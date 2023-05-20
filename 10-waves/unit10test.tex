@@ -1,0 +1,760 @@
+\documentclass{exam}
+\input{../preamble}
+\usepackage{circuitikz}
+\usepackage{exam-randomizechoices}
+
+\def\one{12345}
+\def\two{2}
+\def\three{3}
+\def\four{4}
+
+\def\testVersion{\one} % Edit Version number here only.
+
+\setrandomizerseed{\testVersion}
+
+\pagestyle{headandfoot}
+\firstpageheader{Physics}{Test on Unit 11: Waves}{Version \testVersion}
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\SolutionEmphasis{\color{red}}
+
+\printanswers
+
+\begin{document}
+\begin{questions}
+
+\question
+The first wave below represents the electromagnetic wave for the color cyan, which is indicated in the visible spectrum below. The dashed double arrows are the same length. Which color could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {cyan};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*632/490,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(490/632*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1em}
+
+\begin{tikzpicture}
+    \begin{axis}[width=14cm, height=7cm,
+        ymin=0,ymax=1,
+        height=3cm,
+        xmin=360,xmax=740,
+        yticklabels={},
+        ytick=\empty,
+        axis lines=left,
+        separate axis lines,
+        y axis line style=white,
+        x dir=reverse,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none}
+        ]
+        \addplot[draw=none, name path=uv, forget plot] coordinates{(360,0)(360,0.5)};
+        \addplot[draw=none, name path=visible, forget plot] coordinates{(740,0)(740,0.5)};
+        \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
+        \draw[<-,thick] (490,0.5) -- ++(axis direction cs: 0,0.4) node[above] {cyan};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice red
+    \choice violet
+    \choice indigo
+    \choice ultraviolet 
+\end{randomizechoices}
+
+\question 
+The first wave represents a green electromagnetic wave. The second wave is an electromagnetic wave that is invisible to the human eye. Assume the double dashed arrows are the same size. What type of electromagnetic wave could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {green};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*200/550,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(550/200*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice ultraviolet
+    \choice microwave
+    \choice blue light
+    \choice gamma ray
+    \choice radio wave
+\end{randomizechoices}
+
+\question
+The Bacillus is a species of rod-shaped bacteria that are very common in nature. As shown below, a typical length is about 2 to 6 microns. Consider a green light wave, which has a wavelength of about 500 nanometers. About how many wave cycles of green light could fit along the length of the Bacillus below?
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=2.5cm,
+    xmin=0,xmax=12,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw plot[domain=0:4*pi, samples=1000] (\x/pi,{sin(7/1*\x r)});
+    \begin{scope}[shift={(axis direction cs: 8,0)}]
+        \draw plot[domain=0:4*pi, samples=200] (\x/pi,{sin(\x r)});   
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{-1.5cm}
+
+\begin{tikzpicture}
+    \draw[fill=lightgray] (0,0) circle (0.5);
+    \begin{scope}[shift={(2,0)}]
+        \draw[fill=lightgray] (0,0) circle (0.5); 
+    \end{scope}
+    \fill[lightgray] (0,-0.5) rectangle ++(2,1) node[black,pos=0.5] {\textbf{bacillus}};
+    \draw (0,0.5) -- ++(2,0)
+          (0,-0.5) -- ++(2,0);
+    \draw[<->] (-0.5,0.7) -- ++(3,0) node[above,pos=0.5] {\SI{5}{\micro\meter}};
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice 10
+    \choice 0.1
+    \choice 50
+    \choice 5
+    \choice None of the above
+\end{randomizechoices}
+
+
+\question
+The diagram below represents a transverse wave.
+
+\def\twopi{2*pi}
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+        axis lines=center,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none},
+]
+\addplot [thick,
+    domain=0:1.5*\twopi, 
+    samples=200, 
+    color=black,
+]
+{sin(deg(x))};
+    \draw[black!50] (-1,0) -- ++(axis direction cs: 3*pi+2,0);
+    \fill (0,0) circle (2pt) node[below] {A};
+    \fill (pi/2,1) circle (2pt) node[above] {B};
+    \fill (pi,0) circle (2pt) node[below left] {C};
+    \fill (3*pi/2,-1) circle (2pt) node[below] {D};
+    \fill (2*pi,0) circle (2pt) node[above left] {E};
+    \fill (5*pi/2,1) circle (2pt) node[below] {F};
+    \fill (3*pi,0) circle (2pt) node[below] {G};
+
+\end{axis}
+\end{tikzpicture}
+
+The wavelength of the wave is equal to the distance between points \fillin .
+
+\begin{randomizechoices}
+    \correctchoice B and F
+    \choice A and G
+    \choice D and F
+    \choice C and E
+\end{randomizechoices}
+
+\question
+ The energy of a sound wave is most closely related to its \fillin\ .
+
+ \begin{randomizechoices}
+     \correctchoice amplitude
+     \choice wavelength
+     \choice frequency
+     \choice period
+\end{randomizechoices}
+
+\question
+The diagram below represents a transverse wave.
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+    ticks=none,
+    clip=false,
+    axis lines=center,
+]
+
+\addplot[
+    domain=pi:3*pi,
+    samples=100,
+    color=black,
+]
+{sin(deg(x))};
+    \fill (pi,1) circle (2pt) node[left] {D};
+    \fill (pi,0) circle (2pt) node[left] {A};
+    \fill (pi,-1) circle (2pt) node[left] {E};
+    
+\end{axis}
+\end{tikzpicture}
+
+
+
+
+\question %27
+Describe the electric and magnetic fields that make up an electromagnetic wave.
+
+\begin{center}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[x={(-10:1cm)},y={(90:1cm)},z={(210:1cm)}]
+    % Axes
+    \draw (-1,0,0) node[above] {$x$} -- (5,0,0);
+    \draw (0,0,0) -- (0,2,0) node[above] {$y$};
+    \draw (0,0,0) -- (0,0,2) node[left] {$z$};
+    % Propagation
+    \draw[->,ultra thick] (5,0,0) -- node[above] {$c$} (6,0,0);
+    % Waves
+    \draw[blue,thick] plot[domain=0:4.5,samples=200] (\x,{cos(deg(pi*\x))},0);
+    \draw[red,thick] plot[domain=0:4.5,samples=200] (\x,0,{cos(deg(pi*\x))});
+    % Arrows
+    \foreach \x in {0.1,0.3,...,4.4} {
+      \draw[->,help lines] (\x,0,0) -- (\x,{cos(deg(pi*\x))},0);
+      \draw[->,help lines] (\x,0,0) -- (\x,0,{cos(deg(pi*\x))});
+    }
+    % Labels
+    \node[above right] at (0,1,0) {$\bm{E}$};
+    \node[below] at (0,0,1) {$\bm{B}$};
+    \end{tikzpicture}
+    }
+\end{center}
+
+\begin{choices}
+\choice They are perpendicular to and out of phase with each other.
+\CorrectChoice They are perpendicular to and in phase with each other.
+\choice They are parallel to and out of phase with each other.
+\choice They are parallel to and in phase with each other.
+\end{choices}
+
+% \begin{solution}
+% They are at right angles (OR \ang{90} OR perpendicular) to each other and they are in phase.
+% \end{solution}
+
+\question
+What are the 7 regions of the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice infrared, hertz, joule, kilogram, energy, visible light, ultraviolet
+\choice gamma ray, microwave, mass, velocity, energy, speed, X-ray
+\choice newton, hertz, joule, velocity, energy, speed, X-ray
+\correctchoice radio, microwave, infrared, visible, ultraviolet, X-ray, gamma ray
+\end{choices}
+
+\question
+How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice Wavelength increases.
+\choice Wavelength first increases and then decreases.
+\choice Wavelength first decreases and then increases.
+\CorrectChoice Wavelength decreases.
+\end{choices}
+
+\question
+Which portion of the electromagnetic spectrum is \textit{not invisible} to the human eye?
+
+\begin{choices}
+\choice microwave
+\choice infrared
+\CorrectChoice visible light
+\choice x-ray
+\end{choices}
+
+\question
+What are the 7 colors of visible light?
+
+\begin{choices}
+\choice magenta, cyan, yellow, green, brown, black, white
+\correctchoice red, orange, yellow, green, blue, indigo, violet
+\choice magenta, cyan, yellow, green, red, orange, white
+\choice red, orange, yellow, green, brown, cyan, pink
+\end{choices}
+
+\question
+If the first wave is green light, which color could be represented by the second wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {GREEN LIGHT WAVE};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice red
+\choice yellow
+\correctchoice blue
+\choice infrared
+\end{choices}
+
+
+
+\clearpage
+
+
+\question
+In addition to visible light, bees can also see the \fillin\ region of the electromagnetic spectrum. 
+
+\begin{choices}
+\correctchoice ultraviolet
+\choice infrared
+\choice radio
+\choice X-ray
+\end{choices}
+
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+
+Put these light waves in order according to \textit{wavelength}, from shortest wavelength to longest wavelength.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice red, yellow, blue
+\CorrectChoice blue, yellow, red
+\end{choices}
+
+% \begin{solution}
+% Blue has the shortest wavelength and the highest frequency of the colors given while red has the longest wavelength and the smallest frequency.
+% \end{solution}
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+Put these light waves in order according to \textit{frequency}, from lowest frequency to highest frequency.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice blue, yellow, red
+\CorrectChoice red, yellow, blue
+\end{choices}
+
+\question
+Red light has a wavelength of \SI{700}{nm}. Assuming red light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of red light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{4.3e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\question
+Violet light has a wavelength of \SI{400}{nm}. Assuming violet light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of violet light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{7.5e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\clearpage
+\question 
+The first wave represents red light. Which EM wave could be represented by the other wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {RED LIGHT WAVE};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice green light
+\choice ultraviolet
+\choice X-ray
+\correctchoice infrared
+\end{choices}
+
+\question % 4
+In which region of the electromagnetic spectrum would you find radiation that is invisible to the human eye and has low energy?
+
+\begin{choices}
+\choice Long-wavelength and high-frequency region
+\CorrectChoice Long-wavelength and low-frequency region
+\choice Short-wavelength and high-frequency region
+\choice Short-wavelength and low-frequency region
+\end{choices}
+
+\question
+Which scientist discovered infrared light?
+
+\begin{choices}
+\choice Albert Einstein (1905)
+\choice Isaac Newton (1661)
+\correctchoice William Herschel (1800)
+\choice Madam Curie (1903)
+\end{choices}
+
+\question %26
+Describe one way in which heat waves---infrared radiation---are different from sound waves.
+
+\begin{choices}
+\choice Sound waves are transverse waves, whereas heat waves---infrared radiation---are longitudinal waves.
+\choice Sound waves have shorter wavelengths than heat waves.
+\CorrectChoice Sound waves require a medium, whereas heat waves---infrared radiation---do not.
+\choice Sound waves have higher frequencies than heat waves.
+\end{choices}
+
+% \begin{solution}
+% Heat waves can travel across empty space and sound waves cannot.
+% \end{solution}
+
+\vspace{1em}
+\hrule 
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{Read the prompt below. Then answer questions \ref{ques:fire_first} through \ref{ques:fire_last}.}
+
+When you stand in front of an open fire, you can sense light waves with your eyes. You sense another type of electromagnetic radiation as heat.
+\end{EnvUplevel}
+
+
+\question \label{ques:fire_first} %8
+How are the light waves and heat waves radiated by the fire the same, and how are they different?
+
+\begin{choices}
+\choice Both travel as waves, but only light waves are a form of electromagnetic radiation.
+\CorrectChoice Heat and light are both forms of electromagnetic radiation, but light waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but heat waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but light waves have higher wavelengths.
+\end{choices}
+
+% \begin{solution}
+% Heat and light waves are both forms of electromagnetic radiation, but they have different frequencies. Our eyes detect only the range of frequencies called visible light. The heat waves are easily absorbed by our body, but the light is mostly reflected.
+% \end{solution}
+
+\question %10
+What is this other type of radiation?
+
+\begin{choices}
+\choice Visible light rays
+\choice X-rays
+\choice Gamma rays
+\CorrectChoice Infrared rays
+\end{choices}
+
+
+\question \label{ques:fire_last} %10
+How is this other type of radiation different from light waves?
+
+\begin{choices}
+\choice The visible light rays have higher frequencies and shorter wavelengths than the light waves.
+\CorrectChoice The infrared rays have lower frequencies and longer wavelengths than the light waves.
+\choice The X-rays have lower frequencies and longer wavelengths than the light waves.
+\choice The gamma rays have higher frequencies and shorter wavelengths than the light waves.
+\end{choices}
+\vspace{1em}
+
+\hrule
+
+% \begin{solution}
+% Part A. We sense infrared waves as heat. Part B. We sense the light with our eyes and the heat with our whole body. The heat waves have lower frequency and longer wavelengths than the light waves. They are both forms of electromagnetic radiation.
+% \end{solution}
+
+\question
+What is the value of $c$, the speed of light in a vacuum?
+
+\begin{choices}
+\correctchoice \SI{3.0e8}{m/s} (3 million meters per second)
+\choice \SI{0.0}{m/s} (zero meters per second)
+\choice \SI{1.0e5}{m/s} (100 thousand meters per second)
+\choice \SI{584}{m/s} (584 meters per second)
+\end{choices}
+
+\question
+When light travels through a physical medium, its speed is always \fillin[][0.8in]\ the speed of light ($c$).
+
+\begin{choices}
+\choice greater than
+\choice equal to
+\choice negative
+\correctchoice less than
+\end{choices}
+
+\question
+Light travels in water at \fillin\ the value of $c$.
+
+\begin{choices}
+\correctchoice $3/4$
+\choice $1/2$
+\choice $5/6$
+\choice $2/3$
+\end{choices}
+
+\question
+In air, light has a speed that is \fillin\ of $c$.
+
+\begin{choices}
+\choice 0.03 percent
+\choice 65.00 percent
+\correctchoice 99.97 percent
+\choice 87.50 percent
+\end{choices}
+
+\question
+Diamond slows light down to just \fillin\ of $c$.
+
+\begin{choices}
+\correctchoice 41 percent
+\choice 33 percent
+\choice 61 percent
+\choice 74 percent
+\end{choices}
+
+\question %5
+Light travels at different speeds in different media. Put these media in order, from the slowest light speed to the fastest light speed: air, diamond, vacuum, water.
+
+\begin{choices}
+\choice vacuum, diamond, air, water
+\choice diamond, air, water, vacuum
+\correctchoice diamond, water, air, vacuum
+\choice air, diamond, water, vacuum
+\end{choices}
+
+\question %28
+Explain how X-ray radiation can be harmful and how can it be a useful diagnostic tool.
+
+\begin{choices}
+\choice Overexposure to X-rays can cause HIV, though normal levels of X-rays can be used for sterilizing needles.
+\CorrectChoice Overexposure to X-rays can cause cancer, though in limited doses X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes diabetes, though normal levels of X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes cancer, though normal levels of X-rays can be used for reducing cholesterol in the blood.
+\end{choices}
+
+\question %17
+Which type of electromagnetic radiation has the shortest wavelengths?
+
+\begin{choices}
+\CorrectChoice Gamma rays
+\choice Infrared waves
+\choice Blue light
+\choice Microwaves
+\end{choices}
+
+\question %18
+Which form of EM radiation has the most penetrating ability?
+
+\begin{choices}
+\choice red light
+\choice microwaves
+\choice gamma rays
+\choice infrared radiation
+\end{choices}
+
+
+\question % 3
+What is the location of gamma rays on the electromagnetic spectrum?
+
+\begin{choices}
+\choice At the high-frequency and long-wavelength end of the spectrum
+\CorrectChoice At the high-frequency and short-wavelength end of the spectrum
+\choice At the low-frequency and long-wavelength end of the spectrum
+\choice At the low-frequency and short-wavelength end of the spectrum
+\end{choices}
+
+\question %19
+Why are high-frequency gamma rays more dangerous to humans than visible light?
+
+\begin{choices}
+\choice Gamma rays have a lower frequency range than visible light.
+\choice Gamma rays have a longer wavelength range than visible light.
+\CorrectChoice Gamma rays have greater energy than visible light for penetrating matter.
+\choice Gamma rays have less energy than visible light for penetrating matter.
+\end{choices}
+
+
+
+\question %33
+Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn?
+
+\begin{choices}
+\choice \SI{7.94e9}{min}
+\choice \SI{3.4e4}{min}
+\choice \SI{3.4e-6}{min}
+\choice \SI{79.4}{min}
+\end{choices}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Violet light has a \fillin[higher] frequency and \fillin[shorter] wavelength than red light.
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice lower; longer
+\CorrectChoice higher; shorter
+\choice lower; shorter
+\choice higher; longer
+\end{choices}
+
+% \begin{solution}
+% Violet light has a higher frequency and shorter wavelength than red light.
+% \end{solution}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has lower frequencies than red light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice ultraviolet radiation
+\choice x-ray radiation
+\CorrectChoice infrared radiation
+\choice violet light radiation
+
+\end{choices}
+
+% \begin{solution}
+% Infrared radiation or any other type of radiation in the low-frequency end of the spectrum.
+% \end{solution}
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has shorter wavelengths than violet light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice infrared radiation
+\CorrectChoice ultraviolet radiation
+\choice red light radiation
+\choice microwave radiation
+\end{choices}
+
+% \begin{solution}
+% Ultraviolet radiation or any other type of radiation in the high-frequency end of the spectrum.
+% \end{solution}
+
+\question %22
+What is the wavelength of red light with a frequency of \SI{4.00e14}{\Hz}?
+
+\begin{choices}
+\choice \SI{2.50e14}{\meter}
+\choice \SI{4.00e15}{\meter}
+\choice \SI{2.50e6}{\meter}
+\CorrectChoice \SI{7.50e-7}{\meter}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item frequency: $f = \SI{4.00e14}{\Hz}$
+    \item speed of light: $c = \SI[per-mode=symbol]{3.00e8}{\meter\per\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for wavelength,
+
+\begin{equation*}
+    \lambda = \frac{c}{f} = \SI{7.50e-7}{\meter}
+\end{equation*}
+\end{solution}
+
+\question %14
+Visible light has a range of wavelengths from about \SI{400}{nm} to \SI{800}{nm}. What is the range of frequencies for visible light?
+
+\begin{choices}
+\choice \SI{3.75e6}{\Hz} to \SI{7.50e6}{\Hz}
+\choice \SI{3.75}{\Hz} to \SI{7.50}{\Hz}
+\choice \SI{3.75e-7}{\Hz} to \SI{7.50e-7}{\Hz}
+\CorrectChoice \SI{3.75e14}{\Hz} to \SI{7.50e14}{\Hz}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item red limit of wavelength $\lambda_R = \SI{800}{\nano\meter} = \SI{800e-9}{\meter}$
+    \item violet limit of wavelength: $\lambda_V = \SI{400}{\nano\meter} = \SI{400e-9}{\meter}$
+    \item speed of light: $c = \SI{3.00e8}{\meter/\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for frequency,
+
+\begin{equation*}
+    f = \frac{c}{\lambda}
+\end{equation*}
+
+The red and violet limits of frequency are
+
+\begin{align*}
+    f_R = \frac{c}{\lambda_R} = \SI{3.75e14}{\Hz}\\
+    \\
+    f_V = \frac{c}{\lambda_V} = \SI{7.50e14}{\Hz}\\
+\end{align*}
+\end{solution}
+
+
+
+\end{questions}
+\end{document}

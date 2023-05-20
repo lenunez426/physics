@@ -1,0 +1,322 @@
+\documentclass{exam}
+\input{../preamble}
+\pagestyle{headandfoot}
+\firstpageheader{Physics}{Test}{Unit 3: Projectiles}
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\SolutionEmphasis{\color{red}}
+
+
+%\printanswers
+
+\begin{document}
+\begin{questions}
+
+\question
+The $x$-component is the \fillin\ component of a vector.
+
+\begin{choices}
+    \correctchoice horizontal
+    \choice vertical
+    \choice direction
+    \choice magnitude
+\end{choices}
+
+\question
+The $y$-component is the \fillin\ component of a vector?
+
+\begin{choices}
+    \choice horizontal
+    \choice direction
+    \choice magnitude
+    \correctchoice vertical
+\end{choices}
+
+
+\begin{EnvUplevel}
+\textbf{Refer to the figure below and answer the following questions.}
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+\def\Ax{2}
+\def\Ay{6}
+\begin{tikzpicture}
+\pgfplotsset{compat=1.11}
+    \begin{axis}[width=8cm,height=8cm,
+        axis lines = middle,
+        xlabel = $x$, x label style={anchor=west},
+        ylabel = $y$, y label style={anchor=south},
+        ymin=-8, ymax=8,
+        xmin=-8, xmax=8,
+        xtick={-8,-6,...,8},
+        ytick={-8,-6,...,8},
+        ymajorgrids=true,
+        xmajorgrids=true,
+        clip=false,
+        ]
+        \draw[ultra thick,red,->] (axis cs: 0,0) -- (\Ax,\Ay) node[red,above] {$\vec{A}$};
+    \end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\question
+What is the $x$-component of vector $\vec{A}$?
+
+\begin{choices}
+    \choice $-6$
+    \choice $-2$
+    \choice 6
+    \correctchoice 2
+\end{choices}
+
+\question
+What is the $y$-component of $\vec{A}$?
+
+\begin{choices}
+    \choice 2
+    \correctchoice 6
+    \choice $-2$
+    \choice $-6$
+\end{choices}
+\vspace{1em}
+\hrule
+
+
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{Read the passage below. Then answer the following questions.}
+
+The fox travels 48 meters west, then makes a left and travels 55 meters south.
+\end{EnvUplevel}
+
+\question
+ What is the magnitude of the fox's resultant displacement? (\textit{Tip}: Draw a sketch.)
+
+\begin{choices}
+    \choice \SI{48}{m}
+    \choice \SI{55}{m}
+    \choice \SI{103}{m}
+    \correctchoice \SI{73}{m}
+\end{choices}
+
+\question
+What is the direction of the resultant displacement as measured counter-clockwise from \SI{0}{\degree} (i.e., from the east axis)?
+
+\begin{choices}
+    \correctchoice \SI{229}{\degree}
+    \choice \SI{194}{\degree}
+    \choice \SI{48.9}{\degree}
+    \choice \SI{304}{\degree}
+\end{choices}
+\vspace{1em}
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Read the passage below. Then answer the remaining questions.}
+    
+    Sam Houston fires a cannon horizontally at \SI{63}{m/s} from the top of a tall cliff. The cliff is 754 meters tall.
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture} 
+    \tikzmath{
+        \gravity = 9.8;
+        \vi = 28.6;
+        \yi = 60;
+        \thetai = 0.0;
+        \ys = 1.3;
+        \x1 = 20; \y1 = 57.60;
+        \x2 = 40; \y2 = 50.42;
+        \x3 = 60; \y3 = 38.43;
+        \x4 = 80; \y4 = 21.66;
+        \x5 = \vi*sqrt(2*\yi/\gravity); \y5 = 0;
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=8cm,height=8cm,ticks=none,
+        axis line style = {black!50},
+        axis lines = middle,
+        clip=false,
+        ylabel style= {anchor=south},
+        xlabel style= {anchor=west},
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=120,
+        ymin=0, ymax=80,
+        ]
+        \addplot [dashed,
+            domain=0:100,
+            samples=100, 
+            color=black!50,
+        ]
+        {\yi + tan(\thetai)*x - \gravity*x^2/(2*(\vi*cos(\thetai))^2)}; %equation of path
+        \fill (0,\yi) circle (3pt) node[left] {$y_0$};
+        \fill (\x1,\y1) circle (3pt); %Calculated using equator of path
+        \fill (\x2,\y2) circle (3pt);
+        \fill (\x3,\y3) circle (3pt);
+        \fill (\x4,\y4) circle (3pt);
+        \fill (\x5,\y5) circle (3pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\question
+What is the horizontal acceleration of the cannon?
+
+\begin{choices}
+    \correctchoice \SI{0}{m/s^2}
+    \choice \SI{63}{m/s^2}
+    \choice \SI{9.8}{m/s^2}
+    \choice Unknown without time $t$
+\end{choices}
+
+\question
+What is the cannon's vertical acceleration?
+
+\begin{choices}
+    \choice \SI{0}{m/s^2}
+    \choice \SI{-63}{m/s^2}
+    \correctchoice \SI{-9.8}{m/s^2}
+    \choice Unknown without time $t$
+\end{choices}
+
+\clearpage
+\question
+What is the horizontal velocity of the cannon 4 seconds after launch?
+
+\begin{choices}
+    \correctchoice \SI{63}{m/s}
+    \choice \SI{252}{m/s}
+    \choice \SI{164}{m/s}
+    \choice \SI{0}{m/s}
+\end{choices}
+
+\question 
+What is the cannon's vertical velocity 4 seconds after launch?
+
+\begin{choices}
+    \choice \SI{-63.0}{m/s}
+    \correctchoice \SI{-39.2}{m/s}
+    \choice \SI{-105}{m/s}
+    \choice \SI{-44.1}{m/s}
+\end{choices}
+
+\question
+What is the cannon's horizontal displacement after 7 seconds of travel?
+
+\begin{choices}
+    \correctchoice \SI{441}{m}
+    \choice \SI{63}{m}
+    \choice \SI{867}{m}
+    \choice \SI{225}{m}
+\end{choices}
+
+\question
+What is the vertical displacement of the cannon 7 seconds after launch?
+
+\begin{choices}
+    \choice \SI{-34.4}{m}
+    \choice \SI{-96}{m}
+    \correctchoice \SI{-240}{m}
+    \choice \SI{-390}{m}
+\end{choices}
+
+
+\question
+How much time does it take the cannon to impact the ground below?
+
+\begin{choices}
+    \correctchoice \SI{12.4}{s}
+    \choice \SI{13.0}{s}
+    \choice \SI{14.1}{s}
+    \choice \SI{15.2}{s}
+\end{choices}
+
+\question
+What is the magnitude of the cannon's velocity as the cannon strikes the ground? (This is known as the ``entry speed.'')
+
+\begin{choices}
+    \choice \SI{58.6}{m/s}
+    \correctchoice \SI{136.9}{m/s}
+    \choice \SI{184.6}{m/s}
+    \choice \SI{7658}{m/s}
+\end{choices}
+
+\end{questions}
+\end{document}
+
+\clearpage
+\question
+After takeoff, an airplane travels \SI{120}{m} at \SI{33}{\degree} above the horizontal. What is the horizontal component of its displacement?
+
+\begin{choices}
+    \choice \SI{65.4}{m}
+    \choice \SI{98.0}{m}
+    \correctchoice \SI{101}{m}
+    \choice \SI{3960}{m}
+\end{choices}
+
+\question
+For the airplane in the previous problem, what is the vertical displacement?
+
+\begin{choices}
+    \choice \SI{101}{m}
+    \choice \SI{75.4}{m}
+    \choice \SI{33.0}{m}
+    \correctchoice \SI{65.4}{m}
+\end{choices}
+
+
+\begin{EnvUplevel}
+\textbf{Refer to the figure below and answer the following questions.}
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+\def\A{5}
+\def\angle{142}
+\begin{tikzpicture}
+\pgfplotsset{compat=1.11}
+\begin{axis}[width=8cm,height=8cm,
+    axis lines=middle,
+    axis line style={black!20},
+    xmin=-5,xmax=5,ymin=-5,ymax=5,
+    axis equal,
+    ticks = none,
+    xlabel = $x$, x label style={anchor=west},
+    ylabel = $y$, y label style={anchor=south},
+        ticks=none,
+        clip=false,
+        ]
+        \node[left] at (axis cs: -5,0) {$-x$};
+        \node[below] at (axis cs: 0,-5) {$-y$};
+        \draw[thick] (axis cs: -1,0) arc (180:\angle:1);
+        \node at (axis cs: -1.8,0.5) {\SI{38}{\degree}}; %180 - 142 = 38
+        \draw[ultra thick,black,->] (axis cs: 0,0) -- ++(axis direction cs: {\A*cos(\angle)},{\A*sin(\angle)}) node[above] {$\vec{A}=16$};
+    \end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\question
+What is the $x$-component of the vector?
+
+\begin{choices}
+    \choice $-9.85$
+    \choice 12.6
+    \choice 9.85
+    \correctchoice $-12.6$
+\end{choices}
+
+\question
+What is the $y$-component of the vector?
+
+\begin{choices}
+    \choice 12.6
+    \correctchoice 9.85
+    \choice $-12.6$
+    \choice $-9.85$
+\end{choices}
+
+\vspace{1em}
+\hrule

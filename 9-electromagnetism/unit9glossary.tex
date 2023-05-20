@@ -1,0 +1,46 @@
+\newglossaryentry{magnetic pole}{
+    name=magnetic pole,
+    description={part of a magnet that exerts the strongest force on other magnets or magnetic material}
+}
+
+\newglossaryentry{north pole}{
+    name=north pole,
+    description={part of a magnet that orients itself toward the geographic North Pole of Earth}
+}
+
+\newglossaryentry{south pole}{
+    name=south pole,
+    description={part of a magnet that orients itself toward the geographic South Pole of Earth}
+}
+
+\newglossaryentry{magnetic dipole}{
+    name=magnetic dipole,
+    description={term that describes magnets because they always have two poles: north and south}
+} 
+
+\newglossaryentry{magnetic field}{
+    name=magnetic field,
+    description={directional lines around a magnetic material that indicates the direction and magnitude of the magnetic force}
+}
+
+\newglossaryentry{electromagnet}{
+    name=electromagnet,
+    description={device that uses electric current to make a magnetic field}
+}
+
+\newglossaryentry{right-hand rule}{
+    name={right-hand rule},
+    description={rule involving curling the right-hand fingers from one vector to another; the direction in which the right thumb points is the direction of the resulting vector}
+}
+
+\newglossaryentry{electromagnetism}{
+    name=electromagnetism,
+    description={study of electric and magnetic phenomena}
+}
+
+\tikzstyle directed=[postaction={decorate,decoration={markings, % arrows on the field lines
+  mark=at position .1 with {\arrowreversed[scale=1.5]{stealth}},
+  mark=at position .9 with {\arrowreversed[scale=1.5]{stealth}}}}]
+\tikzstyle tangent=[postaction={decorate,decoration={markings, % Tangent to the field line
+  mark=at position .7 with {\draw[ultra thick,stealth-,red,solid](-12pt,0)--(12pt,0)node[above]{$\vec{B}$};}}}]
+\tikzstyle fLines=[thick,dashed,directed,tangent]

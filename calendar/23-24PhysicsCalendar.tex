@@ -1,0 +1,1291 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Monthly Calendar
+% LaTeX Template
+% Version 1.1 (19/9/2018)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Evan Sultanik with modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the calendar.sty file to be in the same directory as the
+% .tex file. The calendar.sty file provides the necessary structure to create the
+% calendar.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt,dvipsnames]{article} % Can also use 9pt or 11pt for a smaller or larger overall font size
+
+\usepackage{calendar} % Use the calendar.sty style
+
+\usepackage[landscape, a4paper, margin=1cm]{geometry} % Page dimensions and margins
+
+\usepackage{palatino} % Use the Palatino font
+
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,backgrounds}
+
+\newcommand{\tstar}[5]{% inner radius, outer radius, tips, rot angle, options
+\pgfmathsetmacro{\starangle}{360/#3}
+\draw[#5] (#4:#1)
+\foreach \x in {1,...,#3}
+{ -- (#4+\x*\starangle-\starangle/2:#2) -- (#4+\x*\starangle:#1)
+}
+-- cycle;
+}
+
+\newcommand{\ngram}[4]{% outer radius, tips, rot angle, options
+\pgfmathsetmacro{\starangle}{360/#2}
+\pgfmathsetmacro{\innerradius}{#1*sin(90-\starangle)/sin(90+\starangle/2)}
+\tstar{\innerradius}{#1}{#2}{#3}{#4}
+}
+
+\def\blueSqr{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[fill=RoyalBlue] (0,0) rectangle (0.5,0.5);
+        \end{tikzpicture}
+    \end{center}
+}
+
+\def\orangeSqr{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[fill=YellowOrange] (0,0) rectangle (0.5,0.5);
+        \end{tikzpicture}
+    \end{center}
+}
+
+\def\greenStar{
+    \begin{center}
+        \begin{tikzpicture}
+         \ngram{0.5}{5}{54}{thick,fill=green!30}
+        \end{tikzpicture}
+    \end{center}
+}
+
+\begin{document}
+
+\pagestyle{empty} % Disable default headers and footers
+
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+
+\StartingDayNumber=1 % The starting day of the calendar, default of 1 means Sunday, 2 for Monday, etc
+
+%----------------------------------------------------------------------------------------
+%	CALENDAR HEADER
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+	\textsc{\LARGE August}\\
+	\textsc{\large 2023}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{2.5cm}} 
+
+% 2
+\day{}{}
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 15
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 16
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 17
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 18
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 22
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 23
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 24
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 25
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{First Day of School}{Begin Unit 1: Constant Motion} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{Constant Motion Model}{Begin Constant Motion Model} 
+
+% 31
+\day{}{\vspace{2.5cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE September}\\
+	\textsc{\large 2023}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{Work}{\vspace{2cm}} 
+
+% 2
+\day{}{}
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{Momentum \& Kinetic Energy}{Begin Constant Motion Model Refined With Momentum and Kinetic Energy} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{Frame of Reference}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{Review Day}{Review for tomorrow's assessment on Unit 1: Constant Motion}
+
+% 22
+\day{Assessment Day}{End Unit 1: Constant Motion}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{Teacher Work Day}{
+    \begin{center}
+        \begin{tikzpicture}
+         \ngram{0.5}{5}{54}{thick,fill=green!30}
+        \end{tikzpicture}
+    \end{center}
+}
+
+% 26
+\day{Begin Unit 2}{Unit 2: Force Interactions \eventskip Interactions (2--3 days)}
+
+% 27
+\day{Interactions (cont.)}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{Balanced vs.~Unbalanced}{\vspace{2.5cm}} 
+
+% 30
+\day{}{}
+
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE October}\\
+	\textsc{\large 2023}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+% \BlankDay
+% \BlankDay
+% \BlankDay
+% \BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{2.5cm}}  
+
+% 2
+\day{}{\vspace{2.5cm}} 
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{Review Day}{Review for tomorrow's assessment on Unit 2: Force Interactions} 
+
+% 5 
+\day{Assessment Day}{End Unit 2: Force Interactions} 
+
+% 6
+\day{Begin Unit 3}{Unit 3: Changing Motion} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{Teacher Work Day}{
+    \begin{center}
+        \begin{tikzpicture}
+         \ngram{0.5}{5}{54}{thick,fill=green!30}
+        \end{tikzpicture}
+    \end{center}
+} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+% 31
+\day{}{\vspace{2.5cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE November}\\
+	\textsc{\large 2023}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{2.5cm}}  
+
+% 2
+\day{Review Day}{} 
+
+% 3 
+\day{Assessment Day}{End Unit 3} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{Professional Day/Student Holiday}{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[fill=YellowOrange] (0,0) rectangle (0.5,0.5);
+        \end{tikzpicture}
+    \end{center}
+} 
+
+% 7
+\day{Professional Day/Student Holiday}{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[fill=YellowOrange] (0,0) rectangle (0.5,0.5);
+        \end{tikzpicture}
+    \end{center}
+} 
+
+% 8
+\day{Begin Unit 4}{Unit 4: Force Analysis} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 21
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 22
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 23
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 24
+\day{Student/Staff Holiday}{\blueSqr} 
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE December}\\
+	\textsc{\large 2023}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{Review Day}{Review for Monday's assessment on Unit 4: Force Analysis}  
+
+% 2
+\day{}{\vspace{2cm}}
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{Assessment Day}{End Unit 4} 
+
+% 5
+\day{Begin Unit 5}{Unit 5: 1D Motion Application} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{Review Day}{Review for tomorrow's assessment on Unit 5: 1D Motion Application} 
+
+% 13
+\day{Assessment Day}{End Unit 5} 
+
+% 14
+\day{Begin Final Exam Review}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{Final Exams}{\vspace{2.5cm}} 
+
+% 19
+\day{Final Exams}{\vspace{2.5cm}} 
+
+% 20
+\day{Final Exams}{\vspace{2.5cm}} 
+
+% 21
+\day{Final Exams}{\vspace{2.5cm}}
+
+% 22
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{1.5cm}}
+
+% 25
+\day{Staff/Student Holiday \vspace{-1em}}{\blueSqr}
+
+% 26
+\day{Staff/Student Holiday \vspace{-1em}}{\blueSqr}
+
+% 27
+\day{Staff/Student Holiday \vspace{-1em}}{\blueSqr}
+
+% 28
+\day{Staff/Student Holiday \vspace{-1em}}{\blueSqr}
+
+% 29
+\day{Staff/Student Holiday \vspace{-1em}}{\blueSqr}
+
+% 30
+\day{}{} 
+
+% 31
+\day{}{\vspace{1cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE January}\\
+	\textsc{\large 2024}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 2
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 3 
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 4
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 5
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{Begin Unit 6}{Unit 6: 2D Motion Application} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+% 31
+\day{}{\vspace{2.5cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE February}\\
+	\textsc{\large 2024}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{2.5cm}}  
+
+% 2
+\day{Review Day}{Review for Monday's assessment on Unit 6: 2D Motion Application}
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{Assessment Day}{End Unit 6}
+
+% 6
+\day{Begin Unit 7}{Unit 7: Conservation in Systems}
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{Teacher Work Day}{\greenStar} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{Professional Day/Student Holiday}{\orangeSqr} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{Review Day}{Review for Monday's assessment on Unit 7: Conservation in Systems}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{Assessment Day}{End Unit 7}
+
+% 27
+\day{Begin Unit 8}{Unit 8: Conservation of Charge}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE March}\\
+	\textsc{\large 2024}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{1.5cm}}  
+
+% 2
+\day{}{\vspace{1.5cm}} 
+
+% 3 
+\day{}{\vspace{2.5cm}} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 12
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 13
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 14
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 15
+\day{Staff/Student Holiday}{\blueSqr} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+% 31
+\day{}{\vspace{1cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE April}\\
+	\textsc{\large 2024}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{Review Day}{Review for tomorrow's assessment on Unit 8: Conservation of Charge}  
+
+% 2
+\day{Assessment Day}{End Unit 8} 
+
+% 3 
+\day{Begin Unit 9}{Unit 9: Electromagnetism} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{}{\vspace{2.5cm}} 
+
+% 7
+\day{}{\vspace{2.5cm}} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{Review Day}{Review for tomorrow's assessment on Unit 9: Electromagnetism} 
+
+% 12
+\day{Assessment Day}{End Unit 9} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{Teacher Work Day}{\greenStar} 
+
+% 16
+\day{Begin Unit 10}{Unit 10: Waves \& Optics} 
+
+% 17
+\day{}{\vspace{2.5cm}} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{}{\vspace{2.5cm}} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{}{\vspace{2.5cm}}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+%\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\clearpage
+
+\begin{center}
+	\textsc{\LARGE May}\\
+	\textsc{\large 2024}
+\end{center}
+
+\begin{calendar}{\textwidth} 
+
+
+\BlankDay
+\BlankDay
+\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+%\BlankDay
+
+\setcounter{calendardate}{1}
+
+% 1
+\day{}{\vspace{2.5cm}}  
+
+% 2
+\day{}{\vspace{2.5cm}} 
+
+% 3 
+\day{Review Day}{Review for Monday's assessment on Unit 10: Waves \& Optics} 
+
+% 4
+\day{}{\vspace{2.5cm}} 
+
+% 5
+\day{}{\vspace{2.5cm}} 
+
+% 6
+\day{Assessment Day}{End Unit 10} 
+
+% 7
+\day{Begin Unit 11}{Unit 11: Modern Physics} 
+
+% 8
+\day{}{\vspace{2.5cm}} 
+
+% 9
+\day{}{\vspace{2.5cm}} 
+
+% 10
+\day{}{\vspace{2.5cm}} 
+
+% 11
+\day{}{\vspace{2.5cm}} 
+
+% 12
+\day{}{\vspace{2.5cm}} 
+
+% 13
+\day{}{\vspace{2.5cm}} 
+
+% 14
+\day{}{\vspace{2.5cm}} 
+
+% 15
+\day{}{\vspace{2.5cm}} 
+
+% 16
+\day{}{\vspace{2.5cm}} 
+
+% 17
+\day{Review Day}{Review for Monday's assessment on Unit 11: Modern Physics} 
+
+% 18
+\day{}{\vspace{2.5cm}} 
+
+% 19
+\day{}{\vspace{2.5cm}} 
+
+% 20
+\day{Assessment Day}{End Unit 11} 
+
+% 21
+\day{}{\vspace{2.5cm}}
+
+% 22
+\day{}{\vspace{2.5cm}}
+
+% 23
+\day{}{\vspace{2.5cm}}
+
+% 24
+\day{}{\vspace{2.5cm}}
+
+% 25
+\day{}{\vspace{2.5cm}}
+
+% 26
+\day{}{\vspace{2.5cm}}
+
+% 27
+\day{Staff/Student Holiday}{\blueSqr}
+
+% 28
+\day{}{\vspace{2.5cm}} 
+
+% 29
+\day{}{\vspace{2.5cm}} 
+
+% 30
+\day{}{\vspace{2.5cm}} 
+
+% 31
+\day{Last Day of School}{\vspace{2.5cm}} 
+
+% Un-comment the \BlankDay below if the bottom line of the calendar is missing
+\BlankDay
+
+\finishCalendar
+\end{calendar}
+
+\end{document}

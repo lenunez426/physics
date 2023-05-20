@@ -1,0 +1,1759 @@
+\documentclass[dvipsnames]{article}
+\input{../preamble}
+\input{unit6glossary}
+\usetikzlibrary{math}
+\usepackage{cancel}
+
+\numberwithin{equation}{section}
+\setcounter{section}{6}
+\numberwithin{figure}{section}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headruleskip}{0mm}
+\fancyfoot[C]{Access for free at \href{https://openstax.org/books/physics/pages/1-introduction}{https://openstax.org/books/physics/pages/1-introduction}
+\hfill \thepage}
+\fancyhead{}
+
+\title{Unit 6: Two-Dimensional Motion}
+\author{Physics\footnote{Access for free at \href{\openstax}{\openstax}} \hspace{0.1ex} at CFISD}
+\date{Updated on \today}
+\openstaxfooter
+
+\begin{document}
+
+\maketitle
+
+\subsection{Vectors and Components}
+
+A \gls{vector} is a quantity that has both magnitude and direction. Graphically a vector is an arrow used to represent quantities with both magnitude and direction. Two-dimensional vectors can be broken down into two components. A \gls{component} is a piece of a vector that points in either the vertical or the horizontal direction. The horizontal piece of a vector is known as the $x$-component. The vertical piece is the $y$-component. Components may be down graphically or mathematically, as shown in the following examples.
+
+\begin{example}
+    Find the $x$- and $y$-components of vector $A$ below.
+\end{example}
+
+\begin{center}
+\def\Ax{6}
+\def\Ay{4}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=8cm,
+        axis lines = center,
+        xlabel = $x$, 
+        ylabel = $y$, 
+        ymin=0, ymax=8,
+        xmin=0, xmax=8,
+        xtick={-8,-6,...,8},
+        ytick={-8,-6,...,8},
+        ymajorgrids=true,
+        xmajorgrids=true,
+        clip=false,
+        ]
+        \draw[ultra thick,->] (axis cs: 0,0) -- (\Ax,\Ay) node[above] {$\vec{A}$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+\Solution The horizontal and vertical components, $A_x$ and $A_y$, respectively, are found graphically:
+
+\begin{center}
+\def\Ax{6}
+\def\Ay{4}
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=7cm,
+        axis lines = center,
+        xlabel = $x$, 
+        ylabel = $y$, 
+        ymin=0, ymax=8,
+        xmin=0, xmax=8,
+        xtick={-8,-6,...,8},
+        ytick={-8,-6,...,8},
+        ymajorgrids=true,
+        xmajorgrids=true,
+        clip=false,
+        ]
+        \draw[ultra thick,->] (axis cs: 0,0) -- (\Ax,\Ay) node[above] {$\vec{A}$};
+        \draw[ultra thick,->,cyan] (0,0) -- (\Ax,0) node[above,pos=0.8] {$A_x = 6$};
+        \draw[ultra thick,->,red] (\Ax,0) -- ++(0,\Ay) node[right,pos=0.9] {$A_y = 4$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Therefore, the $x$ and $y$ components of vector $A$ are
+
+\begin{equation*}
+    \vec{A}_x = 6 \quad \text{and} \quad \vec{A}_y = 4
+\end{equation*}
+
+\solutionEnd
+\vspace{1em}
+
+The $x$- and $y$-components are always perpendicular, or at \ang{90}, to each other. 
+
+\begin{center}
+    \pgfplotsset{compat=1.11}
+    \def\A{6}
+    \def\angle{55}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis lines=center,
+        axis line style={black!20},
+        xmin=0,xmax=5,
+        ymin=0,ymax=5,
+        clip=false,
+        ticks=none,
+        xlabel=$+x$,
+        ylabel=$+y$,
+    ]
+    \draw[blue,thick,->] (0,0) -- ({\A*cos(\angle)},0) node[pos=0.5,below] {$\vec{A}_x$};
+    \draw[red,thick,->] ({\A*cos(\angle)},0) -- ++(0,{\A*sin(\angle)}) node[pos=0.5, right] {$\vec{A}_y$};
+    \draw[ultra thick,->] (0,0) -- ({\A*cos(\angle)},{\A*sin(\angle)}) node[pos=0.5,above left] {$\vec{A}$};
+    \draw[thick] (0.6,0) arc (0:\angle:0.6) node[pos=0.75,right=2pt] {$\theta$};
+    \end{axis}
+\end{tikzpicture}
+\captionsetup{type=figure,margin=1in,font=scriptsize}
+\captionof{figure}{Vector $A$ and it's two components. $A_x$ is the horizontal component; $A_y$ is the vertical. The quantity $\theta$ is the angle between the $x$-axis and vector $A$.}
+\label{xXmnIC}
+\end{center}
+
+Since they form a right triangle, they combine together to give the length of the overall vector in accordance with the Pythagorean Theorem:
+
+\begin{equation} \label{NsyXHk}
+    A^2 = A_x^2 + A_y^2
+\end{equation}
+
+\clearpage
+
+\begin{example}
+    Consider vector $A$, whose $x$- and $y$-components are 3 and 4, respectively. Calculate the magnitude of $\vec{A}$.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=5cm,height=5cm,
+        axis lines=center,
+        axis line style={draw=none},
+        xmin=0,xmax=4,
+        ymin=0,ymax=4,
+        clip=false,
+        ticks=none,
+    ]
+    \draw[dashed,->] (0,0) -- (3,0) node[pos=0.5,below] {3};
+    \draw[dashed,->] (3,0) -- ++(0,4) node[pos=0.5, right] {4};
+    \draw[thick,->] (0,0) -- (3,4) node[pos=0.5,above left] {$\vec{A}$};
+    \draw (0.6,0) arc (0:53.13:0.6);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\Solution We are given the magnitudes of the horizontal and vertical components: $A_x = 3$ and $A_y = 4$. The unknown we are looking for is the magnitude of the resultant vector: $A =\ ?$
+
+\vspace{1em}
+
+The given and unknown quantities are related by the Pythagorean theorem, Equation \eqref{NsyXHk}, as
+
+\begin{equation*}
+    A^2 = A_x^2 + A_y^2
+\end{equation*}
+
+Substituting given values leads to 
+
+\begin{equation*}
+    A^2 = 3^2 + 4^2
+\end{equation*}
+
+which simplifies to
+
+\begin{equation*}
+    A^2 = 25
+\end{equation*}
+
+To solve for $A$, we take the square root of both sides:
+
+\begin{equation*}
+    \sqrt{A^2} = \sqrt{25}
+\end{equation*}
+
+Therefore, 
+
+\begin{equation*}
+    A = 5
+\end{equation*}
+
+The magnitude of the vector whose $x$- and $y$-components are 3 and 4 is 5. 
+
+\solutionEnd
+
+\begin{example}
+    The magnitude of a two-dimensional vector is 185. If the magnitude of its vertical component is 153, calculate the magnitude of its $x$-component. 
+\end{example}
+
+\Solution We are given magnitudes of the vector and its $y$-component: $A = 185$ and $A_y = 153$. We are looking for the horizontal component: $A_x =\ ?$ The given and unknown quantities are related by the Pythagorean theorem (Eq.~\ref{NsyXHk}):
+
+\begin{equation*}
+    A^2 = A_x^2 + A_y^2
+\end{equation*}
+
+Substituting known values leads to 
+
+\begin{equation*}
+    185^2 = A_x^2 + 153^2
+\end{equation*}
+
+Since we are solving for $A_x$, let's re-write this equation by putting the unknown variable on the left, simply as 
+
+\begin{equation*}
+    A_x^2 + 153^2 = 185^2
+\end{equation*}
+
+We solve for the horizontal component as follows:
+
+\begin{align*}
+    \textbf{Add $153^2$} \qquad & A_x^2 + 153^2 \redminus \textcolor{red}{153^2} = 185^2 \redminus \textcolor{red}{153^2}\\[1ex]
+    \textbf{Simplify} \qquad & A_x^2 = 185^2 - 153^2\\[1ex]
+    \textbf{Simplify} \qquad & A_x^2 = \num{10816}\\[1ex]
+    \textbf{Take square root} \qquad & \sqrt{A_x^2} = \sqrt{\num{10816}}\\[1ex]
+    \textbf{Simplify} \qquad & A_x = 104
+\end{align*}
+
+Therefore, the magnitude of the horizontal ($x$) component of the vector is 104.
+
+\solutionEnd
+
+Take a look at Figure \ref{xXmnIC}. It's possible to find the magnitude of vector $A$ if you know the angle $\theta$ and either the $x$- or $y$-component. Vector $A$ is related to  angle $\theta$ and its components by the trig functions cosine (cos) and sine (sin), as follows:
+
+\begin{align}
+    A_x = A \cos{\theta} \label{06CyUc}\\[1ex]
+    A_y = A \sin{\theta} \label{aBWDIc}
+\end{align}
+
+\begin{example}
+    A vector with a magnitude of 25 is oriented \ang{36} above the horizontal, as shown below. Find the $x$- and $y$-components.
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=5cm,height=5cm,
+        axis lines=center,
+        axis line style={draw=none},
+        xmin=0,xmax=4,
+        ymin=0,ymax=4,
+        clip=false,
+        ticks=none,
+    ]
+    \draw[dashed,->] (0,0) -- ({5*cos(36)},0) node[pos=0.5,below] {$A_x$};
+    \draw[dashed,->] ({5*cos(36)},0) -- ++(0,{5*sin(36)}) node[pos=0.5, right] {$A_y$};
+    \draw[thick,->] (0,0) -- ({5*cos(36)},{5*sin(36)}) node[pos=0.5,above left] {25};
+    \draw (0.6,0) arc (0:36:0.6) node [pos=0.75,right=2pt]{\ang{36}};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\Solution We are given the vector's magnitude and angle: $A = 25$ and $\theta=\ang{36}$. By Equation~\eqref{06CyUc}, the horizontal component is
+
+\begin{equation*}
+    A_x = A \cos{\theta} = 25 \cos{(\ang{36})} = 20.2
+\end{equation*}
+
+The vertical component, by Equation \eqref{aBWDIc}, is
+
+\begin{equation*}
+    A_y = A \sin{\theta} = 25 \sin{(\ang{36})} = 14.7
+\end{equation*}
+
+\solutionEnd
+
+\subsection{Projectile Motion} \label{tMF7JY}
+
+\Gls{projectile motion} is the motion of an object thrown (projected) into the air when, after the initial force that launches the object, air resistance is negligible and the only other force that object experiences is the force of gravity. The object is called a \gls{projectile}, and its path is called its \gls{trajectory}. \Gls{air resistance} is a frictional force that slows its motion and can significantly alter the trajectory of the motion. Due to the difficulty in calculation, only situations in which the deviation from projectile motion is negligible and air resistance can be ignored are considered in introductory physics. That approximation is often quite accurate.
+
+\vspace{1em}
+
+The most important concept in projectile motion is that when air resistance is ignored, horizontal and vertical motions are independent, meaning that they don't influence one another. Figure 5.27 compares a cannonball in free fall (in blue) to a cannonball launched horizontally in projectile motion (in red). You can see that the cannonball in free fall falls at the same rate as the cannonball in projectile motion. Keep in mind that if the cannon launched the ball with any vertical component to the velocity, the vertical displacements would not line up perfectly.
+
+\vspace{1em}
+
+Since vertical and horizontal motions are independent, we can analyze them separately, along perpendicular axes. To do this, we separate projectile motion into the two components of its motion, one along the horizontal axis and the other along the vertical.
+
+\begin{center}
+    \begin{tikzpicture} 
+    \tikzmath{
+        \vi = 28.6;
+        \yi = 60;
+        \thetai = 0.0;
+    }
+    \tikzset{declare function={f(\x)=\yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);}} %equation of path
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=8cm,height=8cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=120,
+        ymin=0, ymax=80,
+        ]
+        \draw[dashed,domain=0:100,variable=\x,samples=200] plot ({\x},{f(\x)});
+        \draw[dashed] (0,{f(0)}) -- ++(100,0);
+        \draw[dashed] (0,{f(0)}) -- ++(0,-{f(0)});
+        
+        \fill (0,{f(0)}) circle (2pt);
+        \fill (20,{f(20)}) circle (2pt); 
+        \fill (40,{f(40)}) circle (2pt); 
+        \fill (60,{f(60)}) circle (2pt); 
+        \fill (80,{f(80)}) circle (2pt); 
+        \fill (100,{f(100)}) circle (2pt); 
+        
+        \draw[dashed] (20,{f(0)}) -- ++(0,{-(f(0)-f(20))});
+        \draw[dashed] (40,{f(0)}) -- ++(0,{-(f(0)-f(40))});
+        \draw[dashed] (60,{f(0)}) -- ++(0,{-(f(0)-f(60))});
+        \draw[dashed] (80,{f(0)}) -- ++(0,{-(f(0)-f(80))});
+        \draw[dashed] (100,{f(0)}) -- ++(0,{-(f(0)-f(100))});
+        \fill[cyan] (20,{f(0)}) circle (2pt);
+        \fill[cyan] (40,{f(0)}) circle (2pt);
+        \fill[cyan] (60,{f(0)}) circle (2pt);
+        \fill[cyan] (80,{f(0)}) circle (2pt);
+        \fill[cyan] (100,{f(0)}) circle (2pt);
+        
+        \draw[dashed] (0,{f(20)}) -- ++(20,0);
+        \draw[dashed] (0,{f(40)}) -- ++(40,0);
+        \draw[dashed] (0,{f(60)}) -- ++(60,0);
+        \draw[dashed] (0,{f(80)}) -- ++(80,0);
+        \draw[dashed] (0,{f(100)}) -- ++(100,0);
+        \fill[red] (0,{f(20)}) circle (2pt);
+        \fill[red] (0,{f(40)}) circle (2pt);
+        \fill[red] (0,{f(60)}) circle (2pt);
+        \fill[red] (0,{f(80)}) circle (2pt);
+        \fill[red] (0,{f(100)}) circle (2pt);
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{The diagram shows the projectile motion of a cannonball shot at a horizontal angle versus one dropped with no horizontal velocity. Note that both cannonballs have the same vertical position over time.}
+\end{center}
+
+\vspace{1em}
+
+We'll call the horizontal axis the $x$-axis and the vertical axis the $y$-axis. For notation, $d$ is the total displacement, and $x$ and $y$ are its components along the horizontal and vertical axes. The magnitudes of these vectors are $x$ and $y$, as illustrated in Figure \ref{i1Y7vV}.
+
+\begin{center}
+    \begin{tikzpicture} 
+    \tikzmath{
+        \vi = 18.0;
+        \yi = 0;
+        \thetai = 70.0;
+    }
+    \tikzset{declare function={f(\x)=\yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);}} %equation of path
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=8cm,height=8cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=20,
+        ymin=0, ymax=18,
+        ]
+        \node at (15.6,0.35) {$\square$};
+        \draw[dashed,domain=0:16,variable=\x,samples=200] plot ({\x},{f(\x)}) node[above left=-5pt] {\faSoccerBallO};
+        \draw[->,thick] (0,0) -- ++(16,{f(16)}) node[pos=0.5,above=3pt]{$d$};
+        \draw[->,dashed,thick,cyan] (0,0) -- ++(16,0) node[pos=0.5,below] {$x$};
+        \draw[->,dashed,thick,red] (16,0) -- ++(0,{f(16)}) node[pos=0.5,right] {$y$};
+        \node at (2.5,0.65) {$\theta$};
+        \draw (1.5,0) arc (0:35:1.5);
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{A boy kicks a ball at angle $\theta$, and it is displaced a distance of $d$ along its trajectory.}
+    \label{i1Y7vV}
+\end{center}
+
+\vspace{1em}
+
+As usual, we use velocity, acceleration, and displacement to describe motion. We must also find the components of these variables along the $x$- and $y$-axes. The components of acceleration are then very simple: $a_y = -g = -\SI{9.80}{m/s^2}$. Note that this definition defines the upwards direction as positive. Because gravity is vertical, $a_x = 0$. Both accelerations are constant, so we can use the kinematic equations. For review, the kinematic equations from a previous chapter are summarized below.
+
+\begin{align}
+    x &= x_0 + v_{\text{avg}} t\\[0.5ex]
+    v_{\text{avg}} &= \frac{v_0 + v}{2}\\[0.5ex]
+    v &= v_0 + a t\\[0.5ex]
+    x &= x_0 + v_0 t + \frac{1}{2} a t^2\\[0.5ex]
+    v^2 &= v_0^2 + 2 a (x - x_0)
+\end{align}
+
+where $x$ is position, $x_0$ is initial position, $v$ is velocity, $v_avg$ is average velocity, $t$ is time, and $a$ is acceleration.
+
+\vspace{1em}
+
+The following four steps are used to analyze projectile motion:
+
+\vspace{1em}
+
+\textbf{Step 1}: Separate the motion into horizontal and vertical components along the $x$- and $y$-axes. These axes are perpendicular, so the Pythagorean theorem, $A^2 = A_x^2 + A_y^2$ is used. The magnitudes of the displacement $d$ along $x$- and $y$-axes are called $x$ and  $y$. The magnitude of the velocity is $v$, and the magnitudes of the components of the velocity, $v_x$ and $v_y$, relate to $v$ also by the Pythagorean theorem. Initial values are denoted with a subscript 0.
+
+\vspace{1em}
+
+\textbf{Step 2}: Treat the motion as two independent one dimensional motions, one horizontal and the other vertical. The kinematic equations for horizontal motion take the following forms under the condition that horizontal acceleration is zero ($a_x = 0$):
+
+\begin{align}
+    x &= x_0 + v_x t \label{7fMAPG}\\[0.5ex]
+    v_x &= v_{0x} = \text{velocity is a constant} \label{dCvDf4}
+\end{align}
+
+For vertical motion, the kinematic equations take the following forms under the condition that vertical acceleration is $a_y = -g = \SI{-9.80}{m/s^2}$:
+
+\begin{align}
+    y &= y_0 + \frac{1}{2}\left(v_{0y} + v_y\right)t\\[0.5ex]
+    v_y &= v_{0y} - gt \label{SjYaoE} \\[0.5ex]
+    y &= y_0 + v_{0y}t - \frac{1}{2}  g t^2  \label{36YuvF} \\[0.5ex]
+    v_y^2 &= v_{0y}^2 - 2 g (y - y_0) \label{wROSXN}
+\end{align}
+
+\vspace{1em}
+
+\textbf{Step 3}: Solve for the unknowns in the two separate motions (one horizontal and one vertical). Note that the only common variable between the motions is time $t$. The problem solving procedures here are the same as for one-dimensional kinematics.
+
+\vspace{1em}
+
+\textbf{Step 4}: Recombine the two motions to find the total displacement $d$ and velocity $v$. These are related to their components via the Pythagorean theorem as shown below:
+
+\begin{align}
+    d &= \sqrt{x^2 + y^2}\\[0.5ex]
+    v &= \sqrt{v_x^2 + v_y^2}
+\end{align}
+  .
+
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={f(\x)=\yi + tan(\thetai)*\x - 10*\x^2/(2*(\vi*cos(\thetai))^2);},
+        declare function={t(\x)=\x/(\vi*cos(\thetai));}
+    ]
+    \tikzmath{
+        \grav = 10;
+        \vi = 20;
+        \yi = 0;
+        \thetai = 45.0;
+        \viy = \vi*sin(\thetai);
+        \ymax = (\viy^2)/(2*\grav);
+        \tmax = 2*\ymax/\viy;
+        \vix = \vi*cos(\thetai);
+        \xmax = \vix*\tmax;
+        \sf = 0.3; %scale factor for vector components
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=12cm,height=12cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=50,
+        ymin=0, ymax=15,
+        ]
+        
+        \draw[fill=black] (0,0) circle (2pt);
+        \draw[thick,violet,->] (0,0) -- ++(\vix*\sf,\viy*\sf) node[below right] {$v_0$};
+        \draw[thick,dashed,red,->] (0,0) -- ++(0,{\sf*\vi*sin(\thetai)}) node[right=-2pt] {$v_{0y}$};
+        \draw[thick,dashed,cyan,->] (0,0) -- ++(\vix*\sf,0) node[pos=1.3, above=-2pt] {$v_{0x}$};
+        \draw (1,0) arc (0:75:0.6) node[midway,right=-1pt] {$\theta_0$};
+        
+        \pgfplotsinvokeforeach{5,10,15}{
+                \draw[fill=black] (#1,{f(#1)}) circle (2pt);
+                \draw[thick,dashed,red,->] (#1,{f(#1)}) -- ++(0,{\sf*(\vi*sin(\thetai) - \grav*t(#1))}) node[above=-2pt] {$v_y$};
+                \draw[thick,dashed,cyan,->] (#1,{f(#1)}) -- ++(\vix*\sf,0) node[right=-2pt] {$v_x$};
+                \draw[thick,violet,->] (#1,{f(#1)}) -- ++(\vix*\sf,{\sf*(\vi*sin(\thetai) - \grav*t(#1))}) node[above=-2pt] {$v$};
+                }
+                
+        \draw[fill=black] (\xmax,\ymax) circle (2pt);
+        \draw[thick,violet,->] (\xmax,\ymax) -- ++(\vix*\sf,0) node[right=-2pt] {$v = v_x$};
+        
+        \pgfplotsinvokeforeach{25,30,35,45}{
+                \draw[fill=black] (#1,{f(#1)}) circle (2pt);
+                \draw[thick,dashed,red,->] (#1,{f(#1)}) -- ++(0,{\sf*(\vi*sin(\thetai) - \grav*t(#1))}) node[below=-2pt] {$v_y$};
+                \draw[thick,dashed,cyan,->] (#1,{f(#1)}) -- ++(\vix*\sf,0) node[right=-2pt] {$v_x$};
+                \draw[thick,violet,->] (#1,{f(#1)}) -- ++(\vix*\sf,{\sf*(\vi*sin(\thetai) - \grav*t(#1))}) node[below=-2pt] {$v$};
+                }
+
+                \draw[fill=black] (40,{f(40)}) circle (2pt);
+                \draw[thick,dashed,red,->] (40,{f(40)}) -- ++(0,{\sf*(\vi*sin(\thetai) - \grav*t(40))}) node[left=-2pt] {$v_y=-v_{0y}$};
+                \draw[thick,dashed,cyan,->] (40,{f(40)}) -- ++(\vix*\sf,0) node[above=-2pt] {$v_x$};
+                \draw[thick,violet,->] (40,{f(40)}) -- ++(\vix*\sf,{\sf*(\vi*sin(\thetai) - \grav*t(40))}) node[below=-2pt] {$v$};
+                \draw (40.8,0) arc (0:-\thetai:0.8) node[midway,right=-1pt] {$\theta =-\theta_0$};
+
+                \draw (5.8,{f(5)}) arc (0:40:0.8) node[midway,right] {$\theta$};
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,font=scriptsize}
+    \captionof{figure}{We analyze two-dimensional projectile motion by breaking it into two independent one-dimensional motions along the vertical and horizontal axes. The horizontal motion is constant. The velocity in the vertical direction begins to decrease, then becomes zero at the peak, then increases in the downward direction.}
+    \label{xRbMxN}
+\end{center}
+
+\clearpage
+
+\begin{example} \label{4Dn9PW}
+    During a fireworks display like the one illustrated in Figure \ref{ZxjpEr}, a shell is shot into the air with an initial speed of \SI{70.0}{m/s} at an angle of \ang{75} above the horizontal. The fuse is timed to ignite the shell just as it reaches its highest point above the ground. Calculate the height at which the shell explodes. (This peak vertical position is defined as \gls{maximum height}.)
+\end{example}
+
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={f(\x)=\yi + tan(\thetai)*\x - \grav*\x^2/(2*(\vi*cos(\thetai))^2);},
+        declare function={t(\x)=\x/(\vi*cos(\thetai));}
+    ]
+    \tikzmath{
+        \grav = 9.8;
+        \vi = 70;
+        \yi = 0.0;
+        \thetai = 75.0;
+        \viy = \vi*sin(\thetai);
+        \ymax = (\viy^2)/(2*\grav);
+        \tmax = 2*\ymax/\viy;
+        \vix = \vi*cos(\thetai);
+        \xmax = \vix*\tmax;
+        \sf = 0.25; %scale factor for vector components
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=8cm,height=8cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=175,
+        ymin=0, ymax=275,
+        ]
+        \draw[domain=0:\xmax,variable=\x,samples=250] plot ({\x},{f(\x)});
+        \draw (10,0) arc (0:35:30) node[pos=0.8,right=2pt] {$\theta = \ang{75}$};
+        \draw[dashed] (0,\ymax) node[left] {$h$} -- ++(\xmax,0);
+        \draw[dashed] (\xmax,0) -- ++(0,\ymax);
+        \draw[ultra thick,violet,->] (0,0) -- ++({\vi*cos(\thetai)},{\vi*sin(\thetai)}) node[left] {$v$};
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{The diagram shows the trajectory of a fireworks shell.}
+    \label{ZxjpEr}
+\end{center}
+
+\Solution We are given the initial speed and launch angle: $v_0 = \SI{70}{m/s}$ and $\theta_0 = \ang{75}$. We know the magnitude of the acceleration due to gravity is $g = \SI{9.8}{m/s^2}$. Since horizontal and vertical motions are independent, we start by analyzing only the vertical motion. The $y$-component of the initial velocity is given by
+
+\begin{equation*}
+    v_{0y} = v_0 \sin{\theta_0} = 70 \sin{(\ang{75})} = 67.61
+\end{equation*}
+
+If we assume the firework starts at the origin, its initial vertical position is zero: $y_0 = 0$.
+
+\vspace{1em}
+
+The unknown we are looking for is final vertical position (or height above $y_0$): $y =\ ?$ 
+
+\vspace{1em}
+
+The key to solving this problem is the following fact: From Figure ?.?? we see that at the highest point in the trajectory, the $y$-component of velocity is zero: $v_y = 0$. Therefore, at the highest point, the given and unknown quantities are related by Equation \eqref{wROSXN}:
+
+\begin{equation*}
+    v_y^2 = v_{0y}^2 - 2 g \left(y-y_0\right)
+\end{equation*}
+
+Substituting known values leads to
+
+\begin{equation*}
+    0^2 = \left(67.6\right)^2 - 2 (9.8) \left(y - 0\right)
+\end{equation*}
+
+or, more simply, to
+
+\begin{equation*}
+    0 = 67.6^2 - 19.6 y
+\end{equation*}
+
+We can solve this equation for height $y$ as follows:
+
+\begin{align*}
+    \textbf{Add $19.6 y$} \qquad & 0 \redplus \textcolor{red}{19.6 y} = 67.6^2 - \cancel{19.6 y} \redplus \textcolor{red}{\cancel{19.6 y}}\\[1ex]
+    \textbf{Simplify} \qquad & 19.6 y = 67.6^2\\[1ex]
+    \textbf{Divide by 19.6} \qquad & \frac{\cancel{19.6} y}{\textcolor{red}{\cancel{19.6}}} = \frac{67.6^2}{\textcolor{red}{19.6}}\\[1ex]
+    \textbf{Simplify} \qquad & y = 233
+\end{align*}
+
+Therefore, the maximum height of the firework is 233 meters.
+
+\solutionEnd
+
+\begin{example} \label{t57osh}
+    How much time passed between the launch of the shell in Example \ref{4Dn9PW} and the explosion?
+\end{example}
+
+\Solution
+Upon solving Example \ref{4Dn9PW}, we learned that initial and final vertical velocities associated with a launch to maximum height are
+
+\begin{equation*}
+    v_{0y} = \SI{67.6}{m/s} \quad \text{and} \quad v_y = \SI{0}{m/s}
+\end{equation*}
+
+Furthermore, gravitational acceleration is always $g = \SI{9.8}{m/s^2}$. Since we are now looking for how long it took the firework to reach maximum height, the unknown is time: $t =\ ?$
+
+\vspace{1em}
+
+The given and unknown quantities are now related by Equation \eqref{SjYaoE} as 
+
+\begin{equation*}
+    v_y = v_{0y} - gt
+\end{equation*}
+
+Substituting known values leads to
+
+\begin{equation*}
+    0 = 67.6 - 9.8 t
+\end{equation*}
+
+Let's solve this equation as follows:
+
+\begin{align*}
+    \textbf{Add $9.8 t$} \qquad & 0 \redplus \textcolor{red}{9.8 t} = 67.6 - \cancel{9.8 t} \redplus \cancel{\textcolor{red}{9.8 t}}\\[1ex]
+    \textbf{Simplify} \qquad & 9.8 t = 67.6\\[1ex]
+    \textbf{Divide by 9.8} \qquad & \frac{\cancel{9.8} t}{\cancel{\textcolor{red}{9.8}}} = \frac{67.6}{\textcolor{red}{9.8}}\\[1ex]
+    \textbf{Simplify} \qquad & t = 6.90
+\end{align*}
+
+Therefore, from the launch of the firework to its explosion at maximum height, a total of 6.90 seconds elapsed.
+
+\solutionEnd
+
+\begin{example} 
+    What is the horizontal displacement of the shell in Example \ref{4Dn9PW} when it explodes?
+\end{example}
+
+\Solution In this example, since we are asked to find horizontal displacement, we analyze only the horizontal motion. Assuming the firework is launched from the origin, its initial position is $x_0 = 0$. Since the initial speed and launch angle are $v_0 = \SI{70}{m/s}$ and $\theta_0 = \ang{75}$,  the horizontal component of initial velocity is
+
+\begin{equation*}
+    v_{0x} = v_0 \cos{\theta_0} = 70 \cos{(\ang{75})} = \SI{18.1}{m/s}
+\end{equation*}
+
+In horizontal motion, by Equation \eqref{dCvDf4}, velocity is a constant, meaning that the projectile, throughout its trajectory, will maintain a constant horizontal speed of 
+
+\begin{equation*}
+    v_x = v_{0x} = \SI{18.1}{m/s}
+\end{equation*}
+
+
+Furthermore, in Example \ref{t57osh}, we concluded that the time from launch to maximum height is $t = \SI{6.90}{s}$. Finally, the unknown we are looking for is displacement from the origin: $x =\ ?$.
+
+\vspace{1em}
+
+The known and unknown quantities are related by Equation \eqref{7fMAPG} as
+
+\begin{equation*}
+    x = x_0 + v_x t
+\end{equation*}
+
+Substituting known values leads to 
+
+\begin{equation*}
+    x = 0 + (18.1)(6.90) = 125 
+\end{equation*}
+
+Therefore, the firework was horizontally displaced by 125 meters.
+
+\solutionEnd
+
+
+The fact that vertical and horizontal motions are independent of each other lets us predict the range of a projectile. The \gls{range} is the horizontal distance $R$ traveled by a projectile on level ground, as illustrated in Figure \ref{6hKQ2Y}. Throughout history, people have been interested in finding the range of projectiles for practical purposes, such as aiming cannons.
+
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={f(\x,\yi,\vi,\thetai)=\yi + tan(\thetai)*\x - \grav*\x^2/(2*(\vi*cos(\thetai))^2);}, %equation of path
+        declare function ={R(\vi,\thetai)= \vi^2*sin(2*\thetai)/\grav;}, %range
+        declare function={h(\vi,\thetai)=(\vi*sin(\thetai))^2/(2*\grav);}, %maximum height
+    ]
+    \tikzmath{
+        \grav = 9.8;
+        \sf = 0.5; %scale factor for vector components
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=12cm,height=5cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax={R(50,45)*1.1},
+        ymin=0, ymax={h(50,45)*1.1},
+        ]
+        \draw[Green,thick,->] (0,0) -- ++({50*cos(45)},{50*sin(45)}) node[above left=-5pt] {\SI{50}{m/s}};;
+        \draw[Green,thick,domain=0:{R(50,45)},variable=\x,samples=250] plot ({\x},{f(\x,0,50,45)}) node[black,below] {$R = \SI{225}{m}$};
+        \draw[violet,thick,->] (0,0) -- ++({40*cos(45)},{40*sin(45)}) node[pos=0.93,right=2.7mm] {\SI{40}{m/s}};;
+        \draw[violet,thick,domain=0:{R(40,45)},variable=\x,samples=250] plot ({\x},{f(\x,0,40,45)}) node[black,below] {$R = \SI{163}{m}$};
+        \draw[red,thick,->] (0,0) -- ++({30*cos(45)},{30*sin(45)}) node[pos=0.4,right=3pt] {\SI{30}{m/s}, \ang{45}};
+        \draw[red,thick,domain=0:{R(30,45)},variable=\x,samples=250] plot ({\x},{f(\x,0,30,45)})
+    node[black,below] {$R = \SI{91.8}{m}$};;
+        \end{axis}
+    \end{tikzpicture}
+
+    \vspace{1em}
+
+    \begin{tikzpicture}[
+        declare function={f(\x,\yi,\vi,\thetai)=\yi + tan(\thetai)*\x - \grav*\x^2/(2*(\vi*cos(\thetai))^2);}, %equation of path
+        declare function ={R(\vi,\thetai)= \vi^2*sin(2*\thetai)/\grav;}, %range
+        declare function={h(\vi,\thetai)=(\vi*sin(\thetai))^2/(2*\grav);}, %maximum height
+    ]
+    \tikzmath{
+        \grav = 9.8;
+        \sf = 0.5; %scale factor for vector components
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=12cm,height=5cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax={R(50,45)*1.1},
+        ymin=0, ymax={h(50,75)*1.1},
+        ]
+        \draw[Green,thick,->] (0,0) -- ++({50*cos(75)},{50*sin(75)}) node[pos=1.7,rotate=58] {\SI{50}{m/s}, \ang{75}};;
+        \draw[Green,thick,domain=0:{R(50,75)},variable=\x,samples=250] plot ({\x},{f(\x,0,50,75)}) node[black,below] {$R = \SI{128}{m}$};
+        \draw[violet,thick,->] (0,0) -- ++({50*cos(45)},{50*sin(45)}) node[pos=1.6,rotate=20,below=-6pt] {\SI{50}{m/s}, \ang{45}};;
+        \draw[violet,thick,domain=0:{R(50,45)},variable=\x,samples=250] plot ({\x},{f(\x,0,50,45)}) node[black,below] {$R = \SI{225}{m}$};
+        \draw[red,thick,->] (0,0) -- ++({50*cos(15)},{50*sin(15)}) node[pos=1.5] {\SI{50}{m/s}, \ang{15}};;
+        \draw[red,thick,domain=0:{R(50,15)},variable=\x,samples=250] plot ({\x},{f(\x,0,50,15)});
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{Trajectories of projectiles on level ground. \textit{Top plot}: The greater the initial speed,$v_0$, the greater the range for a given initial angle. \textit{Bottom plot}: The effect of initial angle, $\theta_0$, on the range of a projectile with a given initial speed. Note that any combination of trajectories that add to 90 degrees will have the same range in the absence of air resistance, although the maximum heights of those paths are different.}
+    \label{6hKQ2Y}
+\end{center}
+
+How does the initial velocity of a projectile affect its range? Obviously, the greater the initial speed $v_0$, the greater the range, as shown in the figure above. The initial angle $\theta_0$ also has a dramatic effect on the range. When air resistance is negligible, the range $R$ of a projectile on level ground is
+
+\begin{equation} \label{GqvaN1}
+    R = \frac{v_0^2 \sin{(2\theta_0)}}{g}
+\end{equation}
+
+where $v_0$ is the initial speed and $\theta_0$ is the initial angle relative to the horizontal. It is important to note that the range doesn't apply to problems where the initial and final $y$ position are different, or to cases where the object is launched perfectly horizontally.
+
+\begin{example}
+    \href{https://youtu.be/9Ijev8RHF04}{Brynden the Blackfish} uses a bow to launch an arrow at a speed of \SI{39}{m/s}. The arrow's trajectory looks like those shown in Figure \ref{6hKQ2Y}. If the launch angle is \ang{56}, what is the arrow's range? Ignore air resistance (which, actually, \textit{could} affect the motion of the arrow.) 
+\end{example}
+
+\Solution We are given the initial speed and launch anlge: $v_0 = \SI{39}{m/s}$ and $\theta_0 = \ang{56}$. Acceleration due to gravity always has a magnitude of $g = \SI{9.8}{m/s^2}$. 
+
+\vspace{1em}
+
+The unknown we are looking for is range, which is given by Equation \eqref{GqvaN1} as
+
+\begin{equation*}
+    R = \frac{v_0^2 \sin{2\theta_0}}{g}
+\end{equation*}
+
+Substituting known values leads to
+
+\begin{equation*}
+    R = \frac{39^2 \sin{(2 \cdot \ang{56})}}{9.8} = 144
+\end{equation*}
+
+Therefore, the range of the arrow is 144 meters. That's how far it can travel horizontally.
+
+\solutionEnd
+
+\begin{example} \label{9XXF9X}
+    George drops a rock from rest from the top of an \SI{82}{m} tall cliff. Calculate how long it will take the rock to impact the ground. 
+\end{example}
+
+\Solution We are given the rock's initial velocity (``from rest''): $v_{0y} = 0$. Taking the rock's initial vertical position to be the origin, then we are also given its initial and final positions: $y_0 = 0$ and $y = \SI{-82}{m}$. Furthermore, we know the magnitude of gravitational acceleration is $g = \SI{9.8}{m/s^2}$. 
+
+\vspace{1em}
+
+The unknown we are looking for is time: $t =\ ?$
+
+\vspace{1em}
+
+The given and unknown quantities are related by Equation \eqref{36YuvF}:
+
+\begin{equation*}
+    y = y_0 + v_{0y}t - \frac{1}{2}  g t^2
+\end{equation*}
+
+Substituting given values leads to 
+
+\begin{equation*}
+    -82 = 0 + (0) t - \frac{1}{2} g t^2
+\end{equation*}
+
+or, more simply, to
+
+\begin{equation*}
+    -82 = - 4.9 t^2
+\end{equation*}
+
+Since we are solving this equation for time, $t$, we should write the unknown variable on the left:
+
+\begin{equation*}
+    -4.9 t^2 = -82
+\end{equation*}
+
+This equation is solved as follows:
+
+\begin{align*}
+    \textbf{Divide by $-4.9$} \qquad & \frac{\cancel{-4.9} t^2}{\cancel{\redminus \textcolor{red}{4.9}}} = \frac{-82}{\redminus \textcolor{red}{4.9}}\\[1ex]
+    \textbf{Simplify} \qquad & t^2 = \frac{82}{4.9}\\[1ex]
+    \textbf{Take square root} \qquad & \sqrt{t^2} = \sqrt{\frac{82}{4.9}}\\[1ex]
+    \textbf{Simplify} \qquad & t = 4.09
+\end{align*}
+
+Therefore, dropping from rest, it takes this rock 4.09 seconds to strike the ground.
+
+\solutionEnd
+
+
+\begin{example} \label{lB7EDG}
+    A cannon is aimed at a right angle to the horizontal, perfectly upwards, next to a 76-meter-tall redwood tree. The cannon fires a cannonball at a speed of \SI{42}{m/s}. How much time after launch does it take the cannonball to reach the top of the tree, if the projectile has passed maximum height and is on its way down?
+\end{example}
+
+\Solution Since the cannonball's motion is strictly vertical, we will work with equations governing vertical motion only. We are given the cannonball's initial speed: $v_{0y} = \SI{42.0}{m/s}$. Gravitational acceleration always has a magnitude of $g = \SI{9.80}{m/s^2}$. If we assume the cannonball starts at the origin, then we know its initial and final positions: $y_0 = 0$ and $y = \SI{76.0}{m}$. The unknown we are looking for is the time: $t =\ ?$.
+
+\vspace{1em}
+
+The given and unknown quantities are related by Equation \eqref{36YuvF}:
+
+\begin{equation*}
+    y = y_0 + v_{0y}t - \frac{1}{2}  g t^2
+\end{equation*}
+
+Substituting given values leads to 
+
+\begin{equation*}
+    76 =  0 + 42 t -\frac{1}{2}(9.8) t^2\ ,
+\end{equation*}
+
+or, more simply, to
+
+\begin{equation*}
+    76 = 42 t - 4.9 t^2
+\end{equation*}
+
+We may solve for time, $t$, as follows:
+
+\begin{align*}
+    \textbf{Add $4.9 t^2$} \qquad & 76 \redplus \textcolor{red}{4.9 t^2} = 42 t - 4.9 t^2 \redplus \textcolor{red}{4.9 t^2}\\[1ex]
+    \textbf{Simplify} \qquad & 76 + 4.9 t^2 = 42 t\\[1ex]
+    \textbf{Subtract $42 t$} \qquad & 76 + 4.9 t^2 \redminus \textcolor{red}{42 t} = 42 t \redminus \textcolor{red}{42 t}\\[1ex]
+    \textbf{Simplify} \qquad & 76 + 4.9 t^2 - 42 t = 0
+\end{align*}
+
+The last equation may be rearranged as 
+
+\begin{equation} \label{LScbXD}
+    4.9 t^2 - 42 t + 76 = 0
+\end{equation}
+
+so that it resembles the quadratic form
+
+\begin{equation} \label{WsGUny}
+    ax^2 + bx + c = 0
+\end{equation}
+
+whose two solutions are given by the quadratic equation
+
+\begin{equation} \label{BMWMHy}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+
+Setting the coefficients in Equation \eqref{LScbXD} to match the symbols in Equation \eqref{WsGUny} leads to 
+
+\begin{equation*}
+    a = 4.9\ , \quad b = -42\ ,\quad c = 76
+\end{equation*}
+
+Substituting these coefficients into Equation \eqref{BMWMHy} leads to the first solution of time:
+
+\begin{equation*}
+    t_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a} = \frac{-(-42) + \sqrt{(-42)^2 - 4 (4.9)(76)}}{2(4.9)} = \SI{5.98}{s}
+\end{equation*}
+
+Likewise, the second solution of time is given by
+
+\begin{equation*}
+    t_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a} = \SI{2.60}{s}
+\end{equation*}
+
+Since the second solution, $t_2 = \SI{2.60}{s}$, is less than the first, it must correspond to the cannonball reaching the top of the tree ($y=\SI{76}{m}$) on the way \textit{up}. The first solution ($t_1 = \SI{5.98}{s}$) corresponds to the projectile reaching the same point on its way back down. Therefore, the cannonball will reach the top of the tree, on its way back down, 5.98 seconds after the initial launch.
+
+\solutionEnd
+
+
+\begin{example} \label{pyn6Go}
+    George, from Example \ref{9XXF9X}, this time throws a rock downwards at a speed of \SI{17.00}{m/s} from the top of the same \SI{82}{m} tall cliff. Calculate how long it will take the rock to impact the ground now.
+\end{example}
+
+\Solution We are given initial velocity: $v_{0y} = \SI{-17.00}{m/s}$. Assuming that the rock's initial vertical position is zero, then we are given the following initial and final positions: $y_0 = 0$ and $y = \SI{-82}{m}$. Also, we know the magnitude of gravitational acceleration is always $g = \SI{9.8}{m/s^2}$. 
+
+\vspace{1em}
+
+The unknown we are looking for is time: $t =\ ?$
+
+\vspace{1em}
+
+The given and unknown quantities are related by Equation \eqref{36YuvF}:
+
+\begin{equation*}
+    y = y_0 + v_{0y}t - \frac{1}{2}  g t^2
+\end{equation*}
+
+This is the same equation and unknown that was referred to in Example \ref{lB7EDG}, so the current solution will develop almost exactly like the one from Example \ref{lB7EDG}, even though the two examples involve different trajectories.
+
+
+\vspace{1em}
+
+Substituting given values leads to 
+
+\begin{equation*}
+    -82 =  0 - 17 t -\frac{1}{2}(9.8) t^2\ ,
+\end{equation*}
+
+or, more simply, to
+
+\begin{equation*}
+     -82 = - 17 t -4.9 t^2
+\end{equation*}
+
+Let's rearrange this equation as follows:
+
+\begin{align*}
+    \textbf{Add $17t$} \qquad & - 82 \redplus \textcolor{red}{17t} = -17t \redplus \textcolor{red}{17t} - 4.9 t^2 \\[1ex]
+    \textbf{Simplify} \qquad & -82 + 17t = -4.9t^2\\[1ex]
+    \textbf{Add $4.9 t^2$} \qquad & -82 + 17t \redplus \textcolor{red}{4.9 t^2} = -4.9t^2 \redplus \textcolor{red}{4.9 t^2}\\[1ex]
+    \textbf{Simplify} \qquad & -82 + 17t + 4.9t^2 = 0
+\end{align*}
+
+The last equation is rearranged as 
+
+\begin{equation} \label{dw27jh}
+    4.9 t^2 + 17t - 82 = 0
+\end{equation}
+
+so that it fits the quadratic form $ax^2 + bx + c = 0$, which has two solutions given by the quadratic equation \eqref{BMWMHy}. Let the coefficients in Equation \eqref{dw27jh} be
+
+\begin{equation*}
+    a = 4.9\ , \quad b = 17\ ,\quad c = -82
+\end{equation*}
+
+so that the first root of time is
+
+\begin{equation*}
+    t_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a} = \frac{-17 + \sqrt{17^2 - 4(4.9)(-82)}}{2(4.9)} = \SI{2.71}{s}
+\end{equation*}
+
+The second solution is found similarly as
+
+\begin{equation*}
+    t_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a} = \SI{-6.18}{s}
+\end{equation*}
+
+Since the rock must strike the ground \textit{after} it is thrown, we take the first solution of time as the answer to this exercise: the rock strikes the ground 2.71 seconds after it is launched. 
+
+\solutionEnd
+
+\begin{example}
+    Suppose a large rock is ejected from a volcano, as illustrated in Figure ?.??, with a speed of  \SI{25.0}{m/s} and at an angle \ang{35} above the horizontal. The rock strikes the side of the volcano at an altitude 20.0 m lower than its starting point. Calculate the time it takes the rock to follow this path.
+\end{example}
+
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={f(\x)=\yi + tan(\thetai)*\x - \grav*\x^2/(2*(\vi*cos(\thetai))^2);},
+        declare function={t(\x)=\x/(\vi*cos(\thetai));}
+    ]
+    \tikzmath{
+        \grav = 9.8;
+        \vi = 25;
+        \yi = 0.0;
+        \thetai = 35.0;
+        \viy = \vi*sin(\thetai);
+        \ymax = (\viy^2)/(2*\grav);
+        \tmax = 2*\ymax/\viy;
+        \vix = \vi*cos(\thetai);
+        \xmax = \vix*3.96; %t = 3.96 s
+        \sf = 0.5; %scale factor for vector components
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=12cm,height=7cm,ticks=none,
+        axis lines = center,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=100,
+        ymin=-30, ymax=10,
+        ]
+        \draw[domain=0:\xmax,variable=\x,samples=250] plot ({\x},{f(\x)});
+        \draw[ultra thick,violet,->] (0,0) -- ++(axis direction cs: {\sf*\vix},{\sf*\viy}) node[above=-1pt] {$\SI{25}{m/s}$};
+        \draw (5,0) arc (0:35:5) node[pos=0.1,right=-1pt] {\ang{35}};
+        \draw[dashed] (\xmax,-20) -- ++(axis direction cs: 0,20) node[pos=0.5,right] {-\SI{20}{m}};
+        \draw[fill=black] (\xmax,-20) circle (2pt);
+        \draw (\xmax,-20) -- ++(axis direction cs: 12,0);
+        \draw[,ultra thick,->,violet] (\xmax,-20) -- ++(axis direction cs: {\sf*\vix},{\sf*(\viy -\grav*3.96)}) node[below=-2pt] {$v$};
+        \draw (\xmax+5,-20) arc (0:-48:5) node[pos=0.1,right=-1pt] {$\theta$};
+        \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{The diagram represents the projectile motion of a large rock from a volcano.}
+\end{center}
+
+\Solution Recall the most important concept in projectile motion: horizontal and vertical motions are independent. Since they don't influence one another, we can analyze them separately. For this problem, we can ignore calculations related to the horizontal motion and focus only on the vertical motion. As such, the solution to this example will develop like Examples \ref{lB7EDG} and \ref{pyn6Go}. 
+
+\vspace{1em}
+
+We are given the initial speed and launch angle: $v_0 = \SI{25.0}{m/s}$ and $\theta_0 = \ang{35}$. If we set the origin to be the rock's initial position, then the initial and final vertical positions are $y_0 = 0$ and $y = \SI{-20.0}{m}$. The magnitude of gravitational acceleration is $g = \SI{-9.8}{m/s^2}$.
+
+\vspace{1em}
+
+Since we are analyzing vertical motion only, we get the $y$-component of initial velocity by
+
+\begin{equation*}
+    v_{0y} = v_0 \sin{\theta_0} = 25 \sin{(\ang{35})} = 14.34
+\end{equation*}
+
+ The unknown quantity we are looking for is time: $t =\ ?$ These given and unknown quantities are related by Equation \eqref{36YuvF}
+
+\begin{equation*}
+    y = y_0 + v_{0y}t - \frac{1}{2} g t^2
+\end{equation*}
+
+At this point, this example is solved like the solutions to Examples \ref{lB7EDG} and \ref{pyn6Go}. As shown previously, we can define the coefficients $a$, $b$, and $c$ to fit the given quantities from this example. Then, applying the quadratic formula \eqref{BMWMHy} with those coefficients leads to the two solutions (roots) of time:
+
+\begin{equation*}
+    t_1 = \SI{3.96}{s} \quad \text{and} \quad t_2 = \SI{-1.03}{s}
+\end{equation*}
+
+Choosing the positive solution, we conclude that the rock will strike the ground 3.96 seconds after launch.
+
+\subsection*{\ref{tMF7JY} Exercises}
+
+\begin{exercise} \label{90PABl}
+    What is the angle between the $x$ and $y$ components of a vector?
+\end{exercise}
+
+\begin{exercise}
+    Horizontal and vertical motions of a projectile are independent of each other. What does this mean?
+\end{exercise}
+
+\begin{exercise} \label{YYBBp5}
+    Using the conventional choice for positive and negative axes described in the text, what is the $y$-component of the acceleration of an object experiencing projectile motion?
+\end{exercise}
+
+\begin{exercise}  \label{agp59Z}
+    Two identical items, object 1 and object 2, are dropped from the top of a \SI{50.0}{m} building. Object 1 is dropped with an initial velocity of \SI{0}{m/s}, while object 2 is thrown straight downward with an initial velocity of \SI{13.0}{m/s}. What is the difference in time, in seconds rounded to the nearest tenth, between when the two objects hit the ground?
+\end{exercise}
+
+\begin{exercise} \label{Xu3FK9}
+    A water balloon cannon is fired at \SI{30}{m/s} at an angle of \ang{50} above the horizontal. How far away will it fall?
+\end{exercise}
+
+\begin{exercise} \label{piJ9kJ}
+    A person wants to fire a water balloon cannon such that it hits a target \SI{100}{m} away. If the cannon can only be launched at \ang{45} above the horizontal, what should be the initial speed at which it is launched?
+\end{exercise}
+
+\begin{exercise} \label{sy5RGT}
+    After a projectile is launched in the air, in which direction does it experience constant, non-zero acceleration, ignoring air resistance?
+\end{exercise}
+
+\begin{exercise} \label{N0Bwou}
+    A ball is thrown in the air at an angle of \ang{40}. If the maximum height it reaches is \SI{10}{m}, what must be its initial speed?
+\end{exercise}
+
+\begin{exercise} \label{lhjg95}
+    A large rock is ejected from a volcano with a speed of \SI{30}{m/s} and at an angle \ang{60} above the horizontal. The rock strikes the side of the volcano at an altitude of \SI{10.0}{m} lower than its starting point. Calculate the horizontal displacement of the rock.
+\end{exercise}
+
+\begin{exercise} \label{wlbvvu}
+    How can you express the velocity, $v$, of a projectile in terms of its initial velocity, $v_0$, acceleration, $g$, and time, $t$?
+\end{exercise}
+
+% \begin{exercise}
+%     In the equation for the maximum height of a projectile, what does $v_{0y}$ stand for?
+
+% \begin{equation*}
+%     h = \frac{v_{0y}^2}{2g}
+% \end{equation*}
+% \end{exercise}
+
+\begin{exercise} \label{xj6gln}
+    True or False? Range is defined as the maximum vertical distance travelled by a projectile. 
+\end{exercise}
+
+\begin{exercise} \label{5wfdN0}
+    For what angle of a projectile is its range equal to zero?
+\end{exercise}
+
+\begin{exercise} \label{DnqDpu}
+    Ignoring drag, what is the $x$-component of the acceleration of a projectile? Why?
+\end{exercise}
+
+\begin{exercise} \label{QsBUvP}
+    What is the optimum angle at which a projectile should be launched in order to cover the maximum distance?
+\end{exercise}
+
+\clearpage
+
+\printnoidxglossaries
+
+\subsection*{Answers to Select Exercises}
+
+\ref{90PABl}. \ang{90}\\
+\ref{YYBBp5}. \SI{-9.8}{m/s^2}\\
+\ref{agp59Z}. \SI{1.1}{s}\\
+\ref{Xu3FK9}. \SI{90.4}{m}\\
+\ref{piJ9kJ}. \SI{31.3}{m/s}\\
+\ref{sy5RGT}. Vertical (or $y$)\\
+\ref{N0Bwou}. \SI{21.8}{m/s}\\
+\ref{lhjg95}. \SI{84.9}{m}\\
+\ref{wlbvvu}. See Equation \eqref{SjYaoE}\\
+\ref{xj6gln}. Range is horizontal.\\
+\ref{5wfdN0}. \ang{0} or \ang{90}\\
+\ref{DnqDpu}. \SI{0}{m/s^2}. Gravitational acceleration is vertical only.\\
+\ref{QsBUvP}. \ang{45}\\
+
+\subsection{Uniform Circular Motion} \label{uPOucv}
+
+\Gls{UCM} is the motion of an object in a circular path at a constant speed. Examples of (approximate) uniform circular motion include the \href{https://youtu.be/3NYlYN-QTig}{hammer throw}, a bicyclist rounding a turn on a curved path, and the Earth's orbit around the Sun. The \gls{tangential velocity} ($\vec{v}$) is the instantaneous linear velocity of the object in circular motion. If the circular motion is abruptly cut off (as in the hammer throw sport), the object moves in a straight line in the direction of the tangential velocity. \Gls{tangential speed} is the magnitude of the tangential velocity, with no regard for the direction. The \gls{radius of curvature} ($r$) is the distance between the center of the circle and the path. Since the object revolves around the center of the circle, its acceleration is said to be ``center-seeking.''
+
+\begin{center}
+\centering
+\begin{tikzpicture}
+\pgfplotsset{compat=1.11}
+\begin{axis}[
+    width=6cm,height=6cm,
+    axis line style={draw=none},
+    ticks=none,
+    axis lines=middle,
+    xmin=-1,xmax=1,
+    ymin=-1,ymax=1,
+    clip=false,
+]
+    % \draw[red] (-0.7,-0.4) rectangle (1,1.5);
+    \draw[gray] (0,0) circle (1);
+    \fill (0,0) circle (1pt);
+    \fill ({cos(45)},{sin(45)}) circle (3pt) node[right=2pt] {$m$};
+    \begin{scope}[xshift=0.12cm,yshift=-0.12cm]
+        \draw[dashed] (0,0) node[rotate=45] {\tiny $|$} -- ({cos(45)},{sin(45)}) node[rotate=45] {\tiny $|$};
+        \node at (0.4,0.2) {$r$};
+    \end{scope}
+    \draw[ultra thick,->] ({cos(45)},{sin(45)}) -- (0.3,0.3) node[left] {$a_{\text{c}}$};
+    \draw[thick,->] ({cos(45)},{sin(45)}) -- ++(axis direction cs: -0.6,0.6) node[left] {$v$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{mdframed}[backgroundcolor=black!10]
+\Gls{centripetal acceleration} is the acceleration of an object moving in a circle, directed toward the center of the circle. The equation for centripetal acceleration is
+
+
+\begin{equation} \label{5vsZ8y}
+    a_{\text{c}} = \frac{v^2}{r}\ 
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $a_{\text{c}}$ & centripetal acceleration & meter per second squared & \SI{}{m/s^2}\\
+        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
+        $r$ & radius & meter & \SI{}{m}\\
+    \hline
+    \end{tabular}
+\end{center}
+\end{mdframed}
+
+Recall that Newton's Second Law of Motion relates force, mass, and acceleration:
+
+\begin{equation*}
+    F_{\text{net}} = ma
+\end{equation*}
+
+Therefore, if we know the mass of the object, we can multiply it by its centripetal acceleration to get a centripetal force.
+
+\begin{mdframed}[backgroundcolor=black!10]
+\Gls{centripetal force} is any force causing uniform circular motion. This force is in the direction of the centripetal acceleration: towards the center of the circle.
+
+\begin{equation} \label{qzzym8}
+    F_{\text{c}} = m a_{\text{c}} = \frac{m v^2}{r}
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $F_{\text{c}}$ & centripetal force & newton & N\\
+        $m$ & mass & kilogram & \SI{}{kg}\\
+        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
+        $r$ & radius & meter & \SI{}{m}\\
+    \hline
+    \end{tabular}
+\end{center}
+\end{mdframed}
+
+\subsection*{\ref{uPOucv} Exercises}
+\begin{multicols}{2}
+\begin{exercise} \label{x2YCzr}
+    What is meant by the word \textit{centripetal}?
+\end{exercise}
+
+\begin{exercise} \label{S4rGIt}
+    (a) What is the direction of the velocity of an object in uniform circular motion? (b) What is the direction of the acceleration?
+\end{exercise}
+
+\begin{exercise} \label{aVu3ZA}
+    Suppose you have an object tied to a rope and are rotating it over your head in uniform circular motion. If you increase the length of the rope, would you have to apply more or less force to maintain the same speed?
+\end{exercise}
+
+\begin{exercise} \label{DeBjJa}
+    What is the centripetal force exerted on a \SI{1600}{kg} car that rounds a \SI{100}{m} radius curve at \SI{12}{m/s}?
+\end{exercise}
+
+\begin{exercise} \label{MJm5VE}
+    Find the frictional force between the tires and the road that allows a \SI{1000}{kg} car traveling at \SI{30}{m/s} to round a \SI{20}{m} radius curve.
+\end{exercise}
+
+\begin{exercise} \label{fsjtBV}
+    Select the quantity that is constant in uniform circular motion: speed, velocity, acceleration, displacement.
+\end{exercise}
+
+\begin{exercise} \label{GD8Yff}
+    List all the quantities that influence centripetal force.
+\end{exercise}
+
+\begin{exercise} \label{aEtlVz}
+    An increase in the magnitude of the \rule{2cm}{0.15mm} causes a \textit{reduction} in the centripetal force.
+\end{exercise}
+
+\begin{exercise} \label{5lauZ6}
+    What happens to centripetal acceleration as the radius of curvature \textit{decreases} and the speed is held constant? Why?
+\end{exercise}
+
+\begin{exercise} \label{KB7t4k}
+    Why do we experience more sideways acceleration while driving around sharper curves?
+\end{exercise}
+
+\begin{exercise} \label{jb3iGO}
+    Is centripetal acceleration a vector or a scalar?
+\end{exercise}
+
+\begin{exercise} \label{TUxTQh}
+    What are the units of centripetal acceleration?
+\end{exercise}
+
+\begin{exercise} \label{9YKhPo}
+    What are the units of centripetal force?
+\end{exercise}
+
+\begin{exercise} \label{wS6Htw}
+    What is the angle formed between the vectors of tangential velocity and centripetal force?
+\end{exercise}
+
+\begin{exercise} \label{barV9C}
+    What is the angle formed between the vectors of centripetal acceleration and centripetal force?
+\end{exercise}
+
+
+\begin{exercise} \label{M6NkHB}
+    As the mass of an object in uniform circular motion increases, what happens to the centripetal force required to keep it moving at the same speed?
+\end{exercise}
+
+\begin{exercise} \label{IAjJBC}
+    Is an object in uniform circular motion accelerating? Why or why not?
+\end{exercise}
+
+\begin{exercise} \label{G8I4Up}
+    An object is in uniform circular motion. Suppose the centripetal force was removed. In which direction would the object now travel?
+\end{exercise}
+
+\begin{exercise} \label{Kv8Old}
+An 89-kg system consisting of a bicycle and rider are rounding a turn at \SI{16}{m/s} on a path with a radius of curvature of \SI{25}{m}. (a) What is the centripetal acceleration on the system? (b) What is the centripetal force?
+\end{exercise}
+
+{\color{cyan} \hrule}
+\vspace{2ex}
+
+\ref{B208cB}--\ref{416pje} Calculate (a) centripetal acceleration and (b) centripetal force for an object in uniform circular motion for the given quantities.
+
+\begin{exercise} \label{B208cB}
+mass is \SI{45}{kg}, tangential speed is \SI{7}{m/s}, radius of curvature is \SI{10}{m}
+\end{exercise}
+
+\begin{exercise}
+tangential speed is \SI{18}{m/s}, mass is \SI{2000}{kg}, radius of curvature is \SI{24}{m}
+\end{exercise}
+
+\begin{exercise}
+radius of curvature is \SI{3}{m}, mass is \SI{842}{kg}, tangential speed is \SI{92}{m/s}
+\end{exercise}
+
+\begin{exercise}
+radius of curvature is \SI{45}{m}, tangential speed is \SI{15}{m/s}, mass is \SI{1961}{kg}
+\end{exercise}
+
+\begin{exercise}\label{416pje}
+tangential speed is \SI{6}{m/s}, radius of curvature is \SI{20}{m}, mass is \SI{1540}{kg}
+\end{exercise}
+
+
+\end{multicols}
+
+
+
+\clearpage
+
+\subsection{Newton's Law of Universal Gravitation}
+
+\framebox{\textbf{Link}} \textit{PhET Simulation}: ``Gravity Force Lab'' (\href{https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_en.html}{click here})
+
+\begin{mdframed}[backgroundcolor=black!10]
+\Gls{NLUG} calculates the magnitude of the gravitational force that two objects, separated by some distance, exert on each other.
+\vspace{-1cm}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {$m_1$};
+        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {$m_2$};
+        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
+        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
+        \fill (0,0) circle[radius=2pt]; %node[below] {\tiny CM};
+        \fill (5,0) circle[radius=2pt]; %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.35) {$r$};
+    \end{tikzpicture}
+    %\caption{The model for Newton's law of universal gravitation.}
+    \label{fig:Newton_Law_Universal_Gravitation}
+    \end{center}
+
+The equation for the law of gravitation is
+
+\begin{equation} \label{eq:NLUG}
+    F = \frac{G m_1 m_2}{r^2}
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $F$ & gravitational force between two masses & Newton & N\\
+        $G$ & gravitational constant & (\textit{see} $\rightarrow$) & \SI{}{N \cdot m^2/kg^2}\\
+        $m_1$ & mass of object 1 & kilogram & kg\\
+        $m_2$ & mass of object 2 & kilogram & kg\\
+        $r$ & distance between centers of mass & meter & m\\
+    \hline
+    \end{tabular}
+\end{center}
+
+The \gls{GravConst} is always the same number (that's why it's a constant) and must be used any time the law of gravitation is applied. It's
+
+\begin{equation*}
+    G = \SI{6.67e-11}{\frac{N \cdot m^2}{kg^2}}
+\end{equation*}
+\end{mdframed}
+
+
+
+
+\begin{example}
+Consider two spheres of mass \SI{100.0}{kg} and \SI{400.0}{kg} whose centers are separated by \SI{4.00}{m}. What is the magnitude of the gravitational force between them?
+\vspace{1ex}
+
+\Solution We are given two masses and the distance between them: $m_1 = \SI{100.0}{kg}$, $m_2 = \SI{400}{kg}$, $r = \SI{4.00}{m}$. Also, remember that $G = \SI{6.67e-11}{N\,m^2/kg^2}$. By Newton's law of universal gravitation (Eq.~\ref{eq:NLUG}), the gravitational force is
+
+\begin{equation*}
+    F = \frac{G m_1 m_2}{r^2} = 
+    \frac{\left(\SI{6.67e-11}{}\right) \left(100\right) \left(400\right)}{\left(4.00\right)^2} = 
+    \SI{1.67e-7}{N}
+\end{equation*}
+\end{example}
+
+\cyanhrule
+\vspace{2ex}
+
+Calculate the magnitude of the gravitational force between two objects.
+
+\begin{exercise} \label{9DkhbB}
+Two objects of mass \SI{707}{kg} and \SI{279}{kg} are separated by \SI{12}{m}. 
+\end{exercise}
+
+
+
+\begin{exercise} \label{MMnbpt}
+What is the gravitational force between the objects below?
+\vspace{-2em}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {\SI{5}{kg}};
+        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {\SI{10}{kg}};
+        \fill (0,0) circle (2pt); %node[below] {\tiny CM};
+        \fill (5,0) circle (2pt); %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.4) {\SI{25}{cm}};
+        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
+        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
+    \end{tikzpicture}
+\end{center}
+\end{exercise}
+
+\begin{example}
+    The magnitude of the gravitational force that a 620-kg sphere and a 890-kg one exert on each other is \SI{7.52e-7}{N}. What is the distance between the spheres?
+\end{example}
+
+\Solution We are given two masses and the gravitational force: $m_1 = \SI{620}{kg}$, $m_2 = \SI{890}{kg}$, and $F = \SI{7.52e-7}{N}$. We are solving for distance: $r=$ ? These quantities are related by Newton's law of universal gravitation:
+
+\begin{equation*}
+    F = \frac{G m_1 m_2}{r^2}
+\end{equation*}
+
+To solve this equation for distance $r$, we take the following steps:
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Substitute given values} & \hspace{-3em} &
+    \SI{7.52e-7}{} = \frac{
+        \left(\SI{6.67e-11}{}\right)
+        \left(620\right)
+        \left(890\right)
+    }{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
+    \SI{7.52e-7}{} = \frac{\SI{3.68e-5}{}}{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Re-write} & \hspace{-3em} &
+    \frac{\SI{7.52e-7}{}}{1} = \frac{\SI{3.68e-5}{}}{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Swap terms} & \hspace{-3em} &
+    \frac{r^2}{1} = \frac{\SI{3.68e-5}{}}{\SI{7.52e-7}{}}
+\end{align*}
+
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
+    r^2 = 48.9
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Take the square root} & \hspace{-3em} &
+    \sqrt{r^2} = \sqrt{48.9}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Therefore:} & \hspace{-3em} &
+    r = \SI{7.00}{m}
+\end{align*}
+
+
+\begin{exercise} \label{dKPTLZ}
+The gravitational force between two planetary bodies is \SI{2.52e20}{N}. The bodies' masses are \SI{3.9e23}{kg} and \SI{1.4e24}{kg}. What is the distance between the objects?
+\end{exercise}
+
+
+\hrule
+
+\begin{exercise} \label{zw3NbF}
+What is the distance between the objects below?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \fill (0,0) circle[radius=3pt]; %node[below] {\tiny CM};
+        \fill (5,0) circle[radius=3pt]; %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.4) {$r$};
+        \draw (0,0) circle (0.5cm) node[above,inner sep=0.5cm] {\SI{100}{kg}};
+        \draw (5,0) circle (0.7cm) node[above,inner sep=0.7cm] {\SI{4.0e3}{kg}};
+        \draw[->,thick] (0,0) -- (2,0);
+        \draw[->,thick] (5,0) -- (3,0) ;
+        \node at (1.5,-0.3) {\SI{2.6e-6}{N}};
+        % \node at (3.8,-0.25) {$F$};
+    \end{tikzpicture}
+\end{center}
+\end{exercise}
+
+
+% \begin{center}
+%     \centering
+%     \begin{tikzpicture}
+%         \fill (0,0) circle[radius=3pt]; %node[below] {\tiny CM};
+%         \fill (5,0) circle[radius=3pt]; %node[below] {\tiny CM};
+%         \draw[<->] (0,0.2) -- (5,0.2);
+%         \node at (2.5,0.4) {$r$};
+%         \draw (0,0) circle (0.5cm) node[above,inner sep=0.5cm] {\SI{120}{kg}};
+%         \draw (5,0) circle (0.7cm) node[above,inner sep=0.7cm] {\SI{434}{kg}};
+%         \draw[->,thick] (0,0) -- (2,0);
+%         \draw[->,thick] (5,0) -- (3,0) ;
+%         \node at (1.5,-0.3) {\SI{8.0e-7}{N}};
+%         % \node at (3.8,-0.25) {$F$};
+%     \end{tikzpicture}
+% \end{center}
+
+\cyanhrule
+
+\subsection{Factor of Change Method}
+
+The \textbf{factor of change method} allows you to calculate proportional changes in the gravitational force with proportional changes in distance and/or mass. Let Let $F$ be the original force and $F'$ be the changed force. The factors of change get plugged into the corresponding parentheses below:
+
+\begin{equation*}
+    \frac{F'}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(\ )(\ )}{(\ )^2}
+\end{equation*}
+
+The two basic rules are summarized as follows:
+
+\begin{enumerate}
+\setlength\itemsep{0ex}
+    \item If a quantity stays constant, plug in a 1 in the place where that quantity appears in the equation. Since $G$ is a constant, always plug in 1 for $G$.
+    \item If a quantity changes by a factor other than 1, plug that factor in the equation. (For example, if distance doubles, plug in a 2 in the place of $r$.)
+\end{enumerate}
+
+
+
+\begin{example} \label{ex5bd1}
+Two spheres are separated by 18 meters, and the gravitational force between them is \SI{3.0e-7}{N}. (a) If the distance between the objects is halved (changed to 9 meters), by what factor does the gravitational force change? (b) What is the new magnitude of the gravitational force?
+\end{example}
+
+\Solution Since the objects get closer, we expect the gravitational force to increase. Distance changes from \SI{18}{m} to \SI{9}{m}, implying that $r$ \textit{decreases} by a factor of 2. In other words, $r$ changes factor of $\frac{1}{2}$. All other factors stay constant. 
+
+\begin{equation*}
+    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\left(\frac{1}{4}\right)} = 4
+\end{equation*}
+
+This means $F'$ is 4 times greater than the original force $F$, as we expected:
+
+\begin{equation*}
+    F' = 4 F = 4 \times  \left(\SI{3.0e-7}{N}\right) = \SI{1.2e-6}{N}
+\end{equation*}
+
+
+\vspace{1em}
+\hrule
+
+\begin{example}
+If the distance in Example~\ref{ex5bd1} \textit{increases} by 2 rather than decreases, what is the proportional change in the gravitational force?
+\end{example} 
+
+\Solution Now $r$ changes by a factor of 2, and $m_1$ and $m_2$ continue staying the same:
+
+\begin{equation*}
+    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{(2)^2} = \frac{1}{2^2} =\frac{1}{4}
+\end{equation*}
+
+$F'$ will decrease to $\frac{1}{4}$ the magnitude of $F$.
+
+\vspace{1ex}
+\cyanhrule
+\vspace{1ex}
+
+The gravitational force, as shown in the previous examples, is known as an ``inverse-square law,'' since force scales as 1 over the distance squared:
+
+\begin{equation*} \tag{inverse-square law}
+    F \sim \frac{1}{r^2} \hspace{3em}
+\end{equation*}
+
+\begin{exercise} \label{WhkfQ4}
+By what factor does the gravitational force $F$ change if the distance $r$ is increases to $3r$? (See Figure~\ref{fig:Newton_Law_Universal_Gravitation}.) 
+\end{exercise}
+
+\begin{exercise} \label{CqOs7y}
+By what factor does the gravitational force $F$ change if the distance $r$ is changes to 10\% of $r$? 
+\end{exercise}
+
+\begin{exercise} \label{PwaIbN}
+By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 4?
+\end{exercise}
+
+\begin{exercise} \label{akw9Hx}
+By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 4?
+\end{exercise}
+
+\begin{exercise} \label{Dhfy9M}
+By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 5?
+\end{exercise}
+
+\begin{exercise} \label{gjeHTU}
+By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 5?
+\end{exercise}
+
+\begin{exercise} \label{yXaSNL}
+Calculate Earth's tangential speed in its orbit around the Sun. Assume that the centripetal force on Earth is the gravitational force exerted on Earth by the Sun. The mass of the Sun is \SI{1.99e30}{kg}, and the average distance between Earth and the Sun is \SI{1.5e11}{m}.
+\end{exercise}
+
+\cyanhrule
+\clearpage
+\subsection{Acceleration due to gravity, $g$}
+
+\begin{example}
+Show that an object of any mass $m$ that is in free-fall near the surface of Earth will accelerate downwards due to gravity at a rate of $g = \SI{9.8}{m/s^2}$. You'll need the planetary data summarized below:
+
+\begin{center}
+    \centering
+    \begin{tabular}{c|c}
+        \textbf{Earth's mass} & \textbf{Earth's radius} \\
+        \hline
+        \SI{5.9736e24}{kg} & \SI{6.376e6}{m}\\
+    \end{tabular}
+\end{center}
+\end{example}
+
+\Solution Let's re-write Newton's Law of Universal Gravitation (Eq.~\ref{eq:NLUG}) as
+
+\begin{equation*}
+    F = \frac{G m M}{R^2}\ ,
+\end{equation*}
+
+where $M = \SI{5.97e24}{kg}$ is Earth's mass, and $R = \SI{6.38e6}{m}$ is Earth's radius. The distance between the centers of mass of Earth and object $m$ is Earth's radius, as the picture below depicts:
+
+% \begin{equation*}
+%     r = R_{\mathrm{\Earth}} = \SI{6.376e6}{m}.
+% \end{equation*}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (2pt) node[right,inner sep=5pt] {\tiny CM};
+        \draw[<->] (0,-0.1) -- (0,-2);
+        \draw[->,thick] (0,2.1) -- (0,1) node[anchor=south east,inner sep = 5pt] {$F$};
+        \node at (0.3,-1) {$R_{\text{Earth}}$};
+        \draw (0,0) circle (2cm) node[left,inner sep=4pt] {$M$};
+        \fill (0,2.15) circle (2pt) node[above,inner sep = 4pt] {$m$};
+        \node at (2.6,0) {Earth};
+    \end{tikzpicture}
+\end{center}
+
+Recall that Newton's Second Law of Motion (from Unit 4) states
+
+\begin{equation*}
+    F_{\text{net}} = m a
+\end{equation*}
+
+The only force on $m$ is the gravitational force from Earth. Combining Newton's 2nd Law with Newton's Law of Universal Gravitation leads to
+
+\begin{equation*}
+    F = ma = \frac{G m M}{R^2}
+\end{equation*}
+
+Since mass $m$ appears on both sides of the equation, it cancels:
+
+\begin{equation*}
+    \textcolor{red}{\cancel{m}}a = \frac{G \textcolor{red}{\cancel{m}} M}{R^2}
+\end{equation*}
+
+leaving only
+
+\begin{equation*}
+    a = \frac{G M}{R^2}
+\end{equation*}
+
+When planetary mass and radius are plugged in, this acceleration is defined as \textit{acceleration due to gravity}, $g$, near the planet's surface:
+
+\begin{equation}
+    g = \frac{GM}{R^2}
+\end{equation}
+
+
+Plugging in Earth's mass and radius leads to 
+
+\begin{equation*} 
+    g = \frac{GM}{R^2} = \frac{\left(\SI{6.674e-11}{}\right)\left(\SI{5.97e24}{}\right)}{\left(\SI{6.38e6}{m}\right)^2} = \SI{9.81}{m/s^2}
+\end{equation*}
+
+
+
+
+\begin{exercise} \label{knMwSV}
+The Moon is about 384,000 kilometers away. What is the acceleration due to gravity from Earth at the halfway point to the Moon? 
+\end{exercise}
+
+\hrule
+
+% \textit{Solution}
+
+% \textbf{Known}: $h = \SI{384000}{km} = \SI{3.84e8}{m}$, $M = \SI{5.9736e24}{kg}$, $R_{\mathrm{\Earth}} = \SI{6.376e6}{m}$
+
+% Then
+
+% \begin{equation*}
+%     g = \frac{GM}{r^2} = \frac{G M}{\left(R_{\Earth} + h\right)^2} = \SI{0.010}{m/s^2}
+% \end{equation*}
+
+
+
+\clearpage
+\printnoidxglossaries
+
+
+\clearpage
+\subsection{Answers to Select Exercises}
+
+\begin{multicols}{2}
+\ref{x2YCzr}. Center-seeking
+
+\ref{S4rGIt}. (a) tangential \hspace{1em} (b) radially inward.
+
+\ref{aVu3ZA}. Less force. In Equation~(\ref{qzzym8}), radius (the length of the rope) is in the denominator of the fraction. This means that force and radius are \textit{inversely proportional}: if one goes up, the other goes down. By \textit{increasing} the radius (the length of the rope), the centripetal force must \textit{decrease}.
+
+\ref{DeBjJa}. \SI{2304}{N}
+
+\ref{MJm5VE}. \SI{45000}{N}
+
+\ref{fsjtBV}. Speed. The others are vectors whose directions may change.
+
+\ref{GD8Yff}. Mass, speed, and radius. See Eq.~(\ref{qzzym8}).
+
+\ref{aEtlVz}. radius of curvature
+
+\ref{5lauZ6}. Acceleration is inversely proportional to radius (Eq.~\ref{5vsZ8y}). Therefore, assuming speed stays the same, as radius \textit{decreases} (as the circle gets smaller), acceleration \textit{increases}. See, also, Exercise \ref{aVu3ZA}.
+
+\ref{KB7t4k}. Sharper curve means smaller radius of curvature. As radius decreases, acceleration increases. See Exercise \ref{5lauZ6}.
+
+\ref{jb3iGO}. vector
+
+\ref{TUxTQh}. meters per second squared (\SI{}{m/s^2})
+
+\ref{9YKhPo}. newton (N)
+
+\ref{wS6Htw}. \SI{90}{\degree}
+
+\ref{barV9C}. \SI{0}{\degree}
+
+\ref{M6NkHB}. Centripetal force must increase. Equation (\ref{qzzym8}) suggests that force and mass are \textit{directly proportional}: if one increases, the other goes increases too. 
+
+\ref{IAjJBC}. Yes. Although the object is not speeding up or slowing down, the direction of the velocity vector continuously changes. 
+
+\ref{G8I4Up}. In the direction of the tangential velocity at the instant the force was removed.
+
+\ref{Kv8Old}. (a) \SI{10.24}{m/s^2} \hspace{1em} (b) \SI{911}{N}
+
+\ref{9DkhbB}. \SI{9.14e-8}{N}
+
+\ref{MMnbpt}. \SI{5.3e-8}{N}
+
+\ref{zw3NbF}. \SI{3.2}{m}
+
+\ref{knMwSV}. \SI{0.010}{m/s^2}
+
+\ref{WhkfQ4}. $\frac{1}{9}$
+
+\ref{CqOs7y}. 100
+
+\ref{PwaIbN}. $\frac{1}{16}$
+
+\ref{akw9Hx}. 16
+
+\ref{Dhfy9M}. $\frac{1}{25}$
+
+\ref{gjeHTU}. 25
+
+\ref{yXaSNL}. \SI{2.98e4}{m/s} ($\approx \SI{30}{km/s}$)
+
+\ref{dKPTLZ}. \SI{3.8e8}{m}
+
+\end{multicols}
+
+
+
+\end{document}

@@ -1,0 +1,448 @@
+\documentclass{exam}
+\input{../preamble}
+\usepackage{circuitikz}
+\usepackage{exam-randomizechoices}
+
+\def\one{1}
+\def\two{2}
+\def\three{3}
+\def\four{4}
+
+\def\testVersion{\two} % Edit Version number here only.
+
+\setrandomizerseed{\testVersion}
+
+\pagestyle{headandfoot}
+\firstpageheader{Physics}{Test on Unit 9: Electromagnetism}{Version \testVersion}
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\SolutionEmphasis{\color{red}}
+
+%\printanswers
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{
+\vspace{-1em}
+\begin{center}
+    \textbf{EQUATIONS}
+\end{center}
+
+\vspace{-1.5em}
+
+\begin{equation*}
+    B =\frac{\mymu_0 I}{2\pi r} \qquad
+    \mymu_0 = 4 \pi \times 10^{-7}  \qquad
+    \pi \approx 3.14
+\end{equation*}
+
+\begin{center}
+    $\bigodot$ means ``out of page'' \hspace{2em}
+    $\bigotimes$ means ``into page''
+\end{center}
+}}}
+\end{center}
+
+
+\begin{questions}
+
+\question
+Magnets are categorized as magnetic dipoles. What is meant by \textit{dipole}?
+
+\begin{randomizechoices}
+    \correctchoice That a bar magnet has two poles.
+    \choice That a bar magnet has one pole.
+    \choice That a bar magnet has no poles.
+    \choice That a bar magnet has infinitely many poles.
+\end{randomizechoices}
+
+\question
+What are the labels of the poles of a bar magnet?
+
+\begin{randomizechoices}
+\choice North only
+\choice North, south, east, and west
+\choice East and west
+\CorrectChoice North and south
+\end{randomizechoices}
+
+\question
+What do you get when you cut a bar magnet in half?
+
+\begin{randomizechoices}
+\choice One magnet with two south poles, and one magnet with two north poles.
+\choice Two objects that are not magnetism anymore.
+\choice It’s impossible to cut a magnet in half.
+\CorrectChoice Two magnets, each with a north and south pole.
+\end{randomizechoices}
+
+\question
+True or False? Earth generates a magnetic field which surrounds it.
+
+\begin{randomizechoices}
+    \correctchoice True
+    \choice False
+\end{randomizechoices}
+
+\question
+The south geographic pole of Earth (in Antarctica) is near what type of \textit{magnetic} pole?
+
+\begin{randomizechoices}
+    \correctchoice north
+    \choice south
+    \choice east
+    \choice west
+\end{randomizechoices}
+
+
+\question
+What type of \textit{magnetic} pole is close to Earth's north \textit{geographic} pole (near Alaska)? 
+
+\begin{randomizechoices}
+\choice north
+\CorrectChoice south
+\choice east
+\choice west
+\end{randomizechoices}
+
+% \question
+% The \textit{magnetic} pole of Earth that is close to the \textit{geographic} South Pole is a\\ magnetic \fillin Pole.
+
+% \begin{randomizechoices}
+% \CorrectChoice North
+% \choice South
+% \choice East
+% \choice West
+% \end{randomizechoices}
+
+% \question
+% The \textit{magnetic} North Pole of Earth is close to the \textit{geographic} \fillin Pole.
+
+% \begin{randomizechoices}
+% \choice North
+% \CorrectChoice South
+% \choice East
+% \choice West
+% \end{randomizechoices}
+
+% \question
+% The \textit{magnetic} South Pole of Earth is close to the \textit{geographic} \fillin Pole.
+
+% \begin{randomizechoices}
+% \CorrectChoice North
+% \choice South
+% \choice East
+% \choice West
+% \end{randomizechoices}
+
+\question
+One way to visualize magnetic field lines around a magnet is by\ldots 
+
+\begin{randomizechoices}
+\choice using certified electromagnetic goggles.
+\choice attracting or repelling the magnet with a second magnet.
+\CorrectChoice sprinkling iron filings around the magnet.
+\choice brushing the magnet with glow-in-the-dark liquid and turning off the lights.
+\end{randomizechoices}
+
+\question
+Besides magnets, what other thing creates a magnetic field?
+
+\begin{randomizechoices}
+\choice Water.
+\choice The gravitational force.
+\CorrectChoice electric current (i.e., moving charges)
+\choice Nothing. Only magnets can create magnetic fields.
+\end{randomizechoices}
+
+%\clearpage
+
+% \question
+% Where were the first known magnets discovered?
+
+% \begin{randomizechoices}
+% \choice Houston, TX
+% \CorrectChoice Magnesia (present-day western Turkey)
+% \choice London, England
+% \choice The North Pole
+% \end{randomizechoices}
+
+% \question
+% Suppose that equal parts of sand and iron powder are mixed together in a glass petri dish. What happens when a magnet is placed next to one side of the dish?
+
+% \begin{randomizechoices}
+% \CorrectChoice Magnet attracts the iron only
+% \choice Magnet attracts the sand only
+% \choice Magnet attracts both the sand and the iron
+% \choice The magnet attracts the iron and repels the sand
+% \end{randomizechoices}
+
+\question
+In which direction do magnetic field lines from a bar magnet flow?
+
+\begin{randomizechoices}
+\choice South to North
+\choice North to East
+\CorrectChoice North to South
+\choice South to West
+\end{randomizechoices}
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+\choice a current of water
+\CorrectChoice electric charges that are moving
+\choice directional field lines around a magnet
+\choice the atoms that make up a metal wire
+\end{randomizechoices}
+
+% \question
+% The SI units for electric current, amperes (A), are equivalent to which other units?
+
+% \begin{randomizechoices}
+% \CorrectChoice C/s
+% \choice e/s
+% \choice $-$e/s
+% \choice C/$\mathrm{s^2}$
+% \end{randomizechoices}
+
+\question
+The electrons in a straight wire flow downwards. In which direction does electric current flow?
+
+\begin{randomizechoices}
+\CorrectChoice up
+\choice down
+\choice $\bigodot$
+\choice $\bigotimes$
+\end{randomizechoices}
+
+% \question
+% The current in a straight wire flows to the right. In which direction do electrons flow?
+
+\clearpage
+
+\question
+What is the purpose of the right-hand rule?
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\centering
+    \begin{tikzpicture}
+        \draw[ultra thick,->] (0,-2) -- ++(0,3.5) node[above] {$I$};
+        \begin{scope}[rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:280:1);
+        \end{scope}
+        \begin{scope}[yshift=2mm,rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:283:1.6);
+        \end{scope}
+        \begin{scope}[yshift=4mm,rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:286:2.2);
+        \end{scope}
+        \node[red] at (1.3,-0.5) {$\vec{B}$};
+    \end{tikzpicture}
+\end{minipage}%
+\hspace{1em}
+\begin{minipage}{0.3\textwidth}
+    \centering
+        \includegraphics[width=3.6cm]{Figures/Unit10_RightHandRule.jpeg}
+\end{minipage}
+\end{center}
+
+\begin{randomizechoices}
+\choice to show the direction of gravity
+\CorrectChoice to show the direction of magnetic field around a current-carrying wire
+\choice to show the direction of current between two magnets
+\choice to show the direction of magnetic field between two magnets
+\end{randomizechoices}
+
+% \question
+% What is the direction of the magnetic field when the current is
+
+% \begin{center}
+%     $\bigodot I$
+% \end{center}
+
+% \begin{randomizechoices}
+% \choice {$\circlearrowright$}
+% \CorrectChoice {$\circlearrowleft$}
+% \choice $\bigodot$
+% \choice $\bigotimes$
+% \end{randomizechoices}
+
+% \clearpage
+% \question
+% What is the direction of the magnetic field when the current is
+
+% \begin{center}
+%     $\bigotimes I$
+% \end{center}
+
+% \begin{randomizechoices}
+% \CorrectChoice {$\circlearrowright$}
+% \choice {$\circlearrowleft$}
+% \choice $\bigodot$
+% \choice $\bigotimes$
+% \end{randomizechoices}
+
+\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{above} the wire?
+
+\begin{center}
+\begin{tikzpicture}
+\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
+\begin{scope}[yshift=3mm]
+    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Above};    
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+\choice left
+\choice right
+\choice out of the page %$\bigodot$
+\CorrectChoice into the page %$\bigotimes$
+\end{randomizechoices}
+
+\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{below} the wire?
+
+\begin{center}
+\begin{tikzpicture}
+\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
+\begin{scope}[yshift=-13mm]
+    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Below};    
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+\choice left
+\choice right
+\CorrectChoice out of the page %$\bigodot$
+\choice into the page %$\bigotimes$
+\end{randomizechoices}
+
+\clearpage
+
+\question Electric current flows through a vertical wire. The surrounding magnetic field goes into and out of the page as shown below. In what direction do \textbf{ELECTRONS} through the wire flow?
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[ultra thick] (0,0) node[below] {down} -- ++(0,3) node[above] {up} ; 
+    \foreach \i in {0,0.5,...,1.5}
+        \foreach \j in {0.5,1.0,...,2.5}
+      {
+        \begin{scope}[xshift=-2cm]
+            \node at (\i,\j) {$\otimes$};
+        \end{scope}
+        \begin{scope}[xshift=0.5cm]
+            \node at (\i,\j) {$\odot$};
+        \end{scope}
+      }
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice up
+    \choice down
+    \choice out of the page
+    \choice into the page
+\end{randomizechoices}
+
+\vspace{1em}
+
+\cyanhrule
+
+\begin{EnvUplevel}
+\textbf{Questions \ref{JAlbal} through \ref{JxMpCM} are OPTIONAL and are worth EXTRA CREDIT.} To get full credit, show all your work on a sheet of paper, express your answer with correct units, and box your answer.
+\end{EnvUplevel}
+
+\question \label{JAlbal}
+A wire carries 7.0 amperes of electric current. What is the magnetic field strength 4.5 centimeters outside the current-carrying wire? %Answer: 
+
+\begin{solution}
+    \SI{3.1e-5}{T}
+\end{solution}
+
+\question
+The magnitude of the magnetic field at a point outside a current-carrying wire is shown below. Calculate the distance, in meters, of the point above the wire.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[ultra thick,->] (0,0) -- (3,0) node[right] {$\SI{12}{A}$};
+        \draw[dashed] (1.5,0) -- ++(0,0.9);
+        \node[red] at (1.5,1) {$\bigodot$}; \node[black,right=4pt] at (1.5,1) {\SI{8e-7}{T}};
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    3.0 meters
+\end{solution}
+
+\question
+The magnetic field strength 3 millimeters outside a current-carrying wire is \num{5e-4} tesla. Calculate the electric current through the wire.
+
+\begin{solution}
+    \SI{7.5}{A}
+\end{solution}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{LhsqrR} and \ref{JxMpCM} are in reference to the magnetic field equation:}
+\end{EnvUplevel}
+
+\begin{equation*}
+    B = \frac{\mymu_0 I}{2\pi r}
+\end{equation*}
+
+\question \label{LhsqrR}
+Solve the equation algebraically for distance. Show all your steps.
+
+\question \label{JxMpCM}
+Solve the equation algebraically for electric current. Show all your steps.
+
+\clearpage
+\keylistkeyname{Key Version \testVersion}
+\printkeytable
+
+
+
+
+
+% \question
+% What is the magnetic field strength at a distance of 3 m from a wire carrying a current of 2 A?
+
+% \begin{randomizechoices}
+% \CorrectChoice $1.3 \times 10^{-7}$ T
+% \choice $6.7 \times 10^{-6}$ T
+% \choice 6 T
+% \choice 5 T
+% \end{randomizechoices}
+
+% \question
+% What is the magnetic field strength at a distance of 0.05 m from a wire carrying a current of 7.3 A?
+
+% \begin{randomizechoices}
+% \choice $9.1 \times 10^{-5}$ T
+% \CorrectChoice $2.9 \times 10^{-5}$ T
+% \choice 0.05 T
+% \choice 7.3 T
+% \end{randomizechoices}
+
+
+\end{questions}
+\end{document}
+
+\question
+What is a magnetic field?
+
+\begin{randomizechoices}
+\choice a field of magnets
+\CorrectChoice directional lines around a magnetic material that indicate the direction and magnitude of the magnetic force
+\choice a material or object that produces a magnetism
+\choice part of a magnet that exerts the strongest force on other magnets or magnetic material
+\end{randomizechoices}
+
+
+
+
+
+
