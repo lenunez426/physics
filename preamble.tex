@@ -41,14 +41,19 @@
 \sisetup{group-separator = {,}}
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{math}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+
 
 
 \DeclareSIUnit{\nothing}{\relax}
 \def\mymu{\SI{}{\micro\nothing} }
 
-\newtheorem{example}{Example}
-\newtheorem{exercise}{}
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{}[section]
 \newtheorem{regla}{Rule}
+
 
 \newcommand{\Solution}{{\footnotesize \color{cyan} SOLUTION }}
 
