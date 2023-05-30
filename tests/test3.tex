@@ -1,14 +1,135 @@
-\documentclass[addpoints]{exam}
-\usepackage{preamble}
-
+\documentclass{exam}
+\input{../preamble}
 \pagestyle{headandfoot}
-\firstpageheader{Physics}{Chapter 2: Motion in One Dimension}{Problem Set}
+\firstpageheader{Physics}{Unit 2: Acceleration}{Test}
 
 \CorrectChoiceEmphasis{\color{red}\bfseries}
 \SolutionEmphasis{\color{red}}
+\printanswers
+
+
+
+
 \begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering USEFUL INFORMATION
+\begin{equation*}
+    a = \frac{\Delta{v}}{\Delta{t}} = \frac{v_f - v_0}{t_f - t_0} \quad\quad \SI{1}{km} = \SI{1000}{m} \quad\quad \SI{1}{h} = \SI{60}{min} \quad\quad \SI{1}{min} = \SI{60}{s}
+\end{equation*}
+}}}
+\end{center}
 \begin{questions}
-%\printanswers
+
+
+
+\question
+A rock is dropped from rest from the top of a tall cliff, taking \SI{5.0}{s} to reach the ground. If the rock impacts the ground at a velocity of \SI{49}{m/s}, what is the acceleration due to gravity?
+
+\begin{choices}
+    \choice \SI{0.10}{m/s^2}
+    \correctchoice \SI{9.8}{m/s^2}
+    \choice \SI{4.9}{m/s^2}
+    \choice \SI{245}{m/s^2}
+\end{choices}
+
+\question
+If an object's acceleration is \SI{3}{m/s^2}, then with every second that passes, the object's velocity (speed) will increase by \fillin[][2cm]\ .
+
+\begin{choices}
+    \choice \SI{1}{m/s}
+    \choice \SI{2}{m/s}
+    \correctchoice \SI{3}{m/s}
+    \choice \SI{4}{m/s}
+\end{choices}
+
+\question
+Jasmine starts from rest and accelerates her bicycle at \SI{3}{m/s^2}. What will be her velocity after 4 seconds?
+
+\begin{choices}
+    \choice \SI{0.083}{m/s}
+    \choice \SI{0.75}{m/s}
+    \choice \SI{1.3}{m/s}
+    \correctchoice \SI{12}{m/s}
+\end{choices}
+
+\question
+What are the units used to measure acceleration?
+
+\begin{choices}
+    \choice meters per second (\SI{}{m/s})
+    \correctchoice meters per second squared (\SI{}{m/s^2})
+    \choice meters (m)
+    \choice seconds (s)
+\end{choices}
+
+\clearpage
+\question %This problem and the next one go together.
+A subway train accelerates from rest to \SI{12.8}{m/s} (\SI{45.9}{km/h}) in \SI{17.0}{s}. What is the average acceleration during that time interval?
+
+\begin{choices}
+\choice \SI{12.8}{m/s}
+\choice \SI{2.70}{m/s^2}
+\choice \SI{45.9}{m/s^2}
+\CorrectChoice \SI{0.753}{m/s^2} 
+\end{choices}
+
+\question 
+%Relating the result of this problem (train's velocity at 17 s) to the previous counterpart created epiphanies for serveral students. When we showed that we arrive at the final velocity from the previous problem (12.8 m/s), some students went "Ohh, that's really cool!"
+A train starting from rest accelerates at \SI{0.753}{m/s^2}. Complete the table below, calculating changes in the train's velocity across time.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{c|c}
+        \textbf{Time (s)} & \textbf{Velocity (m/s)} \\
+        \hline
+        0 & 0\\
+        1 &  \\
+        2 &  \\
+        3 &  \\
+        4 &  \\
+        \vdots &  \\
+        17 &  \\
+    \end{tabular}
+\end{figure}
+
+\question
+Coco the dog trots at \SI{2.0}{m/s}. When she hears her owner say ``Treat!'' she accelerates at \SI{1.2}{m/s^2} for \SI{4.0}{s}. What is Coco's final velocity?
+
+\begin{choices}
+    \choice \SI{4.8}{m/s}
+    \correctchoice \SI{6.8}{m/s}
+    \choice \SI{2.0}{m/s}
+    \choice \SI{1.2}{m/s}
+\end{choices}
+
+John is cruising in his car at \SI{35}{m/s} when the traffic light turns yellow, causing him to momentarily to hit the breaks. If he decelerates at \SI{-10}{m/s}, what will be his final velocity after \SI{3}{seconds}?
+
+\begin{choices}
+    \correctchoice \SI{}{m/s}
+\end{choices}
+
+\question
+An object accelerates from \SI{120}{m/s} to \SI{145}{m/s} at a rate of \SI{7.5}{m/s^2}. How long will it take the object to reach its final velocity?
+
+\begin{choices}
+    \correctchoice \SI{3.3}{s}
+    \choice \SI{4.9}{s}
+    \choice \SI{0.3}{s}
+    \choice \SI{25}{s}
+\end{choices}
+
+\clearpage
+\question
+The Houston Zoo releases a falcon from a cage. The falcon flies at \SI{5}{m/s}. When it sees its breakfast (a small mouse), it accelerates to \SI{32}{m/s} in \SI{7.2}{s}. What is the falcon's average acceleration?
+%$a = \SI{3.75}{m/s^2}$
+
+\question
+Hurricane Iris crosses Cuba at \SI{5.0}{m/s}. When it reaches the ocean, it accelerates at \SI{0.48}{m/s^2} for \SI{35}{s}. What will be Hurricane Iris's final velocity?
+
+\question 
+Tom rides in a jet that accelerates from \SI{53.6}{m/s} to \SI{134}{m/s} at a rate of \SI{26.8}{m/s^2}. How long will it take Tom to reach his top velocity?
+
 
 \question
 What is acceleration?
@@ -556,6 +677,289 @@ In the first 20 seconds, the corresponding initial and final velocities are $v_0
 \end{equation*}
 
 \end{solutionorbox}
+
+\question %Like PCA
+A skater starts at the top of a ramp and skates to the bottom. How is the skater's average acceleration calculated?
+
+\begin{choices}
+\CorrectChoice velocity at the \textbf{bottom} of the ramp \textit{minus} velocity at the \textbf{top}, \textit{divided} by the time it takes to reach the bottom
+\choice velocity at the \textbf{top} of the ramp \textit{minus} velocity at the \textbf{bottom}, \textit{divided} by the time it takes to reach the bottom
+\choice position at the \textbf{bottom} of the ramp \textit{minus} position at the \textbf{top}, \textit{divided} by the time it takes to reach the bottom
+\choice position at the \textbf{top} of the ramp \textit{minus} position at the \textbf{bottom}, \textit{divided} by the time it takes to reach the bottom
+\end{choices}
+
+
+\question %Like PCA
+An elevator moving down is slowing down. What is the direction of its acceleration?
+
+\begin{choices}
+\choice Left
+\choice Right 
+\choice Up
+\correctchoice Down
+\end{choices}
+
+% \question %Like PCA
+% A car moving to the right is speeding up. What is the direction of its acceleration?
+
+% \question %Like PCA
+% A car moving to the left is slowing down. What is the direction of its acceleration?
+
+% \question %Like PCA
+% A car moving to the left is speeding up. What is the direction of its acceleration?
+
+% \question %Like PCA
+% An elevator moving downward is slowing down. What is the direction of its acceleration?
+
+% \question %Like PCA
+% An elevator moving downward is speeding up. What is the direction of its acceleration?
+
+% \begin{choices}
+% \choice Up
+% \choice Right
+% \choice Left
+% \CorrectChoice Down
+% \end{choices}
+
+% \question %Like PCA
+% An elevator moving upward is slowing down. What is the direction of its acceleration?
+
+% \question
+% An elevator moving upward is speeding up. What is the direction of its acceleration?
+
+
+
+
+\question % Like Ch2 #12
+The driver of a sports car traveling at \SI{12.5}{m/s} steps down hard on the accelerator for \SI{4.5}{s} and the velocity increases to \SI{57.0}{m/s}. What was the average acceleration of the car during the \SI{4.5}{s} time interval?
+
+\begin{choices}
+\choice \SI{12.6}{m/s^2}
+\choice \SI{2.7}{m/s^2}
+\CorrectChoice \SI{9.9}{m/s^2}
+\choice \SI{0.10}{m/s^2}
+\end{choices}
+
+\question % Like Ch2 #18
+If a velocity increases from 0 to 36 m/s in 12 s, what is the average acceleration?
+
+\begin{choices}
+\choice \SI{0.333}{m/s^2}
+\CorrectChoice \SI{3.0}{m/s^2}
+\choice \SI{36}{m/s^2}
+\choice \SI{432}{m/s^2}
+\end{choices}
+
+\question
+What is average acceleration?
+
+\begin{choices}
+    \choice change in velocity divided by change in position
+    \correctchoice change in velocity divided by change in time
+    \choice rate of change of displacement
+    \choice rate of change of position
+\end{choices}
+
+\question
+Acceleration may be measured in units of \fillin\ .
+
+\begin{choices}
+    \choice meters per second (\SI{}{m/s})
+    \correctchoice meters per second squared (\SI{}{m/s^2})
+    \choice meters squared per second (\SI{}{m^2/s})
+    \choice seconds (s)
+\end{choices}
+
+\question
+If a falcon is flying at \SI{10}{m/s} and then, some short time later, flies at \SI{17}{m/s}, what is the falcon's change in velocity?
+
+\begin{choices}
+    \choice It's not possible to know without knowing the change in time.
+    \choice \SI{10}{m/s}
+    \choice \SI{17}{m/s}
+    \correctchoice \SI{7.0}{m/s}
+\end{choices}
+
+\question
+Amanda jogs with a constant velocity of \SI{6.2}{m/s} for 3.0 seconds. What is her average acceleration?
+
+\begin{choices}
+    \choice \SI{2.06}{m/s^2}
+    \choice \SI{0.48}{m/s^2}
+    \choice \SI{6.2}{m/s^2}
+    \correctchoice \SI{0.0}{m/s^2}
+\end{choices}
+
+\question % Like Ch2 #18
+The velocity of an airplane increases from 0 to \SI{36}{m/s} in \SI{12}{s}. What is the plane's average acceleration?
+
+\begin{choices}
+\choice \SI{0.333}{m/s^2}
+\CorrectChoice \SI{3.0}{m/s^2}
+\choice \SI{36}{m/s^2}
+\choice \SI{432}{m/s^2}
+\end{choices}
+
+\question
+An object moves in accordance with the graph below. What is the object's acceleration?
+\vspace{1em}
+
+\begin{minipage}{0.3\textwidth}
+    \begin{choices}
+    \choice \SI{1}{m/s^2}
+    \choice \SI{6}{m/s^2}
+    \choice \SI{125}{m/s^2}
+    \CorrectChoice \SI{5}{m/s^2}
+    \end{choices}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+    \begin{tikzpicture}
+    \begin{axis}[width=240pt, height=150pt,
+    axis y line=left, 
+        axis x line=left,
+        ymin=0, ymax=175,
+        xmin=0, xmax=30,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,25,...,175}
+    ]
+    \addplot[
+        %color=green!67!black,
+        color=red,
+        mark options={color=red},mark=*,
+        ultra thick,
+        ]
+        coordinates {
+        (0,25)(25,150)
+        };
+    \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+
+
+
+
+\question
+What is the acceleration of an object whose motion is shown by the graph below?
+
+\begin{minipage}{0.3\textwidth}
+    \begin{choices}
+        \choice \SI{-52.5}{m/s^2}
+        \choice \SI{3}{m/s^2}
+        \choice \SI{52.5}{m/s^2}
+        \correctchoice \SI{-3}{m/s^2}
+    \end{choices}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=240pt, height=150pt,
+        axis y line=left, 
+        axis x line=left,
+        ymin=0, ymax=20,
+        xmin=0, xmax=6,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,5,...,20},
+        yminorgrids=true, minor y tick num=4,
+        xminorgrids=true, minor x tick num=4,
+    ]
+    \addplot[
+        color=red,
+        mark options={color=red},mark=*,
+        ultra thick,
+        ]
+        coordinates {
+        (0,18)(5,3)
+        };
+\end{axis}
+\end{tikzpicture} 
+\end{minipage}
+
+\question
+Mario the soccer player jogs in one direction at a constant velocity in accordance with the graph below. What is his displacement?
+
+\begin{minipage}{0.3\textwidth}
+    \begin{choices}
+        \choice \SI{0.0}{m}
+        \correctchoice \SI{56}{m}
+        \choice \SI{7}{m}
+        \choice \SI{15}{m}
+    \end{choices}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=240pt, height=150pt,
+        axis y line=left, 
+        axis x line=left,
+        ymin=0, ymax=10,
+        xmin=0, xmax=10,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,5,...,10},
+        % ymajorgrids=true,
+        % xmajorgrids=true,
+        yminorgrids=true, minor y tick num=4,
+        xminorgrids=true, minor x tick num=4,
+    ]
+    %\fill[black!20] (axis cs: 0,0) rectangle (axis cs: 6,15);
+    \addplot[
+        color=red,
+        mark options={color=red},mark=*,
+        ultra thick,
+        ]
+        coordinates {
+        (0,7)(8,7)
+        };
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+
+\question
+An object's motion is represent by the graph below. What is the object's displacement?
+
+\begin{minipage}{0.3\textwidth}
+    \begin{choices}
+        \correctchoice \SI{-15}{m}
+        \choice \SI{15}{m}
+        \choice \SI{-105}{m}
+        \choice \SI{105}{m}
+    \end{choices}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=240pt,height=150pt,
+    axis y line=left, 
+    axis x line=center,
+    xlabel = Time (s),
+    ylabel = Velocity (m/s),
+    ymin=-25, ymax=25,
+    xmin=0, xmax=16,
+    ytick={-20,-10,...,20},
+    xtick={0,5,...,15},
+    ymajorgrids=true,
+    xmajorgrids=true,
+    yminorgrids=true, minor y tick num=1,
+    xminorgrids=true, minor x tick num=4,
+    % x label style={anchor=west},
+    clip=false,
+]
+    \addplot[
+        %color=green!67!black,
+        color=red,
+        mark options={color=red},mark=*,
+        ultra thick,
+        ]
+        coordinates {
+        (0,-20)
+        (9,10)
+        (12,10)
+        };
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
 
 \end{questions}
 \end{document}

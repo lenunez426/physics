@@ -1,0 +1,47 @@
+\documentclass[dvipsnames]{article}
+\input{preamble}
+
+\begin{document}
+
+In athletics, a ``hammer'' is not construction tool but a 4-kilogram metal ball connected to a handle by a steel wire. Suppose Anita spins the hammer in a circular path, supplying a centripetal force of \SI{320}{N} and giving the hammer a tangential speed of \SI{12}{m/s}. Calculate the radius of curvature of the hammer's path.
+
+\begin{minipage}{6cm}
+    \centering
+    \begin{randomizechoices}
+        \correctchoice \SI{1.8}{m}
+        \choice \SI{26.7}{m}
+        \choice \SI{1.1}{m}
+        \choice \SI{2.5}{m}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{6cm}
+    \centering
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=8cm,height=6cm,
+            axis line style={draw=none},
+            axis equal image,
+            ticks=none,
+            axis lines=middle,
+            xmin=-1.1,xmax=1.6,
+            ymin=-0.2,ymax=1.1,
+            clip=true,
+        ]
+        % \clip (-1.1,-0.2) rectangle ++(2.2,1.4);
+        \draw[gray,dashed] (0,0) circle (1);
+        \fill (0,0) circle (1pt);
+        \fill ({cos(0)},{sin(0)}) circle (3pt) node[above right] {$\SI{4.0}{kg}$};
+        \begin{scope}[shift={(axis direction cs: 0,-0.04)}]
+            \draw[dashed,<->] (0,0) -- ({cos(0)},{sin(0)}) node[pos=0.5,below] {$r$};
+        \end{scope}
+        \draw[Green,very thick,->] ({cos(0)},{sin(0)}) -- ++(axis direction cs: -0.4,0) node[black,above=3pt] {$a_{\text{c}}$};
+        \draw[red,very thick,->] ({cos(0)},{sin(0)}) -- ++(axis direction cs: 0,0.7) node[black,pos=1.1] {$\SI{12}{m/s}$};
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+\end{minipage}
+
+    
+
+\end{document}

@@ -1,46 +1,14 @@
-\documentclass[dvipsnames]{article}
-\input{../preamble}
-\input{unit8glossary}
-\usepackage{circuitikz}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\headruleskip}{0mm}
-\fancyhead{}
-
-\numberwithin{equation}{section}
-\setcounter{section}{8}
-\numberwithin{figure}{section}
-
-
-
-
-\title{Unit 8: Conservation of Charge}
-\author{Physics\footnote{Access for free at \href{\openstax}{\openstax}} \hspace{0.1ex} at Cypress Springs High School}
-\date{Updated on \today}
-\openstaxfooter
-
-\makenoidxglossaries
-
-
+\documentclass[main.tex]{subfiles}
 
 \begin{document}
 
-\maketitle
+\section{Conservation of Charge}
+
 
 \subsection{Millikan's Oil Drop Experiment} \label{e8Ie5P}
 
-\begin{minipage}{0.55\textwidth}
-    The American physicist Robert Millikan (1868-1953) and his student Harvey Fletcher (1884-1981) were the first to make a relatively accurate measurement of the fundamental unit of charge on the electron. They designed what is now a classic experiment performed by students. The Millikan oil-drop experiment is shown on the right. The basic idea of the experiment is that a fine oil mist is sprayed between two plates that can be charged with a known amount of opposite charge. Some oil drops accumulate some excess negative charge when being sprayed and are attracted to the positive charge of the upper plate and repelled by the negative charge on the lower plate. By tuning the charge on these plates until the weight of the oil drop is balanced by the electric forces, the experimenter may determine to a high degree of precision the oil drop's net charge.
-\end{minipage}%
-\hspace{1cm}
-\begin{minipage}{0.35\textwidth}
-    \centering
-    \fbox{
-    \includegraphics[width=5cm]{Figure18.4.jpg}
-    }
-\end{minipage}
+The American physicist Robert Millikan (1868-1953) and his student Harvey Fletcher (1884-1981) were the first to make a relatively accurate measurement of the fundamental unit of charge on the electron. They designed what is now a classic experiment performed by students. The Millikan oil-drop experiment is shown on the right. The basic idea of the experiment is that a fine oil mist is sprayed between two plates that can be charged with a known amount of opposite charge. Some oil drops accumulate some excess negative charge when being sprayed and are attracted to the positive charge of the upper plate and repelled by the negative charge on the lower plate. By tuning the charge on these plates until the weight of the oil drop is balanced by the electric forces, the experimenter may determine to a high degree of precision the oil drop's net charge.
+
 
 \vspace{1em}
 \cyanhrule
@@ -107,25 +75,18 @@
 \vspace{1em}
 
 When various materials are rubbed together in controlled ways, certain combinations of materials always result in a net charge of one type on one material and a net charge of the opposite type on the other material. By convention, we call one type of charge positive and the other type negative. For example, when glass is rubbed with silk, the glass becomes positively charged and the silk negatively charged. Because the glass and silk have opposite charges, they attract one another like clothes that have rubbed together in a dryer. Two glass rods rubbed with silk in this manner will repel one another, because each rod has positive charge on it. Similarly, two silk cloths rubbed in this manner will repel each other, because both cloths have negative charge.
+
 \vspace{1em}
 
-\begin{center}
-    \includegraphics[width=14cm]{Figures/Figure18.2.jpg}
-\end{center}
+
 
 It took scientists a long time to discover what lay behind these two types of charges. The word electric itself comes from the Greek word \textit{elektron} for amber, because the ancient Greeks noticed that amber, when rubbed by fur, attracts dry straw. Almost 2,000 years later, in 1897, the English physicist J.~J.~Thomson and French physicist Jean Perrin, were studying the mysterious cathode rays that were known at the time to consist of particles smaller than the smallest atom. Perrin showed that cathode rays actually carried negative electrical charge. Later, Thomson's work led him to declare, ``I can see no escape from the conclusion that [cathode rays] are charges of negative electricity carried by particles of matter.''
 Science had in fact discovered the particle that carries the fundamental unit of negative electrical charge. We now know this particle as the \gls{electron}.
 \vspace{1em}
 
 
-\begin{minipage}{0.6\textwidth}
 Atoms, however, were known to be electrically neutral, which means that they carry the same amount of positive and negative charge, so their net charge is zero. Because electrons are negative, some other part of the atom must contain positive charge. Thomson put forth what is called the \textit{plum pudding model}, in which he described atoms as being made of thousands of electrons swimming around in a nebulous mass of positive charge. His student, Ernest Rutherford, originally believed that this model was correct and used it (along with other models) to try to understand the results of his experiments bombarding gold foils with alpha particles (i.e., helium atoms stripped of their electrons). The results, however, did not confirm Thomson's model but rather destroyed it! Rutherford found that most of the space occupied by the gold atoms was actually empty and that almost all of the matter of each atom was concentrated into a tiny, extremely dense nucleus. The atomic nucleus was later found to contain particles called protons.  Each \gls{proton} carries a unit of positive electric charge.
-\end{minipage}%
-\hspace{2em}
-\begin{minipage}{0.3\textwidth}
-\centering
-    \includegraphics[width=6cm]{Figure18.3.jpg}
-\end{minipage}
+
 
 \vspace{1em}
 
@@ -863,31 +824,6 @@ Recall the charges in Example \ref{e3NF5s}, where we calculated an electrostatic
 
 Note that even though the charges got farther apart, the overall net force increased because the second charge became stronger.
 
-% The electrostatic force, as shown in the previous examples, is known as an ``inverse-square law,'' since force scales as 1 over the distance squared:
-
-% \begin{equation*} \tag{inverse-square law}
-%     F \sim \frac{1}{r^2} \hspace{3em}
-% \end{equation*}
-
-
-
-% \framebox{\textbf{Practice}} By what factor does the gravitational force $F$ change if the distance $r$ is changes to 10\% of $r$? 
-
-% \textit{Answer}: $F^{\prime} = 100 F$
-
-% \framebox{\textbf{Practice}} By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 4?
-
-% \textit{Answer}: $F^{\prime} = \frac{1}{16} F$
-
-% \framebox{\textbf{Practice}} By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 4?
-
-% \textit{Answer}: $F^{\prime} = 16 F$
-
-% \framebox{\textbf{Practice}} By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 5?
-
-% \textit{Answer}: $F^{\prime} = \frac{1}{25} F$
-
-% \framebox{\textbf{Practice}} By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 5? \textit{Answer}: $F^{\prime} = 25 F$
 
 \subsection*{\ref{MeMuHN} Exercises}
 
@@ -1020,19 +956,9 @@ Consider the 99 nanocoulomb force between the charges below.
 
 \subsection{Electric Current} \label{yDnCNq}
 
-% \fbox{
-\begin{minipage}{0.5\textwidth}
-    Just as water flows from high to low elevation, electrons that are free to move will travel from a place with low potential to a place with high potential. A battery has two terminals that are at different potentials. If the terminals are connected by a conducting wire, an electric current (charges) will flow, as shown in the rightward figure. Electrons will then move from the low-potential terminal of the battery (the negative end) through the wire and enter the high-potential terminal of the battery (the positive end).
-\end{minipage}
-% }%
-\hspace{5mm}
-\fbox{
-\begin{minipage}{0.4\textwidth}
-\centering
-    \includegraphics[width=3.5cm]{Figure19.2.jpg}
-    \label{ZzegPy}
-\end{minipage}
-}
+
+Just as water flows from high to low elevation, electrons that are free to move will travel from a place with low potential to a place with high potential. A battery has two terminals that are at different potentials. If the terminals are connected by a conducting wire, an electric current (charges) will flow, as shown in the rightward figure. Electrons will then move from the low-potential terminal of the battery (the negative end) through the wire and enter the high-potential terminal of the battery (the positive end).
+
 \vspace{1em}
 
 \Gls{electric current} ($I$) is electric charge that is moving. Mathematically, electric charge is the rate at which electric charge moves. A large current, such as that used to start a truck engine, moves a large amount very quickly, whereas a small current, such as that used to operate a hand-held calculator, moves a small amount of charge more slowly. In equation form, electric current is
@@ -1086,21 +1012,8 @@ The negative sign reflects the fact that electrons carry the negative charge. Th
 \cyanhrule
 
 
-% \fbox{
-\begin{minipage}{0.5\textwidth}
-    Electric current moving through a wire is like water current moving through a pipe. To define the flow of water through a pipe, we can count the water molecules that flow past a given section of the pipe. For electric current, as shown in the figure, we count the number of electrical charges that flow past a section of a wire (or, more generally, a conductor).
-\end{minipage}
-% }%
-\hspace{5mm}
-\fbox{
-\begin{minipage}{0.4\textwidth}
-    \centering
-    \includegraphics[width=5cm,trim={0 0 0 6mm},clip]{Figure19.3.jpg}
-    \captionsetup{type=figure,margin=1in,font=scriptsize}
-    \captionof{figure}{Electric current moving through a wire.}
-    \label{MraOZo}
-\end{minipage}
-}%
+Electric current moving through a wire is like water current moving through a pipe. To define the flow of water through a pipe, we can count the water molecules that flow past a given section of the pipe. For electric current, as shown in the figure, we count the number of electrical charges that flow past a section of a wire (or, more generally, a conductor).
+
 \vspace{1em}
 \cyanhrule
 
@@ -1224,7 +1137,7 @@ In the series case above, the current running through all wires is the same. In 
 Circuit diagrams, like the two shown above, usually look neat and rectangular. Real world circuits, like one shown in the screen shot of the PhET Simulation below, don't always look neat:
 
 \begin{center}
-    \includegraphics[width=10cm]{Figures/Unit9_PhET_Circuit1.png}
+    \includegraphics[width=10cm]{figures/Unit9_PhET_Circuit1.png}
 \end{center}
 
 Elements like lamps and resistors cause resistance in a circuit. \Gls{resistance} is how much a circuit element opposes the passage of electric current. The SI unit of resistance is the ohm (\qty{}{\ohm}). For example, a resistor or lamp may apply 5.0 ohms, or \qty{5.0}{\ohm}, of resistance to a circuit:
@@ -1304,22 +1217,22 @@ Elements like lamps and resistors cause resistance in a circuit. \Gls{resistance
 % \begin{center}
 % \begin{minipage}{0.45\textwidth}
 %     \centering
-%     \includegraphics[width=6cm]{Figures/Unit9_Circuit1.png}
+%     \includegraphics[width=6cm]{figures/Unit9_Circuit1.png}
 % \end{minipage}%
 % \begin{minipage}{0.45\textwidth}
 %     \centering
-%     \includegraphics[width=6cm]{Figures/Unit9_Circuit2.png}
+%     \includegraphics[width=6cm]{figures/Unit9_Circuit2.png}
 % \end{minipage}
 % \end{center}
 
 % \begin{center}
 % \begin{minipage}{0.45\textwidth}
 %     \centering
-%     \includegraphics[width=6cm]{Figures/Unit9_Circuit3.png}
+%     \includegraphics[width=6cm]{figures/Unit9_Circuit3.png}
 % \end{minipage}%
 % \begin{minipage}{0.45\textwidth}
 %     \centering
-%     \includegraphics[width=6cm]{Figures/Unit9_Circuit4.png}
+%     \includegraphics[width=6cm]{figures/Unit9_Circuit4.png}
 % \end{minipage}
 % \end{center}
 
@@ -1567,7 +1480,7 @@ Go to the ``Circuit Construction Kit'' \phet (\href{https://phet.colorado.edu/si
 
 \begin{minipage}{0.45\textwidth}
     \centering
-    \includegraphics[width=7cm]{Figures/Unit9_PhET_Circuit2.png}
+    \includegraphics[width=7cm]{figures/Unit9_PhET_Circuit2.png}
 \end{minipage}%
 \hspace{10mm}
 \begin{minipage}{0.45\textwidth}

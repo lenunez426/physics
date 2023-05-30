@@ -1,29 +1,8 @@
-% \documentclass{article}
-% \input{../preamble}
-% \usetikzlibrary{math}
-% \usepackage{cancel}
-
-% \numberwithin{equation}{section}
-% \setcounter{section}{6}
-% \numberwithin{figure}{section}
-
-% \usepackage{fancyhdr}
-% \pagestyle{fancy}
-% \renewcommand{\headrulewidth}{0pt}
-% \renewcommand{\headruleskip}{0mm}
-% \fancyfoot[C]{Access for free at \href{https://openstax.org/books/physics/pages/1-introduction}{https://openstax.org/books/physics/pages/1-introduction}
-% \hfill \thepage}
-% \fancyhead{}
-
-% \title{Unit 6: 2D Motion}
-% \author{Edited by Luis Nunez}
-% \date{Updated on \today}
-
-\documentclass[main.tex]{subfiles}
+\documentclass{article}
+\input{../preamble}
+\input{glossaries/glos6}
 
 \begin{document}
-
-\section{Force Interactions}
 
 \subsection{Vectors and Components}
 
@@ -43,7 +22,7 @@ The $y$-component ($\vec{A}_y$) is the vertical component of a vector; the proje
 Consider vector $\vec{A}$ below. (a) What is $x$-component of vector $\vec{A}$? (b) What is the $y$-component?
 \end{example}
 
-\begin{figure}[h!]
+\begin{center}
     \centering
 \def\Ax{6}
 \def\Ay{4}
@@ -88,7 +67,7 @@ Consider vector $\vec{A}$ below. (a) What is $x$-component of vector $\vec{A}$? 
         \node at (-4,8) {\Solution}; 
     \end{axis}
 \end{tikzpicture}
-\end{figure}
+\end{center}
 
 The $x$-component is 6. The $y$-component is 4. See the graph above.
 
@@ -98,7 +77,7 @@ The $x$-component is 6. The $y$-component is 4. See the graph above.
 Find the $x$-component ($\vec{A}_x$) and $y$-component ($\vec{A}_y$) of vector $\vec{A}$.
 \end{example}
 
-\begin{figure}[h!]
+\begin{center}
     \centering
 \def\Ax{-7}
 \def\Ay{3}
@@ -145,7 +124,7 @@ Find the $x$-component ($\vec{A}_x$) and $y$-component ($\vec{A}_y$) of vector $
         \node at (-4,8) {\Solution};
     \end{axis}
 \end{tikzpicture}
-\end{figure}
+\end{center}
 
 The components are
 
@@ -159,7 +138,7 @@ The components are
 
 Angles are graphed in one of the four quadrants in the coordinate plane. An angle in \href{https://openstax.org/books/algebra-and-trigonometry-2e/pages/7-1-angles}{standard position} has its vertex at the origin and its initial side on the $+x$ axis (or east direction). Positive angles are measured counter-clockwise from the $+x$ direction.
 
-\begin{figure}[h!]
+\begin{center}
     \centering
     \def\A{2.5}
     \def\Q{2}
@@ -227,7 +206,7 @@ Angles are graphed in one of the four quadrants in the coordinate plane. An angl
     \node at (\Q,\Q) {\footnotesize \textbf{I}}; \node at (-\Q,\Q) {\footnotesize \textbf{II}}; \node at (-\Q,-\Q) {\footnotesize \textbf{III}}; \node at (\Q,-\Q) {\footnotesize \textbf{IV}};
     \end{axis}
 \end{tikzpicture}%
-\end{figure}
+\end{center}
 
 The \href{https://openstax.org/books/elementary-algebra-2e/pages/4-1-use-the-rectangular-coordinate-system}{coordinate plane} can denote north (N), south (S), east (E), and west (W) directions. When working on problems, avoid angles made from the $y$-axis; use angles starting from the $x$-axis only.
 
@@ -1159,129 +1138,525 @@ By the Pythagorean Theorem (see ``Vectors'' section above), the magnitude of vel
 
 This is the entry speed.
 
+%%%%%
 
+\subsection{Lab: Energy of a Tossed Ball}
+
+\subsubsection*{Objectives}
+
+\begin{itemize}
+\setlength\itemsep{-1ex}
+    \item Measure the change in the kinetic and potential energies as a ball moves in free fall.
+    \item See how the total energy of the ball changes during free fall.
+\end{itemize}
+
+\subsubsection*{Materials}
+
+Notebook; Chromebook; \textit{Vernier Graphical Analysis} app; Go Direct Motion Detector; basketball; wire basket
+
+\subsubsection*{Pre-Lab Questions}
+For each question, consider the motion of a ball tossed straight upward. Only consider the motion while the ball is in free-fall, which starts just after the ball is released and ends just before it is caught. Assume that the ball experiences very little air resistance.
+
+\begin{exercise}
+    Describe what is happening to the (a) velocity and (b) acceleration of the ball as it rises and falls.
+\end{exercise}
+
+\begin{exercise}
+    Describe what is happening with the kinetic energy of the ball as it rises and falls.
+\end{exercise}
+
+\begin{exercise}
+    What is happening with the gravitational potential energy of the ball as it rises and falls?
+\end{exercise}
+
+\begin{exercise}
+    What form of energy does the ball have while momentarily at rest at the top of the path?
+\end{exercise}
+
+\begin{exercise}
+    What form of energy does the ball have while in motion near the bottom of its path?
+\end{exercise}
+
+\begin{exercise}
+    Sketch a graph of velocity vs.~times for the ball. 
+\end{exercise}
+
+\subsubsection*{Procedure}
+
+\begin{enumerate}
+\setlength\itemsep{-1ex}
+    \item Complete the Pre-Lab questions.
+    \item Measure and record the mass of the ball. 
+    \item Launch \textit{Vernier Graphical Analysis} in your Chromebook. Click \texttt{Sensor Data Collection} to set up the motion detector. Click the \texttt{View Options} icon in the upper right corner and display 2 graphs.
+    \item Place the motion detector on the floor or table, and protect it by placing a wire basket over it. 
+    \item Using two hands, hold the ball about \SI{25}{cm} above the motion detector. 
+    \item Click \texttt{Collect} to start data collection.
+    \item Wait one second, then toss the ball straight upward, about 0.5 to \SI{1.0}{m} above the motion detector. Move your hands out of the way after release. Catch and hold the ball, then click \texttt{Stop}.
+    \item After data collection is complete, the graphs of \textbf{position vs.~time} and \textbf{velocity vs.~time} are displayed. Repeat the step above if the position vs.~time graph does not show a region of smoothly changing distance. (Check your graphs with your teacher.) To repeat data collection, click \texttt{Collect} to start data collection.
+\end{enumerate}
+
+
+\subsubsection*{Analysis}
+Click the graphs to examine the free-fall portion of the data and answer the following questions.
+
+\begin{enumerate}
+\setlength\itemsep{-1ex}
+    \item Identify the portion of each graph where the ball had just left your hands and was thus in free fall. Determine the height and velocity of the ball at this time using your graphs. Enter the values in the data table below.
+    \item Identify the point on each graph where the ball was at the top of its path. Determine the time, height, and velocity of the ball at this point. Enter your values in the data table.
+    \item Find the time where the ball was moving downward, just before it was caught. Record the height, velocity, and time in the data table.
+    \item Chose two more points that are halfway in time between the three recorded above. 
+    \item For each of the five points in your data table, calculate the gravitational potential energy (PE) and kinetic energy (KE); see Equations (\ref{RlpJa5}) and (\ref{s57crz}). Use the position of the motion detector as the zero of your gravitational potential energy. Record these calculations in the data table. Finally, calculate the total mechanical energy (ME), which is defined as the sum of kinetic and potential energies:
+
+    \begin{equation}
+        \mathrm{ME} = \mathrm{KE} + \mathrm{PE}
+    \end{equation}
+\end{enumerate}
+
+\subsubsection*{Data}
+\def\mycolwidth{1.55cm}
+
+\vspace{1ex}
+\begin{tabular}{|m{4cm}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|m{\mycolwidth}|}
+    \hline
+    \textbf{Position} & \textbf{Time} (s) & \textbf{Height} (m) & \textbf{Velocity} (m/s) & \textbf{PE} (J) & \textbf{KE} (J) & \textbf{ME} (J)\\
+    \hline
+    After release/toss & & & & & & \\[0.5ex]
+    \hline
+    Between release and top & & & & & & \\[0.5ex]
+    \hline
+    Top of path & & & & & & \\[0.5ex]
+    \hline
+    Between top and catch & & & & & & \\[0.5ex]
+    \hline
+    Before catch & & & & & & \\[0.5ex]
+    \hline
+\end{tabular}
+
+\subsubsection*{Post-Lab Questions}
+
+\begin{exercise}
+    What happened to the total amount of mechanical energy of the ball throughout its flight?
+\end{exercise}
+
+\begin{exercise}
+    Was there a relationship between the amount of change in gravitational potential energy versus the amount of change in kinetic energy of the ball throughout its flight?
+\end{exercise}
+
+\begin{exercise}
+    Assuming this example is a typical model example, use what you saw about the energy of the ball to write a ``law'' of physics that describes how the energy of objects changes and/or doesn't change. 
+\end{exercise}
+
+\begin{exercise}
+    Sketch a graph of kinetic energy vs.~time and potential energy vs.~time for the ball, on the same axes. You can either use your data values OR your analysis in the questions above.
+\end{exercise}
+
+
+
+\subsection{Newton's Law of Universal Gravitation}
+
+\framebox{\textbf{Link}} \textit{PhET Simulation}: ``Gravity Force Lab'' (\href{https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_en.html}{click here})
+
+\begin{mdframed}[backgroundcolor=black!10]
+\Gls{NLUG} calculates the magnitude of the gravitational force that two objects, separated by some distance, exert on each other.
+\vspace{-1cm}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {$m_1$};
+        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {$m_2$};
+        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
+        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
+        \fill (0,0) circle[radius=2pt]; %node[below] {\tiny CM};
+        \fill (5,0) circle[radius=2pt]; %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.35) {$r$};
+    \end{tikzpicture}
+    %\caption{The model for Newton's law of universal gravitation.}
+    \label{fig:Newton_Law_Universal_Gravitation}
+    \end{center}
+
+The equation for the law of gravitation is
+
+\begin{equation} \label{eq:NLUG}
+    F = \frac{G m_1 m_2}{r^2}
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $F$ & gravitational force between two masses & Newton & N\\
+        $G$ & gravitational constant & (\textit{see} $\rightarrow$) & \SI{}{N \cdot m^2/kg^2}\\
+        $m_1$ & mass of object 1 & kilogram & kg\\
+        $m_2$ & mass of object 2 & kilogram & kg\\
+        $r$ & distance between centers of mass & meter & m\\
+    \hline
+    \end{tabular}
+\end{center}
+
+The \gls{GravConst} is always the same number (that's why it's a constant) and must be used any time the law of gravitation is applied. It's
+
+\begin{equation*}
+    G = \SI{6.67e-11}{\frac{N \cdot m^2}{kg^2}}
+\end{equation*}
+\end{mdframed}
+
+
+
+
+\begin{example}
+Consider two spheres of mass \SI{100.0}{kg} and \SI{400.0}{kg} whose centers are separated by \SI{4.00}{m}. What is the magnitude of the gravitational force between them?
+\vspace{1ex}
+
+\Solution We are given two masses and the distance between them: $m_1 = \SI{100.0}{kg}$, $m_2 = \SI{400}{kg}$, $r = \SI{4.00}{m}$. Also, remember that $G = \SI{6.67e-11}{N\,m^2/kg^2}$. By Newton's law of universal gravitation (Eq.~\ref{eq:NLUG}), the gravitational force is
+
+\begin{equation*}
+    F = \frac{G m_1 m_2}{r^2} = 
+    \frac{\left(\SI{6.67e-11}{}\right) \left(100\right) \left(400\right)}{\left(4.00\right)^2} = 
+    \SI{1.67e-7}{N}
+\end{equation*}
+\end{example}
+
+\cyanhrule
+\vspace{2ex}
+
+Calculate the magnitude of the gravitational force between two objects.
+
+\begin{exercise} \label{9DkhbB}
+Two objects of mass \SI{707}{kg} and \SI{279}{kg} are separated by \SI{12}{m}. 
+\end{exercise}
+
+
+
+\begin{exercise} \label{MMnbpt}
+What is the gravitational force between the objects below?
+\vspace{-2em}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {\SI{5}{kg}};
+        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {\SI{10}{kg}};
+        \fill (0,0) circle (2pt); %node[below] {\tiny CM};
+        \fill (5,0) circle (2pt); %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.4) {\SI{25}{cm}};
+        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
+        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
+    \end{tikzpicture}
+\end{center}
+\end{exercise}
+
+\begin{example}
+    The magnitude of the gravitational force that a 620-kg sphere and a 890-kg one exert on each other is \SI{7.52e-7}{N}. What is the distance between the spheres?
+\end{example}
+
+\Solution We are given two masses and the gravitational force: $m_1 = \SI{620}{kg}$, $m_2 = \SI{890}{kg}$, and $F = \SI{7.52e-7}{N}$. We are solving for distance: $r=$ ? These quantities are related by Newton's law of universal gravitation:
+
+\begin{equation*}
+    F = \frac{G m_1 m_2}{r^2}
+\end{equation*}
+
+To solve this equation for distance $r$, we take the following steps:
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Substitute given values} & \hspace{-3em} &
+    \SI{7.52e-7}{} = \frac{
+        \left(\SI{6.67e-11}{}\right)
+        \left(620\right)
+        \left(890\right)
+    }{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
+    \SI{7.52e-7}{} = \frac{\SI{3.68e-5}{}}{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Re-write} & \hspace{-3em} &
+    \frac{\SI{7.52e-7}{}}{1} = \frac{\SI{3.68e-5}{}}{r^2}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Swap terms} & \hspace{-3em} &
+    \frac{r^2}{1} = \frac{\SI{3.68e-5}{}}{\SI{7.52e-7}{}}
+\end{align*}
+
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
+    r^2 = 48.9
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Take the square root} & \hspace{-3em} &
+    \sqrt{r^2} = \sqrt{48.9}
+\end{align*}
+
+\begin{align*}
+    \hspace{-3.5em} & \textbf{Therefore:} & \hspace{-3em} &
+    r = \SI{7.00}{m}
+\end{align*}
+
+
+\begin{exercise} \label{dKPTLZ}
+The gravitational force between two planetary bodies is \SI{2.52e20}{N}. The bodies' masses are \SI{3.9e23}{kg} and \SI{1.4e24}{kg}. What is the distance between the objects?
+\end{exercise}
+
+
+\hrule
+
+\begin{exercise} \label{zw3NbF}
+What is the distance between the objects below?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \fill (0,0) circle[radius=3pt]; %node[below] {\tiny CM};
+        \fill (5,0) circle[radius=3pt]; %node[below] {\tiny CM};
+        \draw[<->] (0,0.2) -- (5,0.2);
+        \node at (2.5,0.4) {$r$};
+        \draw (0,0) circle (0.5cm) node[above,inner sep=0.5cm] {\SI{100}{kg}};
+        \draw (5,0) circle (0.7cm) node[above,inner sep=0.7cm] {\SI{4.0e3}{kg}};
+        \draw[->,thick] (0,0) -- (2,0);
+        \draw[->,thick] (5,0) -- (3,0) ;
+        \node at (1.5,-0.3) {\SI{2.6e-6}{N}};
+        % \node at (3.8,-0.25) {$F$};
+    \end{tikzpicture}
+\end{center}
+\end{exercise}
+
+\cyanhrule
+
+\subsection{Factor of Change Method}
+
+The \textbf{factor of change method} allows you to calculate proportional changes in the gravitational force with proportional changes in distance and/or mass. Let Let $F$ be the original force and $F'$ be the changed force. The factors of change get plugged into the corresponding parentheses below:
+
+\begin{equation*}
+    \frac{F'}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(\ )(\ )}{(\ )^2}
+\end{equation*}
+
+The two basic rules are summarized as follows:
+
+\begin{enumerate}
+\setlength\itemsep{0ex}
+    \item If a quantity stays constant, plug in a 1 in the place where that quantity appears in the equation. Since $G$ is a constant, always plug in 1 for $G$.
+    \item If a quantity changes by a factor other than 1, plug that factor in the equation. (For example, if distance doubles, plug in a 2 in the place of $r$.)
+\end{enumerate}
+
+
+
+\begin{example} \label{ex5bd1}
+Two spheres are separated by 18 meters, and the gravitational force between them is \SI{3.0e-7}{N}. (a) If the distance between the objects is halved (changed to 9 meters), by what factor does the gravitational force change? (b) What is the new magnitude of the gravitational force?
+\end{example}
+
+\Solution Since the objects get closer, we expect the gravitational force to increase. Distance changes from \SI{18}{m} to \SI{9}{m}, implying that $r$ \textit{decreases} by a factor of 2. In other words, $r$ changes factor of $\frac{1}{2}$. All other factors stay constant. 
+
+\begin{equation*}
+    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\left(\frac{1}{4}\right)} = 4
+\end{equation*}
+
+This means $F'$ is 4 times greater than the original force $F$, as we expected:
+
+\begin{equation*}
+    F' = 4 F = 4 \times  \left(\SI{3.0e-7}{N}\right) = \SI{1.2e-6}{N}
+\end{equation*}
+
+
+\vspace{1em}
+\hrule
+
+\begin{example}
+If the distance in Example~\ref{ex5bd1} \textit{increases} by 2 rather than decreases, what is the proportional change in the gravitational force?
+\end{example} 
+
+\Solution Now $r$ changes by a factor of 2, and $m_1$ and $m_2$ continue staying the same:
+
+\begin{equation*}
+    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{(2)^2} = \frac{1}{2^2} =\frac{1}{4}
+\end{equation*}
+
+$F'$ will decrease to $\frac{1}{4}$ the magnitude of $F$.
+
+\vspace{1ex}
+\cyanhrule
+\vspace{1ex}
+
+The gravitational force, as shown in the previous examples, is known as an ``inverse-square law,'' since force scales as 1 over the distance squared:
+
+\begin{equation*} \tag{inverse-square law}
+    F \sim \frac{1}{r^2} \hspace{3em}
+\end{equation*}
+
+\begin{exercise} \label{WhkfQ4}
+By what factor does the gravitational force $F$ change if the distance $r$ is increases to $3r$? (See Figure~\ref{fig:Newton_Law_Universal_Gravitation}.) 
+\end{exercise}
+
+\begin{exercise} \label{CqOs7y}
+By what factor does the gravitational force $F$ change if the distance $r$ is changes to 10\% of $r$? 
+\end{exercise}
+
+\begin{exercise} \label{PwaIbN}
+By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 4?
+\end{exercise}
+
+\begin{exercise} \label{akw9Hx}
+By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 4?
+\end{exercise}
+
+\begin{exercise} \label{Dhfy9M}
+By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 5?
+\end{exercise}
+
+\begin{exercise} \label{gjeHTU}
+By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 5?
+\end{exercise}
+
+\begin{exercise} \label{yXaSNL}
+Calculate Earth's tangential speed in its orbit around the Sun. Assume that the centripetal force on Earth is the gravitational force exerted on Earth by the Sun. The mass of the Sun is \SI{1.99e30}{kg}, and the average distance between Earth and the Sun is \SI{1.5e11}{m}.
+\end{exercise}
+
+\cyanhrule
+\clearpage
+\subsection{Acceleration due to gravity}
+
+\begin{example}
+Show that an object of any mass $m$ that is in free-fall near the surface of Earth will accelerate downwards due to gravity at a rate of $g = \SI{9.8}{m/s^2}$. You'll need the planetary data summarized below:
+
+\begin{center}
+    \centering
+    \begin{tabular}{c|c}
+        \textbf{Earth's mass} & \textbf{Earth's radius} \\
+        \hline
+        \SI{5.9736e24}{kg} & \SI{6.376e6}{m}\\
+    \end{tabular}
+\end{center}
+\end{example}
+
+\Solution Let's re-write Newton's Law of Universal Gravitation (Eq.~\ref{eq:NLUG}) as
+
+\begin{equation*}
+    F = \frac{G m M}{R^2}\ ,
+\end{equation*}
+
+where $M = \SI{5.97e24}{kg}$ is Earth's mass, and $R = \SI{6.38e6}{m}$ is Earth's radius. The distance between the centers of mass of Earth and object $m$ is Earth's radius, as the picture below depicts:
+
+% \begin{equation*}
+%     r = R_{\mathrm{\Earth}} = \SI{6.376e6}{m}.
+% \end{equation*}
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (2pt) node[right,inner sep=5pt] {\tiny CM};
+        \draw[<->] (0,-0.1) -- (0,-2);
+        \draw[->,thick] (0,2.1) -- (0,1) node[anchor=south east,inner sep = 5pt] {$F$};
+        \node at (0.3,-1) {$R_{\text{Earth}}$};
+        \draw (0,0) circle (2cm) node[left,inner sep=4pt] {$M$};
+        \fill (0,2.15) circle (2pt) node[above,inner sep = 4pt] {$m$};
+        \node at (2.6,0) {Earth};
+    \end{tikzpicture}
+\end{center}
+
+Recall that Newton's Second Law of Motion (from Unit 4) states
+
+\begin{equation*}
+    F_{\text{net}} = m a
+\end{equation*}
+
+The only force on $m$ is the gravitational force from Earth. Combining Newton's 2nd Law with Newton's Law of Universal Gravitation leads to
+
+\begin{equation*}
+    F = ma = \frac{G m M}{R^2}
+\end{equation*}
+
+Since mass $m$ appears on both sides of the equation, it cancels:
+
+\begin{equation*}
+    \textcolor{red}{\cancel{m}}a = \frac{G \textcolor{red}{\cancel{m}} M}{R^2}
+\end{equation*}
+
+leaving only
+
+\begin{equation*}
+    a = \frac{G M}{R^2}
+\end{equation*}
+
+When planetary mass and radius are plugged in, this acceleration is defined as \textit{acceleration due to gravity}, $g$, near the planet's surface:
+
+\begin{equation}
+    g = \frac{GM}{R^2}
+\end{equation}
+
+
+Plugging in Earth's mass and radius leads to 
+
+\begin{equation*} 
+    g = \frac{GM}{R^2} = \frac{\left(\SI{6.674e-11}{}\right)\left(\SI{5.97e24}{}\right)}{\left(\SI{6.38e6}{m}\right)^2} = \SI{9.81}{m/s^2}
+\end{equation*}
+
+
+\begin{exercise} \label{knMwSV}
+The Moon is about 384,000 kilometers away. What is the acceleration due to gravity from Earth at the halfway point to the Moon? 
+\end{exercise}
+
+\hrule
+
+\ref{B208cB}--\ref{416pje} Calculate (a) centripetal acceleration and (b) centripetal force for an object in uniform circular motion for the given quantities.
+
+\begin{exercise} \label{B208cB}
+mass is \SI{45}{kg}, tangential speed is \SI{7}{m/s}, radius of curvature is \SI{10}{m}
+\end{exercise}
+
+\begin{exercise}
+tangential speed is \SI{18}{m/s}, mass is \SI{2000}{kg}, radius of curvature is \SI{24}{m}
+\end{exercise}
+
+\begin{exercise}
+radius of curvature is \SI{3}{m}, mass is \SI{842}{kg}, tangential speed is \SI{92}{m/s}
+\end{exercise}
+
+\begin{exercise}
+radius of curvature is \SI{45}{m}, tangential speed is \SI{15}{m/s}, mass is \SI{1961}{kg}
+\end{exercise}
+
+\begin{exercise}\label{416pje}
+tangential speed is \SI{6}{m/s}, radius of curvature is \SI{20}{m}, mass is \SI{1540}{kg}
+\end{exercise}
+
+% \textit{Solution}
+
+% \textbf{Known}: $h = \SI{384000}{km} = \SI{3.84e8}{m}$, $M = \SI{5.9736e24}{kg}$, $R_{\mathrm{\Earth}} = \SI{6.376e6}{m}$
+
+% Then
+
+% \begin{equation*}
+%     g = \frac{GM}{r^2} = \frac{G M}{\left(R_{\Earth} + h\right)^2} = \SI{0.010}{m/s^2}
+% \end{equation*}
+
+\subsection{Answers}
+\ref{9DkhbB}. \SI{9.14e-8}{N}\\
+\ref{MMnbpt}. \SI{5.3e-8}{N}\\
+\ref{zw3NbF}. \SI{3.2}{m}\\
+\ref{knMwSV}. \SI{0.010}{m/s^2}\\
+\ref{WhkfQ4}. $\frac{1}{9}$\\
+\ref{CqOs7y}. 100\\
+\ref{PwaIbN}. $\frac{1}{16}$\\
+\ref{akw9Hx}. 16\\
+\ref{Dhfy9M}. $\frac{1}{25}$\\
+\ref{gjeHTU}. 25\\
+\ref{yXaSNL}. \SI{2.98e4}{m/s} ($\approx \SI{30}{km/s}$)\\
+\ref{dKPTLZ}. \SI{3.8e8}{m}\\
+
+
+
+\clearpage
+\printnoidxglossaries
+
+
+\clearpage
 \end{document}
-
-
-
-% Learning Goals:
-% \vspace{-1em}
-% \begin{enumerate}
-%     \setlength\itemsep{0.1ex}
-%     \item Identify the $x$- and $y$-components of a vector on a Cartesian coordinate plane. %PS VP3, VP4
-%     \item Given the magnitude and direction of a vector, calculate the vector's $x$- and $y$-components. %PS VP3, VP4
-%     \item Add vectors in one dimension.
-%     \item Find the magnitude of a resultant vector by applying the Pythagorean Theorem to add two perpendicular vectors
-%     \item Find the direction of a resultant vector by applying $\tan{\theta}=\text{opp}/\text{adj}$ to two perpendicular vectors
-% \end{enumerate}
-
-% \textbf{Summary of kinematic equations (constant $a$):}
-
-% \begin{equation} \tag{2.28, 2.50}
-%     x = x_0 + \bar{v} t
-% \end{equation}
-
-
-% \begin{equation} \tag{2.29, 2.51}
-%     \bar{v} = \frac{v_0 + v}{2}
-% \end{equation}
-
-% \begin{equation} \tag{2.35, 2.52}
-%     v = v_0 + at\ .
-% \end{equation}
-
-% \begin{equation} \tag{2.40, 2.53}
-%     x = x_0 + v_0 t + \frac{1}{2} a t^2
-% \end{equation}
-
-% \begin{equation} \tag{2.46, 2.54}
-%     v^2 = v^2_0 + 2 a \left(x - x_0\right)
-% \end{equation}
-
-% \vspace{1em}
-% \hrule
-% \vspace{1em}
-
-% Acceleration due to gravity on Earth:
-
-% \begin{equation}\label{eq:accel_gravity} \tag{2.74}
-%     g = 9.80\, \mathrm{m/s^2}\ .
-% \end{equation}
-
-% \vspace{1em}
-% \hrule
-% \vspace{1em}
-
-% Kinematic equations for objects in free-fall where 
-% acceleration is $a= -g$:
-
-% \begin{equation} \tag{2.75}
-%     v = v_0 - gt\ .
-% \end{equation}
-
-% \begin{equation} \tag{2.76}
-%     y = y_0 + v_{0y} t - \frac{1}{2}g t^2\ .
-% \end{equation}
-
-% \begin{equation} \tag{2.77}
-%     v_y^2 = v_{0y}^2 - 2g\left(y - y_0\right)\ .
-% \end{equation}
-
-% \vspace{1em}
-% \hrule
-% \vspace{1em}
-
-
-
-% Maximum height of a projectile launched at an angle:
-
-% \begin{equation} \tag{3.56}
-%     h = \frac{v^2_{0y}}{2g}\ .
-% \end{equation}
-
-% Range of a projectile on level ground:
-
-% \begin{equation} \tag{3.71}
-%     R = \frac{v^2_0 \sin{2\theta_0}}{g}\ .
-% \end{equation}
-
-% \vspace{1em}
-% \hrule
-% \vspace{1em}
-
-% \subsection{Representations of motion}
-
-% \begin{equation} \tag{2.92}
-%     \mathrm{slope} = \frac{\Delta{x}}{\Delta{t}} = v\ .
-% \end{equation}
-
-% \begin{equation} \tag{2.98}
-%     \mathrm{slope} = \frac{\Delta{v}}{\Delta{t}} = a\ .
-% \end{equation}
-
-% \vspace{1em}
-% \hrule
-% \vspace{1em}
-
-
-% \textbf{Resolving vector $\boldsymbol{A}$ into perpendicular components:}
-
-% \begin{equation} \tag{3.6}
-%     A_x = A \cos{\theta}\ .
-% \end{equation}
-
-% \begin{equation} \tag{3.7}
-%     A_y = A \sin{\theta}\ .
-% \end{equation}
-
-% Note: There is a typo in Eq.\,(3.10) in OpenStax, and the 
-% correct equation is write here:
-
-% \begin{equation} \tag{3.10}
-%     A = \sqrt{A_x^2 + A_y^2}\ .
-% \end{equation}
-
-% \begin{equation} \tag{3.11}
-%     \theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)
-% \end{equation}
-

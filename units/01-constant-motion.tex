@@ -1,18 +1,4 @@
-% \documentclass{article}
-% \input{../preamble}
 \documentclass[main.tex]{subfiles}
-% \input{01-constant-motion/unit1glossary}
-
-% \numberwithin{equation}{section}
-% \setcounter{section}{1}
-% \numberwithin{figure}{section}
-
-
-
-% \title{Unit 1: Constant Motion}
-% \author{Physics at CFISD}
-% \date{Updated on \today}
-
 \begin{document}
 
 \section{Constant Motion}
@@ -371,172 +357,6 @@ Without a position axis, we arrive at the same result from Example~\ref{g2RSJB}:
 
 \cyanhrule
 
-% \begin{multicols}{2}
-\subsection*{\ref{pdfqW3} Exercises}
-
-\begin{center}
-    \begin{tikzpicture}
-    \begin{axis}[width=15cm,
-        axis lines = left,
-        axis y line=none,
-        xlabel = {Position (m)},
-        ymin=0, ymax=12, 
-        xmin=-10, xmax=10,
-        xtick={-10,-8,...,12},
-        clip=false,
-        ]
-        \node[above] at (-9,0) {\Springtree[3]};
-        \node[above] at (7,0) {\huge \faHome};
-        \node[above] at (4,0) {\Strichmaxerl[2.5]} ;
-    \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{kE0eEH}
-    Find the position of (a) the person, (b) the tree, and (c) the house.
-\end{exercise}
-
-\begin{exercise} \label{dOncsX}
-    The person walks to the house, then to the tree. What is their total distance traveled?
-\end{exercise}
-
-\begin{exercise} \label{Ka0olk}
-    The person walks to the house, then to the tree. What is the person's displacement?
-\end{exercise}
-
-\begin{exercise}
-    If the figure above shows the person's final position, and if they started at the house, what is their displacement?
-\end{exercise}
-
-\cyanhrule
-
-\vspace{1em}
-
-\textbf{\ref{PTZXm9}--\ref{9nlNcq}} Emma Walker undergoes the three displacements shown below. Assume right is the positive direction.
-
-\begin{center}
-    \begin{tikzpicture}
-    \begin{axis}[width=15cm,
-        axis lines = left,
-        axis y line=none,
-        axis x line=none,
-        xlabel = {Position (m)},
-        ymin=0, ymax=12, 
-        xmin=-15, xmax=75,
-        xtick={-10,-8,...,12},
-        clip=false,
-        ]
-        \node[above] at (0,0) {\Strichmaxerl[2.5]};
-        \draw[->] (0,1) -- ++(axis direction cs: 48,0) node[above,pos=0.5] {\SI{48}{m}};
-        \draw[->] (48,1.7) -- ++ (axis direction cs: -60,0) node[above,pos=0.5] {\SI{60}{m}};
-        \draw[->] ({48-60},2.4) -- ++(axis direction cs: 85,0) node[above,pos=0.5] {\SI{85}{m}};
-    \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{PTZXm9}
-    What is the total distance traveled by Emma?
-\end{exercise}
-
-\begin{exercise} \label{9nlNcq}
-    What is Emma's total displacement?
-\end{exercise}
-
-
-
-
-\begin{exercise}
-    Which of the following does your car's odometer record: distance or displacement?
-\end{exercise}
-
-\begin{exercise}
-    Is distance a scalar or a vector?
-\end{exercise}
-
-\begin{exercise}
-    Is displacement a scalar or a vector?
-\end{exercise}
-
-\begin{exercise}
-    Provide at least 3 differences between distance and displacement.
-\end{exercise}
-
-\begin{exercise}
-    Calculate Rodrigo's displacement, from Example~\ref{4Li1vK}, using the vector sum method that was modeled in Example~\ref{LBLwIS}.
-\end{exercise}
-
-\begin{exercise}
-    Calculate Norma's displacement, from Example~\ref{mAnrq8}, using the vector sum method that was modeled in Example~\ref{LBLwIS}.
-\end{exercise}
-
-\begin{exercise} \label{xs4oMq}
-A dog walks 14 meters to the east and then 20 meters back to the west.  (a) Draw a sketch of the dog's trip. (b) Calculate the distance traveled. (c) Calculate the dog's displacement. (\textit{Hint}: Let east be the positive direction.) (d) What is the magnitude of his displacement?
-\end{exercise}
-
-
-\cyanhrule
-
-\vspace{1em}
-
-In a coordinate system in which the direction to the right is positive, Morgan walks 35 meters to the left, 18 meters to the right, and then 26 meters to the left.
-
-\begin{exercise} \label{3rT1wE}
-What distance does Morgan travel?
-\end{exercise}
-
-\begin{exercise} \label{0NkeX1}
-What is Morgan's displacement?
-\end{exercise}
-
-\cyanhrule
-
-\vspace{1em}
-
-Nimzy the cat moves 16 meters eastward, then 7 meters westward, and finally 3 meters eastward.
-
-\begin{exercise} \label{umzXid}
-    What total distance does Nimzy travel?
-\end{exercise}
-
-\begin{exercise} \label{CO3yuB}
-    What is the magnitude of the Nimzy's displacement?
-\end{exercise}
-
-\begin{exercise} \label{2O3f3z}
-    What is the direction of Nimzy's displacement?
-\end{exercise}
-
-\cyanhrule
-
-\vspace{1em}
-
-\textbf{\ref{raIRVr}--\ref{Dxhphh}} Suppose you walk halfway around a circular track of radius \SI{63.67}{m}, as shown in the figure below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=5cm,height=5cm,
-    axis equal,
-    ticks=none,
-    clip=false,
-    xmin=-1,xmax=1,ymin=-1,ymax=1,
-    axis lines=center,
-    axis line style={draw=none},
-]
-    \fill (-1,0) circle (2pt) node[left] {start};
-    \fill (1,0) circle (2pt) node[right] {end};
-    \draw[->,thick] (-1,0) arc (180:2:1);
-    \draw[dashed] (1,0) arc (0:-180:1);
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{raIRVr}
-    What total distance do you travel?
-\end{exercise}
-
-\begin{exercise} \label{Dxhphh}
-    Calculate your displacement.
-\end{exercise}
 
 % \end{multicols}
 \cyanhrule
@@ -720,73 +540,6 @@ Therefore, Phillip's elapsed time to school is \SI{252}{s} (about 4 minutes).
 
 \solutionEnd
 
-\vspace{1em}
-
-\cyanhrule
-
-% \begin{multicols}{2}
-
-\subsection*{\ref{nqhUSe} Exercises}
-
-\textbf{\ref{qquil7}--\ref{cIfbMu}} Quinn jogs back and forth in one dimension, undergoing several displacements in the following sequence: 40 meters east, 24 meters west, \SI{36}{m} east, \SI{49}{m} west, \SI{14}{m} east, and finally \SI{45}{m} west. The total elapsed time of her trip is 33 seconds. Assume east is the positive direction.
-
-\begin{exercise} \label{qquil7}
-    Draw a diagram for Quinn's trip like Figure \ref{vds9fx}. Include labels and arrows showing the displacements.
-\end{exercise}
-
-\begin{exercise} \label{c7YaTG}
-    What total distance does Quinn travel?
-\end{exercise}
-
-\begin{exercise} \label{ASXgWQ}
-    What is Quinn's average speed?
-\end{exercise}
-
-\begin{exercise} \label{iG7rDo}
-    Calculate Quinn's displacement.
-\end{exercise}
-
-\begin{exercise} \label{cIfbMu}
-    Find Quinn's average velocity.
-\end{exercise}
-
-\cyanhrule
-
-\begin{exercise} \label{JYqHaE}
-    Is it possible to determine a car's instantaneous velocity from just the speedometer reading? Explain.
-\end{exercise}
-
-\begin{exercise} \label{EeYgx7}
-A pitcher throws a baseball from the pitcher's mound to home plate in \SI{0.46}{s}. The distance between the mound and home plate is \SI{18.4}{m}. What is the average speed of the baseball?
-\end{exercise}
-
-
-
-
-
-\begin{exercise} \label{Zj7dfC}
-    A soccer ball travels with an average speed of \SI{16}{m/s} for \SI{3.0}{s}. How far did the ball travel?
-\end{exercise}
-
-
-
-\cyanhrule
-
-
-
-\vspace{1em}
-
-\begin{exercise} \label{ix2lKL}
-Eduardo jogs with an average velocity of 6.1 meters per second east. What is his displacement after 75 seconds?
-\end{exercise}
-
-
-\begin{exercise} \label{BI1eOB}
-If displacement is \SI{428}{m} west and average velocity is \SI{1.70}{m/s} west, what is the elapsed time?
-\end{exercise}
-
-\cyanhrule
-% \end{multicols}
 
 \subsection{Position vs.~Time Graphs} \label{qoPhdL}
 
@@ -996,132 +749,6 @@ The average velocity is $-0.47$ meters per second, or 0.47 meters per second to 
 
 \cyanhrule
 
-\subsection*{\ref{qoPhdL} Exercises}
-
-
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=7cm, height=6cm,
-        axis y line=left, 
-        axis x line=left,
-        ymin=0, ymax=10,
-        xmin=0, xmax=12,
-        ylabel = Position (m),
-        xlabel = Time (s),
-        grid=both,
-        ytick={0,2,...,10}
-    ]
-    \addplot[color=black,very thick,
-        ]
-        coordinates {
-        (0,0)(8,8)(10,8)(12,8)
-        };
-    \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{WTBtZb}
-    Find the initial position, final position, and displacement across the entire time interval.
-\end{exercise}
-
-\begin{exercise} \label{wqqrdf}
-    Calculate displacement in the time interval from 4 to 12 seconds.
-\end{exercise}
-
-\begin{exercise} \label{HQaLcm}
-    What is the average velocity in the last 6 seconds of motion?
-\end{exercise}
-
-\cyanhrule
-
-\vspace{1em}
-
-Consider the graph below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=6cm,
-    axis lines=left,
-    ymin=0, ymax=14,
-    xmin=0, xmax=12,
-    ylabel = Position (m),
-    xlabel = Time (s),
-    grid=both,
-    ytick={0,2,...,14}
-]
-\addplot[color=black,
-    very thick,
-    ]
-    coordinates {
-        (0,0)(2,6)(4,12)(6,12)(8,8)(10,8)(12,6)
-    };
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{hmsqqg}
-    What is the runner's net displacement over the entire time interval?
-\end{exercise}
-
-\begin{exercise} \label{dixR7T}
-    What is the runner’s average velocity over the entire time interval?
-\end{exercise}
-
-\begin{exercise} \label{YYxvX1}
-   What is the average velocity in the first 4 seconds? 
-\end{exercise}
-
-
-\cyanhrule
-
-\vspace{1em}
-
-Consider the graph below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=6cm,
-    axis y line=left, 
-    axis x line=center,
-    every axis x label/.style={at={(current axis.right of origin)},anchor=west},
-    xlabel = Time (s),
-    ylabel = Position (m),
-    ymin=-10, ymax=8,
-    xmin=0, xmax=40,
-    ytick={-10,-8,...,8},
-    xtick={0,10,...,40},
-    ymajorgrids=true,
-    xmajorgrids=true,
-]
-    \addplot[color=black, very thick,
-        ]
-        coordinates {
-        (0,2)(10,8)(20,-4)(30,-4)(40,-8)
-        };
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{5Wd4QG}
-    What is the displacement over the entire time interval?
-\end{exercise}
-
-
-\begin{exercise} \label{OselF0}
-   What is the displacement over the first 10 seconds? 
-\end{exercise}
-
-
-\begin{exercise} \label{ZRQnM6}
-    What is the average velocity for the whole time period shown in the graph?
-\end{exercise}
-
-\begin{exercise} \label{fZtSlq}
-    What is the velocity between 10 and 20 seconds?
-\end{exercise}
-
-
 
 
 
@@ -1249,7 +876,7 @@ The idea discovered in Example \ref{uuZRlv} that displacement is the area under 
     \textbf{The area bounded by a curve in a velocity vs.~time graph is displacement.}
 \end{mdframed}
 
-\begin{example}
+\begin{example} \label{HjmJqM}
     A golf ball rolls to the left at a constant speed, strikes a wall after 3 seconds, and rolls in the opposite direction at a constant but slower speed. It's motion is described in the graph below. What is the ball's displacement from it's original position across its 10 seconds of motion?
 \end{example}
 
@@ -1331,127 +958,6 @@ or a displacement of 21 meters to the right. The total displacement is found by 
 The golf ball traveled a total distance of 33 meters (12 + 21), but since it moved first to the left and then to the right, its overall displacement from the origin is 9 meters to the right.
 
 \solutionEnd
-
-\subsection*{\ref{EOqf0D} Exercises}
-
-\begin{exercise} \label{E3dHaa}
-    Calculate the displacement of the object whose motion is represented by the graph.
-\end{exercise}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=left,
-        width=6cm,height=6cm,
-        ymin=0, ymax=10,
-        xmin=0, xmax=10,
-        ylabel = Velocity (m/s),
-        xlabel = Time (s),
-        grid=both,
-        ytick={0,1,...,10},
-        xtick={0,1,...,10}
-    ]
-    \addplot[thick,mark=*,
-        ]
-        coordinates {
-        (0,7)(9,7)
-        };
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{1xi7hi}
-    Calculate the total displacement of the object who's motion is represented by the graph below.
-\end{exercise}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis y line=left, 
-        axis x line=center,
-        width=6cm,height=6cm,
-        ymin=-5, ymax=5,
-        xmin=0, xmax=10,
-        ylabel = Velocity (m/s),
-        xlabel = Time (s),
-        grid=both,
-        ytick={-5,-4,...,5},
-        xtick={0,1,...,10},
-        every axis x label/.style={at={(current axis.right of origin)},anchor=west},
-    ]
-\addplot[mark=none,thick,
-    ]
-    coordinates {
-    (0,-4)(7,-4)(7,2)(10,2)
-    };
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise}
-    Calculate the average velocity of object whose motion is represented by the position vs.~time graph below. Then create a velocity vs.~time graph similar to the one in Figure \ref{paOxO0}.
-\end{exercise}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis lines=left,
-    width=6cm, height=6cm,
-    ymin=0, ymax=35,
-    xmin=0, xmax=10,
-    ylabel = {Position (m)},
-    xlabel = {Time (s)},
-    grid=both,
-    ytick={0,5,...,35},
-    xtick={0,1,...,10},
-    clip=true
-]
-\addplot[mark=none,thick,
-    ]
-    coordinates {
-    (0,0)(10,40)
-    };
-\end{axis}
-\end{tikzpicture}%
-\hspace{1em}
-\begin{tikzpicture}
-\begin{axis}[axis lines=left,
-    width=6cm, height=6cm,
-    ymin=0, ymax=35,
-    xmin=0, xmax=10,
-    ylabel = {Velocity (m/s)},
-    xlabel = {Time (s)},
-    xtick={0,1,...,10},
-    clip=true,
-    every y tick label/.append style={white},  
-    every y tick/.append style={white}]
-]
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{exercise} \label{BksbmH}
-    A person on a hoverboard drives to the left, slows down, comes to a stop, turns around, and drives to the right at an increasing speed. Their motion is represented by the graph below. Calculate their displacement.
-\end{exercise}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[axis y line=left, 
-        axis x line=center,
-        width=6cm,height=6cm,
-        ymin=-5, ymax=5,
-        xmin=0, xmax=10,
-        ylabel = Velocity (m/s),
-        xlabel = Time (s),
-        grid=both,
-        ytick={-5,-4,...,5},
-        xtick={0,1,...,10},
-        every axis x label/.style={at={(current axis.right of origin)},anchor=west},
-    ]
-\addplot[mark=none,thick,domain=0:10,]
-    {-3 + x};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
 
 \subsection{Momentum and Kinetic Energy} \label{yUPGRH}
 
@@ -1560,7 +1066,443 @@ Therefore, the skater's speed is 14 meters per second.
 
 \solutionEnd
 
-\subsection*{\ref{yUPGRH} Exercise}
+\subsection{Exercises}
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=12, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node[above] at (-9,0) {\Springtree[3]};
+        \node[above] at (7,0) {\huge \faHome};
+        \node[above] at (4,0) {\Strichmaxerl[2.5]} ;
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{kE0eEH}
+    Find the position of (a) the person, (b) the tree, and (c) the house.
+\end{exercise}
+
+\begin{exercise} \label{dOncsX}
+    The person walks to the house, then to the tree. What is their total distance traveled?
+\end{exercise}
+
+\begin{exercise} \label{Ka0olk}
+    The person walks to the house, then to the tree. What is the person's displacement?
+\end{exercise}
+
+\begin{exercise}
+    If the figure above shows the person's final position, and if they started at the house, what is their displacement?
+\end{exercise}
+
+\cyanhrule
+
+\vspace{1em}
+
+\textbf{\ref{PTZXm9}--\ref{9nlNcq}} Emma Walker undergoes the three displacements shown below. Assume right is the positive direction.
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis lines = left,
+        axis y line=none,
+        axis x line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=12, 
+        xmin=-15, xmax=75,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node[above] at (0,0) {\Strichmaxerl[2.5]};
+        \draw[->] (0,1) -- ++(axis direction cs: 48,0) node[above,pos=0.5] {\SI{48}{m}};
+        \draw[->] (48,1.7) -- ++ (axis direction cs: -60,0) node[above,pos=0.5] {\SI{60}{m}};
+        \draw[->] ({48-60},2.4) -- ++(axis direction cs: 85,0) node[above,pos=0.5] {\SI{85}{m}};
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{PTZXm9}
+    What is the total distance traveled by Emma?
+\end{exercise}
+
+\begin{exercise} \label{9nlNcq}
+    What is Emma's total displacement?
+\end{exercise}
+
+
+\begin{exercise}
+    Which of the following does your car's odometer record: distance or displacement?
+\end{exercise}
+
+\begin{exercise}
+    Is distance a scalar or a vector?
+\end{exercise}
+
+\begin{exercise}
+    Is displacement a scalar or a vector?
+\end{exercise}
+
+\begin{exercise}
+    Provide at least 3 differences between distance and displacement.
+\end{exercise}
+
+\begin{exercise}
+    Calculate Rodrigo's displacement, from Example~\ref{4Li1vK}, using the vector sum method that was modeled in Example~\ref{LBLwIS}.
+\end{exercise}
+
+\begin{exercise}
+    Calculate Norma's displacement, from Example~\ref{mAnrq8}, using the vector sum method that was modeled in Example~\ref{LBLwIS}.
+\end{exercise}
+
+\begin{exercise} \label{xs4oMq}
+A dog walks 14 meters to the east and then 20 meters back to the west.  (a) Draw a sketch of the dog's trip. (b) Calculate the distance traveled. (c) Calculate the dog's displacement. (\textit{Hint}: Let east be the positive direction.) (d) What is the magnitude of his displacement?
+\end{exercise}
+
+
+\cyanhrule
+
+\vspace{1em}
+
+In a coordinate system in which the direction to the right is positive, Morgan walks 35 meters to the left, 18 meters to the right, and then 26 meters to the left.
+
+\begin{exercise} \label{3rT1wE}
+What distance does Morgan travel?
+\end{exercise}
+
+\begin{exercise} \label{0NkeX1}
+What is Morgan's displacement?
+\end{exercise}
+
+\cyanhrule
+
+\vspace{1em}
+
+Nimzy the cat moves 16 meters eastward, then 7 meters westward, and finally 3 meters eastward.
+
+\begin{exercise} \label{umzXid}
+    What total distance does Nimzy travel?
+\end{exercise}
+
+\begin{exercise} \label{CO3yuB}
+    What is the magnitude of the Nimzy's displacement?
+\end{exercise}
+
+\begin{exercise} \label{2O3f3z}
+    What is the direction of Nimzy's displacement?
+\end{exercise}
+
+\cyanhrule
+
+\vspace{1em}
+
+\textbf{\ref{raIRVr}--\ref{Dxhphh}} Suppose you walk halfway around a circular track of radius \SI{63.67}{m}, as shown in the figure below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=5cm,height=5cm,
+    axis equal,
+    ticks=none,
+    clip=false,
+    xmin=-1,xmax=1,ymin=-1,ymax=1,
+    axis lines=center,
+    axis line style={draw=none},
+]
+    \fill (-1,0) circle (2pt) node[left] {start};
+    \fill (1,0) circle (2pt) node[right] {end};
+    \draw[->,thick] (-1,0) arc (180:2:1);
+    \draw[dashed] (1,0) arc (0:-180:1);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{raIRVr}
+    What total distance do you travel?
+\end{exercise}
+
+\begin{exercise} \label{Dxhphh}
+    Calculate your displacement.
+\end{exercise}
+
+%%%%%%%%
+
+\textbf{\ref{qquil7}--\ref{cIfbMu}} Quinn jogs back and forth in one dimension, undergoing several displacements in the following sequence: 40 meters east, 24 meters west, \SI{36}{m} east, \SI{49}{m} west, \SI{14}{m} east, and finally \SI{45}{m} west. The total elapsed time of her trip is 33 seconds. Assume east is the positive direction.
+
+\begin{exercise} \label{qquil7}
+    Draw a diagram for Quinn's trip like Figure \ref{vds9fx}. Include labels and arrows showing the displacements.
+\end{exercise}
+
+\begin{exercise} \label{c7YaTG}
+    What total distance does Quinn travel?
+\end{exercise}
+
+\begin{exercise} \label{ASXgWQ}
+    What is Quinn's average speed?
+\end{exercise}
+
+\begin{exercise} \label{iG7rDo}
+    Calculate Quinn's displacement.
+\end{exercise}
+
+\begin{exercise} \label{cIfbMu}
+    Find Quinn's average velocity.
+\end{exercise}
+
+\cyanhrule
+
+\begin{exercise} \label{JYqHaE}
+    Is it possible to determine a car's instantaneous velocity from just the speedometer reading? Explain.
+\end{exercise}
+
+\begin{exercise} \label{EeYgx7}
+A pitcher throws a baseball from the pitcher's mound to home plate in \SI{0.46}{s}. The distance between the mound and home plate is \SI{18.4}{m}. What is the average speed of the baseball?
+\end{exercise}
+
+\begin{exercise} \label{Zj7dfC}
+    A soccer ball travels with an average speed of \SI{16}{m/s} for \SI{3.0}{s}. How far did the ball travel?
+\end{exercise}
+
+\cyanhrule
+
+\vspace{1em}
+
+\begin{exercise} \label{ix2lKL}
+Eduardo jogs with an average velocity of 6.1 meters per second east. What is his displacement after 75 seconds?
+\end{exercise}
+
+
+\begin{exercise} \label{BI1eOB}
+If displacement is \SI{428}{m} west and average velocity is \SI{1.70}{m/s} west, what is the elapsed time?
+\end{exercise}
+
+%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7cm, height=6cm,
+        axis y line=left, 
+        axis x line=left,
+        ymin=0, ymax=10,
+        xmin=0, xmax=12,
+        ylabel = Position (m),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,2,...,10}
+    ]
+    \addplot[color=black,very thick,
+        ]
+        coordinates {
+        (0,0)(8,8)(10,8)(12,8)
+        };
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{WTBtZb}
+    Find the initial position, final position, and displacement across the entire time interval.
+\end{exercise}
+
+\begin{exercise} \label{wqqrdf}
+    Calculate displacement in the time interval from 4 to 12 seconds.
+\end{exercise}
+
+\begin{exercise} \label{HQaLcm}
+    What is the average velocity in the last 6 seconds of motion?
+\end{exercise}
+
+\cyanhrule
+
+\vspace{1em}
+
+Consider the graph below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7cm,height=6cm,
+    axis lines=left,
+    ymin=0, ymax=14,
+    xmin=0, xmax=12,
+    ylabel = Position (m),
+    xlabel = Time (s),
+    grid=both,
+    ytick={0,2,...,14}
+]
+\addplot[color=black,
+    very thick,
+    ]
+    coordinates {
+        (0,0)(2,6)(4,12)(6,12)(8,8)(10,8)(12,6)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{hmsqqg}
+    What is the runner's net displacement over the entire time interval?
+\end{exercise}
+
+\begin{exercise} \label{dixR7T}
+    What is the runner’s average velocity over the entire time interval?
+\end{exercise}
+
+\begin{exercise} \label{YYxvX1}
+   What is the average velocity in the first 4 seconds? 
+\end{exercise}
+
+
+\cyanhrule
+
+\vspace{1em}
+
+Consider the graph below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7cm,height=6cm,
+    axis y line=left, 
+    axis x line=center,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+    xlabel = Time (s),
+    ylabel = Position (m),
+    ymin=-10, ymax=8,
+    xmin=0, xmax=40,
+    ytick={-10,-8,...,8},
+    xtick={0,10,...,40},
+    ymajorgrids=true,
+    xmajorgrids=true,
+]
+    \addplot[color=black, very thick,
+        ]
+        coordinates {
+        (0,2)(10,8)(20,-4)(30,-4)(40,-8)
+        };
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{5Wd4QG}
+    What is the displacement over the entire time interval?
+\end{exercise}
+
+
+\begin{exercise} \label{OselF0}
+   What is the displacement over the first 10 seconds? 
+\end{exercise}
+
+
+\begin{exercise} \label{ZRQnM6}
+    What is the average velocity for the whole time period shown in the graph?
+\end{exercise}
+
+\begin{exercise} \label{fZtSlq}
+    What is the velocity between 10 and 20 seconds?
+\end{exercise}
+
+%%%%%%%%%%%%%%%
+
+\begin{exercise} \label{E3dHaa}
+    Calculate the displacement of the object whose motion is represented by the graph.
+\end{exercise}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,
+        width=6cm,height=6cm,
+        ymin=0, ymax=10,
+        xmin=0, xmax=10,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,1,...,10},
+        xtick={0,1,...,10}
+    ]
+    \addplot[thick,mark=*,
+        ]
+        coordinates {
+        (0,7)(9,7)
+        };
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{exercise} \label{1xi7hi}
+    Calculate the total displacement of the object who's motion is represented by the graph below.
+\end{exercise}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis y line=left, 
+        axis x line=center,
+        width=6cm,height=6cm,
+        ymin=-5, ymax=5,
+        xmin=0, xmax=10,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,10},
+        every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+    ]
+\addplot[mark=none,thick,
+    ]
+    coordinates {
+    (0,-4)(7,-4)(7,2)(10,2)
+    };
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{exercise}
+    Calculate the average velocity of object whose motion is represented by the position vs.~time graph below. Then create a velocity vs.~time graph similar to the one in Figure \ref{paOxO0}.
+\end{exercise}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,
+    width=6cm, height=6cm,
+    ymin=0, ymax=35,
+    xmin=0, xmax=10,
+    ylabel = {Position (m)},
+    xlabel = {Time (s)},
+    grid=both,
+    ytick={0,5,...,35},
+    xtick={0,1,...,10},
+    clip=true
+]
+\addplot[mark=none,thick,
+    ]
+    coordinates {
+    (0,0)(10,40)
+    };
+\end{axis}
+\end{tikzpicture}%
+\hspace{1em}
+\begin{tikzpicture}
+\begin{axis}[axis lines=left,
+    width=6cm, height=6cm,
+    ymin=0, ymax=35,
+    xmin=0, xmax=10,
+    ylabel = {Velocity (m/s)},
+    xlabel = {Time (s)},
+    xtick={0,1,...,10},
+    clip=true,
+    every y tick label/.append style={white},  
+    every y tick/.append style={white}]
+]
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+%%%%%%%
+% Momentum and Kinetic Energy:
 
 \begin{exercise}
     Can a lighter object have more momentum than a heavier one? How?
@@ -1594,7 +1536,7 @@ Therefore, the skater's speed is 14 meters per second.
 
 \clearpage
 
-\subsection*{References and Additional Resources}
+\subsection{References \& Additional Resources}
 
 Videos from the \textit{YouTube} channel \texttt{Khan Academy}:
 \vspace{-1ex}
@@ -1625,7 +1567,7 @@ Other resources:
 \end{enumerate}
 
 \clearpage
-\subsection*{Answers to Select Exercises}
+\subsection{Answers to Select Exercises}
 
 \ref{kE0eEH}. (a) 4 meters \hspace{1em} (b) \SI{+7}{m} \hspace{1em} (c) \SI{-9}{m}\\
 \ref{dOncsX}. \SI{19}{m}\\
@@ -1657,7 +1599,6 @@ Other resources:
 \ref{fZtSlq}. $-\SI{1.2}{m/s}$\\
 \ref{E3dHaa}. \SI{63}{m/s}\\
 \ref{1xi7hi}. $-\SI{22}{m}$\\
-\ref{BksbmH}. $+\SI{8}{m}$\\
 \ref{QDJrfn}. (a) \SI{10.25}{kg\,m/s} \hspace{1em} (b) 85.9\\
 \ref{9FyFRV}. \SI{50}{kg\,m/s}\\
 \ref{5CHfrd}. \SI{605}{J}\\

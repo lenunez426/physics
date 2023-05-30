@@ -1,270 +1,10 @@
-% \documentclass[dvipsnames]{article}
-% \input{../preamble}
-% \input{unit6glossary}
-% \usetikzlibrary{math}
-% \usepackage{cancel}
-
-% \numberwithin{equation}{section}
-% \setcounter{section}{6}
-% \numberwithin{figure}{section}
-
-% \usepackage{fancyhdr}
-% \pagestyle{fancy}
-% \renewcommand{\headrulewidth}{0pt}
-% \renewcommand{\headruleskip}{0mm}
-% \fancyfoot[C]{Access for free at \href{https://openstax.org/books/physics/pages/1-introduction}{https://openstax.org/books/physics/pages/1-introduction}
-% \hfill \thepage}
-% \fancyhead{}
-
-% \title{Unit 6: Two-Dimensional Motion}
-% \author{Physics\footnote{Access for free at \href{\openstax}{\openstax}} \hspace{0.1ex} at CFISD}
-% \date{Updated on \today}
-% \openstaxfooter
-
 \documentclass[main.tex]{subfiles}
 
 \begin{document}
 
 \section{2D Motion Application}
 
-\subsection{Vectors and Components}
-
-A \gls{vector} is a quantity that has both magnitude and direction. Graphically a vector is an arrow used to represent quantities with both magnitude and direction. Two-dimensional vectors can be broken down into two components. A \gls{component} is a piece of a vector that points in either the vertical or the horizontal direction. The horizontal piece of a vector is known as the $x$-component. The vertical piece is the $y$-component. Components may be down graphically or mathematically, as shown in the following examples.
-
-\begin{example}
-    Find the $x$- and $y$-components of vector $A$ below.
-\end{example}
-
-\begin{center}
-\def\Ax{6}
-\def\Ay{4}
-\begin{tikzpicture}
-    \begin{axis}[width=8cm,height=8cm,
-        axis lines = center,
-        xlabel = $x$, 
-        ylabel = $y$, 
-        ymin=0, ymax=8,
-        xmin=0, xmax=8,
-        xtick={-8,-6,...,8},
-        ytick={-8,-6,...,8},
-        ymajorgrids=true,
-        xmajorgrids=true,
-        clip=false,
-        ]
-        \draw[ultra thick,->] (axis cs: 0,0) -- (\Ax,\Ay) node[above] {$\vec{A}$};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\clearpage
-\Solution The horizontal and vertical components, $A_x$ and $A_y$, respectively, are found graphically:
-
-\begin{center}
-\def\Ax{6}
-\def\Ay{4}
-\begin{tikzpicture}
-    \begin{axis}[width=7cm,height=7cm,
-        axis lines = center,
-        xlabel = $x$, 
-        ylabel = $y$, 
-        ymin=0, ymax=8,
-        xmin=0, xmax=8,
-        xtick={-8,-6,...,8},
-        ytick={-8,-6,...,8},
-        ymajorgrids=true,
-        xmajorgrids=true,
-        clip=false,
-        ]
-        \draw[ultra thick,->] (axis cs: 0,0) -- (\Ax,\Ay) node[above] {$\vec{A}$};
-        \draw[ultra thick,->,cyan] (0,0) -- (\Ax,0) node[above,pos=0.8] {$A_x = 6$};
-        \draw[ultra thick,->,red] (\Ax,0) -- ++(0,\Ay) node[right,pos=0.9] {$A_y = 4$};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-Therefore, the $x$ and $y$ components of vector $A$ are
-
-\begin{equation*}
-    \vec{A}_x = 6 \quad \text{and} \quad \vec{A}_y = 4
-\end{equation*}
-
-\solutionEnd
-\vspace{1em}
-
-The $x$- and $y$-components are always perpendicular, or at \ang{90}, to each other. 
-
-\begin{center}
-    \pgfplotsset{compat=1.11}
-    \def\A{6}
-    \def\angle{55}
-\begin{tikzpicture}
-    \begin{axis}[width=6cm,height=6cm,
-        axis lines=center,
-        axis line style={black!20},
-        xmin=0,xmax=5,
-        ymin=0,ymax=5,
-        clip=false,
-        ticks=none,
-        xlabel=$+x$,
-        ylabel=$+y$,
-    ]
-    \draw[blue,thick,->] (0,0) -- ({\A*cos(\angle)},0) node[pos=0.5,below] {$\vec{A}_x$};
-    \draw[red,thick,->] ({\A*cos(\angle)},0) -- ++(0,{\A*sin(\angle)}) node[pos=0.5, right] {$\vec{A}_y$};
-    \draw[ultra thick,->] (0,0) -- ({\A*cos(\angle)},{\A*sin(\angle)}) node[pos=0.5,above left] {$\vec{A}$};
-    \draw[thick] (0.6,0) arc (0:\angle:0.6) node[pos=0.75,right=2pt] {$\theta$};
-    \end{axis}
-\end{tikzpicture}
-\captionsetup{type=figure,margin=1in,font=scriptsize}
-\captionof{figure}{Vector $A$ and it's two components. $A_x$ is the horizontal component; $A_y$ is the vertical. The quantity $\theta$ is the angle between the $x$-axis and vector $A$.}
-\label{xXmnIC}
-\end{center}
-
-Since they form a right triangle, they combine together to give the length of the overall vector in accordance with the Pythagorean Theorem:
-
-\begin{equation} \label{NsyXHk}
-    A^2 = A_x^2 + A_y^2
-\end{equation}
-
-\clearpage
-
-\begin{example}
-    Consider vector $A$, whose $x$- and $y$-components are 3 and 4, respectively. Calculate the magnitude of $\vec{A}$.
-\end{example}
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[width=5cm,height=5cm,
-        axis lines=center,
-        axis line style={draw=none},
-        xmin=0,xmax=4,
-        ymin=0,ymax=4,
-        clip=false,
-        ticks=none,
-    ]
-    \draw[dashed,->] (0,0) -- (3,0) node[pos=0.5,below] {3};
-    \draw[dashed,->] (3,0) -- ++(0,4) node[pos=0.5, right] {4};
-    \draw[thick,->] (0,0) -- (3,4) node[pos=0.5,above left] {$\vec{A}$};
-    \draw (0.6,0) arc (0:53.13:0.6);
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\Solution We are given the magnitudes of the horizontal and vertical components: $A_x = 3$ and $A_y = 4$. The unknown we are looking for is the magnitude of the resultant vector: $A =\ ?$
-
-\vspace{1em}
-
-The given and unknown quantities are related by the Pythagorean theorem, Equation \eqref{NsyXHk}, as
-
-\begin{equation*}
-    A^2 = A_x^2 + A_y^2
-\end{equation*}
-
-Substituting given values leads to 
-
-\begin{equation*}
-    A^2 = 3^2 + 4^2
-\end{equation*}
-
-which simplifies to
-
-\begin{equation*}
-    A^2 = 25
-\end{equation*}
-
-To solve for $A$, we take the square root of both sides:
-
-\begin{equation*}
-    \sqrt{A^2} = \sqrt{25}
-\end{equation*}
-
-Therefore, 
-
-\begin{equation*}
-    A = 5
-\end{equation*}
-
-The magnitude of the vector whose $x$- and $y$-components are 3 and 4 is 5. 
-
-\solutionEnd
-
-\begin{example}
-    The magnitude of a two-dimensional vector is 185. If the magnitude of its vertical component is 153, calculate the magnitude of its $x$-component. 
-\end{example}
-
-\Solution We are given magnitudes of the vector and its $y$-component: $A = 185$ and $A_y = 153$. We are looking for the horizontal component: $A_x =\ ?$ The given and unknown quantities are related by the Pythagorean theorem (Eq.~\ref{NsyXHk}):
-
-\begin{equation*}
-    A^2 = A_x^2 + A_y^2
-\end{equation*}
-
-Substituting known values leads to 
-
-\begin{equation*}
-    185^2 = A_x^2 + 153^2
-\end{equation*}
-
-Since we are solving for $A_x$, let's re-write this equation by putting the unknown variable on the left, simply as 
-
-\begin{equation*}
-    A_x^2 + 153^2 = 185^2
-\end{equation*}
-
-We solve for the horizontal component as follows:
-
-\begin{align*}
-    \textbf{Add $153^2$} \qquad & A_x^2 + 153^2 \redminus \textcolor{red}{153^2} = 185^2 \redminus \textcolor{red}{153^2}\\[1ex]
-    \textbf{Simplify} \qquad & A_x^2 = 185^2 - 153^2\\[1ex]
-    \textbf{Simplify} \qquad & A_x^2 = \num{10816}\\[1ex]
-    \textbf{Take square root} \qquad & \sqrt{A_x^2} = \sqrt{\num{10816}}\\[1ex]
-    \textbf{Simplify} \qquad & A_x = 104
-\end{align*}
-
-Therefore, the magnitude of the horizontal ($x$) component of the vector is 104.
-
-\solutionEnd
-
-Take a look at Figure \ref{xXmnIC}. It's possible to find the magnitude of vector $A$ if you know the angle $\theta$ and either the $x$- or $y$-component. Vector $A$ is related to  angle $\theta$ and its components by the trig functions cosine (cos) and sine (sin), as follows:
-
-\begin{align}
-    A_x = A \cos{\theta} \label{06CyUc}\\[1ex]
-    A_y = A \sin{\theta} \label{aBWDIc}
-\end{align}
-
-\begin{example}
-    A vector with a magnitude of 25 is oriented \ang{36} above the horizontal, as shown below. Find the $x$- and $y$-components.
-\end{example}
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[width=5cm,height=5cm,
-        axis lines=center,
-        axis line style={draw=none},
-        xmin=0,xmax=4,
-        ymin=0,ymax=4,
-        clip=false,
-        ticks=none,
-    ]
-    \draw[dashed,->] (0,0) -- ({5*cos(36)},0) node[pos=0.5,below] {$A_x$};
-    \draw[dashed,->] ({5*cos(36)},0) -- ++(0,{5*sin(36)}) node[pos=0.5, right] {$A_y$};
-    \draw[thick,->] (0,0) -- ({5*cos(36)},{5*sin(36)}) node[pos=0.5,above left] {25};
-    \draw (0.6,0) arc (0:36:0.6) node [pos=0.75,right=2pt]{\ang{36}};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\Solution We are given the vector's magnitude and angle: $A = 25$ and $\theta=\ang{36}$. By Equation~\eqref{06CyUc}, the horizontal component is
-
-\begin{equation*}
-    A_x = A \cos{\theta} = 25 \cos{(\ang{36})} = 20.2
-\end{equation*}
-
-The vertical component, by Equation \eqref{aBWDIc}, is
-
-\begin{equation*}
-    A_y = A \sin{\theta} = 25 \sin{(\ang{36})} = 14.7
-\end{equation*}
-
-\solutionEnd
+Two-dimensional motion breaks down into two parts: projectile motion and circular motion.
 
 \subsection{Projectile Motion} \label{tMF7JY}
 
@@ -1019,7 +759,156 @@ At this point, this example is solved like the solutions to Examples \ref{lB7EDG
 
 Choosing the positive solution, we conclude that the rock will strike the ground 3.96 seconds after launch.
 
-\subsection*{\ref{tMF7JY} Exercises}
+
+\subsection{Uniform Circular Motion} \label{uPOucv}
+
+Circular motion is when an object moves in a circular path. Examples of circular motion include a race car speeding around a circular curve, a toy attached to a string swinging in a circle around your head, or the circular loop-the-loop on a roller coaster. The simplest case of circular motion is \gls{uniform circular motion}, where an object travels a circular path at a constant speed. Note that, unlike speed, the linear velocity of an object in circular motion is constantly changing because it is always changing direction. We know that acceleration is a change in velocity, either in magnitude or in direction or both. Therefore, an object undergoing uniform circular motion is always accelerating, even though the magnitude of its velocity is constant.
+
+\vspace{1em}
+
+You experience this acceleration yourself every time you ride in a car while it turns a corner. If you hold the steering wheel steady during the turn and move at a constant speed, you are executing uniform circular motion. What you notice is a feeling of sliding (or being flung, depending on the speed) away from the center of the turn. This isn't an actual force that is acting on you---it only happens because your body wants to continue moving in a straight line (as per Newton's first law) whereas the car is turning off this straight-line path. Inside the car it appears as if you are forced away from the center of the turn. This fictitious force is known as the \gls{centrifugal force}. The sharper the curve and the greater your speed, the more noticeable this effect becomes.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=7cm,height=7cm,
+        axis line style={draw=none},
+        ticks=none,
+        axis lines=middle,
+        xmin=-1,xmax=1,
+        ymin=-1,ymax=1,
+        clip=false,
+    ]
+    \draw[gray] (0,0) circle (1);
+    \fill (0,0) circle (1pt);
+    \fill ({cos(45)},{sin(45)}) circle (3pt) node[above right] {$m$};
+    \begin{scope}[shift={(axis direction cs: 0.04,-0.04)}]
+        \draw[dashed,<->] (0,0) -- ({cos(45)},{sin(45)}) node[pos=0.5,below right=-1pt] {$r$};
+    \end{scope}
+    \draw[Green,very thick,->] ({cos(45)},{sin(45)}) -- ++(axis direction cs: -0.3,-0.3) node[black,above=5pt,pos=1.2] {$a_{\text{c}}$};
+    \draw[red,very thick,->] ({cos(45)},{sin(45)}) -- ++(axis direction cs: -0.6,0.6) node[black,pos=1.1] {$v$};
+\end{axis}
+\end{tikzpicture}
+\captionsetup{type=figure,margin=1in,font=scriptsize}
+\captionof{figure}{Uniform circular motion, the radius of curvature and vectors for tangential velocity and centripetal acceleration. Compare this with the Ladybug Motion Simulation in Exercise \ref{N066SF}.}
+\label{4QmpMJ}
+\end{center}
+
+Other examples of (approximate) uniform circular motion include the \href{https://youtu.be/3NYlYN-QTig}{hammer throw}, a bicyclist rounding a turn on a curved path, and the Earth's orbit around the Sun. The \gls{tangential velocity} ($\vec{v}$) is the instantaneous linear velocity of the object in circular motion. If the circular motion is abruptly cut off (as in the hammer throw sport), the object moves in a straight line in the direction of the tangential velocity. \Gls{tangential speed} is the magnitude of the tangential velocity, with no regard for the direction. The \gls{radius of curvature} ($r$) is the distance between the center of the circle and the path. We call the acceleration of an object moving in uniform circular motion the \gls{centripetal acceleration} ($a_c$) because centripetal means \textit{center seeking}.
+
+\vspace{1em}
+
+Now that we know that the direction of centripetal acceleration is toward the center of rotation, let's discuss the magnitude of centripetal acceleration. For an object traveling at speed $v$ in a circular path with radius $r$, the magnitude of centripetal acceleration is
+
+
+\begin{equation} \label{5vsZ8y}
+    a_{\text{c}} = \frac{v^2}{r}\ 
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $a_{\text{c}}$ & centripetal acceleration & meter per second squared & \SI{}{m/s^2}\\
+        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
+        $r$ & radius & meter & \SI{}{m}\\
+    \hline
+    \end{tabular}
+\end{center}
+
+Centripetal acceleration is greater at high speeds and in sharp curves (smaller radius), as you may have noticed when driving a car, because the car actually pushes you toward the center of the turn. But it is a bit surprising that ac is proportional to the speed squared. This means, for example, that the acceleration is four times greater when you take a curve at \SI{20}{m/s} than at \SI{10}{m/s}.
+
+\vspace{1em}
+
+Because an object in uniform circular motion undergoes acceleration (by changing the direction of motion but not the speed), we know from Newton's second law of motion that there must be a net external force acting on the object. Since the magnitude of the acceleration is constant, so is the magnitude of the net force, and since the acceleration points toward the center of the rotation, so does the net force.
+
+\vspace{1em}
+
+Any force or combination of forces can cause a centripetal acceleration. Just a few examples are the tension in the rope on a tether ball, the force of Earth's gravity on the Moon, the friction between a road and the tires of a car as it goes around a curve, or the normal force of a roller coaster track on the cart during a loop-the-loop.
+
+\vspace{1em}
+
+The component of any net force that causes circular motion is called a \gls{centripetal force}. When the net force is equal to the centripetal force, and its magnitude is constant, uniform circular motion results. The direction of a centripetal force is toward the center of rotation, the same as for centripetal acceleration. According to Newton's second law of motion, a net force causes the acceleration of mass according to 
+
+\begin{equation*}
+    F_{\text{net}} = ma
+\end{equation*}
+
+For uniform circular motion, the acceleration is centripetal acceleration: 
+
+\begin{equation*}
+    a = a_c
+\end{equation*}
+
+Therefore, the magnitude of centripetal force, $F_c$, is $F_c = m a_c$. By using Equation \eqref{5vsZ8y} for the magnitude of centripetal acceleration, $a_c = v^2/r$, we get an expression involving the magnitude of the centripetal force in terms of tangential speed:
+
+\begin{equation} \label{4H9EJq}
+    F_c = m a_c = \frac{m v^2}{r}
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $F_{\text{c}}$ & centripetal force & newton & N\\
+        $m$ & mass & kilogram & \SI{}{kg}\\
+        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
+        $r$ & radius & meter & \SI{}{m}\\
+    \hline
+    \end{tabular}
+\end{center}
+
+Newton's second law also states that the object will accelerate in the same direction as the net force. By definition, the centripetal force is directed towards the center of rotation, so the object will also accelerate towards the center. A straight line drawn from the circular path to the center of the circle will always be perpendicular to the tangential velocity. 
+
+\begin{example}
+    A car follows a curve of radius \SI{500}{m} at a speed of \SI{25.0}{m/s} (about \SI{56}{mph}). What is the magnitude of the car's centripetal acceleration?
+\end{example}
+
+\Solution We are given the radius of curvature and the tangential velocity:
+
+\begin{equation*}
+    r = \SI{500}{m} \quad \text{and} \quad v = \SI{25}{m/s}
+\end{equation*}
+
+The unknown is centripetal acceleration: $a_c =\ ?$. By Equation \eqref{5vsZ8y},
+
+\begin{equation*}
+    a_c = \frac{v^2}{r} = \frac{25^2}{500} = 1.25 
+\end{equation*}
+
+The centripetal acceleration on the car is \SI{1.25}{m/s} (about 13\% of $g$, the acceleration due to gravity).
+
+\solutionEnd
+
+\begin{example}
+    What is the centripetal force exerted on a \SI{1600}{kg} car that rounds a \SI{100}{m} radius curve at \SI{12}{m/s}?
+\end{example}
+
+\Solution We are given mass, radius, and speed:
+
+\begin{equation*}
+    m = \SI{1600}{kg}\ , \quad 
+    r = \SI{100}{m}\ , \quad
+    v = \SI{12}{m/s}
+\end{equation*}
+
+The unknown is centripetal force: $F_c =\ ?$ The given and unknown values are related Equation \eqref{4H9EJq}:
+
+\begin{equation*}
+    F_c = \frac{m v^2}{r} = \frac{(1600)(12^2)}{100} = 2304
+\end{equation*}
+
+The centripetal force is 2304 newtons inward. 
+
+\solutionEnd
+
+\subsection{Exercises}
+
+\subsubsection*{\nameref{tMF7JY}}
 
 \begin{exercise} \label{90PABl}
     What is the angle between the $x$ and $y$ components of a vector?
@@ -1085,111 +974,22 @@ Choosing the positive solution, we conclude that the rock will strike the ground
     What is the optimum angle at which a projectile should be launched in order to cover the maximum distance?
 \end{exercise}
 
-\clearpage
+\subsubsection*{Uniform Circular Motion}
 
-\printnoidxglossaries
+\begin{exercise} \label{N066SF}
+    Bring Figure \ref{4QmpMJ} to life by taking the following steps:
 
-\subsection*{Answers to Select Exercises}
+    \begin{enumerate}
+    \setlength\itemsep{0.1ex}
+        \item Access the OpenStax Simulations (\href{https://veillette.github.io/simulations/}{click here}).
+        \item Click the simulation called ``Ladybug Motion.''
+        \item Under \texttt[Green]{Vectors}, check the boxes for \texttt[Green]{Show Velocity} and \texttt[Green]{Show Acceleration}. 
+        \item Towards the bottom, click \texttt[red]{Velocity}. Then, under \texttt[Green]{Remote Control}, drag the red button until you generate a red arrow about 1 centimeter in length. The Ladybug will start moving.
+        \item When the Ladybug is in motion, locate the \texttt[Green]{Motion} options, and select \texttt[Green]{Circular}. The Ladybug is now undergoing uniform circular motion.
+        \item Draw a sketch of the Ladybug and its velocity and acceleration vectors. Compare your sketch to Figure \ref{4QmpMJ}. 
+    \end{enumerate}
+\end{exercise}
 
-\ref{90PABl}. \ang{90}\\
-\ref{YYBBp5}. \SI{-9.8}{m/s^2}\\
-\ref{agp59Z}. \SI{1.1}{s}\\
-\ref{Xu3FK9}. \SI{90.4}{m}\\
-\ref{piJ9kJ}. \SI{31.3}{m/s}\\
-\ref{sy5RGT}. Vertical (or $y$)\\
-\ref{N0Bwou}. \SI{21.8}{m/s}\\
-\ref{lhjg95}. \SI{84.9}{m}\\
-\ref{wlbvvu}. See Equation \eqref{SjYaoE}\\
-\ref{xj6gln}. Range is horizontal.\\
-\ref{5wfdN0}. \ang{0} or \ang{90}\\
-\ref{DnqDpu}. \SI{0}{m/s^2}. Gravitational acceleration is vertical only.\\
-\ref{QsBUvP}. \ang{45}\\
-
-\subsection{Uniform Circular Motion} \label{uPOucv}
-
-\Gls{UCM} is the motion of an object in a circular path at a constant speed. Examples of (approximate) uniform circular motion include the \href{https://youtu.be/3NYlYN-QTig}{hammer throw}, a bicyclist rounding a turn on a curved path, and the Earth's orbit around the Sun. The \gls{tangential velocity} ($\vec{v}$) is the instantaneous linear velocity of the object in circular motion. If the circular motion is abruptly cut off (as in the hammer throw sport), the object moves in a straight line in the direction of the tangential velocity. \Gls{tangential speed} is the magnitude of the tangential velocity, with no regard for the direction. The \gls{radius of curvature} ($r$) is the distance between the center of the circle and the path. Since the object revolves around the center of the circle, its acceleration is said to be ``center-seeking.''
-
-\begin{center}
-\centering
-\begin{tikzpicture}
-\pgfplotsset{compat=1.11}
-\begin{axis}[
-    width=6cm,height=6cm,
-    axis line style={draw=none},
-    ticks=none,
-    axis lines=middle,
-    xmin=-1,xmax=1,
-    ymin=-1,ymax=1,
-    clip=false,
-]
-    % \draw[red] (-0.7,-0.4) rectangle (1,1.5);
-    \draw[gray] (0,0) circle (1);
-    \fill (0,0) circle (1pt);
-    \fill ({cos(45)},{sin(45)}) circle (3pt) node[right=2pt] {$m$};
-    \begin{scope}[xshift=0.12cm,yshift=-0.12cm]
-        \draw[dashed] (0,0) node[rotate=45] {\tiny $|$} -- ({cos(45)},{sin(45)}) node[rotate=45] {\tiny $|$};
-        \node at (0.4,0.2) {$r$};
-    \end{scope}
-    \draw[ultra thick,->] ({cos(45)},{sin(45)}) -- (0.3,0.3) node[left] {$a_{\text{c}}$};
-    \draw[thick,->] ({cos(45)},{sin(45)}) -- ++(axis direction cs: -0.6,0.6) node[left] {$v$};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{mdframed}[backgroundcolor=black!10]
-\Gls{centripetal acceleration} is the acceleration of an object moving in a circle, directed toward the center of the circle. The equation for centripetal acceleration is
-
-
-\begin{equation} \label{5vsZ8y}
-    a_{\text{c}} = \frac{v^2}{r}\ 
-\end{equation}
-
-\begin{center}
-    \begin{tabular}{cl|cl}
-    \hline
-    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
-    \hline\hline
-    \rule{0pt}{2.5ex}
-        $a_{\text{c}}$ & centripetal acceleration & meter per second squared & \SI{}{m/s^2}\\
-        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
-        $r$ & radius & meter & \SI{}{m}\\
-    \hline
-    \end{tabular}
-\end{center}
-\end{mdframed}
-
-Recall that Newton's Second Law of Motion relates force, mass, and acceleration:
-
-\begin{equation*}
-    F_{\text{net}} = ma
-\end{equation*}
-
-Therefore, if we know the mass of the object, we can multiply it by its centripetal acceleration to get a centripetal force.
-
-\begin{mdframed}[backgroundcolor=black!10]
-\Gls{centripetal force} is any force causing uniform circular motion. This force is in the direction of the centripetal acceleration: towards the center of the circle.
-
-\begin{equation} \label{qzzym8}
-    F_{\text{c}} = m a_{\text{c}} = \frac{m v^2}{r}
-\end{equation}
-
-\begin{center}
-    \begin{tabular}{cl|cl}
-    \hline
-    \textbf{Symbol} & \textbf{Quantity} & \textbf{Unit} & \textbf{Unit Symbol}  \\
-    \hline\hline
-    \rule{0pt}{2.5ex}
-        $F_{\text{c}}$ & centripetal force & newton & N\\
-        $m$ & mass & kilogram & \SI{}{kg}\\
-        $v$ & tangential speed & meter per second & \SI{}{m/s} \\
-        $r$ & radius & meter & \SI{}{m}\\
-    \hline
-    \end{tabular}
-\end{center}
-\end{mdframed}
-
-\subsection*{\ref{uPOucv} Exercises}
-\begin{multicols}{2}
 \begin{exercise} \label{x2YCzr}
     What is meant by the word \textit{centripetal}?
 \end{exercise}
@@ -1202,20 +1002,21 @@ Therefore, if we know the mass of the object, we can multiply it by its centripe
     Suppose you have an object tied to a rope and are rotating it over your head in uniform circular motion. If you increase the length of the rope, would you have to apply more or less force to maintain the same speed?
 \end{exercise}
 
-\begin{exercise} \label{DeBjJa}
-    What is the centripetal force exerted on a \SI{1600}{kg} car that rounds a \SI{100}{m} radius curve at \SI{12}{m/s}?
+\begin{exercise} \label{kTvEZX}
+    What is the centripetal acceleration felt by the passengers of a car moving at \SI{12}{m/s} along a curve with radius \SI{2.0}{m}?
 \end{exercise}
+
 
 \begin{exercise} \label{MJm5VE}
     Find the frictional force between the tires and the road that allows a \SI{1000}{kg} car traveling at \SI{30}{m/s} to round a \SI{20}{m} radius curve.
 \end{exercise}
 
 \begin{exercise} \label{fsjtBV}
-    Select the quantity that is constant in uniform circular motion: speed, velocity, acceleration, displacement.
+    Which of the following quantities is constant in uniform circular motion? Speed, velocity, acceleration, displacement.
 \end{exercise}
 
 \begin{exercise} \label{GD8Yff}
-    List all the quantities that influence centripetal force.
+    List the three quantities that influence centripetal force.
 \end{exercise}
 
 \begin{exercise} \label{aEtlVz}
@@ -1250,7 +1051,6 @@ Therefore, if we know the mass of the object, we can multiply it by its centripe
     What is the angle formed between the vectors of centripetal acceleration and centripetal force?
 \end{exercise}
 
-
 \begin{exercise} \label{M6NkHB}
     As the mass of an object in uniform circular motion increases, what happens to the centripetal force required to keep it moving at the same speed?
 \end{exercise}
@@ -1267,495 +1067,43 @@ Therefore, if we know the mass of the object, we can multiply it by its centripe
 An 89-kg system consisting of a bicycle and rider are rounding a turn at \SI{16}{m/s} on a path with a radius of curvature of \SI{25}{m}. (a) What is the centripetal acceleration on the system? (b) What is the centripetal force?
 \end{exercise}
 
-{\color{cyan} \hrule}
-\vspace{2ex}
-
-\ref{B208cB}--\ref{416pje} Calculate (a) centripetal acceleration and (b) centripetal force for an object in uniform circular motion for the given quantities.
-
-\begin{exercise} \label{B208cB}
-mass is \SI{45}{kg}, tangential speed is \SI{7}{m/s}, radius of curvature is \SI{10}{m}
-\end{exercise}
-
-\begin{exercise}
-tangential speed is \SI{18}{m/s}, mass is \SI{2000}{kg}, radius of curvature is \SI{24}{m}
-\end{exercise}
-
-\begin{exercise}
-radius of curvature is \SI{3}{m}, mass is \SI{842}{kg}, tangential speed is \SI{92}{m/s}
-\end{exercise}
-
-\begin{exercise}
-radius of curvature is \SI{45}{m}, tangential speed is \SI{15}{m/s}, mass is \SI{1961}{kg}
-\end{exercise}
-
-\begin{exercise}\label{416pje}
-tangential speed is \SI{6}{m/s}, radius of curvature is \SI{20}{m}, mass is \SI{1540}{kg}
-\end{exercise}
-
-
-\end{multicols}
-
-
 
 \clearpage
 
-\subsection{Newton's Law of Universal Gravitation}
 
-\framebox{\textbf{Link}} \textit{PhET Simulation}: ``Gravity Force Lab'' (\href{https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_en.html}{click here})
-
-\begin{mdframed}[backgroundcolor=black!10]
-\Gls{NLUG} calculates the magnitude of the gravitational force that two objects, separated by some distance, exert on each other.
-\vspace{-1cm}
-
-\begin{center}
-    \centering
-    \begin{tikzpicture}
-        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {$m_1$};
-        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {$m_2$};
-        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
-        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
-        \fill (0,0) circle[radius=2pt]; %node[below] {\tiny CM};
-        \fill (5,0) circle[radius=2pt]; %node[below] {\tiny CM};
-        \draw[<->] (0,0.2) -- (5,0.2);
-        \node at (2.5,0.35) {$r$};
-    \end{tikzpicture}
-    %\caption{The model for Newton's law of universal gravitation.}
-    \label{fig:Newton_Law_Universal_Gravitation}
-    \end{center}
-
-The equation for the law of gravitation is
-
-\begin{equation} \label{eq:NLUG}
-    F = \frac{G m_1 m_2}{r^2}
-\end{equation}
-
-\begin{center}
-    \begin{tabular}{cl|cl}
-    \hline
-    \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
-    \hline\hline
-    \rule{0pt}{2.5ex}
-        $F$ & gravitational force between two masses & Newton & N\\
-        $G$ & gravitational constant & (\textit{see} $\rightarrow$) & \SI{}{N \cdot m^2/kg^2}\\
-        $m_1$ & mass of object 1 & kilogram & kg\\
-        $m_2$ & mass of object 2 & kilogram & kg\\
-        $r$ & distance between centers of mass & meter & m\\
-    \hline
-    \end{tabular}
-\end{center}
-
-The \gls{GravConst} is always the same number (that's why it's a constant) and must be used any time the law of gravitation is applied. It's
-
-\begin{equation*}
-    G = \SI{6.67e-11}{\frac{N \cdot m^2}{kg^2}}
-\end{equation*}
-\end{mdframed}
-
-
-
-
-\begin{example}
-Consider two spheres of mass \SI{100.0}{kg} and \SI{400.0}{kg} whose centers are separated by \SI{4.00}{m}. What is the magnitude of the gravitational force between them?
-\vspace{1ex}
-
-\Solution We are given two masses and the distance between them: $m_1 = \SI{100.0}{kg}$, $m_2 = \SI{400}{kg}$, $r = \SI{4.00}{m}$. Also, remember that $G = \SI{6.67e-11}{N\,m^2/kg^2}$. By Newton's law of universal gravitation (Eq.~\ref{eq:NLUG}), the gravitational force is
-
-\begin{equation*}
-    F = \frac{G m_1 m_2}{r^2} = 
-    \frac{\left(\SI{6.67e-11}{}\right) \left(100\right) \left(400\right)}{\left(4.00\right)^2} = 
-    \SI{1.67e-7}{N}
-\end{equation*}
-\end{example}
-
-\cyanhrule
-\vspace{2ex}
-
-Calculate the magnitude of the gravitational force between two objects.
-
-\begin{exercise} \label{9DkhbB}
-Two objects of mass \SI{707}{kg} and \SI{279}{kg} are separated by \SI{12}{m}. 
-\end{exercise}
-
-
-
-\begin{exercise} \label{MMnbpt}
-What is the gravitational force between the objects below?
-\vspace{-2em}
-
-\begin{center}
-    \centering
-    \begin{tikzpicture}
-        \draw[lightgray] (0,0) circle (0.5cm) node[black,above,inner sep=0.6cm] {\SI{5}{kg}};
-        \draw[lightgray] (5,0) circle (0.7cm) node[black,above,inner sep=0.8cm] {\SI{10}{kg}};
-        \fill (0,0) circle (2pt); %node[below] {\tiny CM};
-        \fill (5,0) circle (2pt); %node[below] {\tiny CM};
-        \draw[<->] (0,0.2) -- (5,0.2);
-        \node at (2.5,0.4) {\SI{25}{cm}};
-        \draw[->,thick] (0,0) -- (2,0) node[below left] {$F$};
-        \draw[->,thick] (5,0) -- (3,0) node[below right] {$F$};
-    \end{tikzpicture}
-\end{center}
-\end{exercise}
-
-\begin{example}
-    The magnitude of the gravitational force that a 620-kg sphere and a 890-kg one exert on each other is \SI{7.52e-7}{N}. What is the distance between the spheres?
-\end{example}
-
-\Solution We are given two masses and the gravitational force: $m_1 = \SI{620}{kg}$, $m_2 = \SI{890}{kg}$, and $F = \SI{7.52e-7}{N}$. We are solving for distance: $r=$ ? These quantities are related by Newton's law of universal gravitation:
-
-\begin{equation*}
-    F = \frac{G m_1 m_2}{r^2}
-\end{equation*}
-
-To solve this equation for distance $r$, we take the following steps:
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Substitute given values} & \hspace{-3em} &
-    \SI{7.52e-7}{} = \frac{
-        \left(\SI{6.67e-11}{}\right)
-        \left(620\right)
-        \left(890\right)
-    }{r^2}
-\end{align*}
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
-    \SI{7.52e-7}{} = \frac{\SI{3.68e-5}{}}{r^2}
-\end{align*}
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Re-write} & \hspace{-3em} &
-    \frac{\SI{7.52e-7}{}}{1} = \frac{\SI{3.68e-5}{}}{r^2}
-\end{align*}
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Swap terms} & \hspace{-3em} &
-    \frac{r^2}{1} = \frac{\SI{3.68e-5}{}}{\SI{7.52e-7}{}}
-\end{align*}
-
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Simplify} & \hspace{-3em} &
-    r^2 = 48.9
-\end{align*}
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Take the square root} & \hspace{-3em} &
-    \sqrt{r^2} = \sqrt{48.9}
-\end{align*}
-
-\begin{align*}
-    \hspace{-3.5em} & \textbf{Therefore:} & \hspace{-3em} &
-    r = \SI{7.00}{m}
-\end{align*}
-
-
-\begin{exercise} \label{dKPTLZ}
-The gravitational force between two planetary bodies is \SI{2.52e20}{N}. The bodies' masses are \SI{3.9e23}{kg} and \SI{1.4e24}{kg}. What is the distance between the objects?
-\end{exercise}
-
-
-\hrule
-
-\begin{exercise} \label{zw3NbF}
-What is the distance between the objects below?
-
-\begin{center}
-    \centering
-    \begin{tikzpicture}
-        \fill (0,0) circle[radius=3pt]; %node[below] {\tiny CM};
-        \fill (5,0) circle[radius=3pt]; %node[below] {\tiny CM};
-        \draw[<->] (0,0.2) -- (5,0.2);
-        \node at (2.5,0.4) {$r$};
-        \draw (0,0) circle (0.5cm) node[above,inner sep=0.5cm] {\SI{100}{kg}};
-        \draw (5,0) circle (0.7cm) node[above,inner sep=0.7cm] {\SI{4.0e3}{kg}};
-        \draw[->,thick] (0,0) -- (2,0);
-        \draw[->,thick] (5,0) -- (3,0) ;
-        \node at (1.5,-0.3) {\SI{2.6e-6}{N}};
-        % \node at (3.8,-0.25) {$F$};
-    \end{tikzpicture}
-\end{center}
-\end{exercise}
-
-
-% \begin{center}
-%     \centering
-%     \begin{tikzpicture}
-%         \fill (0,0) circle[radius=3pt]; %node[below] {\tiny CM};
-%         \fill (5,0) circle[radius=3pt]; %node[below] {\tiny CM};
-%         \draw[<->] (0,0.2) -- (5,0.2);
-%         \node at (2.5,0.4) {$r$};
-%         \draw (0,0) circle (0.5cm) node[above,inner sep=0.5cm] {\SI{120}{kg}};
-%         \draw (5,0) circle (0.7cm) node[above,inner sep=0.7cm] {\SI{434}{kg}};
-%         \draw[->,thick] (0,0) -- (2,0);
-%         \draw[->,thick] (5,0) -- (3,0) ;
-%         \node at (1.5,-0.3) {\SI{8.0e-7}{N}};
-%         % \node at (3.8,-0.25) {$F$};
-%     \end{tikzpicture}
-% \end{center}
-
-\cyanhrule
-
-\subsection{Factor of Change Method}
-
-The \textbf{factor of change method} allows you to calculate proportional changes in the gravitational force with proportional changes in distance and/or mass. Let Let $F$ be the original force and $F'$ be the changed force. The factors of change get plugged into the corresponding parentheses below:
-
-\begin{equation*}
-    \frac{F'}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(\ )(\ )}{(\ )^2}
-\end{equation*}
-
-The two basic rules are summarized as follows:
-
-\begin{enumerate}
-\setlength\itemsep{0ex}
-    \item If a quantity stays constant, plug in a 1 in the place where that quantity appears in the equation. Since $G$ is a constant, always plug in 1 for $G$.
-    \item If a quantity changes by a factor other than 1, plug that factor in the equation. (For example, if distance doubles, plug in a 2 in the place of $r$.)
-\end{enumerate}
-
-
-
-\begin{example} \label{ex5bd1}
-Two spheres are separated by 18 meters, and the gravitational force between them is \SI{3.0e-7}{N}. (a) If the distance between the objects is halved (changed to 9 meters), by what factor does the gravitational force change? (b) What is the new magnitude of the gravitational force?
-\end{example}
-
-\Solution Since the objects get closer, we expect the gravitational force to increase. Distance changes from \SI{18}{m} to \SI{9}{m}, implying that $r$ \textit{decreases} by a factor of 2. In other words, $r$ changes factor of $\frac{1}{2}$. All other factors stay constant. 
-
-\begin{equation*}
-    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\left(\frac{1}{4}\right)} = 4
-\end{equation*}
-
-This means $F'$ is 4 times greater than the original force $F$, as we expected:
-
-\begin{equation*}
-    F' = 4 F = 4 \times  \left(\SI{3.0e-7}{N}\right) = \SI{1.2e-6}{N}
-\end{equation*}
-
-
-\vspace{1em}
-\hrule
-
-\begin{example}
-If the distance in Example~\ref{ex5bd1} \textit{increases} by 2 rather than decreases, what is the proportional change in the gravitational force?
-\end{example} 
-
-\Solution Now $r$ changes by a factor of 2, and $m_1$ and $m_2$ continue staying the same:
-
-\begin{equation*}
-    \frac{F^{\prime}}{F} \sim \frac{G m_1 m_2}{r^2} \sim \frac{(1)(1)(1)}{(2)^2} = \frac{1}{2^2} =\frac{1}{4}
-\end{equation*}
-
-$F'$ will decrease to $\frac{1}{4}$ the magnitude of $F$.
-
-\vspace{1ex}
-\cyanhrule
-\vspace{1ex}
-
-The gravitational force, as shown in the previous examples, is known as an ``inverse-square law,'' since force scales as 1 over the distance squared:
-
-\begin{equation*} \tag{inverse-square law}
-    F \sim \frac{1}{r^2} \hspace{3em}
-\end{equation*}
-
-\begin{exercise} \label{WhkfQ4}
-By what factor does the gravitational force $F$ change if the distance $r$ is increases to $3r$? (See Figure~\ref{fig:Newton_Law_Universal_Gravitation}.) 
-\end{exercise}
-
-\begin{exercise} \label{CqOs7y}
-By what factor does the gravitational force $F$ change if the distance $r$ is changes to 10\% of $r$? 
-\end{exercise}
-
-\begin{exercise} \label{PwaIbN}
-By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 4?
-\end{exercise}
-
-\begin{exercise} \label{akw9Hx}
-By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 4?
-\end{exercise}
-
-\begin{exercise} \label{Dhfy9M}
-By what factor does the gravitational force between two objects change when the distance between them \textit{increases} by a factor of 5?
-\end{exercise}
-
-\begin{exercise} \label{gjeHTU}
-By what factor does the gravitational force between two objects change when the distance between them \textit{decreases} by a factor of 5?
-\end{exercise}
-
-\begin{exercise} \label{yXaSNL}
-Calculate Earth's tangential speed in its orbit around the Sun. Assume that the centripetal force on Earth is the gravitational force exerted on Earth by the Sun. The mass of the Sun is \SI{1.99e30}{kg}, and the average distance between Earth and the Sun is \SI{1.5e11}{m}.
-\end{exercise}
-
-\cyanhrule
-\clearpage
-\subsection{Acceleration due to gravity, $g$}
-
-\begin{example}
-Show that an object of any mass $m$ that is in free-fall near the surface of Earth will accelerate downwards due to gravity at a rate of $g = \SI{9.8}{m/s^2}$. You'll need the planetary data summarized below:
-
-\begin{center}
-    \centering
-    \begin{tabular}{c|c}
-        \textbf{Earth's mass} & \textbf{Earth's radius} \\
-        \hline
-        \SI{5.9736e24}{kg} & \SI{6.376e6}{m}\\
-    \end{tabular}
-\end{center}
-\end{example}
-
-\Solution Let's re-write Newton's Law of Universal Gravitation (Eq.~\ref{eq:NLUG}) as
-
-\begin{equation*}
-    F = \frac{G m M}{R^2}\ ,
-\end{equation*}
-
-where $M = \SI{5.97e24}{kg}$ is Earth's mass, and $R = \SI{6.38e6}{m}$ is Earth's radius. The distance between the centers of mass of Earth and object $m$ is Earth's radius, as the picture below depicts:
-
-% \begin{equation*}
-%     r = R_{\mathrm{\Earth}} = \SI{6.376e6}{m}.
-% \end{equation*}
-
-\begin{center}
-    \centering
-    \begin{tikzpicture}
-        \fill (0,0) circle (2pt) node[right,inner sep=5pt] {\tiny CM};
-        \draw[<->] (0,-0.1) -- (0,-2);
-        \draw[->,thick] (0,2.1) -- (0,1) node[anchor=south east,inner sep = 5pt] {$F$};
-        \node at (0.3,-1) {$R_{\text{Earth}}$};
-        \draw (0,0) circle (2cm) node[left,inner sep=4pt] {$M$};
-        \fill (0,2.15) circle (2pt) node[above,inner sep = 4pt] {$m$};
-        \node at (2.6,0) {Earth};
-    \end{tikzpicture}
-\end{center}
-
-Recall that Newton's Second Law of Motion (from Unit 4) states
-
-\begin{equation*}
-    F_{\text{net}} = m a
-\end{equation*}
-
-The only force on $m$ is the gravitational force from Earth. Combining Newton's 2nd Law with Newton's Law of Universal Gravitation leads to
-
-\begin{equation*}
-    F = ma = \frac{G m M}{R^2}
-\end{equation*}
-
-Since mass $m$ appears on both sides of the equation, it cancels:
-
-\begin{equation*}
-    \textcolor{red}{\cancel{m}}a = \frac{G \textcolor{red}{\cancel{m}} M}{R^2}
-\end{equation*}
-
-leaving only
-
-\begin{equation*}
-    a = \frac{G M}{R^2}
-\end{equation*}
-
-When planetary mass and radius are plugged in, this acceleration is defined as \textit{acceleration due to gravity}, $g$, near the planet's surface:
-
-\begin{equation}
-    g = \frac{GM}{R^2}
-\end{equation}
-
-
-Plugging in Earth's mass and radius leads to 
-
-\begin{equation*} 
-    g = \frac{GM}{R^2} = \frac{\left(\SI{6.674e-11}{}\right)\left(\SI{5.97e24}{}\right)}{\left(\SI{6.38e6}{m}\right)^2} = \SI{9.81}{m/s^2}
-\end{equation*}
-
-
-
-
-\begin{exercise} \label{knMwSV}
-The Moon is about 384,000 kilometers away. What is the acceleration due to gravity from Earth at the halfway point to the Moon? 
-\end{exercise}
-
-\hrule
-
-% \textit{Solution}
-
-% \textbf{Known}: $h = \SI{384000}{km} = \SI{3.84e8}{m}$, $M = \SI{5.9736e24}{kg}$, $R_{\mathrm{\Earth}} = \SI{6.376e6}{m}$
-
-% Then
-
-% \begin{equation*}
-%     g = \frac{GM}{r^2} = \frac{G M}{\left(R_{\Earth} + h\right)^2} = \SI{0.010}{m/s^2}
-% \end{equation*}
-
-
-
-\clearpage
-\printnoidxglossaries
-
-
-\clearpage
 \subsection{Answers to Select Exercises}
-
-\begin{multicols}{2}
-\ref{x2YCzr}. Center-seeking
-
-\ref{S4rGIt}. (a) tangential \hspace{1em} (b) radially inward.
-
+\ref{90PABl}. \ang{90}\\
+\ref{YYBBp5}. \SI{-9.8}{m/s^2}\\
+\ref{agp59Z}. \SI{1.1}{s}\\
+\ref{Xu3FK9}. \SI{90.4}{m}\\
+\ref{piJ9kJ}. \SI{31.3}{m/s}\\
+\ref{sy5RGT}. Vertical (or $y$)\\
+\ref{N0Bwou}. \SI{21.8}{m/s}\\
+\ref{lhjg95}. \SI{84.9}{m}\\
+\ref{wlbvvu}. See Equation \eqref{SjYaoE}\\
+\ref{xj6gln}. Range is horizontal.\\
+\ref{5wfdN0}. \ang{0} or \ang{90}\\
+\ref{DnqDpu}. \SI{0}{m/s^2}. Gravitational acceleration is vertical only.\\
+\ref{QsBUvP}. \ang{45}\\
+\ref{x2YCzr}. Center-seeking\\
+\ref{S4rGIt}. (a) tangential \hspace{1em} (b) radially inward.\\
 \ref{aVu3ZA}. Less force. In Equation~(\ref{qzzym8}), radius (the length of the rope) is in the denominator of the fraction. This means that force and radius are \textit{inversely proportional}: if one goes up, the other goes down. By \textit{increasing} the radius (the length of the rope), the centripetal force must \textit{decrease}.
-
-\ref{DeBjJa}. \SI{2304}{N}
-
-\ref{MJm5VE}. \SI{45000}{N}
-
-\ref{fsjtBV}. Speed. The others are vectors whose directions may change.
-
-\ref{GD8Yff}. Mass, speed, and radius. See Eq.~(\ref{qzzym8}).
-
-\ref{aEtlVz}. radius of curvature
-
-\ref{5lauZ6}. Acceleration is inversely proportional to radius (Eq.~\ref{5vsZ8y}). Therefore, assuming speed stays the same, as radius \textit{decreases} (as the circle gets smaller), acceleration \textit{increases}. See, also, Exercise \ref{aVu3ZA}.
-
-\ref{KB7t4k}. Sharper curve means smaller radius of curvature. As radius decreases, acceleration increases. See Exercise \ref{5lauZ6}.
-
-\ref{jb3iGO}. vector
-
-\ref{TUxTQh}. meters per second squared (\SI{}{m/s^2})
-
-\ref{9YKhPo}. newton (N)
-
-\ref{wS6Htw}. \SI{90}{\degree}
-
-\ref{barV9C}. \SI{0}{\degree}
-
-\ref{M6NkHB}. Centripetal force must increase. Equation (\ref{qzzym8}) suggests that force and mass are \textit{directly proportional}: if one increases, the other goes increases too. 
-
-\ref{IAjJBC}. Yes. Although the object is not speeding up or slowing down, the direction of the velocity vector continuously changes. 
-
-\ref{G8I4Up}. In the direction of the tangential velocity at the instant the force was removed.
-
-\ref{Kv8Old}. (a) \SI{10.24}{m/s^2} \hspace{1em} (b) \SI{911}{N}
-
-\ref{9DkhbB}. \SI{9.14e-8}{N}
-
-\ref{MMnbpt}. \SI{5.3e-8}{N}
-
-\ref{zw3NbF}. \SI{3.2}{m}
-
-\ref{knMwSV}. \SI{0.010}{m/s^2}
-
-\ref{WhkfQ4}. $\frac{1}{9}$
-
-\ref{CqOs7y}. 100
-
-\ref{PwaIbN}. $\frac{1}{16}$
-
-\ref{akw9Hx}. 16
-
-\ref{Dhfy9M}. $\frac{1}{25}$
-
-\ref{gjeHTU}. 25
-
-\ref{yXaSNL}. \SI{2.98e4}{m/s} ($\approx \SI{30}{km/s}$)
-
-\ref{dKPTLZ}. \SI{3.8e8}{m}
-
-\end{multicols}
-
+\ref{kTvEZX}. \SI{72}{m/s^2}\\
+\ref{MJm5VE}. \SI{45000}{N}\\
+\ref{fsjtBV}. Speed. The others are vectors whose directions may change.\\
+\ref{GD8Yff}. Mass, speed, and radius. See Eq.~(\ref{qzzym8}).\\
+\ref{aEtlVz}. radius of curvature\\
+\ref{5lauZ6}. Acceleration is inversely proportional to radius (Eq.~\ref{5vsZ8y}). Therefore, assuming speed stays the same, as radius \textit{decreases} (as the circle gets smaller), acceleration \textit{increases}. See, also, Exercise \ref{aVu3ZA}.\\
+\ref{KB7t4k}. Sharper curve means smaller radius of curvature. As radius decreases, acceleration increases. See Exercise \ref{5lauZ6}.\\
+\ref{jb3iGO}. vector\\
+\ref{TUxTQh}. meters per second squared (\SI{}{m/s^2})\\
+\ref{9YKhPo}. newton (N)\\
+\ref{wS6Htw}. \SI{90}{\degree}\\
+\ref{barV9C}. \SI{0}{\degree}\\
+\ref{M6NkHB}. Centripetal force must increase. Equation (\ref{qzzym8}) suggests that force and mass are \textit{directly proportional}: if one increases, the other goes increases too. \\
+\ref{IAjJBC}. Yes. Although the object is not speeding up or slowing down, the direction of the velocity vector continuously changes. \\
+\ref{G8I4Up}. In the direction of the tangential velocity at the instant the force was removed.\\
+\ref{Kv8Old}. (a) \SI{10.24}{m/s^2} \hspace{1em} (b) \SI{911}{N}\\
 
 
 \end{document}

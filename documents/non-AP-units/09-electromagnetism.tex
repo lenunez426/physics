@@ -1,33 +1,8 @@
-\documentclass{article}
-\input{../preamble}
-\input{unit9glossary}
-
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\headruleskip}{0mm}
-\fancyhead{}
-
-
-\numberwithin{equation}{section}
-\setcounter{section}{9}
-\numberwithin{figure}{section}
-
-
-\title{Unit 9: Electromagnetism}
-\author{Physics\footnote{Access for free at \href{\openstax}{\openstax}} \hspace{0.1ex} at Cypress Springs High School}
-\date{Updated on \today}
-\openstaxfooter
-
-\makenoidxglossaries
-
-
-
+\documentclass[main.tex]{subfiles}
 
 \begin{document}
 
-\maketitle
+\section{Electromagnetism}
 
 \subsection{Magnetism} \label{24h7hD}
 
@@ -152,7 +127,7 @@ A compass is a tiny magnet on a pivot. Like any ordinary magnet, the north pole 
 
 \begin{center}
 \begin{tikzpicture}
-    \node[rotate=23.5] at (4,0) {\includegraphics[width=5cm]{Figures/Unit10_PhET_Earth.png}};
+    \node[rotate=23.5] at (4,0) {\includegraphics[width=5cm]{figures/Unit10_PhET_Earth.png}};
     \begin{scope}[rotate=-45,transform shape,yshift=8mm,xshift=-2mm]
         \draw (0,0) circle (1);
         \node[below] at (0,1) {N};
@@ -170,10 +145,6 @@ A compass is a tiny magnet on a pivot. Like any ordinary magnet, the north pole 
 \end{center}
 
 \vfill
-
-
-
-% What happens to magnetic field lines when two magnets are placed close together? Field lines get warped. See Figure \ref{fig:Figure20.11}
 
 \subsection*{\ref{24h7hD} Exercises}
 
@@ -272,7 +243,7 @@ Electric current flowing through a straight wire creates a unique, 3-dimensional
 \hspace{1em}
 \begin{minipage}{0.3\textwidth}
     \centering
-        \includegraphics[width=3.6cm]{Figures/Unit10_RightHandRule.jpeg}
+        \includegraphics[width=3.6cm]{figures/Unit10_RightHandRule.jpeg}
 \end{minipage}
     \captionsetup{type=figure,margin=1in}
     \captionof{figure}{An electric current ($I$) flowing upwards through a wire and the resulting magnetic field ($B$) surrounding the wire. The right-hand rule helps you visualize the magnetic field around the wire. \textbf{Art credit}: Ryan O.~(2023).}
