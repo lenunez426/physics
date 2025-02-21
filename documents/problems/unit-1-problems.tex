@@ -1,16 +1,6 @@
-% \documentclass[dvipsnames,answers]{exam}
-% \input{global}
-% \input{problem-sets}
-
-% \setrandomizerseed{1}
-
-% \firstpageheader{Physics}{Unit 1: Constant Motion}{Problems}
-% \runningheader{}{}{}
-% \pagestyle{empty}
 \documentclass[../main-physics-problems.tex]{subfiles}
-
 \begin{document}
-% \section{Constant Motion}
+
 \subsection{Location and How Far}
 \subsubsection{Position, Displacement, and Distance}
 
@@ -370,28 +360,155 @@ A bus travels 280\,km south for 3.2 hours, stops for a lunch break for 0.4 hours
 \end{EnvUplevel}
 
 \question
-\phantom{.}
+Consider the following motion graph.
 
 \begin{center}
-    \includegraphics[width=14cm]{documents/figures/murray-graphing-speed-slope-2.png}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (meters)},
+        xlabel={Time (seconds)},
+        ymin=0,ymax=350,
+        xmin=0,xmax=11,
+        ytick={0,50,...,350},
+        xtick={0,1,...,11},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:10] {30*x};
+    \end{axis}
+\end{tikzpicture}
 \end{center}
+
+\begin{parts}
+\part 
+When did the object reach 150 meters?
+
+\part 
+Where was the object at 9 seconds?
+
+\part
+Find the slope of the graph. Show all your work.
 
 \begin{solution}
-    5 seconds.
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (meters)},
+        xlabel={Time (seconds)},
+        ymin=0,ymax=350,
+        xmin=0,xmax=11,
+        ytick={0,50,...,350},
+        xtick={0,1,...,11},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:10] {30*x};
+        \fill[red] (5,150) circle (3pt);
+        \fill[red] (10,300) circle (3pt);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
 
-    About 275 meters.
+Using the two coordinates shown above, the slope is rise over run:
 
-    \begin{equation*}
-        \text{slope} = \frac{\SI{150}{m} - \SI{0}{m}}{\SI{5}{m} - \SI{0}{m}} = \boxed{\SI{30}{m/s}}
-    \end{equation*}
+\begin{equation*}
+    \text{slope} = \frac{\SI{300}{m} - \SI{150}{m}}{\SI{10}{s} - \SI{5}{s}} = \boxed{\SI{30}{m/s}}
+\end{equation*}
 \end{solution}
 
+
+\part 
+What physical quantity does the slope represent?
+
+
+\end{parts}
+
+
 \question
-\phantom{.}
+Consider the following motion graph.
 
 \begin{center}
-    \includegraphics[width=14cm]{documents/figures/murray-graphing-speed-slope-3.png}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+    \end{axis}
+\end{tikzpicture}
 \end{center}
+
+\begin{parts}
+\part 
+Which is the independent variable?
+
+\begin{solution}
+    Time
+\end{solution}
+
+\part 
+Which is the dependent variable?
+
+\begin{solution}
+    Position
+\end{solution}
+
+\part
+Where was the object at 4 seconds?
+
+\begin{solution}
+    \SI{14}{m}
+\end{solution}
+
+\part
+Find the slope of the graph. Show all your work.
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+        clip=false,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+        \fill[red] (0,2) circle (3pt);
+        \fill[red] (4,14) circle (3pt);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Using the two coordinates shown above, the slope is rise over run:
+
+\begin{equation*}
+    \text{slope} = \frac{\SI{14}{m} - \SI{2}{m}}{\SI{4}{s} - \SI{0}{s}} = \boxed{\SI{3}{m/s}}
+\end{equation*}
+\end{solution}
+
+
+\part 
+What physical quantity does the slope represent?
+
+
+\end{parts}
+
+
 
 \question 
 Consider the position vs. time graph below. 

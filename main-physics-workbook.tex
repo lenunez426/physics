@@ -6,6 +6,35 @@
 
 \renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%...Hide or show         %
+%...unit contents below: %
+\newif\ifShowUnitI       %
+\newif\ifShowUnitII      %        
+\newif\ifShowUnitIII     %        
+\newif\ifShowUnitIV      %        
+\newif\ifShowUnitV       %        
+\newif\ifShowUnitVI      %        
+\newif\ifShowUnitVII     %        
+\newif\ifShowUnitVIII    %        
+\newif\ifShowUnitIX      %        
+\newif\ifShowUnitX       %        
+\newif\ifShowUnitXI      %        
+\newif\ifShowUnitXII     % 
+\ShowUnitItrue           %
+\ShowUnitIIfalse         %
+\ShowUnitIIIfalse        %
+\ShowUnitIVfalse         %
+\ShowUnitVfalse          %
+\ShowUnitVIfalse         %
+\ShowUnitVIIfalse        %
+\ShowUnitVIIIfalse       %
+\ShowUnitIXfalse         %
+\ShowUnitXfalse          %
+\ShowUnitXIfalse         %
+\ShowUnitXIIfalse        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{subfiles} % Best loaded last in the preamble
 
 \title{The Workbook: Problems in Physics}
@@ -18,47 +47,69 @@
 
 \section{Constant Motion}
 
+\ifShowUnitI
 \subfile{documents/problems/unit-1-problems}
+\fi
 
 \section{Force Interactions}
 
+\ifShowUnitII
 \subfile{documents/problems/unit-2-problems}
+\fi
 
 \section{The Law of Acceleration}
 
+\ifShowUnitIII
 \subfile{documents/problems/unit-3-problems}
+\fi
 
 \section{Impulse and Work}
 
+\ifShowUnitIV
 \subfile{documents/problems/unit-4-problems}
+\fi
 
 \section{Force Analysis}
 
+\ifShowUnitV
 \subfile{documents/problems/unit-5-problems}
+\fi
 
 \section{One-Dimensional Motion}
 
+\ifShowUnitVI
 \subfile{documents/problems/unit-6-problems}
+\fi
 
 \section{Two-Dimensional Motion}
 
+\ifShowUnitVII
 \subfile{documents/problems/unit-7-problems}
+\fi
 
 \section{Conservation in Mechanical Systems}
 
+\ifShowUnitVIII
 \subfile{documents/problems/unit-8-problems}
+\fi
 
 \section{Conservation of Charge}
 
+\ifShowUnitIX
 \subfile{documents/problems/unit-9-problems}
+\fi
 
 \section{Electromagnetic Induction}
 
+\ifShowUnitX
 \subfile{documents/problems/unit-10-problems}
+\fi
 
 \section{Simple Harmonic Motion and Waves}
 
+\ifShowUnitXI
 \subfile{documents/problems/unit-11-problems}
+\fi
 
 
 

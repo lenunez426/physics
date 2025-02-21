@@ -1,0 +1,90 @@
+\documentclass[answers]{exam}
+\input{global}
+
+\begin{document}
+
+\begin{questions}
+\question
+Consider the following motion graph.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part 
+Which is the independent variable?
+
+\begin{solution}
+    Time
+\end{solution}
+
+\part 
+Which is the dependent variable?
+
+\begin{solution}
+    Position
+\end{solution}
+
+\part
+Where was the object at 4 seconds?
+
+\begin{solution}
+    \SI{14}{m}
+\end{solution}
+
+\part
+Find the slope of the graph. Show all your work.
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+        clip=false,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+        \fill[red] (0,2) circle (3pt);
+        \fill[red] (4,14) circle (3pt);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Using the two coordinates shown above, the slope is rise over run:
+
+\begin{equation*}
+    \text{slope} = \frac{\SI{14}{m} - \SI{2}{m}}{\SI{4}{s} - \SI{0}{s}} = \boxed{\SI{3}{m/s}}
+\end{equation*}
+\end{solution}
+
+
+\part 
+What physical quantity does the slope represent?
+
+
+\end{parts}
+
+\end{questions}
+\end{document}
