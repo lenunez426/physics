@@ -1,0 +1,93 @@
+\usepackage{marvosym}
+
+%...TikZ & PGF
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\tikzset{>=latex}
+\usetikzlibrary{calc,math}
+\usepackage{tikzsymbols}
+\usepgfplotslibrary{fillbetween}
+%\newcommand{\mypgfkeys}[1]{\pgfkeys{/pgf/number format/precision=#1}\pgfmathroundtozerofill} %...for parsing, printing, and rounding calculated numbers to desired decimal point
+\usetikzlibrary{decorations.markings} 
+\usetikzlibrary{arrows.meta} %...APP2 for arrows as objects and images
+\usetikzlibrary{backgrounds} %...For shading portions of graphs
+\usetikzlibrary{patterns} %...Unit 5 Problems
+\tikzset{
+    mark position/.style args={#1(#2)}{
+        postaction={
+            decorate,
+            decoration={
+                markings,
+                mark=at position #1 with \coordinate (#2);
+            }
+        }
+    }
+} %...See https://tex.stackexchange.com/questions/43960/define-node-at-relative-coordinates-of-draw-plot
+
+\tikzset{
+    declare function = {trajectoryequation10(\x,\vi,\thetai)= tan(\thetai)*\x - 10*\x^2/(2*(\vi*cos(\thetai))^2);},
+    declare function = {trajectoryequation(\x,\vi,\thetai)= tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);},
+    declare function = {patheq(\x,\yi,\vi,\thetai)= \yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);},
+    declare function = {patheqten(\x,\yi,\vi,\thetai)= \yi + tan(\thetai)*\x - 10*\x^2/(2*(\vi*cos(\thetai))^2);} %like patheq but with gravity = 10
+}
+
+%...siunitx
+\usepackage{siunitx}
+\DeclareSIUnit{\nothing}{\relax}
+\def\mymu{\SI{}{\micro\nothing} }
+\DeclareSIUnit\mmHg{mmHg}
+\DeclareSIUnit{\mile}{mi}
+%...NOTE: "The product symbol between the number and unit is set using the quantity-product option."
+
+%...Other
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{subcaption}
+\usepackage{dashrule}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage{glossaries}
+%\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{twemojis} %...twitter emojis
+\newcommand{\R}{\mathbb{R}} %...real number symbol
+\usepackage{graphicx}
+\graphicspath{ {../Figures/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,}
+\urlstyle{same}
+\newcommand{\hdashline}{{\hdashrule{\textwidth}{0.5pt}{0.8mm}}}
+\newcommand{\hgraydashline}{{\color{lightgray} \hdashrule{0.99\textwidth}{1pt}{0.8mm}}}
+
+%...Miscellaneous user-defined symbols
+\newcommand{\fnet}{F_{\text{net}}} %...For net force
+\newcommand{\bvec}[1]{\vec{\mathbf{#1}}} %...bold vector
+\newcommand{\bhat}[1]{\,\hat{\mathbf{#1}}} %...bold hat vector
+\newcommand{\que}{\mathord{?}}  %...Question mark symbol in equation env
+%...Define thick horizontal rule for examples:
+\newcommand{\hhrule}{\hrule\hrule}
+\let\oldtexttt\texttt% Store \texttt
+\renewcommand{\texttt}[2][black]{\textcolor{#1}{\ttfamily #2}}% 
+
+%...For use in the exam document class
+\newif\ifprintmetasolutions
+
+
+%...Decreases space above and below align and gather enironment
+\makeatletter
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{-3pt}
+  \setlength\belowdisplayskip{6pt} 
+}
+\makeatother
+
+
+
+

@@ -1,0 +1,67 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage[none]{hyphenat}
+
+
+\setrandomizerseed{1}
+
+\newif\ifversionKlevel
+
+\versionKlevelfalse
+
+\firstpageheader{Physics L\\Review on Units 1--5: Fall Semester Final Exam}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+\runningheader{Physics L}{}{Unit 4 Review}
+
+\ifversionKlevel
+    \firstpageheader{Physics K\\Review on Unit 5: Force Analysis}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+    \runningheader{Physics K}{}{Unit 4 Review}
+\fi
+
+\begin{document}
+\section*{Know}
+
+\begin{multicols}{3}
+\begin{enumerate}[itemsep=0pt]
+    \item Hello world!
+\end{enumerate}
+\end{multicols}
+
+% \section*{Understand}
+
+% How do you\dots
+
+% \begin{itemize}[itemsep=0pt,topsep=2pt]
+%     \item 
+% \end{itemize}
+
+\section*{Do}
+
+\begin{questions}
+\question 
+\fillin[Position][3cm] is the location of an object at any particular time.
+
+\question 
+Displacement is the change in \fillin[position][3cm]\ of an object against a fixed axis.
+
+\question
+The length of the path actually traveled between an initial and a final position is the \fillin[distance][3cm].
+
+\question
+A hiker walks from position A to position B, as shown in the map below. The dotted line represents the hiker's path. What does the arrow represent? \fillin[displacement][3cm]
+
+\begin{center}
+\begin{tikzpicture}[x=8mm,y=8mm]
+    \draw[thin,lightgray,step=8mm] (0,-1) grid (7,5);
+    \draw [thick,smooth,tension=2,dashed] plot coordinates {(1,2) (2,3) (3,0) (4,2) (5.5,2.5) (6,4)};
+    \draw [very thick, ->] (1,2) -- (6,4);
+    \fill (1,2) circle (3pt) node[above left] {A};
+    \fill (6,4) circle (3pt) node[above right] {B};
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\end{questions}
+\end{document}

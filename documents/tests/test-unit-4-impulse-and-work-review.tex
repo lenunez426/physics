@@ -1,0 +1,376 @@
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage[none]{hyphenat}
+
+\setrandomizerseed{1}
+
+\newif\ifversionKlevel
+
+\versionKleveltrue
+
+\firstpageheader{Physics L\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+\runningheader{Physics L}{}{Unit 4 Review}
+
+\ifversionKlevel
+    \firstpageheader{Physics K\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+    \runningheader{Physics K}{}{Unit 4 Review}
+\fi
+
+\begin{document}
+\section*{Know}
+
+\begin{multicols}{3}
+\begin{enumerate}[itemsep=0pt]
+    \item momentum
+    \item kinetic energy (KE)
+    \item impulse
+    \item work
+    \item net force
+    \item change in momentum
+    \item change in KE
+    \item impulse-momentum theorem
+    \item net force
+    \item work-energy theorem
+    \item power
+\end{enumerate}
+\end{multicols}
+
+\section*{Understand}
+
+How do you\dots
+
+\begin{itemize}[itemsep=0pt,topsep=2pt]
+    \item calculate an object's change in momentum from its change in velocity?
+    \item describe the relationship between the size of a net force on an object to the object’s change in momentum?
+    \item describe the relationship between how long the force is applied and an object’s change in momentum?
+    \item explain the real-life applications of the relationship between $F_\text{net}$ and $t$ in producing a given change in momentum (i.e. safety equipment, catapult plane launch)?
+    \item solve problems utilizing the Impulse-Momentum Theorem, $F_\text{net} \Delta t = \Delta p$?
+    \item identify if a net force is doing work on an object based on there being a component of the net force parallel to displacement?
+    \item identify if a net force is doing work on an object based on a change in kinetic energy?
+    \item calculate the net work done on an object?
+    \item describe the relationship between the size of the net force and an object's changing kinetic energy?
+    \item describe the relationship between the displacement over which the net force is applied and the changing kinetic energy of an object?
+    \item solve problems using the work-energy theorem, $W_\text{net} = \Delta \mathrm{KE}$?
+    \item compare the power of various situations with differing time, work, and $\Delta \mathrm{KE}$? (Note: only change one variable at a time)
+    \item calculate the power based on the work and time?
+    \item calculate the power based on change in kinetic energy?
+\end{itemize}
+
+\section*{Do}
+
+\begin{questions}
+
+\question 
+As the length of time 
+%a given 
+that a net force acts on an object increases, what other quantity must also increase? List as many physical quantities as you can. 
+
+\begin{solution}
+    velocity, momentum, change in velocity, change in momentum, position, displacement
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\question
+Describe a scenario in which a force is applied to an object while the work done on the object is zero.
+
+\begin{solution}
+    Answers will vary.
+
+    No work is done when the displacement of the object is zero. For example, a person pushes on a large truck that remains stationary, applying a strong force but doing no work on the truck.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{3cm}
+\fi
+
+\question
+The object depicted below has a mass of \SI{3}{kg}.
+
+\begin{center}
+    \begin{tikzpicture}[x=0.3cm,y=0.3cm]
+        \draw[->,thick] (1cm,0.5cm) -- ++(10,0) node[right] {\SI{10}{N}};
+        \draw[->,thick] (0,0.5cm) -- ++(-6,0) node[left] {\SI{6}{N}};
+        \draw[fill=lightgray] (0,0) rectangle ++(1cm,1cm);
+    \end{tikzpicture}
+\end{center}
+
+The forces shown last for 6 seconds. What is the object's change in velocity during that time?
+
+\begin{solutionorbox}[3cm]
+The net force is
+
+\begin{equation*}
+    F_\text{net} = \SI{10}{N} - \SI{6}{N} = \SI{4}{N}
+\end{equation*}
+
+The impulse-momentum theorem states
+
+\begin{equation*}
+    F_\text{net} \Delta t = \Delta p
+\end{equation*}
+
+Plugging in force and time, the change in momentum is
+
+\begin{align*}
+    \Delta p &= F_\text{net} \Delta t \\[1ex]
+    &= (\SI{4}{N})(\SI{6}{s}) \\[1ex]
+    &= \SI{24}{N\cdot s} \\[1ex]
+    &= \SI{24}{kg\cdot m/s}
+\end{align*}
+
+But change in momentum is
+
+\begin{equation*}
+    \Delta p = m \Delta v
+\end{equation*}
+
+Therefore, the change in velocity is
+
+\begin{equation*}
+    \Delta v = \frac{\Delta p}{m} = \frac{\SI{24}{kg\cdot m/s}}{\SI{3}{kg}} = \boxed{\SI{8}{m/s}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+Draw a velocity vs time graph for an object traveling with a changing momentum. Explain how the graph shows that momentum is changing.
+
+\begin{solutionorbox}[4cm]
+Answers will vary.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$v$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+        ]
+            \addplot[domain=0:2.5,very thick,black] {1.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Momentum is mass multiplied by velocity. So, if velocity is changing, so is momentum.
+\end{solutionorbox}
+
+
+\question
+The average net force shown in the graph below acts on a \SI{12}{kg} object for 9 seconds.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=4cm,
+            xmin=0,xmax=10,
+            ymin=0,ymax=5,
+            axis lines=left,
+            xlabel={Time (s)},
+            ylabel={Force (N)},
+            y label style={rotate=-90},
+            xtick={0,1,...,10},
+            ytick={0,1,...,5},
+            grid=both,
+        ]
+            \draw[very thick] (0,4) -- ++(10,0);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+What is the impulse on the object during this time period?
+
+\begin{solutionorbox}[4cm]
+The net force is $F_\text{net} = \SI{4}{N}$ and the time interval is $\Delta t$. Therefore impulse is
+
+
+\begin{equation*}
+    F_\mathrm{net} \Delta t = (\SI{4}{N})(\SI{10}{s}) = \boxed{\SI{40}{N \cdot s}}
+\end{equation*}
+
+\end{solutionorbox}
+
+\question
+Two identical coffee mugs are dropped from the exact same height. The first mug lands on a concrete floor and breaks. The second mug lands on a pillow and does not break. Using principles learned in this unit on impulse and work, explain why the first coffee mug broke while the second one didn't.
+
+\begin{solution}
+    The mugs experience the same change in momentum ($\Delta p$), since they are identical and are dropped from the same height. By the impulse momentum theorem,
+
+    \begin{equation*}
+        F_{\mathrm{net}} \Delta t = \Delta p
+    \end{equation*}
+
+    each mug experiences a different force and impact time with the surface on which it falls. The mug landing on the pillow took a longer time $\Delta t$ and thus experienced a smaller force $F_\text{net}$. The mug that broke experiences a smaller impact time and thus felt a larger force, which was sufficient to break it.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{3cm}
+\fi
+
+
+\ifversionKlevel
+\else
+\question
+The motion map above shows a ball's motion during an 8 second time period. 
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        \draw[domain=0:10,mark=*,only marks, samples=7,mark size=3.5pt] plot({0.1*\x^2},0);
+        \draw[thick, <-] (6,0.8) -- ++(-3,0);
+    \end{tikzpicture}
+\end{center}
+
+During that time, what is the direction of the net force? Is the net work done on the ball positive or negative? Explain.
+
+\ifprintanswers
+\else
+\fillwithlines{3cm}
+\fi
+
+\begin{solution}
+The force is to the right (positive), since the object is accelerating to the right. Defining the rightward direction as positive, there is positive net work on the object.
+\end{solution}
+\fi
+
+
+
+\question
+The velocity vs time graph below shows the motion of a \SI{12}{kg} object.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=7cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-20,ymax=20,
+        xmin=0,xmax=10,
+        grid=both,
+        ytick={-20,-15,...,20},
+        xtick={0,1,...,10},
+        x label style={at={(axis description cs: 1,0.5)},anchor=west},
+    ]
+        \addplot[very thick] coordinates{(0,-10) (6,-10) (6,15) (10,15)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+What is the object's change in momentum during this time?
+
+\begin{solutionorbox}[5cm]
+According to the graph the object's initial and final velocities are \SI{-10}{m/s} and \SI{15}{m/s}. Therefore, it's change in momentum is
+
+\begin{align*}
+    \Delta p &= m \Delta v \\[1ex]
+    &= m(v_f - v_i) \\[1ex]
+    &= (\SI{12}{kg}) \left(\SI{15}{m/s} - \left(\SI{-10}{m/s}\right)\right) \\[1ex]
+    &= \boxed{\SI{300}{kg\cdot m/s}}
+\end{align*}
+\end{solutionorbox}
+
+\question
+A student drops a \SI{3}{kg} textbook from rest from the second floor of the school. If the book reaches a velocity of \SI{11}{m/s} as it hits the ground, what is its change in momentum from the fall?
+
+\begin{solutionorbox}[4cm]
+\begin{align*}
+    \Delta p &= m \Delta v \\[1ex]
+    &= m\left(v_f - v_i\right) \\[1ex]
+    &= (\SI{3}{kg})(\SI{11}{m/s} - \SI{0}{m/s}) \\[1ex]
+    &= \boxed{\SI{33}{kg\cdot m/s}}
+\end{align*}
+\end{solutionorbox}
+
+\question
+What average net force would need to be applied to an object for \SI{2.0}{s}, in order to change its momentum by \SI{300}{kg\cdot m/s}?
+
+\begin{solutionorbox}[3cm]
+By the impulse momentum theorem,
+
+\begin{equation*}
+    \Delta p = F_\mathrm{net} \Delta t
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    F_\mathrm{net} = \frac{\Delta p}{\Delta t} = \frac{\SI{300}{kg\cdot m/s}}{\SI{2.0}{s}} = \boxed{\SI{150}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\ifversionKlevel
+\question
+Chase, the 15-kg dog, slides across a slippery floor at \SI{4}{m/s}. He gets bumped by Rubble, his dog buddy, increasing his speed to \SI{12}{m/s}. Find the work done on Chase.
+
+\begin{solutionorbox}[3cm]
+By the work-energy theorem,
+
+\vspace{-1em}
+\begin{align*}
+    W_\text{net} = \Delta \mathrm{KE} &= \frac{1}{2}mv_f^2 - \frac{1}{2}m v_i^2 \\[1ex]
+    &= \frac{1}{2} (\SI{15}{kg}) (\SI{12}{m/s})^2 - \frac{1}{2} (\SI{15}{kg}) (\SI{4}{m/s})^2 \\[1ex]
+    &= \boxed{\SI{960}{J}}
+\end{align*}   
+\end{solutionorbox}
+
+\question
+The graph below shows the net force on a scooter as a function of time.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=6cm,
+        axis lines=left,
+        ylabel={Net Force (N)},
+        xlabel={Time (s)},
+        ymin=0,ymax=1000,
+        xmin=0,xmax=6,
+        ytick={0,200,...,1000},
+        xtick={0,1,...,6},
+        grid=both,
+        minor y tick num=1,
+        grid=both
+    ]
+        \addplot[very thick] (0,0) -- (3,900);   
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+At time $t=0$, the velocity of the scooter is \SI{10}{m/s}. The scooter's mass is \SI{90}{kg}. (a) What is the average force on the scooter during the time interval? (b) Using this average force, calculate the scooter's final velocity.
+
+
+\begin{solutionorbox}[6cm]
+    (a) Since the force starts at 0 and linearly increases to 900, the force must be half of 900, or
+
+    \begin{equation*}
+        F_\text{ave} = \SI{450}{N}
+    \end{equation*}
+
+(b) The impulse-momentum theorem states
+
+\begin{equation*}
+    F_\text{ave} \Delta t = m (v_f - v_i)
+\end{equation*}
+
+Solving this equation for the final velocity leads to
+
+\begin{align*}
+    v_f &= \frac{F_\text{ave} \Delta t}{m} + v_i \\[1ex]
+        &= \frac{(\SI{450}{N})(\SI{3}{s})}{\SI{90}{kg}} + \SI{10}{m/s} \\[1ex]
+        &= \boxed{\SI{25}{m/s}}
+\end{align*}
+\end{solutionorbox}
+
+\fi
+
+
+
+\end{questions}
+\end{document}

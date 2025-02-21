@@ -1,0 +1,472 @@
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage[normalem]{ulem}
+
+\setrandomizerseed{1}
+
+\firstpageheader{Physics}{Unit 1: Constant Motion}{Test}
+\runningheader{}{}{}
+
+\begin{document}
+\begin{questions}
+
+\question 
+The position vs. time graph for obj 1 and obj 2 are shown below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- (0,3) node[rotate=90,pos=0.5,above] {$x$ (m)};
+        \draw[->] (0,0) -- (3,0) node[pos=0.5,below] {$t$ (s)};
+        \draw (0,0) -- (3,2) node[pos=1.1] {obj 1};
+        \draw (0,0) -- (2.5,2.9) node[left=2pt,pos=0.9] {obj 2};
+    \end{tikzpicture}
+\end{center}
+
+Based upon this graph, which object has the greater velocity and which explanation demonstrates the most correct reasoning?
+
+\begin{randomizechoices}[norandomize]
+    \choice Obj 1 because it traveled for a longer time.
+    \choice Obj 2 because it had a greater displacement.
+    \choice Obj 1 because it took longer time to travel the same displacement as obj 2.
+    \correctchoice Obj 2 because it had a greater displacement in the same time interval as obj 1.
+\end{randomizechoices}
+
+\begin{EnvUplevel}
+    \textbf{Question \ref{Q2}--\ref{Q3}}. Below is a quantitative motion map for a moving object. The dots indicate the position of the object each second.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=12, 
+        xmin=0, xmax=10,
+        xtick={0,5,10},
+        minor x tick num=4,
+        clip=false,
+        ]
+        \draw[->] (10,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        \draw[->] (8,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        \draw[->] (6,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        \fill (10,1) circle (3pt) node[below=3pt] {start};
+        \fill (8,1) circle (3pt);
+        \fill (6,1) circle (3pt);
+        \fill (4,1) circle (3pt);
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question \label{Q2}
+What is the dog's displacement from $t=\SI{0}{s}$ to $t=\SI{1}{s}$ in the above motion map?
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{2}{m}
+    \correctchoice \SI{-2}{m}
+    \choice \SI{6}{m}
+    \choice \SI{-6}{m}
+\end{randomizechoices}
+
+\question \label{Q3}
+What is the dog's velocity from $t=\SI{0}{s}$ to $t=\SI{2}{s}$ in the above motion map?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice \SI{-2}{m/s}
+    \choice $-3/2\,\mathrm{m/s}$
+    \choice \SI{-3}{m/s}
+    \choice \SI{-6}{m/s}
+\end{randomizechoices}
+
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{Q4}--\ref{Q5}}. Below is a quantitative motion map for a moving object. 
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis y line=left,
+            axis x line=center,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            xmin=0,xmax=6,
+            ymin=-3,ymax=3,
+            xtick={0,1,...,6},
+            ytick={-3,-2,...,3},
+            grid=both,
+            x label style={at={(axis description cs:1,0.5)},anchor=west},
+            ]
+            % \addplot[color=black,mark=*]
+            %     coordinates {
+            %     (0,1)(1,1)(2,1)(3,1)(4,1)(5,1)
+            %     };
+            \addplot[color=black,ultra thick,domain=0:6] {2};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question \label{Q4}
+What is the velocity of the object depicted in the graph below at time $t=\SI{2}{s}$?
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{0}{m/s} (at rest)
+    \choice \SI{1}{m/s}
+    \correctchoice \SI{2}{m/s}
+    \choice \SI{5}{m/s}
+\end{randomizechoices}
+
+\question \label{Q5}
+What is the displacement of the object depicted (shown) in the graph above from time $t=\SI{0}{s}$ to $t=\SI{5}{s}$?
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{0}{m}
+    \choice \SI{5}{m}
+    \choice \SI{2}{m}
+    \correctchoice \SI{10}{m}
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+% \begin{EnvUplevel}
+%     \textbf{Question \ref{Q6}--\ref{Q9}}. Below are the position vs time data tables for three runners---Runner A, Runner B, and Runner C. The starting line is the reference point in each case. The positive direction is considered forward on the track.
+% \end{EnvUplevel}
+
+\question
+Below are the position vs time data tables for three runners---Runner A, Runner B, and Runner C. The starting line is the reference point in each case. The positive direction is considered forward on the track.
+
+    
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c||c|c||c|c|}
+            \hline
+             \textbf{Time} (s) & \textbf{Position} A (m) & \textbf{Time} (s) & \textbf{Position} B (m) & \textbf{Time} (s) & \textbf{Position} C (m)\\ \hline
+             0 & 0 & 0 & 0 & 0 & $-10$\\ \hline
+             1 & 4 & 1 & 2 & 1 & $-5$ \\ \hline
+             2 & 8 & 2 & 4 & 2 & 0\\ \hline
+             3 & 12 & 3 & 6 & 3 & 5\\ \hline
+        \end{tabular}
+    \end{table}
+
+% \question \label{Q6}
+% Which runner started behind the starting line?
+
+% \begin{randomizechoices}[norandomize]
+%     \choice Runner A
+%     \choice Runner B
+%     \correctchoice Runner C
+%     \choice None of the runners
+% \end{randomizechoices}
+
+% \clearpage
+
+% \question 
+% Which runner is running in the negative direction for at least part of the race?
+
+% \begin{randomizechoices}[norandomize]
+%     \choice Runner A
+%     \choice Runner B
+%     \choice Runner C
+%     \correctchoice None of the runners  
+% \end{randomizechoices}
+
+% \question
+% Assuming the runners each continue with the same constant motion, in what order will they cross the finish line which is at the \SI{15}{m} position?
+
+% \begin{randomizechoices}
+%     \choice Order A, B, C 
+%     \correctchoice Order A, C, B
+%     \choice Order C, B, A
+%     \choice Order C, A, B
+% \end{randomizechoices}
+
+% \question \label{Q9}
+Rank the runners from slowest (smallest speed) to fastest (greatest speed).
+
+\begin{randomizechoices}
+    \choice Rank A, B, C 
+    \correctchoice Rank B, A, C
+    \choice Rank C, B, A
+    \choice Rank C, A, B
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+
+\question
+What is the velocity of the object depicted in the position vs. time graph below?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis y line=left,
+            xmin=0,xmax=7,
+            ymin=0,ymax=70,
+            xtick={0,1,...,7},
+            ytick={0,10,...,70},
+            xlabel={$t$ (s)},
+            ylabel={$x$ (m)},
+            grid=both,
+            ylabel style={rotate=-90},
+            ]
+            \draw[domain=0:7,ultra thick] plot (\x,{20+(10/3)*\x});
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}[norandomize]
+    \correctchoice \SI{3.33}{m/s}
+    \choice \SI{6.67}{m/s}
+    \choice \SI{0.30}{m/s}
+    \choice \SI{0.15}{m/s}
+\end{randomizeoneparchoices}    
+
+% \question 
+% A 65\,kg person is walking at a speed of 5\,m/s. Which of the following representations of motion CANNOT represent the person's motion?
+
+% \begin{minipage}{0.45\textwidth}
+% {\Large \textbf{A}}
+%     \begin{center}
+%     \begin{tikzpicture}
+%         \draw[->] (0,0) -- (4.5,0) node[right] {$x$ (m)};
+%         \foreach \i in {0,0.5,...,4} \fill (\i,0.5) circle (2pt);
+%     \end{tikzpicture}
+%     \end{center}
+% \end{minipage}%
+% \begin{minipage}{0.45\textwidth}
+% {\Large \textbf{B}}
+%     \begin{center}
+%     \begin{tikzpicture}
+%         \begin{axis}[width=5cm,height=5cm,
+%             ylabel={$v$ (m/s)},
+%             xlabel={$t$ (s)},
+%             axis lines = left,
+%             xmin=0,xmax=5,
+%             ymin=0,ymax=10,
+%             xtick={0,1,...,5},
+%             ytick={0,2,...,10},
+%             ]
+%             \draw[thick,blue] (0,5) -- (5,5); 
+%         \end{axis}
+%     \end{tikzpicture}
+%     \end{center}
+% \end{minipage}
+
+% \begin{minipage}{0.45\textwidth}
+% {\Large \textbf{C}}
+%     \begin{center}
+%     \begin{tabular}{|c|c|}
+%         \hline
+%         \textbf{Time}: $t$ (s) & \textbf{Momentum}: $p$ (\SI{}{kg\cdot m/s}) \\ \hline
+%          0 & 5\\ \hline
+%          1 & 5\\ \hline
+%          2 & 5\\ \hline
+%          3 & 5\\ \hline
+%     \end{tabular}
+%     \end{center}
+% \end{minipage}%
+% \begin{minipage}{0.45\textwidth}
+% {\Large \textbf{D}}
+%     \begin{center}
+%     \begin{tikzpicture}
+%         \begin{axis}[width=5cm,height=5cm,
+%             ylabel={KE (\SI{}{kg\cdot m^2/s^2})},
+%             xlabel={$t$ (s)},
+%             axis lines = left,
+%             xmin=0,xmax=10,
+%             ymin=0,ymax=1000,
+%             xtick={0,2,...,10},
+%             ytick={0,200,...,1000},
+%             ]
+%             \draw[thick,blue] (0,812.5) -- (10,812.5); 
+%         \end{axis}
+%     \end{tikzpicture}
+%     \end{center}
+% \end{minipage}
+
+% \begin{randomizeoneparchoices}[norandomize]
+%     \choice Representation A
+%     \choice Representation B
+%     \correctchoice Representation C
+%     \choice Representation D
+% \end{randomizeoneparchoices}
+
+\clearpage
+\question %63
+The motion of a 4-kg object is described by the graph below. What is the kinetic energy of the object at 3.5 seconds?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=7cm,
+            width=7cm,
+            axis y line=left,
+            axis x line = center,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            ymin=-30,ymax=30,
+            xmin=0,xmax=10,
+            grid=both,
+            ytick={-30,-25,...,30},
+            xtick={0,1,...,10},
+            x label style={at={(axis description cs:1,0.5)},anchor=west},
+        ]
+        \addplot[ultra thick,black] coordinates{(0,10)(1,20)(3,20)(7,-20)(8,-20)(10,-25)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice 200\,J
+    \choice 400\,J
+    \choice 40\,J
+    \choice 20\,J
+\end{randomizechoices}
+
+\begin{solution}
+    From the graph, the object's velocity from 3 to 7 seconds is
+
+    \begin{equation*}
+        v = \frac{\Delta x}{\Delta t} = \frac{-\SI{40}{m}}{\SI{4}{s}} = -\SI{10}{m/s}
+    \end{equation*}
+
+    Its kinetic energy is
+
+    \begin{equation*}
+        \mathrm{KE} = \frac{1}{2}mv^2 = \frac{1}{2}\left(\SI{4}{kg}\right)\left(-\SI{10}{m/s}\right)^2 = \boxed{\SI{200}{J}}
+    \end{equation*}
+\end{solution}
+
+\question 
+Mary is on a bus that is passing a traffic light. Which of the following statements best describes her motion?
+
+\begin{randomizechoices}[norandomize]
+    \choice She is moving relative to both the traffic light and the bus driver.
+    \choice She is not moving relative to either the traffic light or the bus driver.
+    \correctchoice She is moving relative to the traffic light, but she is not moving relative to the bus driver.
+    \choice She is moving relative to the bus driver, but she is not moving relative to the traffic light.
+\end{randomizechoices}
+
+\question
+Two cars are moving in opposite directions as pictured below:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- (1,0) node[right] {\SI{30}{km/hr}};
+        \draw (0,0) node[left=1em] {\textbf{A}} node[above=-2.7mm] {\reflectbox{\twemoji[width=6mm]{automobile}}};
+        \begin{scope}[xshift=4cm,yshift=1cm]
+            \draw[->] (0,0) -- (-1.5,0) node[left] {\SI{50}{km/hr}};
+            \draw (0,0) node[right=1em] {\textbf{B}} node[above=-3mm] {\twemoji[width=7mm]{articulated lorry}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+Using car A as a reference, how fast is car B moving?
+
+\begin{randomizeoneparchoices}[norandomize]
+    \correctchoice \SI{80}{km/hr}
+    \choice \SI{50}{km/hr}
+    \choice \SI{30}{km/hr}
+    \choice \SI{20}{km/hr}
+\end{randomizeoneparchoices}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{Q14}--\ref{Q16}} Imagine two astronauts playing catch in outer space in a location where both frictional and gravitational forces are negligible (do not make a difference). They are throwing and catching the three objects listed in the table below. 
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{object} & \textbf{mass} & \textbf{velocity} \\ \hline
+        wrench & \SI{2}{kg} & \SI{5}{m/s} \\ \hline
+        $\mathrm{O}_2$ tank & \SI{20}{kg} & \SI{0.5}{m/s}\\ \hline
+        Ball & \SI{0.2}{kg} & \SI{50}{m/s}\\ \hline
+    \end{tabular}
+\end{center}
+
+\clearpage
+\question \label{Q14}
+Which object would resist a change in motion the most and why?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice The $\mathrm{O}_2$ Tank because its has the largest mass and therefore the greatest inertia
+    \choice The $\mathrm{O}_2$ Tank because its has the largest mass and therefore the greatest momentum
+    \choice The Ball because it has the largest speed and therefore the greatest inertia
+    \choice The Ball because it has the largest speed and therefore the greatest momentum
+\end{randomizechoices}
+
+\question 
+Which object has the greatest momentum once thrown based on the table above?
+
+\begin{randomizechoices}[norandomize]
+    \choice Wrench
+    \choice $\mathrm{O}_2$ Tank
+    \choice Ball
+    \correctchoice All momenta are equal.
+\end{randomizechoices}
+
+\question \label{Q16}
+Which object has the greatest kinetic energy once thrown based on the table above?
+
+\begin{randomizechoices}[norandomize]
+    \choice Wrench
+    \choice $\mathrm{O}_2$ Tank
+    \correctchoice Ball
+    \choice All momenta are equal.
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+
+\question 
+What is the kinetic energy of a \SI{2}{kg} object moving with a velocity of \SI{5}{m/s}?
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{7}{J}
+    \choice \SI{10}{J}
+    \correctchoice \SI{25}{J}
+    \choice \SI{50}{J}
+\end{randomizechoices}
+
+\question
+What is the momentum of a \SI{4}{kg} object moving with a velocity of \SI{7}{m/s}?
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{98}{kg\cdot m/s}
+    \correctchoice \SI{28}{kg\cdot m/s}
+    \choice \SI{11}{kg\cdot m/s}
+    \choice \SI{196}{kg\cdot m/s}
+\end{randomizechoices}
+
+\question 
+A person is standing at $+\SI{6}{m}$ from the reference (zero) point. If this person moves with a constant velocity of \SI{5}{m/s} in the positive direction, what is their final position after 3 seconds?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice 21\,m
+    \choice 15\,m
+    \choice \SI{-9}{m}
+    \choice \SI{30}{m}
+\end{randomizechoices}
+
+% \question 
+% A dog runs with a constant velocity of \SI{10}{m/s} for \SI{9}{s}. What is the dog's displacement?
+
+% \begin{solution}
+%     \begin{equation*}
+%         \bar{v} = \frac{\Delta x}{\Delta t} \quad \Rightarrow \quad
+%         \Delta x = \bar{v} t = \boxed{\SI{90}{m}}
+%     \end{equation*}
+% \end{solution}
+
+\clearpage
+
+\Large
+\printkeytable
+
+
+
+\end{questions}
+\end{document}

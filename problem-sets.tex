@@ -1,0 +1,41 @@
+\usepackage[margin=1in]{geometry}
+\usepackage[figurewithin=none]{caption}
+\usepackage{exam-randomizechoices}
+
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\renewcommand{\solutiontitle}{\noindent\textbf{\textcolor{red}{Solution:}}\enspace}
+
+\usepackage{OutilsGeomTikz}
+\usepackage{utfsym} %...Symbols in Unit 7 Problems
+\usepackage{tabu} %...Symbols in Unit 7 Problems
+
+%...For use in Unit 2            %    
+\setlength{\columnsep}{2cm}      %
+\setlength{\columnseprule}{1pt}  %
+\usepackage[none]{hyphenat}      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%...For use in Unit 11 on Waves:
+\pgfdeclarehorizontalshading{visiblelight}{50bp}{  %
+color(0.00000000000000bp)=(red);                   %
+color(8.33333333333333bp)=(orange);                %
+color(16.66666666666670bp)=(yellow);               %
+color(25.00000000000000bp)=(green);                %
+color(33.33333333333330bp)=(cyan);                 %
+color(41.66666666666670bp)=(blue);                 %
+color(50.00000000000000bp)=(violet)                %
+}                                                  %
+
+\newcommand{\checkbox}[1]{%
+  \ifnum#1=1
+    \makebox[0pt][l]{\raisebox{0.15ex}{\hspace{0.1em}\Large$\checkmark$}}%
+  \fi
+  $\square$%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%...If using circuitikz package:
+% \ctikzset{bipoles/battery1/height=0.5}
+% \ctikzset{bipoles/battery1/width=0.25}
+% \ctikzset{bipoles/resistor/height=0.15}
+% \ctikzset{bipoles/resistor/width=0.4}

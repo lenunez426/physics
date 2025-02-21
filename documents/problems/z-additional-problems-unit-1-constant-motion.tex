@@ -1,0 +1,1408 @@
+\documentclass[dvipsnames]{exam}
+\input{global}
+\input{problem-sets}
+
+\setrandomizerseed{1}
+
+\firstpageheader{Physics}{Unit 1: Constant Motion}{Problems}
+\runningheader{}{}{}
+
+\begin{document}
+\begin{questions}
+
+\uplevel{\subsection*{Day 4: Position, Distance, Displacement}}
+
+\question
+\textit{Lecture Question}\\
+For each part below, determine whether the quantity is a vector or scalar, and whether distance or displacement. 
+
+\begin{parts}
+    \part \SI{2}{m}\ \fillin[scalar; distance][6cm]
+    \part \SI{4}{m} South\ \fillin[vector; displacement][6cm]
+    \part \SI{7}{km}\ \fillin[scalar; distance][6cm]
+    \part \SI{5}{cm} in $-x$ direction\ \fillin[vector; displacement][6cm]
+    \part $\Delta y = \SI{-9}{m}$\ \fillin[vector; displacement][6cm]
+    \part \SI{200}{km} left\ \fillin[vector; displacement][6cm]
+    \part $d = \SI{10}{m}$\ \fillin[scalar; distance][6cm]
+    \part \SI[group-separator=,]{13000}{km}\ \fillin[scalar; distance][6cm]
+\end{parts}
+
+
+\uplevel{\subsection*{Day 5: Distance \& Displacement}}
+
+\begin{EnvUplevel}
+    \textbf{Lecture Questions \ref{SXvJU}--\ref{Ocjqf}.} Consider a road trip between a house and a golf course.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=16cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (km)},
+        ymin=0, ymax=15, 
+        xmin=-4, xmax=4,
+        xtick={-4,-3,...,4},
+        clip=false,
+        ]
+        \node[above] at (0,0) {\twemoji[height=1cm]{house with garden}};
+        \node[above] at (0.4,0) {\reflectbox{\twemoji[height=5mm]{automobile}}};
+        \node[above] at (3.1,0) {\twemoji[height=8mm]{triangular flag}};
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question \label{SXvJU}
+\textit{Lecture Question}\\
+Suppose we drive to the golf course from the house.
+
+\begin{parts}
+    \part What is our reference point? How do we know?
+
+    \begin{solution}
+        The house. It's at the origin.
+    \end{solution}
+    
+    \part What is the starting point or initial position?
+
+    \begin{solution}
+        $x_i = \SI{0}{km}$
+    \end{solution}
+    
+    \part What is the final position?
+
+    \begin{solution}
+        $x_f = \SI{3}{km}$
+    \end{solution}
+    
+    \part What is the car’s displacement? 
+
+    \begin{solution}
+        Displacement is
+
+        \begin{equation*}
+            \Delta x = x_f - x_i = \SI{3}{km} - \SI{0}{km} = \SI{3}{km}\,\text{right}
+        \end{equation*}
+    \end{solution}
+    
+    \part What distance did the car travel?  
+
+    \begin{solution}
+        $d = \SI{3}{km}$
+    \end{solution}
+    
+\end{parts}
+
+\question 
+\textit{Lecture Question}\\
+Now, we drive back home.
+
+\begin{parts}
+    \part What is our reference point? How do we know?
+    
+        \begin{solution}
+            The house, because it is at the origin.
+        \end{solution}
+        
+    \part What is the starting point or initial position?
+    
+        \begin{solution}
+            $x_i = \SI{3}{km}$
+        \end{solution}
+        
+    \part What is the final position?
+    
+        \begin{solution}
+            $x_f = \SI{0}{km}$
+        \end{solution}
+        
+    \part What is the car’s displacement? 
+    
+        \begin{solution}
+            Displacement is
+
+            \begin{equation*}
+                \Delta x = x_f - x_i = \SI{0}{km} - \SI{3}{km} = -\SI{3}{km} = \SI{3}{km}\,\text{left}
+            \end{equation*}
+        \end{solution}
+        
+    \part What distance did the car travel?
+    
+        \begin{solution}
+            $d = \SI{3}{km}$
+        \end{solution}
+\end{parts}
+
+\question \label{Ocjqf}
+\textit{Lecture Question}\\
+On a different trip, we drive from home to the golf course and back.
+
+\begin{parts}
+    \part What is our reference point? How do we know?
+
+    \begin{solution}
+        The house, because it is at the origin.
+    \end{solution}
+    
+    \part What is the starting point or initial position?
+
+    \begin{solution}
+        $x_i = \SI{0}{km}$
+    \end{solution}
+    
+    \part What is the final position?
+
+    \begin{solution}
+        $x_f = \SI{0}{km}$
+    \end{solution}
+    
+    \part What is the car’s displacement? 
+
+    \begin{solution}
+        Displacement is
+
+        \begin{equation*}
+            \Delta x = x_f - x_i = \SI{0}{km} - \SI{0}{km} = \SI{0}{km}
+        \end{equation*}      
+
+        So, there is no displacement---no net change in position.
+    \end{solution}
+    
+    \part What distance did the car travel?
+
+    \begin{solution}
+        The distance is the sum of the lengths of the paths, which is 3 kilometers one way and 3 kilometers back:
+
+        \begin{equation*}
+            d = \SI{3}{km} + \SI{3}{km} = \SI{6}{km}
+        \end{equation*}
+    \end{solution}
+\end{parts}
+
+\bigskip
+\hrule
+
+
+\question
+\textit{Lecture Question}\\
+A school is built near home and the golf course.
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=16cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (km)},
+        ymin=0, ymax=15, 
+        xmin=-4, xmax=4,
+        xtick={-4,-3,...,4},
+        clip=false,
+        ]
+        \node[above] at (0,0) {\twemoji[height=1cm]{house with garden}};
+        \node[above] at (0.4,0) {\reflectbox{\twemoji[height=5mm]{automobile}}};
+        \node[above] at (3.1,0) {\twemoji[height=8mm]{triangular flag}};
+        \node[above] at (-4,0) {\twemoji[height=1cm]{school}};
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Suppose we drive from home to school to the golf course.
+
+\begin{parts}
+    \part What is our reference point? How do we know?
+
+    \begin{solution}
+        The house, because it is at the origin.
+    \end{solution}
+    
+    \part What is the starting point or initial position?
+
+    \begin{solution}
+        $x_i = \SI{0}{km}$
+    \end{solution}
+    
+    \part What is the final position?
+
+    \begin{solution}
+        $x_f = \SI{3}{km}$
+    \end{solution}
+    
+    \part What is the car’s displacement? 
+
+    \begin{solution}
+        Displacement is
+
+        \begin{equation*}
+            \Delta x = x_f - x_i = \SI{3}{km} - \SI{0}{km} = \SI{3}{km}\,\text{right}
+        \end{equation*}
+    \end{solution}
+    
+    \part What distance did the car travel?  
+
+    \begin{solution}
+        The distance is the sum of the lengths of the paths:
+
+        \begin{equation*}
+            d = \SI{4}{km} + \SI{7}{km} = \SI{11}{km}
+        \end{equation*}
+    \end{solution}
+\end{parts}
+
+\question
+\textit{Lecture}\\
+Consider the position vs time graph below:
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        ymin=0, ymax=60,
+        xmin=0, xmax=6,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        title={Position vs. Time},
+        grid = both,
+        xtick={0,1,...,6},
+        ytick={0,10,...,60},
+    ]
+    \draw[domain=0:5,very thick] plot(\x,10*\x);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+    \part What will the $y$-axis tell us?
+
+    \begin{solution}
+        Position.
+    \end{solution}
+    
+    \part What will the x-axis tell us?
+
+    \begin{solution}
+        Time.
+    \end{solution}
+    
+    \part What will the axes together tell us?
+
+    \begin{solution}
+        The object's position at any instant in time.
+    \end{solution}
+    
+    \part What was the object's initial position? Justify.
+
+    \begin{solution}
+        Initial position is zero, because when $t = \SI{0}{s}$ the object's position is zero.
+    \end{solution}
+    
+    \part What was the object’s position at $t = \SI{3}{s}$?
+
+    \begin{solution}
+        $x = \SI{30}{m}$
+    \end{solution}
+    
+    \part At what time did the object reach \SI{40}{m}?
+
+    \begin{solution}
+        $t = \SI{4}{s}$
+    \end{solution}
+    
+    \part What was the object's displacement from the start time to $t = \SI{5}{s}$? Justify.
+
+    \begin{solution}
+        Reading the graph, we see that $x_i = \SI{0}{m}$ and $x_f = \SI{50}{m}$. Therefore,
+
+        \begin{equation*}
+            \Delta x = x_f - x_i = \SI{50}{m} - \SI{0}{m} = \boxed{\SI{50}{m}}
+        \end{equation*}
+    \end{solution}
+    
+    \part What was the object’s displacement from $t = \SI{1}{s}$ to $t = \SI{4}{s}$?
+
+    \begin{solution}
+        Reading the graph, we see that $x_i = \SI{10}{m}$ and $x_f = \SI{50}{m}$. Therefore,
+
+        \begin{equation*}
+            \Delta x = x_f - x_i = \SI{50}{m} - \SI{10}{m} = \boxed{\SI{40}{m}}
+        \end{equation*}
+    \end{solution}
+    
+    \part Would this object’s distance traveled be equal to, greater than, or less than its displacement? Justify your answer.
+
+    \begin{solution}
+        Since the object travels in one direction without turning around or changing direction, the distance traveled is equal to the displacement.
+    \end{solution}
+\end{parts}
+
+\question 
+\textit{Lecture}\\
+Jot down everything you know about the position(s), displacement, and distance traveled of this object. Justify how you know that particular fact about the object using evidence from the graph. Compare lists as a table group and compile one big list. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        ymin=0, ymax=10,
+        xmin=0, xmax=10,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,10},
+        ytick={0,1,...,10},
+    ]
+    \addplot[black,very thick]
+        coordinates{(0,2)(2,5)(4,5)(6,9)(8,9)(10,3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    \phantom{.}
+    \begin{enumerate}
+        \item started at 2\,m position
+        \item moved from the 2\,m position to the 5\,m position in the first 2 seconds
+        \item stayed at rest at the 5\,m position for 2 seconds
+        \item moved from the 5\,m position at time $t = \SI{4}{s}$ to the 9\,m position at time $t = \SI{6}{s}$
+        \item stayed at rest at the 9\,m position for 2 seconds
+        \item turned around at $t = \SI{8}{s}$ and began moving back towards starting position
+        \item moved from 9\,m position to 3\,m position
+        \item had a total displacement of 1\,m ($\Delta x = x_f - x_i = \SI{3}{m} - \SI{2}{m}$)
+        \item traveled a total distance of 13\,m ($d = \SI{3}{m} + \SI{4}{m} + \SI{6}{m}$)
+
+    \end{enumerate}
+\end{solution}
+
+
+\subsection*{Day 6: Measuring Displacement}
+
+\question
+\textit{Lecture}\\
+Convert the following:
+
+\begin{parts}
+    \part $\SI{10}{km} =$ \fillin[10,000][2cm]\,m
+    \part $\SI{10}{m} =$ \fillin[0.01][2cm]\,km
+    \part $\SI{35}{cm} =$ \fillin[0.35][2cm]\,m
+    \part $\SI{2}{m} =$ \fillin[200][2cm]\,cm
+    \part $\SI{1}{km} =$ \fillin[100,000][2cm]\,cm
+\end{parts}
+
+\question 
+\textit{Lecture}\\
+Identity which metric prefix and unit would be most appropriate for the following motions:
+
+\begin{parts}
+    \part the displacement of a slug (in short period of time)
+
+    \begin{solution}
+        millimeter (mm)
+    \end{solution}
+    
+    \part the displacement of a human walking leisurely
+
+    \begin{solution}
+        meter (m)
+    \end{solution}
+    
+    \part the displacement of car on the freeway
+
+    \begin{solution}
+        kilometer (km)
+    \end{solution}
+\end{parts}
+
+\question
+\textit{Lecture}\\
+Give an example of something that would be measured with the following metric prefixes and units:
+
+\begin{parts}
+    \part centimeters (cm)
+    \part meters (m)
+    \part kilometers (km)
+\end{parts}
+
+\subsection*{Day 8: Constant Velocity}
+
+\question \label{nTMKE}
+\textit{Lecture}\\
+Consider an object that is traveling 1 meter per second. 
+If it starts at the origin $(x_0 = \SI{0}{m})$, where will it be each second for the first 4 seconds of travel? Create the following table in your notes.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time (seconds)} & \textbf{Position (meters)} \\ \hline
+         0\,s (starting time) & 0\,m (starting point) \\ \hline
+         & \\ \hline
+         & \\ \hline
+         & \\ \hline
+         & \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{solution}
+    \begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time (seconds)} & \textbf{Position (meters)} \\ \hline
+         0\,s (starting time) & 0\,m (starting point) \\ \hline
+         1\,s & 1\,m \\ \hline
+         2\,s & 2\,m \\ \hline
+         3\,s & 3\,m \\  \hline
+         4\,s & 4\,m \\ \hline
+    \end{tabular}
+\end{center}
+\end{solution}
+
+\question
+\textit{Lecture}\\
+Now consider our object that is traveling 3 meters per second. 
+
+\begin{parts}
+    \part What does it mean to have a velocity of \SI{3}{m/s}? It means the object is \fillin[displaced]\ 3 meters each second.
+
+    \part If it starts at the origin $(x_0 = \SI{0}{m})$, where will it be each second for the first 4 seconds of travel? Create a table like the one in Question \ref{nTMKE}.
+
+    \begin{solution}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+             \textbf{Time (seconds)} & \textbf{Position (meters)} \\ \hline
+             0\,s (starting time) & 0\,m (starting point) \\ \hline
+             1\,s & 3\,m \\ \hline
+             2\,s & 6\,m \\ \hline
+             3\,s & 9\,m \\  \hline
+             4\,s & 12\,m \\ \hline
+        \end{tabular}
+    \end{center}
+    \end{solution}
+\end{parts}
+
+\question
+\textit{Lecture}\\
+Next consider an object that is traveling $-2$ meters per second. 
+
+\begin{parts}
+    \part What does it mean to have a velocity of \SI{-2}{m/s}? 
+
+
+    \begin{solution}
+        A velocity of $\SI{-2}{m/s}$ means the object is being displaced 2 meters each second in the negative direction.
+    \end{solution}
+    
+    \part If it starts at the origin $(x_00 = \SI{0}{m})$, where will it be each second for the first 4 seconds of travel? Create a table like the one in Question \ref{nTMKE}.
+
+    \begin{solution}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+             \textbf{Time (seconds)} & \textbf{Position (meters)} \\ \hline
+             0\,s (starting time) & 0\,m (starting point) \\ \hline
+             1\,s & \SI{-2}{m} \\ \hline
+             2\,s & \SI{-4}{m} \\ \hline
+             3\,s & \SI{-6}{m} \\  \hline
+             4\,s & \SI{-8}{m} \\ \hline
+        \end{tabular}
+    \end{center}
+    \end{solution}
+
+    \part If it starts ahead of the origin at $x_0 = \SI{6}{m}$, where will it be each second for the first 4 seconds of travel?
+
+    \begin{solution}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+             \textbf{Time (seconds)} & \textbf{Position (meters)} \\ \hline
+             0\,s (starting time) & 6\,m (starting point) \\ \hline
+             1\,s & \SI{4}{m} \\ \hline
+             2\,s & \SI{2}{m} \\ \hline
+             3\,s & \SI{0}{m} \\  \hline
+             4\,s & \SI{-2}{m} \\ \hline
+        \end{tabular}
+    \end{center}
+    \end{solution}
+\end{parts}
+
+\question
+\textit{Lecture}\\
+Discuss with your group if there is a way to determine the object's velocity from this graph. If so, how? And what is this object’s velocity? If not, what other information would you need to be able to?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            xlabel={Time (s)},
+            ylabel={Position (m)},
+            xmin=0,xmax=9,
+            ymin=-5,ymax=5,
+            xtick={0,1,...,9},
+            ytick={-5,-4,...,5},
+            axis x line=middle,
+            axis y line=left,
+            grid=both,
+            x label style={at={(axis description cs:1,.5)},anchor=west},
+        ]
+            \draw[domain=0:6,very thick] plot(\x,\x); 
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    According to the graph, we see the following data:
+
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+             \textbf{Time (s)} & \textbf{Position (m)} \\ \hline
+             0\,s & \SI{0}{m} \\ \hline
+             1\,s & \SI{1}{m} \\ \hline
+             2\,s & \SI{2}{m} \\ \hline
+             3\,s & \SI{3}{m} \\  \hline
+             4\,s & \SI{4}{m} \\ \hline
+        \end{tabular}
+    \end{center}
+
+    The object's position is increasing 1\,m each second. Therefore, its velocity is 1 meter per second or 1\,m/s.
+\end{solution}
+
+\question
+\textit{Lecture}\\
+With your group, determine the velocity of the object depicted in the $x$ vs $t$ graph below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            xlabel={Time (s)},
+            ylabel={Position (m)},
+            xmin=0,xmax=9,
+            ymin=-5,ymax=5,
+            xtick={0,1,...,9},
+            ytick={-5,-4,...,5},
+            axis x line=middle,
+            axis y line=left,
+            grid=both,
+            x label style={at={(axis description cs:1,.5)},anchor=west},
+        ]
+            \draw[domain=0:10,very thick] plot(\x,0.5*\x); 
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+             \textbf{Time (s)} & \textbf{Position (m)} \\ \hline
+             0\,s & \SI{0}{m} \\ \hline
+             1\,s & \SI{0.5}{m} \\ \hline
+             2\,s & \SI{1}{m} \\ \hline
+             3\,s & \SI{1.5}{m} \\  \hline
+             4\,s & \SI{2}{m} \\ \hline
+        \end{tabular}
+    \end{center}
+
+    It moves 0.5\,m each second, which is most clearly seen by the 2-second time intervals. Therefore it's velocity is $v = \SI{0.5}{m/s}$.
+\end{solution}
+
+\question \label{K10V9}
+Consider the graph below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=9,
+        ymin=0, ymax=5,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,9},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:6,very thick] plot(\x,\x);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+    \part What type of graph is this? What values are represented on the $y$-axis and what values are on the $x$-axis? What does a data point on this graph represent physically?
+
+    \begin{solution}
+        This is a position vs time graph. Position values are represented on the $y$-axis; time values, on the $x$-axis. A data point represents where the object is located relative to the reference point at any given time.    
+    \end{solution}
+    
+    \part What is the $y$-intercept of this line? What does it physically represent?    
+
+    \begin{solution}
+        The $y$-intercept is zero. This indicates that the object's initial position is at the origin.
+    \end{solution}
+    
+    \part What is the slope of this line? What does it physically represent?
+
+    \begin{solution}
+        The slope (or rise over run) is 1 meter per second and represents the object's velocity.
+    \end{solution}
+    
+    \part How much will this object be displaced in 1 second?
+
+    \begin{solution}
+        If $v = \SI{1}{m/s}$, then in 1 second the object is displaced 1 meter.    
+    \end{solution}
+    
+    \part What is the equation of this line?
+        
+    \begin{solution}
+        $x = t$
+    \end{solution}
+    
+    \part What would the formula for the ``area under the curve (line)'' be? Does it mean anything physically?
+
+    \begin{solution}
+        The area under the  curve (line) forms a right triangle. 
+
+    \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=8cm,height=6cm,
+            axis lines=left,
+            xmin=0, xmax=9,
+            ymin=0, ymax=5,
+            ylabel = {Position (m)},
+            xlabel = {Time (s)},
+            grid = both,
+            xtick={0,1,...,9},
+            ytick={0,1,...,5},
+        ]
+        \fill[domain=0:5,black!20] (0,0) -- plot(\x,\x) -- (5,0) -- cycle;
+        \draw[domain=0:5,very thick] plot(\x,\x); 
+    \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    The area of a triangle is one-half times base times height, where the base is a time of 5 seconds and the height is a position of 5 meters:
+
+    \begin{equation*}
+        A = \frac{1}{2}bh = \frac{1}{2}tx
+    \end{equation*}
+
+    In this formula, multiplying position and time yields nonsense units of meter-seconds, which physically does not represent anything. 
+    \end{solution}
+    
+    \part Describe the motion of this object (Recall: describing motion includes important positions and velocity---including direction).
+
+    \begin{solution}
+        The object starts at the origin and moves with a constant velocity of 1 meter per second in the positive direction.
+    \end{solution}
+\end{parts}
+
+\begin{EnvUplevel}
+    \textbf{Questions .} For each of the graphs below, repeat parts (a) through (g) from Question \ref{K10V9}.
+\end{EnvUplevel}
+
+\question 
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=9,
+        ymin=0, ymax=5,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,9},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:9,very thick] plot(\x,-\x/4+4);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=9,
+        ymin=0, ymax=5,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,9},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:9,very thick] plot(\x,2*\x+1);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=9,
+        ymin=0, ymax=5,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,9},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:9,very thick] plot(\x,4);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=8cm,height=6cm,
+            xlabel={Time (s)},
+            ylabel={Velocity (m/s)},
+            xmin=0,xmax=9,
+            ymin=-4,ymax=5,
+            xtick={0,1,...,9},
+            ytick={-4,-3,...,5},
+            axis x line=middle,
+            axis y line=left,
+            grid=both,
+            %x label style={at={(axis description cs:1.05,0.25)},anchor=west},
+        ]
+            \draw[domain=0:10,very thick] plot(\x,-2); 
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=9,
+        ymin=0, ymax=5,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,9},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:9,very thick] plot(\x,2);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Day 11: Representing Constant Motion}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{wsS8H}--\ref{TDX9e}.} In each of the questions below, you are given only \textit{one} of the following motion representations:
+
+    \begin{itemize}
+        \item $x$ vs $t$ graph
+        \item $v$ vs $t$ graph
+        \item written description
+        \item Data Table or Motion Map
+    \end{itemize}
+
+    Provide the remaining three representations. For example, given a $x$ vs $t$ graph, create a $v$ vs $t$ graph, write a description of motion using words, and produce a data table or a motion map.
+\end{EnvUplevel}
+
+\question \label{wsS8H}
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=6,
+        ymin=0, ymax=30,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        xtick={0,1,...,6},
+        ytick={0,5,...,30},
+    ]
+    \draw[domain=0:6,very thick] plot(\x,5*\x);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=5,
+        ymin=0, ymax=5,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        xtick={0,1,...,5},
+        ytick={0,1,...,5},
+    ]
+    \draw[domain=0:9,very thick] plot(\x,3);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+Object starts at the reference point and moves with a constant velocity of \SI{10}{m/s} for \SI{3}{s}.
+
+\question 
+\phantom{.}
+
+\begin{tabular}{|c|c|}
+    \hline
+     $x$ (m) & $t$ (s) \\ \hline
+     0 & 0 \\ \hline
+     1 & 2 \\ \hline
+     2 & 4 \\ \hline
+     3 & 6 \\  \hline
+\end{tabular}
+
+\question
+Object moves with constant positive velocity for 4 seconds.  Then, it stops for 2 seconds and returns to the initial position in 2 seconds.
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=6cm,
+        axis lines=left,
+        xmin=0, xmax=5,
+        ymin=-10, ymax=0,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        xtick={0,1,...,5},
+        ytick={-10,-8,...,10},
+    ]
+    \draw[domain=0:6,very thick] plot(\x,-2*\x);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question 
+\phantom{.}
+
+\begin{tabular}{|c|c|}
+    \hline
+     $t$ (s) & $v$ (m/s) \\ \hline
+     0 & 100 \\ \hline
+     1 & 100 \\ \hline
+     2 & 100 \\ \hline
+\end{tabular}
+
+$x_i = \SI{50}{m}$
+
+\question
+Object A starts 10\,m to the right of the origin and moves to the left at 2\,m/s for 5\,s. 
+Object B starts at the origin and moves to the right at 3\,m/s.
+
+
+\question \label{TDX9e}
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=8cm,height=6cm,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            ymin=-3,ymax=3,
+            xmin=0,xmax=5,
+            ytick={-3,-2,...,3},
+            xtick={0,1,...,5},
+            axis y line=left,
+            axis x line=middle,
+            %x label style={at={(axis description cs:1.05,0.25)},anchor=west},
+        ]
+            \draw[domain=0:5,very thick] plot(\x,-1); 
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\clearpage
+\subsection*{Additional Problems}
+
+
+\textbf{Questions \ref{25l8W}--\ref{BEhG4}.} The graph below represents the motion of a runner.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis lines=left,
+        ymin=0, ymax=12,
+        xmin=0, xmax=12,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,2,...,12},
+        ytick={0,2,...,12},
+    ]
+    \draw[domain=0:10,very thick] plot(\x,\x);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\question \label{25l8W}
+What is the displacement during the entire time interval?
+
+\begin{solution}
+From the position vs.~time graph, the initial and final positions are $x_0=0$ and $x_f = \SI{10}{m}$. Displacement is
+
+\begin{equation*}
+    \Delta{x} = x_f - x_0 = \SI{10}{m}.
+\end{equation*}
+\end{solution}
+
+\question \label{ques:runner_end} 
+Calculate the average velocity during the entire time interval.
+
+\begin{solution}
+For a position vs.~time graph that is linear, average velocity is the slope of the line. Choosing any two coordinates $(t_0,x_0)$ and $(t_f,x_f)$ yields
+
+\begin{equation*}
+    v = \frac{\Delta{x}}{\Delta{t}} = \frac{x_f - x_0}{t_f - t_0} = \SI{1.0}{m/s}
+\end{equation*}
+\end{solution}
+
+\question \label{BEhG4} 
+Draw the corresponding velocity vs.~time graph. Label the velocity and time axes, including units. Label the numbers on the axes. 
+
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis lines=left,
+            ymin=0, ymax=2,
+            xmin=0, xmax=10,
+            ylabel = Velocity (m/s),
+            xlabel = Time (s),
+            grid = none,
+            ytick={0,1,2}
+                ]
+            \draw[domain=0:10,very thick] plot(\x,1);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{solution}
+
+\bigskip
+\hrule
+
+\question 
+Write the mathematical relationship (equation) for each of the motions of the objects depicted in the following graph.
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=7cm,height=7cm,
+        axis lines=left,
+        ymin=0, ymax=20,
+        xmin=0, xmax=20,
+        ylabel = {$x$ (m)},
+        xlabel = {$t$ (s)},
+        grid = both,
+        xtick={0,2,...,20},
+        ytick={0,2,...,20},
+        clip=false,
+    ]
+    \draw[domain=0:10,very thick,mark position=1.0(a)] plot(\x,2*\x);
+    \node at (a) [above] {I};
+    \draw[domain=0:20,very thick,mark position=1.0(a)] plot(\x,\x);
+    \node at (a) [above] {II};
+    \draw[domain=0:20,very thick,mark position=1.0(a)] plot(\x,0.5*\x+6);
+    \node at (a) [right] {III};
+    \draw[domain=0:20,very thick,mark position=1.0(a)] plot(\x,-\x/3+12);
+    \node at (a) [right] {IV};
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    For objects I, II, III, and IV, the equations of motion are, respectively,
+
+    \begin{align*}
+        x &= 2t \\[1ex]
+        x &= t \\[1ex]
+        x &= \frac{1}{2}t + 6 \\[1ex]
+        x &= -\frac{1}{3}t + 12
+    \end{align*}
+\end{solution}
+
+\question
+Consider the motion of Objects A, B, C, and D shown below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis lines=left,
+            ylabel={$x$ (m)},
+            xlabel={$t$ (s)},
+            xmin=0,xmax=10,
+            ymin=0,ymax=10,
+            xtick=\empty,ytick=\empty,
+            clip=true,
+            ]
+            \draw[domain=0:10,very thick,mark position=0.45(a)] plot(\x,2*\x);
+            \node at (a) [left] {Obj A};
+            \draw[domain=0:10,very thick,mark position=0.9(b)] plot(\x,\x);
+            \node at (b) [left] {Obj B};
+            \draw[domain=0:10,very thick,mark position=0.9(c)] plot(\x,0.5*\x);
+            \node at (c) [above left=-2pt] {Obj C};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{parts}
+    \part Which object has the least velocity?
+
+    \begin{solution}
+        Object C. It undergoes a smaller displacement in the same amount of time as the other two. Also, the slope of it's position vs. time graph is smaller (shallower), implying a lesser velocity.
+    \end{solution}
+
+    \part Which object moves with a constant velocity?
+
+    \begin{solution}
+        All three objects move at a constant velocity. They position vs. time graphs are linear, indicating that the ratio of displacement over time is the same value at any two points on the line.
+    \end{solution}
+\end{parts}
+
+
+
+% \begin{randomizechoices}[norandomize]
+%     \choice Object A
+%     \choice Object B
+%     \correctchoice Object C
+%     \choice All objects have the same velocity.
+% \end{randomizechoices}
+
+\question
+Which object is moving with constant motion in the graph below?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis lines=left,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            xmin=0,xmax=10,
+            ymin=0,ymax=10,
+            xtick=\empty,ytick=\empty,
+            clip=false,
+            ]
+            \draw[domain=0:10,very thick,mark position=1.0(a)] plot(\x,7);
+            \node at (a) [right] {Obj A};
+            \draw[domain=0:10,very thick,mark position=1.0(b)] plot(3,\x);
+            \node at (b) [above] {Obj B};
+            \draw[domain=0:10,very thick,mark position=1.0(c)] plot(\x,\x);
+            \node at (c) [above right] {Obj C};
+            \draw[domain=0:10,very thick,mark position=0.9(d)] plot(\x,0.06*\x^2);
+            \node at (d) [below right] {Obj D};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+% \begin{randomizechoices}[norandomize]
+%     \correctchoice Object A
+%     \choice Object B
+%     \choice Object C
+%     \choice Object D
+% \end{randomizechoices}
+
+
+\begin{EnvUplevel}
+    \textbf{Questions}. Below is a quantitative motion map for a moving object. The dots indicate the position of the object at 1-second time intervals.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=15, 
+        xmin=0, xmax=30,
+        xtick={0,5,...,30},
+        minor x tick num=4,
+        clip=false,
+        ]
+        \draw[->] (6,1) --++ (2,0) node[above,pos=0.5] {$v$};
+        \draw[->] (10,1) --++ (2,0) node[above,pos=0.5] {$v$};
+        \draw[->] (14,1) --++ (2,0) node[above,pos=0.5] {$v$};
+        \draw[->] (18,1) --++ (2,0) node[above,pos=0.5] {$v$};
+        \draw[->] (22,1) --++ (2,0) node[above,pos=0.5] {$v$};
+        \fill (6,1) circle (3pt) node[left=3pt] {start};
+        \fill (10,1) circle (3pt);
+        \fill (14,1) circle (3pt);
+        \fill (18,1) circle (3pt);
+        \fill (22,1) circle (3pt);
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question
+What is the object's position after 4 seconds of motion?
+
+\question 
+Calculate the object's displacement from $t = \SI{0}{s}$ to $t = \SI{1}{s}$.
+
+\question
+What is the object's average velocity between $t = \SI{1}{s}$ and $t = \SI{3}{s}$?
+
+\bigskip
+\hrule
+
+\question
+\begin{parts}
+    \part Draw a motion map for an object moving at a constant velocity of \SI{3}{m/s} to the left for 4 seconds.
+    \part What is the displacement through the whole time interval?
+\end{parts}
+
+
+
+\begin{EnvUplevel}
+    \textbf{Questions.} Consider the motion of an object as shown in the graph below.
+\end{EnvUplevel}
+
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,height=6cm,
+            axis lines=left,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            xmin=0,xmax=10,
+            ymin=0,ymax=25,
+            xtick={0,2,...,10},
+            ytick={0,5,...,25},
+            grid=both,
+            ]
+            \addplot[black,mark=*,very thick]
+                coordinates {
+                (0,15)(2,15)(4,15)(6,15)(8,15)(10,15)
+                };
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question 
+Find the object's velocity at $t = \SI{5}{s}$.
+
+\question 
+Calculate the object's displacement from $t = \SI{0}{s}$ to $t = \SI{10}{s}$.
+
+\bigskip
+\hrule
+
+\question
+The data in the table shows the measured distance that a train travels from its station versus time. Use the coordinate system to plot the line graph of the data.
+
+\begin{minipage}{6cm}
+\centering
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Time (min)} & \textbf{Distance (km)} \\
+    \hline
+    0 & 0\\
+    10 & 24\\
+    20 & 36\\
+    30 & 60\\
+    40 & 84\\
+    50 & 97\\
+    60 & 116\\
+    70 & 140\\ \hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}{8cm}
+\centering
+\scalebox{1}{
+\begin{tikzpicture}
+\begin{axis}[width=7cm,height=6cm,
+    axis lines=left,
+    ymin=0, ymax=160,
+    xmin=0, xmax=70,
+    ylabel = Distance from station (km),
+    xlabel = Time (min),
+    grid=both,
+    xtick={0,10,...,70},
+    ytick={0,20,...,160}
+]
+% \addplot[black,
+%     mark options={color=black},mark=*,
+%     ultra thick,
+%     ]
+    % coordinates {
+    % %(0,0)(10,24)(20,36)(30,60)(40,84)(50,97)(60,116)(70,140)
+    % };
+\end{axis}
+\end{tikzpicture}
+}
+\end{minipage}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{oXjxL}--\ref{io05f}.} Refer to the figure below showing two cars moving forward.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (0,0) -- (2,0) node[right] {\SI{45}{m/s}};
+        \draw (0,0) node[left=1em] {\textbf{A}} node[above=-2.7mm] {\reflectbox{\twemoji[width=6mm]{automobile}}};
+        
+        \begin{scope}[xshift=4cm,yshift=1cm]
+            \draw[->] (0,0) -- (1,0) node[right] {\SI{15}{m/s}};
+            \draw (0,0) node[left=1em] {\textbf{B}} node[above=-3mm] {\reflectbox{\twemoji[width=7mm]{articulated lorry}}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\question \label{oXjxL}
+Using car A as a reference, what is the speed of car B?
+
+\begin{solution}
+    \SI{30}{m/s}
+\end{solution}
+
+\question \label{io05f}
+Again, with car A as the reference point, in what direction is car B moving?
+
+\begin{solution}
+    Backwards, or towards car A.
+\end{solution}
+
+\bigskip
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{Ui9uc}--\ref{NuukR}.} Consider the objects and their quantities in the table below.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{object} & \textbf{mass} & \textbf{velocity} \\ \hline
+        mosquito & \SI{2.5}{mg} & \SI{25}{cm/s} \\ \hline
+        Usain Bolt & \SI{94}{kg} & \SI{10}{m/s}\\ \hline
+        airplane & 100,000\,kg & \SI{3}{m/s}\\ \hline
+    \end{tabular}
+\end{center}
+
+\question \label{Ui9uc}
+Which object has the greatest inertia---the tendency to resist a change in motion?
+
+\begin{solution}
+    Because inertia is proportional to mass, the airplane has the greatest resistance to a change in motion.
+\end{solution}
+
+\question
+Which object has the least momentum?
+
+\begin{solution}
+    Momentum is mass multiplied by velocity. Converting to SI units of kg and m/s, the mosquito clearly has the smallest momentum.
+\end{solution}
+
+\question \label{NuukR}
+Which object has the greatest kinetic energy?
+
+\begin{solution}
+    Kinetic energy is one-half times mass times velocity squared, or
+
+    \begin{equation*}
+        E_\mathrm{K} = \frac{1}{2} m v^2
+    \end{equation*}
+
+    So, the airplane has the greatest kinetic energy.
+\end{solution}
+
+\bigskip
+\hrule
+
+\question \label{openstax-8.1}
+An elephant approaches a hunter in the African savanna.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) node {\reflectbox{\twemoji[height=2cm]{elephant}}};
+        \draw (4,-0.5) node {\reflectbox{\twemoji[height=1cm]{man walking}}};
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{parts}
+	\part Calculate the momentum of a 2000-kg elephant charging a hunter at a speed of \SI{7.50} {m/s}.
+	
+	\begin{solution}
+		$m = \SI{2000}{kg}$, $v = \SI{7.50}{m/s}$
+		
+		\begin{equation*}
+			p = mv = \SI{1.5e4}{kg\,m/s}
+		\end{equation*}
+	\end{solution}
+	
+ 	\part Compare the elephant's momentum with the momentum of a 0.0400-kg tranquilizer dart fired at a speed of \SI{600}{m/s}, by taking the ratio of momenta.
+ 	
+ 	\begin{solution}
+ 		$m = \SI{0.400}{kg}$, $v = \SI{600}{m/s}$
+ 		
+ 		\begin{equation*}
+ 			p = mv = \SI{24.0}{kg\,m/s}
+ 		\end{equation*}
+ 		
+ 		\begin{equation*}
+ 			\frac{\SI{1.5e4}{kg\,m/s}}{\SI{24.0}{kg\,m/s}} = 625
+ 		\end{equation*}
+ 		
+ 		The momentum of the elephant is much larger because the mass of the elephant is much larger.
+ 	\end{solution}
+ 	
+ 	\part What is the momentum of the 90.0-kg hunter running at \SI{7.50}{m/s} after missing the elephant?
+ 	
+	\begin{solution}
+	 		$m = \SI{90.0}{kg}$, $v = \SI{7.50}{m/s}$
+ 		
+ 		\begin{equation*}
+ 			p = mv = \SI{675}{kg\,m/s}
+ 		\end{equation*}
+	\end{solution}
+\end{parts}
+
+\question 
+Make a graph of kinetic energy as a function of time for both the hunter and the tranquilizer dart, given that they travel for 3 seconds with constant motion.
+
+\begin{solution}
+    \phantom{.}
+
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[width=8cm,height=8cm,
+                axis lines=left,
+                xlabel={Time (s)},
+                ylabel={Kinetic Energy (\SI{}{kg\cdot m^2/s^2})},
+                xmin=0,xmax=3,
+                ymin=0,ymax=9000,
+                xtick={0,1,2,3},
+                ytick={0,1000,...,9000},
+                grid=both,
+                minor x tick num=2,
+                clip=false
+            ]
+            \draw[very thick] (0,2531) -- ++(3,0) node[right] {hunter};
+            \draw[very thick] (0,7200) -- ++(3,0) node[right] {dart};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{solution}
+
+\end{questions}
+\end{document}

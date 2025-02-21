@@ -1,0 +1,421 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage{mdframed}
+
+\setrandomizerseed{1}
+
+
+\header{Physics\\Review for TEKS Test}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+
+
+\begin{document}
+\begin{questions}
+\question 
+A satellite is launched into frictionless space. True or false? Once in space, the amount of force needed to keep the satellite moving at a constant speed is at least 1 newton. Explain
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\begin{solution}
+    According to the law of inertia, once in motion the satellite will remain in motion at a constant velocity. Therefore, no force is required to keep it in motion. The statement is false. 
+\end{solution}
+
+\question
+For each diagram below, the box is the identical and the force $F$ is applied by various angles above the horizontal. In Diagrams A and C, force $F$ is applied at \ang{45} from the horizontal.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (3,0) node[below,pos=0.5] {Diagram A};
+    \begin{scope}[shift={(1,0)}]
+        \draw[fill=black!10] (0,0) rectangle (1,0.7);
+        \draw[thick,->] (1,0.7) -- ++(1,0.6) node[above] {$F$};        
+    \end{scope}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \draw (0,0) -- (3,0) node[below,pos=0.5] {Diagram B};
+    \begin{scope}[shift={(1,0)}]
+        \draw[fill=black!10] (0,0) rectangle (1,0.7);
+        \draw[thick,->] (1,0.35) -- ++(1.17,0) node[above] {$F$};        
+    \end{scope}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \draw (0,0) -- (3,0) node[below,pos=0.5] {Diagram C};
+    \begin{scope}[shift={(1,0)}]
+        \draw[fill=black!10] (0,0) rectangle (1,0.7);
+        \draw[thick,<-] (1,0.7)node[above=2pt] {$F$} -- ++(1,0.6);        
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Rank order the magnitude of acceleration of the box from least to greatest. Assume all surfaces are frictionless.
+
+\begin{solution}
+    The magnitudes of acceleration are equal for Diagrams A and C. The greatest acceleration occurs for Diagram B.
+\end{solution}
+
+\question
+% The bar chart below shows the kinetic energy of a 3-kg object at two different points in time.
+
+% \begin{center}
+% \begin{tikzpicture}
+% \begin{axis}[width=7cm,height=6cm,
+%     % axis lines=left,
+%     ybar,
+%     symbolic x coords={initial, final},
+%     xtick=data,
+%     ylabel={Kinetic Energy (J)},
+%     ymin=0, ymax=10,
+%     ytick={0,1,...,10},
+%     bar width=35pt,
+%     enlarge x limits=0.5,
+%     ymajorgrids=true,
+%     tick pos=left,
+%     title={Change in Kinetic Energy}
+% ]
+% \addplot[black,fill=black!20] coordinates {(initial,8) (final,2)};
+% \end{axis}
+% \end{tikzpicture}
+% \end{center}
+
+The work-energy theorem states that the net work done on an object is equal to 
+
+\begin{randomizechoices}
+    \correctchoice change in kinetic energy
+    \choice net force multiplied by time
+    \choice mass multiplied by acceleration
+    \choice change in momentum 
+\end{randomizechoices}
+
+\question
+(a) Draw a velocity vs. time graph for a car traveling at a constant velocity of \SI{2}{m/s} for 4 seconds.\\ (b) Discuss how you can use the graph to calculate the car's displacement during that time interval.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=8cm,height=5cm,
+        axis lines=left,
+        ymin=0, ymax=5,
+        xmin=0, xmax=6,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,10},
+        ytick={0,1,...,6},
+        minor x tick num=1,
+    ]
+    \ifprintanswers
+    \addplot[very thick,domain=0:4,red] plot {2};
+    \fi
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+\question
+A storm chaser flying a drone at \SI{21}{m/s} accelerates it at \SI{2.0}{m/s^2} for \SI{5.0}{s}. What is the drone's speed at the end of this time interval?
+
+
+\begin{solution}
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{v_f - v_0}{\Delta t}
+\end{equation*}
+
+\vspace{-1ex}
+\begin{align*}
+    v_f &= v_0 + a \Delta t \\[1ex]
+    &= \SI{21}{m/s} + \left(\SI{2.0}{m/s^2}\right)(\SI{5.0}{s}) \\[1ex]
+    &= \boxed{\SI{31}{m/s}}
+\end{align*}
+\end{solution}
+
+\question
+The velocity vs. time data table below represents the motion of an object.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+         0 & 0 \\ \hline
+         1 & 1 \\ \hline
+         2 & 2 \\ \hline
+         3 & 3 \\ \hline
+         4 & 4 \\ \hline
+         5 & 5 \\ \hline
+         6 & 6 \\ \hline
+    \end{tabular}
+\end{center}
+
+What additional information would you need to find the force acting on the object during this time interval?
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\begin{solution}
+    You can use the table to find the acceleration. By Newton's 2nd law, force is mass multiplied by acceleration. Therefore, we additionally need to know the mass of the object. 
+\end{solution}
+
+
+% \question
+% The chart below is a record of the instantaneous velocities at the given times for a toy car used in a laboratory investigation.
+
+% \begin{center}
+%     \begin{tabular}{|c|c|}
+%         \hline
+%          \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+%          0 & $+3$ \\ \hline
+%          1 & $+1$ \\ \hline
+%          2 & $-1$ \\ \hline
+%          3 & $-3$ \\ \hline
+%     \end{tabular}
+% \end{center}
+
+% Which of the following statements is supported by the data?
+
+% \begin{randomizechoices}
+%     \choice From 0 seconds to 1 seconds, the car is speeding up.
+%     \choice From 1 second to 2 seconds, the car has a constant velocity.
+%     \choice From 2 seconds to 3 seconds, the car is slowing down.
+%     \correctchoice From 0 seconds to 3 seconds, the velocity is changing at a constant rate.
+% \end{randomizechoices}
+
+\question
+The data represented in the position vs. time graph below was collected from a cart moving along a horizontal track.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=7cm,
+        axis lines=left,
+        ymin=0, ymax=80,
+        xmin=0, xmax=6,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,20,...,80},
+        xtick={0,1,...,6},
+        clip=false,
+    ]
+    \addplot[very thick] coordinates {(0,40)(1,40)(2,60)(4,60)(5,0)}; 
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+During which time interval(s) is the cart not moving?
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\begin{solution}
+    Between 0 and 1 second, and between 2 and 4 seconds, the car does not move.
+\end{solution}
+
+% \begin{randomizechoices}
+%     \choice Between 0 to 1 seconds	
+%     \choice Between 1 to 2 seconds
+%     \choice Between 2 to 4 seconds
+%     \correctchoice Between 4 to 5 seconds
+% \end{randomizechoices}
+
+\question
+An air bag is used to safely decrease the momentum of a driver in a car accident. Use the impulse-momentum theorem to explain how the air bag reduces the magnitude of the force acting on the driver.
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\begin{solution}
+    According to the impulse-momentum theorem, $F_\mathrm{net} \Delta t = \Delta p$, an airbag reduces the force on the driver by increasing the amount of time the force acts on the driver to reduce his momentum to zero.
+\end{solution}
+
+% \begin{randomizechoices}	
+%     \choice decreasing the distance over which the force acts on the driver.	
+%     \choice increasing the rate of acceleration of the driver.	
+%     \choice decreasing the mass of the driver.	
+%     \correctchoice increasing the amount of time the force acts on the driver.
+% \end{randomizechoices}
+
+\question
+The object illustrated below is moving horizontally. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (5,0);
+    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
+    \fill (2,0.5) circle (2pt);
+    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
+    \draw[->] (2,0.5) -- ++(+2.0,0) node[above,pos=0.9] {$+$} node[right] {$F_\mathrm{A}$};
+    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
+\end{tikzpicture}
+\end{center}
+
+The magnitude of the applied force $F_\mathrm{A}$ is greater the magnitude of the frictional force $F_f$. The object must be moving with 
+
+\begin{randomizechoices}
+    \correctchoice constant, positive acceleration.
+    \choice constant, positive velocity.
+    \choice constant, negative velocity.
+    \choice constant, negative acceleration.
+\end{randomizechoices}
+
+\question
+The velocity vs. time graph below represents the motion of a 4 kg cart along a straight line.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=5cm,
+        axis lines=left,
+        ymin=0, ymax=7,
+        xmin=0, xmax=4,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,1,...,7},
+        xtick={0,1,...,4},
+        minor x tick num=1,
+    ]
+    \addplot[ultra thick] coordinates {(0,6)(1,6)(1.25,3)(3.5,3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Explain why the change in momentum of the cart between $t = 2$ and $t = 3$ seconds is \SI{0}{\kg\cdot m/s}.
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\begin{solution}
+Change in momentum ($\Delta p$) is mass ($m$) multiplied by change in velocity ($\Delta v$). During this time interval, the cart undergoes no change in velocity and therefore does not change momentum.
+\end{solution}
+
+
+
+% \question
+% The graph below shows the force exerted on a box sliding across the floor with a positive velocity.
+
+% \begin{center}
+% \begin{tikzpicture}
+%     \begin{axis}[width=7cm,height=5cm,
+%         axis lines=left,
+%         ymin=0, ymax=60,
+%         xmin=0, xmax=30,
+%         ylabel = {Force (N)},
+%         xlabel = {Displacement (m)},
+%         grid = both,
+%         ytick={0,10,...,60},
+%         xtick={0,5,...,30},
+%         grid=both
+%     ]
+%     \addplot[ultra thick] coordinates {(0,40)(20,40)(30,0)};
+% \end{axis}
+% \end{tikzpicture}
+% \end{center}
+
+% What is the change in kinetic energy of the box as it slides through a displacement of \SI{15}{m} with a \SI{40}{N} net force acting on it?
+
+
+
+\question
+Two carts collide and bounce off one another. The diagram below shows their motion after the collision.
+
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (7,0);
+    \begin{scope}[shift={(1.5,0.15)}]
+        \draw (0,0) rectangle ++(1.2,0.8) node[pos=0.5] {\SI{1}{kg}};
+        \draw[fill=white] (0.3,0) circle (0.15);
+        \draw[fill=white] (0.9,0) circle (0.15);
+        \draw[thick,->] (0,0.4) -- ++(-0.8,0);
+    \end{scope}
+    \begin{scope}[shift={(4,0.15)}]
+        \draw (0,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
+        \draw[fill=white] (0.4,0) circle (0.15);
+        \draw[fill=white] (1.1,0) circle (0.15);
+        \draw[thick,->] (1.5,0.5) -- ++(0.8,0);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+During the collision, which cart exerted a greater force on the other? Explain.
+
+\ifprintanswers
+\else
+\fillwithlines{2cm}
+\fi
+
+\begin{solution}
+    Because the collision is a force-pair interaction, the magnitudes of forces exerted by each cart on the other during the collision is equal in magnitude, even if the carts have different masses.
+\end{solution}
+
+
+\question
+A car has an oil drip. As the car moves in the positive direction, it drips oil at a regular rate, leaving a trail of spots on the road. Draw the oil drop pattern for a car speeding up with a a positive acceleration. (\textit{Hint:} Draw the motion map.)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \ifprintanswers
+    \draw[domain=-10:0,mark=*,only marks, samples=8,mark size=3pt,red] plot({-0.1*\x^2 -10},0);
+    \else
+    \draw[domain=-10:0,mark=*,only marks, samples=8,mark size=3pt,white] plot({-0.1*\x^2 -10},0);
+    \fi
+    \node[above=3pt] at (-10,0) {Start};
+    \node[above=3pt] at (0,0) {Finish};
+\end{tikzpicture}
+\end{center}
+
+\question
+Four forces act on an object as shown. $F_f$ is equal in magnitude to $F$. $F_\mathrm{N}$ is equal in magnitude to $F_g$. 
+Assuming the block is in motion, make a graph of its position vs. time.
+
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (5,0);
+    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
+    \fill (2,0.5) circle (2pt);
+    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
+    \draw[->] (2,0.5) -- ++(+1.5,0) node[right] {$F$};
+    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        % y label style={rotate=-90},
+        xlabel={Time},
+        clip=false,
+    ]
+        \ifprintanswers
+        \addplot[domain=0:2.5,very thick,red] {x};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+\end{questions}
+\end{document}

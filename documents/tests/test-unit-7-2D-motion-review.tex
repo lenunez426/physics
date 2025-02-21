@@ -1,0 +1,482 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage{mdframed}
+\usepackage[none]{hyphenat}
+
+\setrandomizerseed{1}
+\bracketedpoints
+\addpoints
+
+\newif\ifversionKlevel
+
+\versionKleveltrue
+
+\header{Physics \\Review on Units 6 \& 7: One- \& Two-Dimensional Motion}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+
+\ifversionKlevel
+    \header{Physics \\Review on Units 6 \& 7: One- \& Two-Dimensional Motion}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\fi
+
+\begin{document}
+
+\clearpage
+
+\subsection*{Review}
+
+\begin{questions}
+
+\question
+The JP Morgan Chase Tower is the tallest building in Houston. If you drop a bowling ball from rest from the top of the building, it takes 7.81 seconds for it to strike the ground below. How tall is the building?
+
+\begin{solutionorbox}[4cm]
+We know time is $t = \SI{7.81}{s}$ and the magnitude of gravitational acceleration is $g = \SI{10}{m/s^2}$. Since the object is dropped from rest, initial velocity is $v_i = 0$. The ball's vertical displacement is given by the one-dimensional motion equation
+
+\vspace{-1em}
+\begin{align*}
+    \Delta y &= v_i t - \frac{1}{2}g t^2 \\[1ex]
+    &= (\SI{0}{m/s})(\SI{7.81}{s}) - \frac{1}{2} (\SI{10}{m/s^2})(\SI{7.81}{s})^2 \\[1ex]
+    &= -\SI{305}{m}
+\end{align*}
+
+This vertical displacement must be equal in magnitude to the height of the building. Therefore, the building's height is \SI{305}{m}.    
+\end{solutionorbox}
+
+\question
+The Burj Kalifa, the tallest building in the world, is 830 meters tall. How long would it take a bowling ball that is horizontally launched at \SI{5}{m/s} from the top of the building to strike the ground?
+
+\medskip
+
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=6cm,height=6cm,
+    axis lines = none,
+    clip=false,
+    axis equal image,
+    ymin=0, ymax=125,
+    xmin=0, xmax=90,
+    ]
+    \addplot[domain=0:90,densely dashed] {trajectoryequation10(x,18,0)+125};    
+    \fill[black!10] (0,0) rectangle ++(-20,125);
+    \draw (-20,0) -- (0,0) -- (0,125);
+    \node at (-4,128) {\Strichmaxerl[1]};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hspace{2mm}%
+\fbox{
+\begin{minipage}{0.65\textwidth}
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+In falling, the ball's displacement is $\Delta y = -\SI{830}{m}$. For a horizontally launched projectile, the vertical component of initial velocity is zero: $v_{iy} = 0$. Gravitational acceleration has a magnitude of $g = \SI{10}{m/s^2}$.
+
+To solve for hang time, we start with the one-dimensional motion equation
+
+\begin{equation*}
+    \Delta y = v_{iy} t - \frac{1}{2}g t^2
+\end{equation*}
+
+Substitution of known values yields
+
+\begin{equation*}
+    -\SI{830}{m} = 0 - \frac{1}{2}\left(\SI{10}{m/s^2}\right) t^2
+\end{equation*}
+
+Solving for time gives
+
+\begin{equation*}
+    t = \sqrt{\frac{2(\SI{830}{m})}{\SI{10}{m/s^2}}} = \boxed{\SI{12.9}{s}}
+\end{equation*}
+\end{minipage}
+}
+\question
+A projectile is launched at an angle above the horizon as shown in the figure below. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=9cm,
+        axis lines=left,
+        ylabel={$y$ (m)},
+        y label style={rotate=-90},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=14,
+        xmin=0,xmax=30,
+        ytick={0,2,...,14},
+        xtick={0,3,...,30},
+        grid=both,
+        clip=false,
+    ]
+    \addplot[domain=0:28.06,thick,smooth,densely dashed] {trajectoryequation10(x,18,60)};
+    \ifprintanswers
+    \draw[red,ultra thick,->] (0,0) -- ({2.5cm*cos(60)},{2.5cm*sin(60)}) node[right=2pt,pos=0.9] {\SI{18}{m/s}};
+    \draw[red] (0.7cm,0) arc (0:60:0.7cm) node[red,pos=0.7,right=2pt] {\ang{60}};
+    \fill[red] (14.03,12.15) circle (2pt) node[above=2pt] {apex};
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Complete the following parts:
+
+{\hfill \textit{\dots continued on next page.}}
+
+\begin{parts}
+\part At the origin, draw a velocity vector representing the initial speed. Label it \SI{18}{m/s}.
+\part Estimate the launch angle and label it on the graph.
+\part Label the apex.
+\part The apex height is about \fillin[12][4em] meters.
+\part The maximum range is about \fillin[28][4em] meters.
+\part Discuss the changes, if any, to the apex height, apex range, and maximum projectile range when the initial speed is increased.
+
+\ifprintanswers
+\bgroup
+\color{red}
+When speed increases, the trajectory grows taller and wider such that the apex height, apex range, and maximum projectile all increase.
+\egroup
+\else
+\fillwithlines{2cm}
+\fi
+\end{parts}
+
+\question
+A pumpkin is launched from a cannon. 
+
+\begin{parts}
+\part Draw and label the horizontal component of velocity ($v_x$) and vertical component ($v_y$) at each point in the trajectory below. The directions and relative magnitudes must be accurate.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,width=10cm,
+        axis lines=none,
+        ylabel={$y$ (m)},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=12,
+        xmin=0,xmax=16,
+        ytick={0,2,...,12},
+        xtick={0,2,...,16},
+        grid=both,
+        clip=false,
+    ]
+    \ifprintanswers
+        \draw[->,thick,red] (0,0) -- ++(2,0) node[above] {$v_{ix}$};
+        \draw[->,thick,red] (0,0) -- ++(0,5.5) node[above] {$v_{iy}$};
+    \fi
+    \fill[black] (0,0) circle (2pt);
+    \pgfplotsinvokeforeach{0.41,0.81,2.05,2.46,2.87}{
+        \ifprintanswers
+            \color{red}
+        \else
+            \color{white}
+        \fi
+        \coordinate (P) at ({15*cos(70)*#1},{15*sin(70)*#1 - 0.5*9.8*(#1)^2}); 
+        \draw[->,thick] (P) -- ++(2,0) node[above] {$v_x$};
+        \draw[->,thick] (P) -- ++(0,{5.5 - 3.82*#1}) node[right] {$v_y$};
+        \fill[black] (P) circle (2pt);
+    }
+
+    %...For apex:
+        \coordinate (P) at ({15*cos(70)*1.44},{15*sin(70)*1.44 - 0.5*9.8*1.44^2});
+        \draw[->,thick] (P) -- ++(2,0) node[above] {$v_x$};
+        \fill[black] (P) circle (2pt);
+
+    %...Trajectory
+    \addplot[domain=0:14.74,black,smooth] {trajectoryequation(x,15,70)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part 
+Now draw and label $a_x$ and $a_y$, the horizontal and vertical components of acceleration, respectively.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,width=10cm,
+        axis lines=none,
+        ylabel={$y$ (m)},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=12,
+        xmin=0,xmax=16,
+        ytick={0,2,...,12},
+        xtick={0,2,...,16},
+        grid=both,
+        clip=false,
+    ]
+    \pgfplotsinvokeforeach{0,0.41,0.81,1.44,2.05,2.46,2.87}{
+        \ifprintanswers
+            \color{red}
+        \else
+            \color{white}
+        \fi
+        \coordinate (P) at ({15*cos(70)*#1},{15*sin(70)*#1 - 0.5*9.8*(#1)^2}); 
+
+        \draw[->,thick] (P) -- ++(0,-3) node[below] {$a_y$};
+        \fill[black] (P) circle (2pt);
+    }
+
+    %...Trajectory
+    \addplot[domain=0:14.74,black,smooth] {trajectoryequation(x,15,70)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\clearpage
+\question
+The figure below shows a fly undergoing circular motion. Draw and label the linear speed vector ($v$) and the centripetal acceleration vector ($a_c$). 
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \coordinate (P) at ({cos(135)},{sin(135)});
+    \draw[densely dashed] (0,0) circle (1);
+    \ifprintanswers
+    \draw[thick,->,red] (P) -- ++({0.7*cos(45)},{-0.7*sin(45)}) node[above right=-1pt] {$a_c$};
+    \draw[thick,red,->] (P) -- ++({-cos(45)},{-sin(45)}) node[above left=-1pt] {$v$};
+    \fi
+    \draw (P) node[rotate=135] {\twemoji[width=8mm]{fly}};
+\end{tikzpicture}
+\end{center}
+
+\question 
+Calculate the circumference of the circle below.
+
+\bigskip
+
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,0) circle (1);
+    \draw (0,0) -- (1,0) node[above,pos=0.5] {\SI{6.0}{cm}};
+\end{tikzpicture}
+\end{minipage}
+\hspace{1cm}%
+\fbox{
+\begin{minipage}{0.6\textwidth}
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+\begin{align*}
+    C &= 2\pi r \\[1ex]
+    &= 2\pi (\SI{6.0}{cm}) \\[1ex]
+    &= \boxed{\SI{37.7}{cm}}
+\end{align*}
+
+\vspace{1cm}
+\end{minipage}
+}
+
+\question
+A remote control toy airplane is undergoing uniform circular motion, and its path is shown below. It takes 45 seconds complete one circular trip. Calculate the plane's linear speed.
+
+\bigskip
+
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (0,0) circle (1);
+    \draw (0,0) -- (1,0) node[above,pos=0.5] {\SI{76}{m}};
+\end{tikzpicture}
+\end{minipage}
+\hspace{1cm}%
+\fbox{
+\begin{minipage}{0.6\textwidth}
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+Distance traveled by the plane is
+
+\begin{equation*}
+    s = 2\pi r = 2\pi(\SI{76}{m}) = \SI{477.5}{m}
+\end{equation*}
+
+Linear speed is distance over time:
+
+\begin{equation*}
+    v = \frac{2\pi r}{t} = \frac{2\pi(\SI{76}{m})}{\SI{45}{s}} = \boxed{\SI{10.6}{m/s}}
+\end{equation*}
+
+\vspace{5mm}
+\end{minipage}
+}
+
+\question \label{OXyBFH}
+A car turns at \SI{20}{m/s} on a curved road and undergoes circular motion, as shown below. Calculate its centripetal acceleration.
+
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (1,0) arc (0:180:1);
+    \draw[->,thick] ({cos(45)},{sin(45)}) -- ++({-0.8*cos(45)},{0.8*sin(45)}) node[left,black] {\SI{20}{m/s}};
+    \ifprintanswers
+    \draw[->,very thick] ({cos(45)},{sin(45)}) -- ++({-0.6*cos(45)},{-0.6*sin(45)}) node[above left=-2pt,black,pos=0.8] {$a_c$};
+    \fi
+    \fill (0,0) circle (1pt);
+    \draw[<->] (0,0) -- (-1,0) node[above,pos=0.5] {\SI{50}{m}};
+    \fill ({cos(45)},{sin(45)}) circle (3pt) node[right=3pt] {car};
+\end{tikzpicture}
+\end{minipage}
+\hspace{1em}%
+\fbox{
+\begin{minipage}{0.6\textwidth}
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{align*}
+    a_c &= \frac{v^2}{r} \\[1ex]\
+        &= \frac{(\SI{20}{m/s})^2}{\SI{50}{m}} \\[1ex]
+        &= \boxed{\SI{8.0}{m/s^2}}
+\end{align*}
+
+\vspace{5mm}
+\end{minipage}
+}
+
+\clearpage
+
+\begin{EnvUplevel}
+\textbf{Questions \ref{2nF3qF}--\ref{oSRba9}: Refer to the prompt and figure below.}
+
+A volleyball is tethered to a pole by a 2.0-meter rope and is moving with circular motion. The figure below shows the bird's eye view of the system.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \coordinate (P) at ({cos(45)},{-sin(45)});
+    \draw[densely dashed] (0,0) circle (1);
+    \draw[thick] (0,0) -- (P);
+    \ifprintanswers
+    \draw[very thick,->,red] (P) -- ++({-0.7*cos(45)},{0.7*sin(45)}) node[right=2mm] {$F_c$};
+    \draw[thick,red,->] (P) -- ++({cos(45)},{sin(45)}) node[above left=-1pt] {$v$};
+    \fi
+    \node at (P) {\twemoji[width=8mm]{volleyball}};
+\end{tikzpicture}
+\end{center}    
+\end{EnvUplevel}
+
+\question \label{2nF3qF}
+In the figure above,
+
+\begin{parts}
+    \part draw and label the centripetal force vector on the ball.
+    \part draw the path the volleyball would take if the rope suddenly snapped off at the instant shown. 
+\end{parts}
+
+
+\question
+The volleyball stays in circular motion due to the centripetal force $F_c$. What type of force is $F_c$?
+
+\begin{randomizechoices}
+    \correctchoice tension force
+    \choice gravitational force
+    \choice friction force
+    \choice magnetic force
+\end{randomizechoices}
+
+\question \label{oSRba9}
+The volleyball has a mass of 260 grams. If it takes 3.0 seconds to complete one trip around the circle, what is the centripetal force on the ball?
+
+\begin{solutionorbox}[4cm]
+The linear speed is
+
+\begin{equation*}
+    v = \frac{2\pi r}{t} = \frac{2\pi(\SI{2.0}{m})}{\SI{3.0}{s}} = \SI{4.19}{m/s}
+\end{equation*}
+
+The centripetal force is
+
+\begin{equation*}
+    F_c = \frac{mv^2}{r} = \frac{(\SI{0.26}{kg})\left(\SI{4.19}{m/s}\right)^2}{\SI{2.0}{m}} = \boxed{\SI{2.28}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\bigskip
+
+\hrule
+
+\question \label{}
+A ball of mass $m$ tethered to a pole by a 6.0-meter rope is moving with circular motion. The centripetal force on the ball is $F$, and the ball moves with linear speed $v$. If the centripetal force increases to $\frac{3}{2}F$, what new length of rope must be used to keep the ball's speed at $v$?
+
+\bigskip
+
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (1,0) arc (0:180:1);
+    \fill (0,0) circle (1pt);
+    \draw[thick] (0,0) -- ({cos(45)},{sin(45)}) node {\twemoji[width=8mm]{basketball}} node[pos=0.5,below right] {$r$};
+\end{tikzpicture}
+\end{minipage}
+\hspace{1em}%
+\fbox{
+\begin{minipage}{0.6\textwidth}
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\textbf{Answer:} 4.0 meters
+
+\bigskip
+
+See solution below.
+\vspace{2cm}
+\end{minipage}
+}
+
+\begin{solution}
+Let the original and new centripetal forces be
+
+\begin{equation*}
+    F_1 = \frac{mv^2}{r} \quad \text{and} \quad F_2 = \frac{mv^2}{r_2} = \frac{3}{2} F_1
+\end{equation*}
+
+The ratio of forces is
+
+\begin{equation*}
+    \frac{F_2}{F_1} = \frac{\displaystyle \left(\frac{mv^2}{r_2}\right)}{\left(\displaystyle \frac{mv^2}{r}\right)} = \frac{r}{r_2}
+\end{equation*}
+
+We're also given
+
+\begin{equation*}
+    \frac{F_2}{F_1} = \frac{\frac{3}{2}F_1}{F_1} = \frac{3}{2}
+\end{equation*}
+
+So,
+
+\begin{equation*}
+    \frac{r}{r_2} = \frac{3}{2}
+\end{equation*}
+
+Solving for the new length $r_2$, we get
+
+\begin{equation*}
+    r_2 = \frac{2}{3}r = \frac{2}{3} (\SI{6.0}{m}) = \boxed{\SI{4.0}{m}}
+\end{equation*}
+\end{solution}
+
+\end{questions}
+
+
+\end{document}
+
+
+
+% \clearpage
+
+% \question
+% The combined mass of Cody and his car, from Question \ref{OXyBFH}, is \SI{740}{kg}. Calculate the centripetal force on the car.
+
+% \begin{randomizechoices}
+%     \correctchoice \SI{2770}{N}
+%     \choice \SI{178}{N}
+%     \choice \SI{3083}{N}
+%     \choice \SI{200400}{N}
+% \end{randomizechoices}

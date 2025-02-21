@@ -1,0 +1,989 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+
+\newif\ifKlevel
+
+%\Kleveltrue
+\Klevelfalse
+
+\setrandomizerseed{1}
+\bracketedpoints
+
+\firstpageheader{Physics\\Test on Unit 3: Changing Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+\runningheader{}{}{Physics L Unit 3 Test}
+
+\ifKlevel
+    \firstpageheader{Physics K}{Unit 3: Changing Motion}{Test}
+    \runningheader{}{}{Physics K Unit 3 Test}
+\fi
+
+\begin{document}
+\begin{questions}
+
+\question 
+What is the acceleration of a 90.0\,kg race-car driver while the race car is accelerating from rest to 44.7\,m/s in 4.50\,s?
+
+\begin{randomizeoneparchoices}
+    \choice \SI{893.7}{m/s^2}
+    \choice \SI{0.10}{m/s^2}
+    \choice \SI{9.8}{m/s^2}
+    \correctchoice \SI{9.93}{m/s^2}
+\end{randomizeoneparchoices}
+
+\question 
+A cart is given an initial push up the ramp and is stopped at its highest point.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{scope}[rotate=10,transform shape]
+            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
+            \draw[above=9mm] (3,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
+            \draw[fill=white,above=2mm] (3.4,0) circle (2mm);
+            \draw[fill=white,above=2mm] (4.1,0) circle (2mm);
+            \draw[fill=black!15,above=1pt] (0,0) rectangle (1,1.5) node[pos=0.5,above=7.5mm,align=left] {motion\\detector};
+            \draw (9,0) node[above=2mm,align=left] {Highest point};
+            \draw[thick,->] (3,1.2) -- ++(2,0) node[above,pos=0.5] {Initial push};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+Which of the following $x$ vs $t$ graphs represents the motion of the cart moving ONLY up the ramp.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$x$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title={Graph A},
+        ]
+            \addplot[domain=0:2,very thick,black] {x^2};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$x$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title=Graph B,
+        ]
+            \addplot[domain=0:2,very thick,black] {4*x - x^2};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$x$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title={Graph C}
+        ]
+            \addplot[domain=0:2,very thick,black] {(x-2)^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}[norandomize,keeplast] %...DO NOT REMOVE NORANDOMIZE
+    \choice Graph A
+    \correctchoice Graph B
+    \choice Graph C
+    \choice no correct graph
+\end{randomizeoneparchoices}
+
+\question 
+\phantom{.}
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+         0 & 0 \\ \hline
+         1 & 8 \\ \hline
+         2 & 16 \\ \hline
+         3 & 24 \\ \hline
+    \end{tabular}
+\end{center}
+
+Study the data table above. What is the acceleration of the object?
+
+\begin{randomizeoneparchoices}[norandomimze]
+    \choice \SI{16}{m/s^2}   
+    \choice \SI{32}{m/s^2}  
+    \correctchoice \SI{0}{m/s^2}  
+    \choice \SI{8}{m/s^2}  
+\end{randomizeoneparchoices}
+
+\question 
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{scope}[rotate=-10,transform shape]
+            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.1,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
+            \draw[above=9mm] (3,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
+            \draw[fill=white,above=2mm] (3.4,0) circle (2mm);
+            \draw[fill=white,above=2mm] (4.1,0) circle (2mm);
+            \draw[fill=black!15,above=1pt] (0,0) rectangle (1,1.5) node[pos=0.5,above=7.5mm,align=left] {motion\\detector};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+Study the ramp and cart illustrated above. (Assume the 0 position is the reference point.) Which of the following best describes the motion of cart when it is released?
+
+\begin{randomizechoices}
+    \choice negative velocity, positive acceleration
+    \correctchoice positive velocity, positive acceleration
+    \choice negative velocity, negative acceleration
+    \choice positive velocity, negative acceleration
+\end{randomizechoices}
+
+
+% \begin{randomizeoneparchoices}[norandomize,] %...DO NOT REMOVE NORANOMDIZE
+%     \correctchoice Graph A
+%     \choice Graph B
+%     \choice Graph C
+%     \choice Graph D
+% \end{randomizeoneparchoices}
+
+\question
+Which of the following statements best describes the motion of the object depicted below?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    \begin{axis}[height=4.5cm,
+        width=4.5cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Position},
+        xlabel={Time},
+    ]
+        \addplot[domain=0:2,very thick,black] {4*x - x^2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \choice The object is moving in the positive direction at a constant speed.
+    \correctchoice The object is moving in the positive direction and slowing down.
+    \choice The object is moving in the positive direction and speeding up.
+    \choice The object is moving in the negative direction at a constant speed.  
+\end{randomizechoices}
+
+
+\question
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=12cm,height=2.5cm,
+            axis lines=none,
+            xmin=0,xmax=9,
+            ymin=0,ymax=1,
+            clip=false,
+            ]
+            \draw[domain=0:3,samples=7,only marks,mark=*] plot({\x^2},{0});
+            \draw[ultra thick,->,above=5mm] (3,0) -- ++(2,0);
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+The arrow represents the direction of the object's velocity in the image above. Which of the following statements best describes the motion of the object depicted above?
+
+\begin{randomizechoices}
+    \choice The acceleration of the object is zero.
+    \choice The acceleration of the object is negative.
+    \correctchoice The acceleration of the object is positive.
+    \choice There is not enough information given to determine the direction of the object’s acceleration.
+\end{randomizechoices}
+
+
+\question
+A tow rope is pulling a 1200\,kg truck at \SI{3.6}{m/s^2}. What is the force the rope is exerting on the truck?
+
+\begin{randomizeoneparchoices}
+    \correctchoice \SI{4320}{m/s^2}
+    \choice \SI{333}{m/s^2}
+    \choice \SI{299}{m/s^2}
+    \choice \SI{8400}{m/s^2}
+\end{randomizeoneparchoices}
+
+% \begin{solutionorbox}[3cm]
+% \begin{equation*}
+%     F_\mathrm{net} = ma = (\SI{1100}{kg})(\SI{2.4}{m/s^2}) = \boxed{\SI{2640}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{Q15}--\ref{Q16}.} Use the data table below to answer questions \ref{Q15} \& \ref{Q16}.
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Time (s) & Velocity (m/s) \\ \hline
+        0 & 10\\ \hline
+        1 & 5\\ \hline
+        2 & 0\\ \hline
+        3 & $-5$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\question \label{Q15}
+Given the above velocity and time data above, determine the object’s acceleration.
+
+\begin{randomizeoneparchoices}
+    \correctchoice \SI{-5}{m/s^2}
+    \choice \SI{5}{m/s^2}
+    \choice \SI{10}{m/s^2}
+    \choice \SI{-15}{m/s^2}    
+\end{randomizeoneparchoices}
+
+
+\question \label{Q16}
+Given the above velocity and time data above, determine what the object’s velocity will be at time $t = \SI{5}{s}$ assuming it continues with constant acceleration.
+
+\begin{randomizeoneparchoices}
+    \choice \SI{-5}{m/s}
+    \choice \SI{0}{m/s}
+    \choice \SI{-10}{m/s}
+    \correctchoice \SI{-15}{m/s}   
+\end{randomizeoneparchoices}
+
+\bigskip
+\hrule
+\clearpage
+
+\question
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \foreach \i in {0,5,7.5,8.75}{
+            \node at (\i,0) {\reflectbox{\twemoji[width=8mm]{automobile}}};
+        }
+    \end{tikzpicture}    
+\end{center}
+
+The car pictured above is moving to the right and slowing down (decreasing velocity). Which of the following is TRUE about the acceleration of the object and the net force acting on it.
+
+\begin{randomizechoices}
+    \correctchoice The object has a positive velocity and negative acceleration.
+    \choice The object has a negative velocity and negative acceleration.
+    \choice The object has a negative velocity and positive acceleration.
+    \choice The object has a positive velocity and a positive acceleration.
+\end{randomizechoices}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=0,ymax=8,
+        xmin=0,xmax=4,
+        ticks=none,
+        axis lines=left,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+    ]
+        \addplot[domain=0:3,thick,black] {-2*x+6};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which of the following depictions of a person’s motion matches the velocity graph shown below?
+
+
+\def\myemoji{\reflectbox{\twemoji[height=5mm]{man running}}}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle ++(6,1.5);
+        \node at (3,0.5) {\myemoji};
+        \node[below] at (3,1.5) {\textbf{Representation A}};
+    \end{tikzpicture}
+    \hspace{0em}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle ++(6,1.5);
+        \foreach \i in {1,2,3,4,5}{
+            \node at (\i,0.5) {\myemoji};
+        }
+        \node[below] at (3,1.5) {\textbf{Representation B}};
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}
+        \draw (0,0) rectangle ++(6,1.5);
+        \foreach \i in {1,1.6,2.4,3.3,5}{
+            \node at (\i,0.5) {\myemoji};
+        }
+        \node[below] at (3,1.5) {\textbf{Representation C}};
+    \end{tikzpicture}
+    \hspace{0em}
+    \begin{tikzpicture}
+        \draw (0,0) rectangle ++(6,1.5);
+        \foreach \i in {1.0,2.7,3.6,4.4,5.0}{
+            \node at (\i,0.5) {\myemoji};
+        }
+        %\draw[domain=1:25,samples=5,only marks,mark=*] plot(\x^0.5,0);
+        \node[below] at (3,1.5) {\textbf{Representation D}};
+    \end{tikzpicture}
+\end{center}
+
+{\color{white}
+\begin{randomizeoneparchoices}[norandomize,]
+    \choice Representation A
+    \choice Representation B
+    \choice Representation C
+    \correctchoice Representation D
+\end{randomizeoneparchoices}
+}
+
+\question 
+An object that has negative acceleration must be\dots
+
+\begin{randomizechoices}
+    \choice slowing down
+    \correctchoice accelerating in a direction that is opposite to a stated positive direction
+    \choice speeding up 
+    \choice maintaining a constant speed
+\end{randomizechoices}
+
+
+\question
+A car travels from A to B at a constant 100\,km/hr.
+
+\begin{center}
+    \includegraphics[width=6cm]{physics/figures/figure-unit-3-car-curve.png}
+\end{center}
+
+Which of the following describes the car’s acceleration?
+\clearpage
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice The car is accelerating because it changes direction.
+    \choice The car is accelerating because it moves at constant speed.
+    \choice The car is not accelerating because it went away from the reference point.
+    \choice none of the above
+\end{randomizechoices}
+
+\question 
+Which of the following pair of graphs demonstrates an object moving away from the reference point with a decreasing velocity?
+
+\bigskip
+
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Pair A}
+
+\vspace{1ex}
+
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \addplot[domain=0:2,very thick,black] {(x-2)^2};
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ]
+        \addplot[domain=0:2.5,very thick,black] {-x};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Pair B}
+
+\vspace{1ex}
+
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \addplot[domain=0:2,very thick,black] {4*x - x^2};
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ]
+        \addplot[domain=0:2.5,very thick,black] {-x+2.5};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Pair C}
+
+\vspace{1ex}
+
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \addplot[domain=0:2,very thick,black] {4*x-x^2};
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ]
+        \addplot[domain=0:2.5,very thick,black] {-x};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\centering
+\textbf{Pair D}
+
+\vspace{1ex}
+
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \addplot[domain=0:2,very thick,black] {(x-2)^2};
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ]
+        \addplot[domain=0:2.5,very thick,black] {-x+2.5};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+
+
+{\color{white}
+\begin{randomizeoneparchoices}[norandomize,]
+    \choice Pair A
+    \correctchoice Pair B
+    \choice Pair C
+    \choice Pair D
+\end{randomizeoneparchoices}
+}
+
+
+
+
+\question
+What is happening in this graph?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=4cm,
+            height=4cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-2,ymax=2,
+            xmin=0,xmax=2,
+            ytick={-2,-1,...,2},
+            xtick=\empty,
+            ylabel={Velocity},
+            xlabel={$t$},
+            ]
+            \draw[very thick] (0,0) -- (1.8,-1.8);
+        \end{axis}
+    \end{tikzpicture}%
+    \hspace{1cm}
+    \begin{tikzpicture}[scale=0.8,rotate=10,transform shape]
+            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
+            \draw[above=9mm] (8,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
+            \draw[fill=white,above=2mm] (8.4,0) circle (2mm);
+            \draw[fill=white,above=2mm] (9.1,0) circle (2mm);
+            \draw[above=0.5cm,ultra thick,->] (8,0) -- ++(-1.5,0);
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \choice negative velocity, positive acceleration, increasing speed
+    \choice positive velocity, positive acceleration, increasing speed
+    \choice negative velocity, negative acceleration, decreasing speed
+    \correctchoice negative velocity, negative acceleration, increasing speed
+\end{randomizechoices}
+
+\question
+A runner moves according to the velocity vs time graph shown below. What is the acceleration of the runner at 3 seconds?
+
+\begin{minipage}{0.3\textwidth}
+    \centering
+\begin{randomizechoices}
+    \choice \SI{12}{m/s^2}
+    \choice \SI{2}{m/s^2}
+    \correctchoice \SI{3}{m/s^2}
+    \choice \SI{6}{m/s^2}
+\end{randomizechoices}
+\end{minipage}%
+\hspace{1em}
+\begin{minipage}{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,
+            width=7cm,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            ymin=0,ymax=14,
+            xmin=0,xmax=12,
+            ytick={0,2,...,14},
+            xtick={0,2,...,12},
+            axis lines=left,
+            grid=both,
+            % title={Runner Velocity vs. Time}
+        ]
+        \addplot[very thick,black] coordinates{(0,0)(2,6)(4,12)(6,12)(8,12)(10,12)(12,6)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+
+
+
+% \question
+% The rate at which an object’s velocity changes is called its \fillin[acceleration].
+
+
+\clearpage
+
+\thispagestyle{headandfoot}
+\header{Physics\\Test on Unit 3: Changing Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+
+
+
+\question[2]
+The following shows a velocity vs. time graph, and a student's INCORRECT calculation of the object's average acceleration using two data points.
+
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}
+\begin{axis}[width=7cm,height=6cm,
+    axis lines=left,
+    % axis x line=center,
+    xlabel = {Time (s)},
+    ylabel = {Velocity (m/s)},
+    ymin=0, ymax=14,
+    xmin=0, xmax=10,
+    ytick={0,2,...,14},
+    xtick={0,1,...,10},
+    ymajorgrids=true,
+    xmajorgrids=true,
+]
+    \addplot[very thick,black,domain=0:10] {-3/2*\x+18};
+    \fill (4,12) circle (2pt);
+    \fill (8,6) circle (2pt);
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\begin{align*}
+    a = \frac{\Delta v}{\Delta t} &= \frac{v_f - v_i}{t_f - t_i} \\[1ex]
+    &=  \frac{8 - 4}{6 - 12} \\[1ex] 
+    &= \boxed{\SI{-0.67}{m/s^2}}
+\end{align*}
+\end{minipage}
+
+Explain why the student's calculation is wrong. Then calculate the actual acceleration of the object.
+
+\begin{solutionorbox}[6cm]
+\phantom{.}
+
+\textbf{1 point earned}: For identifying that the numbers were plugged into the fraction incorrectly or for indicating that the fraction should be flipped.
+
+In the numerator, the student calculated change in time, and they calculated change in velocity in the denominator. Therefore, since acceleration is change in velocity vs. change in time, the fraction should be flipped.
+
+\textbf{1 point earned}: For correctly computing average acceleration:
+
+\begin{align*}
+    a = \frac{\Delta v}{\Delta t} &= \frac{v_f - v_i}{t_f - t_i} \\[1ex]
+    &=  \frac{6 - 12}{8 - 4} \\[1ex] 
+    &= \boxed{\SI{-1.5}{m/s^2}}
+\end{align*}
+
+or $a = -\frac{3}{2} \mathrm{m/s^2}$.
+\end{solutionorbox}
+
+\question[2]
+If an 80\,kg cannonball accelerates from rest to \SI{28}{m/s} in 2 seconds, what is the net force on the cannonball?
+
+\begin{solutionorbox}[6cm]
+\phantom{.}
+
+\textbf{1 point earned}: For computing acceleration:
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \SI{14}{m/s^2}
+\end{equation*}
+
+\textbf{1 point earned}: For computing net force:
+
+\begin{equation*}
+    F_\mathrm{net} = ma = (\SI{80}{kg})(\SI{14}{m/s^2}) = \boxed{\SI{1120}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\clearpage
+
+\header{Physics}{}{Unit 3 Test}
+
+\question [2]
+Consider the table below.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Speed} (m/s) & \textbf{Direction} \\ \hline
+        8 & 16 & East\\ \hline
+        9 & 20 & East\\ \hline
+        10 & 24 & East\\ \hline
+        11 & 28 & East\\ \hline
+    \end{tabular}
+\end{center}
+
+Does this table represent an object that is accelerating? How do you know? Explain.
+
+\fillwithlines{3cm}
+
+\begin{solutionorbox}
+\phantom{.}
+
+\textbf{1 point earned}: For stating that the object's velocity is increasing with time.
+
+\textbf{1 point earned}: For stating that acceleration is the rate of change in velocity, so that a change in velocity implies acceleration.
+\end{solutionorbox}
+
+\question [2]
+A cart moves on a straight track and its motion is recorded in the graph below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \addplot[domain=0:2,very thick,black] {4*(x+2) - (x+2)^2};
+        \fill ({0.4},{4*(0.4+2) - (0.4+2)^2}) circle (2pt) node[above=2pt] {A};
+        \fill ({1.2},{4*(1.2+2) - (1.2+2)^2}) circle (2pt) node[above right] {B};
+        \fill ({1.8},{4*(1.8+2) - (1.8+2)^2}) circle (2pt) node[above right] {C};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Points A, B, and C represent three different instants in time. Rank these points according to the object's speed at those instants, from the fastest point to the slowest.
+
+\begin{solutionorbox}[6cm]
+\phantom{.}
+
+\textbf{1 point earned}: For ranking the points from fastest to slowest speed of the object as C, B, A. 
+
+\textbf{1 point earned}: For explaining that the steepness or slope of the curve at the points indicates the object's velocity; the object undergoes bigger changes in position for a small interval of time centered at C than it does for an equal interval of time centered at A.
+\end{solutionorbox}
+
+\clearpage
+
+{\large
+\printkeytable
+}
+\end{questions}
+\end{document}
+
+% \begin{randomizechoices}
+%     \choice \SI{2}{m/s/s}
+%     \correctchoice \SI{14}{m/s/s}
+%     \choice \SI{28}{m/s/s}
+%     \choice \SI{56}{m/s/s}
+% \end{randomizechoices}
+
+
+
+% \question
+% What is the net force exerted on a 85.0\,kg runner while they are going from rest to 12.0\,m/s in 9.5\,s?
+
+% \begin{solutionorbox}[6cm]
+% The runner's acceleration is
+
+% \begin{equation*}
+%     a = \frac{\Delta v}{\Delta t} = \frac{\SI{12.0}{m/s}}{\SI{9.5}{s}} = \SI{1.26}{m/s^2}
+% \end{equation*}
+
+% Therefore, the net force is
+
+% \begin{equation*}
+%     F_\mathrm{net} = ma = (\SI{85.0}{kg})(\SI{1.26}{m/s^2}) = \boxed{\SI{107}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+\clearpage
+
+\begin{EnvUplevel}
+\subsection*{DELETED QUESTIONS}
+
+The following questions have been removed from the test.    
+\end{EnvUplevel}
+
+\color{red}
+
+\question 
+Which of the following representations of motion, depicts an object with constant momentum?
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$v$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title={Graph A},
+        ]
+            \addplot[domain=0:2.5,very thick] {3};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$v$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title=Graph B,
+        ]
+            \addplot[domain=0:2,very thick] {4*x - x^2};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$v$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title={Graph C}
+        ]
+            \addplot[domain=0:2,very thick] {(x-2)^2};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={$v$},
+            y label style={rotate=-90},
+            xlabel={$t$},
+            title={Graph D}
+        ]
+            \addplot[domain=0:2.5,very thick] {1.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline 
+    Time (s) & Velocity (m/s) \\ \hline
+    0 & 0.55 \\ \hline
+    1 & 0.45 \\ \hline
+    2 & 0.35 \\ \hline
+    3 & 0.25\\ \hline
+    4 & 0.15 \\ \hline
+\end{tabular}    
+\end{center}
+
+The following time and velocity data was collected for a ball that was launched up a ramp. Using the information above, determine the acceleration of the ball.
+
+\begin{randomizechoices}
+    \correctchoice \SI{-0.10}{m/s^2}
+    \choice \SI{-0.55}{m/s^2}
+    \choice \SI{-0.35}{m/s^2}
+    \choice \SI{-0.15}{m/s^2}
+\end{randomizechoices}
+
+\question
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,
+            height=6cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-8,ymax=8,
+            xmin=0,xmax=13,
+            ytick={-8,-7,...,8},
+            xtick={0,1,...,13},
+            ticks=none,
+            % grid=both,
+            ylabel={Velocity (m/min)},
+            xlabel={Time (min)},
+            clip=false,
+            ]
+            \draw[very thick] (0,5) -- (12,5) node[right] {\bfseries A};
+            \draw[very thick] (0,-3) -- (12,-3) node[right] {\bfseries B};
+            \draw[very thick] (0,0) -- (7,7) node[pos=1.1] {\bfseries C};
+            \draw[very thick] (0,-5) -- (4,0) node[pos=0.95,below=2pt] {\bfseries D};
+            \draw[very thick] (0,4) -- (12,-5) node[below,pos=0.9] {\bfseries E};
+            \node[above] at (0,8) {N};
+            \node[below] at (0,-8) {S};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+    \part What is the main difference between line A and line B?
+
+    \begin{solution}
+        A \& B are traveling in different directions.
+    \end{solution}
+
+    \part Describe the motion represented by line E.
+
+    \begin{solution}
+        E is slowing down then speeding up towards the reference point.
+    \end{solution}
+\end{parts}
+
+
+
+
+% \end{questions}
+% \end{document}
+
+
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline 
+    Time (s) & Velocity (m/s) \\ \hline
+    0 & 0.55 \\ \hline
+    1 & 0.45 \\ \hline
+    2 & 0.35 \\ \hline
+    3 & 0.25\\ \hline
+    4 & 0.15 \\ \hline
+\end{tabular}    
+\end{center}
+
+The following time and velocity data was collected for a ball that was launched up a ramp. Using the information above, determine the acceleration of the ball.
+
+\begin{randomizechoices}
+    \correctchoice \SI{-0.10}{m/s^2}
+    \choice \SI{-0.55}{m/s^2}
+    \choice \SI{-0.35}{m/s^2}
+    \choice \SI{-0.15}{m/s^2}
+\end{randomizechoices}

@@ -1,0 +1,367 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+
+\setrandomizerseed{1}
+
+\firstpageheader{Physics\\Unit 3: Changing Motion}{Test Review}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+\runningheader{Physics L}{Test Review}{Unit 3: Changing Motion}
+
+\begin{document}
+\section*{Know}
+
+\begin{multicols}{2}
+\begin{enumerate}[itemsep=0pt]
+    \item acceleration
+    \item positive acceleration 
+    \item negative acceleration
+    \item zero acceleration
+    \item velocity vs time graph
+\end{enumerate}
+\end{multicols}
+
+\section*{Understand}
+
+\begin{itemize}[itemsep=0pt]
+    \item Explain the concept of acceleration qualitatively 
+    %(e.g. change in velocity per unit of time, etc.) 
+    and using quantitative data 
+    %(e.g. the car in my lab went 1 meter in the first second but 2 meters in the second, meaning its speed increased 1 m/s each second)
+    .
+    \item Describe the possible motions of an object with zero acceleration, positive acceleration, and negative acceleration.
+    \item Compare the accelerations of objects when given changes in velocity over the same time interval.
+    \item Determine the change in velocity and/or the acceleration of an object when given Multiple Representations.
+    \item Interpret a representation of changing motion and create a different representation of that same motion using appropriate Multiple Representations.
+    \item Predict the change in velocity, instantaneous velocity, or acceleration of an object by applying their understanding of the definition of acceleration and number sense when given displacement, velocity, acceleration data and time.
+    \item Describe the relationship between $F_\mathrm{net}$ and the acceleration experienced by an object.
+    \item Describe the relationship between mass and the acceleration experienced by an object.
+    \item Qualitatively predict the effects of changing the net force acting on an object or the object’s mass on the object’s acceleration using logic, number sense, and Newton’s Law of Acceleration (i.e. bigger force, more massive, with or counter direction of motion).
+    \item Solve problems using $F_\mathrm{net} = ma$.
+\end{itemize}
+
+\section*{Do}
+
+\begin{questions}
+\question
+What is the acceleration of a 24\,kg cheetah while it sprints from rest to 18\,m/s in 3.5\,s?
+
+\begin{solutionorbox}[2cm]
+Acceleration is
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{18}{m/s}}{\SI{3.5}{s}} = \boxed{\SI{5.14}{m/s^2}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+If a car accelerates from rest to \SI{19}{m/s} in 3 seconds, what is the car’s acceleration?
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{19}{m/s}}{\SI{3}{s}} = \boxed{\SI{6.33}{m/s^2}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+A cart is released from the top of a ramp. A motion detector is placed at the top of the ramp, behind the cart.
+
+\begin{center}
+\begin{tikzpicture}[rotate=-10,transform shape,scale=0.8]
+        \draw (0,0) rectangle ++(10,-0.5); %node[pos=0.12,below=-2pt] {0 position}; %node[pos=0.98,above] {$+$};
+        \draw[above=9mm] (1,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
+        \draw[fill=white,above=2mm] (1.4,0) circle (2mm);
+        \draw[fill=white,above=2mm] (2.1,0) circle (2mm);
+        %\draw[above=0.5cm,ultra thick,->] (3,0) -- ++(1.5,0);
+\end{tikzpicture}
+\end{center}
+
+Draw the position vs time, velocity vs time, and acceleration vs time graphs as measured by the detector.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=0,ymax=5,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={$x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+    ]
+        \ifprintanswers
+            \addplot[domain=0:2,very thick,red] {x^2};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ];
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMENT
+        \ifprintanswers
+            \addplot[very thick,red,domain=0:2] {x};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$a$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false
+    ]
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMENT
+        \ifprintanswers
+            \addplot[very thick,red,domain=0:2] {1.5};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+Consider the changing motion of two objects as shown in the graphs below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,
+            width=6cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Position},
+            % y label style={rotate=-90},
+            xlabel={Time},
+            clip=false,
+            title={Object 1}
+        ]
+            \addplot[domain=0:2,very thick,black] {x^2};
+            \fill (0.2,0.2^2) circle (3pt) node[above=3pt] {A};
+            \fill (0.9,0.9^2) circle (3pt) node[right=3pt] {B};
+            \fill (1.5,1.5^2) circle (3pt) node[right=3pt] {C};
+            \fill (2,2^2) circle (3pt) node[right=3pt] {D};            
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{2cm}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,
+            width=6cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Position},
+            % y label style={rotate=-90},
+            xlabel={Time},
+            clip=false,
+            title={Object 2}
+        ]
+            \addplot[domain=0:2,very thick,black] {(x-2)^2};
+            \fill ({0.2},{(0.2-2)^2}) circle (3pt) node[right=3pt] {P};
+            \fill ({0.7},{(0.7-2)^2}) circle (3pt) node[right=3pt] {Q};
+            \fill ({1.2},{(1.2-2)^2}) circle (3pt) node[above right=2pt] {R};
+            \fill ({1.9},{(1.9-2)^2}) circle (3pt) node[above=3pt] {S};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part At which point (A, B, C, or D) was Object 1 moving fastest? How do you know?
+
+\fillwithlines{2cm}
+
+\begin{solutionorbox}
+    Object 1 moves fastest at Point D.
+\end{solutionorbox}
+
+\part At which point was Object 1 moving slowest? How do you know?
+
+\fillwithlines{2cm}
+
+
+\begin{solutionorbox}
+    Object 1 moves slowest at Point A. In general, the steepness or slope of the curve at a point on the position vs. time graph indicates the object's speed.
+\end{solutionorbox}
+
+\part At which point was Object 2 fastest? At which point was it moving slowest? How do you know?
+
+\fillwithlines{2cm}
+
+\begin{solutionorbox}
+    Object 2 moves fastest at Point P and slowest at Point S.
+\end{solutionorbox}
+\end{parts}
+
+\clearpage
+\question
+Consider the velocity vs time graph below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,
+            width=7cm,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            ymin=0,ymax=14,
+            xmin=0,xmax=14,
+            ytick={0,2,...,14},
+            xtick={0,2,...,14},
+            axis lines=left,
+            grid=both
+        ]
+        \addplot[very thick,black] coordinates{(0,0)(3,12)(8,12)(12,4)(14,4)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+Find the acceleration of the object at 11 seconds.
+
+\begin{solutionorbox}[5cm]
+The acceleration at 11 seconds is constant everywhere from 8 to 12 seconds, during which the velocity decreases from 12\,m/s to 4\,m/s. Thus, the acceleration during this time interval is
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{4}{m/s} - \SI{12}{m/s}}{\SI{12}{s} - \SI{8}{s}} = \boxed{-\SI{2}{m/s^2}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+Find the acceleration given the velocity data in the table below.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Time (s) & Velocity (m/s) \\ \hline
+        6 & 15\\ \hline
+        7 & 18\\ \hline
+        8 & 21\\ \hline
+        9 & 24 \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{solutionorbox}[5cm]
+    Using the first and last rows of data, the change in velocity is
+
+\begin{equation*}
+    \Delta v = v_f - v_i = \SI{24}{m/s} - \SI{15}{m/s} = \SI{9}{m/s}
+\end{equation*}
+
+and the change in time is
+
+\begin{equation*}
+    \Delta t = t_f - t_i = \SI{9}{s} - \SI{6}{s} = \SI{3}{s}
+\end{equation*}
+
+Therefore, the acceleration, defined as change in velocity over change in time, is
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{9}{m/s}}{\SI{3}{s}} = \boxed{\SI{3}{m/s^2}}
+\end{equation*}
+\end{solutionorbox}
+
+\clearpage
+\question
+If the object in the previous question continues accelerating at a constant rate, what will be the object's velocity when the time is 13 seconds?
+
+\begin{solutionorbox}[5cm]
+Let the initial velocity and time be $v_i = \SI{24}{m/s}$ and $t_i = \SI{9}{s}$. The final time is $t_f = \SI{13}{s}$, and the final velocity is unknown.
+
+By the acceleration question, we know that
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t_f - t_i}
+\end{equation*}
+
+Plugging in the given values leads to 
+
+\begin{equation*}
+    \SI{3}{m/s^2} = \frac{v_f - \SI{24}{m/s}}{\SI{13}{s} - \SI{9}{s}} =  \frac{v_f - \SI{24}{m/s}}{\SI{4}{s}}
+\end{equation*}
+
+Multiplying both sides by 4\,s gives
+
+\begin{equation*}
+    (\SI{3}{m/s^2})(\SI{4}{s}) = \frac{v_f - \SI{24}{m/s}}{\cancel{\SI{4}{s}}} \times \cancel{\SI{4}{s}}
+\end{equation*}
+
+or
+
+\begin{equation*}
+    \SI{12}{m/s} = v_f - \SI{24}{m/s}
+\end{equation*}
+
+Solving this equation for final speed leads to
+
+\begin{equation*}
+    \boxed{v_f = \SI{36}{m/s}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+Airplane travels in a circular path.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[dashed,gray] (0,0) circle (1.5cm);
+    \node at ({-1.5*cos(45)},{1.5*sin(45)}) {\twemoji[width=7mm]{airplane}};
+\end{tikzpicture}
+\end{center}
+
+True or false? If the airplane maintains a constant speed, it's not accelerating.
+
+\begin{randomizeoneparchoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizeoneparchoices}
+
+\begin{solutionorbox}
+    False. If the airplane is changing direction, then it \textit{is} accelerating, even if its speed is constant.
+\end{solutionorbox}
+
+\question
+A tow rope is pulling a 1100\,kg truck at \SI{2.4}{m/s^2}. What is the force the rope is exerting on the truck?
+
+\begin{solutionorbox}[3cm]
+\begin{equation*}
+    F_\mathrm{net} = ma = (\SI{1100}{kg})(\SI{2.4}{m/s^2}) = \boxed{\SI{2640}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+What is the net force exerted on a 85.0\,kg runner while they are going from rest to 12.0\,m/s in 9.5\,s?
+
+\begin{solutionorbox}[6cm]
+The runner's acceleration is
+
+\begin{equation*}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{12.0}{m/s}}{\SI{9.5}{s}} = \SI{1.26}{m/s^2}
+\end{equation*}
+
+Therefore, the net force is
+
+\begin{equation*}
+    F_\mathrm{net} = ma = (\SI{85.0}{kg})(\SI{1.26}{m/s^2}) = \boxed{\SI{107}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\end{questions}
+
+\end{document}

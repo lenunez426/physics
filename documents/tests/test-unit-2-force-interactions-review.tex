@@ -1,0 +1,141 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+
+\setrandomizerseed{1}
+
+\firstpageheader{Physics}{Unit 2: Force Interactions}{Test Review}
+\runningheader{}{}{}
+
+\begin{document}
+\section*{Know}
+
+\begin{multicols}{3}
+\begin{enumerate}[itemsep=0pt]
+    \item force
+    % \item external force
+    \item net force
+    \item gravity
+    \item friction
+    \item tension
+    \item normal force
+    % \item spring force
+    \item free body diagram
+\end{enumerate}
+\end{multicols}
+
+\section*{Understand}
+
+\begin{itemize}[itemsep=0pt]
+    \item Identify the type of forces acting in a scenario, including gravitational, normal, frictional, applied, 
+    %spring,
+    and tension.
+    \item Identify and represent the force pairs of each interaction in a scenario .
+    \item Recognize that force pairs consist of exactly two forces (same type) resulting from one interaction between two objects.
+    \item Recognize that force pairs must be equal in magnitude and opposite in direction.
+    % \item Identify instances in which equal and opposite forces are not a force pair (e.g. $F_\text{g}$ and $F_\text{n}$ are not force pairs even when they are equal in magnitude and opposite in direction).
+    \item Diagram the forces acting on an object using a free-body diagram.
+    \item Explain the effects of balanced forces on the motion of an object.
+    \item Explain the effects of unbalanced forces on the motion of an object.
+    \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of constant velocity, constant momentum, constant KE, and balanced forces.
+    \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of changing velocity, changing momentum, changing KE, and unbalanced forces.
+\end{itemize}
+
+\section*{Do}
+
+\begin{questions}
+
+\question %6
+A tennis ball strikes a racket. Which has a greater magnitude, the force of the racket on the ball or the force of the ball on the racket?
+
+\question %5
+A boxing glove exerts a force by striking someone's face. What is the force pair to the glove's push?
+
+\question %10
+The motion map for a shopping cart is shown below. What additional information do you need to know whether the object's speed is increasing or decreasing?
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.7]
+        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3pt] plot({0.1*\x^2},0);
+    \end{tikzpicture}
+\end{center}
+
+
+\question \label{PbScd} %1
+A book is at rest is shown in the figure.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!20] (0,0) rectangle ++(4,0.4);
+    \draw[fill=black!20] (0.5,0) rectangle ++(0.2,-2);
+    \draw[fill=black!20] (3.3,0) rectangle ++(0.2,-2);
+    \node[above=2.1mm] at (2,0) {\twemoji[height=1cm]{blue book}};
+\end{tikzpicture}
+\end{center}
+
+What are the two forces exerted on the object? Draw the forces in a free-body diagram.
+
+\clearpage
+
+\question %4
+A box is placed on top of a skateboard, and the system is allowed to move down a straight track. The motion of the box-skateboard system is shown below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=6cm,
+        axis lines=left,
+        ymin=0,ymax=4,
+        xmin=0,xmax=4,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ytick={0,1,...,4},
+        xtick={0,1,...,4},
+        grid=both,
+        clip=false,
+    ]
+        \addplot[thick,domain=0:1] {2*x};
+        \addplot[thick,domain=1:4] {0.2*(x-1)^2+2};
+        \fill (0,0) circle (2pt) node[right=8pt,above=-1pt] {a};
+        \fill (1,2) circle (2pt) node[right=5pt,above=0pt] {b};
+        \fill (4,3.8) circle (2pt) node[left=2pt] {c};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+(a) From point a to point b, are the forces balanced or unbalanced? (b) Is the object speeding up, slowing down, or moving at constant speed, from a to b? (c) From point b to point c, are the forces balanced or unbalanced? (d) Is the object speeding up, slowing down, or moving at constant speed, from b to c?
+
+\question %2
+A cable is used to hang a traffic light from a metal bar. What type of force is the cable exerting on the traffic light?
+
+\question %8
+A runner is running to the right and is increasing in speed over time. Draw a motion map for their motion. 
+
+\question %9
+When the all forces on an object are balanced, what can you conclude about the object's velocity, momentum, and kinetic energy?
+
+
+\question %3
+Draw the force schema for the three force pairs in the scenario shown in Question \ref{PbScd}.
+
+
+\question %7
+True or False? The horizontal forces on the truck below are balanced, so the truck's velocity will increase.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) node {\reflectbox{\twemoji[height=3cm]{delivery truck}}};
+        \draw[thick,<-,left=1.5cm] (0,0) -- (-4,0) node[above,pos=0.5] {400\,N};  
+        \draw[thick,<-,right=1.5cm] (0,0) -- (+3,0) node[above,pos=0.5] {300\,N};  
+    \end{tikzpicture}
+\end{center}
+
+
+
+
+
+\end{questions}
+\end{document}
+
+
+
+

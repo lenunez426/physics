@@ -1,0 +1,1386 @@
+% \documentclass[answers]{exam}
+% \input{global}
+% \input{problem-sets}
+% %\usetikzlibrary{patterns}
+% \usepackage[none]{hyphenat}
+% \input{documents/physics-glossary}
+% \setlength{\parindent}{0pt}
+% \theoremstyle{definition}
+% \newtheorem{example}{Example}
+
+% \setrandomizerseed{1}
+
+% \firstpageheader{Physics}{Unit 5: Force Analysis}{}
+% \runningheader{Physics}{}{Unit 5}
+
+
+\documentclass[../main-physics-problems.tex]{subfiles}
+\begin{document}
+
+
+\subsection{Newton’s Law of Universal Gravitation}
+\subsubsection{The Law of Gravitation}
+\subsubsection{Comparing Acceleration of Two Masses using Gravitation}
+\subsubsection{Ranking the Gravitational Force at Various Distances}
+\subsubsection{Ranking the Gravitational Force of Various Masses}
+\subsubsection{The Gravitational Field}
+\subsubsection{Calculating Force using the Law of Gravitation}
+\subsubsection{The Gravitational Field Strength of Earth, g}
+\subsubsection{Mass and Weight}
+\subsubsection{Calculating Force using Mass and Gravitational Field Strength}
+\subsection{Forces from Surfaces}
+\subsubsection{Normal Force and Frictional Force}
+\subsubsection{Why the Normal and Gravitational Forces are not Force Pairs}
+\subsubsection{How Motion, Surfaces, and the Normal Force affect the Frictional Force}
+\subsection{Applied Forces}
+\subsubsection{Tension Force}
+\subsubsection{Identifying other Applied Forces}
+\subsection{Analyzing Forces using Motion}
+\subsubsection{Free Body Diagrams from Word Problems}
+\subsubsection{Net Resultant Force using Vector Addition}
+\subsubsection{Solving for Unknown Force, Mass, or Acceleration}
+\subsubsection{Solving for Other Unknowns}
+
+\begin{questions}
+\question 
+The table below is based on the equation for Newton's universal law of gravitation. Some information is omitted from the table. Complete the table by filling in the missing information.
+
+\begin{center}
+    \begin{tabular}{cl|cl}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{Base SI Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $F_g$ & \ifprintanswers \color{red} \else \color{white} \fi gravitational force between two objects & newton & N\\
+        $G$ & \ifprintanswers \color{red} \else \color{white} \fi gravitational constant & (\textit{see} $\rightarrow$) & \SI{}{N \cdot m^2/kg^2}\\
+        $m_1$ & mass of object 1 & \ifprintanswers \color{red} \else \color{white} \fi kilogram & \ifprintanswers \color{red} \else \color{white} \fi kg\\
+        $m_2$ & \ifprintanswers \color{red} \else \color{white} \fi mass of object 2 & kilogram & kg\\
+        $r$ & distance between centers of mass & \ifprintanswers \color{red} \else \color{white} \fi meter & \ifprintanswers \color{red} \else \color{white} \fi m\\
+    \hline
+    \end{tabular}
+\end{center}
+
+\question
+A \SI{90.0}{kg} person stands \SI{1.00}{m} from a \SI{60.0}{kg} person sitting on a bench nearby. What is the magnitude of the gravitational force between them?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.6e-7}{N}
+    \choice \SI{5.4e-7}{N}
+    \choice \SI{6.0e-9}{N}
+    \choice \SI{4.0e-9}{N}
+\end{randomizechoices}
+
+\question
+A planet of mass $M$ has a satellite of mass $m$, located a distance $d$ away, attracted by a force $F$. If the mass of the satellite is doubled while $d$ and $M$ remain unchanged, by what factor will $F$ change? 
+
+\begin{randomizechoices}
+    \correctchoice 2
+    \choice $\frac{1}{2}$
+    \choice 4
+    \choice $\frac{1}{4}$
+\end{randomizechoices}
+
+\question
+A planet of mass $M$ has a satellite of mass $m$, located a distance $d$ away, attracted by a force $F$. If the distance to the satellite is cut in half while $M$ and $m$ remain unchanged, by what factor will $F$ change?
+
+\begin{randomizechoices}
+    \choice 2
+    \choice $\frac{1}{2}$
+    \correctchoice 4
+    \choice $\frac{1}{4}$
+\end{randomizechoices}
+
+\question
+A planet of mass $M$ has a satellite of mass $m$, located a distance $d$ away, attracted by a force $F$. The mass of the satellite and the planet are both doubled while distance apart is quadrupled, and the new force of attraction is $F^\prime$. What is the ratio of force $F^\prime$ to the old force $F$?
+
+\begin{randomizechoices}
+    \choice 2
+    \choice $\frac{1}{2}$
+    \choice 4
+    \correctchoice $\frac{1}{4}$
+\end{randomizechoices}
+
+\question
+The masses of Earth and the moon are \SI{5.98e24}{kg} and \SI{7.35e22}{kg}, and the distance separating their centers of mass is \SI{3.84e8}{m}. Calculate the gravitational force of attraction between the Moon and the Earth.
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.99e20}{N}
+    \choice \SI{7.63e28}{N}
+    \choice \SI{2.98e30}{N}
+    \choice \SI{1.14e39}{N}
+\end{randomizechoices}
+
+\question
+The gravitational force of attraction between two objects is \SI{18}{N}. If the mass of one object doubles, the new force of attraction is
+
+\begin{randomizechoices}
+    \correctchoice \SI{36}{N}
+    \choice \SI{9}{N}
+    \choice \SI{2}{N}
+    \choice \SI{24}{N}
+\end{randomizechoices}
+
+\question
+The gravitational force of attraction between two objects is \SI{520}{N}. If the distance between the two objects doubles, the new force of attraction is
+
+\begin{randomizechoices}
+    \correctchoice \SI{130}{N}
+    \choice \SI{260}{N}
+    \choice \SI{2080}{N}
+    \choice \SI{1040}{N}
+\end{randomizechoices}
+
+\question
+The gravitational force of attraction between two objects is \SI{26}{N}. If the mass of one object is halved, the new force of attraction is
+
+\begin{randomizechoices}
+    \correctchoice \SI{13}{N}
+    \choice \SI{52}{N}
+    \choice \SI{2}{N}
+    \choice \SI{4}{N}
+\end{randomizechoices}
+
+\question
+The gravitational force of attraction between two objects is \SI{72}{N}. If the distance between the objects triples, the new force of attraction is
+
+\begin{randomizechoices}
+    \correctchoice \SI{8}{N}
+    \choice \SI{24}{N}
+    \choice \SI{216}{N}
+    \choice \SI{648}{N}
+\end{randomizechoices}
+
+\question
+The gravitational force of attraction between two objects is \SI{10}{N}. If the distance between the objects is halved, the new force of attraction is
+
+\begin{randomizechoices}
+    \correctchoice \SI{40}{N}
+    \choice \SI{20}{N}
+    \choice \SI{5}{N}
+    \choice \SI{2.5}{N}
+\end{randomizechoices}
+
+\question
+What is the force of attraction between two friends Phineas, whose mass is \SI{100.0}{kg}, and Ferb, whose mass is 80.0 kg, when they are \SI{2.00}{m} apart? 
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.33e-7}{N}
+    \choice \SI{2.00e3}{N}
+    \choice \SI{4.00e3}{N}
+    \choice \SI{2.67e-7}{N}
+\end{randomizechoices}
+
+\question
+If the magnitude of the gravitational force of Po, from Kung Fu Panda, on Mantis is \SI{8.92e-11}{N} when they are 0.25 meters apart while sparring, then the magnitude of the gravitational force of Mantis on Po is
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice equal to \SI{8.92e-11}{N}
+    \choice greater than \SI{8.92e-11}{N}
+    \choice less than \SI{8.92e-11}{N}
+    \choice no possible to determine without the masses of Mantis and Po
+\end{randomizechoices}    
+\end{questions}
+
+
+\clearpage
+
+
+\subsubsection*{Exercises}
+\begin{questions}
+\question
+The same experiment that you just conducted in your classroom was done on several other planets. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=9cm,
+        axis lines=left,
+        ylabel={Weight (N)},
+        xlabel={Mass (kg)},
+        ymin=0,ymax=140,
+        xmin=0,xmax=6,
+        ytick={0,20,...,140},
+        xtick={0,1,...,6},
+        grid=both,
+        minor x tick num=1,
+    ]
+        \addplot[very thick,mark=*] coordinates{(0.5,11.6)(2,46.2)(2.75,63.5)(3,69.3)(3.5,80.9)(5,115.5)} node[above] {Jupiter};
+        \addplot[very thick,mark=*] coordinates{(0.5,5.5)(2,22)(2.75,30.3)(3,33)(3.5,38.5)(5,55)} node[above] {Neptune};
+        \addplot[very thick,mark=*] coordinates{(0.5,1.9)(2,7.4)(2.75,10.2)(3,11.1)(3.5,13)(5,18.5)} node[above] {Mars};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Use the results on the graph to find the strength of the gravitational field near the surface of each planet.
+
+\begin{solution}
+Answers will vary due uncertainty in the coordinates.
+
+The gravitational field strength is the slope on a weight vs mass graph.
+
+For Jupiter,
+
+\begin{equation*}
+    g_\mathrm{J} = \frac{\SI{115}{N} - \SI{70}{N}}{\SI{5}{kg} - \SI{3}{kg}} = \SI{22.5}{N/kg}
+\end{equation*}
+
+For Neptune,
+
+\begin{equation*}
+    g_\mathrm{N} =  \frac{\SI{40}{N} - \SI{20}{N}}{\SI{3.5}{kg} - \SI{2}{kg}} = \SI{13.3}{N/kg}
+\end{equation*}
+
+For Mars,
+
+\begin{equation*}
+     g_\mathrm{M} = \frac{\SI{19}{N} - \SI{8}{N}}{\SI{5}{kg} - \SI{2}{kg}} = \SI{3.7}{N/kg}
+\end{equation*}
+
+Note: The \href{https://nssdc.gsfc.nasa.gov/planetary/factsheet/}{actual values} are $g_\mathrm{J} = \SI{23.1}{N/kg}$, $g_\mathrm{N} = \SI{11.0}{N/kg}$, $g_\mathrm{M} = \SI{3.7}{N/kg}$.
+\end{solution}
+
+\part Rank the strength of the gravitational field of these planets from least to greatest. Explain your ranking.
+\end{parts}
+ 
+
+\question
+Match the following characteristics to either mass or weight.
+
+\begin{parts}
+    \part The amount of matter in an object: \fillin[mass]
+    \part Measured in Newtons: \fillin[weight]
+    \part The strength of the gravitational force acting on an object: \fillin[weight]
+    \part Changes based on the strength of the gravitational field: \fillin[weight]
+    \part Remains constant regardless of location: \fillin[mass]
+    \part Measured in kilograms: \fillin[mass]
+\end{parts}
+
+\question
+One of the objects from the previous question was a bowling ball with a mass of \SI{3}{kg}. If the gravitational field strength is \SI{11}{N/kg} on Neptune, what is the mass of the bowling ball on Neptune? Explain your answer.
+
+\begin{solution}
+Mass is constant regardless of location. So, the mass is still \SI{3}{kg}.
+\end{solution}
+
+\question
+An object of unknown mass is on Earth and then brought to Jupiter. If Jupiter's gravitational field strength is 2.5 times greater than Earth's, how will the weight of the object compare on Jupiter to on Earth? Explain your answer.
+
+\begin{solution}
+    Weight is proportional to the stength of the gravitational field. Therefore, the object's weight will be 2.5 times greater on Jupiter.
+\end{solution}
+
+
+\question
+Using Earth's mass $M = \SI{5.97e24}{kg}$ and radius $R = \SI{6378}{km}$, calculate the acceleration due to gravity on Earth's surface, $g$.
+
+\begin{solution}
+\begin{equation*}
+    g = \frac{GM}{R^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg^2})(\SI{5.97e24}{kg})}{\left(\SI{6.378e6}{m}\right)^2} = \boxed{\SI{9.78}{N/kg}}
+\end{equation*}
+\end{solution}
+\end{questions}
+
+\clearpage
+
+
+
+
+\clearpage
+\subsubsection*{Free Body Diagram Whiteboarding}
+
+Draw a free-body diagram for each scenario below. Each diagram should include:
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item system dot
+    \item vector arrows representing magnitude of all forces involved on system object
+    \item force type labels on each vector
+\end{itemize}
+
+\begin{questions}
+
+% \ifprintanswers
+% \else
+\setlength\columnsep{50pt}
+\begin{multicols*}{2}
+% \fi
+
+\question
+An object lies motionless.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+Object slides at constant speed without friction.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \draw[thick,->,yshift=2mm] (1.5,1) -- ++(1,0) node[above,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+Object slows due to kinetic friction.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \draw[thick,->,yshift=2mm] (1.5,1) -- ++(1,0) node[above,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->] (0,0) -- (-1,0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+The object is pulled upward at constant speed.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[very thick] (0.5,1) -- ++(0,1.2);
+    \draw[thick,->,xshift=2mm] (1,0) -- ++(0,1) node[right,pos=0.5] {$v$};
+    \draw[white,thick,->,xshift=-2mm] (0,0) -- ++(0,1) node[left,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{T}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\question
+Static friction prevents sliding.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
+    \draw (0,0) -- (5,0);
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,yshift=2cm,x=1.5cm,y=1.5cm,rotate=37]
+            \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+            \begin{scope}[rotate=-37]
+                \draw[thick,->] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
+                \draw[thick,->] (0,0) -- ({-sin(37)},0) node[left] {$F_f$};
+            \end{scope}
+            \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+An object is suspended from the ceiling.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \draw[very thick] (2.5,1) -- ++(0,1.2);
+    \draw[pattern=north west lines, pattern color=black] (0,2.2) rectangle ++(5,0.2);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,yshift=5mm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{T}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+An object is suspended from the ceiling.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw (0.5,1) -- ++({-2},{2*tan(30)});
+    \draw (0.5,1) -- ++({+2},{2*tan(30)});
+    \draw[pattern=north west lines, pattern color=black] (-2,2.18) rectangle ++(5,0.2);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,yshift=5mm,x=1.2cm,y=1.2cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->] (0,0) -- ({-cos(30)},{sin(30)}) node[pos=1.3] {$F_\mathrm{T_1}$};
+        \draw[thick,->] (0,0) -- ({+cos(30)},{sin(30)}) node[pos=1.3] {$F_\mathrm{T_2}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+The object is motionless.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw (0.5,1) -- ++({-1},{tan(50)});
+    \draw (1,0.5) -- ++(1,0);
+    \draw[pattern=north west lines, pattern color=black] ({-tan(50)},{1+tan(50)}) rectangle ++(2,0.2);
+    \draw[pattern=north west lines, pattern color=black] (2,1.2) rectangle ++(0.2,-1.4);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->] (0,0) -- ({-cos(50)/sin(50)},1) node[pos=1.2] {$F_\mathrm{T_1}$};
+        \draw[thick,->] (0,0) -- ({+cos(50)/sin(50)},0) node[right] {$F_\mathrm{T_2}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+
+\question
+The object is accelerated rightward by an applied force parallel to the rough surface.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm,remember picture]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,->] (1,0.5) -- ++(1.2,0) node[right] {$F$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- (1.5,0) node[right] {$F$};
+        \draw[thick,->] (0,0) -- (-0.7,0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);  
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+The object is pulled at constant velocity by a force at an angle to the surface with friction.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,->] (1,1) -- ++({1.4*cos(45)},{1.4*sin(45)}) node[right] {$F$};
+    \draw[dashed] (1,1) -- ++({1.4*cos(45)},0);
+    \node[xshift=4.4mm,yshift=2mm] at (1,1) {\small $\theta$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,{1-0.8*sin(45)}) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- ({0.8*cos(45)},{0.8*sin(45)}) node[right] {$F$};
+        \draw[thick,->] (0,0) -- ({-0.8*cos(45)},0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+The ball is rising in a parabolic trajectory with air resistance.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,width=4cm,
+        axis lines=none,
+        ymin=0,ymax=15,
+        xmin=0,xmax=15,]
+        \addplot[domain=0:5.73,dashed] (x,{trajectoryequation(x,15,75)});
+        \draw[fill=lightgray] (2.33,6.93) circle (4pt);
+    \end{axis}
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=3cm,yshift=1.5cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- ({-0.6*cos(70)},{-0.6*sin(70)}) node[below left=-3pt] {$F_d$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+The ball is at the top of a parabolic trajectory with air resistance.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,width=4cm,
+        axis lines=none,
+        ymin=0,ymax=15,
+        xmin=0,xmax=15,]
+        \addplot[domain=0:5.73,dashed] (x,{trajectoryequation(x,15,75)});
+        \draw[fill=lightgray] (5.73,10.7) circle (4pt);
+    \end{axis}
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,yshift=1.5cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- ({-0.5},{0}) node[below left=-3pt] {$F_d$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+The object is falling with no air resistance.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,,yshift=5mm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\columnbreak
+
+\question
+The object is falling at constant (terminal) velocity.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=3.5cm,yshift=5mm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_d$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+% \ifprintanswers
+% \else
+% \clearpage
+% \fi
+
+\question
+(Bonus) The object is accelerated leftward by a force applied downward at an angle with friction.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,<-] (1,1) -- ++({1.4*cos(45)},{1.4*sin(45)}) node[right] {$F$};
+    \draw[dashed] (1,1) -- ++({1.4*cos(45)},0);
+    \node[xshift=4.4mm,yshift=2mm] at (1,1) {\small $\theta$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1.2cm,y=1.2cm]
+        \draw[thick,->] (0,0) -- (0,{1+0.8*sin(45)}) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- ({-0.8*cos(45)},{-0.8*sin(45)}) node[left] {$F$};
+        \draw[thick,->] (0,0) -- ({0.8*cos(45)},0) node[right] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\question
+(Bonus) The object slides without friction.
+
+\begin{center}
+\begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,yshift=1.5cm,x=1.5cm,y=1.5cm,rotate=37]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->,rotate=-37] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\end{multicols*}
+% \fi
+\end{questions}
+
+\clearpage
+
+\subsubsection*{Exercises}
+Instructions: You will be given a scenario, free-body diagram, and net force equations. Find the mistake, explain why it is wrong, and correct it. There will only be one mistake in each scenario.
+
+\begin{questions}
+\question
+A person lifts a bag at a constant speed.
+
+\begin{center}
+\fbox{
+\begin{minipage}[c][3.5cm][c]{0.2\textwidth}
+\centering
+\begin{tikzpicture}[x=1.2cm,y=1.2cm]
+    \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_a$};
+    \draw[thick,->] (0,0) -- (0,+0.5) node[right] {$F_\mathrm{N}$};
+    \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+    \fill (0,0) circle (3pt);
+\end{tikzpicture}
+\end{minipage}}%
+\fbox{
+\begin{minipage}[c][3.5cm][c]{0.2\textwidth}
+    \begin{equation*}
+        F_a - F_g = 0
+    \end{equation*}
+\end{minipage}}%
+\fbox{
+\begin{minipage}[c][3.5cm][t]{0.2\textwidth}
+\centering
+    Why is it wrong?
+\end{minipage}}%
+\fbox{
+\begin{minipage}[c][3.5cm][t]{0.2\textwidth}
+\centering
+    Corrected.
+\end{minipage}}
+
+\end{center}
+\end{questions}
+
+\clearpage
+
+\subsubsection*{Linking Force to Motion}
+
+\textbf{Scenario}: A string pulls horizontally on a cart so that it moves at increasing speed along a smooth, frictionless, horizontal surface. When the cart is moving medium-fast, the pulling is stopped abruptly.
+
+\begin{questions}
+\question
+Describe in words what happens to the cart's motion when the pulling stops. Use proper physics vocabulary.
+
+\ifprintanswers
+\else
+\fillwithlines{3cm}
+\fi
+
+\begin{solution}
+    Due to inertia, the cart will continue its motion. It will be moving at a constant velocity due to the fact that the forces on it are balanced.
+\end{solution}
+
+\question
+Using the cart as your system, draw a force schema diagram for the scenario before the pulling stops. Highlight the forces that are relevant to our system before the pulling stops. 
+
+\begin{solutionorbox}[3cm]
+    
+\end{solutionorbox}
+
+
+\question
+Using the cart as your system, draw force diagrams for the following parts of the scenario. Write balanced or unbalanced next to each diagram.
+
+\begin{parts}
+\part while the string is pulling
+
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[x=8mm,y=8mm]
+    \fill (0,0) circle (3pt);
+    \draw[thick,->] (0,0) -- (2,0) node[right] {$F_\mathrm{T}$};
+    \draw[thick,->] (0,0) -- (0,1) node[above] {$F_\mathrm{N}$};
+    \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+    F_{\mathrm{net},x} &= F_\mathrm{T} = ma \\[1ex]
+    F_{\mathrm{net},y} &= F_\mathrm{N} - F_g = 0
+\end{align*}
+\end{minipage}
+\end{center}
+\end{solution}
+
+\part after the pulling stops
+
+\begin{solution}
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\centering
+\begin{tikzpicture}[x=8mm,y=8mm]
+    \draw[thick,->,white] (0,0) -- (2,0) node[right] {$F_\mathrm{T}$};
+    \fill (0,0) circle (3pt);
+    \draw[thick,->] (0,0) -- (0,1) node[above] {$F_\mathrm{N}$};
+    \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+    F_{\mathrm{net},x} &= 0 \\[1ex]
+    F_{\mathrm{net},y} &= F_\mathrm{N} - F_g = 0
+\end{align*}
+\end{minipage}
+\end{center}
+\end{solution}
+\end{parts}
+				
+\question
+Draw a motion map for the scenario. (This will just represent the motion, do not worry about using numbers or trying to calculate anything. Label where the pulling stops on your motion map.)
+
+\begin{solutionorbox}[1cm]
+\begin{center}
+    \begin{tikzpicture}[x=5mm,y=5mm]
+        \draw[domain=0:10,mark=*,only marks, samples=11] plot({0.1*\x^2},0);
+        \draw[domain=0:5,mark=*,only marks, samples=6] plot({0.1*(10^2-9^2)*\x+10},0);
+        \draw[<-,thick] (10,0.4) -- ++(0,2) node[above] {pulling stops};
+    \end{tikzpicture}
+\end{center}
+\end{solutionorbox}
+
+\question
+On the given axes complete the graphs for the scenario. (Label where the pulling stops on your graphs.)
+
+\begin{parts}
+    \part Highlight on the position graph where kinetic energy is changing
+    \part Highlight on the velocity graph where kinetic energy is the greatest.
+    \part In the box under each graph, write a short description about what unbalanced forces would look like on that graph.    
+\end{parts}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=5.5cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=10,
+        xmin=0,xmax=10,
+        grid=both,
+        ytick={0,1,...,10},
+        xtick={0,1,...,10},
+        yticklabel=\empty,
+        xticklabel=\empty,
+    ]
+        \ifprintanswers
+        \addplot[red,very thick,domain=0:6] {0.1*x^2};
+        \addplot[red,very thick,domain=6:10] {0.2*6*(x-6) + 0.1*6^2}; %..Calculus, derivative at t=6
+        \draw[red,thick,<-,xshift=-2pt,yshift=2pt] (6,{0.1*6^2}) -- ++(-2,2) node[above] {pulling stops};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{1mm}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=5.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=10,
+        grid=both,
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,10},
+        yticklabel=\empty,
+        xticklabel=\empty,
+        x label style={at={(axis description cs: 0.5,-0.1)},anchor=north}
+    ]
+        \ifprintanswers
+        \addplot[very thick,red] coordinates{(0,0)(6,3)(10,3)};
+        \draw[red,thick,<-,xshift=2pt,yshift=-2pt] (6,3) -- (8,1);
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{1mm}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=5.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Acceleration (\SI{}{m/s^2})},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=10,
+        grid=both,
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,10},
+        yticklabel=\empty,
+        xticklabel=\empty,
+        x label style={at={(axis description cs: 0.5,-0.1)},anchor=north}
+    ]
+    \ifprintanswers
+    \addplot[red,very thick] coordinates{(0,3)(6,3)};
+    \addplot[red,dashed] coordinates{(6,3)(6,0)};
+    \addplot[red,very thick] coordinates{(6,0)(10,0)};
+    \draw[red,thick,<-,xshift=2pt,yshift=-2pt] (6,3) -- (8,1);
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{questions}
+
+\clearpage
+
+\subsubsection*{Writing Net Force Equations}
+
+\begin{questions}
+\question
+An object lies motionless.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+\question
+Object slides at constant speed without friction.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \draw[thick,->,yshift=2mm] (1.5,1) -- ++(1,0) node[above,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+
+\question
+Object slows due to kinetic friction.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \draw[thick,->,yshift=2mm] (1.5,1) -- ++(1,0) node[above,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->] (0,0) -- (-1,0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} - F_f = m a_x \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+\question
+The object is pulled upward at constant speed.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[very thick] (0.5,1) -- ++(0,1.2);
+    \draw[thick,->,xshift=2mm] (1,0) -- ++(0,1) node[right,pos=0.5] {$v$};
+    \draw[white,thick,->,xshift=-2mm] (0,0) -- ++(0,1) node[left,pos=0.5] {$v$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=3cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{T}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{T} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+\clearpage
+
+\question
+Static friction prevents sliding.
+
+\bigskip
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
+    \draw (0,0) -- (5,0);
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \begin{scope}[xshift=0cm,yshift=0.5cm,transform shape]
+        \draw[->] (0,0) -- (0,1) node[above] {\small $\perp$};
+        \draw[->] (0,0) -- (1,0) node[right] {\small $\parallel$};
+    \end{scope}
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,yshift=2cm,x=1.5cm,y=1.5cm,rotate=37]
+        \draw[thick,->,opacity=0.3] (0,0) -- (0,-1) node[below] {$F_g$};
+        \begin{scope}[rotate=-37]
+            \draw[thick,->] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
+            \draw[thick,->] (0,0) -- ({-sin(37)},0) node[left] {$F_f$};
+            \draw[thick,->] (0,0) -- (0,{-cos(37)}) node[below] {$F_{g,\perp}$};
+            \draw[thick,->] (0,0) -- ({sin(37)},0) node[right] {$F_{g,\parallel}$};
+        \end{scope}
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},\parallel} &= {\ifprintanswers \color{red} F_{g,\parallel} - F_f = 0 \fi} \\[1ex]
+        F_{\mathrm{net},\perp} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_{g,\perp} = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+\question
+An object is suspended from the ceiling.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \draw[very thick] (2.5,1) -- ++(0,1.2);
+    \draw[pattern=north west lines, pattern color=black] (0,2.2) rectangle ++(5,0.2);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,yshift=5mm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{T}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{T} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\question
+An object is suspended from the ceiling.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.5\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw (0.5,1) -- ++({-2},{2*tan(30)});
+    \draw (0.5,1) -- ++({+2},{2*tan(30)});
+    \draw[pattern=north west lines, pattern color=black] (-2,2.18) rectangle ++(5,0.2);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,yshift=5mm,x=1.2cm,y=1.2cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->,opacity=0.3] (0,0) -- ({-cos(30)},{sin(30)});
+        \draw[thick,->] (0,0) -- ({-cos(30)},0) node[left] {$F_\mathrm{T_{1x}}$};
+        \draw[thick,->] (0,0) -- (0,{sin(30)}) node[left] {$F_\mathrm{T_{1y}}$};
+        \draw[thick,->,opacity=0.3] (0,0) -- ({+cos(30)},{sin(30)});
+        \draw[thick,->] (0,0) -- ({+cos(30)},0) node[right] {$F_\mathrm{T_{2x}}$};
+        \draw[thick,->] (0,{sin(30)}) -- ++(0,{sin(30)}) node[above] {$F_\mathrm{T_{2y}}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F_\mathrm{T_{2x}} - F_\mathrm{T_{1x}} = 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{T_{1y}} + F_\mathrm{T_{2y}} - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\question
+The object is motionless.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.5\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw (0.5,1) -- ++({-1},{tan(50)});
+    \draw (1,0.5) -- ++(1,0);
+    \draw[pattern=north west lines, pattern color=black] ({-tan(50)},{1+tan(50)}) rectangle ++(2,0.2);
+    \draw[pattern=north west lines, pattern color=black] (2,1.2) rectangle ++(0.2,-1.4);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_\mathrm{g}$};
+        \draw[thick,->,opacity=0.3] (0,0) -- ({-cos(50)/sin(50)},1) node[pos=1.2] {$F_\mathrm{T_1}$};
+        \draw[thick,->] (0,0) -- ({-cos(50)/sin(50)},0) node[left] {$F_\mathrm{T_{1x}}$};
+        \draw[thick,->] (0,0) -- (0,1) node[above] {$F_\mathrm{T_{1y}}$};
+        \draw[thick,->] (0,0) -- ({+cos(50)/sin(50)},0) node[right] {$F_\mathrm{T_2}$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F_\mathrm{T_2} - F_\mathrm{T_{1x}} = 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{T_{1y}}  - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+\clearpage
+
+\question
+The object is accelerated rightward by an applied force parallel to the rough surface.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm,remember picture]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,->] (1,0.5) -- ++(1.2,0) node[right] {$F$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1cm,y=1cm]
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- (1.5,0) node[right] {$F$};
+        \draw[thick,->] (0,0) -- (-0.7,0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);  
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F - F_f = m a_x \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N}  - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\question
+The object is pulled at constant velocity by a force at an angle to the surface with friction.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,->] (1,1) -- ++({1.4*cos(45)},{1.4*sin(45)}) node[right] {$F$};
+    \draw[dashed] (1,1) -- ++({1.4*cos(45)},0);
+    \node[xshift=4.4mm,yshift=2mm] at (1,1) {\small $\theta$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,{1-0.8*sin(45)}) node[left] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->,opacity=0.3] (0,0) -- ({0.8*cos(45)},{0.8*sin(45)}) node[right] {$F$};
+        \draw[thick,->] (0,{1-0.8*sin(45)}) -- ++(0,{0.8*sin(45)}) node[above] {$F_y$};
+        \draw[thick,->] (0,0) -- ({0.8*cos(45)},0) node[right] {$F_x$};
+        \draw[thick,->] (0,0) -- ({-0.8*cos(45)},0) node[left] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F_x - F_f = 0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N} + F_y  - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+
+\question
+The object is falling with no air resistance.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,,yshift=5mm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red}  0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} - F_g = - m a_y \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\question
+The object is falling at constant (terminal) velocity.
+
+\begin{center}
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[fill=black!10] (2,0) rectangle ++(1,1);
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=3.5cm,yshift=5mm,x=1.5cm,y=1.5cm]
+        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_d$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red}  0 \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_d - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+% \ifprintanswers
+% \else
+% \clearpage
+% \fi
+
+
+\clearpage
+
+\question
+(Bonus) The object is accelerated leftward by a force applied downward at an angle with friction.
+
+\begin{center}
+\begin{minipage}[c][6cm][c]{0.45\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-1.5,0) -- ++(4,0);
+    \draw[fill=black!10] (0,0) rectangle ++(1,1);
+    \draw[thick,<-] (1,1) -- ++({1.4*cos(45)},{1.4*sin(45)}) node[right] {$F$};
+    \draw[dashed] (1,1) -- ++({1.4*cos(45)},0);
+    \node[xshift=4.4mm,yshift=2mm] at (1,1) {\small $\theta$};
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=4cm,x=1.2cm,y=1.2cm]
+        \draw[thick,->] (0,0) -- (0,{1+1.4*sin(45)}) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->,opacity=0.3] (0,0) -- ({-1.4*cos(45)},{-1.4*sin(45)});
+        \draw[thick,->] (0,0) -- (0,{-1.4*sin(45)}) node[right] {$F_y$};
+        \draw[thick,->] (0,{-1.4*sin(45)}) -- ++(0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- ({-1.4*cos(45)},0) node[left] {$F_x$};
+        \draw[thick,->] (0,0) -- ({0.8*cos(45)},0) node[right] {$F_f$};
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.3\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},x} &= {\ifprintanswers \color{red}  -F_x + F_f = - m a_x \fi} \\[1ex]
+        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_y - F_g = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\question
+(Bonus) The object slides without friction.
+
+\begin{center}
+\begin{minipage}[c][6cm][c]{0.45\textwidth}
+\begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
+    \draw (0,0) -- (4,0);
+    \draw[fill=black!10] (1.5,0) rectangle ++(1,1);
+    \begin{scope}[xshift=-0.3cm,yshift=0.5cm,transform shape]
+        \draw[->] (0,0) -- (0,1) node[above] {\small $\perp$};
+        \draw[->] (0,0) -- (1,0) node[right] {\small $\parallel$};
+    \end{scope}
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \begin{scope}[xshift=5cm,yshift=2cm,x=1.5cm,y=1.5cm,rotate=37]
+        \draw[thick,->,opacity=0.3] (0,0) -- (0,-1) node[below] {$F_g$};
+        \begin{scope}[rotate=-37]
+            \draw[thick,->] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
+            \draw[thick,->] (0,0) -- (0,{-cos(37)}) node[below] {$F_{g,\perp}$};
+            \draw[thick,->] (0,0) -- ({sin(37)},0) node[right] {$F_{g,\parallel}$};
+        \end{scope}
+        \fill[black] (0,0) circle (3pt);
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}[c][4cm][c]{0.35\textwidth}
+    \large
+    \begin{align*}
+        F_{\mathrm{net},\parallel} &= {\ifprintanswers \color{red} F_{g,\parallel} = m a_\parallel \fi} \\[1ex]
+        F_{\mathrm{net},\perp} &= {\ifprintanswers \color{red} F_\mathrm{N} - F_{g,\perp} = 0 \fi}
+    \end{align*}
+\end{minipage}
+\end{center}
+
+
+\end{questions}
+
+
+
+
+
+\end{document}

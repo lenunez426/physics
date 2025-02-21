@@ -1,0 +1,2763 @@
+% \documentclass[answers]{exam}
+% \input{global}
+% \input{problem-sets}
+% \input{documents/physics-glossary}
+
+% \setrandomizerseed{1}
+
+% \firstpageheader{Physics}{Unit 2: Force Interactions}{Problems}
+% \runningheader{}{}{}
+
+
+\documentclass[../main-physics-problems.tex]{subfiles}
+
+\begin{document}
+
+\subsection{Interacting Objects}
+
+\subsubsection{Types of Force}
+\subsubsection{Representing Force Pairs in Interactions}
+\subsubsection{Force Pairs as Two Forces of the Same Type}
+\subsubsection{Instances in which Forces are Not a Force Pair}
+
+\subsection{Constant Motion Model Based on Forces}
+
+\subsubsection{Free-Body Diagrams}
+\subsubsection{Effects of Balanced and Unbalanced Forces}
+\subsubsection{Constant and Changing Velocity, Momentum, Kinetic Energy, and Forces}
+
+\begin{questions}
+
+\question
+What is a force?
+
+% \begin{solution}
+%     A \gls{force} is \glsdesc{force}.
+% \end{solution}
+
+\question
+What are some examples of a force?
+
+\begin{solution}
+    Answers may vary.
+
+    \begin{itemize}[itemsep=0pt]
+        \item Earth pulling down on a falling apple. 
+        \item A chair pushing up on a person.
+        \item A magnet attracting another magnet.
+        \item Friction acting on a sliding person.
+    \end{itemize}
+\end{solution}
+
+\question
+What are some types of forces?
+
+\begin{solution}
+    Answers may vary.
+
+    \begin{itemize}[itemsep=0pt]
+        \item contact (applied) force
+        \item magnetic force
+        \item gravitational force
+        \item tension force
+        \item friction force
+        \item normal force
+    \end{itemize}
+\end{solution}
+
+\question
+Can an object put a force on itself? %...Kind of a vague question. If you press your hand against your chest, you are putting a force on yourself.
+
+\begin{solution}
+    No. Force interactions occur between two objects.
+\end{solution}
+
+\question
+\begin{parts}
+\part What is the base SI unit of force? (What is the unit of measurement?)
+
+\begin{solution}
+    The newton (N).
+\end{solution}
+
+\part Express this unit in terms of the fundamental units (kg, m, s).
+
+\begin{solution}
+    One newton is equal to a kilogram multiplied by a meter per second squared:
+
+    \begin{equation*}
+        \SI{1}{N} = 1 \frac{\mathrm{kg}\cdot \mathrm{m}}{\mathrm{s}^2}
+    \end{equation*}
+\end{solution}
+\end{parts}
+
+
+\question
+Two teams play tug-of-war. Team Red pushes right on a cart with a force of \SI{70}{newtons}. Team Blue applies a \SI{50}{N} leftward force. Draw a sketch of the forces and calculate the net force on the cart.
+
+\begin{solution}
+\begin{center}    
+
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+    \begin{scope}[x=2]
+        \draw[thick,->,left=5] (0,0) -- (-50,0) node[left] {\SI{50}{N}};
+        \draw[thick,->,right=5] (0,0) -- (70,0) node[right] {\SI{70}{N}};
+    \end{scope}
+\end{tikzpicture}
+
+\begin{equation*}
+    F_{\text{net}} = 70 - 50 = \SI{20}{N} 
+\end{equation*}
+\end{center}
+\end{solution}
+
+
+\question
+Spongebob and Patrick each apply a 50-newton rightward force on a treasure chest. Mr.~Krabs applies a \SI{75}{N} leftward force. 
+
+\begin{parts}
+\part Draw a sketch of the forces on the chest.
+
+\begin{solution}
+\begin{center}
+    \begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+        \begin{scope}[x=2,y=2]
+            \draw[thick,->,left=5] (0,0) -- (-75,0) node[above,pos=0.5] {\SI{75}{N}};
+            \draw[thick,->,above=3,right=4] (0,0) -- (50,0) node[above,pos=0.5] {\SI{50}{N}};
+            \draw[thick,->,below=3,right=4] (0,0) -- (50,0) node[below,pos=0.5] {\SI{50}{N}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+\end{solution}
+
+\part Calculate the net force on it.
+
+\begin{solution}
+\begin{equation*}
+    F_{\text{net}} = 50 + 50 - 75 = \SI{25}{N}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+
+\question 
+Three forces act on an object. What is the magnitude and direction of the net force?
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+        \begin{scope}[x=2,y=2]
+            \draw[thick,->,above=3,left=4] (0,0) -- ++(-63,0) node[above,pos=0.5] {\SI{63}{N}};
+            \draw[thick,->,below=3,left=4] (0,0) -- ++(-73,0) node[below,pos=0.5] {\SI{73}{N}};
+            \draw[thick,->,right=4] (0,0) -- ++(98,0) node[above,pos=0.5] {\SI{98}{N}};
+        \end{scope}
+    \end{tikzpicture}
+\end{figure}
+
+\begin{solution}
+    \begin{equation*}
+        F_{\text{net}} = 98 - 63 -73 = \SI{-38}{N}
+    \end{equation*}
+\end{solution}
+
+\question
+Four forces act on an object. Find the magnitude and direction of the net force.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \begin{scope}[x=2,y=2]
+            \draw[thick,above=3,->,right=3] (0,0) -- (49,0) node[above,pos=0.5] {49\,N};
+            \draw[thick,below=3,->,right=3] (0,0) -- (67,0) node[below,pos=0.5] {67\,N};
+            \draw[thick,above=3,->,left=3] (0,0) -- (-22,0) node[above,pos=0.5] {22\,N};
+            \draw[thick,below=3,->,left=3] (0,0) -- (-36,0) node[below,pos=0.5] {36\,N};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+    \begin{equation*}
+        F_{\text{net}} = 49 + 67 - 22 - 36 = \SI{58}{N}
+    \end{equation*}
+\end{solution}
+
+\question
+The net force on an object is $\bvec{F}_{\text{net}} = \SI{-25}{N}$. If the applied force is \SI{-46}{N}, what is the magnitude of the frictional force $f$? 
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \begin{scope}[x=2,y=2]
+            \draw[thick,->,left=5] (0,0) -- (-46,0) node[left] {$F_a$}; 
+            \draw[thick,->,right=5] (0,0) -- (21,0) node[right] {$f$};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    \begin{align*}
+        \bvec{F}_{\text{net}} &= f - F_a \\[1ex]
+        -25 &= f - 46\\[1ex]
+        - 25 + 46 &= f\\[1ex]
+        f &= \SI{21}{N}
+    \end{align*}
+\end{solution}
+
+\clearpage
+\begin{EnvUplevel}
+    \subsection{Force Pairs}
+\end{EnvUplevel}
+
+\question
+A small car is at rest at a stoplight. A large truck rear-ends the small car. Why is the force experienced by the car greater than the force experienced by the truck?
+
+\begin{randomizechoices}
+    \choice The car has less mass; the less massive object experiences the greater force.
+    \choice The car is at rest; the object with the smallest speed experiences the greater force.
+    \choice Nonsense! The truck actually experiences a greater force than the car.
+    \correctchoice Nonsense! Both the car and the truck experience the same amount of force.    
+\end{randomizechoices}
+
+\question
+During a football game, a large lineman delivers a vicious hit to the opposing team’s quarterback. Why is the force experienced by the quarterback greater than the force experienced by the lineman?
+
+\begin{randomizechoices}
+    \choice The quarterback has less mass; the less massive object experiences the greater force.
+    \choice The quarterback is stationary; an object at rest always experiences the greater force.
+    \choice Nonsense! The lineman actually experiences a greater force than the quarterback.
+    \correctchoice Nonsense! The lineman and the quarterback experience the same amount of force.    
+\end{randomizechoices}
+
+\question
+A physics student sits in a chair. The chair pushes up on the student's body. Identify the other force of the interaction force pair.
+
+\begin{randomizechoices}
+    \choice The student's body pushes down on the Earth.
+    \choice The Earth pulls down on the student's body.
+    \choice The student's body pulling up on the Earth.
+    \correctchoice The student's body pushing down on the chair.    
+\end{randomizechoices}
+
+\question
+After missing a layup, Jonny expresses his anger by hitting the wall.  The reaction force to the force of Jonny's palm hitting the wall is\dots 
+
+\begin{randomizechoices}
+    \choice Jonny's palm stops
+    \choice the wall forcing itself
+    \choice Jonny's palm forcing itself
+    \correctchoice the wall forcing Johnny's palm
+    \choice the loud sound that is produced
+\end{randomizechoices}
+
+\question
+A quiet moment during a test is interrupted as a physics book falls from a table and strikes the floor.  The reaction force to the force of the Earth pulling the book downwards is\dots 
+
+\begin{randomizechoices}
+    \choice the book hits the floor
+    \choice the force of gravity on the book
+    \choice the floor pushes up on the book
+    \choice the sound of the impact with the floor
+    \correctchoice the book exerts an upward pull on the Earth
+\end{randomizechoices}
+
+\clearpage
+\begin{EnvUplevel}
+    \subsection{Interactions of Objects}
+\end{EnvUplevel}
+
+\question
+Consider a book at rest on a table.
+
+
+\begin{center}
+
+\begin{tikzpicture}
+    \draw[fill=black!20] (0,0) rectangle ++(4,0.4);
+    \draw[fill=black!20] (0.5,0) rectangle ++(0.2,-2);
+    \draw[fill=black!20] (3.3,0) rectangle ++(0.2,-2);
+    \node[above=2.9mm] at (2,0) {\twemoji[height=1cm]{blue book}};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \coordinate (earth) at (0,0); 
+    \coordinate (table) at ({4},0); 
+    \coordinate (book) at ({4*cos(60)},{4*sin(60)}); 
+    \draw (book) node[above] {book};
+    \draw (table) node[right] {table};
+    \draw (earth) node[left] {earth};
+    \draw[ultra thick,<->] (book)  -- (table) node[right=3pt,pos=0.1] {$F_\text{book-table}$} node[right=3pt,pos=0.8] {$F_\text{table-book}$};
+    \draw[ultra thick,<->] (book) -- (earth) node[left=3pt,pos=0.1] {$F_\text{book-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-book}$};
+    \draw[ultra thick,<->] (earth) -- (table) node[below=3pt,pos=0.2] {$F_\text{earth-table}$} node[below=3pt] {$F_\text{table-earth}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+    \part What are the force pairs in this scenario?
+    
+\begin{solution}
+    There are three pairs.
+
+    \begin{enumerate}
+        \item The force on the book by the table ($F_\text{book-table}$) and the force on the table by the book ($F_\text{table-book}$)
+        \item $F_\text{book-earth}$ and $F_\text{earth-book}$
+        \item $F_\text{table-earth}$ and $F_\text{earth-table}$
+    \end{enumerate}
+\end{solution}
+
+\part What are the force types?
+
+\begin{solution}
+    $F_\text{book-table}$ is the normal force, and $F_\text{table-book}$ is the reaction pair of the normal force.
+
+    $F_\text{book-earth}$ and $F_\text{earth-book}$ are gravitational forces due to the mutual attraction of earth and book. Likewise, $F_\text{table-earth}$ and $F_\text{earth-table}$ are gravitational forces.
+\end{solution}
+
+\end{parts}
+
+\question
+What are the three force pairs and types involved in a person tugging a rope?
+
+\begin{center}
+    \includegraphics[width=5cm]{documents/figures/2.3-person-rope.png}
+    \hspace{1cm}
+    \begin{tikzpicture}
+        \coordinate (earth) at (0,0); 
+        \coordinate (rope) at ({4},0); 
+        \coordinate (person) at ({4*cos(60)},{4*sin(60)}); 
+        \draw (person) node[above] {person};
+        \draw (rope) node[right] {rope};
+        \draw (earth) node[left] {earth};
+        \draw[ultra thick,<->] (person)  -- (rope);% node[right=3pt,pos=0.1] {$F_\text{person-rope}$} node[right=3pt,pos=0.8] {$F_\text{rope-person}$};
+        \draw[ultra thick,<->] (person) -- (earth);% node[left=3pt,pos=0.1] {$F_\text{person-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-person}$};
+        \draw[ultra thick,<->] (earth) -- (rope);% node[below=3pt,pos=0.2] {$F_\text{earth-rope}$} node[below=3pt] {$F_\text{rope-earth}$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    \begin{center}
+        \begin{tikzpicture}
+            \coordinate (earth) at (0,0); 
+            \coordinate (rope) at ({4},0); 
+            \coordinate (person) at ({4*cos(60)},{4*sin(60)}); 
+            \draw (person) node[above] {person};
+            \draw (rope) node[right] {rope};
+            \draw (earth) node[left] {earth};
+            \draw[ultra thick,<->] (person)  -- (rope) node[right=3pt,pos=0.1] {$F_\text{person-rope}$} node[right=3pt,pos=0.8] {$F_\text{rope-person}$};
+            \draw[ultra thick,<->] (person) -- (earth) node[left=3pt,pos=0.1] {$F_\text{person-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-person}$};
+            \draw[ultra thick,<->] (earth) -- (rope) node[below=3pt,pos=0.2] {$F_\text{earth-rope}$} node[below=3pt] {$F_\text{rope-earth}$};
+        \end{tikzpicture}
+    \end{center}
+
+$F_\text{person-earth}$ and $F_\text{earth-person}$ involve gravity and friction.
+
+$F_\text{person-rope}$ and $F_\text{rope-person}$ involve tension and friction.
+
+$F_\text{earth-rope}$ and $F_\text{rope-earth}$ involve gravity.
+
+
+\end{solution}
+
+\question
+An air hockey puck glides across an air hockey table at a constant velocity.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-hockey.png}
+\end{center}
+
+\begin{parts}
+\part List all forces. Label each as a field or contact force.
+
+\begin{solution}
+    \begin{enumerate}
+        \item The force on the puck by the table ($F_\text{puck-table}$) and the force on the table by the puck ($F_\text{table-puck}$). These are contact forces.
+        \item $F_\text{puck-earth}$ and $F_\text{earth-puck}$. These are gravitational (field) forces.
+        \item $F_\text{table-earth}$ and $F_\text{earth-table}$. These are gravitational (field) forces.
+    \end{enumerate}
+\end{solution}
+
+\part Between what two objects does each force interact?
+
+\begin{solution}
+    \begin{enumerate}
+        \item $F_\text{puck-table}$ and $F_\text{table-puck}$ interact between the puck and table.
+        \item $F_\text{puck-earth}$ and $F_\text{earth-puck}$ interact between the puck and earth.
+        \item $F_\text{table-earth}$ and $F_\text{earth-table}$ interact between the table and earth.
+    \end{enumerate}
+\end{solution}
+
+\part Draw the force pairs and force schema.
+
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (earth) at (0,0); 
+    \coordinate (table) at ({4},0); 
+    \coordinate (puck) at ({4*cos(60)},{4*sin(60)}); 
+    \draw (puck) node[above] {puck};
+    \draw (table) node[right] {table};
+    \draw (earth) node[left] {earth};
+    \draw[ultra thick,<->] (puck)  -- (table) node[right=3pt,pos=0.1] {$F_\text{puck-table}$} node[right=3pt,pos=0.8] {$F_\text{table-puck}$};
+    \draw[ultra thick,<->] (puck) -- (earth) node[left=3pt,pos=0.1] {$F_\text{puck-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-puck}$};
+    \draw[ultra thick,<->] (earth) -- (table) node[below=3pt,pos=0.2] {$F_\text{earth-table}$} node[below=3pt] {$F_\text{table-earth}$};
+\end{tikzpicture}    
+\end{center}
+
+\end{solution}
+\end{parts}
+
+\clearpage
+\question
+A woman is doing a handstand.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-woman.png}
+\end{center}
+
+\begin{parts}
+    \part List all forces. Label each as a field or contact force.
+
+\begin{solution}
+    \begin{enumerate}
+        \item The force on the woman by the floor ($F_\text{woman-floor}$) and the force on the floor by the woman ($F_\text{floor-woman}$). These are contact forces.
+        \item $F_\text{woman-earth}$ and $F_\text{earth-woman}$. These are gravitational (field) forces.
+    \end{enumerate}
+\end{solution}
+
+\part Between what two objects does each force interact?
+
+\begin{solution}
+    \begin{enumerate}
+        \item $F_\text{woman-floor}$ and $F_\text{floor-woman}$ interact between the woman and floor.
+        \item $F_\text{woman-earth}$ and $F_\text{earth-woman}$ interact between the woman and earth.
+        \item $F_\text{floor-earth}$ and $F_\text{earth-floor}$ interact between the floor and earth.
+    \end{enumerate}
+\end{solution}
+
+
+\part Draw the force pairs and the force schema.
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (earth) at (0,0); 
+    \coordinate (floor) at ({4},0); 
+    \coordinate (woman) at ({4*cos(60)},{4*sin(60)}); 
+    \draw (woman) node[above] {woman};
+    \draw (floor) node[right] {floor};
+    \draw (earth) node[left] {earth};
+    \draw[ultra thick,<->] (woman)  -- (floor) node[right=3pt,pos=0.1] {$F_\text{woman-floor}$} node[right=3pt,pos=0.8] {$F_\text{floor-woman}$};
+    \draw[ultra thick,<->] (woman) -- (earth) node[left=3pt,pos=0.1] {$F_\text{woman-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-woman}$};
+    \draw[ultra thick,<->] (earth) -- (floor) node[below=3pt,pos=0.2] {$F_\text{earth-floor}$} node[below=3pt] {$F_\text{floor-earth}$};
+\end{tikzpicture}
+\end{center}
+
+
+\end{solution}
+
+\end{parts}
+
+\question
+A climber is supported by a rope.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-climber.png}
+\end{center}
+
+\begin{parts}
+\part List all forces. Label each as a field or contact force.
+
+\begin{solution}
+    \begin{enumerate}
+        \item The force on the climber by the rope ($F_\text{climber-rope}$) and the force on the rope by the climber ($F_\text{table-puck}$). These are contact forces, specifically tension and friction.
+        \item $F_\text{climber-earth}$ and $F_\text{earth-climber}$. These are gravitational (field) forces.
+        \item $F_\text{rope-earth}$ and $F_\text{earth-rope}$. These are gravitational (field) forces.
+    \end{enumerate}
+\end{solution}
+
+\part Between what two objects does each force interact?
+
+\begin{solution}
+    \begin{enumerate}
+        \item $F_\text{climber-rope}$ and $F_\text{rope-climber}$ interact between the climber and rope.
+        \item $F_\text{climber-earth}$ and $F_\text{earth-climber}$ interact between the climber and earth.
+        \item $F_\text{rope-earth}$ and $F_\text{earth-rope}$ interact between the rope and earth.
+    \end{enumerate}
+\end{solution}
+
+\part Draw the force pairs and the force schema.
+
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (earth) at (0,0); 
+    \coordinate (rope) at ({4},0); 
+    \coordinate (climber) at ({4*cos(60)},{4*sin(60)}); 
+    \draw (climber) node[above] {climber};
+    \draw (rope) node[right] {rope};
+    \draw (earth) node[left] {earth};
+    \draw[ultra thick,<->] (climber)  -- (rope) node[right=3pt,pos=0.1] {$F_\text{climber-rope}$} node[right=3pt,pos=0.8] {$F_\text{rope-climber}$};
+    \draw[ultra thick,<->] (climber) -- (earth) node[left=3pt,pos=0.1] {$F_\text{climber-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-climber}$};
+    \draw[ultra thick,<->] (earth) -- (rope) node[below=3pt,pos=0.2] {$F_\text{earth-rope}$} node[below=3pt] {$F_\text{rope-earth}$};
+\end{tikzpicture}    
+\end{center}
+
+\end{solution}
+\end{parts}
+
+\question
+A baseball player slows as they slide into the base.
+
+\begin{center}
+    \reflectbox{\includegraphics[width=4cm]{documents/figures/2.3-baseball.png}}
+\end{center}
+
+\begin{parts}
+\part List all forces. Label each as a field or contact force.
+
+\begin{solution}
+    \begin{enumerate}
+        \item The force on the player by the floor ($F_\text{player-floor}$) and the force on the floor by the player ($F_\text{floor-player}$). These are contact (in the vertical direction) and frictional (in the horizontal) forces.
+        \item $F_\text{player-earth}$ and $F_\text{earth-player}$. These are gravitational (field) forces.
+        \item $F_\text{floor-earth}$ and $F_\text{earth-floor}$. These are gravitational (field) forces.
+    \end{enumerate}
+\end{solution}
+
+\part Between what two objects does each force interact?
+
+\begin{solution}
+    \begin{enumerate}
+        \item $F_\text{player-floor}$ and $F_\text{floor-player}$ interact between the player and floor.
+        \item $F_\text{player-earth}$ and $F_\text{earth-player}$ interact between the player and earth.
+        \item $F_\text{floor-earth}$ and $F_\text{earth-floor}$ interact between the floor and earth.
+    \end{enumerate}
+\end{solution}
+
+\part Draw the force pairs and force schema.
+
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (earth) at (0,0); 
+    \coordinate (floor) at ({4},0); 
+    \coordinate (player) at ({4*cos(60)},{4*sin(60)}); 
+    \draw (player) node[above] {player};
+    \draw (floor) node[right] {floor};
+    \draw (earth) node[left] {earth};
+    \draw[ultra thick,<->] (player)  -- (floor) node[right=3pt,pos=0.1] {$F_\text{player-floor}$} node[right=3pt,pos=0.8] {$F_\text{floor-player}$};
+    \draw[ultra thick,<->] (player) -- (earth) node[left=3pt,pos=0.1] {$F_\text{player-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-player}$};
+    \draw[ultra thick,<->] (earth) -- (floor) node[below=3pt,pos=0.2] {$F_\text{earth-floor}$} node[below=3pt] {$F_\text{floor-earth}$};
+\end{tikzpicture}    
+\end{center}
+
+\end{solution}
+\end{parts}
+
+\clearpage
+\begin{EnvUplevel}
+    \subsection{Free-Body Diagrams}
+\end{EnvUplevel}
+
+\question
+An air hockey puck glides across an air hockey table at a constant velocity.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-hockey.png}
+\end{center}
+
+\begin{parts}
+\part Draw the free body diagram.
+
+\begin{solution}
+\phantom{.}
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,->,above=3pt] (0,0) -- ++(0,1.5);
+        \draw[ultra thick,->,below=3pt] (0,0) -- ++(0,-1.5);
+    \end{tikzpicture}
+\end{center}
+\end{solution}
+
+\part Are the forces balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+
+\part Describe the motion, including information about the object's momentum and kinetic energy.
+
+\begin{solution}
+    The puck moves at constant velocity, and thus constant momentum and kinetic energy.
+\end{solution}
+
+\part Draw a representation of this motion using one of our Multiple Representations. (Recall: Multiple Representations can be position vs time graphs, velocity vs time graphs, momentum vs time graphs, kinetic energy vs time graphs, net force vs time graphs, motion maps.)
+
+\begin{solution}
+    \phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Position};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- (1.7,1.5);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Velocity};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,1.3) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Momentum};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,1.3) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Kinetic Energy};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,1.3) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Net Force};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+
+\vspace{1em}
+\begin{tikzpicture}
+    \draw[domain=0:5,mark=*,only marks, samples=11] plot(\x,0);
+    \draw[thick, ->] (2.5,0.5) -- ++(1,0) node[above,pos=0.5] {$\vec{v}$};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}
+
+%*Multiple Representations can be position vs time graphs, velocity vs time graphs, motion maps, momentum vs time graphs, kinetic energy vs time graphs, force vs time graphs.
+%**You should choose a different representation for each scenario.
+
+\question
+A woman is doing a handstand.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-woman.png}
+\end{center}
+
+\begin{parts}
+\part Draw the free body diagram.
+
+\begin{solution}
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,->,above=3pt] (0,0) -- ++(0,1.5);
+        \draw[ultra thick,->,below=3pt] (0,0) -- ++(0,-1.5);
+    \end{tikzpicture}
+\end{center}
+    
+\end{solution}
+
+\part Are the forces balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+
+\part Describe the motion, including information about the object's momentum and kinetic energy.
+
+\begin{solution}
+    The woman is at rest. Her velocity is zero, so her momentum and kinetic energy is zero.
+\end{solution}
+
+\part Draw a representation of this motion using one of our Multiple Representations.
+
+\begin{solution}
+    \phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Position};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,1.3) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Velocity};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Momentum};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Kinetic Energy};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Net Force};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+
+\vspace{1em}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt) node[above=4pt] {$\vec{v} = 0$};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}
+
+\question
+A climber is supported by a rope.
+
+\begin{center}
+    \includegraphics[width=4cm]{documents/figures/2.3-climber.png}
+\end{center}
+
+\begin{parts}
+\part Draw the free body diagram.
+
+\begin{solution}
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,->,above=3pt] (0,0) -- ++(0,1.5);
+        \draw[ultra thick,->,below=3pt] (0,0) -- ++(0,-1.5);
+    \end{tikzpicture}
+\end{center}
+    
+\end{solution}
+
+\part Are the forces balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+
+\part Describe the motion, including information about the object's momentum and kinetic energy.
+
+\begin{solution}
+    The climber is at rest. His velocity is zero, so his momentum and kinetic energy is zero.
+\end{solution}
+
+\part Draw a representation of this motion using one of our Multiple Representations.
+
+\begin{solution}
+    \phantom{.}
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Position};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,1.3) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Velocity};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Momentum};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Kinetic Energy};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1.5ex}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (0,2) node[above,rotate=90,pos=0.5] {Net Force};
+    \draw[->] (0,0) -- (2,0) node[below,pos=0.5] {Time};
+    \draw[ultra thick] (0,0) -- ++(1.7,0);
+\end{tikzpicture}
+
+\vspace{1em}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt) node[above=4pt] {$\vec{v} = 0$};
+\end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}
+
+\clearpage
+
+\question
+A baseball player slows as they slide into the base.
+
+\begin{center}
+    \reflectbox{\includegraphics[width=4cm]{documents/figures/2.3-baseball.png}}
+\end{center}
+
+\begin{parts}
+\part Draw the free body diagram.
+
+\begin{solution}
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,->,above=3pt] (0,0) -- ++(0,1.5);
+        \draw[ultra thick,->,below=3pt] (0,0) -- ++(0,-1.5);
+        \draw[ultra thick,->,right=3pt] (0,0) -- ++(-1,0) node[left] {\small friction};
+    \end{tikzpicture}
+\end{center}
+    
+\end{solution}
+
+\part Are the forces balanced or unbalanced?
+
+\begin{solution}
+    The vertical forces are balanced. In the horizontal direction, the frictional force is unbalanced and slows the player down.
+\end{solution}
+
+\part Describe the motion, including information about the object's momentum and kinetic energy.
+
+\begin{solution}
+    The player is moving to the right and is impacted by a leftward frictional force that slows him down. He has decreasing momentum and decreasing kinetic energy.
+\end{solution}
+
+\part Draw a representation of this motion using one of our Multiple Representations.
+
+\begin{solution}
+    The only representations that may be intuitive to students is net force vs time graph and the motion map:
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[->] (0,-1) -- (0,1) node[above,rotate=90,pos=0.5] {Net Force};
+    \draw[->] (0,0) -- ++(2,0) node[right,] {Time};
+    \draw[ultra thick] (0,-0.5) -- ++(1.7,0);
+\end{tikzpicture}
+
+\vspace{5mm}
+
+\begin{tikzpicture}[scale=0.6]
+    \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3.5pt] plot({0.1*\x^2},0);
+    \draw[thick, <-] (-5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+\end{tikzpicture}
+\end{center}
+
+\vspace{5mm}
+
+The remaining representations are
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=7,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Position},
+            xlabel={Time},
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {5*x - (100/(2*50))*x^2};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{1em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=6,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Velocity},
+            xlabel={Time},
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {5 - 100/50*x};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{1em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=300,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Momentum},
+            xlabel={Time},
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {50*5 - 100*x};
+        \end{axis}
+    \end{tikzpicture}
+    \hspace{1em}
+    \begin{tikzpicture}
+        \begin{axis}[height=4cm,
+            width=4cm,
+            ymin=0,ymax=700,
+            xmin=0,xmax=3,
+            ticks=none,
+            axis lines=left,
+            ylabel={Kinetic Energy},
+            xlabel={Time},
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {0.5*50*(5 - 100*x/50)^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+
+and the proof is below.
+
+For the purpose of demonstration, let's make up some numbers. The player's mass is $m=\SI{50}{kg}$, his initial velocity is $v_0 = +\SI{5}{m/s}$, and he is subject to a frictional force of magnitude $f = \SI{100}{N}$ in the negative (leftward) direction. By Newton's second law the player's acceleration is
+
+\begin{equation*}
+    a = -\frac{f}{m} = \SI{-2}{m/s^2}
+\end{equation*}
+
+Assuming he starts at $x_0 = 0$, his position as a function of time is
+
+\begin{equation*}
+    x(t) = v_0 t + \frac{1}{2}a t^2 = v_0 t -\left(\frac{f}{2m}\right)t^2
+\end{equation*}
+
+and is graphed below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=6cm,
+            width=6cm,
+            ymin=0,ymax=7,
+            xmin=0,xmax=3,
+            ytick={0,1,...,7},
+            xtick={0,0.5,...,3},
+            axis lines=left,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            grid=both,
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {5*x - (100/(2*50))*x^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+The player's velocity as a function of time is given by
+
+\begin{equation*}
+    v(t) = v_0 + a t = v_0 - \frac{ft}{m} 
+\end{equation*}
+
+and is graphed below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=6cm,
+            width=6cm,
+            ymin=0,ymax=6,
+            xmin=0,xmax=3,
+            ytick={0,1,...,6},
+            xtick={0,0.5,...,3},
+            axis lines=left,
+            ylabel={Velocity (m/s)},
+            xlabel={Time (s)},
+            grid=both,
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {5 - 100/50*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+His momentum is
+
+\begin{equation*}
+    p = m v(t) = mv_0 - ft
+\end{equation*}
+
+and is graphed below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=6cm,
+            width=6cm,
+            ymin=0,ymax=300,
+            xmin=0,xmax=3,
+            ytick={0,50,...,300},
+            xtick={0,0.5,...,3},
+            axis lines=left,
+            ylabel={Momentum (\SI{}{kg\cdot m/s})},
+            xlabel={Time (s)},
+            grid=both,
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {50*5 - 100*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+
+His kinetic energy as a function of time is
+
+\begin{align*}
+    \mathrm{KE}(t) &= \frac{1}{2} m \left[v(t)\right]^2 \\[1em]
+        &= \frac{1}{2} m \left(v_0 - \frac{ft}{m}\right)^2 \\[1em]
+        &= \frac{1}{2} m v_0^2 - fv_0 t + \left(\frac{f^2}{2m}\right) t^2
+\end{align*}
+
+and is graphed below:
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=6cm,
+            width=6cm,
+            ymin=0,ymax=700,
+            xmin=0,xmax=3,
+            ytick={0,100,...,700},
+            xtick={0,0.5,...,3},
+            axis lines=left,
+            ylabel={Kinetic Energy (J)},
+            xlabel={Time (s)},
+            grid=both,
+        ]
+            \addplot[domain=0:2.5,ultra thick,black] {0.5*50*(5 - 100*x/50)^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{solution}
+\end{parts}
+
+\clearpage
+\begin{EnvUplevel}
+    \subsection{Balanced and Unbalanced Forces (Part I)}
+
+    \textbf{Questions \ref{cTXNT}--\ref{HPDAU}.} Access the PhET Simulation: Forces and Motion (\href{https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_all.html}{CLICK HERE}).
+
+    \textbf{PART 1: TUG OF WAR.} 
+    
+    Make sure all boxes (Force, Sum of Forces, Values, Masses, Speed) in the upper right hand corner are checked.
+\end{EnvUplevel}
+
+\question \label{cTXNT}
+Create a scenario in which the forces are balanced. Draw a picture of the vector arrows and the net force (sum of forces). What is the net force on the cart? 
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \fill (0,0) circle (5pt);
+    \draw[thick,->] (0,0) -- (3,0) node[right] {100\,N};
+    \draw[thick,->] (0,0) -- (-3,0) node[left] {100\,N};
+\end{tikzpicture}
+
+\begin{equation*}
+    F_\mathrm{net} = 0
+\end{equation*}
+\end{center}
+\end{solution}
+
+\question
+Create a scenario in which the forces are unbalanced. Draw a picture of the vector arrows and the net force (sum of forces). What is the net force on the cart?
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \fill (0,0) circle (5pt);
+    \draw[thick,->] (0,0) -- ({3*1.5},0) node[right] {150\,N};
+    \draw[thick,->] (0,0) -- (-3,0) node[left] {100\,N};
+\end{tikzpicture}
+
+\begin{equation*}
+    F_\mathrm{net} = \SI{100}{N} - \SI{50}{N} = \SI{50}{N}
+\end{equation*}
+
+\end{center}
+\end{solution}
+
+
+\begin{EnvUplevel}
+    \textbf{PART 2: MOTION.} 
+    
+    Click the Motion Panel. Make sure all boxes (Force, Sum of Forces, Values, Masses, Speed) in the upper right hand corner are checked. Note: There is no friction in this scenario.
+\end{EnvUplevel}
+
+\question
+Place the refrigerator on the skateboard. Apply a force of 100\,N. Once the skateboard is moving, set the force to 0 Newtons (which represents letting go). 
+
+\begin{parts}
+    \part What happens to the speed of the skateboard-refrigerator system when there is no longer a force being applied?
+
+    \begin{solution}
+        Speed stays constant.
+    \end{solution}
+    
+    \part Are the forces acting on the skateboard-refrigerator balanced or unbalanced?
+
+    \begin{solution}
+        Balanced.
+    \end{solution}
+    
+    \part What are the forces acting on the skateboard-refrigerator system?
+
+    \begin{solution}
+        None in the horizontal direction. In the vertical direction, the force of gravity and the normal force.
+    \end{solution}
+    
+    \part Will the skateboard-refrigerator system ever stop moving? Why or why not explain?
+
+    \begin{solution}
+        No. According to Newton's first law (the law of inertia), an object in motion will stay in motion at a constant velocity unless acted on by a net external force.
+    \end{solution}
+\end{parts}
+
+\question
+Reset the simulation and click all boxes again. Place the refrigerator on the skateboard and apply a force of 100\,N. This time, do not stop applying the force to the skateboard-refrigerator system. 
+
+\begin{parts}
+    \part What happens to the speed of the skateboard-refrigerator system when the force is continuously applied?
+
+    \begin{solution}
+        The speed increases over time.
+    \end{solution}
+    
+    \part Are the forces acting on the skateboard-refrigerator system balanced or unbalanced?
+
+    \begin{solution}
+        The forces are unbalanced because now there's a net force in the horizontal direction.
+    \end{solution}
+    
+    \part Will the speed of the skateboard-refrigerator system ever stop changing? Why or why not?
+
+    \begin{solution}
+        No. The speed will continue to increase as long as the forces are unbalanced.
+    \end{solution}
+\end{parts}
+
+\begin{EnvUplevel}
+    \textbf{PART 3: FRICTION.}
+
+    Click on the Friction panel. Make sure all boxes (Force, Sum of Forces, Values, Masses, Speed) in the upper right hand corner are checked. Do not change the magnitude of friction.
+\end{EnvUplevel}
+
+\question
+How does the presence of friction affect the movement of the objects in the simulation?
+
+\begin{solution}
+    Friction opposes the applied force and causes objects in motion to slow down and eventually stop.
+\end{solution}
+
+\question
+Before the object starts moving, what do you notice about the frictional force and the applied force? Are the forces balanced or unbalanced?
+
+\begin{solution}
+    Friction is equal in magnitude to the applied force.
+\end{solution}
+
+\question 
+After the object starts moving, what do you notice about the friction force and the applied force? Are the forces balanced or unbalanced?
+
+\begin{solution}
+    The applied force is greater in magnitude than the friction force.
+\end{solution}
+
+\question
+Place one 50\,kg box on the ground. What is the minimum amount of force required to get the box moving?
+
+\begin{solution}
+    126\,N
+\end{solution}
+
+\question
+Place the second 50\,kg box on top of the first. Predict the minimum amount of force that will be required to get the box moving.
+
+\begin{solution}
+    251\,N
+\end{solution}
+
+\question
+What is the minimum amount of force required to get the 2-box (100\,kg) system of boxes moving?
+
+\begin{solution}
+    251\,N
+\end{solution}
+
+\question
+How are these two forces related?
+
+\begin{solution}
+    The forces increase with increasing mass. 
+\end{solution}
+
+\question
+Predict how much force is required to move the refrigerator.
+
+\begin{solution}
+    500\,N
+\end{solution}
+
+\question \label{HPDAU}
+What is the mass of the present? Explain how you got your answer.
+
+
+
+\clearpage
+
+\begin{EnvUplevel}
+    \textbf{Questions .} \textit{Ball \& Broom Activity.} We will be applying a constant force to a bowling ball with a broom. Then we will analyze the motion of the ball and the forces involved. We will be able to draw a Free Body Diagram (FBD) of a situation. Additionally, be able to predict the motion and changes in motion and whether the forces are balanced or unbalanced based on a FBD.
+\end{EnvUplevel}
+
+\question
+Scenario 1. Place the bowling ball on the floor. Do not push on the ball with anything.
+
+\begin{parts}
+    \part Draw a Motion Map of the bowling ball.
+    \part Draw a Free Body Diagram of the bowling ball.
+    \part Were the forces acting on the bowling ball balanced or unbalanced?
+    \part Describe the motion of the object.
+\end{parts}
+
+\question
+Scenario 2.
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Student A should gently push the ball with his/her foot/hand so that it just barely begins moving.
+    \item Student B should say ``drop'' every 2 seconds until the ball reaches the end of the path.
+    \item Student C should drop the coin next to the bowling ball each time Student B says ``drop.''
+\end{itemize}
+
+\medskip
+
+\begin{parts}
+    \part Draw a Motion Map of the bowling ball.
+    \part Draw a Free Body Diagram of the bowling ball.
+    \part Were the forces acting on the bowling ball balanced or unbalanced?
+    \part Describe the motion of the object.
+\end{parts}
+
+\question 
+Scenario 3.
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Student A should gently push the ball with his/her foot/hand so that it just barely begins moving.
+    \item Student A just barely pushes on the ball with the broom with a force just barely large enough to keep the ball moving to the end of the path. The force should be kept constant, so try not to push less or more at different points.  The broom should be kept on the ball the entire time.
+    \item Student B should say ``drop'' every 2 seconds until the ball reaches the end of the path.
+    \item Student C should drop the coin next to the bowling ball each time Student B says ``drop.''
+\end{itemize}
+
+\medskip
+
+\begin{parts}
+    \part Draw a Motion Map of the bowling ball.
+    \part Draw a Free Body Diagram of the bowling ball.
+    \part Were the forces acting on the bowling ball balanced or unbalanced?
+    \part Describe the motion of the object.
+\end{parts}
+
+\question
+In which scenario(s) were the forces balanced?
+
+\begin{solution}
+    Scenarios 1 and 2.
+\end{solution}
+
+\question
+In which scenario(s) was the ball's velocity changing?
+
+\begin{solution}
+    Scenario 3.
+\end{solution}
+
+\question
+Newton’s Law of Inertia is traditionally written as ``An object at rest stays at rest and an object in motion stays in motion unless acted upon by an unbalanced force.'' 
+
+\begin{parts}
+    \part How did the above activity show evidence for that law?
+
+    \begin{solution}
+        Scenario 1 shown the bowling ball staying at rest, and Scenario 2 showed it remaining in motion. Scenario 3 shown the unbalanced force changing the ball's velocity.
+    \end{solution}
+    
+    \part Based on the activity and class discussion, rewrite Newton's Law of Inertia in your own words.
+
+    \begin{solution}
+        Answers may vary.
+    \end{solution}
+\end{parts}
+
+\clearpage
+\begin{multicols*}{2}
+
+
+\question \label{T7nyj}
+The object below is moving to the right.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \choice speeding up
+    \choice slowing down
+    \correctchoice moving at constant speed 
+\end{randomizechoices}
+
+\question \label{lUN3c}
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice balanced
+    \choice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+\question \label{CrTRg}
+The object below is moving to the left.
+
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,->] (0,0) -- (1,0);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \choice speeding up
+    \correctchoice slowing down
+    \choice moving at constant speed 
+\end{randomizechoices}
+
+\question \label{TzyfS}
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \choice balanced
+    \correctchoice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+
+\question \label{ayuwJ}
+The object below is moving to the left.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<->] (-1,0) -- (1,0);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \choice speeding up
+    \choice slowing down
+    \correctchoice moving at constant speed 
+\end{randomizechoices}
+
+\question \label{vYsXn}
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice balanced
+    \choice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+
+
+\vspace*{\fill}
+\columnbreak
+
+
+\question 
+The object below is moving to the right.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<->] (-2,0) -- (1,0);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \choice speeding up
+    \correctchoice slowing down
+    \choice moving at constant speed 
+\end{randomizechoices}
+
+\question 
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \choice balanced
+    \correctchoice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+\question
+The object below is moving to the down.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0.4) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice speeding up
+    \choice slowing down
+    \choice moving at constant speed 
+\end{randomizechoices}
+
+\question 
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \choice balanced
+    \correctchoice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+\question 
+The object below is moving to the right.
+
+\begin{center}
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-0.7) -- (0,0.7);
+        \draw[ultra thick,<->] (-1,0) -- (2,0);
+    \end{tikzpicture}
+\end{center}
+
+The object is\dots .
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice speeding up
+    \choice slowing down
+    \choice moving at constant speed 
+\end{randomizechoices}
+
+\question 
+Are the force on the object balanced or unbalanced?
+
+\begin{randomizechoices}[norandomize]
+    \choice balanced
+    \correctchoice unbalanced
+\end{randomizechoices}
+
+\bigskip
+\hrule
+
+\vspace*{\fill}
+\end{multicols*}
+
+\question
+The graph depicts the motion of an object.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=1:9] {8/x^0.8};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Slowing down.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+\question
+The graph depicts the motion of an object. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:8] {x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+    \part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+    \part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+\end{parts}
+
+
+\question
+The graph depicts the motion of an object. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:8] {-1*x+8};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+\end{parts}
+
+\clearpage
+\question
+The graph depicts the motion of an object.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=5cm,
+        ymin=0,ymax=7,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Position},
+        xlabel={Time},
+    ]
+        \addplot[domain=0:2.5,ultra thick,black] {5*x - (100/(2*50))*x^2};
+    \end{axis}
+\end{tikzpicture}    
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Slowing down.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+\question
+Consider the motion map below. The arrow indicates the object's velocity.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[domain=0:10,mark=*,only marks, samples=11] plot(\x,0);
+        \draw[thick, ->] (4,0.5) -- ++(1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+
+\question
+Consider the motion map below. The arrow indicates the object's velocity.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[domain=0:10,mark=*,only marks, samples=6] plot({0.1*\x^2},0);
+        \draw[thick, <-] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Speeding up.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+\question
+Consider the motion map below. The arrow indicates the object's velocity.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[domain=0:10,mark=*,only marks, samples=6] plot({0.1*\x^2},0);
+        \draw[thick, ->] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Slowing down.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Slowing down.
+\end{solution}
+
+\end{parts}
+
+\question
+Consider the motion map below. The arrow indicates the object's velocity.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[domain=0:10,mark=*,only marks, samples=11] plot(\x,0);
+        \draw[thick, <-] (4,0.5) -- ++(1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+\end{parts}
+
+\clearpage
+\question
+The graph depicts the motion of an object.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {0.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Speeding up.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+\question
+The graph depicts the motion of an object.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:9] {-2.5};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+\end{parts}
+
+\question
+The table below depicts the motion of an object.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+        $0$ & $-0$ \\ \hline 
+        $1$ & $-3$ \\ \hline
+        $2$ & $-6$ \\ \hline
+        $3$ & $-9$ \\ \hline
+        $4$ & $-12$ \\ \hline
+        $5$ & $-15$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Speeding up.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+\question
+The table below depicts the motion of an object.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        $0$ & $25$ \\ \hline 
+        $1$ & $20$ \\ \hline
+        $2$ & $15$ \\ \hline
+        $3$ & $10$ \\ \hline
+        $4$ & $5$ \\ \hline
+        $5$ & $0$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+
+\begin{solution}
+    Moving at constant speed.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Balanced.
+\end{solution}
+\end{parts}
+
+\clearpage
+\question
+The table below depicts the motion of an object.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        $0$ & $0$ \\ \hline 
+        $1$ & $15$ \\ \hline
+        $2$ & $27$ \\ \hline
+        $3$ & $36$ \\ \hline
+        $4$ & $42$ \\ \hline
+        $5$ & $45$ \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{parts}
+\part Is the object speeding up, slowing down, or moving at constant speed?
+
+\begin{solution}
+    Slowing down.
+\end{solution}
+
+\part Are the forces on the object balanced or unbalanced?
+
+\begin{solution}
+    Unbalanced.
+\end{solution}
+\end{parts}
+
+
+\clearpage
+\begin{EnvUplevel}
+    \subsection{Balanced Forces (Part II): Quiz a Friend Activity}
+\end{EnvUplevel}
+
+\question
+A force is required to keep an object moving in a given direction.
+
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
+
+\question
+If an object is at rest, then there are no forces acting upon the object.
+
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
+
+\question
+An unbalanced force means that an object's kinetic energy and momentum are changing.
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice True
+    \choice False
+\end{randomizechoices}
+
+\question
+An object whose forces are balanced will not have momentum or kinetic energy.
+
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
+
+\question
+An object's inertia is only important if the object is not moving.
+
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
+
+\clearpage
+
+ 
+    
+
+\question
+Quiz A Friend Activity.
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+        $0$ & $0$ \\ \hline 
+        $1$ & $4$ \\ \hline
+        $2$ & $8$ \\ \hline
+        $3$ & $12$ \\ \hline
+        $4$ & $16$ \\ \hline
+    \end{tabular}     .
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing Velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing Kinetic Energy
+        \item Speeding up away from the reference point
+    \end{itemize}   .
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<->] (-1,0) -- (1,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item At rest or moving with a constant velocity
+        \item Balanced Forces
+        \item No or constant momentum
+        \item No or constant kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {0.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing velocity
+        \item Unbalanced Forces
+        \item Speeding up away from the reference point.
+        \item Changing Momentum
+        \item Changing Kinetic Energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+\begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        \draw[domain=0:10,mark=*,only marks, samples=6,mark size=3.5pt] plot({0.1*\x^2},0);
+        \draw[thick, <-] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{center}
+
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Speeding up away from the reference point.
+        \item Changing Momentum
+        \item Changing Kinetic Energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,->] (0,0) -- (1,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Unbalanced forces
+        \item Changing velocity
+        \item Speeding up to the right or slowing down to the left.
+        \item Changing Momentum
+        \item Changing Kinetic Energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {4-0.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing kinetic energy
+        \item Slowing down towards the reference point
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {3};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Constant Velocity
+        \item Balanced Forces
+        \item Constant Momentum
+        \item Constant Kinetic Energy
+        \item Moving away from the reference point
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {-3};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Constant Velocity
+        \item Balanced Forces
+        \item Constant Momentum
+        \item Constant Kinetic Energy
+        \item Moving towards the reference point
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:8] {-1*x+8};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Constant Velocity
+        \item Balanced Forces
+        \item Moving towards the reference point
+        \item Constant Momentum
+        \item Constant Kinetic Energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:7] {0};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item No velocity
+        \item At rest
+        \item Balanced Forces
+        \item No Momentum 
+        \item No Kinetic Energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:8] {x};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Constant Velocity
+        \item Balanced Forces
+        \item Constant Momentum
+        \item Constant Kinetic Energy
+        \item Moving away from the reference point
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<->] (-1,0) -- (2,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing Velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing kinetic energy
+        \item Speeding up or slowing down could be either direction.
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<->] (-2,0) -- (1,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing Velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing kinetic energy   
+        \item Speeding up or slowing down could be either direction.
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+        \draw[ultra thick,<-] (-1,0) -- (0,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing Velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing kinetic energy
+        \item Speeding up or slowing down could be either direction.
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:9] {0.1*x^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum 
+        \item Changing kinetic energy
+        \item Speeding up away from the reference point
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Velocity},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {-4+0.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing velocity
+        \item Slowing down towards the reference point.
+        \item Unbalanced Forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:9,samples=50] {2.5*x^0.4};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Slowing down away from the reference point
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}[scale=0.6]
+        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3.5pt] plot({0.1*\x^2},0);
+        \draw[thick, <-] (-5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Slowing down away from the reference point
+        \item Changing velocity
+        \item Unbalanced Forces
+        \item Changing Momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+    
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+    \begin{axis}[height=5cm,width=5cm,
+        axis y line=left,
+        axis x line=center,
+        ymin=-5,ymax=5,
+        xmin=0,xmax=10,
+        ylabel={Velocity},
+        xlabel={Time},
+        xtick=\empty,
+        ytick=\empty,
+        clip=false,
+        x label style={at={(axis description cs: 1,0.5)},anchor=west}
+    ]
+    \addplot[ultra thick,black,domain=0:8] {-0.5*x};
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing Velocity
+        \item Speeding up away from the reference point
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=1:9] {8/x^0.8};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Slowing down towards the reference point
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}[scale=0.6]
+        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3.5pt] plot({0.1*\x^2},0);
+        \draw[thick, ->] (-5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Speeding up towards the reference point
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:8.9] {-0.1*x^2+8};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Speeding up towards the reference point
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}[scale=0.6]
+        \draw[domain=0:10,mark=*,only marks, samples=6,mark size=3.5pt] plot({0.1*\x^2},0);
+        \draw[thick, ->] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Slowing down towards the reference point
+        \item Changing velocity
+        \item Unbalanced forces
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Kinetic Energy},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:9] {0.1*x^2};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing kinetic energy, increasing KE
+        \item Changing velocity
+        \item Speeding up
+        \item Unbalanced Forces
+        \item Changing Momentum
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis lines=left,
+            ymin=0,ymax=10,
+            xmin=0,xmax=10,
+            ylabel={Position},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+        ]
+        \addplot[ultra thick,black,domain=0:9] {5};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Constant Position
+        \item At rest
+        \item No velocity
+        \item Balanced Forces
+        \item No momentum
+        \item No kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<->] (0,-1) -- (0,1);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Balanced Forces
+        \item At rest or Constant velocity
+        \item No or constant momentum
+        \item No or constant kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \fill (0,0) circle (3pt);
+        \draw[ultra thick,<-] (0,-1) -- (0,0);
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Unbalanced Forces
+        \item Speeding up downward
+        \item Changing velocity
+        \item Changing momentum
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[height=5cm,width=5cm,
+            axis y line=left,
+            axis x line=center,
+            ymin=-5,ymax=5,
+            xmin=0,xmax=10,
+            ylabel={Momentum},
+            xlabel={Time},
+            xtick=\empty,
+            ytick=\empty,
+            clip=false,
+            x label style={at={(axis description cs: 1,0.5)},anchor=west}
+        ]
+        \addplot[ultra thick,black,domain=0:8] {4-0.5*x};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+\centering
+    \begin{itemize}[itemsep=0pt]
+        \item Changing momentum
+        \item Unbalanced forces
+        \item Changing Velocity
+        \item Slowing down
+        \item Changing kinetic energy
+    \end{itemize}
+\end{minipage}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{questions}
+\end{document}

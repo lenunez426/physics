@@ -1,0 +1,934 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage{mdframed}
+\usepackage[none]{hyphenat}
+\usepackage[Scale=10]{countriesofeurope} %
+\usepackage{utfsym}
+\usepackage{fdsymbol} %...for \downtherefore
+\usepackage{OutilsGeomTikz}
+
+\setrandomizerseed{1}
+\bracketedpoints
+\addpoints
+
+\newif\ifversionKlevel
+
+\versionKleveltrue
+
+\header{Physics \\Test on Units 6 \& 7: One- \& Two-Dimensional Motion}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+
+\ifversionKlevel
+    \header{Physics \\Test on Units 6 \& 7: One- \& Two-Dimensional Motion}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\fi
+
+\begin{document}
+
+
+\subsection*{Multiple Choice Questions}
+\begin{questions}
+
+\question 
+Two cannonballs are launched from a cannon at the same launch angle, as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=7cm,
+        axis lines=left,
+        ylabel={$y$ (m)},
+        y label style={rotate=-90},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=30,
+        xmin=0,xmax=22,
+        ytick={0,3,...,30},
+        xtick={0,2,...,22},
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        yticklabels=\empty,
+        xticklabels=\empty,
+    ]
+    \addplot[domain=0:11.3,thick,] {trajectoryequation(x,18,80)} node[pos=0.8,fill=white] {Projectile 1};
+    \addplot[domain=0:20.08,thick,] {trajectoryequation(x,24,80)} node[pos=0.7,fill=white] {Projectile 2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which projectile was launched at a greater initial speed?
+
+\begin{randomizechoices}[norandomize]
+    \choice Projectile 1
+    \correctchoice Projectile 2
+    \choice Both were launched at the same speed.
+    \choice It's impossible to tell without knowing the mass of each cannonball.
+\end{randomizechoices}
+
+\question 
+Six pumpkins are launched from a cannon at the same initial speed and launch angle but at different launched heights.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=6cm,
+        axis lines=left,
+        ylabel={$y$ (m)},
+        y label style={rotate=-90},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=33,
+        xmin=0,xmax=14,
+        ytick={0,3,...,33},
+        xtick={0,2,...,14},
+        minor x tick num=1,
+        grid=both,
+        yticklabels=\empty,
+        xticklabels=\empty
+    ]
+    \addplot[domain=0:11.3,thick] {trajectoryequation(x,18,80)};
+    \addplot[domain=0:11.8,thick] {trajectoryequation(x,18,80) + 3};
+    \addplot[domain=0:12.27,thick] {trajectoryequation(x,18,80) + 6};
+    \addplot[domain=0:12.71,thick] {trajectoryequation(x,18,80) + 9};
+    \addplot[domain=0:13.12,thick] {trajectoryequation(x,18,80) + 12};
+    \addplot[domain=0:13.51,thick] {trajectoryequation(x,18,80) + 15};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which of the following statements is true?
+
+\begin{randomizechoices}
+    \correctchoice The horizontal position of the apex is the same for all trajectories.
+    \choice The vertical position of the apex is the same for all trajectories.
+    \choice All trajectories have the same maximum range.
+    \choice Only the projectile launched from the lowest launch height has a parabolic trajectory.
+\end{randomizechoices}
+
+\clearpage
+
+
+\question
+The figure below shows a portion of a trajectory.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=3cm,width=10cm,
+        axis lines=none,
+        ylabel={$y$ (m)},
+        y label style={rotate=-90},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=5,
+        xmin=0,xmax=30,
+        clip=false,
+    ]
+    \addplot[domain=0:28.6,thick] {trajectoryequation(x,18,30)};
+    \fill (14.3,4.13) circle (3pt) node[above left] {P};
+    \draw[thick,->] (14.3,4.13) -- ++(10,0) node[above] {$v_x$};
+    \draw[thick,->] (14.3,4.13) -- ++(0,-3) node[right] {$v_y$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Point P is the point at which the projectile is at the apex. The horizontal component of the projectile's velocity is $v_x$, and the vertical component is $v_y$. Which of the following explains what is incorrect about the figure?
+
+\begin{randomizechoices}
+    \correctchoice The component $v_y$ should not be drawn, since the vertical component of velocity is zero at the apex.
+    \choice The component $v_x$ should not be drawn, since the horizontal component of velocity is zero at the apex.
+    \choice The components $v_x$ and $v_y$ should be the same length, since the horizontal and vertical components of velocity have the same magnitude at the apex. 
+    \choice The component $v_y$ should be pointing up, not down, since the projectile was launched up through the air.
+\end{randomizechoices}
+
+\question
+After a projectile is launched in the air, in which direction does it experience constant, non-zero acceleration? Ignore air resistance.
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice The $y$ direction
+    \choice The $x$ direction
+    \choice Both the $x$ and $y$ direction
+    \choice Neither direction
+\end{randomizechoices}
+
+\question
+The Niels Esperson Building in Houston stands at \SI{125}{m} tall. If Tiger Woods \underline{horizontally} launches a golf ball from the roof at \SI{18}{m/s}, how long will it take the ball to strike the ground?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=6cm,height=6cm,
+    axis lines = none,
+    clip=false,
+    axis equal image,
+    ymin=0, ymax=125,
+    xmin=0, xmax=90,
+    ]
+    \addplot[domain=0:90,densely dashed] {trajectoryequation10(x,18,0)+125};    
+    \fill[black!10] (0,0) rectangle ++(-20,125);
+    \draw (-20,0) -- (0,0) -- (0,125);
+    \node at (-4,128) {\Strichmaxerl[1]};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{4.0}{s}
+    \correctchoice \SI{5.0}{s}
+    \choice \SI{6.0}{s}
+    \choice \SI{7.0}{s}
+\end{randomizechoices}
+
+\clearpage
+
+\question
+Which of the following graphs represents the horizontal component of a projectile's velocity?
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v_x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false,
+        title={Graph A}
+    ]
+        \addplot[domain=0:2.5,very thick,black] {x-2.5};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v_x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false,
+        title={Graph B}
+    ]
+        \addplot[domain=0:2.5,very thick,black] {x};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v_x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false,
+        title={Graph C}
+    ]
+        \addplot[domain=0:2.5,very thick,black] {1.5};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=-3,ymax=3,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v_x$},
+        y label style={rotate=-90},
+        xlabel={$t$},
+        clip=false,
+        title={Graph D}
+    ]
+        \addplot[domain=0:2.5,very thick,black] {-2*x+2.5};
+        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+{
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Graph A
+    \choice Graph B
+    \correctchoice Graph C
+    \choice Graph D
+\end{randomizeoneparchoices}
+}
+
+\question
+During archery practice, an arrow is launched at 30 meters per second at an angle of \ang{70} above the horizontal, as shown in Figure 1 below. Figure 2 shows the projectile's vertical component of velocity as a function of time. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5.5cm,width=7cm,
+        % axis equal image,
+        ticks=none,
+        axis lines=left,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        ymin=0, ymax=41,
+        xmin=0, xmax=65,
+        ylabel style={rotate=-90},
+        title=Figure 1]
+        \addplot[densely dashed,domain=0:57.85] {trajectoryequation10(x,30,70)};
+        \draw (6,0) arc (0:70:6) node[right=2pt,pos=0.8] {$\ang{70}$};
+        \draw[ultra thick,->] (0,0) -- ({15*cos(70)},{15*sin(72)});
+    \end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6cm,
+        ymin=-35,ymax=35,
+        xmin=0,xmax=6,
+        axis y line=left,
+        axis x line=center,
+        ylabel={$v_y$},
+        y label style={at={(axis description cs: 0,1)},anchor=south,rotate=-90},
+        xlabel={$t$},
+        clip=false,
+        ytick={-30,-20,...,30},
+        xtick=\empty,
+        title=Figure 2,
+    ]
+        \addplot[domain=0:5.64,very thick] {30*sin(70) - 10*x};
+        \fill (0,{30*sin(70)}) circle (3pt) node[above right] {A};
+        \fill (1.50,{30*sin(70)-10*1.50}) circle (3pt) node[above right] {B};
+        \fill (2.82,{30*sin(70)-10*2.82}) circle (3pt) node[above right] {C};
+        \fill (4.20,{30*sin(70)-10*4.20}) circle (3pt) node[above right] {D};
+        \fill (5.64,{30*sin(70)-10*5.64}) circle (3pt) node[above right] {E};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which point in the velocity vs time graph represents the instant the projectile is at the apex?
+
+{
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Point A
+    \choice Point B
+    \correctchoice Point C
+    \choice Point D
+    \choice Point E
+\end{randomizeoneparchoices}
+}
+
+\question
+Two students playing golf are competing on who can hit the ball farther. They strike the ball at the same initial speed and achieve the same maximum range, but they hit the balls at different launch angles, as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=8cm,
+        axis equal image,
+        ticks=none,
+        axis lines=left,
+        clip=false,
+        ylabel = $y$,
+        xlabel = $x$,
+        ymin=0, ymax=25,
+        xmin=0, xmax=65,
+        ylabel style={rotate=-90},
+        ]
+        \addplot[densely dotted,domain=0:56.17,thick] {trajectoryequation10(x,25,58)};
+        \addplot[densely dashed,domain=0:56.17,thick] {trajectoryequation10(x,25,32)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Which of the following combinations could have been the launch angles used by the players?
+
+\begin{randomizechoices}
+    \correctchoice \ang{58} and \ang{32}
+    \choice \ang{60} and \ang{45}
+    \choice \ang{29} and \ang{63}
+    \choice \ang{90} and \ang{10}
+\end{randomizechoices}
+
+\clearpage
+
+\question
+What does \textit{centripetal} mean?
+
+\begin{randomizechoices}
+    \correctchoice center-seeking
+    \choice center of petal
+    \choice circular motion
+    \choice acceleration due to gravity
+\end{randomizechoices}
+
+\question
+In uniform circular motion, what is the angle between tangential velocity and centripetal acceleration?
+
+\begin{randomizechoices}
+    \correctchoice \ang{90}
+    \choice \ang{45}
+    \choice \ang{0}
+    \choice \ang{180}
+\end{randomizechoices}
+
+\question
+In uniform circular motion, what is the angle between centripetal acceleration and centripetal force?
+
+\begin{randomizechoices}
+    \correctchoice \ang{0}
+    \choice \ang{90}
+    \choice \ang{45}
+    \choice \ang{180}
+\end{randomizechoices}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{Q3KcTI}--\ref{kbFrGW}.} A fly tethered by a spider web is undergoing uniform circular motion.
+\end{EnvUplevel}
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (0,0) circle (1);
+    \begin{scope}[shift={(1.8,0.8)},scale=0.5,transform shape]
+    \pgflowlevelsynccm
+        \draw[<->] (0,0.2) node[above] {up} -- (0,-0.2) node[below] {down};
+        \draw[<->] (-0.2,0) node[left] {left} -- (0.2,0) node[right] {right};   
+    \end{scope}
+
+    \draw[thick,->] (0,-1) -- ++(1,0) node[right] {$v$};
+    \draw (0,-1) node[rotate=-90] {\twemoji[width=8mm]{fly}};
+\end{tikzpicture}
+\end{center}
+
+\question \label{Q3KcTI}
+At the instant the fly's velocity vector points to the right, as shown in the figure, what is the direction of the centripetal acceleration?
+
+ \begin{randomizechoices}
+    \correctchoice up
+    \choice down
+    \choice left
+    \choice right
+\end{randomizechoices}
+
+
+\question \label{kbFrGW}
+Some time later, the centripetal acceleration vector on the fly points to the right. What is the direction of the fly's velocity now?
+
+\begin{randomizechoices}
+    \correctchoice down
+    \choice up
+    \choice left    
+    \choice right
+\end{randomizechoices}
+
+\vspace{1em}
+
+\hrule
+
+\clearpage
+
+\question \label{N3JMlC}
+In athletics, a ``hammer'' is not construction tool but a 4-kilogram metal ball connected to a handle by a steel wire. Suppose Anita spins the hammer in a circular path, supplying a centripetal force of \SI{320}{N} and giving the hammer a tangential speed of \SI{12}{m/s}. Calculate the radius of curvature of the hammer's path.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (1,0) arc (0:180:1);
+    \draw[->,thick] (1,0) -- ++(0,1) node[above] {\SI{12}{m/s}};
+    \fill (1,0) circle (3pt) node[right=3pt] {\SI{4.0}{kg}};
+    \fill (0,0) circle (1pt);
+    \draw[<->,yshift=-2mm] (0,0) -- (1,0) node[below,pos=0.5] {$r$};
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.8}{m}
+    \choice \SI{26.7}{m}
+    \choice \SI{0.12}{m}
+    \choice \SI{2.5}{m}
+\end{randomizechoices}
+
+\question 
+Anita, from the previous question, is experimenting with a modified hammer that has twice the mass of the standard one. If she originally applied a centripetal force of $F_c$ on the standard hammer, what centripetal force should she apply to maintain the modified hammer's speed at \SI{12}{m/s}?
+
+\begin{randomizechoices}
+    \correctchoice $2 F_c$
+    \choice $\frac{F_c}{2}$
+    \choice $4 F_c$
+    \choice $\frac{F_c}{4}$
+\end{randomizechoices}
+
+
+\question
+Suppose your car experiences a centripetal acceleration of $a_c$ as it turns on a circular road. If the radius of curvature is doubled, and the car's speed remains constant, what does the centripetal acceleration change to?
+
+\begin{randomizechoices}
+    \correctchoice $\frac{1}{2} a_c$
+    \choice $2 a_c$
+    \choice $\frac{1}{4} a_c$
+    \choice $4 a_c$
+\end{randomizechoices}
+
+\question
+A student observes a fighter jet banking a curve with a 1 mile radius at a constant linear speed of \SI{100}{m/s}. The student claims that since the jet's speed remains constant, the jet is not accelerating. Is the student correct?
+
+\begin{randomizechoices}
+    \correctchoice The student is NOT correct, because the jet's velocity vector changes direction.
+    \choice The student is NOT correct, because the jet's velocity vector changes magnitude.
+    \choice The student is correct, because the velocity vector's direction stays the same.
+    \choice The student is correct, because the velocity vector's magnitude stays the same.
+\end{randomizechoices}
+
+\question %45
+Sonic the Hedgehog moves in a straight line with an initial velocity of \SI{15}{m/s} and constant acceleration of \SI{30}{m/s^2}. What is his displacement after 5 seconds of moving?
+
+\ifprintanswers
+\bgroup
+\color{red}
+$\displaystyle \Delta x = v_{ix} t + \frac{1}{2}at^2$
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{450}{m}
+    \choice \SI{525}{m}
+    \choice \SI{75}{m}
+    \choice \SI{375}{m}
+\end{randomizechoices}
+
+
+\question
+Sonic the Hedgehog moves in a straight line with an initial velocity of \SI{15}{m/s} and constant acceleration of \SI{30}{m/s^2}. What is his velocity after 5 seconds of motion?
+
+\ifprintanswers
+\bgroup
+\color{red}
+$v_f = v_i + a t$
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{165}{m/s}
+    \choice \SI{150}{m/s}
+    \choice \SI{105}{m/s}
+    \choice \SI{210}{m/s}
+\end{randomizechoices}
+
+
+\question
+An airplane moving at \SI{50}{m/s} at a northern point above the country of England accelerates southward at \SI{0.10}{m/s^2}. It travels \SI{910}{km} in a straight line, reaching the southern point. How fast is the airplane moving at the southern point?
+
+\begin{center}
+\begin{tikzpicture}
+    \node at (0,0) {\EUCountry{GreatBritain}};
+    \draw[thick,<-] (1.5,-1.5)  -- ++(0,2.7) node[right,pos=0.5] {\SI{910}{km}} node[above=8mm,rotate=180] {\resizebox{5mm}{!}{\usym{1F6E7}}};
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+\bgroup
+\color{red}
+$\displaystyle v_f^2 = v_i^2 = 2 a \Delta x \quad \Rightarrow \quad 
+v_f = \sqrt{v_i^2 + 2a \Delta x}$
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{430}{m/s}
+    \choice \SI{307}{m/s}
+    \choice \SI{184}{m/s}
+    \choice \SI{945}{m/s}
+\end{randomizechoices}
+
+
+\end{questions}
+
+\clearpage
+\subsection*{Free Response Questions}
+
+\begin{questions}
+\begingradingrange{myrange} 
+
+\question \label{OXyBFH}
+Cody banks a curve on a road in his Smart car at \SI{15.6}{m/s}, as shown in the figure below.
+
+\begin{center}
+\begin{tikzpicture}[x=2.4cm,y=2.4cm]
+    \draw[densely dashed] (0,0) circle (1);
+    \draw[->,thick] ({cos(45)},{sin(45)}) -- ++({-cos(45)},{sin(45)}) node[left,black] {\SI{15.6}{m/s}};
+    \ifprintanswers
+    \draw[->,very thick,red] ({cos(45)},{sin(45)}) -- ++({-0.7*cos(45)},{-0.7*sin(45)}) node[above left=-2pt,black,pos=0.8] {$a_c$};
+    \fi
+    \fill (0,0) circle (1pt);
+    \draw[,dashed,<->] (0,0) -- (1,0) node[below,pos=0.5] {\SI{65}{m}};
+    \fill ({cos(45)},{sin(45)}) circle (3pt) node[right=3pt] {car};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part[3] 
+List the variables required to calculate centripetal acceleration. 
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\begin{solution}
+\begin{equation*}
+    v = \SI{15.6}{m/s^2} \qquad 
+    r = \SI{65}{m}
+\end{equation*}
+\end{solution}
+
+\part[2] 
+Write the equation for centripetal acceleration.
+
+\bgroup
+\Large
+\begin{equation*}
+    a_c = \ifprintanswers \color{red} \else \color{white} \fi \frac{v^2}{r}  
+\end{equation*}
+\egroup
+
+\part[5] 
+Substitute the known values into the centripetal acceleration equation.
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    a_c = \frac{\left(\SI{15.6}{m/s}\right)^2}{\SI{65}{m}}
+\end{equation*}
+\end{solutionorbox}
+
+\part[10] 
+What is the car's centripetal acceleration? Include the correct magnitude and units. 
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    a_c = \SI{3.7}{m/s^2}
+\end{equation*}
+\end{solutionorbox}
+
+\part[5]
+Draw and label the centripetal acceleration vector on the car in the figure above.
+
+\begin{solution}
+    See figure above.
+\end{solution}
+\end{parts}
+
+\bigskip
+
+\hrule
+
+\vspace*{\fill}
+
+\ifprintanswers
+\else
+\begin{mdframed}[backgroundcolor=black!5]
+    \centering
+    \textbf{\small TEACHER USE ONLY}\\[1em]
+    \partialgradetable{myrange}[h][questions]
+\end{mdframed}
+\fi
+
+\clearpage
+\question
+A projectile is horizontally launched at \SI{30}{m/s} from a height of 80 meters.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=6cm,
+            ticks=none,
+            ymin=0,ymax=85,
+            xmin=0,xmax=130,
+            clip=false,
+            axis lines*=left,
+            axis equal image,
+        ]
+            \draw[ultra thick,->] (0,80) -- ++(2cm,0) node[above] {\SI{30}{m/s}};
+            \addplot[domain=0:120,thick,dashed] {trajectoryequation10(x,30,0)+80};
+            \fill (0,80) circle (3pt);
+            \draw[<->,thin,xshift=-5pt] (0,0) -- ++(0,80) node[left,pos=0.5] {\SI{80}{m}};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\bigskip
+
+\begin{parts}
+\part[5] The projectile's vertical displacement at impact is \fillin[\SI{-80}{m}]\ .
+
+\part[5] \label{V3NNS}
+Calculate how long it takes the projectile to strike the ground. Show all your work.
+
+\begin{solutionorbox}[6cm]
+\begin{align*}
+    \Delta y &= v_{iy} t - \frac{1}{2}gt^2 \\[1ex]
+    -\SI{80}{m} &= (\SI{0}{m/s})t - \frac{1}{2} \left(\SI{10}{m/s^2}\right) t^2 \\[1ex]
+    \SI{80}{m} &= \frac{1}{2} \left(\SI{10}{m/s^2}\right) t^2
+\end{align*}
+
+Solving for $t$ leads to
+
+\begin{equation*}
+    t = \sqrt{\frac{2(\SI{80}{m})}{\SI{10}{m/s^2}}} = \boxed{\SI{4.0}{s}}
+\end{equation*}
+
+\end{solutionorbox}
+
+\part[5] 
+What is the magnitude of the vertical component of velocity at impact?
+
+\begin{solutionorbox}[3cm]
+\begin{align*}
+    v_y &= v_{iy} - gt \\[1ex]
+    &= 0 - (\SI{10}{m/s^2})(\SI{4.0}{s}) \\[1ex]
+    &= -\SI{40}{m/s}
+\end{align*}
+
+So the magnitude of the velocity is \boxed{\SI{40}{m/s}}.
+\end{solutionorbox}
+
+\bigskip
+
+\part[5] 
+The horizontal component of velocity at impact is \fillin[\SI{30}{m/s}]\ .
+
+% \begin{solutionorbox}[3cm]
+% \SI{30}{m/s}
+% \end{solutionorbox}
+
+\part[5]
+Calculate the horizontal displacement at impact.
+
+\begin{solutionorbox}[3cm]
+\begin{align*}
+    \Delta x &= v_{ix}t \\[1ex]
+    &= (\SI{30}{m/s})(\SI{4.0}{s}) \\[1ex]
+    &= \boxed{\SI{120}{m}}
+\end{align*}
+\end{solutionorbox}
+
+
+% \part[4]
+% Calculate the impact speed.
+
+% \begin{solutionorbox}[6cm]
+% \SI{50}{m/s}
+% \end{solutionorbox}
+
+
+% \part[4] \label{fhUcL}
+% Find the object's total displacement at impact using the launch point as the reference point.
+
+% \begin{solutionorbox}[6cm]
+% \SI{144}{m}
+% \end{solutionorbox}
+\end{parts}
+
+
+\clearpage
+
+\question[25]
+Your lab partner holds a ruler between your finger and thumb and releases it without warning. If human reaction time is usually about \SI{0.20}{s}, how far (in cm) can you expect the ruler to fall before you catch it? (\textit{Disregard air resistance}. The magnitude of gravitational acceleration is $g = \SI{10}{m/s^2}$.)
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+    \begin{scope}
+        \clip (-2.2,5.5) -- (-2.2,-0.9) -- (1.5,-0.9) -- (1.5,5.5) -- cycle;
+        \tkzRegle[Longueur=7,Rotation=90,Circles=false]
+    \end{scope}
+    \draw[ultra thick,<-,xshift=-2pt] (1.8,0) -- ++(+2,0) node[right,align=center] {fingers here};
+    % \draw[red] (-2.2,5.5) -- (-2.2,-0.9) -- (1.5,-0.9) -- (1.5,5.5) -- cycle;
+\end{tikzpicture}
+\end{center}
+\vspace{-1em}
+
+\begin{solutionorbox}[3cm]
+Time is $t = \SI{0.20}{s}$, and gravitational acceleration has magnitude $g = \SI{10}{m/s^2}$. The one-dimensional vertical displacement equation for the ruler is
+
+\begin{equation*}
+    \Delta y = v_{iy} t - \frac{1}{2} g t^2
+\end{equation*}
+
+Since the ruler is dropped from rest, we set $v_{iy} = 0$, so the ruler's displacement is
+\vspace{-1em}
+
+\begin{align*}
+    \Delta y &= -\frac{1}{2} g t^2 \\[1ex]
+    &= -\frac{1}{2} \left(\SI{10}{m/s^2}\right) \left(\SI{0.20}{s}\right)^2 \\[1ex]
+    &= -\SI{0.20}{m}
+\end{align*}
+
+Note that the displacement is negative because the ruler \textit{falls} (i.e., the motion is downward). Therefore, taking the magnitude of vertical displacement, the ruler falls a distance of $\boxed{\SI{0.20}{m}}$ or \SI{20}{cm}.
+\end{solutionorbox}
+
+\question
+Answer each of the parts below.
+
+\begin{parts}
+\part[5]
+Ignoring air resistance, if a \SI{20}{kg} bowling ball and \SI{0.5}{kg} tennis ball were both dropped from the top of a building, how does the acceleration of the bowling compare to the acceleration of the tennis ball?.
+
+\begin{center}
+\begin{tikzpicture}
+    % \draw (0,0) node {\twemoji[height=2cm]{bowling}};
+    \draw[fill=black!10] (0,0) circle (1) node[pos=0.5,above=-2pt] {\resizebox{7mm}{!}{$\downtherefore$}};
+    \draw[ultra thick,->] (0,-1.3) -- ++(0,-1);
+    \begin{scope}[shift={(5,0)}]
+        \draw (0,0) node {\twemoji[width=5mm]{tennis}};
+        \draw[ultra thick,->] (0,-0.5) -- ++(0,-1);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+\else
+\fillwithlines{1.5cm}
+\fi
+
+\begin{solution}
+    The acceleration of both the bowling ball and tennis ball is the same, regardless of their differences in mass. Acceleration is $a_y = -\SI{10}{m/s^2}$.
+\end{solution}
+
+\part[5]
+A ball is projected upward with an initial speed of approximately 30\,m/s.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw plot[domain=0:1.77,samples=7,only marks,mark=*] (\x,{trajectoryequation(\x,10,85)});
+    \node[left] at (0,0) {A};
+    \node[right] at (1.77,0) {G};
+    \node[left] at (0.3,2.8) {B};
+    \node[right] at (1.47,2.8) {F};
+    \node[left] at (0.58,4.5) {C};
+    \node[right] at (1.77-0.58,4.5) {E};
+    \node[above] at (0.86,5.1) {D};
+\end{tikzpicture}
+\end{center}
+
+The diagram represents its position at 1-second intervals of time. At what location will the ball be moving downward with a speed of approximately \SI{30}{m/s}? 
+
+\medskip
+
+\fillin[G][3cm] 
+
+
+\part[5]
+Two toy trucks traveling at the same initial speed roll off platforms of different heights.
+
+\begin{center}
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \draw[fill=black!10] (0,0) rectangle (10,6);
+    \draw (5,6.95) node {\resizebox{2cm}{!}{\reflectbox{\usym{1F69B}}}} node[above=5mm] {A};
+    \draw[->] (8,7) -- ++(2,0) node[above,pos=0.5] {\SI{8}{m/s}};
+    \draw[<->,xshift=-2mm] (0,0) -- (0,6) node[left,pos=0.5] {\SI{60}{cm}};
+    \begin{scope}[shift={(15,0)}]
+        \draw[fill=black!10] (0,0) rectangle (10,4);
+        \draw (5,4.95) node {\resizebox{2cm}{!}{\reflectbox{\usym{1F69B}}}} node[above=5mm] {B};
+        \draw[<->,xshift=-2mm] (0,0) -- (0,4) node[left,pos=0.5] {\SI{40}{cm}};
+        \draw[->] (8,5) -- ++(2,0) node[above,pos=0.5] {\SI{8}{m/s}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Which truck would be in the air for the longest time after getting off the platform? 
+
+\bigskip
+
+\fillin[Truck A][3cm]
+
+\bigskip
+
+\part[5]
+In the figure below, Sphere A is projected off the edge of a \SI{1.0}{m} high bench with a horizontal velocity of \SI{2.0}{m/s}. Sphere B is dropped from the same height as Sphere A.  Both spheres have the same size and mass.
+
+\bigskip
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!5] (0,0) -- (2,0) -- (3.5,1) -- ++(-1.8,0);
+    \draw[ultra thick] (2,0) -- ++(0,-1.5) (3.5,1) -- ++(0,-1.5);
+    \fill (2.3,0.6) circle (2.5mm) node[left=2.5mm] {A}; 
+    \draw[thick,->] (2.6,0.6) -- ++(1.7,0);
+    \fill (6,0.6) circle (2.5mm) node[right=2.5mm] {B}; 
+\end{tikzpicture}
+\end{center}
+
+
+If sphere A leaves the edge of the table at the same instant sphere B is dropped, which sphere will hit the ground first? 
+
+\bigskip
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\begin{solution}
+    Both spheres fall at the same rate. Since the vertical component of initial velocity is zero for both, they will fit the ground at the same time.
+\end{solution}
+
+\bigskip
+
+\part[5]
+The diagram shows the position at different times for a projectile that was launched horizontally with an initial velocity of \SI{6}{m/s}. On the diagram, draw the vectors for the horizontal and vertical components of velocity for each position in the trajectory.
+
+\vspace{5mm}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,width=8cm,
+        axis lines=none,
+        ylabel={$y$ (m)},
+        xlabel={$x$ (m)},
+        ymin=0,ymax=12,
+        xmin=0,xmax=16,
+        ytick={0,2,...,12},
+        xtick={0,2,...,16},
+        grid=both,
+        clip=false,
+    ]
+    \addplot[domain=0:14.98,black] {trajectoryequation(x,10,0)+11};
+    \ifprintanswers
+        \draw[->,thick,red] (0,11) -- ++(3,0) node[above] {$v_{ix}$};
+    \fi
+    \fill[black] (0,11) circle (2pt);
+    \pgfplotsinvokeforeach{0.3,0.6,0.9,1.2,1.5}{
+        \ifprintanswers
+            \color{red}
+        \else
+            \color{white}
+        \fi
+        \coordinate (P) at (10*#1,{11-0.5*9.8*(#1)^2}); 
+        \draw[->,thick] (P) -- ++(3,0) node[right] {$v_x$};
+        \draw[->,thick] (P) -- ++(0,{-3*#1}) node[below] {$v_y$};
+        \fill[black] (P) circle (2pt);
+    }
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\endgradingrange{myrange} 
+\end{questions}
+\end{document}
+
+
+
+% \clearpage
+
+% \question
+% The combined mass of Cody and his car, from Question \ref{OXyBFH}, is \SI{740}{kg}. Calculate the centripetal force on the car.
+
+% \begin{randomizechoices}
+%     \correctchoice \SI{2770}{N}
+%     \choice \SI{178}{N}
+%     \choice \SI{3083}{N}
+%     \choice \SI{200400}{N}
+% \end{randomizechoices}
