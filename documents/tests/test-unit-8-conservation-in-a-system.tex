@@ -295,7 +295,13 @@ Two students are asked to move their desks across the room. Student A gets it do
 A brave monkey stands on the edge of a high-dive diving board.
 
 \begin{center}
-    \includegraphics[width=4cm]{physics/figures/figure-unit-7-monkey.png}
+\definecolor{clr1}{RGB}{28,163,236}
+\definecolor{clr2}{RGB}{35,137,218}
+\begin{tikzpicture}
+    \fill[clr1] (0,0) rectangle (5,1);
+    \draw (0,0) -- (0,3);
+    \draw[ultra thick] (0,3) -- (2,3) node[above=-3pt,pos=0.9] {\reflectbox{\twemoji[width=8mm]{monkey}}};
+\end{tikzpicture}
 \end{center}
 
 If the monkey-earth system has \SI{3000}{J} of GPE when the monkey is at the top of the board, then how much kinetic energy would the monkey have at the bottom, right before he lands in the water? Assume air resistance is negligible.

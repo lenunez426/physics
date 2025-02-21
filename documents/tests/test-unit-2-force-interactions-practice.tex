@@ -1,7 +1,7 @@
 \documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
-% \usetikzlibrary{quotes,angles,positioning}
+
 
 \setrandomizerseed{1}
 \bracketedpoints
@@ -19,63 +19,12 @@
 \question %...originally in unit 5: force analysis
 The free body diagram below represents the forces acting on the box in the image beside it. Given the scenario in the image, which force is missing from the free body diagram?
 
-\begin{center}
-    \begin{tikzpicture}
-        \node at (0,0) {\includegraphics[width=3cm]{z-other/L-physics/other/unit-6-projectile-motion/box.png}};
-        \begin{scope}[xshift=4cm]
-            \fill (0,0) circle (3pt);
-            \draw[<->] (-1,0) node[left] {$F_T$} -- (1,0) node[right] {$?$};
-            \draw[<->] (0,-1) node[below] {$F_g$} -- (0,1) node[above] {$F_N$};
-        \end{scope}
-    \end{tikzpicture}
-\end{center}
-
 \begin{randomizechoices}[norandomize]
     \correctchoice frictional force
     \choice weight force
     \choice tension force
     \choice normal force    
 \end{randomizechoices}
-
-% \question %...originally from unit 5: force analysis
-% A box slides across a smooth frictionless floor as shown in the image below.  What forces act on the box?
-
-% \begin{center}
-%     \begin{tikzpicture}
-%         \draw[fill=black!20] (0,0) rectangle (1,1) node[pos=0.5] {box};
-%         \draw[right=1cm,above=0.5cm,thick] (0,0) -- (3,0) node[above,pos=0.5] {rope};
-%         \draw[left=2cm] (0,0) -- (7,0);
-%     \end{tikzpicture}
-% \end{center}
-
-
-% \begin{randomizechoices}[norandomize]
-%     \choice tension, gravity
-%     \choice tension, gravity, normal force, friction
-%     \correctchoice tension, gravity, normal force
-%     \choice gravity, normal force, friction
-% \end{randomizechoices}
-
-% \question 
-% An baby elephant stands on the bed. Which of the following is a correct force pair?
-
-% \begin{center}
-%     \includegraphics[height=4cm]{physics/figures/figure-unit-2-elephant.png}
-% \end{center}
-
-% \begin{center}
-%     \begin{tikzpicture}
-%         \node at (0,0) {\twemoji[width=3cm]{1f6cf}};
-%         \draw[above=4.2mm,right=-6mm] (0,0) node {\twemoji[height=1.7cm]{elephant}};
-%     \end{tikzpicture}
-% \end{center}
-
-% \begin{randomizechoices}[norandomize]
-%     \choice The force of the Earth on the bed ($F_\text{bed-earth}$), and the force of the elephant on the Earth ($F_\text{earth-elephant}$).
-%     \choice The force of the Earth on the bed ($F_\text{bed-earth}$), and the force of the elephant on the bed ($F_\text{bed-elephant}$).
-%     \correctchoice The force of the Earth on the bed ($F_\text{bed-earth}$), and the force of the bed on the Earth ($F_\text{earth-bed}$).
-%     \choice The force of the Earth on the elephant ($F_\text{elephant-earth}$), and the force of the bed on the elephant ($F_\text{elephant-bed}$).
-% \end{randomizechoices}
 
 
 \question
@@ -168,21 +117,6 @@ Which of the following best describes the following person's motion?
     \choice Moving at a constant velocity, due to balanced forces.
 \end{randomizechoices}
 
-% \question 
-% The picture below shows a student pulling in a rope that is attached to a wall.
-
-% \begin{center}
-%     \includegraphics[width=6cm]{physics/figures/figure-unit-2-student.png}
-% \end{center}
-
-% Which statement correctly describes the amount of force applied by the wall on the student as they apply a \SI{250}{N} force?
-    
-% \begin{randomizechoices}[norandomize]
-%     \choice The wall applies a force of 125 N against the student.
-%     \correctchoice The wall applies a force of 250 N against the student.
-%     \choice The wall applies twice as much force as the student.
-%     \choice The wall applies no force since it is stationary.
-% \end{randomizechoices}
 
 \question 
 When a bug hits the windshield of a car traveling at \SI{40}{mph}, the force of the bug on the windshield is
@@ -214,78 +148,6 @@ What happened during the time interval between 2--4 seconds?
     \choice A balanced force was applied to the car, decreasing the car’s velocity.   
 \end{randomizechoices}
 
-% \question 
-% Which of the following free body diagrams (FBDs) could represent the following image?
-
-% \begin{center}
-% \begin{tikzpicture}
-%     \draw[fill=black!20] (0,0) rectangle ++(4,0.4);
-%     \draw[fill=black!20] (0.5,0) rectangle ++(0.2,-2);
-%     \draw[fill=black!20] (3.3,0) rectangle ++(0.2,-2);
-%     \node[above=2.9mm] at (2,0) {\twemoji[height=1cm]{blue book}};
-% \end{tikzpicture}
-    
-% \end{center}
-
-% % \begin{center}
-% %     \includegraphics[width=6cm]{physics/figures/figure-unit-2-book.png}
-% % \end{center}
-
-% \begin{center}
-%     \begin{tikzpicture}[scale=1.5]
-%         \draw[thick,<->] (-1,0) -- (1,0);
-%         \draw[thick,<->] (0,-1) -- (0,1);
-%         \draw[fill=white] (-0.2,-0.2) rectangle ++(0.4,0.4) node[pos=0.5] {A};
-%     \end{tikzpicture}
-%     \hspace{2em}
-%     \begin{tikzpicture}[scale=1.5]
-%         \draw[thick,<->] (0,-1) -- (0,1);
-%         \draw[fill=white] (-0.2,-0.2) rectangle ++(0.4,0.4) node[pos=0.5] {B};
-%     \end{tikzpicture}
-%     \hspace{4em}
-%     \begin{tikzpicture}[scale=1.5]
-%         \draw[thick,<->] (0,-1) -- (0,1.25);
-%         \draw[fill=white] (-0.2,-0.2) rectangle ++(0.4,0.4) node[pos=0.5] {C};
-%     \end{tikzpicture}
-%     \hspace{2em}
-%     \begin{tikzpicture}[scale=1.5]
-%         \draw[thick,<->] (-1,0) -- (0,0);
-%         \draw[thick,<->] (0,-1) -- (0,1);
-%         \draw[fill=white] (-0.2,-0.2) rectangle ++(0.4,0.4) node[pos=0.5] {D};
-%     \end{tikzpicture}
-% \end{center}
-
-% \begin{randomizeoneparchoices}[norandomize]
-%     \choice Diagram A
-%     \correctchoice Diagram B
-%     \choice Diagram C
-%     \choice Diagram D
-% \end{randomizeoneparchoices}
-
-
-% \question 
-% Given the following image of a person on a bicycle, which of the following statements is correct about the cyclist’s motion?
-
-% % \begin{center}
-% %     \includegraphics[width=6cm]{physics/figures/figure-unit-2-bicycle.png}
-% % \end{center}
-
-% \begin{center}
-%     \begin{tikzpicture}
-%         \node at (0,0) {\reflectbox{\twemoji[height=2cm]{man biking}}};
-%         \draw[thick,<-,right=1.5cm] (0,0) -- (1,0) node[above,pos=0.5] {5\,N};
-%         \draw[thick,<-,left=1.5cm] (0,0) -- (-1,0) node[above,pos=0.5] {5\,N};
-%         \draw[thick,<-,above=1.2cm] (0,0) -- (0,2) node[right,pos=0.5] {20\,N};
-%         \draw[thick,<-,below=1.2cm] (0,0) -- (0,-2) node[right,pos=0.5] {20\,N};
-%     \end{tikzpicture}
-% \end{center}
-
-% \begin{randomizechoices}
-%     \choice The person’s kinetic energy is changing with respect to time.
-%     \choice The person’s velocity is changing with respect to time.
-%     \correctchoice The person’s position is changing with respect to time.
-%     \choice The person’s momentum is changing with respect to time.
-% \end{randomizechoices}
 
 \question 
 Which of the following graphs represents an object with no kinetic energy?
@@ -330,27 +192,6 @@ Which of the following graphs represents an object with no kinetic energy?
 \clearpage
 
 \printkeytable
-
-% \question
-% The following is a kinetic energy vs time graph made by a student doing a lab.  
-
-% \begin{center}
-%     \begin{tikzpicture}
-%         \draw[->] (0,0) -- (0,3) node[above,pos=0.5,rotate=90] {Kinetic Energy};
-%         \draw[->] (0,0) -- (3,0) node[below,pos=0.5] {Time};
-%         \draw[ultra thick,domain=0:2.8] plot (\x,0.3*\x^2);
-%     \end{tikzpicture}
-% \end{center}
-
-% Which of the following descriptions best represents what is happening to the object.
-
-% \begin{randomizechoices}[norandomize]
-%     \choice The forces are balanced and the kinetic energy is increasing.
-%     \choice The forces are balanced and the kinetic energy is constant.
-%     \choice he forces are unbalanced and the kinetic energy is constant.
-%     \correctchoice The forces are unbalanced and the kinetic energy is changing.
-% \end{randomizechoices}
-
 
 
 \end{questions}
