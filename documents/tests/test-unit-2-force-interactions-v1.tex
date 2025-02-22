@@ -175,7 +175,12 @@ Which of the following best describes the following person's motion?
 The picture below shows a student pulling in a rope that is attached to a wall.
 
 \begin{center}
-    \includegraphics[width=6cm]{physics/figures/figure-unit-2-student.png}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node[gray] at (2.5,0.1) {\resizebox{5mm}{!}{\faTachometer}};
+    \draw (5,-0.6) rectangle ++(0.5,2) node[above] {wall};
+    \draw (0,0) -- (2.3,0) (2.7,0) -- (5,0);
+\end{tikzpicture}
 \end{center}
 
 Which statement correctly describes the amount of force applied by the wall on the student as they apply a \SI{250}{N} force?
@@ -340,7 +345,17 @@ Which of the following statements best represents the car’s motion?
 Given this car towing a trailer, what can you say about its motion?
 
 \begin{center}
-    \includegraphics[width=6cm]{physics/figures/figure-unit-2-trailer.png}
+\begin{tikzpicture}
+    \draw[thick] (0.8,-0.1) -- ++(1.8,0);
+    \node at (0,0) {\resizebox{2cm}{!}{\usym{1F699}}};
+    \node at (3,0) {\resizebox{1cm}{!}{\usym{1F69A}}};
+    \begin{scope}[shift={(1.5,-1.5)}]
+        \fill (0,0) circle (5pt);
+        \draw[->,thick] (0,0) -- (-3,0) node[above] {Engine} node[below=2pt] {\SI{6000}{N}};
+        \draw[->,thick,yshift=2pt] (0,0) -- (1,0) node[above,pos=1.2] {Car friction, \SI{1000}{N}};
+        \draw[->,thick,yshift=-2pt] (0,0) -- (1,0) node[below,pos=1.2]  {Trailer friction, \SI{1000}{N}};
+    \end{scope}
+\end{tikzpicture}
 \end{center}
 
 \begin{randomizechoices}[norandomize]
