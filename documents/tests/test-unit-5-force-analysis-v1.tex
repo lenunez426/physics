@@ -268,7 +268,14 @@ Earth’s mass is approximately 81 times the mass of the moon.  If the earth exe
 \end{EnvUplevel}
 
 \begin{center}
-    \includegraphics[width=5cm]{physics/figures/figure-unit-4-bolton.png}
+\begin{tikzpicture}
+    \draw[fill=black!20] (-2.3,0) rectangle ++(-2,-1);
+    \begin{scope}[shift={(-2.3,-0.8)}]
+        \draw[thick,->] (0,0) -- ++({2*cos(20)},{2*sin(20)});
+        \draw[densely dashed] (0,0) -- ++({2*cos(20)},0) node[above=-1pt,pos=0.6] {$\theta$};
+    \end{scope}
+    \node at (0,0) {\Strichmaxerl[8][0][150]};
+\end{tikzpicture}
 \end{center}
 
 \question \label{Q24}
@@ -420,7 +427,10 @@ Which of the following represents the net force equation in the vertical directi
 Mia is pulling up a \SI{20}{kg} bucket of water with an acceleration of \SI{1}{m/s^2} to quench her thirst. 
 
 \begin{center}
-    \includegraphics[width=2cm]{physics/figures/figure-unit-4-bucket.png}
+\begin{tikzpicture}
+    \node at (0,0) {\twemoji[height=1cm]{bucket}};
+    \draw[thick] (0,0.45) -- ++(0,1.5);
+\end{tikzpicture}
 \end{center}
 
 \begin{parts}

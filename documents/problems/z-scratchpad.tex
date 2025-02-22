@@ -12,18 +12,13 @@
 
 \begin{center}
 \begin{tikzpicture}
-    \draw[ultra thick,lightgray] (-0.5,0) -- (3.3,0) (4.7,0) -- (10,0);
-    \node at (4,0) {\resizebox{1.5cm}{!}{\usym{1F699}}};
-    \node at (0,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
-    \node at (1,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
-    \node at (2,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
-    \node at (7,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
-    \node at (8,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
-    \node at (9,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
-    \node at (10,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
-    \fill (4,1.5) circle (3pt);
-    \draw[thick,->] (4,1.5) -- ++(-3,0) node[left] {\SI{300}{N}};
-    \draw[thick,->] (4,1.5) -- ++(+3.5,0) node[right] {\SI{350}{N}};
+    \draw[fill=black!20] (-2.3,0) rectangle ++(-2,-1);
+    \begin{scope}[shift={(-2.3,-0.8)}]
+        \draw[thick,->] (0,0) -- ++({2*cos(20)},{2*sin(20)});
+        \draw[densely dashed] (0,0) -- ++({2*cos(20)},0) node[above=-1pt,pos=0.6] {$\theta$};
+    \end{scope}
+    
+    \node at (0,0) {\Strichmaxerl[8][0][150]};
 \end{tikzpicture}
 \end{center}
 \end{questions}
