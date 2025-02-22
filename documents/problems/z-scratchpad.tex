@@ -1,5 +1,7 @@
 \documentclass[answers]{exam}
 \input{global}
+\input{notes}
+
 % \usetikzlibrary{shapes.geometric}
 
 \begin{document}
@@ -10,17 +12,18 @@
 
 \begin{center}
 \begin{tikzpicture}
- 
-\node[cylinder, 
-    draw = black, 
-    % text = purple,
-    cylinder uses custom fill, 
-    cylinder body fill = lightgray, 
-    cylinder end fill = gray,
-    minimum width = 3cm,
-    minimum height = 1cm,
-    aspect = 1.5, 
-    shape border rotate = 90] (c) at (0,0) {};
+    \draw[ultra thick,lightgray] (-0.5,0) -- (3.3,0) (4.7,0) -- (10,0);
+    \node at (4,0) {\resizebox{1.5cm}{!}{\usym{1F699}}};
+    \node at (0,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (1,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (2,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (7,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (8,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (9,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (10,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \fill (4,1.5) circle (3pt);
+    \draw[thick,->] (4,1.5) -- ++(-3,0) node[left] {\SI{300}{N}};
+    \draw[thick,->] (4,1.5) -- ++(+3.5,0) node[right] {\SI{350}{N}};
 \end{tikzpicture}
 \end{center}
 \end{questions}

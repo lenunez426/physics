@@ -19,17 +19,17 @@
 \newif\ifShowUnitX                               %        
 \newif\ifShowUnitXI                              %        
 \newif\ifShowUnitXII                             % 
-\ShowUnitItrue                                   %
+\ShowUnitIfalse                                  %
 \ShowUnitIItrue                                  %
-\ShowUnitIIItrue                                 %
-\ShowUnitIVtrue                                  %
-\ShowUnitVtrue                                   %
-\ShowUnitVItrue                                  %
-\ShowUnitVIItrue                                 %
-\ShowUnitVIIItrue                                %
-\ShowUnitIXtrue                                  %
-\ShowUnitXtrue                                   %
-\ShowUnitXItrue                                  %
+\ShowUnitIIIfalse                                %
+\ShowUnitIVfalse                                 %
+\ShowUnitVfalse                                  %
+\ShowUnitVIfalse                                 %
+\ShowUnitVIIfalse                                %
+\ShowUnitVIIIfalse                               %
+\ShowUnitIXfalse                                 %
+\ShowUnitXfalse                                  %
+\ShowUnitXIfalse                                 %
 \ShowUnitXIIfalse                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -637,6 +637,25 @@ One example of tension is tetherball, the sport where a ball is connect by a rop
 \end{center}
 
 When the rope is taught, there is a tension force on the ball, and another tension force of equal magnitude is exerted on the pole, to keep the ball in motion.
+
+Here's another example:
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[ultra thick,lightgray] (-0.5,0) -- (3.3,0) (4.7,0) -- (10,0);
+    \node at (4,0) {\resizebox{1.5cm}{!}{\usym{1F699}}};
+    \node at (0,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (1,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (2,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
+    \node at (7,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (8,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (9,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \node at (10,0) {\resizebox{1cm}{!}{\Strichmaxerl[][0][160]}};
+    \fill (4,1.5) circle (3pt);
+    \draw[thick,->] (4,1.5) -- ++(-3,0) node[left] {\SI{300}{N}};
+    \draw[thick,->] (4,1.5) -- ++(+3.5,0) node[right] {\SI{350}{N}};
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Representing Force Pairs in Interactions}
 
