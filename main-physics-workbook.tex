@@ -1,8 +1,6 @@
-\documentclass[]{exam}
+\documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
-
-\setrandomizerseed{1}
 
 \renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
 
@@ -27,13 +25,22 @@
 \ShowUnitIVfalse         %
 \ShowUnitVfalse          %
 \ShowUnitVIfalse         %
-\ShowUnitVIItrue         %
+\ShowUnitVIIfalse        %
 \ShowUnitVIIIfalse       %
-\ShowUnitIXfalse         %
+\ShowUnitIXtrue         %
 \ShowUnitXfalse          %
 \ShowUnitXIfalse         %
 \ShowUnitXIIfalse        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifShowUnitIX
+\usepackage{circuitikz}
+\ctikzset{bipoles/battery1/height=0.5}
+\ctikzset{bipoles/battery1/width=0.25}
+\ctikzset{bipoles/resistor/height=0.15}
+\ctikzset{bipoles/resistor/width=0.4}
+\usepackage{bohr}
+\fi
 
 \usepackage{subfiles} % Best loaded last in the preamble
 

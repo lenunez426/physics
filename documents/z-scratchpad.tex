@@ -1,20 +1,50 @@
 \documentclass[answers]{exam}
 \input{global}
-\input{notes}
+\input{problem-sets}
+\usepackage{makecell}
+
 
 % \usetikzlibrary{shapes.geometric}
 
 \begin{document}
 
-\begin{questions}
-\question
-.
+
 
 \begin{center}
-\begin{tikzpicture}
-    \node at (0,0) {\Strichmaxerl[5][180][20][-30][-10]};
-    \draw[fill=lightgray] (0.25,-0.6) rectangle ++(1.2,1.2);
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-2) grid (6,6);
+    \draw[domain=-6:0,samples=120,thick] plot (\x,{4*exp(-(\x+3)^2)});
+    \node[above] at (-3,4) {$\rightarrow$};
+    \draw[domain=0:6,samples=120,thick] plot (\x,{4*exp(-(\x-3)^2)});
+    \node[above] at (+3,4) {$\leftarrow$};
+    \draw (0,6) -- (0,-2) node[below] {$x=0$};
 \end{tikzpicture}
 \end{center}
-\end{questions}
+
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{4*exp(-(\x)^2) + 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph A}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{2*exp(-(\x)^2) + 2*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph B}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{-4*exp(-(\x)^2) - 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph C}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{-2*exp(-(\x)^2) - 2*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph D}};
+\end{tikzpicture}
+
+
+
+\end{center}
 \end{document}

@@ -1,77 +1,1869 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+%\documentclass[../main-physics-workbook.tex]{subfiles}
+
+%...For a standalone document, un-comment lines below and recompile here:
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\input{documents/physics-glossary}
+\setcounter{section}{9}
+\usepackage{circuitikz}
+\ctikzset{bipoles/battery1/height=0.5}
+\ctikzset{bipoles/battery1/width=0.25}
+\ctikzset{bipoles/resistor/height=0.15}
+\ctikzset{bipoles/resistor/width=0.4}
+\ctikzset{bipoles/cuteswitch/thickness=0.3,bipoles/cuteswitch/shape=circ}
+\ctikzset{bipoles/bulb/height=0.4,bipoles/bulb/width=0.4}
+\usepackage{bohr}
+
+\header{Name:\enspace\makebox[5cm]{\hrulefill}}{}{}
+
 \begin{document}
 
 
 
-\subsection{Charges and Matter}
-\subsubsection{Particles that Contribute Positive, Negative, or No Charge}
-\subsubsection{Neutral Objects}
-\subsubsection{Determining Charge}
-\subsubsection{Two Objects Attract, Repel, or Have No Interaction}
-\subsubsection{Drawing the Electric Field}
+\textbf{\Large Charges and Matter}
+
+\subsection{The Millikan's Oil Drop Experiment}
+
+\textbf{Questions \ref{6YGfUm}--\ref{Q68N4Y}.} Watch ``Charge of an Electron: Millikan's Oil Drop Experiment'' by Tyler DeWitt on YouTube (\href{https://youtu.be/2HhaQtvICe8}{click here}), then answer the exercises below.
+
+\begin{questions}
+\question \label{6YGfUm}
+In what year did Millikan and Fletcher conduct the oil drop experiment?
+
+
+\question
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \rule{2cm}{0.15mm}.
+
+
+\question
+The Millikan's oil drop experiment involves balancing tiny drops of oil by using gravity and \rule{2cm}{0.15mm}.
+
+
+
+\question
+Two parts of the equipment used by Millikan are the \rule{2cm}{0.15mm} and the \rule{2cm}{0.15mm}.
+
+
+\question
+Which force acts downward on the oil drop?
+
+
+\question
+Which plate--the positively or the negatively charged---will the positive oil drop be attracted to? Explain.
+
+
+\question
+What force pushes the oil drop in the opposite direction of gravity?
+
+
+\question
+When the voltage is too HIGH, the oil drop moves \rule{2cm}{0.15mm}.
+
+
+\question
+When the voltage is too LOW, the oil drop moves \rule{2cm}{0.15mm}.
+
+
+\question
+What happens to the oil drop when the voltage through the apparatus is just right?
+
+
+\question
+The force of gravity on the drop depends only on the \rule{2cm}{0.15mm} of the drop.
+
+
+\question
+What 2 factors does the force of electricity on the drop depend on?
+
+
+\question \label{Q68N4Y}
+What is the charge of 1 electron?
+
+\end{questions}
+
+
 
 \clearpage
+\subsection{The Electric Field}
 
-\subsection{Transfer of Charge}
-\subsubsection{Charge is Conserved}
-\subsubsection{Only Electrons are Transferred}
-\subsubsection{Charging by Induction and Conduction}
-\subsubsection{Polarization}
-\subsubsection{The Electroscope}
-\subsubsection{Known and Unknown Charges}
-\subsubsection{Distributions of Charge}
+\begin{questions}
 
-\clearpage
+\question
+Go to the \href{https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html}{PhET Simulation: Charges and Fields}. Check only the following boxes: \checkbox{1} Electric Field, \checkbox{1}~Voltage, \checkbox{1} Grid. In this simulation, you may place charges onto the provided grid. The yellow sensor, when placed at any location, measures the magnitude (size) and direction of the electric field due to one or more charges.
 
-\subsection{Coulomb’s Law}
-\subsubsection{Free Body Diagrams for Two Charged Objects}
-\subsubsection{Electric Force, Charges, and Distance}
-\subsubsection{Electric Force and Gravitational Force}
-\subsubsection{How Changing Charge or Distance Affects the Electric Force}
+\begin{parts}
+\part In the PhET Simulation, place a positive charge aligned with the center of the grid. Then place sensors at each of the points shown in the grid below. \textbf{NOTE:} Place all items \textit{exactly} on the grid line intersections as shown. Then use the space below to draw the electric field vectors exactly to scale as shown in the simulation. Finally, repeat these steps for a single negative charge.
 
-\clearpage
+\begin{EnvUplevel}
+\begin{center}
+\begin{tikzpicture}
+    \draw (-4,-4) grid (4,4);
+    \draw[step=0.2,ultra thin,black!20] (-4,-4) grid (4,4);
+    \draw[thick] (-4,-4) rectangle (4,4);
+    \fill[white] (0,0) circle (0.2cm);
+    \node at (0,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
 
-\subsection{Simple Circuits}
-\subsubsection{Components for a Simple Circuit}
-\subsubsection{Tracing the Conducting Path}
-\subsubsection{Ohm’s Law: Current, Resistance, and Voltage}
-\subsubsection{Measurements using a Multimeter, Ammeter, and Current Probe}
-\subsubsection{Calculating Voltage Drop}
-\subsubsection{Changes in Current with Changes in Voltage or Resistance}
-\subsubsection{Electrical Power}
-\subsubsection{Light Bulb Brightness}
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (-2,+2) -- ++(-0.75,+0.75);
+    \draw[ultra thick,->] (-2.4,0) -- ++(-1.5,0);
+    \draw[ultra thick,->] (-2,-2) -- ++(-0.75,-0.75);
+    \draw[ultra thick,->] (0,-2.4) -- ++(0,-1.5);
+    \draw[ultra thick,->] (+2,-2) -- ++(+0.75,-0.75);
+    \draw[ultra thick,->] (+2.4,0) -- ++(+1.5,0);
+    \draw[ultra thick,->] (+2,+2) -- ++(+0.75,+0.75);
+    \draw[ultra thick,->] (0,+2.4) -- ++(0,+1.5);
+    \egroup
+    \fi
 
-\clearpage
+    \fill (-2,+2) circle (3pt);
+    \fill (-2.4,0) circle (3pt);
+    \fill (-2,-2) circle (3pt);
+    \fill (0,-2.4) circle (3pt);
+    \fill (+2,-2) circle (3pt);
+    \fill (+2.4,0) circle (3pt);
+    \fill (+2,+2) circle (3pt);
+    \fill (0,+2.4) circle (3pt);
+    \draw[ultra thick,<->] (-3,-4) -- (-1,-4) node[above,pos=0.5] {1 meter};
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \draw (-4,-4) grid (4,4);
+    \draw[step=0.2,ultra thin,black!20] (-4,-4) grid (4,4);
+    \draw[thick] (-4,-4) rectangle (4,4);
+    \fill[white] (0,0) circle (0.2cm);
+    \node at (0,0) {\resizebox{0.4cm}{!}{\faMinusCircle}};
 
-\subsection{Series Circuits}
-\subsubsection{Measurements in Series using a Multimeter, Ammeter, and Current Probe}
-\subsubsection{Current Flow through a Series Circuit}
-\subsubsection{Equivalent Resistance in Series}
-\subsubsection{Equivalent Voltage in Series}
-\subsubsection{Total Voltage}
-\subsubsection{Energy Transformations in Series}
-\subsubsection{Determining Current, Voltage, and Power in Series}
 
-\clearpage
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (-2,+2) -- ++(+0.75,-0.75);
+    \draw[ultra thick,->] (-2.4,0) -- ++(+1.5,0);
+    \draw[ultra thick,->] (-2,-2) -- ++(+0.75,+0.75);
+    \draw[ultra thick,->] (0,-2.4) -- ++(0,+1.5);
+    \draw[ultra thick,->] (+2,-2) -- ++(-0.75,+0.75);
+    \draw[ultra thick,->] (+2.4,0) -- ++(-1.5,0);
+    \draw[ultra thick,->] (+2,+2) -- ++(-0.75,-0.75);
+    \draw[ultra thick,->] (0,+2.4) -- ++(0,-1.5);
+    \egroup
+    \fi
 
-\subsection{Parallel Circuits}
-\subsubsection{Measurements in Parallel using a Multimeter, Ammeter, and Current Probe}
-\subsubsection{Junctions}
-\subsubsection{Current Flow through a Parallel Circuit}
-\subsubsection{Voltage Drops in Parallel}
-\subsubsection{Parallel Circuits Compared to Series Circuits}
-\subsubsection{Equivalent Resistance in Parallel}
-\subsubsection{Equivalent Voltage in Parallel}
-\subsubsection{Energy Transformations in Parallel}
-\subsubsection{Determining Current, Voltage, and Power in Parallel}
+    \fill (-2,+2) circle (3pt);
+    \fill (-2.4,0) circle (3pt);
+    \fill (-2,-2) circle (3pt);
+    \fill (0,-2.4) circle (3pt);
+    \fill (+2,-2) circle (3pt);
+    \fill (+2.4,0) circle (3pt);
+    \fill (+2,+2) circle (3pt);
+    \fill (0,+2.4) circle (3pt);
+    \draw[ultra thick,<->] (-1,-4) -- (1,-4) node[above,pos=0.5] {1 meter};
+\end{tikzpicture}
+\end{center}
+\end{EnvUplevel}
 
-\clearpage
+\part 
+Draw the electric field vectors to scale for each of the points below when a positive and negative charge are assembled in the configuration below.
 
-\subsection{Combination Circuits}
-\subsubsection{Voltage and Current in Combination Circuits}
-\subsubsection{Predicting which Bulbs will Light with Switches}
-
+\begin{center}
+\begin{tikzpicture}
+    \draw (-6,-4) grid (6,4);
+    \draw[step=0.2,ultra thin,black!20] (-6,-4) grid (6,4);
     
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (0,0) -- (1.95,0);
+    \draw[ultra thick,->] (0,2) -- ++(1.15,0);
+    \draw[ultra thick,->] (-2,2) -- ++(1.02,1.4);
+    \draw[ultra thick,->] (-5,2) -- ++(-0.62,0.75);
+    \draw[ultra thick,->] (-4,-2) -- ++(-0.6,-1.45);
+    \draw[ultra thick,->] (0,-1) -- ++(1.6,0);
+    \draw[ultra thick,->] (5,-2) -- ++(-0.62,0.75);
+    \draw[ultra thick,->] (3,-2.6) -- ++(0.2,1.2);
+    \draw[ultra thick,->] (4,3) -- ++(-0.16,-0.75);
+    \egroup
+    \fi
+    
+    \fill[white] (-3,0) circle (0.2cm);
+    \node at (-3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill[white] (+3,0) circle (0.2cm);
+    \node at (+3,0) {\resizebox{0.4cm}{!}{\faMinusCircle}};
+    \fill (0,0.0) circle (3pt);
+    \fill (0,2) circle (3pt);
+    \fill (-2,2) circle (3pt);
+    \fill (-5,2) circle (3pt);
+    \fill (-4,-2) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (5,-2) circle (3pt);
+    \fill (3,-2.6) circle (3pt);
+    \fill (4,3) circle (3pt);
+    \draw[ultra thick,<->] (3,-4) -- (5,-4) node[above,pos=0.5] {1 meter};
+\end{tikzpicture}
+\end{center}
+
+\part 
+Draw the electric field vectors to scale for each of the points below when two positive charges are assembled in the configuration below.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (-6,-4) grid (6,4);
+    \draw[step=0.2,ultra thin,black!20] (-6,-4) grid (6,4);
+    
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \node[above right,fill=white] (0,0) {$E=0$};
+    \draw[ultra thick,->] (0,2) -- ++(0,0.65);
+    \draw[ultra thick,->] (-2,2) -- ++(0.5,1.65);
+    \draw[ultra thick,->] (-5,2) -- ++(-0.9,0.8);
+    \draw[ultra thick,->] (-4,-2) -- ++(-0.92,-1.56);
+    \draw[ultra thick,->] (0,-1) -- ++(0,-0.6);
+    \draw[ultra thick,->] (5,-2) -- ++(0.9,-0.8);
+    \draw[ultra thick,->] (3,-2.6) -- ++(0.2,-1.4);
+    \draw[ultra thick,->] (4,3) -- ++(0.4,0.9);
+    \egroup
+    \fi
+    
+    \fill[white] (-3,0) circle (0.2cm);
+    \node at (-3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill[white] (+3,0) circle (0.2cm);
+    \node at (+3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill (0,0.0) circle (3pt);
+    \fill (0,2) circle (3pt);
+    \fill (-2,2) circle (3pt);
+    \fill (-5,2) circle (3pt);
+    \fill (-4,-2) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (5,-2) circle (3pt);
+    \fill (3,-2.6) circle (3pt);
+    \fill (4,3) circle (3pt);
+    \draw[ultra thick,<->] (-1,-4) -- (1,-4) node[above,pos=0.5] {1 meter};
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\question
+Label each charge below with a positive ($+$) or negative ($-$) sign so that it correctly corresponds to the magnetic field lines shown.
+
+
+\begin{center}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-3b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-3a.pdf}
+    \fi
+    }
+\end{minipage}%
+\hspace{5mm}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-4b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-4a.pdf}
+    \fi
+    }
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-5b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-5a.pdf}
+    \fi
+    }
+\end{minipage}%
+\hspace{2.5mm}
+\begin{minipage}{3.5cm}
+    \fbox{
+    \begin{tikzpicture}[x=1.5cm,y=1.5cm]
+        \begin{scope}[decoration={
+            markings,
+            mark=at position 0.6 with {\arrow{>}}}
+            ] 
+        \foreach \x in {0,45,...,315}{
+            \draw[postaction={decorate},rotate=\x] (0,0) -- (1,0);
+        }
+        \end{scope}
+        \draw[fill=white] (0,0) circle (3mm) node {\ifprintanswers \textcolor{red}{\large $+$} \else \fi};
+    \end{tikzpicture}
+    }
+\end{minipage}%
+\hspace{2.5mm}
+\begin{minipage}{3.5cm}
+    \fbox{
+    \begin{tikzpicture}[x=1.5cm,y=1.5cm]
+        \begin{scope}[decoration={
+            markings,
+            mark=at position 0.6 with {\arrow{<}}}
+            ] 
+        \foreach \x in {0,45,...,315}{
+            \draw[postaction={decorate},rotate=\x] (0,0) -- (1,0);
+        }
+        \end{scope}
+        \draw[fill=white] (0,0) circle (3mm) node {\ifprintanswers \textcolor{red}{\large $-$} \else \fi};
+    \end{tikzpicture}
+    }
+\end{minipage}
+\end{center}
+
+\end{questions}
+
+\clearpage
+
+\textbf{\Large Transfer of Charge}
+
+
+\clearpage
+
+\textbf{\Large Coulomb’s Law}
+
+\subsection{Electric Force, Charges, and Distance}
+
+\begin{questions}
+% \question
+% Google the \textit{PhET Simulation} called \texttt{Coulomb's law} (or \href{https://phet.colorado.edu/en/simulations/coulombs-law}{click here}). Press \texttt{Play}, and select the \texttt{Macro Scale} panel. This simulation helps you understand Coulomb's law. (a) How does the magnitude and direction of the force on $q_1$ by $q_2$ compare to that of the force on $q_2$ by $q_1$? (b) What changes in the simulation cause the magnitude of the forces to increase? (c) What changes cause the magnitude of the force to decrease? (d) What changes cause the direction of the forces to change?
+
+\question
+Object A has a positive charge of \SI{6.0e-6}{C}. Object B has a positive charge of \SI{3.0e-6}{C}. The two objects are 0.03 meters apart. Calculate the electric force between the two objects. 
+
+\begin{solution}
+\begin{equation*}
+    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{6.0e-6}{C})(\SI{3.0e-6}{C})}{\left(\SI{0.03}{m}\right)^2} = \boxed{\SI{180}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+Two positive charges of \SI{6.0e-6}{C} are separated by 0.50 meters. Calculate the electric force between the two objects. 
+
+\begin{solution}
+\begin{equation*}
+    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)\left(\SI{6.0e-6}{C}\right)^2}{\left(\SI{0.50}{m}\right)^2} = \boxed{\SI{1.296}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+A negative charge of \SI{-6.0e-6}{C} exerts an attractive force of \SI{65}{N} on a second charge 0.05 meters away. What is the magnitude of the second charge?
+
+\begin{solution}
+Coulomb's law is
+
+\begin{equation*}
+    F_e = \frac{k\left|q_1q_2\right|}{r^2}
+\end{equation*}
+
+We know all variables except for $q_2$, which we can solve for algebraically as follows: Multiplying both sides by $r^2$ gives
+
+\begin{equation*}
+    F r^2 = k |q_1 q_2|
+\end{equation*}
+
+Dividing both sides by the produce $k q_1$ gives
+
+\begin{equation*}
+    |q_2| = \frac{F r^2}{k |q_1|} = \frac{(\SI{65}{N})(\SI{0.05}{m})^2}{(\SI{9e9}{N\cdot m^2/C^2})|(-\SI{6.0e-6}{C})|} = \boxed{\SI{3.0e-6}{C}}
+\end{equation*}
+\end{solution}
+
+\question 
+A force of \SI{-4.4e3}{N} exists between a positive charge of \SI{8.0e-4}{C} and a negative charge of \SI{-3.0e-4}{C}. What distance separates the charges?
+
+\begin{solution}
+Coulomb's law is
+
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2}
+\end{equation*}
+
+Solving for distance leads to
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \sqrt{\frac{(\SI{9e9}{N\cdot m^2/C^2})(\SI{8.0e-4}{C})(\SI{-3.0e-4}{C})}{-\SI{4.4e3}{N}}} = \boxed{\SI{0.70}{m}} = \SI{70}{cm}
+\end{equation*}
+\end{solution}
+
+
+\question \label{z4pMlx}
+Two objects with charges \SI{7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Is the electric force between them attractive or repulsive? (b) What is the magnitude of the electric force between the spheres?
+
+\begin{solution}
+(a) Repulsive. 
+
+(b) \SI{786.6}{N}
+\end{solution}
+
+
+\question \label{TPIAio}
+Two metallic spheres with charges \SI{-7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Do the spheres attract each other, or do they repel? (b) What is the magnitude of the electric force between the spheres?
+
+\begin{solution}
+(a) Attract. 
+
+(b) \SI{786.6}{N}
+\end{solution}
+
+
+\question \label{mJu5SD}
+As shown below, two charges are placed near each other. (a) Are they attracted or repulsed? (b) What is the magnitude of the electric force between the charges?
+\vspace{-1em}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (2pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{8}{\micro C}};
+
+\begin{scope}[xshift=3.01*1.07 cm]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{9}{\micro C}};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+\node[above=6pt] at (3.01/2,0) {\SI{6}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+(a) Repulsed. (b) \SI{179.8}{N}
+\end{solution}
+
+
+\question \label{NqU30G}
+(a) Are the charges below attracted or repulsed by each other? (b) Calculate the electrostatic force between them.
+\vspace{-1em}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (2pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-3.2}{\micro C}};
+
+\begin{scope}[xshift=3.01*1.07 cm]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{-2.5}{\micro C}};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+\node[above=6pt] at (3.01/2,0) {\SI{1.4}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{366.9}{N}
+\end{solution}
+
+
+\question \label{S2QW5m}
+When the two opposite charges shown below are placed near each other, the magnitude of the electrostatic force is \SI{44}{N}. What is the distance between the charges?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (3pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-680}{\micro C}};
+\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$\SI{44}{N}$};
+
+\begin{scope}[xshift=5.02*0.99 cm]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{180}{\micro C}};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{5.0}{m}
+\end{solution}
+
+
+\question \label{clmO0M}
+A \SI{-48}{\micro C} charge and a \SI{55}{\micro C} one are separated by an unknown distance. If the electrostatic force between the charges is \SI{8.2}{N}, what is the distance between the charges?
+
+\begin{solution}
+\SI{1.7}{m}
+\end{solution}
+
+\question \label{TrRzFe}
+Calculate the distance between the charges below if the force $F$ is \SI{7.52e-3}{N}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (3pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-860}{\micro C}};
+\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+\begin{scope}[xshift=5.02*0.99 cm]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{420}{\micro C}};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{657}{m}
+\end{solution}
+
+
+\question \label{bpbHHg}
+When a 0.0066-coulomb charge is placed near a 0.0044-coulomb one, they experience a mutual repulsive force with a magnitude of 74 newtons. What is the distance between the charges?
+
+\begin{solution}
+\SI{59.4}{m}
+\end{solution}
+
+
+
+\question \label{DOuqpT}
+Solve Exercise \ref{TrRzFe} analytically, which means using
+only algebraic symbols and manipulation, and no numbers. Your result should be an equation solved for $r$ in terms of $F$, $k$, $q_1$, and $q_2$.
+
+\begin{solution}
+$r = \sqrt{\frac{k |q_1 q_2|}{F}}$
+\end{solution}
+
+\end{questions}
+
+
+\clearpage
+
+\subsection{How Changing Charge or Distance Affects the Electric Force}
+
+\begin{questions}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, then what is the new force?
+
+\begin{solution}
+The ratio of the new force to the old force is
+
+\begin{equation*}
+    \frac{F}{F_0} = \frac{(1)(1)(2)}{(1)^2} = 2
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    F = 2F_0 = \boxed{\SI{0.16}{N}}
+\end{equation*}
+
+\end{solution}
+
+
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.32}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.020}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0088}{N}$
+\end{solution}
+
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is quadrupled, then what is the new force?
+
+\begin{solution}
+$\SI{0.005}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is halved, then what is the new force?
+
+\begin{solution}
+\begin{equation*}
+    \frac{F}{F_0} = \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\frac{1}{2}\cdot\frac{1}{2}} = \frac{1}{\frac{1}{4}} = 4
+\end{equation*}
+
+\begin{equation*}
+    F = 4 F_0 = 4(\SI{0.08}{N}) = \boxed{\SI{0.32}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.04}{N}$
+\end{solution}
+
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.08}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is increased by a factor of four, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.08}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is tripled, and the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0267}{N}$
+\end{solution}
+
+
+
+
+
+
+
+
+\question
+A balloon with a charge of \SI{4.0e-5}{C} is held a distance of \SI{0.10}{m} from a second balloon having the same charge. Calculate the magnitude of the repulsive force.
+
+\begin{solution}
+\begin{equation*}
+    F = \frac{kq_1q_2}{r^2} = \SI{1440}{N}
+\end{equation*}
+\end{solution}
+
+\question
+Calculate the electrical force (in Newtons) exerted between a 22-gram with a charge of \SI{-2.6e-6}{\micro\coulomb} and a wool sweater with a charge of $+\SI{3.8}{\micro\coulomb}$. The separation distance is \SI{0.75}{m}.
+
+\begin{solution}
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2} = \SI{0.158}{N}
+\end{equation*}
+\end{solution}
+
+\question
+Suppose that two equally charged spheres attract each other with a force of \SI{-0.492}{N} (the negative sign indicating an attractive force) when placed a distance of \SI{29.1}{cm} from each other. Determine the charge of the spheres. 
+
+\begin{solution}
+Let $q$ be magnitude of the charge on each sphere. Then Coulomb's law gives
+
+\begin{equation*}
+    F = \frac{kq^2}{r^2}
+\end{equation*}
+
+Solving for $q$ leads to 
+
+\begin{equation*}
+    q = \sqrt{\frac{Fr^2}{k}} = \boxed{\SI{2.15e-6}{C}}
+\end{equation*}
+\end{solution}
+
+\question
+A $+\SI{5.0}{\micro\coulomb}$ charge and a $-\SI{6.0}{\micro\coulomb}$ charge experience an attractive force of $-\SI{0.72}{N}$ (the negative sign indicating an attractive force). Determine their separation distance.
+
+\begin{solution}
+Coulomb's law states
+
+\begin{equation*}
+    F = \frac{kq_1q_2}{r^2}
+\end{equation*}
+
+Solving for distance gives
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \boxed{\SI{0.61}{m}}
+\end{equation*}
+\end{solution}
+\end{questions}
+
+\clearpage
+
+
+
+\textbf{\Large Simple Circuits}
+
+\subsection{Electric Current}
+
+\begin{questions}
+\question
+A lightbulb is connect with wires to a battery. The electrons flow out of the \fillin[negative ] terminal and into the \fillin[positive ] terminal.
+
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+    \correctchoice \glsdesc{electric current}
+    \choice \glsdesc{resistance}
+\end{randomizechoices}
+
+
+\question
+The SI unit of electric current is the \dots\ .
+
+
+\question
+How can you express 1 \textit{ampere} in terms of a \textit{coulomb} and a \textit{second}?
+
+
+\question
+To calculate electric current, according to some equation, you should compute \dots\ in units of \dots\ divided by \dots\ in units of \dots .
+
+
+\question
+To help you understand the flow of electrons in electric current, what is the analogy provided in the text? Draw a sketch of this analogy.
+
+
+\question
+Give an example of a machine or device that uses a large current.
+
+
+\question
+Give an example of a machine or device that uses a small current.
+
+
+\question
+It takes 3.5 nanoseconds for 14 nanocoulombs of charge to flow through a section of a wire. Calculate the magnitude of electric current flowing through the wire.
+
+
+\question
+A total charge of \qty{0.0035}{C} flows through a component of a car's engine in a time interval of \qty{0.2}{s}. What is the magnitude of the electric current through the component?
+
+\end{questions}
+
+\clearpage
+
+\subsection{Components for a Simple Circuit}
+
+For the following exercises, please access the \href{https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html}{PhET Simulation: Circuit Construction Kit}. Click the Intro tab, and check the box called Labels.
+
+\begin{questions}
+
+
+% \question
+%     \href{https://photos.app.goo.gl/ntKqo9sznG9w7FiUA}{Click here} to view a photo of a real-world circuit. Then use \texttt{PhET} to simulation the circuit, which consists of two batteries, a switch, a lamp, and an ammeter, in series.
+% 
+
+\question
+The following circuit diagram represents a circuit ``in series.'' Copy this sketch in your notebook. Then create the circuit in the PhET Simulation. Then copy it in your notebook, labeling it ``Parallel Circuit.''
+
+
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[bulb,l_={\SI{8}{\ohm}}]  (3,0) to[bulb,l_={\SI{12}{\ohm}}]  (3,2)
+      (0,2) to[battery1,l_=\SI{36}{V}] (0,0)
+      (0,2) to[cute closed switch] (3,2);
+\end{circuitikz}
+\end{center}
+
+\question
+Place an ammeter \textit{near} (not \textit{on}) the circuit. Then click-and-drag the crosshairs onto the wire to measure the current throughout all sections of wire.
+
+The current in the circuit is \fillin[\SI{1.80}{A}].
+
+\question
+Does the current change throughout different portions of wire in the series circuit? \fillin[No][3cm]
+
+\question
+The total current in the circuit is the current flowing out of the positive terminal of the battery.
+
+\begin{parts}
+\part \label{abc123}
+What is the total current? (\textit{Hint:} Use the ammeter.) \fillin[\SI{1.80}{A}][3cm]
+
+\part Find the total (equivalent) resistance in the circuit. 
+
+\begin{solutionorbox}[3cm]
+For resistors in series, 
+
+\begin{align*}
+    R_{\mathrm{eq}} &= R_1 + R_2 \\[1ex]
+    &= \SI{8}{\ohm} + \SI{12}{\ohm} \\[1ex]
+    &= \boxed{\SI{20}{\ohm}}
+\end{align*}
+\end{solutionorbox}
+
+\part Use Ohm's law to show that connecting the battery's voltage to the total resistance produces the total current measured in part~(\ref{abc123}). 
+
+\begin{solutionorbox}[3cm]
+By Ohm's law
+
+\begin{align*}
+    I &= \frac{V}{R_\mathrm{eq}} \\[1ex]
+    &= \frac{\SI{36}{V}}{\SI{20}{\ohm}} \\[1ex]
+    &= \boxed{\SI{1.80}{A}}
+\end{align*}
+
+This is the same current measured by the ammeter.
+\end{solutionorbox}
+
+\end{parts}
+
+\question
+The following circuit is constructed ``in parallel'' because electrons can branch out to either light bulb at the junction. Open a new internet tab, and recreate this parallel circuit in the PhET Simulation. 
+
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm,y=1.8cm]
+    \draw (0,1) to[battery1,l_={\SI{36}{V}}] (0,0) -- (4,0) to[bulb,l_={\SI{12}{\ohm}}] (4,1) ;
+    \draw (2,1) to[bulb={\SI{8}{\ohm}}] (2,0);
+    \draw (0,1) to[cute closed switch] (2,1) to[cute closed switch] (4,1);
+    \draw[thick,<-,yshift=2pt] (2,1) -- ++(0,0.4) node[above] {Junction};
+\end{tikzpicture}
+\end{center}
+ 
+\question
+Place an ammeter near the circuit. Again, use the crosshairs to measure the current throughout all sections of wire. You may open and close the switches as needed in your investigation.
+
+In your notebook sketch, label the current in amperes (A) through various portions of wire in the circuit.
+
+
+\question
+Does the current change throughout the parallel circuit? \fillin[Yes].
+
+\question
+The total current in the circuit is the current coming out of the positive terminal of the battery. This total current is distributed across each ``branch'' of the circuit.
+
+\begin{parts}
+\part Use the ammeter to measure the total current? \fillin[\SI{7.50}{A}][3cm].
+\part Again, use the ammeter to measure the current through the \SI{8}{\ohm} resistor. \fillin[\SI{4.50}{A}][3cm]
+\part Measure the current through the \SI{12}{\ohm} resistor. \fillin[\SI{3.00}{A}][3cm]
+
+\part Find a mathematical relationship between the currents through the resistor and the total current in the circuit.
+
+\begin{solutionorbox}
+The total current is \SI{7.5}{A}, and the currents through each of the two resistors are \SI{4.5}{A} and \SI{3.0}{A}. Thus the relationship is
+
+\begin{equation*}
+    \SI{4.5}{A} + \SI{3.0}{A} = \SI{7.5}{A}
+\end{equation*}
+
+That is, the sum of the currents across each resistor equals the total current in the circuit.
+\end{solutionorbox}
+\end{parts}
+
+
+
+\question
+\begin{parts}
+\part Find the total (equivalent) resistance in the circuit. 
+
+\begin{solutionorbox}[3cm]
+For resistors in series, 
+
+
+\end{solutionorbox}
+
+
+\part Use Ohm's law to show that connecting the battery's voltage to the total resistance produces the total current measured in part~(\ref{abc123}).
+
+\begin{solutionorbox}[3cm]
+
+\end{solutionorbox}
+
+\end{parts}
+\end{questions}
+
+\clearpage
+
+\subsection{Circuits in Series}
+
+\begin{questions}
+\question
+Go to PhET Simulation: Circuit Construction Kit and build the circuit shown below. Points a through h are labeled for referencing current or voltages at those points. For example, $I_\mathrm{b}$ is the current through Point b, and $V_\mathrm{de}$ is the voltage (or potential difference) across Points d and e.
+
+Use the ammeter and voltmeters in the simulation to measure currents and voltages at or across the specified points, and record your values below:
+
+\begin{center}
+% \fbox{
+\begin{minipage}{5.5cm}
+\centering
+\begin{tikzpicture}[x=3cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0) to[R,l_={$R_2 = \SI{3}{\ohm}$}] (1,0) to[R={$R_1$},n=R1,-o]  (1,1)  -- (0,1);
+    \draw (R1.s) node[right]{\SI{2}{\ohm}};
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (2pt) node[above=1pt] {f};
+    \fill (0.25,0) circle (2pt) node[above=1pt] {g};
+    \fill (0,0.25) circle (2pt) node[left=1pt] {h};
+\end{tikzpicture}
+\end{minipage}
+%}
+\fbox{
+\begin{minipage}{4.0cm}
+\centering
+\begin{align*}
+    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  
+\end{align*}
+\end{minipage}}
+\fbox{
+\begin{minipage}{4.0cm}
+\centering
+\begin{align*}
+    V_\mathrm{de} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-2.00}{V}} }  \\[1ex]
+    V_\mathrm{fg} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-3.00}{V}} }  \\[1ex]
+    V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
+    V_\mathrm{gc} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  
+\end{align*}
+\end{minipage}}
+\end{center}
+
+\begin{parts}
+    \part What is the voltage drop across resistor $R_1$? \fillin[\SI{-2.00}{V}]
+    \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-3.00}{V}]
+    \part Measure the potential difference (or voltage) across the battery. \fillin[\SI{5.00}{V}]
+    \part Find the total resistance in circuit. \fillin[\SI{5.00}{\ohm}]
+    \part What is the total current? \fillin[\SI{1.00}{A}]
+\end{parts}
+
+
+\question
+\phantom{.}
+
+\begin{center}
+% \fbox{
+\begin{minipage}{9.5cm}
+\centering
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0);
+    \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (2,1) to[R={$R_3$},n=R3] (3,1) -- (3,0) -- (0,0);
+    \draw (R1.s) node[below] {\SI{2}{\ohm}};
+    \draw (R2.s) node[below] {\SI{2}{\ohm}};
+    \draw (R3.s) node[below] {\SI{1}{\ohm}};
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.2,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.8,1) circle (2pt) node[above=1pt] {c};
+    \fill (1.2,1) circle (2pt) node[above=1pt] {d};
+    \fill (1.8,1) circle (2pt) node[above=1pt] {e};
+    \fill (2.2,1) circle (2pt) node[above=1pt] {f};
+    \fill (2.8,1) circle (2pt) node[above=1pt] {g};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (1.5,0) circle (2pt) node[above=1pt] {j};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {k};
+\end{tikzpicture}
+\end{minipage}
+% }
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\begin{align*}
+    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{c} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{f} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{j} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    V_\mathrm{ka} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
+    V_\mathrm{hi} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{0.00}{V}} }  
+\end{align*}
+\end{minipage}
+}
+\end{center}
+
+\begin{parts}
+    \part Calculate the total resistance in the circuit. \fillin[\SI{6}{\ohm}]
+    \part What is the total current in the circuit? \fillin[\SI{1.00}{A}]
+    \part Measure the voltage drop across resistor $R_1$. \fillin[\SI{-2.00}{V}]
+    \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-2.00}{V}]
+    \part What is the potential difference across resistor $R_3$? \fillin[\SI{-1.00}{V}]
+\end{parts}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{3}{V}}] (0,0);
+    \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (1,0) -- (0,0);
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.25) circle (2pt) node[left=1pt] {g};
+    \draw (R1.s) node[below] {\SI{5}{\ohm}};
+    \draw (R2.s) node[left] {\SI{1}{\ohm}};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) to[R,l={$R_1 = \SI{5}{\ohm}$}] (1,1) to[R,l={$R_2 = \SI{1}{\ohm}$}] (1,0) to[R={$R_3 = \SI{2}{\ohm}$}] (0,0);
+\end{tikzpicture}
+\end{center}
+
+\end{questions}
+
+
+\clearpage
+
+\subsection{Circuits in Parallel}
+
+\begin{questions}
+\question
+\phantom{.}
+
+\begin{center}
+\fbox{
+\begin{minipage}{6.5cm}
+    \begin{tikzpicture}[x=2.5cm,y=2cm]
+        \draw (0,1) to[battery1,l={\SI{10}{V}}] (0,0);
+        \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
+        \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+        \draw (R1.s) node[right] {\SI{2}{\ohm}};
+        \draw (R2.s) node[right] {\SI{4}{\ohm}};
+        \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+        \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+        \fill (2,0.8) circle (2pt) node[right=1pt] {c};
+        \fill (2,0.2) circle (2pt) node[right=1pt] {d};
+        \fill (0.5,0) circle (2pt) node[below=1pt] {e};
+        \fill (1,0.8) circle (2pt) node[right=1pt] {f};
+        \fill (1,0.2) circle (2pt) node[right=1pt] {g};
+        \fill (0,0.2) circle (2pt) node[left=1pt] {h};
+    \end{tikzpicture}
+\end{minipage}
+}
+\fbox{
+\begin{minipage}{4cm}
+    \begin{align*}
+        I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{A}} } \\[1ex]
+        I_\mathrm{d} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{2.50}{A}} } \\[1ex]
+        I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
+        I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
+        V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{10.00}{A}} } 
+    \end{align*}
+\end{minipage}
+}
+\end{center}
+
+\begin{parts}
+\part What is the equivalent resistance of the circuit? \fillin[\SI{1.33}{\ohm}]
+\part What is the current through resistor $R_1$? \fillin[\SI{5.00}{A}]
+\part Measure the current through resistor $R_2$. \fillin[\SI{2.50}{A}]
+\part Find the total current in the circuit. \fillin[\SI{7.50}{A}]
+\part What is the voltage drop across $R_1$? \fillin[\SI{10}{V}]
+\part What is the voltage drop across $R_2$? \fillin[\SI{10}{V}]
+\end{parts}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{12}{V}}] (0,0);
+    \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (2,0) to[R={$R_2$},n=R2] (2,1);
+    \draw (R1.s) node[right] {\SI{2}{\ohm}};
+    \draw (R2.s) node[right] {\SI{4}{\ohm}};
+    \draw (R3.s) node[right] {\SI{3}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{8}{V}}] (0,0);
+    \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (R1.s) node[right] {\SI{10}{\ohm}};
+    \draw (R2.s) node[right] {\SI{40}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {f};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {g};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{5}{V}}] (0,0);
+    \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (2,0) to[R={$R_2$},n=R2] (2,1);
+    \draw (R1.s) node[right] {\SI{10}{\ohm}};
+    \draw (R2.s) node[right] {\SI{10}{\ohm}};
+    \draw (R3.s) node[right] {\SI{10}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+\end{tikzpicture}
+\end{center}
+
+\end{questions}
+
+\clearpage
+
+
+\subsection{Resistors in Series and Parallel}
+
+\textbf{Series Circuits}
+
+\begin{questions}
+\question 
+In the circuit shown below, a voltage of \SI{6}{V} pushes charge through a single resistor of \SI{2}{\ohm}. According to Ohm's law, the current in the resistor (and therefore in the whole circuit) is \fillin[\SI{3}{A}].
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) -- (1,1) to[R,l_={\SI{2}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+\question
+If a second identical resistor is added, as shown below, the \SI{6}{V} battery must push charge through a total resistance of \fillin[\SI{6}{\ohm}].
+The current in the circuit is then \fillin[\SI{1}{A}].
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) to[R,l_={\SI{3}{\ohm}}] (1,1) to[R,l_={\SI{3}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+
+\question
+The equivalent resistance of three \SI{4}{\ohm} resistors in series is \fillin[\SI{12}{\ohm}].
+
+\question
+Does current flow \textit{through} a resistor, or \textit{across} a resistor? \fillin[through]
+
+Is voltage established \textit{through} a resistor, or \textit{across} a resistor? \fillin[across]
+
+
+\question
+Does current in the lamps occur simultaneously, or does charge flow first through one lamp, then the other, and finally the last in turn?
+
+\fillin[Simultaneously\hfill][0.9\textwidth]
+
+
+
+\question 
+Circuits A and B below are identical with all bulbs rated at equal wattage (therefore equal resistance). The only difference between the circuits is that Bulb 5 has a short circuit, as shown.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=1] (1,1) to[bulb,l_=2] (2,1) to[bulb,l_=3] (3,1) -- (3,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit A};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=4] (1,1) to[bulb,l_=5] (2,1) to[bulb,l_=6] (3,1) -- (3,0);
+    \draw[rounded corners=3mm] (1,1) -- (1.25,0.6) -- (1.5,0.4) -- (1.75,0.6) -- (2,1);
+    \fill (1,1) circle (1pt);
+    \fill (2,1) circle (1pt);
+    \node[above=2pt] at (current bounding box.north) {Circuit B};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part In which circuit is the current greater? \fillin[B]
+\part In which circuit are all three bulbs equally bright? \fillin[A]
+\part What bulbs are the brightest? \fillin[4 and 6]
+\part What bulb is the dimmest? \fillin[5]
+\part What bulbs have the largest voltage drops across them? \fillin[4 and 6]
+\part What circuit dissipates more power? \fillin[B]
+\part What circuit produces more light? \fillin[B]
+\end{parts}
+
+
+\uplevel{\textbf{Parallel Circuits}}
+
+\question
+In the circuit shown below, there is a voltage drop of \SI{6}{V} across each \SI{2}{\ohm} resistor. Points a through j are labeled for reference.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{2}{\ohm}}] (1,0);
+    \fill (0,0.8) circle (1.5pt) node[left] {a};
+    \fill (0.5,1) circle (1.5pt) node[above] {b};
+    \fill (1.5,1) circle (1.5pt) node[above] {c};
+    \fill (2,0.8) circle (1.5pt) node[right] {d};
+    \fill (2,0.2) circle (1.5pt) node[right] {e};
+    \fill (1.5,0) circle (1.5pt) node[below] {f};
+    \fill (0.5,0) circle (1.5pt) node[below] {g};
+    \fill (0,0.2) circle (1.5pt) node[left] {h};
+    \fill (1,0.8) circle (1.5pt) node[right] {i};
+    \fill (1,0.2) circle (1.5pt) node[right] {j};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part By Ohm's law, the current in each resistor is \fillin[\SI{3}{A}].
+\part The current through the battery, which is the sum of the currents in the resistors, is \fillin[\SI{6}{A}].
+\part Record the current through each of the points labeled in the figure.
+
+\begin{gather*}
+    I_\mathrm{a} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{b} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{c} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{d} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{e} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \\[1ex]
+    I_\mathrm{f} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{g} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{h} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{i} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{j} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} 
+\end{gather*}
+\end{parts}
+
+\question
+Which circuit below is \textit{not} equivalent to the circuit from the previous question?
+
+\begin{center}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0);
+    \draw (0,1) -- (1.5,1) -- (2,0.75) to[R] (2,0.25) -- (1.5,0);
+    \draw (1.5,1) -- (1,0.75) to[R] (1,0.25) -- (1.5,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit W};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) -- (0,0);
+    \draw (1,1) to[R] (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit X};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0) -- (1.5,0.25);
+    \draw (0,1) -- (1.5,1) -- (1.5,0.75) -- (1,0.75) to[R] (1,0.25) -- (2,0.25) to[R] (2,0.75) -- (1.5,0.75);
+    \node[above=2pt] at (current bounding box.north) {Circuit Y};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) to[R] (0,0);
+    \draw (1,1) -- (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit Z};
+\end{tikzpicture}
+\end{center}
+
+\question 
+Consider the parallel circuit below.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{1}{\ohm}}] (1,0);
+    \draw (2,1) -- (3,1) to[R={\SI{2}{\ohm}}] (3,0) -- (2,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part The voltage drop across each resistor is \fillin[\SI{6}{V}].
+\part Now consider the currents in each branch.
+
+\begin{itemize}[topsep=0pt]
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{1}{\ohm} resistor is \fillin[\SI{6}{A}].
+\end{itemize}
+
+\part The current through the battery, which equals the sum of the currents in each branch, is \fillin[\SI{12}{A}].
+
+\part The equivalent resistance of the circuit equals \fillin[\SI{0.5}{\ohm}].
+
+\end{parts}
+\end{questions}
+
+\clearpage
+
+\subsection{The Circuit Lab}
+
+\begin{questions}
+\question \label{Q1}
+Make a circuit with a battery, light bulb, and switch. Close the switch to make the light turn on, ensuring the circuit is connected correctly. 
+
+\question
+Disconnect the clips from the switch to use the free ends as probes and test the following items for conductivity. Write a C if the item is a conductor, or an I for if it's an insulator.
+
+\begin{center}
+    Paper \fillin[I][2em] \hspace{2em}
+    Lock nut \fillin[C][2em] \hspace{2em}
+    Penny \fillin[C][2em] \hspace{2em}
+    Paperclip \fillin[C][2em] \hspace{2em}
+    Glass \fillin[I][2em] \hspace{2em} \\[1ex]
+    Plastic \fillin[I][2em] \hspace{2em}
+    Cloth \fillin[I][2em] \hspace{2em}
+    Wood \fillin[I][2em] \hspace{2em}
+    Rubber \fillin[I][2em] \hspace{2em}
+\end{center}
+
+
+\question
+Connect clips wires to both sides of the battery. Unscrew and remove a light bulb from the holder. Use the free ends of the clips as probes and connect them the different points on the battery shown below.
+
+\begin{EnvUplevel}
+\vspace{-1em}
+\begin{center}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {A};
+    \draw[shift={(-0.5,-0.5)},<-,very thick] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$+$};
+    \draw[shift={(+0.5,-0.5)},<-,white,very thick] (0,0) -- (+0.8,0) node[right] {$-$};
+    \draw[shift={(0,+0.9)},<-,white,very thick] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {B};
+    \draw[shift={(-0.5,-0.5)},<-,very thick] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick,white] (0,0) -- (0,-0.8) node[below] {$+$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick] (0,0) -- (+0.8,0) node[right] {$+$};
+    \draw[shift={(0,+0.9)},<-,very thick,white] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {C};
+    \draw[shift={(-0.5,-0.5)},<-,very thick,white] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$-$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick] (0,0) -- (+0.8,0) node[right] {$+$};
+    \draw[shift={(0,+0.9)},<-,very thick,white] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {D};
+    \draw[shift={(-0.5,-0.5)},<-,very thick,white] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$-$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick,white] (0,0) -- (+0.8,0) node[right] {$-$};
+    \draw[shift={(0,+0.9)},<-,very thick] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\end{center}
+\end{EnvUplevel}
+
+Which diagram above indicates the two parts of a light bulb that must be touched to complete the circuit? \fillin[B][2cm]
+
+\question
+Re-create the closed circuit from Question \ref{Q1} (battery, bulb, and switch in series). Draw the circuit diagram below.
+
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+What happens if you reverse the battery (by reversing the battery holder)?
+
+\fillwithlines{8mm}
+
+\question
+Create the four circuits with the listed components, and draw the diagrams in the spaces below.
+
+\begin{EnvUplevel}
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 1:} battery, light bulb, switch.
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+What happens if you unscrew the lightbulb?
+
+\vspace{3cm}
+% \fillin[The bulb turns off, and the circuit is open.][7.5cm]
+
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 2:} battery, 2 light bulbs, switch.
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0.5) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+How does this light's brightness compare to\\Circuit1 ? Explain.
+
+\vspace{2.5cm}
+
+% \fillin[Voltage and current has increased.][7.5cm]
+\end{minipage}
+}
+\end{EnvUplevel}
+
+\clearpage
+
+\begin{EnvUplevel}
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 3:} 2 batteries, 1 light bulb, 1 switch
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+How does this light's brightness compare to\\Circuit 1? Explain.
+
+\vspace{2cm}
+% \fillin[The bulb turns off, and the circuit is open.][7.5cm]
+
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 4:} 2 batteries, 2 light bulbs, 1 switch
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0.5) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+What happens if you unscrew a light bulb? Is theres a series or a parallel circuit?
+
+\vspace{2cm}
+
+% \fillin[Voltage and current has increased.][7.5cm]
+\end{minipage}
+}
+\end{EnvUplevel}
+
+
+\begin{EnvUplevel}
+    \textbf{NOTE:} In the following activities, credit can only be earned when you invite your teacher to observe the result of your experiment.
+\end{EnvUplevel}
+
+\question
+Connect two bulbs in series. Then draw a circuit diagram for your circuit.
+
+\begin{center}
+\fbox{
+\begin{minipage}{6cm}
+\centering
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) to[bulb] (2,1) -- (2,0) to[cute closed switch] (0,0);
+\end{tikzpicture}  
+\egroup
+\end{minipage}
+}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\centering
+Teacher's stamp of approval: \fillin[][2em]
+\end{minipage}
+\end{center}
+
+
+
+\question
+Connect two bulbs in parallel. Ensure that each bulb in your circuit can be switched on and off without affecting the second bulb. Draw a circuit diagram for your circuit.
+
+\begin{center}
+\fbox{
+\begin{minipage}{6cm}
+\centering
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2cm,y=1cm]
+    \draw (0,0) to[battery1] (2,0);
+    \draw (0,0) -- (0,2) to[cute closed switch] (1,2) to[bulb] (2,2) -- (2,0);
+    \draw (0,1) to[cute open switch] (1,1) to[bulb] (2,1);
+\end{tikzpicture}  
+\egroup
+\end{minipage}
+}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\centering
+Teacher's stamp of approval: \fillin[][2em]
+\end{minipage}
+\end{center}
+
+% \begin{center}
+% \bgroup
+% \ifprintanswers
+% \color{red}
+% \else
+% \color{white}
+% \fi
+
+
+% \egroup
+% \end{center}
+
+% Teacher's stamp of approval: \fillin[][2em]
+
+\clearpage
+\question
+Experiment: Get a voltmeter and an ammeter from your teacher and make following measurements:
+
+\begin{parts}
+\part Create a series circuit with 1 battery, 1 switch, and 1 bulb.
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across the battery is \fillin[]
+    \item Total current through the circuit is \fillin[]
+    \item Introduce a blue or green resistor into the series. The current through the\\ circuit is now \fillin[]
+\end{itemize}
+
+\part Create a series circuit with 1 battery, 1 switch, and 2 different types of bulb.
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across the first bulb is \fillin[]
+    \item Voltage across the second bulb is \fillin[]
+\end{itemize}
+
+\part Construct a parallel circuit with 2 batteries and 2 different types of bulbs (or 1 bulb, 1 resistor).
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across both batteries is \fillin[]
+    \item Voltage across the first bulb is \fillin[]
+    \item Voltage across the second bulb is \fillin[]
+    \item Current through the first bulb is \fillin[]
+    \item Current through the second bulb is \fillin[]
+\end{itemize}
+
+
+
+\end{parts}
+\end{questions}
+
+
+
+\clearpage
+
+\subsection{Electric Power and Resistance}
+
+\begin{questions}
+\question
+A \SI{1.5}{V} battery is connected to a small light bulb with a resistance of \SI{3.5}{\ohm}. What is the current in the bulb?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{1.5}{V}}{\SI{3.5}{\ohm}} = \boxed{\SI{0.43}{A}}
+\end{equation*}
+\end{solution}
+
+\question
+A stereo with a resistance of \SI{65}{\ohm} is connected across a potential difference of \SI{120}{V}. What is the current in this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{65}{\ohm}} = \boxed{\SI{1.85}{A}}
+\end{equation*}
+\end{solution}
+
+\question
+Find the current in the following devices when they are connected across a potential difference of \SI{120}{V}.
+
+\begin{parts}
+\part a hot plate with a resistance of \SI{48}{\ohm}
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{48}{\ohm}} = \boxed{\SI{2.5}{A}}
+\end{equation*}
+\end{solution}
+
+\part a microwave oven with a resistance of \SI{20}{\ohm}
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{20}{\ohm}} = \boxed{\SI{6}{A}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question 
+The current through a microwave oven is \SI{6.25}{A}. If the resistance of the oven's circuitry is \SI{17.6}{\ohm}, what is the potential difference across the oven?
+
+\begin{solution}
+Ohm's law states
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R$ leads to
+
+\begin{equation*}
+    V = IR = (\SI{6.25}{A})(\SI{17.6}{\ohm}) = \boxed{\SI{110}{V}}
+\end{equation*}
+\end{solution}
+
+\question
+A typical color television draws \SI{2.5}{A} if current when connected across a potential difference of \SI{115}{V}. What is the effective resistance of the television set?
+
+\begin{solution}
+Ohm's law states
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R/I$ leads to
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{115}{V}}{\SI{2.5}{A}} = \boxed{\SI{46}{\ohm}}
+\end{equation*}
+\end{solution}
+
+\question
+The current in a certain resistor is \SI{0.50}{A} when it is connected to a potential difference of \SI{110}{V}. What is the current in this same resistor if
+
+\begin{parts}
+\part the operating potential difference is \SI{90.0}{V}?
+
+\begin{solution}
+Ohm's law is
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R/I$ leads to the resistance of the resistor:
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{110}{V}}{\SI{0.50}{A}} = \SI{220}{\ohm}
+\end{equation*}
+
+Therefore, by Ohm's law, the current with the new potential difference is
+
+\begin{equation*}
+    I = \frac{\SI{90.0}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.41}{A}}
+\end{equation*}
+
+\end{solution}
+\part the operating potential difference is \SI{130}{V}?
+
+\begin{solution}
+Using $R = \SI{220}{\ohm}$ from the previous part,
+
+
+\begin{equation*}
+    I = \frac{\SI{130}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.59}{A}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question
+A \SI{1050}{W} electric toaster operates on a household circuit of \SI{120}{V}. What is the resistance of the wire that makes up the heating element of the toaster?
+
+\begin{solution}
+Power is 
+
+\begin{equation*}
+    P = I V
+\end{equation*}
+
+Dividing both sides by voltage leads to 
+
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{1050}{W}}{\SI{120}{V}} = \SI{8.75}{A}
+\end{equation*}
+
+But Ohm's law is
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R/I$ leads to the resistance
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{8.75}{A}} = \boxed{\SI{13.7}{\ohm}}
+\end{equation*}
+\end{solution}
+
+\question
+A small electronic device is rated at \SI{0.25}{W} when connect to \SI{120}{V}. What is the resistance of this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{0.25}{W}}{\SI{120}{V}} = \SI{2.1e-3}{A}
+\end{equation*}
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{2.1e-3}{A}} = \boxed{\SI{5.7e4}{\ohm}} = \SI{57}{k\ohm}
+\end{equation*}
+\end{solution}
+
+\question
+A calculator is rated at \SI{0.10}{W} when connected to a \SI{1.50}{V} battery. What is the resistance of this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{0.10}{W}}{\SI{1.50}{V}} = \SI{0.067}{A}
+\end{equation*}
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{1.50}{V}}{\SI{0.067}{A}} = \boxed{\SI{22.5}{\ohm}} 
+\end{equation*}
+\end{solution}
+
+\question
+An electric heater is operated by applying a potential difference of \SI{50.0}{V} across a nichrome wire of total resistance \SI{8.00}{\ohm}.
+
+\begin{parts}
+\part Find the current in the wire.
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{50.0}{V}}{\SI{8.00}{\ohm}} = \boxed{\SI{6.25}{A}}
+\end{equation*}
+\end{solution}
+
+\part Find the power rating of the heater.
+
+\begin{solution}
+\begin{equation*}
+    P = IV = (\SI{6.25}{A})(\SI{50.0}{V}) = \boxed{\SI{312.5}{W}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+
+
+\end{questions}
+
+\clearpage
+
+\subsection{Other}   
 \begin{questions}
 
 \question
@@ -288,6 +2080,748 @@ Two positive charged particles will attract while two opposite charges will repe
 
 \end{questions}
 
+{\large \textbf{Other}}
 
+\begin{questions}
+\question
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \fillin[1897].
+
+\begin{randomizechoices}
+    \correctchoice 1897
+    \choice 1913
+    \choice 2005
+    \choice 1796
+\end{randomizechoices}
+
+\question
+Millikan and Fletcher conducted the oil drop experiment 16 years after the discovery of the electron. What was the motivation for the experiment?
+
+\begin{randomizechoices}
+    \correctchoice To numerically calculate the charge on 1 electron.
+    \choice To re-discover the electron independently of Thompson.
+    \choice To measure the true size of 1 electron.
+    \choice To conduct an electrical current through drops of oil.
+\end{randomizechoices}
+
+\question
+What did Millikan conclude was the magnitude of the charge on 1 electron, in units of coulombs? (This value is called the \textbf{elementary charge} or the fundamental unit of electric charge.)
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.60e-19}{C}
+    \choice \SI{8.99e9}{C}
+    \choice \SI{6.67e-11}{C}
+    \choice \SI{9.805e-6}{C}
+\end{randomizechoices}
+
+\question
+What is the SI unit of electric charge?
+
+\begin{randomizechoices}
+\correctchoice coulomb (C)
+\choice joule (J)
+\choice newton (N)
+\choice meter per second (m/s)
+\end{randomizechoices}
+
+\question
+A neutral plastic strip is rubbed with cotton and acquires a positive charge. Which of the following statements is true of the positively-charged strip?
+
+\begin{randomizechoices}
+\choice It gained some electrons during the rubbing process.
+\correctchoice It lost some electrons to the cotton during the charging process.
+\choice It gained some protons during the rubbing process.
+\choice It lost some protons to the cotton during the charging process.
+\end{randomizechoices}
+
+
+
+\question
+Two neutral balloons can make contact with each other. But if you rub the two balloons on a sweater and then try to place them next to one another, they will automatically pull away from each other. Why does this phenomenon occur?
+
+\hspace{1cm}
+
+\clearpage
+\begin{randomizechoices}
+\choice Both balloons lose electrons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\choice Both balloons lose protons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\correctchoice Both balloons gain electrons from the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\choice Both balloons gain protons to the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\end{randomizechoices}
+
+
+
+
+\question
+A neutral hydrogen atom has one proton and one electron. If you remove the electron, what will be the leftover sign of the charge?
+
+\begin{minipage}{0.25\textwidth}
+    \begin{randomizechoices}
+    \choice Negative
+    \CorrectChoice Positive
+    \choice Zero
+    \choice Neutral
+    \end{randomizechoices}
+\end{minipage}%
+\hspace{5mm}%
+\begin{minipage}{0.2\textwidth}
+    \centering
+    \setbohr{insert-missing,nucleus-radius=2em,electron-radius=3pt}
+    \bohr{1}{}
+\end{minipage}
+
+\question
+A balloon contains 80 million excess electrons. What is the net electric charge on the balloon?
+
+\begin{randomizechoices}
+\choice \SI{-8.99e-9}{\coulomb}
+\choice \SI{-1.603e-19}{C}
+\choice \SI{-20.8e-28}{C}
+\correctchoice \SI{-1.28e-11}{C}
+\end{randomizechoices}
+
+\question
+A speck of dust with excess electrons acquires a charge of \SI{-0.8}{nC}. How many excess electrons does it contain?
+
+\begin{randomizechoices}
+    \correctchoice \num{5000000000}
+    \choice \num{5e12}
+    \choice $0.000\,005$
+    \choice 50
+\end{randomizechoices}
+
+\question
+What is the value of the Coulomb's constant?
+
+\begin{randomizechoices}
+    \correctchoice \num{8.99e9}
+    \choice \num{1.60e-19}
+    \choice \num{6.67e-11}
+    \choice \num{5.00e-6}
+\end{randomizechoices}
+
+\question
+Coulomb's law\ldots
+
+\begin{randomizechoices}
+    \correctchoice describes the electrostatic force between charged objects.
+    \choice describes the gravitational force between charged objects.
+    \choice states that opposite charges repel.
+    \choice states that like charges attract.
+\end{randomizechoices}
+\vspace{1em}
+
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{See the figure below, which shows two charged objects placed near each other. Then answer questions \ref{Vgjjc7}--\ref{Fxl8ta}.}
+% \textit{Reminder}: \mymu means $10^{-6}$, and 1 centimeter is 0.01 meter.
+\end{EnvUplevel}
+
+\vspace{-1em}
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-1.2,xmax=4,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{3.6}{\micro C}};
+    
+    \begin{scope}[xshift=3.01*1.24 cm]
+        \fill (0,0) circle (2pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {\SI{2.0}{\micro C}};
+    \end{scope}
+    
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+    \node[above=6pt] at (3.01/2,0) {\SI{4.7}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{Vgjjc7}
+Since the objects are charged, there exists \fillin[][5cm] between them.
+
+\begin{randomizechoices}
+    \correctchoice an electrostatic force
+    \choice a gravitational force
+    \choice a distance
+    \choice a charge
+\end{randomizechoices}
+
+\question
+Are the two charges attracted or repulsed?
+
+\begin{randomizechoices}[keeplast]
+    \choice attracted
+    \correctchoice repulsed
+    \choice both attracted and repulsed
+    \choice neither attracted nor repulsed
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which option explains your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \choice opposite charges attract
+    \correctchoice like charges repel
+    \choice the positive charge causes attraction; the negative, repulsion
+    \choice the positive and negative cancel each other, removing all attraction and repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+What is the charge of the \SI{3.6}{\micro C} object in base units of coulombs?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.6e-6}{C}
+    \choice \SI{3.6e-9}{C}
+    \choice \SI{3.6e9}{C}
+    \choice \SI{3.6e16}{C}
+\end{randomizechoices}
+
+\question \label{Fxl8ta}
+Calculate the magnitude of the electrostatic force that the charged objects exert on each other.
+
+\begin{randomizechoices}
+    \correctchoice \SI{29.3}{N}
+    \choice \SI{3.25e-9}{N}
+    \choice \SI{1.37}{N}
+    \choice \SI{1.53e-10}{N}
+\end{randomizechoices}
+\vspace{1em}
+
+
+\clearpage
+\begin{EnvUplevel}
+     \textbf{Read the prompt below. Then answer questions \ref{yETfik}--\ref{b4zyju}.}
+
+    Two charges are placed next to each other. The first has a charge of -7.5 microcoulombs, and the second, 1.2 microcoulombs. The magnitude of the electrostatic force is 0.005 newtons.  
+\end{EnvUplevel}
+
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_1$};
+    %\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+    \begin{scope}[xshift=5.02*0.99 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$q_2$};
+        %\draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    \end{scope}
+
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+    \node[above=6pt] at (5.02/2,0) {$r$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{yETfik}
+Is the electrostatic force attractive or repulsive?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice attractive
+    \choice repulsive
+    \choice both
+    \choice neither
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which of the following justifies your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice opposite charges attract
+    \choice like charges repel
+    \choice opposite charges generation attraction and repulsion
+    \choice like charges prevent attraction or repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question \label{b4zyju}
+What is the distance between the charges?
+
+\begin{randomizechoices}
+    \correctchoice \SI{4.0}{m}
+    \choice \SI{8.9}{m}
+    \choice \SI{1.8e-9}{m}
+    \choice \SI{3.6e-7}{m}
+\end{randomizechoices}
+\vspace{1em}
+
+
+
+\question
+A \SI{-8e-6}{C} charge and \SI{9e-6}{C} charge are separated by \SI{3.0}{cm}. What is the magnitude of the electrostatic force between them?
+
+\begin{randomizechoices}
+        \correctchoice \SI{719}{N}
+        \choice \SI{21.5}{N}
+        \choice \SI{0.64}{N}
+        \choice \SI{8e-8}{N}
+\end{randomizechoices}
+
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+    \correctchoice electric charge that is moving
+    \choice a property of matter that causes objects to attract or repel
+    \choice the electric potential energy per unit charge
+    \choice schematic drawing of an electrical circuit 
+\end{randomizechoices}
+
+\question 
+What is the SI unit of electric current?
+
+\begin{randomizeoneparchoices}
+    \correctchoice ampere (A)
+    \choice coulomb (C)
+    \choice ohm ($\Omega$)
+    \choice volt (V)
+\end{randomizeoneparchoices}
+
+\question
+What is the function of the circuit component shown below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[rmeter,t=A] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice to measure current through a wire
+    \choice to measure voltage across a battery
+    \choice to measure resistance of a resistor
+    \choice to enable a circuit to be switched on or off
+\end{randomizechoices}
+
+\question
+Which circuit element is depicted in the symbol below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[R] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizeoneparchoices}
+    \correctchoice resistor
+    \choice battery
+    \choice lamp
+    \choice switch
+    \choice zig-zag transistor
+\end{randomizeoneparchoices}
+
+\question
+What is the function of a resistor in a circuit?
+
+\begin{randomizechoices}
+    \correctchoice to oppose the passage of electric current
+    \choice to increase the passage of electric current
+    \choice to completely stop the passage of electric current
+    \choice to measure the passage of electric current
+\end{randomizechoices}
+
+\question
+What is current through the resistor in the circuit below? 
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (0,2) to[battery,l=$\SI{24}{V}$] (3,2)
+                -- (3,0) to[R=$\SI{8.0}{\ohm}$] (0,0);
+\end{circuitikz}
+\end{center}
+
+
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.0}{A}
+    \choice \SI{0.3}{A}
+    \choice \SI{32}{A}
+    \choice \SI{16}{A}
+\end{randomizechoices}
+
+\question
+Which set of resistors has the \textit{smallest} equivalent resistance?
+
+% \fbox{
+{\LARGE \textbf{A}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{1.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{2.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+    \end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \textbf{B}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{1.0}{\ohm}$] (2.5,0) to[R=$\SI{2.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+% \fbox{
+{\LARGE \textbf{C}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{2.0}{\ohm}$] (2.5,0) to[R=$\SI{3.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \textbf{D}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{2.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{3.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+\begin{oneparchoices}
+    \correctchoice \textbf{A}
+    \choice \textbf{B}
+    \choice \textbf{C}
+    \choice \textbf{D}
+\end{oneparchoices}
+
+\vspace{1em}
+
+
+
+\begin{EnvUplevel}
+    \textbf{Consider the circuit below. Then answer questions \ref{zaf0rk} through \ref{MMCLG2}.}
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) -- (3,0) to[R=$\SI{5}{\ohm}$] (3,2) -- (0,2) to[battery,l=$\SI{15}{V}$] (0,0)
+            (3,0) -- (5,0) to[R=$\SI{20}{\ohm}$] (5,2) -- (3,2);
+    \end{circuitikz}
+\end{center}
+
+
+\question \label{zaf0rk}
+What is the current through the \SI{5}{\ohm} resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.00}{A}
+    \choice \SI{0.80}{A}
+    \choice \SI{50.0}{A}
+    \choice \SI{0.20}{A}
+\end{randomizechoices}
+
+\question
+What is the current through the 20-ohm resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{0.75}{A}
+    \choice \SI{60.0}{A}
+    \choice \SI{0.06}{A}
+    \choice \SI{12.0}{A}
+\end{randomizechoices}
+
+\question \label{MMCLG2}
+What is the current through the wires that are directly connected to the battery?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.75}{A}
+    \choice \SI{4.0}{A}
+    \choice \SI{0.25}{A}
+    \choice \SI{83.4}{A}
+\end{randomizechoices}
+
+\vspace{1em}
+
+
+
+
+\question
+An electric appliance draws 3.0 amperes of current when it is connected to a 21-volt source. What is the resistance of this appliance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{7.0}{\ohm}
+    \choice \SI{63}{\ohm}
+    \choice \SI{24}{\ohm}
+    \choice \SI{0.14}{\ohm}
+\end{randomizechoices}
+
+ \clearpage
+\question
+This diagram represents a circuit. What is the total resistance of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{41}{\ohm}] (3,3) to[R=\SI{15}{\ohm}] (0,3) to [battery,l=\SI{61}{V}] (0,0)
+            (3,0) -- (5,0) to[R=\SI{31}{\ohm}] (5,3) -- (3,3);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{33}{\ohm}
+    \choice \SI{87}{\ohm}
+    \choice \SI{25}{\ohm}
+    \choice \SI{28}{\ohm}
+\end{randomizechoices}
+
+\question
+Three resistors---4 ohms, 6 ohms, and 8 ohms---are connected in parallel in an electric circuit. The equivalent resistance of the circuit is \fillin\ .
+
+\begin{randomizechoices}
+    \correctchoice less than 4 ohms
+    \choice between 4 and 8 ohms
+    \choice between 10 and 18 ohms
+    \choice greater than 18 ohms
+\end{randomizechoices}
+
+
+\question 
+In which circuit represented below are meters properly connected to measure the current through resistor $R_1$ and the potential difference across resistor $R_2$?
+
+
+{\LARGE \textbf{A}}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0) to[rmeter,t=A] ++(2,0) to[R=$R_2$] ++(2,0) to[rmeter,t=V] ++(0,2) to[battery] ++(-6,0) -- ++(0,-2);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \textbf{B}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(3,0) to[R=$R_2$] ++(3,0) -- ++(0,2) to[battery] ++(-6,0) -- ++(0,-2) 
+    (0.5,0) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (3.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1);
+\end{circuitikz}
+\end{minipage}
+
+{\LARGE \textbf{C}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(0,2.5) to[R,a=$R_1$] ++(-3,0) -- ++(0,-2.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0.5,2.5) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (0,2.5) -- ++(0,1.5) to[battery] ++(3,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \textbf{D}}
+\begin{minipage}[c][6cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(1,0) -- ++(0,1.5) to[rmeter,t=A] ++(-2,0) to[R,a=$R_1$] ++(-2,0) -- ++(0,-1.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0,1.5) -- ++(0,1.5) to[battery] ++(4,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}
+
+\begin{oneparchoices}
+    \choice \textbf{A}
+    \choice \textbf{B}
+    \choice \textbf{C}
+    \correctchoice \textbf{D}
+\end{oneparchoices}
+
+
+\question
+The diagram below represents a circuit. What is the voltage of the battery when the ammeter reads 4.0 amperes?
+
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[battery] (3,0)
+            to[rmeter,t=A] ++(0,2) to[R=\SI{6.0}{\ohm}] ++(-3,0) -- ++(0,-2)
+            (3,2) -- ++(0,1.5) to[R=\SI{12}{\ohm}] ++(-3,0) -- ++(0,-1.5); 
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{16}{V}
+    \choice \SI{0.22}{V}
+    \choice \SI{1.0}{V}
+    \choice \SI{4.5}{V}
+\end{randomizechoices}
+
+
+
+\question
+A heater has a resistance of 10.0 ohms. It operates on \SI{120.0}{V}. What is the current through the resistance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{12}{A}
+    \choice \SI{24}{A}
+    \choice \SI{120}{A}
+    \choice \SI{80}{A}
+\end{randomizechoices}
+
+\clearpage
+\question
+What is the current through the battery?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=\SI{4}{\ohm}] (0,3) to[battery,l=\SI{8}{V}] ++(3,0) -- ++(0,-3) to[R=\SI{4}{\ohm}] ++(-3,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1}{A}
+    \choice \SI{4}{A}
+    \choice \SI{8}{A}
+    \choice \SI{2}{A}
+\end{randomizechoices}
+
+
+
+
+\question
+The diagram below represents parts of an electric circuit containing three resistors. What is the equivalent resistance of this part of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- ++(0,3) to[R=\SI{3.0}{\ohm}] ++(2,0) -- ++(0,-3) to[R=\SI{12}{\ohm}]  (0,0)
+    (-1,1.5) to[R=\SI{4.0}{\ohm}] ++(4,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.5}{\ohm}
+    \choice \SI{0.67}{\ohm}
+    \choice \SI{6.3}{\ohm}
+    \choice \SI{19}{\ohm}
+\end{randomizechoices}
+
+\clearpage
+\question
+In the circuit represented by the diagram below, what is the reading of the voltmeter V?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{10}{\ohm}] ++(0,3) to[R=\SI{20}{\ohm}] ++(-3,0) to[battery,l=\SI{60}{V}] (0,0)
+            (0.5,3) -- ++(0,1) to[rmeter,t=V] ++(2,0) -- ++(0,-1);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{40}{V}
+    \choice \SI{2.0}{V}
+    \choice \SI{30}{V}
+    \choice \SI{20}{V}
+\end{randomizechoices}
+
+
+
+
+\question
+What happens to the electrostatic force between 2 charges if the distance between the charges is quadrupled?
+
+\begin{choices}
+\choice the force \textit{decreases} to $1/4$ its original strength
+\choice the force \textit{increases} to 4 times its original strength
+\choice the force \textit{increases} to 16 times its original strength
+\correctchoice the force \textit{decreases} to $1/16$ its original strength
+\end{choices}
+
+\question
+The magnitude of the attractive force between two charged objects is \SI{0.96}{N}. If the distance between the objects is quadrupled, what is the magnitude of the new force?
+
+\begin{choices}
+\choice \SI{16.67}{N}
+\choice \SI{15.36}{N}
+\choice \SI{0.24}{N}
+\choice \SI{0.06}{N}
+\end{choices}
+
+\question
+Charging a neutral body by bringing it near a charged object is charging by \fillin\ .
+
+\begin{choices}
+\choice friction
+\choice conduction
+\choice induction
+\choice VISA
+\end{choices}
+
+\question
+Which of the following is the best list of insulators?
+
+\begin{choices}
+\choice rubber, copper, plastic 
+\choice rubber, wood, plastic
+\choice rubber, copper, wood 
+\choice human body, copper, plastic
+\end{choices}
+
+\question
+The force exerted between two charged spheres is \SI{64}{N}. What is the magnitude of the force when the distance between the spheres is tripled?
+
+\begin{choices}
+\choice \SI{16.0}{N}
+\choice \SI{192.0}{N}
+\choice \SI{7.1}{N}
+\choice \SI{21.3}{N}
+\end{choices}
+
+\question
+Two identical spheres contain a charge of $q$. If each sphere then acquires a new charge of $3q$, and are held at a constant separation distance, how does the electric force between the spheres change?
+
+\begin{choices}
+\choice It increases by a factor of 3.
+\choice It decreases to one-ninth its
+original value.
+\choice It increases by a factor of 9.
+\choice It decreases to one-third its
+original value.
+\choice It increases by a factor of 6.
+\end{choices}
+
+\question
+True or false? Although both are inverse square laws, the electric force is significantly stronger than gravitational force.
+
+\begin{choices}
+\choice True
+\choice False
+\end{choices}
+
+\question
+True or false? Since the electric force and the gravitational force are inverse square laws, both types of forces can be either attractive or repulsive.
+
+\begin{choices}
+\choice True
+\choice False
+\end{choices}
+
+
+
+\question
+If two-point charges that are 2000 meters apart have charge values of \SI{40}{C} and \SI{-40}{C}, respectively, what is the
+value of the electrostatic force between them? Coulomb's constant is  \SI{8.99e9}{N\,\cdot\,m^2/C^2}).
+
+\end{questions}
 
 \end{document}

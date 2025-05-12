@@ -1,0 +1,65 @@
+\documentclass{article}
+\input{global}
+
+
+\begin{document}
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={a(\x)=0*\x+2;},
+        declare function={b(\x)=0*\x;}
+    ]
+    \begin{axis}[
+        domain=0:5,
+        axis lines=middle,
+        axis equal image,
+        xtick=\empty, ytick=\empty,
+        axis line style={draw=none},
+        enlargelimits=true,
+        clip mode=individual, clip=false
+    ]
+    \addplot [black, only marks, mark=*, samples=300, mark size=0.75,domain=0:2]
+        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
+        
+    \addplot [black, only marks, mark=*, samples=50, mark size=0.75,domain=2.5:4.5]
+        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
+    \draw[thick] (axis cs: 0,0) rectangle (axis cs: 2,2);
+    \draw[thick] (axis cs: 2.5,0) rectangle (axis cs: 4.5,2);
+    \node at (axis cs: 1,2.2) {\small \textbf{HIGH DENSITY}};
+    \node at (axis cs: 3.5,2.2) {\small \textbf{LOW DENSITY}};
+    \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{Particles in two boxes of identical size. The air density is higher in the box with more particles.}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7.5cm,width=7.5cm,
+      cycle list={
+        only marks,mark size=1pt\\
+        only marks,mark size=1pt\\
+      },
+      xmin=0,xmax=8,
+      ymin=-4,ymax=4,
+      domain=270:360+90,
+      samples=150,
+      axis line style={draw=none},
+      ticks=none,
+      clip=false,
+    ]
+    \draw[dashed,->] (0,0) -- (6,0);
+    \addplot ({(0.2+0.07*rand)*cos(x)},{(0.2+0.07*rand)*sin(x)});
+    \addplot ({(1.0+0.07*rand)*cos(x)},{(1.0+0.07*rand)*sin(x)});
+    \addplot ({(2.0+0.10*rand)*cos(x)},{(2.0+0.10*rand)*sin(x)});
+    \addplot ({(3.0+0.12*rand)*cos(x)},{(3.0+0.12*rand)*sin(x)});
+    \addplot ({(4.0+0.12*rand)*cos(x)},{(4.0+0.12*rand)*sin(x)});
+    
+    \draw[<-,ultra thick] (3.7,1.5) -- ++(axis direction cs: 1,0.5) node[right] {compression};
+    \draw[<-,ultra thick] (2.5,-2.5) -- ++(axis direction cs: 2,1) node[right] {rarefaction};
+    
+    \node[align=left,left=1em] at (0,0) {sound\\ source};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{document}

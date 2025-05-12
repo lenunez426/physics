@@ -1,0 +1,828 @@
+\documentclass{exam}
+\input{global}
+\usepackage{exam-randomizechoices}
+\usepackage{circuitikz}
+\usepackage{bohr}
+\newcommand\mybox[2][]{\tikz[overlay]\node[fill=white,inner sep=2pt, anchor=text,rectangle,#1] {#2};\phantom{#2}} %Used in chapter 3, projectile motion. See Range plots.
+
+
+\def\one{1}
+\def\two{2}
+\def\three{3}
+\def\four{4}
+
+\def\testVersion{\four} % Edit Version number here only.
+
+\setrandomizerseed{\testVersion}
+
+\pagestyle{headandfoot}
+\firstpageheader{Physics}{Test on Unit 8: Electrostatics}{Version \testVersion}
+\CorrectChoiceEmphasis{\color{red}\bfseries}
+\SolutionEmphasis{\color{red}}
+
+%\printanswers
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{
+\begin{center}
+\vspace{-1em}
+  \textbf{EQUATIONS}  
+\end{center}
+\vspace{-2em}
+
+\begin{equation*}
+    e = \qty{1.6e-19}{C} \hspace{5mm} 
+    q = -ne\ \text{(excess electrons)} \hspace{5mm}
+    k = \num{8.99e9} \hspace{5mm}
+    F = \frac{k \left|q_1 q_2 \right|}{r^2} 
+\end{equation*}%
+\begin{equation*}
+    \mymu = \text{``micro''} = 10^{-6} \hspace{5mm}
+    \text{n} = \text{``nano''} = 10^{-9} \hspace{5mm}
+    \qty{1}{cm} = \qty{0.01}{m}
+\end{equation*}
+
+}}}
+\end{center}
+
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{
+\begin{center}
+\vspace{-1em}
+  \textbf{EQUATIONS}  
+\end{center}
+\vspace{-2em}
+
+\begin{equation*}
+    V = I R \hspace{1em} \text{\footnotesize (Ohm's Law)} \qquad
+    R_{\text{eq}} = R_1 + R_2 \hspace{1em} \text{ \footnotesize (series)} \qquad
+    R_{\text{eq}} = \left(\frac{1}{R_1} + \frac{1}{R_2}\right)^{-1} \hspace{1em} \text{\footnotesize (parallel)}
+\end{equation*}
+
+
+}}}
+\end{center}
+
+\begin{questions}
+
+\question
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \fillin[1897].
+
+\begin{randomizechoices}
+    \correctchoice 1897
+    \choice 1913
+    \choice 2005
+    \choice 1796
+\end{randomizechoices}
+
+\question
+Millikan and Fletcher conducted the oil drop experiment 16 years after the discovery of the electron. What was the motivation for the experiment?
+
+\begin{randomizechoices}
+    \correctchoice To numerically calculate the charge on 1 electron.
+    \choice To re-discover the electron independently of Thompson.
+    \choice To measure the true size of 1 electron.
+    \choice To conduct an electrical current through drops of oil.
+\end{randomizechoices}
+
+\question
+What did Millikan conclude was the magnitude of the charge on 1 electron, in units of coulombs? (This value is called the \textbf{elementary charge} or the fundamental unit of electric charge.)
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.60e-19}{C}
+    \choice \SI{8.99e9}{C}
+    \choice \SI{6.67e-11}{C}
+    \choice \SI{9.805e-6}{C}
+\end{randomizechoices}
+
+\question
+What is the SI unit of electric charge?
+
+\begin{randomizechoices}
+\correctchoice coulomb (C)
+\choice joule (J)
+\choice newton (N)
+\choice meter per second (m/s)
+\end{randomizechoices}
+
+\question
+A neutral plastic strip is rubbed with cotton and acquires a positive charge. Which of the following statements is true of the positively-charged strip?
+
+\begin{randomizechoices}
+\choice It gained some electrons during the rubbing process.
+\correctchoice It lost some electrons to the cotton during the charging process.
+\choice It gained some protons during the rubbing process.
+\choice It lost some protons to the cotton during the charging process.
+\end{randomizechoices}
+
+
+
+\question
+Two neutral balloons can make contact with each other. But if you rub the two balloons on a sweater and then try to place them next to one another, they will automatically pull away from each other. Why does this phenomenon occur?
+
+\hspace{1cm}
+
+\clearpage
+\begin{randomizechoices}
+\choice Both balloons lose electrons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\choice Both balloons lose protons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\correctchoice Both balloons gain electrons from the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\choice Both balloons gain protons to the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\end{randomizechoices}
+
+
+
+
+\question
+A neutral hydrogen atom has one proton and one electron. If you remove the electron, what will be the leftover sign of the charge?
+
+\begin{minipage}{0.25\textwidth}
+    \begin{randomizechoices}
+    \choice Negative
+    \CorrectChoice Positive
+    \choice Zero
+    \choice Neutral
+    \end{randomizechoices}
+\end{minipage}%
+\hspace{5mm}%
+\begin{minipage}{0.2\textwidth}
+    \centering
+    \setbohr{insert-missing,nucleus-radius=2em,electron-radius=3pt}
+    \bohr{1}{}
+\end{minipage}
+
+\question
+A balloon contains 80 million excess electrons. What is the net electric charge on the balloon?
+
+\begin{randomizechoices}
+\choice \SI{-8.99e-9}{\coulomb}
+\choice \SI{-1.603e-19}{C}
+\choice \SI{-20.8e-28}{C}
+\correctchoice \SI{-1.28e-11}{C}
+\end{randomizechoices}
+
+\question
+A speck of dust with excess electrons acquires a charge of \qty{-0.8}{nC}. How many excess electrons does it contain?
+
+\begin{randomizechoices}
+    \correctchoice \num{5000000000}
+    \choice \num{5e12}
+    \choice $0.000\,005$
+    \choice 50
+\end{randomizechoices}
+
+\question
+What is the value of the Coulomb's constant?
+
+\begin{randomizechoices}
+    \correctchoice \num{8.99e9}
+    \choice \num{1.60e-19}
+    \choice \num{6.67e-11}
+    \choice \num{5.00e-6}
+\end{randomizechoices}
+
+\question
+Coulomb's law\ldots
+
+\begin{randomizechoices}
+    \correctchoice describes the electrostatic force between charged objects.
+    \choice describes the gravitational force between charged objects.
+    \choice states that opposite charges repel.
+    \choice states that like charges attract.
+\end{randomizechoices}
+\vspace{1em}
+\hrule
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{See the figure below, which shows two charged objects placed near each other. Then answer questions \ref{Vgjjc7}--\ref{Fxl8ta}.}
+% \textit{Reminder}: \mymu means $10^{-6}$, and 1 centimeter is 0.01 meter.
+\end{EnvUplevel}
+
+\vspace{-1em}
+
+
+\def\distanceA{5}
+\def\distanceR{3}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-1.2,xmax=4,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{3.6}{\micro C}};
+    
+    \begin{scope}[xshift=\distanceR*1.24 cm]
+        \fill (0,0) circle (2pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {\SI{2.0}{\micro C}};
+    \end{scope}
+    
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: \distanceR,0);
+    \node[above=6pt] at (\distanceR/2,0) {\SI{4.7}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{Vgjjc7}
+Since the objects are charged, there exists \fillin[][5cm] between them.
+
+\begin{randomizechoices}
+    \correctchoice an electrostatic force
+    \choice a gravitational force
+    \choice a distance
+    \choice a charge
+\end{randomizechoices}
+
+\question
+Are the two charges attracted or repulsed?
+
+\begin{randomizechoices}[keeplast]
+    \choice attracted
+    \correctchoice repulsed
+    \choice both attracted and repulsed
+    \choice neither attracted nor repulsed
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which option explains your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \choice opposite charges attract
+    \correctchoice like charges repel
+    \choice the positive charge causes attraction; the negative, repulsion
+    \choice the positive and negative cancel each other, removing all attraction and repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+What is the charge of the \qty{3.6}{\micro C} object in base units of coulombs?
+
+\begin{randomizechoices}
+    \correctchoice \qty{3.6e-6}{C}
+    \choice \qty{3.6e-9}{C}
+    \choice \qty{3.6e9}{C}
+    \choice \qty{3.6e16}{C}
+\end{randomizechoices}
+
+\question \label{Fxl8ta}
+Calculate the magnitude of the electrostatic force that the charged objects exert on each other.
+
+\begin{randomizechoices}
+    \correctchoice \qty{29.3}{N}
+    \choice \qty{3.25e-9}{N}
+    \choice \qty{1.37}{N}
+    \choice \qty{1.53e-10}{N}
+\end{randomizechoices}
+\vspace{1em}
+\hrule
+
+\clearpage
+\begin{EnvUplevel}
+     \textbf{Read the prompt below. Then answer questions \ref{yETfik}--\ref{b4zyju}.}
+
+    Two charges are placed next to each other. The first has a charge of -7.5 microcoulombs, and the second, 1.2 microcoulombs. The magnitude of the electrostatic force is 0.005 newtons.  
+\end{EnvUplevel}
+
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_1$};
+    %\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+    \begin{scope}[xshift=\distanceA*0.99 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$q_2$};
+        %\draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    \end{scope}
+
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: \distanceA,0);
+    \node[above=6pt] at (\distanceA/2,0) {$r$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{yETfik}
+Is the electrostatic force attractive or repulsive?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice attractive
+    \choice repulsive
+    \choice both
+    \choice neither
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which of the following justifies your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice opposite charges attract
+    \choice like charges repel
+    \choice opposite charges generation attraction and repulsion
+    \choice like charges prevent attraction or repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question \label{b4zyju}
+What is the distance between the charges?
+
+\begin{randomizechoices}
+    \correctchoice \qty{4.0}{m}
+    \choice \qty{8.9}{m}
+    \choice \qty{1.8e-9}{m}
+    \choice \qty{3.6e-7}{m}
+\end{randomizechoices}
+\vspace{1em}
+
+\hrule
+
+\question
+A \qty{-8e-6}{C} charge and \qty{9e-6}{C} charge are separated by \SI{3.0}{cm}. What is the magnitude of the electrostatic force between them?
+
+\begin{randomizechoices}
+        \correctchoice \qty{719}{N}
+        \choice \qty{21.5}{N}
+        \choice \qty{0.64}{N}
+        \choice \qty{8e-8}{N}
+\end{randomizechoices}
+
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+    \correctchoice electric charge that is moving
+    \choice a property of matter that causes objects to attract or repel
+    \choice the electric potential energy per unit charge
+    \choice schematic drawing of an electrical circuit 
+\end{randomizechoices}
+
+\question 
+What is the SI unit of electric current?
+
+\begin{randomizeoneparchoices}
+    \correctchoice ampere (A)
+    \choice coulomb (C)
+    \choice ohm ($\Omega$)
+    \choice volt (V)
+\end{randomizeoneparchoices}
+
+\question
+What is the function of the circuit component shown below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[rmeter,t=A] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice to measure current through a wire
+    \choice to measure voltage across a battery
+    \choice to measure resistance of a resistor
+    \choice to enable a circuit to be switched on or off
+\end{randomizechoices}
+
+\question
+Which circuit element is depicted in the symbol below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[R] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizeoneparchoices}
+    \correctchoice resistor
+    \choice battery
+    \choice lamp
+    \choice switch
+    \choice zig-zag transistor
+\end{randomizeoneparchoices}
+
+\question
+What is the function of a resistor in a circuit?
+
+\begin{randomizechoices}
+    \correctchoice to oppose the passage of electric current
+    \choice to increase the passage of electric current
+    \choice to completely stop the passage of electric current
+    \choice to measure the passage of electric current
+\end{randomizechoices}
+
+\question
+What is current through the resistor in the circuit below? 
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (0,2) to[battery,l=$\SI{24}{V}$] (3,2)
+                -- (3,0) to[R=$\SI{8.0}{\ohm}$] (0,0);
+\end{circuitikz}
+\end{center}
+
+
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.0}{A}
+    \choice \SI{0.3}{A}
+    \choice \SI{32}{A}
+    \choice \SI{16}{A}
+\end{randomizechoices}
+
+\question
+Which set of resistors has the \textit{smallest} equivalent resistance?
+
+% \fbox{
+{\LARGE \mybox{\textbf{A}} \hspace{-1.4em}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{1.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{2.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+    \end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \mybox{\textbf{B}} \hspace{-1.4em}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{1.0}{\ohm}$] (2.5,0) to[R=$\SI{2.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+% \fbox{
+{\LARGE \mybox{\textbf{C}} \hspace{-1.4em}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{2.0}{\ohm}$] (2.5,0) to[R=$\SI{3.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \mybox{\textbf{D}} \hspace{-1.4em}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{2.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{3.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+\begin{randomizeoneparchoices}[norandomize]
+    \correctchoice \mybox{\textbf{A}}
+    \choice \mybox{\textbf{B}}
+    \choice \mybox{\textbf{C}}
+    \choice \mybox{\textbf{D}}
+\end{randomizeoneparchoices}
+
+\vspace{1em}
+
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Consider the circuit below. Then answer questions \ref{zaf0rk} through \ref{MMCLG2}.}
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) -- (3,0) to[R=$\SI{5}{\ohm}$] (3,2) -- (0,2) to[battery,l=$\SI{15}{V}$] (0,0)
+            (3,0) -- (5,0) to[R=$\SI{20}{\ohm}$] (5,2) -- (3,2);
+    \end{circuitikz}
+\end{center}
+
+
+\question \label{zaf0rk}
+What is the current through the \SI{5}{\ohm} resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.00}{A}
+    \choice \SI{0.80}{A}
+    \choice \SI{50.0}{A}
+    \choice \SI{0.20}{A}
+\end{randomizechoices}
+
+\question
+What is the current through the 20-ohm resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{0.75}{A}
+    \choice \SI{60.0}{A}
+    \choice \SI{0.06}{A}
+    \choice \SI{12.0}{A}
+\end{randomizechoices}
+
+\question \label{MMCLG2}
+What is the current through the wires that are directly connected to the battery?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.75}{A}
+    \choice \SI{4.0}{A}
+    \choice \SI{0.25}{A}
+    \choice \SI{83.4}{A}
+\end{randomizechoices}
+
+\vspace{1em}
+
+\hrule
+
+
+\question
+An electric appliance draws 3.0 amperes of current when it is connected to a 21-volt source. What is the resistance of this appliance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{7.0}{\ohm}
+    \choice \SI{63}{\ohm}
+    \choice \SI{24}{\ohm}
+    \choice \SI{0.14}{\ohm}
+\end{randomizechoices}
+
+ \clearpage
+\question
+This diagram represents a circuit. What is the total resistance of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{41}{\ohm}] (3,3) to[R=\SI{15}{\ohm}] (0,3) to [battery,l=\SI{61}{V}] (0,0)
+            (3,0) -- (5,0) to[R=\SI{31}{\ohm}] (5,3) -- (3,3);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{33}{\ohm}
+    \choice \SI{87}{\ohm}
+    \choice \SI{25}{\ohm}
+    \choice \SI{28}{\ohm}
+\end{randomizechoices}
+
+\question
+Three resistors---4 ohms, 6 ohms, and 8 ohms---are connected in parallel in an electric circuit. The equivalent resistance of the circuit is \fillin\ .
+
+\begin{randomizechoices}
+    \correctchoice less than 4 ohms
+    \choice between 4 and 8 ohms
+    \choice between 10 and 18 ohms
+    \choice greater than 18 ohms
+\end{randomizechoices}
+
+
+\question 
+In which circuit represented below are meters properly connected to measure the current through resistor $R_1$ and the potential difference across resistor $R_2$?
+
+
+{\LARGE \mybox{\textbf{A}}}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0) to[rmeter,t=A] ++(2,0) to[R=$R_2$] ++(2,0) to[rmeter,t=V] ++(0,2) to[battery] ++(-6,0) -- ++(0,-2);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \mybox{\textbf{B}} \hspace{-1ex}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(3,0) to[R=$R_2$] ++(3,0) -- ++(0,2) to[battery] ++(-6,0) -- ++(0,-2) 
+    (0.5,0) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (3.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1);
+\end{circuitikz}
+\end{minipage}
+
+{\LARGE \mybox{\textbf{C}} \hspace{-1em}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(0,2.5) to[R,a=$R_1$] ++(-3,0) -- ++(0,-2.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0.5,2.5) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (0,2.5) -- ++(0,1.5) to[battery] ++(3,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \mybox{\textbf{D}} \hspace{-1em}}
+\begin{minipage}[c][6cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(1,0) -- ++(0,1.5) to[rmeter,t=A] ++(-2,0) to[R,a=$R_1$] ++(-2,0) -- ++(0,-1.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0,1.5) -- ++(0,1.5) to[battery] ++(4,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}
+
+\begin{randomizeoneparchoices}[norandomize]
+    \choice \mybox{\textbf{A}}
+    \choice \mybox{\textbf{B}}
+    \choice \mybox{\textbf{C}}
+    \correctchoice \mybox{\textbf{D}}
+\end{randomizeoneparchoices}
+
+
+\question
+The diagram below represents a circuit. What is the voltage of the battery when the ammeter reads 4.0 amperes?
+
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[battery] (3,0)
+            to[rmeter,t=A] ++(0,2) to[R=\SI{6.0}{\ohm}] ++(-3,0) -- ++(0,-2)
+            (3,2) -- ++(0,1.5) to[R=\SI{12}{\ohm}] ++(-3,0) -- ++(0,-1.5); 
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{16}{V}
+    \choice \SI{0.22}{V}
+    \choice \SI{1.0}{V}
+    \choice \SI{4.5}{V}
+\end{randomizechoices}
+
+
+
+\question
+A heater has a resistance of 10.0 ohms. It operates on \SI{120.0}{V}. What is the current through the resistance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{12}{A}
+    \choice \SI{24}{A}
+    \choice \SI{120}{A}
+    \choice \SI{80}{A}
+\end{randomizechoices}
+
+\clearpage
+\question
+What is the current through the battery?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=\SI{4}{\ohm}] (0,3) to[battery,l=\SI{8}{V}] ++(3,0) -- ++(0,-3) to[R=\SI{4}{\ohm}] ++(-3,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1}{A}
+    \choice \SI{4}{A}
+    \choice \SI{8}{A}
+    \choice \SI{2}{A}
+\end{randomizechoices}
+
+
+
+
+\question
+The diagram below represents parts of an electric circuit containing three resistors. What is the equivalent resistance of this part of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- ++(0,3) to[R=\SI{3.0}{\ohm}] ++(2,0) -- ++(0,-3) to[R=\SI{12}{\ohm}]  (0,0)
+    (-1,1.5) to[R=\SI{4.0}{\ohm}] ++(4,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.5}{\ohm}
+    \choice \SI{0.67}{\ohm}
+    \choice \SI{6.3}{\ohm}
+    \choice \SI{19}{\ohm}
+\end{randomizechoices}
+
+\clearpage
+\question
+In the circuit represented by the diagram below, what is the reading of the voltmeter V?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{10}{\ohm}] ++(0,3) to[R=\SI{20}{\ohm}] ++(-3,0) to[battery,l=\SI{60}{V}] (0,0)
+            (0.5,3) -- ++(0,1) to[rmeter,t=V] ++(2,0) -- ++(0,-1);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{40}{V}
+    \choice \SI{2.0}{V}
+    \choice \SI{30}{V}
+    \choice \SI{20}{V}
+\end{randomizechoices}
+
+%\ifprintanswers
+\keylistkeyname{Key Version \testVersion}
+\printkeytable
+%\fi
+
+\end{questions}
+\end{document}
+
+\question
+What happens to the electrostatic force between 2 charges if the distance between the charges is quadrupled?
+
+\begin{choices}
+\choice the force \textit{decreases} to $1/4$ its original strength
+\choice the force \textit{increases} to 4 times its original strength
+\choice the force \textit{increases} to 16 times its original strength
+\correctchoice the force \textit{decreases} to $1/16$ its original strength
+\end{choices}
+
+\question
+The magnitude of the attractive force between two charged objects is \SI{0.96}{N}. If the distance between the objects is quadrupled, what is the magnitude of the new force?
+
+\begin{choices}
+\choice \SI{16.67}{N}
+\choice \SI{15.36}{N}
+\choice \SI{0.24}{N}
+\choice \SI{0.06}{N}
+\end{choices}
+
+\question
+Charging a neutral body by bringing it near a charged object is charging by \fillin\ .
+
+\begin{choices}
+\choice friction
+\choice conduction
+\choice induction
+\choice VISA
+\end{choices}
+
+\question
+Which of the following is the best list of insulators?
+
+\begin{choices}
+\choice rubber, copper, plastic 
+\choice rubber, wood, plastic
+\choice rubber, copper, wood 
+\choice human body, copper, plastic
+\end{choices}
+
+\question
+The force exerted between two charged spheres is \SI{64}{N}. What is the magnitude of the force when the distance between the spheres is tripled?
+
+\begin{choices}
+\choice \SI{16.0}{N}
+\choice \SI{192.0}{N}
+\choice \SI{7.1}{N}
+\choice \SI{21.3}{N}
+\end{choices}
+
+\question
+Two identical spheres contain a charge of $q$. If each sphere then acquires a new charge of $3q$, and are held at a constant separation distance, how does the electric force between the spheres change?
+
+\begin{choices}
+\choice It increases by a factor of 3.
+\choice It decreases to one-ninth its
+original value.
+\choice It increases by a factor of 9.
+\choice It decreases to one-third its
+original value.
+\choice It increases by a factor of 6.
+\end{choices}
+
+\question
+True or false? Although both are inverse square laws, the electric force is significantly stronger than gravitational force.
+
+\begin{choices}
+\choice True
+\choice False
+\end{choices}
+
+\question
+True or false? Since the electric force and the gravitational force are inverse square laws, both types of forces can be either attractive or repulsive.
+
+\begin{choices}
+\choice True
+\choice False
+\end{choices}
+
+\question
+Skip for now.
+
+\question
+Skip for now.
+
+\question
+Skip for now.
+
+\question
+Skip for now.
+
+
+
+
+
+\question
+If two-point charges that are 2000 meters apart have charge values of \SI{40}{C} and \SI{-40}{C}, respectively, what is the
+value of the electrostatic force between them? Coulomb's constant is  \SI{8.99e9}{N\,\cdot\,m^2/C^2}).

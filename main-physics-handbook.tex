@@ -4,6 +4,14 @@
 \input{notes}
 \input{documents/physics-glossary}
 
+\usepackage{circuitikz}
+\ctikzset{bipoles/battery1/height=0.5}
+\ctikzset{bipoles/battery1/width=0.25}
+\ctikzset{bipoles/resistor/height=0.15}
+\ctikzset{bipoles/resistor/width=0.4}
+\ctikzset{bipoles/cuteswitch/thickness=0.3,bipoles/cuteswitch/shape=circ}
+\ctikzset{bipoles/bulb/height=0.4,bipoles/bulb/width=0.4}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %...Hide or show unit contents below:            %
@@ -19,17 +27,17 @@
 \newif\ifShowUnitX                               %        
 \newif\ifShowUnitXI                              %        
 \newif\ifShowUnitXII                             % 
-\ShowUnitIfalse                                  %
-\ShowUnitIItrue                                  %
-\ShowUnitIIIfalse                                %
-\ShowUnitIVfalse                                 %
-\ShowUnitVfalse                                  %
-\ShowUnitVIfalse                                 %
-\ShowUnitVIIfalse                                %
-\ShowUnitVIIIfalse                               %
-\ShowUnitIXfalse                                 %
-\ShowUnitXfalse                                  %
-\ShowUnitXIfalse                                 %
+\ShowUnitItrue                                  %
+\ShowUnitIItrue                                 %
+\ShowUnitIIItrue                                %
+\ShowUnitIVtrue                                 %
+\ShowUnitVtrue                                  %
+\ShowUnitVItrue                                 %
+\ShowUnitVIItrue                                %
+\ShowUnitVIIItrue                                %
+\ShowUnitIXtrue                                 %
+\ShowUnitXtrue                                  %
+\ShowUnitXItrue                                 %
 \ShowUnitXIIfalse                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2421,7 +2429,7 @@ Nancy the ice skater, whose mass is \SI{70}{kg}, stands at rest with ice skates 
 
 \textit{Solution:} 
 
-We are given Nancy's mass, the sack's mass, and the final velocity of the sack: $m_1 = \SI{70}{kg}$, $m_2 = \SI{5}{kg}$, and $v_2^{\prime} = \SI{50}{m/s}$. Furthermore, the initial velocities of both objects is zero: $v_1 = 0$ and $v_2 = 0$. The unknown quantity we're looking for is Nancy's final (recoil) velocity: $v_1^{\prime} =\ ?$ All these quantities are related by Equation \ref{eVkwoQ}, the law of conservation of momentum:
+We are given Nancy's mass, the sack's mass, and the final velocity of the sack: $m_1 = \SI{70}{kg}$, $m_2 = \SI{5}{kg}$, and $v_2^{\prime} = \SI{50}{m/s}$. Furthermore, the initial velocities of both objects is zero: $v_1 = 0$ and $v_2 = 0$. The unknown quantity we're looking for is Nancy's final (recoil) velocity: $v_1^{\prime} =\ ?$ All these quantities are related by the law of conservation of momentum:
 
 \begin{equation*}
     m_1 v_1 + m_2 v_2 = m_1 v_1^{\prime} + m_2 v_2^{\prime}
@@ -2651,27 +2659,111 @@ Therefore, the final velocity of the system is (rounding up) \SI{-0.13}{m/s}; th
 
 \subsection{Charges and Matter}
 
-\subsubsection{Particles that Contribute Positive, Negative, or No Charge}
+\subsubsection*{The Millikan's Oil Drop Experiment}
 
 \textbf{\Gls{electric charge}} is \glsdesc{electric charge}.
 
 The \textbf{\gls{electron}} is the \glsdesc{electron}. The \textbf{\gls{proton}} is the \glsdesc{proton}.
 
+The Millikan's oil drop experiment of 1909 found the magnitude of the charge on one electron. 
+
+The \textbf{\gls{elementary charge}} ($e$) is the \glsdesc{elementary charge}. Its value is
+
+\begin{equation*}
+    e = \SI{1.60e-19}{C}
+\end{equation*}
+
+where C is for coulombs, the base SI unit of electric charge.
+
+\subsubsection{Particles that Contribute Positive, Negative, or No Charge}
+
+Protons contribute to positive charge, electrons to negative. Neutrons are neutral because their charge is zero. 
+
 \subsubsection{Neutral Objects}
+
+A neutral object has no charge, or a charge or zero.
+
+A large object is neutral if it has the same number of positive and negative charge.
 
 \subsubsection{Determining Charge}
 
 \subsubsection{Two Objects Attract, Repel, or Have No Interaction}
 
-\subsubsection{Drawing the Electric Field}
+\subsubsection{The Electric Field}
 
 The \textbf{\gls{electric field}} \glsdesc{electric field}.
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    \foreach \x in {0,45,...,315}{
+        \draw[->,thick,rotate=\x] (0,0) -- (1,0);
+    }
+    \foreach \x in {0,45,...,315}{
+        \draw[thick,rotate=\x] (0,0) -- (1.5,0);
+    }
+    \draw[fill=white] (0,0) circle (3mm) node {$+$};
+\end{tikzpicture}
+\hspace{1em}
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    \begin{scope}[thick,decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{<}}}
+        ] 
+    \foreach \x in {0,45,...,315}{
+        \draw[postaction={decorate},thick,rotate=\x] (0,0) -- (1.5,0);
+    }
+    \end{scope}
+    \draw[fill=white] (0,0) circle (3mm) node {$-$};
+\end{tikzpicture}
+\hspace{1em}
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    % \foreach \x in {0,45,...,315}{
+    %     \draw[-,thick,rotate=\x] (0,0) -- (1,0);
+    % }
+    \foreach \x in {0,45,...,315}{
+        \draw[white,thick,rotate=\x] (0,0) -- (1.5,0);
+    }
+    \draw[fill=white] (0,0) circle (3mm) node {n};
+\end{tikzpicture}
+
+
+\end{center}
 
 \subsection{Transfer of Charge}
 
 \subsubsection{Charge is Conserved}
 
 The \textbf{\gls{law of conservation of charge}} \glsdesc{law of conservation of charge}.
+
+Protons are stuck to the atom. Electrons are free to transfer away from atoms and to other objects. When electrons are transferred, charge is transferred. An object containing equal amounts of protons and electrons is electrically neutral: its net charge is zero. In general, an object with $n$ excess electrons has a net electric charge ($q$) of
+
+\begin{equation} \label{Dabfyz}
+    q = - ne \hspace{1em} \text{(electron excess)}
+\end{equation}
+
+\begin{center}
+    \begin{tabular}{cl|cc}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $q$ & net charge & coulomb & \si{\coulomb}\\
+        $n$ & number of excess electrons & (none) & (none) \\
+        $e$ & elementary charge & coulomb & \si{\coulomb} \\
+    \hline
+    \end{tabular}
+\end{center}
+
+\begin{example}
+    After rubbing on a shirt, a balloon acquires 25 excess electrons. What is the electric charge on the balloon?
+\end{example}
+
+\textit{Solution:}
+We are given the number of excess electrons: $n = 25$. We know the elementary charge (on each electron): $e = \SI{1.6e-19}{C}$. The unknown is the electric charge on the balloon: $q =\ ?$. By Equation~\ref{Dabfyz}, electric charge is
+
+\begin{equation*}
+    q = - n e = -25\,(\num{1.6e-19}) = \SI{-4.0e-18}{C}
+\end{equation*}
 
 \subsubsection{Only Electrons are Transferred}
 
@@ -2695,6 +2787,206 @@ The \textbf{\gls{law of conservation of charge}} \glsdesc{law of conservation of
 
 \subsubsection{Electric Force, Charges, and Distance}
 
+Two charges always exert a \href{https://phet.colorado.edu/en/simulations/coulombs-law}{mutual force} on each other. The charges may be a proton and an electron, or they may be macroscopic objects like a balloon and a shirt. Opposite charges generate an attractive force, and like charges, a repulsive one. 
+
+
+\def\distanceA{5}
+\def\distanceR{2}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_1\,(+)$};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+    \begin{scope}[xshift=\distanceA*0.99 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$q_2\,(-)$};
+        \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    \end{scope}
+
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: \distanceA,0);
+    \node[above=6pt] at (\distanceA/2,0) {$r$};
+    \node[above=1cm] at (\distanceA/2,0) {\textbf{Attractive}};
+\end{axis}
+\end{tikzpicture}%
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_3\,(+)$};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    
+    \begin{scope}[xshift=\distanceR*1.07 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$q_4\,(+)$};
+        \draw[->,thick] (0,0) -- ++(axis direction cs: +2,0) node[below] {$F$};
+    \end{scope}
+    
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: \distanceR,0);
+    \node[above=6pt] at (\distanceR/2,0) {$r$};
+    \node[above=1cm] at (\distanceR/2,0) {\textbf{Repulsive}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+This force is called the electrostatic force. Its magnitude is given by \textbf{Coulomb's law}:
+
+\begin{equation} \label{TjSj69}
+    F = \frac{k|q_1 q_2|}{r^2}    
+\end{equation}
+
+where $k$ is the Coulomb's constant, $q_1$ and $q_2$ are the charges of each object, and $r$ is the distance between the objects. Coulomb's law implies that object 1 exerts an electric force on object 2 that is equal in magnitude to the force that object 2 exerts on object 1.
+\vspace{1em}
+
+The Coulomb's constant, $k$, is a physical constant---a universal value that does not change and applies for all applications of Coulomb's law. Its magnitude is given by
+
+\begin{equation}
+    k = \SI{8.99e9}{N \cdot m^2/C^2}
+\end{equation}
+
+but may be approximated as \SI{9e9}{N \cdot m^2/C^2}. Note that $|q_1 q_2|$ is the \href{https://openstax.org/books/elementary-algebra-2e/pages/1-3-add-and-subtract-integers}{absolute value} of the product of $q_1$ and $q_2$; the absolute value of a number is always greater than or equal to zero.
+
+\begin{center}
+\begin{tabular}{cl|cc}
+\hline
+\textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+\hline\hline
+\rule{0pt}{2.5ex}
+    $F$ & electric force & newton & \si{\newton}\\
+    $k$ & Coulomb constant & (\textit{see} $\rightarrow$) & \SI{}{N \cdot m^2/C^2}\\
+    $q_1$ & charge of object 1 & coulomb & \si{\coulomb}\\
+    $q_2$ & charge of object 2 & coulomb & \si{\coulomb} \\
+    $r$ & distance & meter & \si{\meter} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Metric prefix:} The metric prefix ``micro'' (µ) means one-millionth:
+
+\begin{equation*}
+    1\,\text{µ} = \frac{1}{\SI{1000000}{}} =\SI{1e-6}{}
+\end{equation*}
+
+So, a micro coulomb means $\SI{1}{\micro C} = \SI{1e-6}{C}$.
+
+
+\begin{example} \label{e3NF5s}
+Two spheres with charges \SI{-4}{\micro C} and \SI{8}{\micro C} are separated by \SI{3}{cm}. (a) Is the electric force between the objects attractive or repulsive? (b) What is the magnitude of the electric force between them?
+\end{example}
+
+Solution: (a) Because the charges have opposite charges, they will attract. (b) We are given the charges of two objects and the distance between them. Converting the given quantities of charge and distance to SI base units of coulombs and meters, we express the quantities as
+
+\begin{equation*}
+    q_1 = \SI{-4}{\micro C} = \SI{-4e-6}{C} 
+    \qquad \text{and} \qquad
+    q_2 = \SI{8}{\micro C} = \SI{8e-6}{C}
+\end{equation*}
+
+and $r = \SI{3}{cm} = \SI{0.03}{m}$. The diagram of the charges is shown below:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$\SI{-4e-6}{C}$};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+    \begin{scope}[xshift=\distanceA*0.99 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$\SI{8e-6}{C}$};
+        \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    \end{scope}
+
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: \distanceA,0);
+    \node[above=6pt] at (\distanceA/2,0) {\SI{0.03}{m}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+By Coulomb's law, Eq.~(\ref{TjSj69}), the electric force between these charged spheres is
+
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2} = \frac{\left(\SI{8.99e9}{}\right) \left|\left(\SI{-4e-6}{}\right) \left(\SI{8e-6}{}\right)\right|}{\left(\SI{0.03}{}\right)^2} =
+    \SI{319.6}{N}
+\end{equation*}
+
+\begin{example}
+A \SI{-50}{\micro C} charge and a \SI{95}{\micro C} one are separated by an unknown distance. If the electrostatic force between the charges is \SI{18.9}{N}, what is the distance between the charges?
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (3pt);
+\draw (0,0) circle (6mm) node[above=6mm] {$q_1$};
+\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+\begin{scope}[xshift=1.02*0.99 cm]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_2$};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 1.02,0);
+\node[above=6pt] at (1.02/2,0) {$r =\ ?$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Solution: We are given two charges and the electrostatic force: $q_1 = \SI{-50}{\micro C} = \qty{-50e-6}{C}$, $q_2 = \SI{95}{\micro C} = \qty{95e-6}{C}$, $F = \SI{18.9}{N}$. We want to find the separation distance between the charges: $r =\ ?$. These quantities are related by Coulomb's law:
+
+\begin{equation*}
+F = \frac{k |q_1 q_2|}{r^2}\ ,
+\end{equation*}
+
+where Coulomb's constant is
+
+\begin{equation*}
+k = \SI{8.99e9}{N \cdot m^2/C^2}
+\end{equation*}
+
+Plugging in these values into Coulomb's law leads to 
+
+\begin{equation*}
+18.9 = \frac{(\num{8.99e9}) \left|(\qty{-50e-6}{C})(\qty{95e-6}{C})\right|}{r^2}
+\end{equation*} 
+
+This equation is solved for distance $r$ as follows:
+
+\begin{align*}
+\textbf{Multiply across numerator} \qquad & 18.9 = \frac{\textcolor{red}{42.7}}{r^2}\\[1ex]
+\textbf{Multiply by $r^2$} \qquad & 18.9\,\textcolor{red}{r^2} = \frac{42.7}{\cancel{r^2}} \cdot \textcolor{red}{\cancel{r^2}}\\[1ex]
+\textbf{Simplify} \qquad & 18.9\,r^2 = 42.7\\[1ex]
+\textbf{Divide by 18.9} \qquad & \frac{\cancel{18.9}\,r^2}{\textcolor{red}{\cancel{18.9}}} = \frac{42.7}{\textcolor{red}{18.9}}\\[1ex]
+\textbf{Simplify} \qquad & r^2 = 2.26\\
+\textbf{Take square root} \qquad & r = \sqrt{2.26}\\[1ex]
+\textbf{Compute square root} \qquad & r = \qty{1.50}{m}\\ 
+\end{align*}
+
+
+
 \subsubsection{Electric Force and Gravitational Force}
 
 \subsubsection{How Changing Charge or Distance Affects the Electric Force}
@@ -2704,32 +2996,150 @@ The \textbf{\gls{law of conservation of charge}} \glsdesc{law of conservation of
 
 \subsection{Simple Circuits}
 
+\subsubsection*{Electric Current}
+
+\textbf{\Gls{electric current}} ($I$) is \glsdesc{electric current}. Mathematically, electric current is the rate at which electric charge moves through a point in a wire per unit time:
+
+\begin{equation} \label{JzFlJp}
+    I = \frac{\Delta Q}{\Delta t}
+\end{equation}
+
+where $\Delta{Q}$ is the amount of charge that flows and $\Delta{t}$ is the amount of time.
+
+\begin{center}
+    \begin{tabular}{cl|cc}
+    \hline
+    \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+    \hline\hline
+    \rule{0pt}{2.5ex}
+        $I$ & current & ampere & A\\
+        $\Delta{Q}$ & charge & coulomb & C\\
+        $\Delta{t}$ & time & second & s\\
+    \hline
+    \end{tabular}
+\end{center}
+
+ The SI unit for electric current is the \textbf{ampere} (A), where one ampere is one coulomb per second:
+
+\begin{equation*}
+    \SI{1}{A} = \SI{1}{C/s}
+\end{equation*}
+
+
+\begin{example}
+    A lightning strike can transfer as many as $10^{20}$ electrons from the cloud to the ground. If the strike lasts \SI{2}{ms} (milliseconds), what is the average electric current in the lightning?
+\end{example}
+
+\textit{Solution:}
+
+The total charge transferred is
+
+\begin{equation*}
+    \Delta Q = -ne = -(10^{20})(\SI{1.602e-19}{C}) = \SI{-16}{C}
+\end{equation*}
+
+The amount of time in seconds is
+
+\begin{equation*}
+    \Delta t = \SI{2}{ms} = \SI{2e-3}{s} = \SI{0.002}{s}
+\end{equation*}
+
+The current in the lightning is
+
+\begin{equation*}
+    I = \frac{\Delta Q}{\Delta t} = \frac{-\SI{16}{C}}{\SI{0.002}{s}} = \SI{-8000}{A}
+\end{equation*}
+
+The negative sign reflects the fact that electrons carry the negative charge. Thus, although the electrons flow from the cloud to the ground, the positive current is defined to flow from the ground to the cloud.
+
+\hfill $\blacksquare$
+
 \subsubsection{Components for a Simple Circuit}
+
 An \textbf{\gls{electric circuit}} is a \glsdesc{electric circuit}. A \textbf{\gls{simple circuit}} is \glsdesc{simple circuit}. A \textbf{\gls{resistor}} is a \glsdesc{resistor}. \textbf{\Gls{voltage}} is \glsdesc{voltage}.
 
-\subsubsection{Tracing the Conducting Path}
 
-\subsubsection{Ohm's Law: Current, Resistance, and Voltage}
+% \subsection*{Circuit Diagrams} \label{wpbAPw}
 
-\textbf{\Gls{electric current}} is \glsdesc{electric current}.
+A \textbf{circuit diagram} is a schematic drawing of an electrical circuit including all circuit elements, such as resistors, lamps, and batteries. Below are common symbols for circuit elements:
 
-\subsubsection{Measurements using a Multimeter, Ammeter, and Current Probe}
+\begin{circuitikz}
+    \draw (0,0) to[bulb]  (0.8,0) node[right=1mm]{bulb};
+    \hspace{4cm}
+    \draw (0,0) to[battery] (1,0) node[right=1mm]{battery};
+    \hspace{4cm}
+    \draw (0,0) to[cute open switch] (0.8,0) node[right=1mm]{switch (open)};
+    \hspace{4cm}
+    \draw (0,0) to[cute closed switch] (0.8,0) node[right=1mm]{switch (closed)};
+\end{circuitikz}
 
-\subsubsection{Calculating Voltage Drop}
+\vspace{1em}
 
-\subsubsection{Changes in Current with Changes in Voltage or Resistance}
+\begin{circuitikz}
+    \draw (0,0) to[resistor] (2,0) node[right=1mm]{resistor};
+    \hspace{4cm}
+    \draw (0,0) to[rmeter,t=A] (2,0) node[right=1mm]{ammeter};
+    \hspace{4cm}
+    \draw (0,0) to[rmeter,t=V] (2,0) node[right=1mm]{voltmeter};
+    \hspace{4.5cm}
+    \draw (0,0) -- (1.5,0) node[right=1mm]{wire};
+\end{circuitikz}
+
+\vspace{1em}
+
+Elements in a closed circuit may be connected ``in series'' or ``in parallel.'' \textbf{In series} is when elements in a circuit are connected one after the other in the same branch of the circuit. 
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[bulb]  (3,0) to[bulb]  (3,2)
+          (0,2) to[battery] (0,0)
+          (0,2) to[cute open switch] (3,2);
+\end{circuitikz}
+\end{center}
+
+\textbf{In parallel} is when a group of resistors or elements are connected side by side, with the top ends of the resistors connected together by a wire and the bottom ends connected together by a different wire. 
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[bulb]  (3,2)
+        (3,0) -- ++(2,0) to[bulb]  ++(0,2) -- ++(-2,0)
+        (0,2) to[battery] (0,0)
+        (0,2) to[cute open switch] (3,2);
+\end{circuitikz}
+\end{center}
+
+In the series case above, the current running through all wires is the same. In the parallel case, the current may change depending on which wire in the circuit you analyze.
+
+\vspace{1em}
+
+Circuit diagrams, like the two shown above, usually look neat and rectangular. Real world circuits, like one shown in the screen shot of the PhET Simulation below, don't always look neat:
+
+% \begin{center}
+%     \includegraphics[width=10cm]{../figures/Unit9_PhET_Circuit1.png}
+% \end{center}
+
+Elements like lamps and resistors cause resistance in a circuit. \textbf{resistance} is how much a circuit element opposes the passage of electric current. The SI unit of resistance is the ohm (\qty{}{\ohm}). For example, a resistor or lamp may apply 5.0 ohms, or \qty{5.0}{\ohm}, of resistance to a circuit:
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=\qty{5.0}{\ohm}] (2,0);
+    \begin{scope}[xshift=4cm]
+    \draw (0,0) to[lamp,l=\SI{5.0}{\ohm}] (2,0);
+    \end{scope}
+\end{circuitikz}
+\end{center}
+
+
+
+
+
+
 
 \subsubsection{Electrical Power}
 
 \textbf{\Gls{electric power}} is \glsdesc{electric power}.
 
-\subsubsection{Light Bulb Brightness}
 
-\subsection{Series Circuits}
-
-\subsubsection{Measurements in Series using a Multimeter, Ammeter, and Current Probe}
-
-\subsubsection{Current Flow through a Series Circuit}
 
 A circuit \textbf{\gls{in series}} is \glsdesc{in series}.
 
@@ -2737,43 +3147,11 @@ A circuit \textbf{\gls{in series}} is \glsdesc{in series}.
 
 An \textbf{\gls{equivalent resistor}} is the \glsdesc{equivalent resistor}.
 
-\subsubsection{Equivalent Voltage in Series}
 
-\subsubsection{Total Voltage}
-
-\subsubsection{Energy Transformations in Series}
-
-\subsubsection{Determining Current, Voltage, and Power in Series}
-
-\clearpage
-
-\subsection{Parallel Circuits}
-
-\subsubsection{Measurements in Parallel using a Multimeter, Ammeter, and Current Probe}
-
-\subsubsection{Junctions}
-
-\subsubsection{Current Flow through a Parallel Circuit}
 
 A circuit \textbf{\gls{in parallel}} is \glsdesc{in parallel}.
 
-\subsubsection{Voltage Drops in Parallel}
 
-\subsubsection{Parallel Circuits Compared to Series Circuits}
-
-\subsubsection{Equivalent Resistance in Parallel}
-
-\subsubsection{Equivalent Voltage in Parallel}
-
-\subsubsection{Energy Transformations in Parallel}
-
-\subsubsection{Determining Current, Voltage, and Power in Parallel}
-
-\subsection{Combination Circuits}
-
-\subsubsection{Voltage and Current in Combination Circuits}
-
-\subsubsection{Predicting which Bulbs will Light with Switches}
 
 \fi
 
@@ -2799,29 +3177,9 @@ A \textbf{\gls{magnetic dipole}} is the \glsdesc{magnetic dipole}.
 
 The \textbf{\gls{magnetic field}} consists of \glsdesc{magnetic field}.
 
-\subsubsection{Visualizing Magnetic Field Loops}
-
-\subsubsection{Predicting Attraction or Repulsion by Field Lines}
-
-\subsubsection{Magnetic Field Strength by Field Lines}
-
 \subsection{Compass}
 
 \subsubsection{How a Compass Points in the Direction of the Magnetic Field}
-
-\subsubsection{Earth's Magnetic and Geographic Poles}
-
-\subsection{Electromagnetic Fields}
-
-\subsubsection{Magnetic Fields and Moving Charges}
-
-\subsubsection{Magnetic Fields around Current Carrying Wires}
-
-\subsubsection{Representing Magnetic Fields Into and Out of the Page}
-
-\subsection{Electromagnetic Induction}
-
-\subsubsection{Changing Magnetic Fields and Induced Electrical Currents}
 
 \textbf{\Gls{electromagnetic induction}} is the \glsdesc{electromagnetic induction}.
 
@@ -2851,19 +3209,10 @@ A \textbf{\gls{transformer}} is a \glsdesc{transformer}.
 
 \subsection{Generators and Motors}
 
-\subsubsection{Converting Mechanical to Electrical Energy}
 
 A \textbf{\gls{generator}} is a \glsdesc{generator}
 
 An \textbf{\gls{electric motor}} is a \glsdesc{electric motor}.
-
-\subsubsection{Inducing More or Less Current in a Generator}
-
-\subsubsection{Moving Charge in an External Magnetic Field}
-
-\subsubsection{Construction and Operation of a Motor and Generator}
-
-\subsubsection{Changing the Rotational Speed of a Motor}
 
 \fi
 

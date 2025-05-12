@@ -1888,78 +1888,498 @@ An 89-kg system consisting of a bicycle and rider are rounding a turn at \SI{16}
 
 \subsubsection{How Radius and Mass Affects Orbiting Systems}
 
-\end{document}
+\subsection{Other}
+
+\begin{questions}
+
+\question
+The $x$-component is the \fillin\ component of a vector.
+
+\begin{choices}
+    \correctchoice horizontal
+    \choice vertical
+    \choice direction
+    \choice magnitude
+\end{choices}
+
+\question
+The $y$-component is the \fillin\ component of a vector?
+
+\begin{choices}
+    \choice horizontal
+    \choice direction
+    \choice magnitude
+    \correctchoice vertical
+\end{choices}
+
+
+\begin{EnvUplevel}
+\textbf{Refer to the figure below and answer the following questions.}
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+\def\Ax{2}
+\def\Ay{6}
+\begin{tikzpicture}
+\pgfplotsset{compat=1.11}
+    \begin{axis}[width=8cm,height=8cm,
+        axis lines = middle,
+        xlabel = $x$, x label style={anchor=west},
+        ylabel = $y$, y label style={anchor=south},
+        ymin=-8, ymax=8,
+        xmin=-8, xmax=8,
+        xtick={-8,-6,...,8},
+        ytick={-8,-6,...,8},
+        ymajorgrids=true,
+        xmajorgrids=true,
+        clip=false,
+        ]
+        \draw[ultra thick,red,->] (axis cs: 0,0) -- (\Ax,\Ay) node[red,above] {$\vec{A}$};
+    \end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\question
+What is the $x$-component of vector $\vec{A}$?
+
+\begin{choices}
+    \choice $-6$
+    \choice $-2$
+    \choice 6
+    \correctchoice 2
+\end{choices}
+
+\question
+What is the $y$-component of $\vec{A}$?
+
+\begin{choices}
+    \choice 2
+    \correctchoice 6
+    \choice $-2$
+    \choice $-6$
+\end{choices}
+\vspace{1em}
+\hrule
+
 
 
 \clearpage
-\begin{questions}
-\question
-If an object is thrown horizontally, travels with an average $x$-component of its velocity equal to \SI{5}{m/s}, and does not hit the ground, what will be the $x$-component of the displacement after \SI{20}{s}? 
+\begin{EnvUplevel}
+\textbf{Read the passage below. Then answer the following questions.}
 
-\begin{randomizechoices}
-    \choice \SI{-100}{m}
-    \choice \SI{-4}{m}
-    \choice \SI{4}{m}
-    \correctchoice \SI{100}{m}
-\end{randomizechoices}
+The fox travels 48 meters west, then makes a left and travels 55 meters south.
+\end{EnvUplevel}
 
 \question
-How can you express the vertical velocity, $v_y$, of a projectile in terms of its initial vertical velocity, $v_{iy}$, acceleration, $g$, and time, $t$?
+ What is the magnitude of the fox's resultant displacement? (\textit{Tip}: Draw a sketch.)
 
-\begin{randomizechoices}
-    \choice $v_y = -gt$
-    \correctchoice $v_y = v_{iy} - g t$
-    \choice $v_y + v_{iy} = -gt$
-    \choice $v_{iy} + v_y - gt$
-\end{randomizechoices} 
-
-% \question \label{MbIMKN}
-%     Create a table listing the boulder's speed at times $t = \SI{0}{s}$, \SI{1}{s}, \SI{2}{s}, \SI{3}{s}, \SI{4}{s}, and \SI{5}{s} after being dropped.
-
-%     \ref{MbIMKN}. $v = \SI{0}{m/s}$, \SI{10}{m/s}, \SI{20}{m/s}, \SI{30}{m/s}, \SI{40}{m/s}, and \SI{50}{m/s}.\\
-% 
-
-% \question \label{ObtV91}
-%     (a) Draw a qualitative (no numbers) \textbf{momentum vs.~time} graph representing the free fall of the boulder. (b) Draw a qualitative graph of \textbf{net force vs.~time}.
-% 
+\begin{choices}
+    \choice \SI{48}{m}
+    \choice \SI{55}{m}
+    \choice \SI{103}{m}
+    \correctchoice \SI{73}{m}
+\end{choices}
 
 \question
-After a projectile is launched in the air, in which direction does it experience constant, non-zero acceleration, ignoring air resistance?
+What is the direction of the resultant displacement as measured counter-clockwise from \SI{0}{\degree} (i.e., from the east axis)?
 
-\begin{randomizechoices}
-    \choice The $x$ direction
-    \correctchoice The $y$ direction
-    \choice Both the x and $y$ directions
-    \choice Neither direction
-\end{randomizechoices}
+\begin{choices}
+    \correctchoice \SI{229}{\degree}
+    \choice \SI{194}{\degree}
+    \choice \SI{48.9}{\degree}
+    \choice \SI{304}{\degree}
+\end{choices}
+\vspace{1em}
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Read the passage below. Then answer the remaining questions.}
+    
+    Sam Houston fires a cannon horizontally at \SI{63}{m/s} from the top of a tall cliff. The cliff is 754 meters tall.
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture} 
+    \tikzmath{
+        \gravity = 9.8;
+        \vi = 28.6;
+        \yi = 60;
+        \thetai = 0.0;
+        \ys = 1.3;
+        \x1 = 20; \y1 = 57.60;
+        \x2 = 40; \y2 = 50.42;
+        \x3 = 60; \y3 = 38.43;
+        \x4 = 80; \y4 = 21.66;
+        \x5 = \vi*sqrt(2*\yi/\gravity); \y5 = 0;
+    }
+    \pgfplotsset{compat=1.11}
+        \begin{axis}[width=8cm,height=8cm,ticks=none,
+        axis line style = {black!50},
+        axis lines = middle,
+        clip=false,
+        ylabel style= {anchor=south},
+        xlabel style= {anchor=west},
+        ylabel = $y$,
+        xlabel = $x$,
+        xmin=0, xmax=120,
+        ymin=0, ymax=80,
+        ]
+        \addplot [dashed,
+            domain=0:100,
+            samples=100, 
+            color=black!50,
+        ]
+        {\yi + tan(\thetai)*x - \gravity*x^2/(2*(\vi*cos(\thetai))^2)}; %equation of path
+        \fill (0,\yi) circle (3pt) node[left] {$y_0$};
+        \fill (\x1,\y1) circle (3pt); %Calculated using equator of path
+        \fill (\x2,\y2) circle (3pt);
+        \fill (\x3,\y3) circle (3pt);
+        \fill (\x4,\y4) circle (3pt);
+        \fill (\x5,\y5) circle (3pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 
 \question
-Using the conventional choice for positive and negative axes, what is the $y$-component of the acceleration of an object experiencing projectile motion?
+What is the horizontal acceleration of the cannon?
 
-\begin{randomizechoices}
-    \choice $\SI{-10}{m/s}$
-    \correctchoice $\SI{-10}{m/s^2}$
-    \choice \SI{10}{m/s}
-    \choice \SI{10}{m/s^2}
-\end{randomizechoices}
+\begin{choices}
+    \correctchoice \SI{0}{m/s^2}
+    \choice \SI{63}{m/s^2}
+    \choice \SI{9.8}{m/s^2}
+    \choice Unknown without time $t$
+\end{choices}
+
+\question
+What is the cannon's vertical acceleration?
+
+\begin{choices}
+    \choice \SI{0}{m/s^2}
+    \choice \SI{-63}{m/s^2}
+    \correctchoice \SI{-9.8}{m/s^2}
+    \choice Unknown without time $t$
+\end{choices}
+
+\clearpage
+\question
+What is the horizontal velocity of the cannon 4 seconds after launch?
+
+\begin{choices}
+    \correctchoice \SI{63}{m/s}
+    \choice \SI{252}{m/s}
+    \choice \SI{164}{m/s}
+    \choice \SI{0}{m/s}
+\end{choices}
+
+\question 
+What is the cannon's vertical velocity 4 seconds after launch?
+
+\begin{choices}
+    \choice \SI{-63.0}{m/s}
+    \correctchoice \SI{-39.2}{m/s}
+    \choice \SI{-105}{m/s}
+    \choice \SI{-44.1}{m/s}
+\end{choices}
+
+\question
+What is the cannon's horizontal displacement after 7 seconds of travel?
+
+\begin{choices}
+    \correctchoice \SI{441}{m}
+    \choice \SI{63}{m}
+    \choice \SI{867}{m}
+    \choice \SI{225}{m}
+\end{choices}
+
+\question
+What is the vertical displacement of the cannon 7 seconds after launch?
+
+\begin{choices}
+    \choice \SI{-34.4}{m}
+    \choice \SI{-96}{m}
+    \correctchoice \SI{-240}{m}
+    \choice \SI{-390}{m}
+\end{choices}
+
+
+\question
+How much time does it take the cannon to impact the ground below?
+
+\begin{choices}
+    \correctchoice \SI{12.4}{s}
+    \choice \SI{13.0}{s}
+    \choice \SI{14.1}{s}
+    \choice \SI{15.2}{s}
+\end{choices}
+
+\question
+What is the magnitude of the cannon's velocity as the cannon strikes the ground? (This is known as the ``entry speed.'')
+
+\begin{choices}
+    \choice \SI{58.6}{m/s}
+    \correctchoice \SI{136.9}{m/s}
+    \choice \SI{184.6}{m/s}
+    \choice \SI{7658}{m/s}
+\end{choices}
+
+
+
+
+\clearpage
+\question
+After takeoff, an airplane travels \SI{120}{m} at \SI{33}{\degree} above the horizontal. What is the horizontal component of its displacement?
+
+\begin{choices}
+    \choice \SI{65.4}{m}
+    \choice \SI{98.0}{m}
+    \correctchoice \SI{101}{m}
+    \choice \SI{3960}{m}
+\end{choices}
+
+\question
+For the airplane in the previous problem, what is the vertical displacement?
+
+\begin{choices}
+    \choice \SI{101}{m}
+    \choice \SI{75.4}{m}
+    \choice \SI{33.0}{m}
+    \correctchoice \SI{65.4}{m}
+\end{choices}
+
+
+\begin{EnvUplevel}
+\textbf{Refer to the figure below and answer the following questions.}
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+\def\A{5}
+\def\angle{142}
+\begin{tikzpicture}
+\pgfplotsset{compat=1.11}
+\begin{axis}[width=8cm,height=8cm,
+    axis lines=middle,
+    axis line style={black!20},
+    xmin=-5,xmax=5,ymin=-5,ymax=5,
+    axis equal,
+    ticks = none,
+    xlabel = $x$, x label style={anchor=west},
+    ylabel = $y$, y label style={anchor=south},
+        ticks=none,
+        clip=false,
+        ]
+        \node[left] at (axis cs: -5,0) {$-x$};
+        \node[below] at (axis cs: 0,-5) {$-y$};
+        \draw[thick] (axis cs: -1,0) arc (180:\angle:1);
+        \node at (axis cs: -1.8,0.5) {\SI{38}{\degree}}; %180 - 142 = 38
+        \draw[ultra thick,black,->] (axis cs: 0,0) -- ++(axis direction cs: {\A*cos(\angle)},{\A*sin(\angle)}) node[above] {$\vec{A}=16$};
+    \end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\question
+What is the $x$-component of the vector?
+
+\begin{choices}
+    \choice $-9.85$
+    \choice 12.6
+    \choice 9.85
+    \correctchoice $-12.6$
+\end{choices}
+
+\question
+What is the $y$-component of the vector?
+
+\begin{choices}
+    \choice 12.6
+    \correctchoice 9.85
+    \choice $-12.6$
+    \choice $-9.85$
+\end{choices}
+
+\question
+Memo, the goalkeeper, wants to kick a soccer ball as far down the field as possible. Which of the following launch angles will produce the largest horizontal displacement?
+
+\begin{minipage}{6cm}
+\centering
+    \begin{randomizechoices}
+        \correctchoice \ang{47}
+        \choice \ang{86}
+        \choice \ang{15}
+        \choice \ang{39}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{6cm}
+    \begin{center}
+        \begin{tikzpicture} 
+        \tikzmath{
+            \vi = 18.0;
+            \yi = 0;
+            \thetai = 70.0;
+        }
+        \tikzset{declare function={f(\x)=\yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);}} %equation of path
+        \pgfplotsset{compat=1.11}
+            \begin{axis}[width=7cm,height=6cm,ticks=none,
+            axis lines = center,
+            clip=false,
+            ylabel = $y$,
+            xlabel = $x$,
+            xmin=0, xmax=20,
+            ymin=0, ymax=18,
+            % axis line style={draw=none},
+            ]
+            \draw[dashed,domain=0:16,variable=\x,samples=200] plot ({\x},{f(\x)}) node {\faSoccerBallO};
+            \draw (1.5,0) arc (0:60:1.5) node[right=2pt,pos=0.8] {$\theta$};
+            \end{axis}
+        \end{tikzpicture}
+        \label{i1Y7vV}
+    \end{center}
+\end{minipage}
 
 \question
 What is the angle between the $x$ and $y$ components of a vector?
 
-\begin{randomizechoices}[norandomize]
-    \choice \ang{0}
+\begin{randomizechoices}
     \correctchoice \ang{90}
     \choice \ang{45}
-    \choice \ang{180}
+    \choice \ang{0}
+    \choice \ang{30}
 \end{randomizechoices}
 
 \question
-Horizontal and vertical motions of a projectile are independent of each other. What does this mean?
+True or False? Range is defined as the maximum vertical distance travelled by a projectile. 
+
+\begin{choices}
+    \choice True
+    \correctchoice False
+\end{choices}
+
+\question
+For what angle of a projectile is its range equal to zero?
 
 \begin{randomizechoices}
-    \correctchoice All objects in projectile motion with the same initial vertical velocity fall at the same rate, regardless of their horizontal velocity.
-    \choice All objects in projectile motion fall at different rates, regardless of their initial horizontal velocities.
-    \choice Any object in projectile motion falls at the same rate as its initial vertical velocity, regardless of its initial horizontal velocity.
-    \choice All objects in projectile motion fall at different rates and the rate of fall of the object is independent of the initial velocity.
+    \correctchoice \ang{90}
+    \choice \ang{45}
+    \choice \ang{10}
+    \choice \ang{1}
 \end{randomizechoices}
+
+\clearpage
+\question
+On November 5, 2022, Yordan Alvarez of the Houston Astros hit a game-winning home run at Minute Maid Park. The baseball was hit with an exit velocity of \SI{50.3}{m/s} at a launch angle of \ang{27}. When the ball's horizontal displacement from the plate was 110 meters, its height above ground was 26.5 meters. Calculate the ball's displacement from home plate at this instant.
+
+\vspace{1em}
+
+\begin{minipage}{6cm}
+    \centering 
+    \begin{randomizechoices}
+        \correctchoice \SI{113}{m}
+        \choice \SI{110}{m}
+        \choice \SI{136}{m}
+        \choice \SI{12803}{m}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{6cm}
+    \centering 
+    \begin{center}
+        \begin{tikzpicture} 
+        \tikzmath{
+            \vi = 50.3;
+            \yi = 0;
+            \thetai = 27.0;
+        }
+        \tikzset{declare function={f(\x)=\yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);}} %equation of path
+        \pgfplotsset{compat=1.11}
+        \begin{axis}[width=6cm,height=6cm,ticks=none,
+            axis lines = center,
+            clip=false,
+            axis equal image,
+            xmin=0, xmax=120,
+            ymin=0, ymax=40,
+            axis line style={draw=none},
+            ticks=none,
+            ]
+            \draw[lightgray,domain=0:110,variable=\x,samples=200] plot ({\x},{f(\x)});
+            \draw[->,thick] (0,0) -- ++(110,{f(110)}) node[pos=0.75,below]{$d$};
+            \draw[->,dashed] (0,0) -- ++(110,0) node[pos=0.5,below] {\SI{110}{m}};
+            \draw[->,dashed] (110,0) -- ++(0,{f(110)}) node[pos=0.5,right] {\SI{26.5}{m}};
+            \draw[fill=black] (110,{f(110)}) circle (2pt);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}    
+\end{minipage}%
+
+\question
+The Harbinger Willow Tail is a comet-like firework shell that makes for an awesome spectacle. It's launched with horizontal and vertical velocity components of \SI{20.6}{m/s} and \SI{51.0}{m/s}, respectively. How much time after launch will it take the Harbinger to reach its maximum height?
+
+\begin{randomizechoices}
+    \correctchoice \SI{5.2}{s}
+    \choice \SI{6.9}{s}
+    \choice \SI{4.8}{s}
+    \choice \SI{7.3}{s}
+\end{randomizechoices}
+
+
+
+\clearpage
+
+\question \label{EJzjXh}
+The JPMorgan Chase Tower is the tallest building in Houston, at a height of 305 meters. If Tiger Woods horizontally launches a golf ball at 12 meters per second off the roof, how long will it take the ball to strike the ground? Ignore air resistance.
+
+\begin{minipage}{6cm}
+    \centering
+    \begin{randomizechoices}
+        \correctchoice \SI{7.9}{s}
+        \choice \SI{5.6}{s}
+        \choice \SI{1.6}{s}
+        \choice \SI{3.9}{s}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{6cm}
+    \centering
+    \begin{center}
+        \begin{tikzpicture}[
+                declare function={f(\x,\yi,\vi,\thetai)=\yi + tan(\thetai)*\x - \grav*\x^2/(2*(\vi*cos(\thetai))^2);}, %equation of path
+                declare function ={R(\vi,\thetai)= \vi^2*sin(2*\thetai)/\grav;}, %range
+                declare function={h(\vi,\thetai)=(\vi*sin(\thetai))^2/(2*\grav);}, %maximum height
+            ]
+            \tikzmath{
+                \grav = 9.8;
+                \sf = 0.5; %scale factor for vector components
+            }
+        \pgfplotsset{compat=1.11}
+            \begin{axis}[width=6cm,height=6cm,ticks=none,
+            axis lines = center,
+            clip=false,
+            xmin=0, xmax=150,
+            ymin=0, ymax=350,
+            axis line style={draw=none}
+            ]
+            \draw[dashed,domain=0:95,variable=\x,samples=100] plot ({\x},{f(\x,305,12,0)});
+            \begin{scope}[shift={(-20,0)}]
+                \draw[fill=black!50] (0,0) rectangle (20,305);
+            \end{scope}
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}
+
+\question
+How does the elapsed time from Question \ref{EJzjXh} change if the ball is dropped vertically from rest instead of launched horizontally?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice The new elapsed time remains the same.
+    \choice The new elapsed time is longer.
+    \choice The new elapsed time is shorter.
+    \choice It's impossible to determine.
+\end{randomizechoices}
+
+
+
 \end{questions}
+
+\end{document}
+
+

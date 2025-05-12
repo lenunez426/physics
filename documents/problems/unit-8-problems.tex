@@ -1,4 +1,13 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+%\documentclass[../main-physics-problems.tex]{subfiles}
+
+
+%...For a standalone document, un-comment lines below and recompile here:
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
+\setcounter{section}{8}
+
 \begin{document}
 
 \subsection{Physical Systems}
@@ -760,6 +769,30 @@ How much power is expended if you lift a \SI{60}{N} crate 10 meters in 1 second?
 
 \subsubsection{Total Momentum Before and After Collisions and Explosions}
 
+\begin{questions}
+\question
+A \SI{3}{kg} cannonball is shot from a \SI{200}{kg} cannon initially at rest. The cannon recoils backwards at \SI{0.4}{m/s}.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,-0.4) rectangle (2.5,0.4);
+    \fill (2.5,0) ellipse (0.12 and 0.4);
+    \draw (0.8,-0.1) node {\resizebox{1cm}{!}{\textlinb{\BPwheel}}};
+\end{tikzpicture}
+\hspace{3cm}
+\begin{tikzpicture}
+    \draw (0,-0.4) rectangle (2.5,0.4);
+    \fill (2.5,0) ellipse (0.12 and 0.4);
+    \draw (0.8,-0.1) node {\resizebox{1cm}{!}{\textlinb{\BPwheel}}};
+    \draw[->,thick] (-0.1,0) -- ++(-1,0) node[above,pos=0.9] {\SI{0.4}{m/s}};
+    \begin{scope}[shift={(3.5,0)}]
+        \draw[fill=lightgray] (0,0) circle (0.3);
+        \draw[->,thick] (0.4,0) -- ++(1,0);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{questions}
+
 \subsubsection{Law of Conservation of Momentum}
 
 \begin{questions}
@@ -781,9 +814,253 @@ A ball is hit by a racket and its momentum changes. Under what conditions is mom
 
 \subsubsection{Solving for Unknown Quantities using Conservation of Momentum}
 
+\clearpage
 
 \begin{questions}
+\question
+A 11\,kg cube of bricks moving to the right at 12\,m/s collides with a 17\,kg cube of metal moving to the left at 19\,m/s. The objects slide on level ice, so you can ignore friction. (a) If the brick cube recoils at 24\,m/s to the left, what is the speed of the metal cube after collision? (b) In what direction does the metal cube move after collision? How do you know?
 
+
+\begin{solution}
+We are given 
+
+\vspace{-1em}
+\begin{align*}
+    m_1 &= \SI{11}{kg} \\[1ex]
+    v_1 &= \SI{12}{m/s} \\[1ex]
+    m_2 &= \SI{17}{kg} \\[1ex]
+    v_2 &= \SI{-19}{m/s} \\[1ex]
+    v_1^{\prime} &= \SI{-24}{m/s}
+\end{align*}
+
+Conservation of energy states
+
+\begin{equation*}
+    m_1v_1 + m_2 v_2 = m_1 v_1^{\prime} + m_2 v_2^{\prime}
+\end{equation*}
+
+Solving for $v_2^{\prime}$ and plugging in known values leads to a velocity of
+
+\begin{equation*}
+    v_2 = \frac{m_1 v_1 + m_2 v_2 - m_1 v_1^{\prime}}{m_2} = \boxed{\SI{4.3}{m/s}}
+\end{equation*}
+
+(b) The metal cube will recoil backwards and travel to the right, because our velocity value in the previous calculation is positive, indicating rightward motion.
+\end{solution}
+
+\question
+A \SI{1.00}{kg} marble moving to the right at \SI{0.80}{m/s} collides with a \SI{3.00}{kg} marble moving to the left at \SI{0.25}{m/s}. After the collision, the second marble recoils to the right at \SI{0.275}{m/s}. What is the velocity of the first marble after collision? 
+%\hfill \rotatebox[origin=c]{180}{\scriptsize \textcolor{lightgray}{\SI{-0.775}{m/s}}}
+
+\begin{solution}
+    \SI{-0.775}{m/s}
+\end{solution}
+
+\question
+After the elastic collision below, Ball 2 recoils at \SI{0.274}{m/s} to the right. Find the velocity of Ball 1 after collision. 
+%\hfill \rotatebox[origin=c]{180}{\scriptsize \textcolor{lightgray}{\SI{-4.75}{m/s}}}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[very thick,->] (0,0) -- (2.5,0) node[above] {\SI{3.76}{m/s}}; 
+        \draw[fill=white] (0,0) circle (1) node {\SI{1.54}{kg}};
+        \begin{scope}[shift={(8,0)}]
+            \draw[very thick,->] (0,0) -- ++(-2.5,0) node[above] {\SI{1.26}{m/s}}; 
+            \draw[fill=white] (0,0) circle (1) node {\SI{8.54}{kg}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    \SI{-4.75}{m/s}
+\end{solution}
+
+\question
+After the following elastic collision, Ball 2 moves at \SI{2.98}{m/s}. Find the final speed of Ball 1.
+
+%\hfill \rotatebox[origin=c]{180}{\scriptsize \textcolor{lightgray}{\SI{1.27}{m/s}}}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[very thick,->] (0,0) -- (2.5,0) node[above] {\SI{3.30}{m/s}}; 
+        \draw[fill=white] (0,0) circle (1) node {\SI{3.66}{kg}};
+        \begin{scope}[shift={(6,0)}]
+            \draw[very thick,->] (0,0) -- ++(2.5,0) node[above] {\SI{1.59}{m/s}}; 
+            \draw[fill=white] (0,0) circle (1) node {\SI{5.34}{kg}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+    \SI{1.27}{m/s}
+\end{solution}
+
+\question
+After the following elastic collision, Ball 1 moves at \SI{6.38}{m/s} to the left. What is the velocity of Ball 2 after collision? %\hfill \rotatebox[origin=c]{180}{\scriptsize \textcolor{lightgray}{\SI{-1.63}{m/s}}}
+
+
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[very thick,->] (0,0) -- (2.5,0) node[above] {\SI{1.10}{m/s}}; 
+        \draw[fill=white] (0,0) circle (1) node {\SI{2.01}{kg}};
+        \begin{scope}[shift={(8,0)}]
+            \draw[very thick,->] (0,0) -- ++(-2.5,0) node[above] {\SI{3.65}{m/s}}; 
+            \draw[fill=white] (0,0) circle (1) node {\SI{7.34}{kg}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+    \SI{-1.60}{m/s}
+\end{solution}
+
+
+\question 
+After an elastic collision, Ball 1 moves with a velocity of \SI{-0.125}{m/s}. What is the velocity of Ball 2?
+
+% \hfill \rotatebox[origin=c]{180}{\scriptsize \textcolor{lightgray}{\SI{1.375}{m/s}}}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[very thick,->] (0,0) -- (2.5,0) node[above] {\SI{1.00}{m/s}}; 
+        \draw[fill=white] (0,0) circle (1) node {\SI{2.50}{kg}};
+        \begin{scope}[shift={(8,0)}]
+            \draw[very thick,->] (0,0) -- ++(-2.5,0) node[above] {\SI{0.50}{m/s}}; 
+            \draw[fill=white] (0,0) circle (1) node {\SI{1.50}{kg}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+    \SI{1.375}{m/s}
+\end{solution}
+
+\clearpage
+
+\question \label{W5BnBq} %%% Refer to this example at the beginning of the unit to motivate a better understanding of momentum. Our object is to scaffold up 
+Nancy the ice skater, whose mass is \SI{70}{kg}, stands at rest with ice skates on an icy (frictionless) surface. She uses superhero strength to throw a \SI{5}{kg} sack of potatoes horizontally away from her body at \SI{50}{m/s} (\SI{112}{mph}). As a result of both the frictionless surface and the law of conservation of momentum, she will accelerate in the direction opposite the sack. The speed she gains as a result throwing the object is known as the \textbf{recoil velocity}. Calculate Nancy's recoil velocity.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=lightgray] (0,0) circle (6mm) node[left=6mm] {\SI{70}{kg}};
+    \draw[fill=lightgray] (0.9,0) circle (3mm) node[right=3mm] {\SI{5}{kg}};
+\end{tikzpicture}%
+\hspace{2cm}
+\begin{tikzpicture}
+    \draw[->] (0,0) -- (-1.2,0) node[left] {$v_1^\prime$};
+    \draw[fill=lightgray] (0,0) circle (6mm); %node[below=6mm] {\SI{70}{kg}};
+    \begin{scope}[xshift=2cm]
+        \draw[->] (0,0) -- (+2.2,0) node[right] {$v_2^\prime = \SI{50}{m/s}$};
+        \draw[fill=lightgray] (0,0) circle (3mm); %node[below=3mm] {\SI{5}{kg}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{solution}
+We are given Nancy's mass, the sack's mass, and the final velocity of the sack: $m_1 = \SI{70}{kg}$, $m_2 = \SI{5}{kg}$, and $v_2^{\prime} = \SI{50}{m/s}$. Furthermore, the initial velocities of both objects is zero: $v_1 = 0$ and $v_2 = 0$. The unknown quantity we're looking for is Nancy's final (recoil) velocity: $v_1^{\prime} =\ ?$ All these quantities are related by the law of conservation of momentum:
+
+\begin{equation*}
+    m_1 v_1 + m_2 v_2 = m_1 v_1^{\prime} + m_2 v_2^{\prime}
+\end{equation*}
+
+Substituting the known values leads to 
+
+\begin{equation*}
+    0 = 70\,v_1^{\prime} + (5)(50)
+\end{equation*}
+
+ which simplifies to 
+
+ \begin{equation*}
+     0 = 70\,v_1^{\prime} + 250
+ \end{equation*}
+
+ Solve for the recoil velocity ($v_1^{\prime}$) as follows:
+
+ \begin{align*}
+     \textbf{Write $v_1^{\prime}$ on left} \qquad & 70\,v_1^{\prime} + 250 = 0\\[0.5ex]
+     \textbf{Subtract 250} \qquad & 70\,v_1^{\prime} + \cancel{250} \mathbin{\color{red} - } \textcolor{red}{\cancel{250}} = \mathbin{\color{red} - } \textcolor{red}{250}\\[0.5ex]
+     \textbf{Simplify} \qquad &  70\,v_1^{\prime} = -250\\[0.5ex]
+     \textbf{Divide by 70} \qquad & \frac{\cancel{70}\,v_1^{\prime}}{\textcolor{red}{\cancel{70}}} = \frac{-250}{\textcolor{red}{70}}\\[0.5ex]
+     \textbf{Simplify} \qquad & v_1^{\prime} = -3.57\\
+ \end{align*}
+
+Therefore, Nancy's recoil velocity is \SI{-3.57}{m/s}. She slides backwards as a result of throwing the object forward, all while the momentum of the system remains conserved.
+\end{solution}
+
+\begin{EnvUplevel} %...APP1-8.32
+    \textbf{Questions \ref{MLfZn}--\ref{Gw24a}.} During an ice show, a 55\,kg skater leaps into the air and is caught by an initially stationary 79\,kg skater. 
+\end{EnvUplevel}
+     
+\question \label{MLfZn}
+What is their final velocity assuming negligible friction and that the 55\,kg skater's original horizontal velocity is 5.75\,m/s? 
+ 
+\begin{randomizechoices}
+    \correctchoice \SI{2.36}{m/s}
+    \choice \SI{14.0}{m/s}
+    \choice \SI{4.00}{m/s}
+    \choice \SI{8.24}{m/s}
+\end{randomizechoices}
+ 
+\question \label{Gw24a}
+How much kinetic energy is lost?
+ 
+\begin{randomizechoices}
+    \correctchoice \SI{536}{J}
+    \choice \SI{1278}{J}
+    \choice \SI{906}{J}
+    \choice \SI{0}{J}
+\end{randomizechoices}
+
+\bigskip
+
+\hrule
+
+\question \label{copy of 4.4 Q7 Inelastic collisions - final kinetic energy}
+
+A \SI{6}{kg} penguin sliding at \SI{4}{m/s} collides and sticks to a second \SI{10}{kg} penguin that is initially stationary. What is the kinetic energy of the system of penguins after the collision?
+
+\ifprintanswers
+{\color{red}
+$\displaystyle \frac{1}{2} \left(\frac{m_1^2}{m_1 + m_2}\right) v^2$
+}
+\medskip
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{18}{J}
+    \choice \SI{48}{J}
+    \choice \SI{1.5}{J}
+    \choice \SI{128}{J}
+\end{randomizechoices}
+
+
+
+\question
+Two objects moving towards each other experience an inelastic collision. After the collision, the kinetic energy of the system\dots    
+ 
+\begin{randomizechoices}[keeplast]
+    \choice remains constant
+    \choice increases
+    \correctchoice decreases
+    \choice may increase or decrease depending on the speeds of the objects
+\end{randomizechoices}
+
+\question %...Example 8.1 
+Calculate the momentum of a \SI{116}{kg} football player running at \SI{7.0}{m/s}. 
+
+\begin{randomizechoices}
+    \correctchoice \SI{812}{kg\,m/s}
+    \choice \SI{123}{kg\,m/s}
+    \choice \SI{16.6}{kg\,m/s}
+    \choice \SI{2842}{kg\,m/s}
+\end{randomizechoices}
 
 
 \question \label{yEzMEO}
@@ -793,63 +1070,12 @@ A billiards ball rolling on the table has momentum $p_1$. It hits another statio
 It will decrease.
 \end{solution}
 
-\question
-Give an example of an isolated system. (\textit{Hint}: What were some of the examples alluded to in the text?)
 
 
-\question \label{Fl5xyW}
-As in Example \ref{W5BnBq}, calculate the recoil velocity of an 85-kilogram man who, standing on a frictionless surface, throws a \SI{20}{kg} boulder away from his body at \SI{6.0}{m/s}.
 
-\begin{solution}
-\SI{-1.4}{m/s}
-\end{solution}
-
-
-\question \label{dMW612}
-Solve Example \ref{W5BnBq} without plugging in the given numbers; that is, by algebraically manipulating the variables only. Your final answer should be an equation for $v_1^{\prime}$ in terms of $m_2$, $v_2^{\prime}$, and $m_1$.
-
-\begin{solution}
-$v_1^{\prime} = -\frac{m_2\,v_2^{\prime}}{m_1}$
-\end{solution}
-%%%%%%%%
 
 \question \label{rhrGbz}
 What is an elastic collision?
-
-
-% \question
-%     In which type of collision is kinetic energy conserved?
-% 
-
-\question\label{bTj1d8} %%% I made a mistake creating this problem. Need to fix this problem to ensure it doesn't violate conservation of energy. 
-An object with a mass of \SI{7.0}{kg} moving at \SI{13.6}{m/s} experiences an elastic collision with an object of mass \SI{23}{kg} moving at \SI{-1.9}{m/s}. The first object's velocity after collision is \SI{-2.5}{m/s}. Draw a sketch with labels, like the one shown in Example \ref{wXY1rT}, and calculate the second object's velocity after collision.
-
-\begin{solution}
-\SI{3.0}{m/s}
-\end{solution}
-
-
-\question \label{O4Og7L} %%% I made a mistake creating this problem. Need to fix this problem to ensure it doesn't violate conservation of energy. 
-Mass of the first object is \SI{2.0}{kg}.
-Initial velocity of the first object is \SI{10}{m/s}. 
-Mass of the second object is \SI{6.0}{kg}. 
-Initial velocity of the second object is \SI{-1.5}{m/s}. 
-Velocity of the first object after collision is \SI{-3}{m/s}.
-
-\begin{solution}
-\SI{2.83}{m/s}
-\end{solution}
-
-\question \label{6yR4Xo} %%% I made a mistake creating this problem. Need to fix this problem to ensure it doesn't violate conservation of energy. 
-Mass of the first object is \SI{354}{kg}.
-Initial velocity of the first object is \SI{58}{m/s}. 
-Mass of the second object is \SI{768}{kg}. 
-Initial velocity of the second object is \SI{-47}{m/s}. 
-Velocity of the first object after collision is \SI{-20}{m/s}.
-
-\begin{solution}
-\SI{-11.0}{m/s}
-\end{solution}
 
 
 
@@ -858,7 +1084,7 @@ What is an inelastic collision?
 
 
 \question \label{3Fptzi}
-An object with a mass of \SI{1.25}{kg} moving at a velocity of \SI{2.11}{m/s} experiences an inelastic collision with a \SI{3.00}{kg} object that is moving at \SI{-1.90}{m/s}. Draw a sketch of the objects, including given and unknown quantities, like the figure in Example \ref{usQeew}. What is the final velocity of the combined system after the collision, $v^{\prime}$? 
+An object with a mass of \SI{1.25}{kg} moving at a velocity of \SI{2.11}{m/s} experiences an inelastic collision with a \SI{3.00}{kg} object that is moving at \SI{-1.90}{m/s}. Draw a sketch of the objects, including given and unknown quantities. What is the final velocity of the combined system after the collision, $v^{\prime}$? 
 
 \begin{solution}
 \SI{-0.72}{m/s}
@@ -1304,6 +1530,415 @@ In what direction are the players moving after the collision?
 \bigskip
 
 \hrule
+
+
+\question
+Describe what happens to the energy of the car-earth system as the car moves down the ramp from point A to point B. Assume friction is negligible. 
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,0) -- (2,-2) -- ++(3,0) -- ++(2,2);
+        \node[rotate=-45,above=-1mm] at (0.2,-0.2) {\reflectbox{\twemoji[width=8mm]{automobile}}} node[above right=3mm] {\textbf{A}};
+        \node[rotate=-45,above=-1mm] at (1.5,-1.5) {\reflectbox{\twemoji[width=8mm]{automobile}}}; 
+        \node[above right=3mm] at (1.5,-1.5) {\textbf{B}};
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \choice The car's kinetic energy stays the same, gravitational potential energy stays the same, and total energy stays the same
+    \correctchoice The car's kinetic energy increases, gravitational potential energy decreases, and total energy stays the same
+    \choice The car's kinetic energy stays the same, gravitational potential energy increases, and total energy increases
+    \choice The car's kinetic energy increases, gravitational potential energy increases, and total energy stays the same
+\end{randomizechoices}
+
+\question
+A skater starts at the top of a skating ramp and skates down the ramp and up the other side. If we ignore the effect of friction, which energy bar graph best describes the energy of the skater-earth system when the skater is halfway down the ramp?
+
+\begin{minipage}{0.6\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick,domain=0:4] plot (\x,{0.8*(\x-2)^2});
+        \draw (0,3.2) node[above right=-1.5mm,rotate=-55] {\Strichmaxerl[2.5]};
+    \end{tikzpicture}    
+\end{minipage}%
+\begin{minipage}{0.35\textwidth}
+    \centering
+    \begin{randomizechoices}
+        \choice Graph A
+        \choice Graph B
+        \correctchoice Graph C
+        \choice Graph D
+    \end{randomizechoices}    
+\end{minipage}%
+
+\bigskip
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=90,title=\textbf{Graph A},
+        symbolic x coords={$E_k$,$E_g$,$E_\mathrm{total}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_k$,80)
+            ($E_g$,0)
+            ($E_\mathrm{total}$,80)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+        \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=90,title=\textbf{Graph B},
+        symbolic x coords={$E_k$,$E_g$,$E_\mathrm{total}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_k$,0)
+            ($E_g$,80)
+            ($E_\mathrm{total}$,80)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+    \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=90,title=\textbf{Graph C},
+        symbolic x coords={$E_k$,$E_g$,$E_\mathrm{total}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_k$,40)
+            ($E_g$,40)
+            ($E_\mathrm{total}$,80)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+    \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=90,title=\textbf{Graph D},
+        symbolic x coords={$E_k$,$E_g$,$E_\mathrm{total}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_k$,60)
+            ($E_g$,20)
+            ($E_\mathrm{total}$,80)
+        };
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\question
+The box is about to fall off the building. How much kinetic energy will the box have right before hitting the ground? Assume air resistance is negligible.
+
+\begin{minipage}{0.3\textwidth}
+    \centering
+    \begin{randomizechoices}
+        \choice \SI{1500}{J}
+        \choice \SI{4500}{J}
+        \choice \SI{300}{J}
+        \correctchoice \SI{3000}{J}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \draw[fill=black!10] (0,0) rectangle ++(1,3);
+        \draw[<->,dashed] (-0.2,0) -- ++(0,3) node[pos=0.5,left] {\SI{30}{m}};
+        \draw[fill=yellow!30] (0.8,3) rectangle ++(1,1) node[pos=0.5] {\SI{10}{kg}};
+    \end{tikzpicture}
+\end{minipage}
+
+\question
+You drop a \SI{5}{kg} bowling ball from \SI{2}{meters} above a trampoline. When it bounces, it only bounces up \SI{1}{meter}. How much of the ball's energy was turned into thermal energy when it hit the trampoline?
+
+\begin{randomizechoices}
+    \choice \SI{1}{J}
+    \correctchoice \SI{50}{J}
+    \choice \SI{25}{J}
+    \choice \SI{10}{J}
+\end{randomizechoices}
+
+\question
+Stickman pushes a \SI{20}{kg} box up a hill. It takes him 10 seconds to reach the top. At the top of the hill, the box has 1200 joules of gravitational potential energy. What was Stickman's power output?
+
+\begin{minipage}{0.3\textwidth}
+    \begin{randomizechoices}
+        \correctchoice \SI{120}{W}
+        \choice \SI{20}{W}
+        \choice \SI{200}{W}
+        \choice \SI{240}{W}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+    \begin{tikzpicture}
+        \draw (0,0) -- (2,2) -- ++(1,0);
+        \begin{scope}[rotate=45]
+            \draw[ultra thick] (0.5,0) rectangle ++(0.5,0.5);
+            \draw[->] (1,0.25) -- ++(0.75,0);
+        \end{scope}
+    \end{tikzpicture}
+\end{minipage}
+
+\question
+A truck is driving down the freeway when it hits a bird. The truck experiences a force of 100 Newtons and a change in momentum of \SI{2.5}{kg\,m/s}. If the truck has $1000\times$ the mass of the bird, the bird will experience a force of \fillin\ Newtons and a change in momentum of \fillin\,\SI{}{kg\,m/s}.
+
+\begin{randomizechoices}
+    \correctchoice 100; 2.5
+    \choice 100,000; 2500
+    \choice 100; 2500
+    \choice 100,000; 2.5
+\end{randomizechoices}
+
+\question
+An army is shooting a cannon at a castle. When the cannon shoots a \SI{1}{kg} cannon ball, the ball leaves the cannon with a velocity of \SI{150}{m/s}. The cannon moves backwards at \SI{1}{m/s}. What is the mass of the cannon?
+
+\begin{randomizechoices}
+    \choice \SI{3}{kg}
+    \correctchoice \SI{150}{kg}
+    \choice \SI{1}{kg}
+    \choice \SI{50}{kg}
+\end{randomizechoices}
+
+\question
+Object A is moving with the momentum shown in the momentum vs time graph. Between 4 and 6 seconds, object A has a collision with object B. How much momentum does object B gain during the collision?
+
+\begin{minipage}{0.3\textwidth}
+\centering
+    \begin{randomizechoices}
+        \correctchoice \SI{60}{kg\,m/s}
+        \choice \SI{30}{kg\,m/s}
+        \choice \SI{-40}{kg\,m/s}
+        \choice \SI{-60}{kg\,m/s}
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+\centering
+    \begin{tikzpicture}
+        \begin{axis}[width=8cm,height=6cm,
+            ymin=0,ymax=120,
+            xmin=0,xmax=10,
+            ylabel={Momentum (\SI{}{kg\,m/s})},
+            xlabel={Time (s)},
+            title={Momentum vs.~Time Graph},
+            xtick={0,2,...,10},
+            ytick={0,20,...,120},
+            axis lines=left,
+            grid=both,
+            ]
+            \draw[ultra thick,blue] (0,100) -- (4,100) -- (6,40) -- (10,40); 
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+
+\question
+A \SI{5100}{kg} airplane is flying 1300 meters above the ground. The plane's velocity is \SI{245}{m/s}. Which of the following represents how to calculate the total mechanical energy of the airplane-earth system?
+
+\begin{randomizechoices}
+    \smallskip
+    \correctchoice $(5100)(10)(1300) + \frac{1}{2}(5100)(245)^2\,\text{joules}$ \smallskip
+    \choice $(5100)(10)(1300) + \frac{1}{2}(5100)(245)^2\,\text{joules}$ \smallskip
+    \choice $ \frac{1}{2}(5100)(245)^2\,\text{joules}$\smallskip
+    \choice $(5100)(10)(1300)\,\text{joules}$\smallskip
+\end{randomizechoices}
+
+\question
+Three mountain climbers of equal weight travel up a mountain, but each one takes a different path. Which climber has acquired the most GPE upon reaching the top of the mountain? (Use a system consisting of the climber and the earth).
+
+\begin{minipage}{0.4\textwidth}
+    \begin{randomizechoices}[norandomize]
+        \choice Climber 1
+        \choice Climber 2
+        \choice Climber 3
+        \correctchoice GPE's would all be equal.
+    \end{randomizechoices}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \coordinate (origin) at (-2,-2);
+        \coordinate (peak) at (0,1.8);
+        \draw (0,0) node[opacity=0.6] {\twemoji[height=4cm]{snow-capped mountain}};
+        \draw[ultra thick,rounded corners=5mm,red] (origin) node[left,black] {Start} -- (-1,-0.8) -- (peak) ;
+        \draw[ultra thick,rounded corners=5mm,red] (origin) -- (0,-1) -- (-0.5,0) -- (0.5,0.5)-- (peak);
+        \draw[ultra thick,rounded corners=5mm,red] (origin) -- (1,-1.5) -- (1.1,0.5) -- (peak) node[above,black] {Finish};
+        \node[red] at (-0.5,1.3) {\textbf{1}};
+        \node[red,fill=white] at (0,-0.2) {\textbf{2}};
+        \node[red] at (0.8,1.4) {\textbf{3}};
+    \end{tikzpicture}
+\end{minipage}
+
+\question 
+You need to lift a heavy weight. How can you increase your power without changing the amount of work you do?
+
+\begin{randomizechoices}
+    \choice Lift the weight slowly
+    \correctchoice Lift the weight quickly
+    \choice Make the weight lighter
+    \choice Make the weight heavier
+\end{randomizechoices}
+
+\question
+Two students are asked to move their desks across the room. Student A gets it done in 10 seconds, but student B takes 20 seconds to get it done. What can be said about the power of Student A?
+
+\begin{randomizechoices}
+    \correctchoice Student A has twice ($2\times$) the power of Student B
+    \choice Student A has half ($\frac{1}{2}\times$) the power of Student B
+    \choice Student A has quadruple ($4\times$) the power of Student B
+\end{randomizechoices}
+
+
+\question
+A brave monkey stands on the edge of a high-dive diving board. If the monkey-earth system has \SI{3000}{J} of GPE when the monkey is at the top of the board, then how much kinetic energy would the monkey have at the bottom, right before he lands in the water? Assume air resistance is negligible.
+
+\begin{randomizechoices}
+    \correctchoice \SI{3000}{J} of KE
+    \choice \SI{0}{J} of KE
+    \choice \SI{-3000}{J} of KE
+    \choice \SI{1500}{J} of KE
+\end{randomizechoices}
+
+
+
+% \question
+% A \SI{2}{kg} brick falls to the ground from a \SI{3}{m} high roof. What is the work done of the brick by the force of gravity?
+
+% \begin{randomizechoices}
+%     \choice \SI{600}{J}
+%     \correctchoice \SI{60}{J}
+%     \choice \SI{0}{J}
+%     \choice \SI{6}{J}
+% \end{randomizechoices}
+
+\question 
+For an object sliding on a surface with friction, what effect will the frictional force have on this system?
+
+\begin{randomizechoices}
+    \choice It will not affect the energy of the system.
+    \choice Not enough information is given to know the effects of friction on the system.
+    \choice It will do work to add energy to the system.
+    \correctchoice It will do work to remove energy from the system.
+\end{randomizechoices}
+
+\question
+A \SI{6}{kg} book is resting on a shelf that is \SI{2}{m} above the floor. How much gravitational potential energy does the book-earth system have?
+
+\begin{randomizechoices}
+    \choice \SI{12}{J}
+    \correctchoice \SI{120}{J}
+    \choice \SI{3}{J}
+    \choice \SI{30}{J}
+\end{randomizechoices}
+
+\question
+The graphs below show the initial and final energies of a rock-earth system as the rock falls towards the earth. Which of the following statements could be inferred from the data in the graphs below?
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=12,title=\textbf{Initial},
+        symbolic x coords={$E_g$,$E_k$,$E_\mathrm{T}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_g$,8)
+            ($E_k$,4)
+            ($E_\mathrm{T}$,12)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+    \hspace{1cm}
+    \begin{tikzpicture}
+    \begin{axis}[width=4cm,height=4cm,ymin=0,ymax=12,title=\textbf{Final},
+        symbolic x coords={$E_g$,$E_k$,$E_\mathrm{T}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=blue] coordinates {
+            ($E_g$,6)
+            ($E_k$,4)
+            ($E_\mathrm{T}$,8)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice The decrease in total energy is due to the external work of air resistance.
+    \choice Since the kinetic energy was constant, there was no external work done on the system.
+    \choice The decrease in kinetic energy is due to the external work of air resistance.
+\end{randomizechoices}
+
+
+\question
+A father (\SI{100}{kg}) and his son (\SI{50}{kg}) are jogging at the same speed. Which statement is true about the kinetic energies (KE) of the father and the son? The father's KE is\dots
+
+\begin{randomizechoices}
+    \choice Two times smaller than the son's KE.
+    \choice Four times smaller than the son's KE.
+    \correctchoice Two times larger than the son's KE.
+    \choice Four times larger than the son's KE.
+\end{randomizechoices}
+
+\question
+The diagram below depicts a 2-kg mass colliding with and sticking to a second box. What is the mass of the second box?
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (6,0) node[below,pos=0.5] {Before collision};
+        \draw[thick] (1,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
+        \draw[thick,->] (2.5,0.5) -- ++(1.5,0) node[above,pos=0.7] {\SI{3}{m/s}};
+        \draw[fill=gray] (4.5,0) rectangle ++(1,1);
+
+        \begin{scope}[xshift=7cm]
+            \draw (0,0) -- (6,0) node[below,pos=0.5] {After collision};
+            \draw[thick] (1,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
+            \draw[fill=gray] (2.5,0) rectangle ++(1,1);
+            \draw[thick,->] (3.5,0.5) -- ++(0.5,0) node[right] {\SI{1}{m/s}};
+        \end{scope}
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}[norandomize]
+    \choice \SI{1}{kg}
+    \choice \SI{2}{kg}
+    \choice \SI{3}{kg}
+    \correctchoice \SI{4}{kg}
+\end{randomizechoices}
+
+\clearpage
+\question
+In the diagram shown, a \SI{10}{kg} ball is fired with a velocity of \SI{500}{m/s} from a \SI{1000}{kg} cannon. What is the momentum of the system before the ball is fired and after the ball is fired?
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[fill=lightgray] (0,-0.5) rectangle ++(2,1) node[pos=0.5] {cannon} node[below=0.5cm,pos=0.5] {$m = \SI{1000}{kg}$};
+        \draw[thick,->] (0,0) -- ++(-0.5,0);
+        \draw[fill] (4,0) circle (4pt) node[below=4pt] {$m = \SI{10}{kg}$};
+        \draw[thick,->] (4,0) -- ++(2,0);
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \choice \SI{0}{kg\,m/s};\ \  \SI{5000}{kg\,m/s}
+    \correctchoice \SI{0}{kg\,m/s};\ \  \SI{0}{kg\,m/s}
+    \choice \SI{5000}{kg\,m/s};\ \  \SI{5000}{kg\,m/s}
+    \choice \SI{1500}{kg\,m/s};\ \  \SI{500}{kg\,m/s}
+\end{randomizechoices}
+
+\question
+In the diagram below, scaled vectors represent the momentum of each of two masses, A and B, sliding toward each other on a frictionless, horizontal surface. Which scaled vector best represents the momentum of the system after the masses collide?
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (12,0) node[below,pos=0.5] {Frictionless surface};
+        \draw[fill=gray] (1,0) rectangle ++(1,1) node[pos=0.5,below=0.5cm] {Mass A} (10,0) rectangle ++(1,1) node[pos=0.5,below=0.5cm] {Mass B};
+        \draw[->,thick] (2,0.5) -- ++(4,0); 
+        \draw[->,thick] (10,0.5) -- ++(-1,0);
+    \end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}[norandomize]
+    \choice \tikz{\draw[->,thick] (0,0) -- (-1,0);}
+    \choice \tikz{\draw[->,thick] (0,0) -- (-4,0);}
+    \correctchoice \tikz{\draw[->,thick] (0,0) -- (+3,0);}
+    \choice \tikz{\draw[->,thick] (0,0) -- (+4,0);}
+\end{randomizeoneparchoices}
+
 
 
 

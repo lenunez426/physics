@@ -1,5 +1,830 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+%\documentclass[../main-physics-problems.tex]{subfiles}
+
+
+%...For a standalone document, un-comment lines below and recompile here:
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
+\setcounter{section}{1}
+
 \begin{document}
+
+\subsection{Scalars and Vectors}
+
+\begin{questions}
+\question 
+Classify each statement below as either a scalar or vector quantity.
+
+\begin{itemize}
+    \item A distance of \SI{3.25}{m}: \fillin[scalar][2cm]
+    \item A temperature of \SI{22}{\degreeCelsius}: \fillin[scalar][2cm]
+    \item A climb of \SI{55}{ft} upwards: \fillin[vector][2cm]
+    \item A velocity of \SI{8}{m/s} north: \fillin[vector][2cm]
+    \item \SI{2}{L} of soda: \fillin[scalar][2cm]
+    \item Driving \SI{75}{mph} east: \fillin[vector][2cm]
+    \item Accelerating \SI{10}{m/s^2} east: \fillin[vector][2cm]
+    \item A displacement of \SI{5}{km} to the right: \fillin[vector][2cm]
+    \item A speed of \SI{8}{m/s}: \fillin[scalar][2cm]
+    \item A climb of \SI{55}{ft}: \fillin[scalar][2cm]
+\end{itemize}
+\end{questions}
+
+\subsection{Distance vs. Displacement Measurements}
+
+\begin{questions}
+\question
+For the object that begins from the origin and moves \SI{7}{m} towards the east, the total distance traveled is \fillin[7] meters, and the displacement is \fillin[7] meters directed towards the \fillin[east].
+
+
+\question
+An object begins at the origin and moves \SI{5}{m} towards the north, then \SI{2}{m} towards the east and finally, \SI{4}
+{m} towards the north. The total distance traveled is \fillin[]. The magnitude of displacement is \fillin[], and the direction of the displacement is \fillin[].
+
+\question
+An object begins at the origin and moves 5\,m towards the north, then 2\,m towards the east, and finally 4\,m towards the south. The total distance traveled is \fillin[]. The magnitude of displacement is \fillin[], and the direction of the displacement is \fillin[].
+
+
+\question
+An object begins at the origin and moves 2\,m to the left, then 5\,m upwards, and finally 2\,m to the left. The total distance traveled is \fillin[]. The magnitude of displacement is \fillin[], and the direction of the displacement is \fillin[].
+
+
+\question
+An object begins at the origin and moves 10\,m to the right, then 10\,m to the left. The total distance traveled is \fillin[\SI{20}{m}]. The displacement is \fillin[\SI{0}{m}].
+
+\question
+Under which condition will distance and displacement have the same magnitude?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice Whenever the object moves in a straight line without changing direction.
+    \choice Whenever there is a change in the direction of motion.
+    \choice Whenever the object moves in 2 opposite directions.
+    \choice Distance and displacement can never have the same magnitude.
+\end{randomizechoices}
+
+\question
+Under which condition will displacement be zero?
+
+\begin{randomizechoices}
+    \choice Whenever the object is moving up.
+    \correctchoice Whenever the object returns to its initial position.
+    \choice Whenever the object is moving too slowly.
+\end{randomizechoices}
+
+\question
+Use words from the work bank, and list three things in each section of the Venn diagram for distance and displacement below:
+
+\begin{EnvUplevel}
+
+\begin{minipage}{10cm}
+\centering
+\begin{tikzpicture}
+    \draw[thick] (0,0) circle (3cm) node[above=3cm] {\large Distance};
+    \begin{scope}[xshift=3cm]
+        \draw[thick] (0,0) circle (3cm) node[above=3cm] {\large Displacement};;
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\textbf{Word Bank}
+
+\begin{itemize}[itemsep=0pt]
+    \item has magnitude only
+    \item has units of meters
+    \item can be measured
+    \item vector
+    \item has both magnitude and direction
+    \item represented as an arrow
+    \item does not have direction
+    \item scalar
+    \item has a direction
+\end{itemize}
+\end{minipage}
+}
+
+\end{EnvUplevel}
+
+
+\end{questions}
+
+\clearpage
+
+\subsection{Practice Problems on Distance and Displacement}
+
+\begin{questions}
+\question
+Ron Farr runs the following route in 10 seconds: 30 meters in the positive direction, 50 meters in the negative direction, and 15 meters in the positive direction.
+
+\begin{parts}
+\part What is the distance Ron ran?
+
+\begin{solution}
+\begin{equation*}
+    d = \SI{30}{m} + \SI{50}{m} + \SI{15}{m} = \boxed{\SI{95}{m}}
+\end{equation*}
+\end{solution}
+
+\part What is Ron's displacement?
+
+\begin{solution}
+\begin{equation*}
+    \Delta x = \SI{30}{m} - \SI{50}{m} + \SI{15}{m} = \boxed{-\SI{5}{m}}
+\end{equation*}
+\end{solution}
+
+\part
+What is his average speed?
+
+\begin{solution}
+\begin{equation*}
+    \text{average speed} = \frac{\text{distance traveled}}{\text{time}} = \frac{\SI{95}{m}}{\SI{30}{s}} = \boxed{\SI{3.17}{m/s}}
+\end{equation*}
+\end{solution}
+
+\part 
+What is his average velocity?
+
+\begin{solution}
+\begin{equation*}
+    \bar{v} = \frac{\Delta x}{\Delta t} = \frac{-\SI{5}{m}}{\SI{30}{s}} = \boxed{-\SI{0.17}{m/s}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question
+Justin Credible runs the following route in 15 seconds: 50 meters in the negative direction, 30 meters in the positive direction, 15 meters in the negative direction, 40 meters in the positive direction, and 20 meters in the negative direction.
+
+\begin{parts}
+\part What is the distance Justin ran?
+
+\part What is Justin's displacement?
+
+
+\part What is his average speed?
+
+\part What is his average velocity?
+\end{parts}
+
+\question
+A bus travels 280\,km south for 3.2 hours, stops for a lunch break for 0.4 hours, then travels 210\,km south for 2.8 hours. Taking north to be the positive ($+$) direction, what is the average velocity for the total trip, in kilometers per hour (km/h)?
+
+\begin{randomizechoices}
+    \correctchoice \SI{-77}{km/h}
+    \choice \SI{77}{km/h}
+    \choice \SI{82}{km/h}
+    \choice \SI{-82}{km/h}
+\end{randomizechoices}
+
+\question
+What is the velocity of a rocket that travels 9000 meters in 12.12 seconds?
+
+\begin{randomizechoices}
+    \correctchoice \SI{743}{m/s}
+    \choice \SI{135}{m/s}
+    \choice \SI{109000}{m/s}
+    \choice \SI{535}{m/s}
+\end{randomizechoices}
+
+\question
+How long will your trip take (in hours) if you travel 350\,km with a velocity of 80\,km/h?
+
+\begin{randomizechoices}
+    \correctchoice \SI{4.4}{h}
+    \choice \SI{0.23}{h}
+    \choice \SI{28000}{h}
+    \choice \SI{6.7}{h}
+\end{randomizechoices}
+
+\question
+How far will you travel in 60 seconds, if you are running at a rate of 6.2\,m/s?
+
+\begin{randomizechoices}
+    \correctchoice \SI{372}{m}
+    \choice \SI{0.1}{m}
+    \choice \SI{9.68}{m}
+    \choice \SI{45}{m}
+\end{randomizechoices}
+
+\question
+A tennis ball travels the full length of the 24\,m court in 0.5\,s. What is the average velocity?·
+
+\begin{randomizechoices}
+    \correctchoice \SI{48}{m/s}
+    \choice \SI{12}{m/s}
+    \choice \SI{0.02}{m/s}
+\end{randomizechoices}
+
+\question
+How many seconds will it take a satellite to travel 450,000 meters at a rate of 120\,m/s?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3750}{s}
+    \choice \SI{5.4e7}{s}
+    \choice \SI{2.7e-4}{s}
+\end{randomizechoices}
+\end{questions}
+
+\clearpage
+
+\subsection{Finding Slope Practice}
+
+\begin{questions}
+
+\question
+Consider the following motion graph.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=120,
+        xmin=0,xmax=12,
+        ytick={0,20,...,120},
+        xtick={0,2,...,12},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:10] {10*x};
+        \ifprintanswers
+        \fill[red] (2,20) circle (2pt);
+        \fill[red] (8,80) circle (2pt);
+        \draw[red] (2,20) -- (8,20) node[above,pos=0.6,fill=white] {$\Delta t = \SI{6}{s}$};
+        \draw[red] (8,20) -- (8,80) node[right,pos=0.5,fill=white] {$\Delta x = \SI{60}{m}$};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part
+Which is the independent variable? \fillin[time]
+
+\part
+Which is the dependent variable? \fillin[position]
+
+\part
+Where was the object at 4 seconds? \fillin[\SI{40}{m}]
+
+\part
+Find the slope of the graph. Show your work.
+
+
+\begin{solution}
+Using the two coordinates shown above, the slope is rise over run:
+
+\begin{equation*}
+    \text{slope} = \frac{\Delta x}{\Delta t} = \frac{\SI{80}{m} - \SI{20}{m}}{\SI{8}{s} - \SI{2}{s}} = \frac{\SI{60}{m}}{\SI{6}{s}} = \boxed{\SI{10}{m/s}} 
+\end{equation*}
+\end{solution}
+
+\part
+What does the slope you just found stand for? 
+
+\begin{solution}
+The slope means that the velocity of the object is \SI{10}{m/s}.
+\end{solution}
+\end{parts}
+
+\question
+Consider the following motion graph.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (meters)},
+        xlabel={Time (seconds)},
+        ymin=0,ymax=350,
+        xmin=0,xmax=11,
+        ytick={0,50,...,350},
+        xtick={0,1,...,11},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:10] {30*x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part 
+When did the object reach 150 meters?
+
+\part 
+Where was the object at 9 seconds?
+
+\part
+Find the slope of the graph. Show all your work.
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (meters)},
+        xlabel={Time (seconds)},
+        ymin=0,ymax=350,
+        xmin=0,xmax=11,
+        ytick={0,50,...,350},
+        xtick={0,1,...,11},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:10] {30*x};
+        \fill[red] (5,150) circle (3pt);
+        \fill[red] (10,300) circle (3pt);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Using the two coordinates shown above, the slope is rise over run:
+
+\begin{equation*}
+    \text{slope} = \frac{\SI{300}{m} - \SI{150}{m}}{\SI{10}{s} - \SI{5}{s}} = \boxed{\SI{30}{m/s}}
+\end{equation*}
+\end{solution}
+
+
+\part 
+What physical quantity does the slope represent?
+
+
+\end{parts}
+
+\question
+Consider the following motion graph.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part 
+Which is the independent variable?
+
+\begin{solution}
+    Time
+\end{solution}
+
+\part 
+Which is the dependent variable?
+
+\begin{solution}
+    Position
+\end{solution}
+
+\part
+Where was the object at 4 seconds?
+
+\begin{solution}
+    \SI{14}{m}
+\end{solution}
+
+\part
+Find the slope of the graph. Show all your work.
+
+\begin{solution}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=7cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=18,
+        xmin=0,xmax=6,
+        ytick={0,2,...,18},
+        xtick={0,1,...,6},
+        grid=both,
+        clip=false,
+    ]
+        \addplot[thick,domain=0:5] {3*x+2};
+        \fill[red] (0,2) circle (3pt);
+        \fill[red] (4,14) circle (3pt);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Using the two coordinates shown above, the slope is rise over run:
+
+\begin{equation*}
+    \text{slope} = \frac{\SI{14}{m} - \SI{2}{m}}{\SI{4}{s} - \SI{0}{s}} = \boxed{\SI{3}{m/s}}
+\end{equation*}
+\end{solution}
+
+
+\part 
+What physical quantity does the slope represent?
+
+
+\end{parts}
+\end{questions}
+
+\clearpage
+
+\subsection{Dune Buggy Lab}
+
+Materials:
+
+\begin{itemize}[itemsep=0pt]
+    \item stopwatch
+    \item meter stick
+    \item dune buggy
+\end{itemize}
+
+The dune buggy is our battery-powered vehicle that moves with constant speed. 
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=10cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=14, 
+        xmin=0, xmax=8,
+        xtick={0,1,...,8},
+        clip=false,
+        ]
+        \node[above=-3pt] at (3,0) {\resizebox{1cm}{!}{\reflectbox{\usym{1F699}}}};
+    \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+In this lab, the dune buggy will move against a position axis and undergo the following three trials:
+
+\begin{itemize}
+    \item Trial 1: The buggy starts at zero position and moves to the end.
+    \item Trial 2: The buggy starts at somewhere other than zero and moves to the end.
+    \item Trial 3: The buggy starts at the end and moves toward zero.
+\end{itemize}
+
+\begin{questions}
+\question
+The teacher demonstrates the first trial of the lab. Here's some sample data.
+
+
+\begin{EnvUplevel}
+\centering
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+        &  \\ \hline
+\end{tabular}
+\egroup
+\end{minipage}
+}%
+\hspace{5mm}
+\fbox{
+\begin{minipage}{9cm}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[height=7cm,width=8cm,
+            % ylabel={Position (m)},
+            % xlabel={Time (s)},
+            ymin=0,ymax=8,
+            xmin=0,xmax=30,
+            ytick={0,1,...,8},
+            xtick={0,3,...,30},
+            xticklabels=\empty,
+            yticklabels=\empty,
+            axis lines=left,
+            grid=both,
+        ]
+        %\addplot[mark=*,only marks] coordinates{(2.3,0)(5.0,1)(7.6,2)(9.9,3)(12.4,4)(14.9,5)(17.5,6)(19.9,7)(22.5,8)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+}
+\end{EnvUplevel}
+
+Student's do the following parts:
+
+\begin{parts}
+    \part Make a graph for position vs. time for the buggy. Then draw a best-fit-line of the data. Label the axes with correct quantities and units.
+
+\begin{solution}
+\phantom{.}
+
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tabular}{c|c}
+        \hline
+        Time (s) & Position (m) \\ \hline
+        2.3 & 0 \\
+        5.0 & 1 \\
+        7.6 & 2 \\
+        9.9 & 3 \\
+        12.4 & 4 \\
+        14.9 & 5 \\
+        17.5 & 6 \\
+         19.9 & 7 \\
+         22.5 & 8 \\
+    \end{tabular}
+\end{minipage}%
+\hspace{1em}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[height=6cm,width=6cm,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            ymin=0,ymax=8,
+            xmin=0,xmax=25,
+            ytick={0,1,...,8},
+            xtick={0,5,...,25},
+            axis lines=left,
+            grid=both,
+        ]
+        \addplot[mark=*,only marks] coordinates{(2.3,0)(5.0,1)(7.6,2)(9.9,3)(12.4,4)(14.9,5)(17.5,6)(19.9,7)(22.5,8)};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+
+\end{solution}
+
+    \part Calculate the slope of the line, with the correct units. (Answers may vary.)
+
+\begin{solution}
+    To find slope, choose any two points and compute rise (change in position) over run (change in time). For example, choosing coordinates
+
+    \begin{equation*}
+        (\text{time\,1},\text{pos\,1}) = (\SI{7.6}{s},\SI{2}{m}) \qquad \text{and} \qquad
+        (\text{time\,2},\text{pos\,2}) = (\SI{17.5}{s},\SI{6}{m})
+    \end{equation*}
+    
+    the slope is
+
+    \begin{equation*}
+        \text{slope} = \frac{\text{pos\,2} - \text{pos\,1}}{\text{time\,2} - \text{time\,1}} 
+        = \frac{\SI{6}{m} - \SI{2}{m}}{\SI{17.5}{s} - \SI{7.6}{s}} = \boxed{\SI{0.404}{m/s}}
+    \end{equation*}
+
+    \bigskip
+
+    On a calculator, use parentheses like this:
+
+    \medskip
+
+    \begin{center}
+        \texttt{(6-2)/(17.5-7.6)}\\
+        \hspace{2.5em} \texttt{.404040404}
+    \end{center}
+\end{solution}
+
+\end{parts}
+
+% \vspace{5mm}
+
+% \begin{minipage}{0.45\textwidth}
+%     \centering
+%     \begin{tabular}{c|c}
+%         \hline
+%         Time (s) & Position (m) \\ \hline
+%         2.68 & 0 \\
+%         5.14 & 1 \\
+%         7.16 & 2 \\
+%         10.03 & 3 \\
+%         12.13 & 4 \\
+%         14.80 & 5 \\
+%         17.05 & 6 \\
+%         19.67 & 7 \\
+%         21.72 & 8 \\
+%     \end{tabular}
+% \end{minipage}%
+% \hspace{1em}
+% \begin{minipage}{0.45\textwidth}
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[height=6cm,width=6cm,
+%             ylabel={Position (m)},
+%             xlabel={Time (s)},
+%             ymin=0,ymax=8,
+%             xmin=0,xmax=25,
+%             ytick={0,1,...,8},
+%             xtick={0,5,...,25},
+%             axis lines=left,
+%             grid=both,
+%         ]
+%         \addplot[mark=*,only marks] coordinates{(2.68,0)(5.14,1)(7.16,2)(10.03,3)(12.13,4)(14.8,5)(17.05,6)(19.67,7)(21.72,8)};
+%         \end{axis}
+%     \end{tikzpicture}
+% \end{minipage}
+
+\end{questions}
+
+\clearpage
+
+\subsection{Dune Buggy Lab (Part II)}
+
+\begin{questions}
+\question
+Warm-Up: Sketch a position vs. time graph for the following scenario:
+
+A girl walks from the reference point forward to \SI{5}{m} in 3 seconds. Then she stops for about 2 seconds. Finally she walks back to the reference point over 5 seconds.
+
+%Be ready to share your graph on your whiteboard
+
+\begin{solution}
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=8cm,height=6cm,
+            ymin=0,ymax=6,
+            xmin=0,xmax=11,
+            axis lines=left,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            grid=both,
+            ytick={0,1,...,6},
+            xtick={0,1,...,11},
+        ]
+            \addplot[black,very thick]
+                coordinates{(0,0)(3,5)(5,5)(10,0)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+\end{solution}
+
+
+%...Source: teacher.desmos.com by Teagan Bourne. Transcribed into LaTeX.
+\question
+Consider the graph below. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=10cm,height=7cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=8,
+            axis lines=left,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            grid=both,
+            ytick={0,1,...,5},
+            xtick={0,1,...,8},
+            minor tick num=3,
+            minor grid style={line width=.2pt,draw=gray!25},
+            major grid style={line width=.2pt,draw=gray!75},
+        ]
+            \addplot[black,very thick]
+                coordinates{(0,0)(2,2)(3,4)(5,4)(7,3.25)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the distance traveled by the object between 2 and 3 seconds as seen in this graph?
+
+\begin{solution}
+    2 meters.
+\end{solution}
+
+\part What is the distance traveled by the object between 2 and 5 seconds as seen in this graph?
+
+\begin{solution}
+    2 meters.
+\end{solution}
+
+\part What is the total distance traveled by the object as seen in this graph?
+
+\begin{solution}
+    4.75 meters.
+\end{solution}
+
+\part
+What is the total displacement of the object as seen in this graph?
+
+\begin{solution}
+    3.25 meters
+\end{solution}
+\end{parts}
+
+\question
+Consider the next graph.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=7cm,height=8cm,
+            ymin=-3,ymax=5,
+            xmin=0,xmax=8,
+            axis y line=left,
+            axis x line = center,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            grid=both,
+            ytick={-3,-2,...,5},
+            xtick={0,1,...,8},
+            x label style={at={(axis description cs:1,0.38)},anchor=west},
+        ]
+            \addplot[black,very thick]
+                coordinates{(0,3)(3,3)(4,2)(6,1)(7,-2)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the distance traveled by the object between 1 and 3 seconds as seen in this graph?
+
+\begin{solution}
+    0 meters. The object did not move.
+\end{solution}
+
+\part
+Which time is the beginning of the fastest motion of the object?
+
+\begin{solution}
+    6 seconds.
+\end{solution}
+
+\part What is the total distance traveled by the object as seen in this graph?
+
+\begin{solution}
+    5 meters
+\end{solution}
+
+\part What is the total displacement of the object as seen in this graph?
+
+\begin{solution}
+    \SI{-5}{m} or 5 meters in the negative direction.
+\end{solution}
+\end{parts}
+
+\question
+Consider this graph.
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=10cm,height=7cm,
+            ymin=0,ymax=5,
+            xmin=0,xmax=7,
+            axis lines=left,
+            ylabel={Position (m)},
+            xlabel={Time (s)},
+            grid=both,
+            ytick={0,1,...,5},
+            xtick={0,1,...,7},
+            minor tick num=3,
+            minor grid style={line width=.2pt,draw=gray!25},
+            major grid style={line width=.2pt,draw=gray!75},
+        ]
+            \addplot[black,very thick]
+                coordinates{(0,0)(1.5,3)(3,3)(4,4)(6,0)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the total distance traveled by the object as seen in this graph?
+
+\begin{solution}
+    8 meters
+\end{solution}
+
+\part What is the total displacement of the object as seen in this graph?
+
+\begin{solution}
+    0 meters
+\end{solution}
+\end{parts}
+
+\end{questions}
+
+\clearpage
+
+
+
+\clearpage
+
+\section{Other Topics}
 
 \subsection{Location and How Far}
 \subsubsection{Position, Displacement, and Distance}
@@ -359,154 +1184,7 @@ A bus travels 280\,km south for 3.2 hours, stops for a lunch break for 0.4 hours
     \subsection{Position vs. Time Graphs}
 \end{EnvUplevel}
 
-\question
-Consider the following motion graph.
 
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=5cm,
-        width=7cm,
-        axis lines=left,
-        ylabel={Position (meters)},
-        xlabel={Time (seconds)},
-        ymin=0,ymax=350,
-        xmin=0,xmax=11,
-        ytick={0,50,...,350},
-        xtick={0,1,...,11},
-        grid=both,
-    ]
-        \addplot[thick,domain=0:10] {30*x};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part 
-When did the object reach 150 meters?
-
-\part 
-Where was the object at 9 seconds?
-
-\part
-Find the slope of the graph. Show all your work.
-
-\begin{solution}
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=5cm,
-        width=7cm,
-        axis lines=left,
-        ylabel={Position (meters)},
-        xlabel={Time (seconds)},
-        ymin=0,ymax=350,
-        xmin=0,xmax=11,
-        ytick={0,50,...,350},
-        xtick={0,1,...,11},
-        grid=both,
-    ]
-        \addplot[thick,domain=0:10] {30*x};
-        \fill[red] (5,150) circle (3pt);
-        \fill[red] (10,300) circle (3pt);
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-Using the two coordinates shown above, the slope is rise over run:
-
-\begin{equation*}
-    \text{slope} = \frac{\SI{300}{m} - \SI{150}{m}}{\SI{10}{s} - \SI{5}{s}} = \boxed{\SI{30}{m/s}}
-\end{equation*}
-\end{solution}
-
-
-\part 
-What physical quantity does the slope represent?
-
-
-\end{parts}
-
-
-\question
-Consider the following motion graph.
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=5cm,
-        width=7cm,
-        axis lines=left,
-        ylabel={Position (m)},
-        xlabel={Time (s)},
-        ymin=0,ymax=18,
-        xmin=0,xmax=6,
-        ytick={0,2,...,18},
-        xtick={0,1,...,6},
-        grid=both,
-    ]
-        \addplot[thick,domain=0:5] {3*x+2};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part 
-Which is the independent variable?
-
-\begin{solution}
-    Time
-\end{solution}
-
-\part 
-Which is the dependent variable?
-
-\begin{solution}
-    Position
-\end{solution}
-
-\part
-Where was the object at 4 seconds?
-
-\begin{solution}
-    \SI{14}{m}
-\end{solution}
-
-\part
-Find the slope of the graph. Show all your work.
-
-\begin{solution}
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=5cm,
-        width=7cm,
-        axis lines=left,
-        ylabel={Position (m)},
-        xlabel={Time (s)},
-        ymin=0,ymax=18,
-        xmin=0,xmax=6,
-        ytick={0,2,...,18},
-        xtick={0,1,...,6},
-        grid=both,
-        clip=false,
-    ]
-        \addplot[thick,domain=0:5] {3*x+2};
-        \fill[red] (0,2) circle (3pt);
-        \fill[red] (4,14) circle (3pt);
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-Using the two coordinates shown above, the slope is rise over run:
-
-\begin{equation*}
-    \text{slope} = \frac{\SI{14}{m} - \SI{2}{m}}{\SI{4}{s} - \SI{0}{s}} = \boxed{\SI{3}{m/s}}
-\end{equation*}
-\end{solution}
-
-
-\part 
-What physical quantity does the slope represent?
-
-
-\end{parts}
 
 
 
@@ -613,344 +1291,7 @@ object?
 \end{parts}
 
 \clearpage
-\begin{EnvUplevel}
-    \subsection{Dune Buggy Lab (Part I)}
-\end{EnvUplevel}
 
-
-
-
-\question
-The teacher demonstrates the first trial of the lab. Here's some sample data.
-
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \begin{tabular}{c|c}
-        \hline
-        Time (s) & Position (m) \\ \hline
-        2.3 & 0 \\
-        5.0 & 1 \\
-        7.6 & 2 \\
-        9.9 & 3 \\
-        12.4 & 4 \\
-        14.9 & 5 \\
-        17.5 & 6 \\
-         19.9 & 7 \\
-         22.5 & 8 \\
-    \end{tabular}
-\end{minipage}%
-\hspace{1em}
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[height=6cm,width=6cm,
-            % ylabel={Position (m)},
-            % xlabel={Time (s)},
-            ymin=0,ymax=8,
-            xmin=0,xmax=25,
-            ytick={0,1,...,8},
-            xtick={0,5,...,25},
-            xticklabels=\empty,
-            yticklabels=\empty,
-            axis lines=left,
-            grid=both,
-        ]
-        %\addplot[mark=*,only marks] coordinates{(2.3,0)(5.0,1)(7.6,2)(9.9,3)(12.4,4)(14.9,5)(17.5,6)(19.9,7)(22.5,8)};
-        \end{axis}
-    \end{tikzpicture}
-\end{minipage}
-
-Student's do the following parts:
-
-\begin{parts}
-    \part Make a graph for position vs. time for the buggy. Then draw a best-fit-line of the data. Label the axes with correct quantities and units.
-
-\begin{solution}
-\phantom{.}
-
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \begin{tabular}{c|c}
-        \hline
-        Time (s) & Position (m) \\ \hline
-        2.3 & 0 \\
-        5.0 & 1 \\
-        7.6 & 2 \\
-        9.9 & 3 \\
-        12.4 & 4 \\
-        14.9 & 5 \\
-        17.5 & 6 \\
-         19.9 & 7 \\
-         22.5 & 8 \\
-    \end{tabular}
-\end{minipage}%
-\hspace{1em}
-\begin{minipage}{0.45\textwidth}
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[height=6cm,width=6cm,
-            ylabel={Position (m)},
-            xlabel={Time (s)},
-            ymin=0,ymax=8,
-            xmin=0,xmax=25,
-            ytick={0,1,...,8},
-            xtick={0,5,...,25},
-            axis lines=left,
-            grid=both,
-        ]
-        \addplot[mark=*,only marks] coordinates{(2.3,0)(5.0,1)(7.6,2)(9.9,3)(12.4,4)(14.9,5)(17.5,6)(19.9,7)(22.5,8)};
-        \end{axis}
-    \end{tikzpicture}
-\end{minipage}
-
-\end{solution}
-
-    \part Calculate the slope of the line, with the correct units. (Answers may vary.)
-
-\begin{solution}
-    To find slope, choose any two points and compute rise (change in position) over run (change in time). For example, choosing coordinates
-
-    \begin{equation*}
-        (\text{time\,1},\text{pos\,1}) = (\SI{7.6}{s},\SI{2}{m}) \qquad \text{and} \qquad
-        (\text{time\,2},\text{pos\,2}) = (\SI{17.5}{s},\SI{6}{m})
-    \end{equation*}
-    
-    the slope is
-
-    \begin{equation*}
-        \text{slope} = \frac{\text{pos\,2} - \text{pos\,1}}{\text{time\,2} - \text{time\,1}} 
-        = \frac{\SI{6}{m} - \SI{2}{m}}{\SI{17.5}{s} - \SI{7.6}{s}} = \boxed{\SI{0.404}{m/s}}
-    \end{equation*}
-
-    \bigskip
-
-    On a calculator, use parentheses like this:
-
-    \medskip
-
-    \begin{center}
-        \texttt{(6-2)/(17.5-7.6)}\\
-        \hspace{2.5em} \texttt{.404040404}
-    \end{center}
-\end{solution}
-
-\end{parts}
-
-% \vspace{5mm}
-
-% \begin{minipage}{0.45\textwidth}
-%     \centering
-%     \begin{tabular}{c|c}
-%         \hline
-%         Time (s) & Position (m) \\ \hline
-%         2.68 & 0 \\
-%         5.14 & 1 \\
-%         7.16 & 2 \\
-%         10.03 & 3 \\
-%         12.13 & 4 \\
-%         14.80 & 5 \\
-%         17.05 & 6 \\
-%         19.67 & 7 \\
-%         21.72 & 8 \\
-%     \end{tabular}
-% \end{minipage}%
-% \hspace{1em}
-% \begin{minipage}{0.45\textwidth}
-%     \centering
-%     \begin{tikzpicture}
-%         \begin{axis}[height=6cm,width=6cm,
-%             ylabel={Position (m)},
-%             xlabel={Time (s)},
-%             ymin=0,ymax=8,
-%             xmin=0,xmax=25,
-%             ytick={0,1,...,8},
-%             xtick={0,5,...,25},
-%             axis lines=left,
-%             grid=both,
-%         ]
-%         \addplot[mark=*,only marks] coordinates{(2.68,0)(5.14,1)(7.16,2)(10.03,3)(12.13,4)(14.8,5)(17.05,6)(19.67,7)(21.72,8)};
-%         \end{axis}
-%     \end{tikzpicture}
-% \end{minipage}
-
-\clearpage
-\begin{EnvUplevel}
-    \subsection{Dune Buggy Lab (Part II)}
-\end{EnvUplevel}
-
-
-
-\question
-Warm-Up: Sketch a position vs. time graph for the following scenario:
-
-A girl walks from the reference point forward to \SI{5}{m} in 3 seconds. Then she stops for about 2 seconds. Finally she walks back to the reference point over 5 seconds.
-
-%Be ready to share your graph on your whiteboard
-
-\begin{solution}
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=8cm,height=6cm,
-            ymin=0,ymax=6,
-            xmin=0,xmax=11,
-            axis lines=left,
-            ylabel={Position (m)},
-            xlabel={Time (s)},
-            grid=both,
-            ytick={0,1,...,6},
-            xtick={0,1,...,11},
-        ]
-            \addplot[black,very thick]
-                coordinates{(0,0)(3,5)(5,5)(10,0)};
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
-\end{solution}
-
-
-%...Source: teacher.desmos.com by Teagan Bourne. Transcribed into LaTeX.
-\question
-Consider the graph below. 
-
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=10cm,height=7cm,
-            ymin=0,ymax=5,
-            xmin=0,xmax=8,
-            axis lines=left,
-            ylabel={Position (m)},
-            xlabel={Time (s)},
-            grid=both,
-            ytick={0,1,...,5},
-            xtick={0,1,...,8},
-            minor tick num=3,
-            minor grid style={line width=.2pt,draw=gray!25},
-            major grid style={line width=.2pt,draw=gray!75},
-        ]
-            \addplot[black,very thick]
-                coordinates{(0,0)(2,2)(3,4)(5,4)(7,3.25)};
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part What is the distance traveled by the object between 2 and 3 seconds as seen in this graph?
-
-\begin{solution}
-    2 meters.
-\end{solution}
-
-\part What is the distance traveled by the object between 2 and 5 seconds as seen in this graph?
-
-\begin{solution}
-    2 meters.
-\end{solution}
-
-\part What is the total distance traveled by the object as seen in this graph?
-
-\begin{solution}
-    4.75 meters.
-\end{solution}
-
-\part
-What is the total displacement of the object as seen in this graph?
-
-\begin{solution}
-    3.25 meters
-\end{solution}
-\end{parts}
-
-\question
-Consider the next graph.
-
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=7cm,height=8cm,
-            ymin=-3,ymax=5,
-            xmin=0,xmax=8,
-            axis y line=left,
-            axis x line = center,
-            ylabel={Position (m)},
-            xlabel={Time (s)},
-            grid=both,
-            ytick={-3,-2,...,5},
-            xtick={0,1,...,8},
-            x label style={at={(axis description cs:1,0.38)},anchor=west},
-        ]
-            \addplot[black,very thick]
-                coordinates{(0,3)(3,3)(4,2)(6,1)(7,-2)};
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part What is the distance traveled by the object between 1 and 3 seconds as seen in this graph?
-
-\begin{solution}
-    0 meters. The object did not move.
-\end{solution}
-
-\part
-Which time is the beginning of the fastest motion of the object?
-
-\begin{solution}
-    6 seconds.
-\end{solution}
-
-\part What is the total distance traveled by the object as seen in this graph?
-
-\begin{solution}
-    5 meters
-\end{solution}
-
-\part What is the total displacement of the object as seen in this graph?
-
-\begin{solution}
-    \SI{-5}{m} or 5 meters in the negative direction.
-\end{solution}
-\end{parts}
-
-\question
-Consider this graph.
-
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=10cm,height=7cm,
-            ymin=0,ymax=5,
-            xmin=0,xmax=7,
-            axis lines=left,
-            ylabel={Position (m)},
-            xlabel={Time (s)},
-            grid=both,
-            ytick={0,1,...,5},
-            xtick={0,1,...,7},
-            minor tick num=3,
-            minor grid style={line width=.2pt,draw=gray!25},
-            major grid style={line width=.2pt,draw=gray!75},
-        ]
-            \addplot[black,very thick]
-                coordinates{(0,0)(1.5,3)(3,3)(4,4)(6,0)};
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part What is the total distance traveled by the object as seen in this graph?
-
-\begin{solution}
-    8 meters
-\end{solution}
-
-\part What is the total displacement of the object as seen in this graph?
-
-\begin{solution}
-    0 meters
-\end{solution}
-\end{parts}
-
-
-
-\clearpage
 
 \begin{EnvUplevel}
     \subsection{Speed and Velocity}
@@ -2142,6 +2483,992 @@ What is the velocity of car B relative to the velocity of car A? Assume rightwar
     \choice \SI{30}{km/h}
     \choice \SI{-30}{km/h}
 \end{randomizechoices}
+
+\begin{questions}
+\printanswers
+
+
+\question % Like Check Your Understanding 2.1 #5
+What is the difference between distance and displacement?
+
+\begin{choices}
+\choice Distance has both magnitude and direction, while displacement has magnitude but no direction.
+\CorrectChoice Distance has magnitude but no direction, while displacement has both magnitude and direction.
+\choice Distance has magnitude but no direction, while displacement has only direction.
+\choice There is no difference. Both distance and displacement have magnitude and direction.
+\end{choices}
+
+\vspace{1em} \hrule 
+
+\begin{EnvUplevel}
+\textbf{Read the following prompt. Then answer Questions~\ref{ques:cat_start} through~\ref{ques:cat_end}.}
+
+A cat moves 16 meters eastward, then 7 meters westward, and finally 3 meters eastward. 
+\end{EnvUplevel}
+
+
+
+\question \label{ques:cat_start}
+What is the distance traveled?
+
+\begin{choices}
+\CorrectChoice 26 meters
+\choice 12 meters
+\choice 16 meters
+\choice 10 meters
+\end{choices}
+
+\question
+What is the magnitude of the displacement?
+
+\begin{choices}
+\choice \SI{-12}{meters}
+\choice 26 meters
+\choice \SI{-26}{meters}
+\CorrectChoice 12 meters
+\end{choices}
+
+\question \label{ques:cat_end}
+What is the direction of the displacement?
+
+\begin{choices}
+\CorrectChoice East
+\choice West
+\choice North
+\choice South
+\end{choices}
+
+\vspace{1em} \hrule
+
+\question
+If $d_0 = \SI{10}{m}$ and $d_f = \SI{3}{m}$, what is the displacement?
+
+\begin{choices}
+\choice \SI{7}{m}
+\CorrectChoice \SI{-7}{m} 
+\choice \SI{13}{m}
+\choice \SI{-13}{m}
+\end{choices}
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{The remaining questions refer to the figure below.}
+\end{EnvUplevel}
+
+
+% \begin{figure}[h!]
+%     \centering
+%     \pgfplotsset{compat=1.11,
+%     width=\textwidth,every axis/.append style={
+%                         axis x line=middle,    
+%                         axis line style={<->}, 
+%                         xlabel={$x$},
+%                         ylabel={$y$},          
+%                         label style={font=\normalsize},
+%                         tick label style={font=\normalsize}  
+%                         }}
+%     \begin{tikzpicture}
+%     \begin{axis}[
+%         axis lines = left,
+%         axis y line=none,
+%         xlabel = Position (m),
+%         % ylabel = {$y$},
+%         ymin=0, ymax=0, 
+%         xmin=-10, xmax=13,
+%         % ymajorgrids=true,
+%         % xmajorgrids=true,
+%         %grid style=dashed,
+%         % ytick={0,1,...,20},
+%         xtick={-10,-8,...,12},
+%         ]
+%         \node (fig1) at (20.5,-94)
+%         {\includegraphics[scale=0.05]{tree.jpg}};  
+%         \node (fig2) at (180,-94)
+%         {\includegraphics[scale=0.05]{house.png}};  
+%         \draw[->, line width = 1mm] (50,-90) node[above] {A} -- + (0,-10);
+%         \draw[->, line width = 1mm] (80,-90) node[above] {B} -- + (0,-10);
+%         \draw[->, line width = 1mm] (100,-90) node[above] {C} -- + (0,-10);
+%         \draw[->, line width = 1mm] (140,-90) node[above] {D} -- + (0,-10);
+%         \draw[->, line width = 1mm] (170,-90) node[above] {E} -- + (0,-10);
+%     \end{axis}
+%     \end{tikzpicture}
+% \end{figure}
+
+\question
+The man moves from the \textbf{house} to \textbf{point B}. What is the distance traveled?
+
+\begin{choices}
+\CorrectChoice 10 m
+\choice \SI{-10}{m}
+\choice 8 m
+\choice \SI{-2}{m}
+\end{choices}
+
+\question
+The man moves from the \textbf{tree} to \textbf{point C} to \textbf{point A}. What is his displacement?
+
+\begin{choices}
+\CorrectChoice \SI{3}{m}
+\choice \SI{-5}{m}
+\choice \SI{13}{m}
+\choice \SI{-3}{m}
+\end{choices}
+
+\question
+The man moves from \textbf{point C} to \textbf{point D} to \textbf{point B}. What is the direction of his displacement?
+
+\begin{choices}
+\choice positive ($+$)
+\CorrectChoice negative ($-$)
+\choice south
+\choice north
+\end{choices}
+
+\question
+The man moves from \textbf{point E} to \textbf{point D} to the \textbf{house}. What is the distance traveled?
+
+\begin{choices}
+\choice \SI{-1}{m}
+\choice 4 m
+\CorrectChoice 7 m
+\choice 3 m
+\end{choices}
+
+
+\question
+The man moves from the \textbf{house} to the \textbf{tree}, back to \textbf{point C}, back to the \textbf{tree}, and back to the \textbf{house}. What is his displacement?
+
+\begin{choices}
+\CorrectChoice zero
+\choice \SI{48}{m}
+\choice \SI{-16}{m}
+\choice \SI{8}{m}
+\end{choices}
+
+
+
+
+\question % Like Ch. 2 #44
+A certain basketball exercise is defined as running across the court and back again. If a player completes 4 exercises in 3 minutes, how can his average velocity be zero?
+\begin{choices}
+\choice His average velocity is zero because his total distance is zero.
+\choice His average velocity is zero because the number of laps completed is an odd number.
+\choice His average velocity is zero because the velocity of each successive lap is equal and opposite.
+\CorrectChoice His average velocity is zero because his total displacement is zero.
+\end{choices}
+
+\question % Like Ch. 2 Worked Example
+A student has a displacement of 739 m north in 162 s. What was the student's average velocity?
+
+\begin{choices}
+\choice 0.22 m/s
+\choice 119,718 m/s
+\choice 162 m/s
+\CorrectChoice 4.56 m/s
+\end{choices}
+
+\question % Like Ch. 2 Worked Example
+Layla jogs with an average velocity of 6.1 m/s east. What is her displacement after 75 seconds?
+
+\begin{choices}
+\choice 0.081 m
+\choice 12.3 m
+\CorrectChoice 458 m
+\choice 6.1 m
+\end{choices}
+
+\question % Like Ch. 2 Worked Example
+Phillip walks along a straight path from his house to his school. How long will it take him to get to school if he walks 709 m west with an average velocity of 5.5 m/s west?
+
+
+\begin{choices}
+\choice 0.0078 s
+\choice 3900 s
+\choice 5.5 s
+\CorrectChoice 129 s
+\end{choices}
+
+
+
+\question % Like Ch. 2 #18
+You sit in an airplane that is moving at an average speed of 906.2 km/h. During the 14.5 s that you glance out the window, how far has the plane traveled?
+
+\begin{choices}
+\choice 3650 km
+\CorrectChoice 3.650 km
+\choice 13,140 km
+\choice 13.140 km
+\end{choices}
+
+
+
+\begin{EnvUplevel}
+    Consider the figure below and answers the questions.
+\end{EnvUplevel}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\textwidth,
+        axis lines = left,
+        axis y line=none,
+        xlabel = \textbf{Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node at (axis cs: 7,0.05)
+        {\Springtree[3]};
+        %{\includegraphics[scale=0.05]{Figures/tree.jpg}};
+        \node at (axis cs: 3,0.04)
+        {\huge \faHome};
+        %{\includegraphics[scale=0.05]{Figures/house.png}};  
+        \fill (axis cs: -10,0) circle[radius=3pt] node[above] 
+        {\Strichmaxerl[2.5]} ;
+        %{$d = 0$};
+    \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\question
+What is the position of the man?
+
+\begin{choices}
+    \choice \SI{10}{m}
+    \choice \SI{-10}{m}
+    \choice \SI{0}{m}
+    \choice \SI{3}{m}
+\end{choices}
+
+\question
+What is the position of the tree?
+
+\begin{choices}
+    \choice \SI{0}{m}
+    \choice \SI{-10}{m}
+    \choice \SI{7}{m}
+    \choice \SI{3}{m}
+\end{choices}
+
+\question
+What is the position of the house?
+
+\begin{choices}
+    \choice \SI{-7}{m}
+    \choice \SI{-10}{m}
+    \choice \SI{0}{m}
+    \choice \SI{3}{m}
+\end{choices}
+
+
+\question
+The man starts at the origin, then moves to the house, then moves to the tree, and finishes 2 meters to the \textbf{LEFT} of the origin. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\textwidth,
+        axis lines = left,
+        axis y line=none,
+        xlabel = \textbf{Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node at (axis cs: -8,0.05)
+        {\Springtree[3]};
+        %{\includegraphics[scale=0.05]{Figures/tree.jpg}};
+        \node at (axis cs: 8,0.04)
+        {\huge \faHome};
+        %{\includegraphics[scale=0.05]{Figures/house.png}};  
+        \fill (axis cs: 0,0) circle[radius=3pt] node[above] 
+        {\Strichmaxerl[2.5]} ;
+        %{$d = 0$};
+    \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{Figures/Unit02_Fig_PHeT_MovingMan1.png}
+%     \caption{A screenshot of the Moving Man Simulation, which is available at \href{https://archive.cnx.org/specials/}{https://archive.cnx.org/specials/}}
+%     \label{fig:Unit02_Fig_PHeT_MovingMan1}
+% \end{figure}
+
+
+\begin{parts}
+\part What is the distance traveled by the man?
+
+\part What is his displacement?
+\end{parts}
+
+
+\question
+John takes a walk.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\textwidth,
+        axis lines = left,
+        axis y line=none,
+        xlabel = \textbf{Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node at (axis cs: -8,0.04)
+        {\Springtree[3]};
+        \node at (axis cs: 8,0.03)
+        {\huge \faHome};
+        \fill (axis cs: -5,0) circle[radius=3pt] node[above,inner sep=7pt] {A};
+        \fill (axis cs: -2,0) circle[radius=3pt] node[above,inner sep=7pt] {B};
+        \fill (axis cs: 0,0) circle[radius=3pt] node[above,inner sep=7pt] {C};
+        \fill (axis cs: 4,0) circle[radius=3pt] node[above,inner sep=7pt] {D};
+        \fill (axis cs: 7,0) circle[radius=3pt] node[above,inner sep=7pt] {E};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{A position axis with labeled points.}
+    \label{fig:PositionAxis} 
+\end{figure}
+
+\begin{parts}
+    \part If he goes from the house to \textbf{B} to \textbf{D}, what distance does he traveled? What is his displacement?
+    \part If he goes from \textbf{A} to \textbf{E} to \textbf{D}, what distance does he travel? What is his displacement?
+\end{parts}
+
+\question
+What does a car’s odometer record?
+
+\begin{choices}
+\choice Displacement
+\CorrectChoice Distance
+\choice Both distance and displacement
+\choice The sum of distance and displacement
+\end{choices}
+
+\begin{solution}
+An odometer gives the total number of miles a car has driven since it was new. 
+\end{solution}
+
+\question
+Find a desk partner. Select one of you to pick 3 points (tree, A, B, C, D, E, or house) from Figure (\ref{fig:PositionAxis}). Then calculate the distance travel traveled by an object between those points, and calculate the object's displacement.
+
+Lastly, let the other partner select a different set of 3 points, and re-calculate distance and displacement for those points. 
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{Read the following prompt. Then answer Questions~\ref{ques:cat_start} through~\ref{ques:cat_end}.} 
+\end{EnvUplevel}
+\vspace{-0.5em}
+
+\begin{EnvUplevel}
+A cat moves 16 meters eastward, then 7 meters westward, and finally 3 meters eastward.
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\textwidth,
+        axis lines = left,
+        axis y line=none,
+        xlabel = \textbf{Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \draw[->,thick] (axis cs: 8,0.05) -- (axis cs: 9.5,0.05) node[right] {\textbf{East}};
+        \draw[->,thick] (axis cs: -8,0.05) -- (axis cs: -9.5,0.05) node[left] {\textbf{West}};
+        \fill (axis cs: 0,0) circle[radius=3pt] node[above,inner sep=7pt] {$d_0$};
+    \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
+\question \label{ques:cat_start}
+What is the distance traveled?
+
+\begin{solution}
+\begin{equation*}
+    16 + 7 + 3 = \SI{26}{m}
+\end{equation*}
+\end{solution}
+
+\begin{choices}
+\CorrectChoice 26 meters
+\choice 12 meters
+\choice 16 meters
+\choice 10 meters
+\end{choices}
+
+\question
+What is the magnitude of the displacement?
+
+\begin{solution}
+\begin{equation*}
+  \mathrm{displacement} = 16 - 7 + 3 = \SI{12}{m \ East}  
+\end{equation*}
+
+Therefore, magnitude of displacement is 12 meters.
+\end{solution}
+
+\begin{choices}
+\choice \SI{-12}{meters}
+\choice 26 meters
+\choice \SI{-26}{meters}
+\CorrectChoice 12 meters
+\end{choices}
+
+\question \label{ques:cat_end}
+What is the direction of the displacement?
+
+\begin{solution}
+East
+\end{solution}
+
+\begin{choices}
+\CorrectChoice East
+\choice West
+\choice North
+\choice South
+\end{choices}
+
+\vspace{1em} \hrule
+
+\question
+If a space shuttle orbits Earth once, what is the shuttle’s distance traveled and displacement?
+
+\begin{choices}
+\choice Distance and displacement both are zero.
+\CorrectChoice Distance is circumference of the circular orbit. Displacement is zero.
+\choice Distance is zero. Displacement is circumference of the circular orbit.
+\choice Distance and displacement both are equal to circumference of the circular orbit.
+\end{choices}
+
+\begin{solution}
+The distance traveled is just the length of its circular orbit. Its displacement is 0 because the shuttle ended where it started.
+\end{solution}
+
+\begin{EnvUplevel}
+\textbf{Read the following prompt. Then answer Questions~\ref{ques:Skier_start} through~\ref{ques:Skier_end}.}
+
+A skier moves 53 meters eastward, then 71 meters westward, and finally 16 meters eastward. 
+\end{EnvUplevel}
+
+
+\question \label{ques:Skier_start}
+What is the distance traveled?
+
+\begin{choices}
+\choice 2 meters
+\choice 53 meters
+\choice 16 meters
+\CorrectChoice 140 meters
+\end{choices}
+
+\question
+What is the magnitude of the displacement?
+
+\begin{choices}
+\choice 140 meters
+\choice 71 meters
+\CorrectChoice 2 meters
+\choice Cannot be determined.
+\end{choices}
+
+\question \label{ques:Skier_end}
+What is the direction of the displacement?
+
+\begin{choices}
+\choice East
+\CorrectChoice West
+\choice North   
+\choice South
+\end{choices}
+
+\vspace{1em} \hrule
+
+\question
+If $x_0 = \SI{10}{m}$ and $x_f = \SI{3}{m}$, what is the displacement?
+
+\begin{solution}
+\begin{equation*}
+    \Delta{x} = x_f - x_0 = 3 - 10 = \SI{-7}{m} 
+\end{equation*}
+\end{solution}
+
+% \begin{choices}
+% \choice \SI{7}{m}
+% \CorrectChoice \SI{-7}{m} 
+% \choice \SI{13}{m}
+% \choice \SI{-13}{m}
+% \end{choices}
+
+\vspace{1em}
+\hrule
+
+\question
+Open ``The Moving Man'' simulation (\href{https://archive.cnx.org/specials/e2ca52af-8c6b-450e-ac2f-9300b38e8739/moving-man/}{click here}). 
+
+\begin{parts}
+\part When referring to the Man's position as $x = \SI{8}{m}$, what does the ``m'' mean?
+\begin{solution}
+The ``m'' stands for ``meters'' and is the SI unit of position ($x$).
+\end{solution}
+
+\part What is his displacement if he moves from the house to $x = \SI{4}{m}$?
+\part What is his displacement from the tree to $x = \SI{-3}{m}$?
+\part What is the displacement from the tree to the house?
+\end{parts}
+
+
+\question
+If a biker rides west for 50 miles from his starting position, then turns and bikes back east 80 miles, what is his displacement?
+
+\begin{choices}
+\choice 130 miles
+\CorrectChoice 30 miles east
+\choice 30 miles west
+\choice Cannot be determined from the information given
+\end{choices}
+
+\begin{solution}
+If east is assumed to be the positive direction, the initial displacement will be $-50$ mi (west is negative), while the second displacement will be 80 mi. Adding the displacements: $-50 + 80 = 30$ mi east.
+\end{solution}
+
+\question
+A person travels 6 meters north, 4 meters east, and 6 meters south. What is the displacement?
+
+\begin{choices}
+\choice \SI{16}{\meter} east
+\choice \SI{6}{\meter} north
+\choice \SI{6}{\meter} south
+\CorrectChoice \SI{4}{\meter} east
+\end{choices}
+
+\question % Like Check Your Understanding 2.1 #5
+What is the difference between distance and displacement?
+
+\begin{solution}
+(\textit{Answers will vary.}) Distance is a vector (i.e., has magnitude but no direction), while displacement is a vector (i.e., has both magnitude and direction).
+\end{solution}
+
+\clearpage
+
+
+\question
+A pitcher throws a baseball from the pitcher's mound to home plate in \SI{0.46}{s}. The distance is \SI{18.4}{m}. What was the average speed of the baseball?
+
+\begin{choices}
+\correctchoice \SI{40.0}{m/s}
+\choice \SI{72.9}{m/s}
+\choice \SI{1.03}{m/s}
+\choice \SI{8.54}{m/s}
+\end{choices}
+
+\begin{solution}
+    $\text{distance} = \SI{18.4}{\meter}$, $\text{time}=\SI{0.46}{\second}$
+
+\begin{equation*}
+    \text{speed} = \frac{\text{distance}}{\text{time}} = \SI{40}{\meter/\second}
+\end{equation*}
+\end{solution}
+
+\question
+Four bicyclists travel different distances and times along a straight path. \\
+Which cyclist traveled with the GREATEST average speed?
+
+\begin{choices}
+\choice Cyclist 1 travels \SI{95}{m} in \SI{27}{s}.
+\choice Cyclist 2 travels \SI{87}{m} in \SI{22}{s}.
+\choice Cyclist 3 travels \SI{106}{m} in \SI{26}{s}.
+\CorrectChoice Cyclist 4 travels \SI{108}{m} in \SI{24}{s}.
+\end{choices}
+
+\begin{solution}
+The average speed for cyclist 4 is found by dividing the distance (108 m) by the time (24 s) to give 4.5 m/s. Doing the same for the remaining cyclists results in a lower average speed for each.
+\end{solution}
+
+
+\question
+A cart crosses a 228-cm track in 2.00 seconds. What was its average speed?
+
+\begin{choices}
+    \choice \SI{114}{m/s}
+    \choice \SI{228}{m/s}
+    \correctchoice \SI{1.14}{m/s}
+    \choice \SI{2.28}{m/s}
+\end{choices}
+
+\question
+Suppose you travel 12.5 km in 18.3 minutes. What is your average speed in kilometers per hour? (Note: Average speed is distance traveled divided by time of travel.)
+
+\begin{solution}
+\begin{equation*}
+    \mathrm{average\ speed = \frac{distance}{time}} = \frac{\SI{12.5}{\kilo\meter}}{\SI{18.3}{\minute}} = \SI[per-mode=fraction]{0.683}{\kilo\meter\per\minute}
+\end{equation*}
+
+\begin{equation*}
+    \SI[per-mode=fraction]{0.683}{\kilo\meter\per\minute} \times \frac{\SI{60}{\min}}{\SI{1}{\hour}} = \framebox{\SI{41.0}{\kilo\meter/\hour}}
+\end{equation*}
+\end{solution}
+
+\question
+An airplane travels 15 km in 5.0 minutes. What is its average speed in meters per second? (Note: Average speed is distance traveled divided by time of travel.)
+
+\begin{solution}
+\begin{equation*}
+    \mathrm{average\ speed = \frac{distance}{time}} = \frac{\SI{15}{\kilo\meter}}{\SI{5.0}{\minute}} = \SI[per-mode=fraction]{3.0}{\kilo\meter\per\minute}
+\end{equation*}
+
+\begin{equation*}
+    \SI[per-mode=fraction]{3.0}{\kilo\meter\per\minute} \times \frac{\SI{1}{\minute}}{\SI{60}{\second}} \times \frac{\SI{1000}{\meter}}{\SI{1}{\kilo\meter}} = \framebox{\SI{50}{\meter/\second}}\ .
+\end{equation*}
+\end{solution}
+
+
+\question
+A car travels 150 kilometers in 3.2 hours. What is the car's average speed?
+
+\begin{solution}
+The \textit{Known} quantities are
+
+\begin{itemize}
+    \item $\mathrm{distance} = \SI{150}{\km}$
+    \item $\mathrm{time} = \SI{3.2}{\hour}$
+\end{itemize}
+
+The average speed is
+
+\begin{equation*}
+    s_{\mathrm{avg}} = \mathrm{\frac{distance}{time}} = \SI[per-mode=symbol]{47}{\km\per\hour}\ .
+\end{equation*}
+\end{solution}
+
+\question
+A soccer ball travels with an average speed of \SI{16}{m/s} for \SI{2.5}{s}. How far did the ball travel?
+
+\begin{choices}
+    \choice \SI{6.4}{m}
+    \choice \SI{0.15}{m}
+    \choice \SI{16}{m}
+    \correctchoice \SI{40}{m}
+\end{choices}
+
+\question
+Imagine you and Usain Bolt have a race. Your average speeds are \SI{6.3}{m/s} and \SI{10.4}{m/s}, respectively. If you both run for 15 seconds, what distances will you and Bolt travel?
+
+\begin{choices}
+    \choice  \SI{0.42}{m};\ \ \SI{94.5}{m}
+    \choice  \SI{156}{m};\ \ \SI{2.38}{m}
+    \choice  \SI{2.38}{m};\ \ \SI{0.42}{m}
+    \correctchoice \SI{94.5}{m};\ \ \SI{156}{m} 
+\end{choices}
+
+\question % Like Ch. 2 #18
+You sit in an airplane that is moving at an average speed of 
+\SI{900}{km/h} (\SI{0.25}{km/s}). During the \SI{8.0}{s}
+that you glance out the window, how far has the plane traveled?
+
+\begin{choices}
+\CorrectChoice \SI{2.0}{km}
+\choice \SI{7200}{km}
+\choice \SI{113}{km}
+\choice \SI{0.031}{km}
+\end{choices}
+
+
+\subsection*{Velocity}
+\question % Like Ch. 2 Worked Example
+A student has a displacement of 720 m north in 80 s. What was the student's average velocity?
+
+\begin{choices}
+\choice \SI{8.0}{m/s}
+\CorrectChoice \SI{9.0}{m/s}
+\choice \SI{7.6}{m/s}
+\choice \SI{13}{m/s}
+\end{choices}
+
+
+\question
+A student has a displacement of \SI{739}{m} north in \SI{162}{s}. What was the student's average velocity?
+
+\begin{solution}
+    The given quantities are $\Delta{x} = \SI{739}{m}$ and $\Delta{t} = \SI{162}{s}$. Average velocity is
+
+\begin{equation*}
+        \bar{v} = \frac{\Delta{x}}{\Delta{t}} = \SI{4.56}{m/s\ north}
+\end{equation*}
+\end{solution}
+
+
+
+\question % Like Ch. 2 Worked Example
+Layla jogs with an average velocity of 6.1 m/s east. What is her displacement after 75 seconds?
+
+\begin{choices}
+\choice 0.081 m
+\choice 12.3 m
+\CorrectChoice 458 m
+\choice 6.1 m
+\end{choices}
+
+
+\question % Like High-School Physics Ch. 2 Worked Example
+Phillip walks along a straight path from his house to his school. How long will it take him to get to school if he walks \SI{540}{m} west with an average velocity of 1.5 m/s west?
+
+\begin{choices}
+\CorrectChoice \SI{6.0}{min}
+\choice \SI{360}{min}
+\choice \SI{5.4}{min}
+\choice \SI{810}{min}
+
+
+\end{choices}
+
+\question
+In the definition of velocity, what physical quantity is changing over time?
+
+\begin{choices}
+\choice speed
+\choice distance
+\choice acceleration
+\CorrectChoice position vector
+\end{choices}
+
+\begin{solution}
+A velocity vector gives the rate of change of the position vector.
+\end{solution}
+
+\question
+Yes or no---Is it possible to determine a car’s instantaneous velocity from just the speedometer reading?
+
+\begin{choices}
+\CorrectChoice No, it reflects speed but not the direction.
+\choice No, it reflects the average speed of the car.
+\choice Yes, it sometimes reflects instantaneous velocity of the car.
+\choice Yes, it always reflects the instantaneous velocity of the car.
+\end{choices}
+
+\question
+A car travels with an average speed of 23 m/s for 82 s. Which of the following could NOT have been the car's displacement?
+
+\begin{choices}
+\choice 1,700 m east
+\CorrectChoice 1,900 m west
+\choice 1,600 m north
+\choice 1,500 m south
+\end{choices}
+
+\begin{solution}
+If the car moved in a straight line, its displacement would be $(23\ \mathrm{m/s})(82\ \mathrm{s}) = 1,886\ \mathrm{m}$. Any other path would result in a displacement of smaller magnitude. So, 1,900 m west is not possible.
+\end{solution}
+
+\question 
+A car is moving on a straight road at a constant speed in a single direction. Which of the following statements is true?
+
+\begin{choices}
+\choice Average velocity is zero.
+\CorrectChoice The magnitude of average velocity is equal to the average speed.
+\choice The magnitude of average velocity is greater than the average speed.
+\choice The magnitude of average velocity is less than the average speed.
+\end{choices}
+
+\begin{solution}
+The magnitude of its velocity will be equal to the speed if the direction of motion is not changing.
+\end{solution}
+
+
+\question
+A student has a displacement of 304 m north in 180 s. What was the student's average velocity?
+
+\begin{solution}
+The known quantities are:
+
+\begin{itemize}
+    \item displacement: $\Delta{x} = \SI{304}{\meter}$
+    \item change in time: $\Delta{t} = \SI{180}{\second}$
+\end{itemize}
+
+The average velocity is
+
+\begin{equation*}
+    v_{\mathrm{avg}} = \frac{\Delta{x}}{\Delta{t}} = \frac{\SI{304}{\meter}}{\SI{180}{\second}} = \SI[per-mode=symbol]{1.7}{\meter\per\second\ north}
+\end{equation*}
+\end{solution}
+
+
+
+\question
+Cassie walked to her friend’s house with an average speed of 1.40 m/s. The distance between the houses is 205 m. How long did the trip take her?
+
+\begin{solution}
+    $\text{speed} = \SI{1.40}{\meter/\second}$, $D = \SI{205}{\meter/\second}$
+
+\begin{equation*}
+    \text{time} = \frac{\text{distance}}{\text{speed}} = \SI{146}{\second}
+\end{equation*}
+\end{solution}
+
+\question
+What is the distance traveled by an object that moves with an average speed of 6.0 meters per second for 8.0 seconds?
+
+\begin{solution}
+    $\text{speed} = \SI{6.0}{\meter/\second}$, $\text{time} = \SI{8.0}{\second}$
+
+\begin{equation*}
+    \text{distance} = \text{speed} \times \text{time} = \SI{48}{\meter} 
+\end{equation*}
+\end{solution}
+
+
+\question
+A train on a track makes a trip from the 5.25-km mark to the 3.75-km mark. What is the average velocity (in km/h) if the trip takes 5.0 min?
+
+\begin{solution}
+    \textbf{Answer}: $\SI{-18.0}{km/h}$. See \textit{OpenStax}: Example 2.6 (\href{https://openstax.org/books/college-physics/pages/2-4-acceleration}{link})
+\end{solution}
+
+\question
+Layla jogs with an average velocity of 2.4 m/s east. What is her displacement after 46 s?
+
+\begin{solution}
+    $v = \SI{2.4}{m/s\ east}$, $t = \SI{46}{s}$
+
+\begin{equation*}
+    \Delta{x} = v \cdot t = \SI{110}{m\ east}
+\end{equation*}
+\end{solution}
+
+
+\question
+How long will it take Phillip to get to school if he walks 428 m west with an average velocity of 1.70 m/s west?
+
+\begin{solution}
+    $\Delta{x} = \SI{428}{m\ west}$, $v = \SI{1.70}{m/s\ west}$
+
+\begin{equation*}
+    t = \frac{\Delta{x}}{v} = \SI{252}{s}
+\end{equation*}
+\end{solution}
+
+
+\question
+Which of the following information about motion can be determined by looking at a position vs.~time graph that is a straight line?
+
+\begin{choices}
+\choice frame of reference
+\choice average acceleration
+\CorrectChoice velocity
+\choice direction of force applied
+\end{choices}
+
+\question
+What is the slope of a straight line graph of position vs.~time?
+
+\begin{choices}
+\CorrectChoice Velocity
+\choice Displacement
+\choice Distance
+\choice Acceleration
+\end{choices}
+
+\begin{solution}
+The slope of the line is the rise (position) over the run (time). ``Position over time'' units are for velocity.
+\end{solution}
+
+
+\question
+True or False: The position vs.~time graph of an object that is speeding up is a straight line.
+
+\begin{choices}
+\choice True
+\CorrectChoice False
+\end{choices}
+
+
+
+\begin{EnvUplevel}
+\textbf{Refer to Figure~\ref{fig:Ch2_Prob6} and answer Questions \ref{ques:start} through \ref{ques:Ch2_Prob35}.}
+\end{EnvUplevel}
+
+
+\question
+What does the area under a velocity vs.~time graph line represent?
+
+\begin{choices}
+\choice Acceleration
+\CorrectChoice Displacement
+\choice Distance
+\choice Instantaneous velocity
+\end{choices}
+
+\begin{EnvUplevel}
+\textbf{For questions \ref{ques:Unit02_Elevator1} and \ref{ques:Unit02_Elevator2}, refer to the velocity vs.~time graph shown in Figure~\ref{fig:Unit02_Fig2.20}.}
+\end{EnvUplevel}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[axis y line=left, 
+        axis x line=left,
+        ymin=0, ymax=4,
+        xmin=0, xmax=25,
+        ylabel = Velocity (m/s),
+        xlabel = Time (s),
+        grid=both,
+        ytick={0,1,...,4}
+    ]
+    \addplot[
+        %color=green!67!black,
+        color=black,
+        %mark options={color=black},mark=*,
+        ultra thick,
+        ]
+        coordinates {
+        (0,0)(3,3)(17,3)(23,0)
+        };
+    \end{axis}
+    \end{tikzpicture}
+    \caption{A $v$ vs.~$t$ graph of an elevator moving up some floors. Suppose the elevator is initially at rest. It then speeds up for 3 seconds, maintains that velocity for 15 seconds, then slows down for 5 seconds until it stops.}
+    \label{fig:Unit02_Fig2.20}
+\end{figure}
+
+\question \label{ques:Unit02_Elevator1}
+
+The instantaneous velocity at t = 10 s is \underline{\hspace{2cm}}. The instantaneous velocity at t = 23 s is \underline{\hspace{2cm}}.
+
+\begin{choices}
+\choice \SI[per-mode=symbol]{0.0}{\meter\per\second}; \SI[per-mode=symbol]{0.0}{\meter\per\second}
+\choice \SI[per-mode=symbol]{0.0}{\meter\per\second}; \SI[per-mode=symbol]{3.0}{\meter\per\second}
+\CorrectChoice \SI[per-mode=symbol]{3.0}{\meter\per\second}; \SI[per-mode=symbol]{0.0}{\meter\per\second}
+\choice \SI[per-mode=symbol]{3.0}{\meter\per\second}; \SI[per-mode=symbol]{1.5}{\meter\per\second}
+\end{choices}
+
+\question \label{ques:Unit02_Elevator2}
+
+Calculate the net displacement and the average velocity of the elevator over the time interval shown.
+
+\begin{choices}
+\choice Net displacement is 45 m and average velocity is 2.10 m/s.
+\choice Net displacement is 45 m and average velocity is 2.28 m/s.
+\choice Net displacement is 57 m and average velocity is 2.66 m/s.
+\CorrectChoice Net displacement is 57 m and average velocity is 2.48 m/s.
+\end{choices}
+
+
+
+
+
+\end{questions}
 
 
 

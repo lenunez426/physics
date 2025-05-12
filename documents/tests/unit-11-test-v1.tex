@@ -1,0 +1,585 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+
+\setrandomizerseed{1}
+
+\header{Physics \\Test on Unit 11: Waves}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\runningheader{}{}{}
+
+
+\begin{document}
+
+\noindent \textcolor{red}{\textbf{INSTRUCTOR SOLUTIONS}}
+
+\bigskip
+
+\noindent \textbf{Questions \ref{Q1}--\ref{Q2}.} The figure below shows the displacement from equilibrium for a wave on a string as a function of position.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5.5cm,
+        width=9.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Displacement (m)},
+        xlabel={Position (m)},
+        x label style={at={(axis description cs: 0.5,0)},below},
+        ymin=-10,ymax=10,
+        xmin=0,xmax=12,
+        ytick={-10,-6,...,10},
+        xtick={0,1,...,12},
+        grid=both,
+        clip=false,
+        minor y tick num=1,
+        ]
+        \addplot[thick,domain=0:12,samples=150] {8*cos(deg(2*pi*x/4)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{questions}
+
+\question \label{Q1}
+What is the wave's amplitude?
+
+\begin{randomizechoices}
+    \correctchoice \SI{8}{m}
+    \choice \SI{16}{m}
+    \choice \SI{4}{m}
+    \choice \SI{2}{m}
+\end{randomizechoices}
+
+\question \label{Q2}
+The wavelength of the wave is
+
+\begin{randomizechoices}
+    \choice \SI{8}{m}
+    \choice \SI{16}{m}
+    \correctchoice \SI{4}{m}
+    \choice \SI{2}{m}
+\end{randomizechoices}
+
+\question
+What wave property is being measured in the figure below?
+
+\begin{center}
+\begin{tikzpicture}[y=1cm,x=3cm]
+    \draw[gray,domain=0:2,smooth] plot(\x,{sin(deg(2*pi*\x))});
+    \draw[thick,|<->|,yshift=1mm] (0.25,1) -- ++(1,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice wavelength
+    \choice amplitude
+    \choice frequency
+    \choice wave speed
+\end{randomizechoices}
+
+\question
+What wave characteristic is being measured in the figure below?
+
+\begin{center}
+\begin{tikzpicture}[y=1cm,x=3cm]
+    \draw[gray,domain=0:2,smooth] plot(\x,{sin(deg(2*pi*\x))});
+    \draw[lightgray,densely dashed] (0,0) -- (2,0);
+    \draw[thick,<->] (1.25,0) -- ++(0,1);
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \choice wavelength
+    \correctchoice amplitude
+    \choice frequency
+    \choice wave speed
+\end{randomizechoices}
+
+\question 
+The transverse wave shown in the figure below is produced by disturbing one end a coil at a rate of \SI{3}{Hz}. Find the wave speed.
+
+\begin{center}
+\begin{tikzpicture}[y=1cm,x=3cm]
+    \draw[gray,domain=0:2,smooth] plot(\x,{sin(deg(2*pi*\x))});
+    \draw[thick,|<->|,yshift=1mm] (0.25,1) -- ++(1,0) node[above,pos=0.5] {\SI{2}{m}};
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+{\color{red}
+$v = f\lambda$
+}
+\fi
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice \SI{6}{m/s}
+    \choice \SI{5}{m/s}
+    \choice \SI{3}{m/s}
+    \choice \SI{2}{m/s}
+    \choice More information is needed.
+\end{randomizechoices}
+
+
+\question
+A metronome emits clicks at a rate of \SI{4.0}{Hz}. Calculate period between clicks. 
+
+\ifprintanswers
+{\color{red}
+$T = \frac{1}{f}$
+}
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{0.25}{s}
+    \choice \SI{4.0}{s}
+    \choice \SI{0.50}{s}
+    \choice \SI{8.0}{s}
+\end{randomizechoices}
+
+\question
+Two wave pulses of equal amplitude are moving towards each other on a string, as shown in the figure below.
+
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-2) grid (6,6);
+    \draw[domain=-6:0,samples=120,thick] plot (\x,{4*exp(-(\x+3)^2)});
+    \node[above] at (-3,4) {$\rightarrow$};
+    \draw[domain=0:6,samples=120,thick] plot (\x,{4*exp(-(\x-3)^2)});
+    \node[above] at (+3,4) {$\leftarrow$};
+    \draw (0,6) -- (0,-2) node[below] {$x=0$};
+\end{tikzpicture}
+\end{center}
+
+Which of the following graphs represents how the string will appear when the pulses meet at $x=0$?
+
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{4*exp(-(\x)^2) + 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph A}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{2*exp(-(\x)^2) + 2*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph B}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{-4*exp(-(\x)^2) - 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph C}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{-2*exp(-(\x)^2) - 2*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph D}};
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}[norandomize]
+    \correctchoice Graph A
+    \choice Graph B
+    \choice Graph C
+    \choice Graph D
+\end{randomizeoneparchoices}
+
+\question
+Two wave pulses with unequal amplitudes are moving towards each other on a string, as shown in the figure below.
+
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-6) grid (6,6);
+    \draw[domain=-6:0,samples=120,thick] plot (\x,{2*exp(-(\x+3)^2)});
+    \node[above] at (-3,2) {$\rightarrow$};
+    \draw[domain=0:6,samples=120,thick] plot (\x,{-6*exp(-(\x-3)^2)});
+    \node[below] at (+3,-6) {$\leftarrow$};
+    \draw (0,6) -- (0,-6) node[above,pos=0] {$x=0$};
+\end{tikzpicture}
+\end{center}
+
+Which of the following graphs represents how the string will appear when the pulses meet at $x=0$?
+
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{4*exp(-(\x)^2) + 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph A}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{2*exp(-(\x)^2) + 2*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph B}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{-4*exp(-(\x)^2) - 4*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph C}};
+\end{tikzpicture}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
+    \draw[domain=-6:6,samples=120,thick] plot (\x,{2*exp(-(\x)^2) - 6*exp(-(\x)^2)});
+    \node[above] at (current bounding box.north) {\textbf{Graph D}};
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Graph A
+    \choice Graph B
+    \choice Graph C
+    \correctchoice Graph D
+\end{randomizeoneparchoices}
+
+\question
+Sound is a \fillin[longitudinal][4cm]\ wave.
+
+\begin{randomizechoices}
+    \correctchoice longitudinal
+    \choice transverse
+    \choice electromagnetic
+    \choice seismic
+\end{randomizechoices}
+
+\question
+The figure below shows particles of air as a sound wave propagates through them. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7.5cm,width=7.5cm,
+      cycle list={
+        only marks,mark size=1pt\\
+        only marks,mark size=1pt\\
+      },
+      xmin=0,xmax=8,
+      ymin=-4,ymax=4,
+      domain=270:360+90,
+      samples=150,
+      axis line style={draw=none},
+      ticks=none,
+      clip=false,
+    ]
+    \draw[dashed,->] (0,0) -- (6,0);
+    \addplot ({(0.2+0.07*rand)*cos(x)},{(0.2+0.07*rand)*sin(x)});
+    \addplot ({(1.0+0.07*rand)*cos(x)},{(1.0+0.07*rand)*sin(x)});
+    \addplot ({(2.0+0.10*rand)*cos(x)},{(2.0+0.10*rand)*sin(x)});
+    \addplot ({(3.0+0.12*rand)*cos(x)},{(3.0+0.12*rand)*sin(x)});
+    \addplot ({(4.0+0.12*rand)*cos(x)},{(4.0+0.12*rand)*sin(x)});
+    
+    \draw[<-,ultra thick] (3.75,1.5) -- ++(axis direction cs: 1,0.5) node[right] {X};
+    \draw[<-,ultra thick] (2.5,-2.5) -- ++(axis direction cs: 2,1) node[right] {Y};
+    
+    \node[left=1em] at (0,0) {\twemoji[width=1cm]{speaker high volume}};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Region X is called a \fillin[compression][4cm], and Region Y is a \fillin[rarefaction][4cm].
+
+\begin{randomizechoices}
+    \correctchoice compression; \hspace{1mm} rarefaction
+    \choice rarefaction; \hspace{1mm} compression
+    \choice wavelength; \hspace{1mm} frequency
+    \choice frequency; \hspace{1mm} wavelength
+\end{randomizechoices}
+
+
+\question
+A group of students conducts an experiment using a long coil to study the properties of waves.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[decorate,decoration={coil,
+        segment length=2.5pt,
+        amplitude=2mm
+        },domain=0:3,x=3cm,y=5mm,samples=150] plot(\x,{sin(deg(2*pi*\x))});
+\end{tikzpicture}
+\end{center}
+
+After taking multiple sets of data, they produce the graph shown below and conclude that wavelength is inversely proportional to some measured property of the wave.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=8cm,
+        ylabel={Wavelength (m)},
+        xlabel={???},
+        axis lines=left,
+        ymin=0,ymax=10,
+        xmin=0,xmax=5,
+        ytick={0,2,...,10},
+        xtick={0,1,...,5},
+        minor y tick num=1,
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        tick label style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=1}
+        ]
+        \addplot[only marks] coordinates{(0.83,10)(1.23,5)(2.17,3.33)(3.13,2.5)(4.17,2)(4.55,1.67)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+After forgetting to label the $x$-axis, the teacher deducts 10\% of their grade. Which of the following quantities and units could be plotted on the horizontal axis to produce the inverse relationship?
+
+\ifprintanswers
+{\color{red}
+$v = f \lambda \quad \Rightarrow \quad \lambda = \frac{v}{f}$, where $v$ is constant for each measurement.
+}
+\fi
+
+\begin{randomizechoices}
+    \correctchoice Frequency (Hz)
+    \choice Period (s)
+    \choice Wave Speed (m/s)
+    \choice Amplitude (m)
+\end{randomizechoices}
+
+
+
+\begin{EnvUplevel}
+\textbf{Questions \ref{Q3}--\ref{Q4}.} A rope made of lots of beads is attached to an oscillating machine that produces steady transverse waves across the rope. A student places the other end of the rope near a window to facilitate the counting of wave cycles.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}[shift={(7.45,-1.43)},x=5mm,y=5mm]]
+    \draw[ultra thick,brown] (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \clip (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \node at (2,3.1) {\twemoji[height=4cm]{national park}};
+    \end{scope}
+    \draw[x=6mm,y=1cm,domain=-pi/2:pi/2+4*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=6mm,y=1cm,domain=-pi/2:pi/2+4*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    % % \draw[<-,very thick] (2.75*pi,1) -- ++(1,0) node[right] {crest};
+\end{tikzpicture}
+\end{center}
+\end{EnvUplevel}
+
+\question \label{Q3}
+What is the number of waves on the string shown in the figure?
+
+\begin{randomizechoices}
+    \correctchoice 2.5
+    \choice 3.0
+    \choice 3.5
+    \choice 4.0
+\end{randomizechoices}
+
+\question 
+Using a stop watch, a student measures the amount of time it takes for 10 full wave cycles to propagate through the window frame. Then, using Desmos, they calculate 10 cycles divided by the total measured time. This calculation determines the wave's
+
+\begin{randomizechoices}
+    \correctchoice frequency
+    \choice wavelength
+    \choice speed
+    \choice period
+\end{randomizechoices}
+
+\question \label{Q4}
+The student doubles the oscillation frequency and notes that the wavelength reduces to half the original value. What happened to the wave speed?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice The wave speed stayed constant.
+    \choice The wave speed doubled.
+    \choice The wave speed was halved.
+    \choice There is not enough information. 
+\end{randomizechoices}
+
+
+\bigskip
+
+\hrule
+
+\question
+When an ambulance is at rest, it emits a siren at a frequency of $f_0$ corresponding to the rest pitch. The ambulance then moves at speed $v_0$ relative to Alice and Bob, as shown in the figure below. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (-5,0) node {\Strichmaxerl[3]} node[above=4mm] {Alice};
+    \draw (+5,0) node {\Strichmaxerl[3]} node[above=4mm] {Bob};
+    \node at (0,0) {\reflectbox{\resizebox{1cm}{!}{\usym{1F691}}}}; 
+    \draw (-0.10,0) circle (0.8);
+    \draw (-0.30,0) circle (1.2);
+    \draw (-0.50,0) circle (1.6);
+    \draw (-0.70,0) circle (2.0);
+\end{tikzpicture}
+\end{center}
+
+Alice will hear a pitch that is \fillin[lower than][4cm] the rest pitch, and Bob will hear a pitch that is \fillin[higher than][4cm] the rest pitch.
+
+\begin{randomizechoices}
+    \correctchoice lower than; \hspace{1pt} higher than
+    \choice higher than; \hspace{1pt} lower than
+    \choice lower than; \hspace{1pt} equal to
+    \choice equal to; \hspace{1pt} higher than
+\end{randomizechoices}
+
+
+\question
+A rope is attached to a wave and the standing wave shown below is produced.
+
+\begin{center}
+\begin{tikzpicture}[y=8mm,x=7cm]
+    \draw[very thick,domain=0:1,samples=100,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))});
+    \draw[domain=0:1,samples=100,densely dashed,black!25] plot(\x,{-sin(deg(2*pi*2.5*\x))});
+\end{tikzpicture}
+\end{center}
+
+How many nodes and antinodes are shown in the figure?
+
+\begin{randomizechoices}
+    \correctchoice 6 nodes, 5 antinodes
+    \choice 5 nodes, 6 antinodes
+    \choice 2.5 nodes, antinodes
+    \choice 3 nodes, 2.5 antinodes
+\end{randomizechoices}
+
+\question
+An incident pulse moving to the right approaches a fixed end.
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (0,-4) grid (6,4);
+    \draw[domain=0:6,samples=120,thick] plot (\x,{3*exp(-(\x-3)^2)});
+    \node[right] at (3,3) {$\rightarrow$};
+    \fill (6,0) circle (2pt) node[above right] {fixed end};
+\end{tikzpicture}
+\end{center}
+
+Which of the following figures represents the reflected pulse?
+
+\begin{center}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (0,-4) grid (6,4);
+    \draw[domain=0:6,samples=120,thick] plot (\x,{3*exp(-(\x-3)^2)});
+    \node[left] at (3,3) {$\leftarrow$};
+    \fill (6,0) circle (2pt);
+    \node[above] at (current bounding box.north) {\textbf{Figure A}};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (0,-4) grid (6,4);
+    \draw[domain=0:6,thick] plot (\x,0);
+    % \node[left] at (3,3) {$\leftarrow$};
+    \fill (6,0) circle (2pt);
+    \node[above] at (current bounding box.north) {\textbf{Figure B}};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (0,-4) grid (6,4);
+    \draw[domain=0:6,samples=120,thick] plot (\x,{+3*exp(-(\x-3)^2)});
+    \draw[domain=0:6,samples=120,thick] plot (\x,{-3*exp(-(\x-3)^2)});
+    \node[left] at (3,-3) {$\leftarrow$};
+    \node[left] at (3,+3) {$\leftarrow$};
+    \fill (6,0) circle (2pt);
+    \node[above] at (current bounding box.north) {\textbf{Figure C}};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[y=3mm,x=3mm]
+    \draw[step=0.5,black!15] (0,-4) grid (6,4);
+    \draw[domain=0:6,samples=120,thick] plot (\x,{-3*exp(-(\x-3)^2)});
+    \node[left] at (3,-3) {$\leftarrow$};
+    \fill (6,0) circle (2pt);
+    \node[above] at (current bounding box.north) {\textbf{Figure D}};
+\end{tikzpicture}
+\end{center}
+
+\question
+How do the pitch and amplitude of a sound wave produced by a meowing kitten compare to sound produced by a blue whale?
+
+\begin{randomizechoices}
+    \correctchoice The kitten's sound has a higher pitch but smaller amplitude.
+    \choice The kitten's sound has a lower pitch but greater amplitude.
+    \choice The kitten's sound has a higher pitcher and greater amplitude.
+    \choice The kitten's sound has a lower pitch and smaller amplitude.
+\end{randomizechoices}
+
+\question
+What is the shortest length of an open pipe that resonates at a frequency of \SI{49.0}{Hz} The velocity of sound is \SI{343}{m/s}.
+
+\begin{center}
+\begin{tikzpicture}[y=6mm,x=7cm]
+    \draw (0,1) -- (1,1) (0,-1) -- (1,-1);
+    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{+cos(deg(2*pi*2*\x))});
+    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{-cos(deg(2*pi*2*\x))});
+    % \draw[domain=0:1,samples=100,densely dashed,black!25] plot(\x,{-sin(deg(2*pi*2.5*\x))});
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+{\color{red}
+$f = \frac{nv}{2L}$, where $n=1$ for shortest pipe, and $v = \SI{343}{m/s}$ is sound speed. $\Rightarrow \quad L = \frac{nv}{2f} = \frac{(1)(\SI{343}{m/s})}{2(\SI{49}{Hz})} = \boxed{\SI{3.5}{m}}$
+}
+\fi
+
+\begin{randomizechoices}
+    \choice \SI{1.75}{m}
+    \correctchoice \SI{3.50}{m}
+    \choice \SI{14.0}{m}
+    \choice \SI{22.0}{m}
+\end{randomizechoices}
+
+\question
+The energy of a sound wave is most closely related to its
+
+\begin{randomizechoices}
+    \correctchoice amplitude
+    \choice period
+    \choice frequency
+    \choice wavelength
+\end{randomizechoices}
+
+% \question
+% A long rope is made by connecting a smaller metallic rope to a rubber one. A group of students generate a transverse pulse by distributing one end of the rope.  In Trial one, the pulse is incident along the metal portion, and in Trial 2 the incident pulse travels along the rubber portion, as shown below.
+
+% \begin{EnvUplevel}
+% \begin{center}
+% \begin{tikzpicture}[y=3mm,x=5mm]
+%     \draw[ultra thick,domain=-6:0,samples=120] plot (\x,{4*exp(-(\x+3)^2)});
+%     \node[above] at (-3,4) {$\rightarrow$};
+%     \draw (0,0) -- (6,0) node[below] {rubber};
+%     \draw[densely dashed] (0,3) -- (0,-3) node[below] {boundary};
+%     \node[above=] at (current bounding box.north) {\textbf{Trial 1}};
+%     \node[below] at (-6,0) {metal};
+% \end{tikzpicture}
+% \hspace{1cm}
+% \begin{tikzpicture}[y=3mm,x=5mm]
+%     \draw[domain=-6:0,samples=120] plot (\x,{4*exp(-(\x+3)^2)});
+%     \node[above] at (-3,4) {$\rightarrow$};
+%     \draw[ultra thick] (0,0) -- (6,0) node[below] {metal};
+%     \draw[densely dashed] (0,3) -- (0,-3) node[below] {boundary};
+%     \node[above] at (current bounding box.north) {\textbf{Trial 2}};
+%     \node[below] at (-6,0) {rubber};
+% \end{tikzpicture}
+% \end{center} 
+% \end{EnvUplevel}
+
+% Which trial will produce a reflected pulse?
+
+% \begin{randomizechoices}[norandomize]
+%     \choice Trial 1
+%     \correctchoice Trial 2
+%     \choice Both trials
+%     \choice Neither trial
+% \end{randomizechoices}
+
+\question 
+Sound waves cannot carry energy through
+
+\begin{randomizechoices}
+    \correctchoice a vacuum
+    \choice air
+    \choice water
+    \choice a mirror
+\end{randomizechoices}
+
+
+
+
+
+
+\end{questions}
+\end{document}

@@ -1,24 +1,1091 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+% \documentclass[../main-physics-workbook.tex]{subfiles}
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\input{documents/physics-glossary}
+\usepackage{makecell}
+\usepackage{setspace}
+
+\setcounter{section}{11}
 \begin{document}
 
-\subsection{Oscillating Motion}
+\subsection*{Waves Inquiry}
 
-\subsubsection{Changes in an Oscillating Medium}
+\begin{questions}
+\question 
+Define a wave.
 
-\subsubsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
+\fillwithlines{8mm}
 
-\subsubsection{Effects of Changing the Medium and Energy on SHM}
+\question 
+When a wave travels through a medium it transfers \fillin[energy ] but \fillin[matter ] is not transferred along with the wave. How is this demonstrated in a wave pool?
+
+\fillwithlines{2cm}
+
+
+\question 
+In terms of waves, describe what is meant by the ``medium'' in which a wave travels and give 4 examples.
+
+\question 
+Explain the difference between mechanical waves and non-mechanical (electromagnetic) waves. Give at least three examples of each.
+
+\fillwithlines{2cm}
+
+\question 
+In a transverse wave the particles move \fillin[perpendicular ] relative to the direction the wave moves. Draw a diagram of a transverse wave. Label the direction the particles move along with the direction the wave moves.                 
+
+
+\question 
+In a longitudinal wave the particles move \fillin[parallel ] relative to the direction the wave moves. Draw a diagram of a longitudinal wave. Label the direction the particles move along with the direction the wave moves.                      
+
+
+\question 
+Define a pulse.
+
+\fillwithlines{1.5cm}
+
+\question
+Label the components of each wave using the following terms:
+
+\begin{center}
+\begin{tabular}{ccc}
+     amplitude & wavelength (transverse) &  \\
+     crest & wavelength (longitudinal) & compression \\
+     trough & rarefaction & resting position (equilibrium)
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=1.5cm]
+    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[densely dashed,lightgray] (0,0) -- (3.3*2*pi,0);
+    \bgroup
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \draw[<-,xshift=1pt,yshift=1pt] (pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
+    \draw[<-,xshift=-1pt,yshift=-1pt] (3*pi/2,-1) -- ++ (-1.5,-0.2) node[left] {trough};
+    \draw[<->,yshift=3pt] (2.5*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
+    \draw[<->] (9*pi/2,0) node[below] {amplitude} -- ++(0,1) ;
+    \egroup
+    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \tikzset{declare function={f(\x)=sin(540*\x);}}
+    \begin{tikzpicture}
+     \draw[->] (-0.5,0) -- (10,0);
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+    \bgroup
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
+     \node[below] at (6.5,-1) {compression};
+     \node[below] at (3.4,-1) {rarefaction};
+    \egroup
+     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
+     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
+    \end{tikzpicture}
+\end{center}
+
+\question
+Define period.
+
+\question
+State the period for each of the following:
+
+\begin{parts}
+\part Earth orbiting the Sun: \fillin[1 year] 
+\part Small hand of a clock: \fillin[1 hour]
+\end{parts}
+
+\question
+The following figure represents the graph of a mouse on a bungee cord. Answer the questions below using the graph.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 1,0.5)},right},
+        ymin=-8,ymax=8,
+        xmin=0,xmax=3,
+        ytick={-8,-6,...,8},
+        xtick={0,0.25,...,3},
+        grid=both,
+        clip=false,
+        ]
+        \addplot[thick,domain=0:3,samples=150] {6*cos(deg(2*pi*x)};
+        \fill (0,6) circle (2pt) node[above right] {A};
+        \fill (0.25,0) circle (2pt) node[above right] {B};
+        \fill (0.5,-6) circle (2pt) node[below right] {C};
+        \fill (0.75,0) circle (2pt) node[above right] {D};
+        \fill (1,6) circle (2pt) node[above right] {E};
+        \fill (1.25,0) circle (2pt) node[above right] {F};
+        \fill (1.5,-6) circle (2pt) node[below right] {G};
+        \fill (1.75,0) circle (2pt) node[above right] {H};
+        \fill (2,6) circle (2pt) node[above right] {I};
+        \fill (2.25,0) circle (2pt) node[above right] {J};
+        \fill (2.5,-6) circle (2pt) node[below right] {K};
+        \fill (2.75,0) circle (2pt) node[above right] {L};
+        \fill (3,6) circle (2pt) node[above right] {M};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What point is 1 full cycle after Point A?
+
+\part What point is a half-cycle after Point G?
+
+\part If C represents the lowest point of the mouse's bungee cycle, then where is it at D?
+
+\part What is the period of the mouse's oscillations? How is this period determined?
+\end{parts}
+
+\question Define frequency.
+
+\question
+The formula for period is
+
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{total number of cycles}}
+\end{equation*}
+
+What are the units used to measure period?
+
+\question
+The formula for frequency is
+
+\begin{equation*}
+    f = \frac{\text{total number of cycles}}{\text{total time}}
+\end{equation*}
+
+What are the units used to measure frequency?
+
+\question
+How are frequency and period related mathematically? Write the relationship as a formula.
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    T = \frac{1}{f} \qquad f = \frac{1}{T}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+Calculate the period and frequency for each situation.
+
+\begin{parts}
+\part A pendulum swings back and forth 8 times in 5 seconds.
+
+\begin{solutionorbox}[2cm]
+    
+\end{solutionorbox}
+
+\part It takes 30 seconds for a man to make one complete loop around the track.
+
+\begin{solutionorbox}[2cm]
+    
+\end{solutionorbox}
+\end{parts}
+
+\question 
+How is the energy of a wave relation to the wave amplitude?
+
+\question
+How is this evident in wave surfing?
+
+\question
+If a pendulum is in equilibrium position, work must be done to the system in order to add energy into the system to make the pendulum swing. Which of the following graphs represent the greatest amount of energy added to the system? Explain why. 
+
+\begin{EnvUplevel}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=7cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 0.5,0)},below},
+        ymin=-2,ymax=4,
+        xmin=0,xmax=2,
+        ytick={-2,-1,...,4},
+        xtick={0,1,2},
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        title={Graph 1}
+        ]
+        \addplot[thick,domain=0:2,samples=200] {2*cos(deg(8*pi*x)) + 1};
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=7cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 0.5,0)},below},
+        ymin=-3,ymax=3,
+        xmin=0,xmax=2,
+        ytick={-3,-2,...,3},
+        xtick={0,1,2},
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        title={Graph 2}
+        ]
+        \addplot[thick,domain=0:2,samples=200] {-cos(deg(4*pi*x))};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{EnvUplevel}
+
+\question 
+How does the velocity of a wave relate to the frequency of a wave? The figures below show systems of waves set up in strings, fixed on both ends, under tension. Each set was produced in 1.0 seconds. All the strings have identical tension and length. The variables in each situation is the amplitude and the number of waves present. Rank the wavelength, frequency and velocity of each wave from least to greatest.
+
+\begin{center}
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{15*sin(deg(2*pi*1.5*\x))}) node[left,pos=0] {A};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-15*sin(deg(2*pi*1.5*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{12*sin(deg(2*pi*2*\x))}) node[left,pos=0] {B};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-12*sin(deg(2*pi*2*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100,smooth] plot(\x,{10*sin(deg(2*pi*2.5*\x))}) node[left,pos=0] {C};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-10*sin(deg(2*pi*2.5*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{16*sin(deg(2*pi*3.5*\x))}) node[left,pos=0] {D};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-16*sin(deg(2*pi*3.5*\x))});
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    Wavelength from least to greatest is Wave D, Wave C, Wave B, Wave A. Frequency from least to greatest to A, B, C, D. All waves have the same velocity because the string tension is the same for all waves. 
+\end{solution}
+
+\end{questions}
 
 \clearpage
 
-\subsection{Transverse Waves}
+\subsection*{Math Practice: Wave Characteristics}
 
-\subsubsection{Amplitude, Wavelength, Frequency, and Wave Speed}
+The following terms and equations will be used to answer questions throughout this worksheet.
+
+\begin{equation*}
+    T = \frac{1}{f} \qquad v = f \lambda
+\end{equation*}
+
+where $f$ is frequency, $T$ is period, $v$ is the speed of the wave, and $\lambda$ is the wavelength. 
+
+
+\begin{questions}
+\question 
+Find the frequency in hertz (Hz) for the following periods:
+
+\begin{parts}
+\part \SI{0.40}{s} 
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{0.40}{s}} = \boxed{\SI{2.5}{Hz}}$
+}
+\fi
+
+
+\part \SI{8}{s}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{8}{s}} = \boxed{\SI{0.125}{Hz}}$
+}
+\fi
+
+\part $1/30\,\text{s}$
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\frac{1}{30}\,\text{s}} = \boxed{\SI{30}{Hz}}$
+}
+\fi
+
+\part \SI{20}{s}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{20}{s}} = \boxed{\SI{0.05}{Hz}}$
+}
+\fi
+
+\end{parts}
+
+\question
+Find the period in seconds for the following frequencies:
+
+\begin{parts}
+\part \SI{0.4}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{0.4}{Hz}} = \boxed{\SI{2.5}{s}}$
+}
+\fi
+
+\part \SI{8}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{8}{Hz}} = \boxed{\SI{0.125}{s}}$
+}
+\fi
+
+\part \SI{90}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{90}{Hz}} = \boxed{\SI{0.11}{s}}$
+}
+\fi
+
+\part \SI{1.034e-5}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{1.034e-5}{Hz}} = \boxed{\SI{9.671e4}{s}}$
+}
+\fi
+\end{parts}
+
+\question
+Find the frequency of a metronome if it is set to make 7 complete oscillations in 15 seconds. Round to the nearest hundredth.
+
+\begin{solution}
+\begin{equation*}
+    f = \frac{\text{cycles}}{\text{time}} = \frac{7}{\SI{15}{s}} = \boxed{\SI{0.47}{Hz}}
+\end{equation*}
+\end{solution}
+
+\question
+Sarah and a few of her friends went to the beach and saw that the distance between the crest of each wave is \SI{1.5}{m}. The waves hit the beach every 7 seconds. For each calculation below, round to the nearest hundredth.
+
+\begin{parts}
+\part Find the frequency of the waves. 
+
+\begin{solution}
+\begin{equation*}
+    f = \frac{1}{T} = \frac{1}{\SI{7}{s}} = \boxed{\SI{0.143}{Hz}}
+\end{equation*}
+\end{solution}
+
+\part Find the speed of the waves.
+
+\begin{solution}
+\begin{equation*}
+    v = f\lambda = (\SI{0.14}{Hz})(\SI{1.5}{m}) = \boxed{\SI{}{\SI{0.21}{m/s}}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question
+Calculate the period, in seconds, and frequency, in hertz, of a pendulum that swings back and forth 12 times in one minute.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}
+    \draw[lightgray] (-1,0) -- (1,0) (0,0) -- (0,{-3.5*sin(75)});
+    \fill[lightgray] (-1,0) rectangle (1,0.1);
+    \coordinate (P) at ({3*cos(70)},{-3*sin(70)});
+    \draw[thick] (0,0) -- (P) node[pos=0.65,above right] {$l$};
+    \fill (P) circle (2pt) node[right=2pt] {$m$};
+    \draw (0,-1) arc (270:290:1) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (290:250:3);
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{12}{cycles}} = \boxed{\SI{5.0}{s}}
+\end{equation*}
+
+\begin{equation*}
+    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{12}{cycles}}{\SI{60}{s}} = \boxed{\SI{0.20}{Hz}}
+\end{equation*}
+\end{solution}
+
+\question
+What is the period, in seconds, and frequency, in hertz, of a hear that beats 60 times in one minute?
+
+\begin{solution}
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{60}{cycles}} = \boxed{\SI{1}{s}}
+\end{equation*}
+
+\begin{equation*}
+    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{60}{cycles}}{\SI{60}{s}} = \boxed{\SI{1}{Hz}}
+\end{equation*}
+
+\end{solution}
+
+\question
+At the beach today, the waves were \SI{0.34}{m} apart and had a frequency of $1/10\,\text{Hz}$. Find the speed of the waves.
+
+\begin{solution}
+We are given $\lambda = \SI{0.34}{m}$ and $f = \frac{1}{10}\,\text{Hz} = \SI{0.1}{Hz}$
+
+\begin{equation*}
+    v = f\lambda = (\SI{0.10}{Hz})(\SI{0.34}{m}) = \boxed{\SI{0.034}{m/s}}
+\end{equation*}
+\end{solution}
+
+\question
+Callie and Chris go on a hike along the edge of the ocean. They stop to revel in the view below. Callie notices that 7 waves pass beneath them in 25 seconds, each wave being 3 meters apart. Calculate the period, frequency, wavelength, and speed of these ocean waves.
+
+\begin{solution}
+\begin{align*}
+    T &= \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{25}{s}}{\SI{7}{cycles}} = \boxed{\SI{3.6}{s}} \\[1ex]
+    f &= \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{7}{cycles}}{\SI{25}{s}} = \boxed{\SI{0.28}{Hz}} \\[1ex]
+    \lambda &= \boxed{\SI{3.0}{m}} \\[1ex] 
+    v &= f \lambda = (\SI{0.28}{Hz})(\SI{3.0}{m}) = \boxed{\SI{0.84}{m/s}}
+\end{align*}
+
+\end{solution}
+
+\end{questions}
+
+\clearpage
+
+
+\subsection*{Generating Waves Lab}
+
+\textbf{Purpose:} To determine the relationship between wavelength and frequency. 
+
+\bigskip
+
+\noindent \textit{Procedures:}
+
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+    \item Stretch the coil to a distance between 5 to 6 meters. Record the distance stretched below:
+
+    \begin{center}
+        \textbf{Distance coil was stretched}: \fillin[]\ m
+    \end{center}
+    
+    \item Oscillate the coil to start a standing wave that is $\frac{1}{2}$ wavelength long.
+    \item When you have a smooth wave, record the time it takes to complete 10 cycles, in the data table below. \textit{Note:} Moving your hand back and forth is one cycle. 
+    \item Repeat steps 2 and 3 for 1, 1.5, 2, and 2.5 wavelengths.
+\end{enumerate}
+
+\ifprintanswers
+
+\begin{center}
+\bgroup
+\newcolumntype{R}[1]{>{\color{red}}#1}
+\def\arraystretch{3}
+\begin{tabular}{|c|R{c}|R{c}|R{c}|R{c}|R{c}|R{c}|}
+    \hline
+    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
+    0.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*0.5*\x))})} & 12.0 & 0.83 & 1.20 & 10 & 8.33\\ \hline
+    1.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.0*\x))})} & 8.1 & 1.23 & 0.81 & 5.00 & 6.17\\ \hline
+    1.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.5*\x))})} & 4.6 & 2.17 & 0.46 & 3.33 & 7.25\\ \hline
+    2.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.0*\x))})} & 3.2 & 3.13 & 0.32 & 2.50 & 7.81\\ \hline
+    2.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.5*\x))})} & 2.4 & 4.17 & 0.24 & 2.00 & 8.33\\ \hline
+    3.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*3.0*\x))})} & 2.2 & 4.55 & 0.22 & 1.67 & 7.58\\ \hline
+\end{tabular}
+\egroup
+\end{center}
+
+\else
+
+\begin{center}
+\bgroup
+\def\arraystretch{3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
+    0.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))})} & & & & & \\ \hline
+    1.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))})} & & & & & \\ \hline
+    1.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))})} & & & & & \\ \hline
+    2.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))})} & & & & & \\ \hline
+    2.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))})} & & & & & \\ \hline
+    3.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))})} & & & & & \\ \hline
+\end{tabular}
+\egroup
+\end{center}
+
+\fi
+
+\uplevel{\textit{Analysis}}
+
+\begin{questions}
+\question
+Show one sample calculation for frequency.
+
+{\large
+\begin{equation*}
+    f = \frac{\text{10 cycles}}{\text{time}} 
+      = \frac{\text{10 cycles}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{8.1}{s} \qquad} 
+      = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad}
+\end{equation*}
+}
+
+\question
+Show one sample calculation for period.
+
+{\large
+\begin{equation*}
+    T = \frac{1}{f} 
+    = \frac{1}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad} 
+    = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{0.81}{s} \qquad}
+\end{equation*}
+}
+
+\question
+Show one sample calculation for determining the wavelength $\lambda$.
+
+{\large
+\begin{equation*}
+    \lambda = \frac{\text{distance stretched}}{\text{number of waves}} = \frac{\ifprintanswers \color{red} \else \color{white} \fi \SI{5.00}{m}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \text{2 waves} \qquad} = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{2.50}{m} \qquad}
+\end{equation*}
+}
+
+\clearpage
+
+\question
+Graph wavelength vs. frequency, and wavelength vs. period in the space below.
+
+\begin{EnvUplevel}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=8cm,
+        ylabel={Wavelength (m)},
+        xlabel={Frequency (Hz)},
+        axis lines=left,
+        ymin=0,ymax=10,
+        xmin=0,xmax=5,
+        ytick={0,2,...,10},
+        xtick={0,1,...,5},
+        minor y tick num=1,
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        tick label style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=1}
+        ]
+        \ifprintanswers
+        \addplot[red,only marks] coordinates{(0.83,10)(1.23,5)(2.17,3.33)(3.13,2.5)(4.17,2)(4.55,1.67)};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6.5cm,
+        ylabel={Wavelength (m)},
+        xlabel={Period (s)},
+        axis lines=left,
+        ymin=0,ymax=10,
+        xmin=0,xmax=2,
+        ytick={0,2,...,10},
+        xtick={0,0.5,...,2},
+        minor y tick num=1,
+        minor x tick num=2,
+        grid=both,
+        clip=false,
+        tick label style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=1}
+        ]
+        \ifprintanswers
+        \addplot[red,only marks] coordinates{(1.20,10)(0.81,5)(0.46,3.33)(0.32,2.5)(0.24)(2.00)(0.22,1.67)};
+        \addplot[domain=0.2:1.3,red] {7.886*x - 0.188};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+What is the proportional relationship between wavelength and frequency?
+
+\ifprintanswers
+{\color{red} Wavelength is inversely proportional to frequency: $\lambda \propto \frac{1}{f}$. 
+
+\vspace{-5mm}}
+\fi
+
+\fillwithlines{8mm}
+
+\question
+What is the slope of the $\lambda$ vs $T$ graph? Include correct units. What is the significance (meaning) of this slope? \textit{Hint:} Look at the units.
+
+\begin{solutionorbox}[2cm]
+According to the best fit line (see Python, scipy), the slope is \SI{7.886}{m/s}. Slope represents the speed of the wave. 
+\end{solutionorbox}
+
+\question
+Write the equation for the wavelength vs period graph. Do not use $x$ and $y$ in your equation, but $\lambda$ and $T$, and include units for your slope. 
+
+\ifprintanswers
+{\color{red} $\lambda = (\SI{7.886}{m/s}) T - \SI{0.188}{m}$
+
+\vspace{-5mm}
+}
+
+\fi
+
+\fillwithlines{8mm}
+
+
+
+\question
+Calculate the average velocity for all waves from the six values in the table in the previous page. Is there a trend of increasing or decreasing velocities as the frequency increases?
+
+\ifprintanswers
+{\color{red} $\bar{v} = \SI{7.58}{m/s}$. While there is some variation in velocities, overall trend is constant.
+
+\vspace{-5mm}
+}
+\fi
+
+\fillwithlines{8mm}
+
+\question
+How does the average velocity of all the waves compare to the slope for your graph? Is there any relationship between the two numbers?
+
+\ifprintanswers
+{\color{red}
+The average velocity is (approximately) the slope on the $\lambda$ vs $T$ graph.
+
+\vspace{-5mm}
+}
+\fi
+
+\fillwithlines{8mm}
+
+
+\question
+The wave shown below is traveling to the right with a frequency  of \SI{25.0}{Hz}. Find the amplitude, wavelength, period, and speed.
+
+\begin{EnvUplevel}
+\begin{minipage}{7.5cm}
+\centering
+\begin{tikzpicture}
+    \draw[domain=0:1,y=1cm,x=6cm,smooth] plot(\x,{cos(deg(2*pi*1.5*\x))});
+    \draw[black!15] (0,1.2) -- (0,-1.2) (0,0) -- (6,0);
+    \draw[thick,|<->|,yshift=-2mm] (0,-1) -- (2,-1) node[below,pos=0.5] {\SI{10}{cm}};
+    \draw[thick,|<->|,xshift=+2mm] (6,-1) -- (6,+1) node[right,pos=0.5] {\SI{18}{cm}};
+\end{tikzpicture}
+\end{minipage}
+\hspace{5mm}
+\fbox{
+\begin{minipage}{7.5cm}
+{
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{align*}
+    A &= \SI{9}{cm} \\[1ex]
+    \lambda &= \SI{20}{cm} \\[1ex]
+    T &= \frac{1}{f} = \SI{0.040}{s} \\[1ex]
+    v &= f\lambda = \SI{500}{cm/s}
+\end{align*}
+}
+\end{minipage}
+
+}
+\end{EnvUplevel}
+
+
+
+\end{questions}
+
+\clearpage
+
+
+\subsection*{Wave Behavior and Sound}
+
+\bgroup
+
+\doublespacing
+\begin{questions}
+\question
+When a wave travels across a boundary from one medium to another, the pulse that strikes the boundary is called the \fillin[incident pulse][4cm].
+
+\question
+Some of the energy of the incident wave’s pulse is \fillin[transmitted][4cm] across the boundary, while some is reflected backward in what is known as the \fillin[reflected pulse][5cm].
+
+\question
+When a wave pulse hits a rigid boundary, the pulse is reflected back with almost exactly the same amplitude as the pulse of the incident wave, but the reflected pulse is \fillin[inverted].
+
+\question
+The law of \fillin[superposition][4cm] states that the displacement of a medium caused by two or more waves is the algebraic sum of the displacements caused by the individual waves. The result of the superposition of two or more waves is called \fillin[interference][4cm].
+
+\question
+A standing wave is produced when a wave that is traveling is reflected back upon itself. There are two main parts to a standing wave: an area of zero amplitude is called a \fillin[node], and an area of maximum amplitude is called an \fillin[antinode].
+
+\question
+Sound waves are pressure oscillations that are transmitted through matter. Sound waves travel through air because a vibrating source produces regular variations, or oscillations, in air pressure.
+
+\question
+Sound waves are longitudinal waves because the motion of the particles in air is parallel to the direction of the wave’s motion.
+
+\question
+\fillin[Pitch] is the highness or lowness of a sound and depends on the frequency of vibration. The human ear is not equally sensitive to all frequencies, and most people cannot hear sounds with frequencies below 20\,Hz or above 16,00\, Hz.
+
+\question
+The \fillin[loudness] of a sound wave is the intensity of the sound as perceived by the ear and interpreted by the brain and depends primarily on the amplitude of the pressure wave.
+
+\question
+The Doppler Effect. The change in frequency of sound caused by the movement of either the source, the detector, or both is called the Doppler effect.
+
+The Doppler effect can be described as the effect produced by a moving source of waves in which there is an apparent upward shift in frequency for observers towards whom the source is approaching and an apparent downward shift in frequency for observers from whom the source is receding.
+
+It is important to note that the effect does not result because of an actual change in the frequency of the source.
+
+\question
+In a 2-dimensional medium a transmitted wave can change direction. This is \fillin[refraction], the bending of a wave as it passes from one medium to another. 
+
+\question
+Resonance occurs when the frequency of sound waves exactly matches the natural frequency of an object. 
+\end{questions}
+\egroup
+
+\clearpage
+
+\subsection*{Characteristics of Waves}
+
+\textbf{Questions \ref{Q1}--\ref{Q4}}. See the figure below. Then answer the next 4 questions that follow. 
+
+\begin{center}
+\tikzset{declare function={f(\x)=sin(540*\x);}}
+\begin{tikzpicture}[y=7mm,x=8mm]
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+     \draw[|<->|] (0.6,1.3) -- (6.6,1.3) node[above,pos=0.5] {$\lambda$};
+     \node[below=5mm] at (current bounding box.south) {Wave 1};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=4mm,y=1cm]
+    \draw[domain=0:2.5*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[densely dashed,lightgray] (0,0) -- (2.5*2*pi,0);
+    \draw[|<->|] (pi/2,1.2) -- (5*pi/2,1.2) node[above,pos=0.5] {$\lambda$};
+    \draw[thick,<->] (9*pi/2,0) -- (9*pi/2,1) node[right=-2pt,pos=0.5] {$X$};
+    \node[below=5mm] at (current bounding box.south) {Wave 2};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{questions}
+\question \label{Q1}
+Which of the waves is a transverse wave?
+
+\begin{randomizechoices}[norandomize]
+    \choice Wave 1
+    \correctchoice Wave 2
+    \choice Both
+    \choice Neither
+\end{randomizechoices}
+
+\question 
+What does the parameter $\lambda$ represent?
+
+\begin{randomizechoices}
+    \correctchoice wavelength
+    \choice frequency
+    \choice wave speed
+    \choice amplitude
+\end{randomizechoices}
+
+\question 
+What does the parameter $X$ represent?
+
+\begin{randomizechoices}
+    \choice wavelength
+    \choice frequency
+    \choice wave speed
+    \correctchoice amplitude
+\end{randomizechoices}
+
+\question \label{Q4}
+Which is the longitudinal wave?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice Wave 1
+    \choice Wave 2
+    \choice Both
+    \choice Neither
+\end{randomizechoices}
+
+\bigskip
+
+\hrule
+
+\question
+The velocity of a wave depends on \fillin[medium]\ through which the wave passes.
+
+\question
+The number of waves passing a point each second is called the \fillin[frequency].
+
+\question
+A wave has a frequency of \SI{25}{Hz} with a wavelength of 2 meters. Find the wave's velocity.
+
+\question
+What is the frequency of a wave traveling at \SI{100}{m/s} with a wavelength of 5 meters?
+
+\question
+What is the wavelength of a wave traveling at \SI{250}{m/s} with a frequency of \SI{25}{Hz}?
+
+\question
+Two waves, A and B, have the same velocity. Wave A has a frequency twice that of Wave B. The wavelength of Wave B is \fillin[twice]\ the wavelength of Wave A.
+
+\question
+Waves A and B have the same wavelength. Wave A is traveling at a velocity twice that of Wave B. The frequency of wave B is \fillin[half] the frequency of Wave A. 
+
+\question
+A wave is traveling at a velocity of \SI{200}{m/s}. What is the wave's velocity when the frequency is halved?
+
+\end{questions}
+
+
+\clearpage
+
+\subsection{Lab: The Simple Harmonic Oscillator}
+
+\begin{questions}
+
+\question
+Acquire the following items:
+
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+    \item spring
+    \item hanging masses (\SI{2}{g} -- \SI{1000}{g})
+    \item stopwatch
+    \item tape, calculator, and pencil
+\end{itemize}
+
+\begin{parts}
+\part Hold one end the spring with your hand at a constant height of 2 meters above the ground, letting the spring hang vertically so that a mass may be attached to the bottom.
+\medskip
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[decorate,decoration={coil,
+        segment length=3pt,
+        %pre length=2mm,
+        post length=2mm,
+        amplitude=3mm
+        }] (0,0) -- (0,-2);
+    \draw[fill=lightgray] (-0.4,-2) rectangle (0.4,-3) node[pos=0.5] {\SI{1}{kg}};
+    \draw[densely dashed,<-] (0.7,-3) -- (2,-3);
+    \begin{scope}[shift={(4,0)}]
+        \draw[decorate,decoration={coil,
+            segment length=8pt,
+            %pre length=2mm,
+            post length=2mm,
+            amplitude=3mm
+            }] (0,0) -- (0,-5.5);
+            \draw[fill=lightgray] (-0.4,-5.5) rectangle (0.4,-6.5) node[pos=0.5] {\SI{1}{kg}};
+    \end{scope}
+    \draw[densely dashed,->] (1.9,-6.5) node[left] {lowest position} -- (3.2,-6.5);
+    \node[above=6pt] at (current bounding box.north) {SIMPLE HARMONIC OSCILLATOR};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Attach a \SI{1000}{g} mass to the spring (taped if necessary) and release it from rest. Note the location of maximum displacement, which is when the spring reaches the lowest position.
+    \item Start the stopwatch when the mass is at the lowest point. Due to the spring force, the mass will first rise; it will then descend due to gravity. The back-and-forth movement is called an \textbf{oscillation}. One full trip back to the lowest point is one oscillation.
+    \item Stop the stopwatch when the mass has completed 10 oscillations. The \textbf{period} of oscillation is the amount of time it takes the mass to complete one oscillation. To calculate period, divide the total elapsed time in seconds by the number of oscillations (10). 
+    \item \textbf{Frequency} of oscillation is the number of oscillations per second. The base SI unit is the Hertz (Hz), defined as 1/s. Frequency is inversely related to period,
+
+    \begin{equation*}
+        T = \frac{1}{f}
+    \end{equation*}
+    
+    \item Using mass values in the table below, change the hanging mass to a lower values, and repeat the steps above. Then record the period and frequency of oscillations for each hanging mass.
+\end{itemize}
+
+\begin{EnvUplevel}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+% \fbox{
+\begin{minipage}{7cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
+    1000 & \hspace{2cm} &  \hspace{2cm} \\ \hline
+    900 & & \\ \hline
+    800 & & \\ \hline
+    700 & & \\ \hline
+    600 & & \\ \hline
+\end{tabular}
+\end{minipage}%
+% }%
+\hspace{5mm}
+% \fbox{
+\begin{minipage}{7cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
+    500 & \hspace{2cm} & \hspace{2cm} \\ \hline
+    400 & & \\ \hline
+    300 & & \\ \hline
+    200 & & \\ \hline
+    100 & & \\ \hline
+\end{tabular}
+\end{minipage}
+% }
+\egroup
+\end{center}
+\end{EnvUplevel}
+
+\clearpage
+
+\part Graph the period of oscillation as a function of the hanging mass, below. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis lines=left,
+        ylabel={Period (s)},
+        xlabel={Mass (g)},
+        ymin=0,ymax=2.5,
+        xmin=0,xmax=1000,
+        ytick={0,0.5,...,2.5},
+        xtick={0,100,...,1000},
+        grid=both,
+        ]
+        \ifprintanswers
+        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {2*pi*sqrt(x/1000/10)};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part Now graph the frequency of oscillation as a function of the hanging mass.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis lines=left,
+        ylabel={Frequency (Hz)},
+        xlabel={Mass (g)},
+        ymin=0,ymax=2,
+        xmin=0,xmax=1000,
+        ytick={0,0.4,...,2},
+        xtick={0,100,...,1000},
+        grid=both,
+        ]
+        \ifprintanswers
+        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {1/(2*pi*sqrt(x/1000/10))};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part Ask your teacher about the mathematical relationship between period and mass in simple harmonic motion. Then use mass and period values from the previous tables to compute the spring constant~$k$. Note: mass values in the table below are converted to kilograms. Finally, compute the average of the 10 spring constant calculations, $\bar{k}$, and record your answer below:
+
+\begin{EnvUplevel}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+% \fbox{
+\begin{minipage}{5cm}
+\centering
+\begin{tabular}{|c|c|}
+    \hline
+    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
+    1.0 & \hspace{2cm}  \\ \hline
+    0.9 & \\ \hline
+    0.8 & \\ \hline
+    0.7 & \\ \hline
+    0.6 & \\ \hline
+\end{tabular}
+\end{minipage}%
+%}%
+% \hspace{5mm}
+% \fbox{
+\begin{minipage}{6cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
+    0.5 & \hspace{2cm} \\ \hline
+    0.4 & \\ \hline
+    0.3 & \\ \hline
+    0.2 & \\ \hline
+    0.1 & \\ \hline
+\end{tabular}
+\end{minipage}
+% }
+\fbox{
+\begin{minipage}{4cm}
+\centering
+Average spring constant
+\bgroup
+\Large
+\vspace{1em}
+\begin{equation*}
+    \bar{k} = {\ifprintanswers \color{red} \else \color{white}\fi \SI{10}{N/m}}
+\end{equation*}
+\vspace{1em}
+\egroup
+\end{minipage}
+}
+\egroup
+\end{center}
+\end{EnvUplevel}
+\end{parts}
+
+\end{questions}
+
+% \subsubsection{Changes in an Oscillating Medium}
+
+% \subsubsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
+
+% \subsubsection{Effects of Changing the Medium and Energy on SHM}
+
+\clearpage
+
+\subsection{Wavelength, Wave Cycles, and Amplitude}
+
 
 \begin{questions}
 
 \begin{EnvUplevel}
-    \textbf{Questions \ref{first}--\ref{fifth}.} Count the number of wave cycles. Measurements of wave cycles may be as small as $\frac{1}{4}$ of a cycle.
+    \textbf{Questions \ref{first}--\ref{fifth}.} Count the number of wave cycles. Measurements can be in increments of $\frac{1}{2}$ a cycle.
 \end{EnvUplevel}
 
 \question \label{first}
@@ -64,13 +1131,13 @@ Number of wave cycles: \fillin[5]
 
 
 \question
-Number of wave cycles: \fillin[8.75]
+Number of wave cycles: \fillin[8.5]
 
 
 \begin{center}
 \begin{tikzpicture}[x=2.5mm,y=1cm]
 \draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (-pi/2,-1) grid (19*pi,1);
-\draw[domain=0.5*pi:0.5*pi + 8.75*2*pi,samples=200] plot (\x,{sin(\x r)});
+\draw[domain=0.5*pi:0.5*pi + 8.5*2*pi,samples=200] plot (\x,{sin(\x r)});
 \ifprintanswers
     \color{red}
     \draw[domain=0.5*pi:0.5*pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
@@ -82,8 +1149,8 @@ Number of wave cycles: \fillin[8.75]
     \fill (12.5*pi,1) circle (2pt) node [above=2pt] {6};
     \fill (14.5*pi,1) circle (2pt) node [above=2pt] {7};
     \fill (16.5*pi,1) circle (2pt) node [above=2pt] {8};
-    \draw[domain=0.5*pi + 8*2*pi:0.5*pi + 8.75*2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-    \fill (0.5*pi+8.75*2*pi,0) circle (2pt) node [above=2pt] {8.75};
+    \draw[domain=0.5*pi + 8*2*pi:0.5*pi + 8.5*2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+    \fill (0.5*pi+8.5*2*pi,-1) circle (2pt) node [above right] {8.5};
 \fi
 \end{tikzpicture}
 \end{center}
@@ -110,22 +1177,23 @@ Number of wave cycles: \fillin[3][1cm] \hfill Amplitude: \fillin[2 units] \hfill
 \question \label{fifth}
 Count the total number of wave cycles. Then measure the amplitude and wavelength in grid units.
 
-Number of wave cycles: \fillin[3.75][1cm] \hfill Amplitude: \fillin[10 units] \hfill Wavelength: \fillin[?]
+Number of wave cycles: \fillin[3.5][1cm] \hfill Amplitude: \fillin[10 units] \hfill Wavelength: \fillin[8 units]
 
 \begin{center}
 \begin{tikzpicture}[x=3mm,y=2cm]
 \draw[black!20,ultra thin,xstep=0.25*pi,ystep=0.1] (0,-1) grid (4.5*2*pi,1);    
 \draw[black!20,ultra thin] (0,-1) -- ++(4.5*2*pi,0);    
-\draw[domain=pi:pi + 3.75*2*pi,samples=200] plot (\x,{sin(\x r)});
+\draw[domain=pi:pi + 3.5*2*pi,samples=200] plot (\x,{sin(\x r)});
 \end{tikzpicture}
 \end{center}
 
+\end{questions}
+\clearpage
+
+\subsection*{PhET Simulation: Wave on a String}
 
 
-
-
-\question
-Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html}{click here}). Set a wave to oscillate with no end, with damping set to none, and with the display of the rulers and timer, as summarized below. Leave all other settings at their default values.
+Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html}{click here}). Set a wave to oscillate with the settings shown below. Leave all other settings at their default values.
 
 \begin{center}
 \begin{minipage}{0.15\textwidth}
@@ -174,16 +1242,25 @@ Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.ed
 \end{minipage}
 \end{center}
 
-\bigskip
+
+
+\begin{questions}
+    
+\question
+\textit{Measuring wave amplitude, wavelength, period, and frequency. }
 
 For each of the parts below use the play (\faPlay), pause (\faPause), and step (\faStepForward) buttons and the \texttt{Slow Motion} setting as needed to facilitate your measurements.
 
 \begin{parts}
 
 \part
-\textit{Measuring amplitude.} The dashed line is the vertical center of the wave and represents the equilibrium position. The amplitude is measured as the vertical distance between the dashed line and the crest, as shown below.
+\textit{Measuring amplitude.} The dashed line is the vertical center of the wave, and amplitude is the vertical distance between the dashed line and the crest. Using the vertical ruler in the simulation, \textbf{measure} the wave's amplitude. 
+
+\smallskip
 
 \begin{center}
+\begin{minipage}{8cm}
+\centering
 \begin{tikzpicture}
     \draw[densely dashed,x=6mm] (0,0) -- (2*2*pi,0);
     \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
@@ -192,14 +1269,30 @@ For each of the parts below use the play (\faPlay), pause (\faPause), and step (
         \tkzRegle[Rotation=90,Longueur=4,AfficheValeurs=false,CouleurFond=white,Opacite=0.5,Fond=true]
     \end{scope}
 \end{tikzpicture}
+\end{minipage}%
+\hspace{1em}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\vspace{1cm}
+
+Amplitude = \fillin[0.75][1.5cm]\, cm 
+
+\vspace{1cm}
+\end{minipage}
+}
 \end{center}
 
-Use the vertical ruler to measure the amplitude: \fillin[0.75]\ cm
+% Use the vertical ruler to measure the amplitude: \fillin[0.75]\ cm
 
 \part
 \textit{Measuring wavelength.} The wavelength of a wave may be measured as the horizontal distance between two adjacent crests. 
 
+\smallskip
+
 \begin{center}
+\begin{minipage}{8cm}
+\centering
 \begin{tikzpicture}
     \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
     \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
@@ -207,12 +1300,26 @@ Use the vertical ruler to measure the amplitude: \fillin[0.75]\ cm
         \tkzRegle[Longueur=7.5,AfficheValeurs=false,CouleurFond=white,Opacite=1,Fond=true]
     \end{scope}
 \end{tikzpicture}
+\end{minipage}%
+\hspace{1em}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\vspace{1cm}
+
+Wavelength = \fillin[4.2][1.5cm]\, cm 
+
+\vspace{1cm}
+\end{minipage}
+}
 \end{center}
 
-Use the ruler to measure the wavelength: \fillin[4.2]\ cm
+% Use the ruler to measure the wavelength: \fillin[4.2]\ cm
 
 \part 
-\textit{Measuring frequency and period.} Pause (\faPause) the wave, and step (\faStepForward) it forward so that a crest is exactly aligned at the window frame, as shown below. The window represents a reference point in space, so each time a new crest passes through the window, a wave cycle has been completed.
+\textit{Measuring period and frequency.} Pause (\faPause) the wave, and step (\faStepForward) it forward so that a crest is exactly aligned at the window frame, as shown below. The window represents a reference point in space, so each time a new crest passes through the window, a wave cycle has been completed.
+
+\medskip
 
 \begin{center}
 \begin{tikzpicture}
@@ -227,40 +1334,63 @@ Use the ruler to measure the wavelength: \fillin[4.2]\ cm
 \end{tikzpicture}
 \end{center}
 
+\clearpage
 
-Press both the reset and the play buttons on the timer (note that it won't run until the simulation is played). Now play (\faPlay) the simulation and record the time it takes 10 subsequent crests to pass through the window (that's 10 wave cycles). Switching to \texttt{Slow Motion} and using step (\faStepForward) may be useful. Record the time below.
+\begin{itemize}
+    \item Press both the reset and the play buttons on the timer. (Note that it won't run until the simulation is played).
+    \item Press play (\faPlay) to the simulation.
+    \item Measure the time it takes exactly 10 subsequent crests to pass through the window (that's 10 wave cycles). Write the time in the space below.
+    \item \textit{Tip:} Switching to \texttt{Slow Motion} and using step (\faStepForward) may be useful. 
+\end{itemize}
+
+
 
 \begin{center}
-    Time for 10 wave cycles: \fillin[6.67]\ seconds
+\fbox{
+\begin{minipage}{8cm}
+\centering
+\vspace{1em}
+
+Time for 10 wave cycles: \fillin[6.67][1.5cm]\ seconds
+
+\vspace{1em}
+\end{minipage}
+}
 \end{center}
 
-Frequency may be defined as wave cycles per second, so divide the number of waves (10) by the total time. Show your work and record the frequency below.
-
-\ifprintanswers
-\begin{equation*}
-    f = \frac{\textcolor{red}{10}\ \text{wave cycles}}{\textcolor{red}{6.67}\ \mathrm{s}} = \boxed{\textcolor{red}{1.50}\ \mathrm{Hz}}
-\end{equation*}
-\else
-\begin{equation*}
-    f = \frac{\textcolor{white}{10}\ \text{wave cycles}}{\textcolor{white}{6.67}\ \mathrm{s}} = \boxed{\textcolor{white}{1.50}\ \mathrm{Hz}}
-\end{equation*}
-\fi
-
-Similarly, the period ($T$) of the wave is the time it takes to complete one cycle. Using the same data, calculate the wave's period by dividing the total time for 10 wave cycles by the number of cycles (10):
+The period ($T$) of the wave is the time it takes to complete one cycle. \textbf{Calculate} the wave's period by dividing the total time for 10 wave cycles by the number of cycles:
 
 
 \ifprintanswers
 \begin{equation*}
-    T = \frac{\textcolor{red}{6.67}\ \mathrm{s}}{\textcolor{red}{10}\ \text{wave cycles}} = \boxed{\textcolor{red}{0.667}\ \mathrm{s}}
+    T = \frac{\textcolor{red}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{red}{0.667} \qquad \mathrm{s}}
 \end{equation*}
 \else
 \begin{equation*}
-    T = \frac{\textcolor{white}{6.67}\ \mathrm{s}}{\textcolor{white}{10}\ \text{wave cycles}} = \boxed{\textcolor{white}{0.667}\ \mathrm{s}}
+    T = \frac{\textcolor{white}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{white}{0.667}\qquad \mathrm{s}}
 \end{equation*}
 \fi
 
-\part
-\textit{Measuring wave speed.} Pause (\faPause) and step (\faStepForward) the wave so that a crest aligns with the \SI{0}{cm} mark, as shown below.
+
+And, frequency ($f$) is defined as the number of wave cycles per second, so divide the number of waves (10) by the total time. Show your work and record the frequency below.
+
+\ifprintanswers
+\begin{equation*}
+    f = \frac{\text{10 wave cycles}}{\textcolor{red}{6.67}\ \mathrm{s}} = \boxed{\textcolor{red}{1.50}\qquad \mathrm{Hz}}
+\end{equation*}
+\else
+\begin{equation*}
+    f = \frac{\text{10 wave cycles}}{\textcolor{white}{6.67}\ \mathrm{s}} = \boxed{\textcolor{white}{1.50}\qquad \mathrm{Hz}}
+\end{equation*}
+\fi
+
+\end{parts}
+
+\question
+\textit{Measuring wave speed.} 
+
+\begin{parts}
+\part Pause (\faPause) and step (\faStepForward) the wave so that a crest aligns with the \SI{0}{cm} mark, as shown below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -271,11 +1401,19 @@ Similarly, the period ($T$) of the wave is the time it takes to complete one cyc
     \begin{scope}[scale=0.87,shift={(1.05,3.5)}]
         \tkzRegle[Longueur=8,AfficheValeurs=true,CouleurFond=white,Opacite=1,Fond=true]
     \end{scope}
+    \begin{scope}[shift={(2.6,0)},opacity=0.1,transform shape]
+        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \end{scope}
 \end{tikzpicture}
 \end{center}
 
-Reset and play the timer. Then use the \texttt{Slow Motion}, play, and step buttons to record the time it takes the crest to travel exactly \SI{3.0}{cm}. Record this time interval below:
+\begin{itemize}
+    \item Reset and play the timer.
+    \item Use the \texttt{Slow Motion}, play, and step buttons to record the time it takes the crest to be horizontally displaced by exactly $\Delta x = \SI{3.0}{cm}$. Record this time interval below:
 
+{
+\large
 \ifprintanswers
 \begin{equation*}
     \Delta t = \textcolor{red}{0.48}\ \mathrm{s}
@@ -285,8 +1423,9 @@ Reset and play the timer. Then use the \texttt{Slow Motion}, play, and step butt
     \Delta t = \textcolor{white}{0.48}\ \mathrm{s}
 \end{equation*}
 \fi
+}
 
-Speed $(v)$ is distance over time, so fill in the equation below and calculate the wave speed:
+    \item Speed $(v)$ is distance over time, so fill in the equation below and calculate the wave speed:
 
 \ifprintanswers
 \bgroup
@@ -303,7 +1442,225 @@ Speed $(v)$ is distance over time, so fill in the equation below and calculate t
 \end{equation*}
 \egroup
 \fi
+\end{itemize}
+
+
+
+\part Increase the amplitude to \SI{1.25}{cm}. Then, as previously done, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and use the average velocity equation to find wave speed:
+
+{
+\large
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+
+How does increasing amplitude affect the transverse wave speed?
+
+\ifprintanswers
+\else
+\fillwithlines{1.5cm}
+\fi
+
+\begin{solution}
+    Increasing the amplitude does not affect wave speed. It only affects the energy transported by the wave.
+\end{solution}
+
+\part
+Reset the amplitude back to the default, \SI{0.75}{cm}. Then change the tension in the string to low:
+
+\begin{center}
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \begin{scope}
+        \draw (0,0) -- (10,0);
+        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+        \foreach \i in {0,1,...,10}{
+            \draw (\i,0) node {$|$};
+        }
+        \foreach \i in {0,5,10}{
+            \draw (\i,0) node {\Huge $|$};
+        }
+    \end{scope}
+    \node[above=1.5em] at (0,0) {Low};
+    \node[above=2.5em] at (5,0) {Tension};
+    \node[above=1.5em] at (10,0) {High};
+    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
+\end{tikzpicture}
+\end{center}
+
+Once again, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and find the wave speed:
+
+{
+\large 
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{2.38}\ \mathrm{s}} = \boxed{\textcolor{red}{1.26}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{2.38}\ \mathrm{s}} = \boxed{\textcolor{white}{1.26}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+
+How does decreasing the tension in the string affect the wave speed? 
+
+\ifprintanswers
+\else
+\fillwithlines{1.5cm}
+\fi
+
+\begin{solution}
+    Decreasing string tension also decreases the wave speed.
+\end{solution}
+
+\part
+Now change the tension in the string to medium. Then calculate the wave speed at medium tension below.
+
+
+
+\begin{center}
+\begin{minipage}{5cm}
+\centering
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \begin{scope}
+        \draw (0,0) -- (10,0);
+        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+        \foreach \i in {0,1,...,10}{
+            \draw (\i,0) node {$|$};
+        }
+        \foreach \i in {0,5,10}{
+            \draw (\i,0) node {\Huge $|$};
+        }
+    \end{scope}
+    \node[above=1.5em] at (0,0) {Low};
+    \node[above=2.5em] at (5,0) {Tension};
+    \node[above=1.5em] at (10,0) {High};
+    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (4.7,-1.2) rectangle (5.3,1.2);
+\end{tikzpicture}
+\end{minipage}%
+\hspace{5mm}
+\begin{minipage}{7cm}
+\centering
+{
+\large 
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.80}\ \mathrm{s}} = \boxed{\textcolor{red}{3.75}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.80}\ \mathrm{s}} = \boxed{\textcolor{white}{3.75}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+\end{minipage}
+\end{center}
+
+
+
+
+
+
+
+
 \end{parts}
+
+
+\question
+\textit{Wave speed and string tension.} The speed of a wave on a string is given by
+
+\begin{equation*}
+    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
+\end{equation*}
+
+where $F_\mathrm{T}$ is the tension  of the string, and $\mu$ is the linear mass density, or the mass per unit length of string. Assume that this PhET uses a string with
+
+\begin{equation*}
+    \mu = \SI{0.10}{kg/m}
+\end{equation*}
+
+
+\begin{parts}
+\part 
+What is the speed of the wave on a string when the tension is \SI{79}{N}?
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}} = \sqrt{\frac{\SI{79}{N}}{\SI{0.10}{kg/m}}} = \boxed{\SI{28}{m/s}}
+\end{equation*}
+\end{solutionorbox}
+
+\part 
+Using wave speed found in the previous part, calculate the tension in the string at medium tension. (\textit{Hint}: First convert your speed from cm/s to m/s.)
+
+\begin{solutionorbox}[4cm]
+    
+\end{solutionorbox}
+
+\end{parts}
+
+
+
+\clearpage
+
+
+
+
+%\begin{parts}
+
+% \part 
+% The linear mass density of the string is $\mu = \SI{1.0}{g/cm}$. Calculate the tension in the string when it's set to low. Express the answer in newtons (N).
+
+% \begin{solutionorbox}[3cm]
+% In base SI units, the linear mass density is
+
+% \begin{equation*}
+%     \mu = \SI[per-mode=fraction]{1.0}{\gram\per\centi\meter} \times 
+%     \frac{\SI{1}{kg}}{\SI{1000}{g}} \times \frac{\SI{100}{cm}}{\SI{1}{m}} = \SI{0.1}{kg/m}
+% \end{equation*}
+
+% The wave speed on a string is related to tension and linear mass density as
+
+% \begin{equation*}
+%     v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
+% \end{equation*}
+
+% Solving for tension leads to
+
+% \begin{equation*}
+%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{1.26e-2}{m/s}\right)^2 =  \boxed{\SI{1.6e-5}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+% \part 
+% Using the same linear mass density from the previous part, find the tension, in newtons, when tension is set to high. 
+
+
+
+% \begin{solutionorbox}[4cm]
+% From previous measurements, we know that when tension is high, the string speed is $v_\mathrm{string} = \SI{6.25}{cm/s} = \SI{6.25e-2}{m/s}$. Using the result from the previous part, tension is
+
+% \begin{equation*}
+%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{6.25e-2}{m/s}\right)^2 =  \boxed{\SI{3.9e-4}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+
+%\end{parts}
+
+
+\clearpage
+
+\begin{EnvUplevel}
+    \subsubsection*{Checking for Understanding}
+\end{EnvUplevel}
 
 \question
 Amplitude is most closely related which of the following wave properties?
@@ -427,182 +1784,16 @@ Access the \texttt{PhET Simulation} ``Waves Intro'' (\href{https://phet.colorado
     \item Convert the given measurement from nanometers (nm) to meters (m), given that $\SI{1}{nm} = 10^{-9}\,\text{m}$.
     \item If the wave travels at a speed of 300 million meters per second (\SI{3e8}{m/s}), what is the frequency of the light wave? Express the answer both in scientific notation and in decimal notation.
 \end{enumerate}
-
-
-
-
 \end{questions}
 
+\end{document}
 
-\subsubsection{Effects of Changing the Medium on Transverse Waves}
-\begin{questions}
-
-\question
-Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html}{click here}). Set a wave to oscillate with no end, with damping set to none, and with the display of the rulers and timer, as summarized below. Leave all other settings at their default values.
-
-\begin{center}
-\begin{minipage}{0.15\textwidth}
-\begin{itemize}
-    \item[$\bigcirc$] Manual 
-    \item[$\bigodot$] \textbf{Oscillate}
-    \item[$\bigcirc$] Pulse
-\end{itemize}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.3\textwidth}
-\centering
-\begin{tikzpicture}[x=4mm,y=4mm]
-    \begin{scope}
-        \draw (0,0) -- (10,0);
-        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
-        \foreach \i in {0,1,...,10}{
-            \draw (\i,0) node {$|$};
-        }
-        \foreach \i in {0,5,10}{
-            \draw (\i,0) node {\Huge $|$};
-        }
-    \end{scope}
-    \node[above=1.5em] at (0,0) {None};
-    \node[above=2.5em] at (5,0) {Damping};
-    \node[above=1.5em] at (10,0) {Lots};
-    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
-\end{tikzpicture}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.15\textwidth}
-\centering
-\begin{itemize}
-    \item[$\bigcirc$] Fixed End 
-    \item[$\bigcirc$] Loose End
-    \item[$\bigodot$] \textbf{No End}
-\end{itemize}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.2\textwidth}
-\begin{itemize}
-    \item[\checkbox{1}] Rulers
-    \item[\checkbox{1}] Timer
-    \item[$\square$] Reference Line
-\end{itemize}
-\end{minipage}
-\end{center}
-
-In a previous problem, we found that the default wave speed is \SI{6.25}{cm/s}.
-
-\begin{parts}
-\part Increase the amplitude to \SI{1.25}{cm}. Then, as previously done, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and use the average velocity equation to find wave speed:
-
-\ifprintanswers
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\else
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\fi
-
-How does increasing amplitude affect the transverse wave speed?
-
-\ifprintanswers
-\else
-\fillwithlines{1.5cm}
-\fi
-
-\begin{solution}
-    Increasing the amplitude does not affect wave speed. It only affects the energy transported by the wave.
-\end{solution}
-
-\part
-Reset the amplitude back to the default, \SI{0.75}{cm}. Then change the tension in the string to low:
-
-\begin{center}
-\begin{tikzpicture}[x=4mm,y=4mm]
-    \begin{scope}
-        \draw (0,0) -- (10,0);
-        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
-        \foreach \i in {0,1,...,10}{
-            \draw (\i,0) node {$|$};
-        }
-        \foreach \i in {0,5,10}{
-            \draw (\i,0) node {\Huge $|$};
-        }
-    \end{scope}
-    \node[above=1.5em] at (0,0) {Low};
-    \node[above=2.5em] at (5,0) {Tension};
-    \node[above=1.5em] at (10,0) {High};
-    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
-\end{tikzpicture}
-\end{center}
-
-
-Once again, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and find the wave speed:
-
-\ifprintanswers
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{2.38}\ \mathrm{s}} = \boxed{\textcolor{red}{1.26}\ \mathrm{cm/s}}
-\end{equation*}
-\else
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{2.38}\ \mathrm{s}} = \boxed{\textcolor{white}{1.26}\ \mathrm{cm/s}}
-\end{equation*}
-\fi
-
-How does decreasing the tension in the string affect the wave speed? Conversely, how might increasing tension affect wave speed?
-
-\ifprintanswers
-\else
-\fillwithlines{1.5cm}
-\fi
-
-\begin{solution}
-    Decreasing string tension also decreases the wave speed, and increasing tension increases wave speed.
-\end{solution}
-
-\part 
-The linear mass density of the string is $\mu = \SI{1.0}{g/cm}$. Calculate the tension in the string when it's set to low. Express the answer in newtons (N).
-
-\begin{solutionorbox}[4cm]
-In base SI units, the linear mass density is
-
-\begin{equation*}
-    \mu = \SI[per-mode=fraction]{1.0}{\gram\per\centi\meter} \times 
-    \frac{\SI{1}{kg}}{\SI{1000}{g}} \times \frac{\SI{100}{cm}}{\SI{1}{m}} = \SI{0.1}{kg/m}
-\end{equation*}
-
-The wave speed on a string is related to tension and linear mass density as
-
-\begin{equation*}
-    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
-\end{equation*}
-
-Solving for tension leads to
-
-\begin{equation*}
-    F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{1.26e-2}{m/s}\right)^2 =  \boxed{\SI{1.6e-5}{N}}
-\end{equation*}
-\end{solutionorbox}
-
-\part 
-Using the same linear mass density from the previous part, find the tension, in newtons, when tension is set to high. 
-
-
-
-\begin{solutionorbox}[4cm]
-From previous measurements, we know that when tension is high, the string speed is $v_\mathrm{string} = \SI{6.25}{cm/s} = \SI{6.25e-2}{m/s}$. Using the result from the previous part, tension is
-
-\begin{equation*}
-    F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{6.25e-2}{m/s}\right)^2 =  \boxed{\SI{3.9e-4}{N}}
-\end{equation*}
-\end{solutionorbox}
-
-\end{parts}
-
-\end{questions}
 \clearpage
 
 
-\subsubsection{Mathematical Relationship between Frequency, Wave Velocity, and Wavelength}
+
+
+\subsection{Desmos: The Wave Equation}
 
 \begin{questions}
 \question
@@ -613,7 +1804,7 @@ The sinusoidal wave function is
 \end{equation*}
 
 
-Graphing this as a function of position ($x$) and time ($t$) can be very illuminating. 
+To visualize wave motion, we will graph this function of position ($x$) and time ($t$). 
 
 \begin{parts}
 
@@ -713,7 +1904,7 @@ While $t$ is playing indefinitely, manually set the slider on $f$ to different v
 
 \clearpage
 
-\subsubsection{Constructive and Destructive Interference}
+\subsection{Desmos: Constructive and Destructive Interference}
 
 \begin{questions}
 \question
@@ -725,16 +1916,18 @@ Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. In the fi
 
 Then define the following functions in cells 2 and 3:
 
+{\large
 \begin{align*}
-    f_1 &= 4 e^{-\left(x-t\right)^2} \\[1ex]
-    f_2 &= 4 e^{-\left(x+t\right)^2}
+    F_1 &= 4 e^{-\left(x-t\right)^2} \\[1ex]
+    F_2 &= 4 e^{-\left(x+t\right)^2}
 \end{align*}
+}
 
 In cell 1, where $t$ is defined, press the play (\faPlay) button to begin looping $t$ forwards and backwards. Observe the motion of the pulses. Now follow the parts below.
 
 \begin{parts}
 \part
-Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $f_1$  and $f_2$ below.
+Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -745,12 +1938,14 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     ytick={0,2,...,8},
     xtick={-6,-4,...,6},
     grid=both,
+    clip=false,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {4*exp(-(x-3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -764,10 +1959,11 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+1.5)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {4*exp(-(x-1.5)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1.5)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
 \end{axis}
 \end{tikzpicture}
 
@@ -783,10 +1979,11 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+0.75)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {4*exp(-(x-0.75)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.75)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-0.75)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -800,16 +1997,17 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \part 
-If cell 4, define the function $f_3 = f_1 + f_2$. Play (\faPlay) the $t$ cell to begin the loop, and pause and sketch $f_3$ at the same times below.
+If cell 4, define the function $F_3 = F_1 + F_2$. Play (\faPlay) the $t$ cell to begin the loop, and pause and sketch $F_3$ at the same times below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -825,6 +2023,7 @@ If cell 4, define the function $f_3 = f_1 + f_2$. Play (\faPlay) the $t$ cell to
     \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -841,6 +2040,7 @@ If cell 4, define the function $f_3 = f_1 + f_2$. Play (\faPlay) the $t$ cell to
     \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2) + 4*exp(-(x+1.5)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
 \end{axis}
 \end{tikzpicture}
 
@@ -859,6 +2059,7 @@ If cell 4, define the function $f_3 = f_1 + f_2$. Play (\faPlay) the $t$ cell to
     \addplot[domain=-6:6,samples=120,thick,red] {4*exp(-(x-0.75)^2) + 4*exp(-(x+0.75)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -875,6 +2076,7 @@ If cell 4, define the function $f_3 = f_1 + f_2$. Play (\faPlay) the $t$ cell to
     \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2) + 4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -886,21 +2088,25 @@ What behavior do you see when the waves meet at the same location?
 % \else
 \fillwithlines{1.5cm}
 % \fi
+
+\part The function $F_3$ depicts the wave phenomenon called \fillin[constructive]\ interference.
 \end{parts}
 
 \question 
-Hide the graph $f_3$ by pressing the button in cell 4. Then change the second function to negative, as
+Hide the graph $F_3$ by pressing the button in cell 4. Then change the second function to negative, as
 
+{\large 
 \begin{equation*}
-    f_2 = -4e^{-(x+t)^2}
+    F_2 = -4e^{-(x+t)^2}
 \end{equation*}
+}
 
 Then in cell 1, press play (\faPlay) to set $t$ looping forward and backward.
 
 \begin{parts}
 
 \part
-Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $f_1$  and $f_2$ below.
+Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -913,10 +2119,11 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {-4*exp(-(x-3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
 \end{axis}
 \end{tikzpicture}%
 \hspace{2em}
@@ -930,10 +2137,11 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+1)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {-4*exp(-(x-1)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
 \end{axis}
 \end{tikzpicture}
 
@@ -949,10 +2157,11 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+0.3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {-4*exp(-(x-0.3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
 \end{axis}
 \end{tikzpicture}%
 \hspace{2em}
@@ -966,16 +2175,17 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, green!50!black] {-4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
 \part 
-Show $f_3$ by pressing the button in cell 4. Then graph $f_3 = f_1 + f_2$ for the same values of $t$ as the previous part. 
+Show $F_3$ by pressing the button in cell 4. Then graph $F_3 = F_1 + F_2$ for the same values of $t$ as the previous part. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -991,6 +2201,7 @@ Show $f_3$ by pressing the button in cell 4. Then graph $f_3 = f_1 + f_2$ for th
     \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -1007,6 +2218,7 @@ Show $f_3$ by pressing the button in cell 4. Then graph $f_3 = f_1 + f_2$ for th
     \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2) + 4*exp(-(x+1)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
 \end{axis}
 \end{tikzpicture}
 
@@ -1025,6 +2237,7 @@ Show $f_3$ by pressing the button in cell 4. Then graph $f_3 = f_1 + f_2$ for th
     \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2) + 4*exp(-(x+0.3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
 \end{axis}
 \end{tikzpicture}
 \hspace{1cm}
@@ -1041,6 +2254,7 @@ Show $f_3$ by pressing the button in cell 4. Then graph $f_3 = f_1 + f_2$ for th
     \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2) + 4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -1080,6 +2294,36 @@ In the next cell, write an equation for a function $f_2$ that destructively inte
     f_2 = -e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
 \end{equation*}    
 \end{solution}
+
+\question
+In a new tab, graph the following function and sketch it below:
+
+\begin{equation*}
+    y(x) = \sin(x) - \frac{1}{9} \sin(3x) + \frac{1}{25} \sin(5x) - \frac{1}{49} \sin(7x) + \frac{1}{81} \sin(9x)
+\end{equation*}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=6cm,width=10cm,
+    axis lines=center,
+    ymin=-4,ymax=4,
+    xmin=-10,xmax=10,
+    ytick={-6,-4,...,6},
+    xtick={-10,-6,...,10},
+    minor y tick num=1,
+    minor x tick num=1,
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-10:10,samples=125,very thick, red] {sin(deg(x)) - 1/9*sin(3*deg(x)) + 1/25*sin(5*deg(x)) - 1/49*sin(7*deg(x)) + 1/81*sin(9*deg(x))};
+    \fi
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Describe in words how the graph appears.
+
+\fillwithlines{2cm}
 
 \end{questions}
 
@@ -1232,6 +2476,10 @@ In the next cell, write an equation for a function $f_2$ that destructively inte
 
 % \end{questions}
 
+\clearpage
+
+
+
 \subsection{Longitudinal Waves}
 
 \begin{questions}
@@ -1256,6 +2504,8 @@ Whales emit deep sounds through the ocean. Find Table 14.1 in \texttt{OpenStax: 
 Access the table from Exercise \ref{J5ZJhe}. Identify the media through which sound waves travel the slowest and the fastest.
 
 \end{questions}
+
+
 
 \clearpage
 \subsection{Electromagnetic Waves}
@@ -1441,54 +2691,6 @@ Which animal can see infrared light?
 Sort the colors yellow, blue, and red from shortest wavelength to longest.
 
 
-\question
-The first wave below represents the electromagnetic wave associated with the color cyan, also known as aqua blue. The second wave represents a different color of the visible light spectrum. Which colors can you rule \textit{out} to be represented by the second wave? Assume that the dashed double arrows are the same length and that cyan lies between green and blue.
-
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=3cm,
-    xmin=0,xmax=24,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
-    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
-    \node[above=2mm] at (4.5,1) {cyan};
-    \begin{scope}[shift={(axis direction cs: 12,0)}]
-        \draw[dashed,<->] (0.5*632/490,1.05) -- ++(axis direction cs: 2,0);
-        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(490/632*\x r)});
-        \node[above=2mm] at (5,1) {???};    
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1em}
-
-% \begin{tikzpicture}
-%     \begin{axis}[width=14cm, height=7cm,
-%         ymin=0,ymax=1,
-%         height=3cm,
-%         xmin=360,xmax=740,
-%         yticklabels={},
-%         ytick=\empty,
-%         axis lines=left,
-%         separate axis lines,
-%         y axis line style=white,
-%         x dir=reverse,
-%         clip=false,
-%         ticks=none,
-%         axis line style={draw=none}
-%         ]
-%         \addplot[draw=none, name path=uv, forget plot] coordinates{(360,0)(360,0.5)};
-%         \addplot[draw=none, name path=visible, forget plot] coordinates{(740,0)(740,0.5)};
-%         \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
-%         \draw[<-,thick] (490,0.5) -- ++(axis direction cs: 0,0.4) node[above] {cyan};
-%     \end{axis}
-% \end{tikzpicture}
-\end{center}
 
 \question
 Convert \SI{5798}{nm} to meters, writing in scientific notation.
@@ -1552,5 +2754,705 @@ Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’
 
 \subsection{Optics}
 
-\end{document}
+{\large \textbf{Other}}
+
+\begin{questions}
+    
+\question
+The first wave below represents the electromagnetic wave for the color cyan, which is indicated in the visible spectrum below. The dashed double arrows are the same length. Which color could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {cyan};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*632/490,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(490/632*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1em}
+
+\begin{tikzpicture}
+    \begin{axis}[width=14cm, height=7cm,
+        ymin=0,ymax=1,
+        height=3cm,
+        xmin=360,xmax=740,
+        yticklabels={},
+        ytick=\empty,
+        axis lines=left,
+        separate axis lines,
+        y axis line style=white,
+        x dir=reverse,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none}
+        ]
+        \addplot[draw=none, name path=uv, forget plot] coordinates{(360,0)(360,0.5)};
+        \addplot[draw=none, name path=visible, forget plot] coordinates{(740,0)(740,0.5)};
+        \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
+        \draw[<-,thick] (490,0.5) -- ++(axis direction cs: 0,0.4) node[above] {cyan};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice red
+    \choice violet
+    \choice indigo
+    \choice ultraviolet 
+\end{randomizechoices}
+
+\question 
+The first wave represents a green electromagnetic wave. The second wave is an electromagnetic wave that is invisible to the human eye. Assume the double dashed arrows are the same size. What type of electromagnetic wave could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {green};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*200/550,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(550/200*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice ultraviolet
+    \choice microwave
+    \choice blue light
+    \choice gamma ray
+    \choice radio wave
+\end{randomizechoices}
+
+
+\question
+The diagram below represents a transverse wave.
+
+\def\twopi{2*pi}
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+        axis lines=center,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none},
+]
+\addplot [thick,
+    domain=0:1.5*\twopi, 
+    samples=200, 
+    color=black,
+]
+{sin(deg(x))};
+    \draw[black!50] (-1,0) -- ++(axis direction cs: 3*pi+2,0);
+    \fill (0,0) circle (2pt) node[below] {A};
+    \fill (pi/2,1) circle (2pt) node[above] {B};
+    \fill (pi,0) circle (2pt) node[below left] {C};
+    \fill (3*pi/2,-1) circle (2pt) node[below] {D};
+    \fill (2*pi,0) circle (2pt) node[above left] {E};
+    \fill (5*pi/2,1) circle (2pt) node[below] {F};
+    \fill (3*pi,0) circle (2pt) node[below] {G};
+
+\end{axis}
+\end{tikzpicture}
+
+The wavelength of the wave is equal to the distance between points \fillin .
+
+\begin{randomizechoices}
+    \correctchoice B and F
+    \choice A and G
+    \choice D and F
+    \choice C and E
+\end{randomizechoices}
+
+\question
+ The energy of a sound wave is most closely related to its \fillin\ .
+
+ \begin{randomizechoices}
+     \correctchoice amplitude
+     \choice wavelength
+     \choice frequency
+     \choice period
+\end{randomizechoices}
+
+\question
+The diagram below represents a transverse wave.
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+    ticks=none,
+    clip=false,
+    axis lines=center,
+]
+
+\addplot[
+    domain=pi:3*pi,
+    samples=100,
+    color=black,
+]
+{sin(deg(x))};
+    \fill (pi,1) circle (2pt) node[left] {D};
+    \fill (pi,0) circle (2pt) node[left] {A};
+    \fill (pi,-1) circle (2pt) node[left] {E};
+    
+\end{axis}
+\end{tikzpicture}
+
+
+
+
+\question %27
+Describe the electric and magnetic fields that make up an electromagnetic wave.
+
+\begin{center}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[x={(-10:1cm)},y={(90:1cm)},z={(210:1cm)}]
+    % Axes
+    \draw (-1,0,0) node[above] {$x$} -- (5,0,0);
+    \draw (0,0,0) -- (0,2,0) node[above] {$y$};
+    \draw (0,0,0) -- (0,0,2) node[left] {$z$};
+    % Propagation
+    \draw[->,ultra thick] (5,0,0) -- node[above] {$c$} (6,0,0);
+    % Waves
+    \draw[blue,thick] plot[domain=0:4.5,samples=200] (\x,{cos(deg(pi*\x))},0);
+    \draw[red,thick] plot[domain=0:4.5,samples=200] (\x,0,{cos(deg(pi*\x))});
+    % Arrows
+    \foreach \x in {0.1,0.3,...,4.4} {
+      \draw[->,help lines] (\x,0,0) -- (\x,{cos(deg(pi*\x))},0);
+      \draw[->,help lines] (\x,0,0) -- (\x,0,{cos(deg(pi*\x))});
+    }
+    % Labels
+    \node[above right] at (0,1,0) {$\boldsymbol{E}$};
+    \node[below] at (0,0,1) {$\boldsymbol{B}$};
+    \end{tikzpicture}
+    }
+\end{center}
+
+\begin{choices}
+\choice They are perpendicular to and out of phase with each other.
+\CorrectChoice They are perpendicular to and in phase with each other.
+\choice They are parallel to and out of phase with each other.
+\choice They are parallel to and in phase with each other.
+\end{choices}
+
+% \begin{solution}
+% They are at right angles (OR \ang{90} OR perpendicular) to each other and they are in phase.
+% \end{solution}
+
+\question
+What are the 7 regions of the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice infrared, hertz, joule, kilogram, energy, visible light, ultraviolet
+\choice gamma ray, microwave, mass, velocity, energy, speed, X-ray
+\choice newton, hertz, joule, velocity, energy, speed, X-ray
+\correctchoice radio, microwave, infrared, visible, ultraviolet, X-ray, gamma ray
+\end{choices}
+
+\question
+How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice Wavelength increases.
+\choice Wavelength first increases and then decreases.
+\choice Wavelength first decreases and then increases.
+\CorrectChoice Wavelength decreases.
+\end{choices}
+
+\question
+Which portion of the electromagnetic spectrum is \textit{not invisible} to the human eye?
+
+\begin{choices}
+\choice microwave
+\choice infrared
+\CorrectChoice visible light
+\choice x-ray
+\end{choices}
+
+\question
+What are the 7 colors of visible light?
+
+\begin{choices}
+\choice magenta, cyan, yellow, green, brown, black, white
+\correctchoice red, orange, yellow, green, blue, indigo, violet
+\choice magenta, cyan, yellow, green, red, orange, white
+\choice red, orange, yellow, green, brown, cyan, pink
+\end{choices}
+
+\question
+If the first wave is green light, which color could be represented by the second wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {GREEN LIGHT WAVE};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice red
+\choice yellow
+\correctchoice blue
+\choice infrared
+\end{choices}
+
+
+
+\clearpage
+
+
+\question
+In addition to visible light, bees can also see the \fillin\ region of the electromagnetic spectrum. 
+
+\begin{choices}
+\correctchoice ultraviolet
+\choice infrared
+\choice radio
+\choice X-ray
+\end{choices}
+
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+
+Put these light waves in order according to \textit{wavelength}, from shortest wavelength to longest wavelength.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice red, yellow, blue
+\CorrectChoice blue, yellow, red
+\end{choices}
+
+% \begin{solution}
+% Blue has the shortest wavelength and the highest frequency of the colors given while red has the longest wavelength and the smallest frequency.
+% \end{solution}
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+Put these light waves in order according to \textit{frequency}, from lowest frequency to highest frequency.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice blue, yellow, red
+\CorrectChoice red, yellow, blue
+\end{choices}
+
+\question
+Red light has a wavelength of \SI{700}{nm}. Assuming red light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of red light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{4.3e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\question
+Violet light has a wavelength of \SI{400}{nm}. Assuming violet light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of violet light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{7.5e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\clearpage
+\question 
+The first wave represents red light. Which EM wave could be represented by the other wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {RED LIGHT WAVE};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice green light
+\choice ultraviolet
+\choice X-ray
+\correctchoice infrared
+\end{choices}
+
+\question % 4
+In which region of the electromagnetic spectrum would you find radiation that is invisible to the human eye and has low energy?
+
+\begin{choices}
+\choice Long-wavelength and high-frequency region
+\CorrectChoice Long-wavelength and low-frequency region
+\choice Short-wavelength and high-frequency region
+\choice Short-wavelength and low-frequency region
+\end{choices}
+
+\question
+Which scientist discovered infrared light?
+
+\begin{choices}
+\choice Albert Einstein (1905)
+\choice Isaac Newton (1661)
+\correctchoice William Herschel (1800)
+\choice Madam Curie (1903)
+\end{choices}
+
+\question %26
+Describe one way in which heat waves---infrared radiation---are different from sound waves.
+
+\begin{choices}
+\choice Sound waves are transverse waves, whereas heat waves---infrared radiation---are longitudinal waves.
+\choice Sound waves have shorter wavelengths than heat waves.
+\CorrectChoice Sound waves require a medium, whereas heat waves---infrared radiation---do not.
+\choice Sound waves have higher frequencies than heat waves.
+\end{choices}
+
+% \begin{solution}
+% Heat waves can travel across empty space and sound waves cannot.
+% \end{solution}
+
+\vspace{1em}
+\hrule 
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{Read the prompt below. Then answer questions \ref{ques:fire_first} through \ref{ques:fire_last}.}
+
+When you stand in front of an open fire, you can sense light waves with your eyes. You sense another type of electromagnetic radiation as heat.
+\end{EnvUplevel}
+
+
+\question \label{ques:fire_first} %8
+How are the light waves and heat waves radiated by the fire the same, and how are they different?
+
+\begin{choices}
+\choice Both travel as waves, but only light waves are a form of electromagnetic radiation.
+\CorrectChoice Heat and light are both forms of electromagnetic radiation, but light waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but heat waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but light waves have higher wavelengths.
+\end{choices}
+
+% \begin{solution}
+% Heat and light waves are both forms of electromagnetic radiation, but they have different frequencies. Our eyes detect only the range of frequencies called visible light. The heat waves are easily absorbed by our body, but the light is mostly reflected.
+% \end{solution}
+
+\question %10
+What is this other type of radiation?
+
+\begin{choices}
+\choice Visible light rays
+\choice X-rays
+\choice Gamma rays
+\CorrectChoice Infrared rays
+\end{choices}
+
+
+\question \label{ques:fire_last} %10
+How is this other type of radiation different from light waves?
+
+\begin{choices}
+\choice The visible light rays have higher frequencies and shorter wavelengths than the light waves.
+\CorrectChoice The infrared rays have lower frequencies and longer wavelengths than the light waves.
+\choice The X-rays have lower frequencies and longer wavelengths than the light waves.
+\choice The gamma rays have higher frequencies and shorter wavelengths than the light waves.
+\end{choices}
+\vspace{1em}
+
+\hrule
+
+% \begin{solution}
+% Part A. We sense infrared waves as heat. Part B. We sense the light with our eyes and the heat with our whole body. The heat waves have lower frequency and longer wavelengths than the light waves. They are both forms of electromagnetic radiation.
+% \end{solution}
+
+\question
+What is the value of $c$, the speed of light in a vacuum?
+
+\begin{choices}
+\correctchoice \SI{3.0e8}{m/s} (3 million meters per second)
+\choice \SI{0.0}{m/s} (zero meters per second)
+\choice \SI{1.0e5}{m/s} (100 thousand meters per second)
+\choice \SI{584}{m/s} (584 meters per second)
+\end{choices}
+
+\question
+When light travels through a physical medium, its speed is always \fillin[][0.8in]\ the speed of light ($c$).
+
+\begin{choices}
+\choice greater than
+\choice equal to
+\choice negative
+\correctchoice less than
+\end{choices}
+
+\question
+Light travels in water at \fillin\ the value of $c$.
+
+\begin{choices}
+\correctchoice $3/4$
+\choice $1/2$
+\choice $5/6$
+\choice $2/3$
+\end{choices}
+
+\question
+In air, light has a speed that is \fillin\ of $c$.
+
+\begin{choices}
+\choice 0.03 percent
+\choice 65.00 percent
+\correctchoice 99.97 percent
+\choice 87.50 percent
+\end{choices}
+
+\question
+Diamond slows light down to just \fillin\ of $c$.
+
+\begin{choices}
+\correctchoice 41 percent
+\choice 33 percent
+\choice 61 percent
+\choice 74 percent
+\end{choices}
+
+\question %5
+Light travels at different speeds in different media. Put these media in order, from the slowest light speed to the fastest light speed: air, diamond, vacuum, water.
+
+\begin{choices}
+\choice vacuum, diamond, air, water
+\choice diamond, air, water, vacuum
+\correctchoice diamond, water, air, vacuum
+\choice air, diamond, water, vacuum
+\end{choices}
+
+\question %28
+Explain how X-ray radiation can be harmful and how can it be a useful diagnostic tool.
+
+\begin{choices}
+\choice Overexposure to X-rays can cause HIV, though normal levels of X-rays can be used for sterilizing needles.
+\CorrectChoice Overexposure to X-rays can cause cancer, though in limited doses X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes diabetes, though normal levels of X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes cancer, though normal levels of X-rays can be used for reducing cholesterol in the blood.
+\end{choices}
+
+\question %17
+Which type of electromagnetic radiation has the shortest wavelengths?
+
+\begin{choices}
+\CorrectChoice Gamma rays
+\choice Infrared waves
+\choice Blue light
+\choice Microwaves
+\end{choices}
+
+\question %18
+Which form of EM radiation has the most penetrating ability?
+
+\begin{choices}
+\choice red light
+\choice microwaves
+\choice gamma rays
+\choice infrared radiation
+\end{choices}
+
+
+\question % 3
+What is the location of gamma rays on the electromagnetic spectrum?
+
+\begin{choices}
+\choice At the high-frequency and long-wavelength end of the spectrum
+\CorrectChoice At the high-frequency and short-wavelength end of the spectrum
+\choice At the low-frequency and long-wavelength end of the spectrum
+\choice At the low-frequency and short-wavelength end of the spectrum
+\end{choices}
+
+\question %19
+Why are high-frequency gamma rays more dangerous to humans than visible light?
+
+\begin{choices}
+\choice Gamma rays have a lower frequency range than visible light.
+\choice Gamma rays have a longer wavelength range than visible light.
+\CorrectChoice Gamma rays have greater energy than visible light for penetrating matter.
+\choice Gamma rays have less energy than visible light for penetrating matter.
+\end{choices}
+
+
+
+\question %33
+Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn?
+
+\begin{choices}
+\choice \SI{7.94e9}{min}
+\choice \SI{3.4e4}{min}
+\choice \SI{3.4e-6}{min}
+\choice \SI{79.4}{min}
+\end{choices}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Violet light has a \fillin[higher] frequency and \fillin[shorter] wavelength than red light.
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice lower; longer
+\CorrectChoice higher; shorter
+\choice lower; shorter
+\choice higher; longer
+\end{choices}
+
+% \begin{solution}
+% Violet light has a higher frequency and shorter wavelength than red light.
+% \end{solution}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has lower frequencies than red light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice ultraviolet radiation
+\choice x-ray radiation
+\CorrectChoice infrared radiation
+\choice violet light radiation
+
+\end{choices}
+
+% \begin{solution}
+% Infrared radiation or any other type of radiation in the low-frequency end of the spectrum.
+% \end{solution}
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has shorter wavelengths than violet light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice infrared radiation
+\CorrectChoice ultraviolet radiation
+\choice red light radiation
+\choice microwave radiation
+\end{choices}
+
+% \begin{solution}
+% Ultraviolet radiation or any other type of radiation in the high-frequency end of the spectrum.
+% \end{solution}
+
+\question %22
+What is the wavelength of red light with a frequency of \SI{4.00e14}{\Hz}?
+
+\begin{choices}
+\choice \SI{2.50e14}{\meter}
+\choice \SI{4.00e15}{\meter}
+\choice \SI{2.50e6}{\meter}
+\CorrectChoice \SI{7.50e-7}{\meter}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item frequency: $f = \SI{4.00e14}{\Hz}$
+    \item speed of light: $c = \SI[per-mode=symbol]{3.00e8}{\meter\per\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for wavelength,
+
+\begin{equation*}
+    \lambda = \frac{c}{f} = \SI{7.50e-7}{\meter}
+\end{equation*}
+\end{solution}
+
+\question %14
+Visible light has a range of wavelengths from about \SI{400}{nm} to \SI{800}{nm}. What is the range of frequencies for visible light?
+
+\begin{choices}
+\choice \SI{3.75e6}{\Hz} to \SI{7.50e6}{\Hz}
+\choice \SI{3.75}{\Hz} to \SI{7.50}{\Hz}
+\choice \SI{3.75e-7}{\Hz} to \SI{7.50e-7}{\Hz}
+\CorrectChoice \SI{3.75e14}{\Hz} to \SI{7.50e14}{\Hz}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item red limit of wavelength $\lambda_R = \SI{800}{\nano\meter} = \SI{800e-9}{\meter}$
+    \item violet limit of wavelength: $\lambda_V = \SI{400}{\nano\meter} = \SI{400e-9}{\meter}$
+    \item speed of light: $c = \SI{3.00e8}{\meter/\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for frequency,
+
+\begin{equation*}
+    f = \frac{c}{\lambda}
+\end{equation*}
+
+The red and violet limits of frequency are
+
+\begin{align*}
+    f_R = \frac{c}{\lambda_R} = \SI{3.75e14}{\Hz}\\
+    \\
+    f_V = \frac{c}{\lambda_V} = \SI{7.50e14}{\Hz}\\
+\end{align*}
+\end{solution}
+
+\end{questions}
+
+
+
+
+
+
 
