@@ -10,10 +10,6 @@
 
 \begin{document}
 
-\noindent \textcolor{red}{\textbf{INSTRUCTOR SOLUTIONS}}
-
-\bigskip
-
 \noindent \textbf{Questions \ref{Q1}--\ref{Q2}.} The figure below shows the displacement from equilibrium for a wave on a string as a function of position.
 
 \begin{center}
@@ -81,7 +77,7 @@ What wave property is being measured in the figure below?
 What wave characteristic is being measured in the figure below?
 
 \begin{center}
-\begin{tikzpicture}[y=1cm,x=3cm]
+\begin{tikzpicture}[y=0.8cm,x=3cm]
     \draw[gray,domain=0:2,smooth] plot(\x,{sin(deg(2*pi*\x))});
     \draw[lightgray,densely dashed] (0,0) -- (2,0);
     \draw[thick,<->] (1.25,0) -- ++(0,1);
@@ -119,13 +115,68 @@ $v = f\lambda$
     \choice More information is needed.
 \end{randomizechoices}
 
+\question 
+As a pendulum swings back and forth, it completes 30 cycles in one minute.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}
+    \draw[lightgray] (-1,0) -- (1,0) (0,0) -- (0,{-3.5*sin(75)});
+    \fill[lightgray] (-1,0) rectangle (1,0.1);
+    \coordinate (P) at ({3*cos(70)},{-3*sin(70)});
+    \draw[thick] (0,0) -- (P) node[pos=0.65,above right] {$l$};
+    \fill (P) circle (2pt) node[right=2pt] {$m$};
+    \draw (0,-1) arc (270:290:1) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (290:250:3);
+\end{tikzpicture}
+\end{center}
+
+What is the period of oscillation?
+
+\ifprintanswers
+{\color{red}
+
+$T = \frac{\text{total time}}{\text{\# cycles}} = \frac{\SI{60}{s}}{\SI{30}{cycles}} = \boxed{\SI{2.0}{s}}$
+
+\medskip
+}
+\fi
+
+\begin{randomizechoices}
+    \choice 30 seconds
+    \correctchoice 2 seconds
+    \choice 1/30 seconds
+    \choice 0.5 seconds
+\end{randomizechoices}
+
+\question
+The Undertaker is a wrestler whose entrance song begins with the ominous chiming of a church bell. Eight chimes are heard in the first 40 seconds of his song. Calculate the frequency of those chimes. 
+
+\ifprintanswers
+{\color{red}
+
+$f = \frac{\text{\# cycles}}{\text{total time}} = \frac{\SI{8}{cycles}}{\SI{40}{s}} = \boxed{\SI{0.2}{Hz}}$
+
+\medskip
+}
+\fi
+
+
+\begin{randomizechoices}
+    \correctchoice \SI{0.2}{Hz}
+    \choice \SI{5}{Hz}
+    \choice \SI{320}{Hz}
+    \choice \SI{0.8}{Hz}
+\end{randomizechoices}
 
 \question
 A metronome emits clicks at a rate of \SI{4.0}{Hz}. Calculate period between clicks. 
 
 \ifprintanswers
 {\color{red}
-$T = \frac{1}{f}$
+$T = \frac{1}{f} = \frac{1}{\SI{4.0}{Hz}} = \boxed{\SI{0.25}{s}}$
+
+\medskip
 }
 \fi
 
@@ -135,6 +186,29 @@ $T = \frac{1}{f}$
     \choice \SI{0.50}{s}
     \choice \SI{8.0}{s}
 \end{randomizechoices}
+
+\question
+A hummingbird flaps its wings at a high rate of \SI{50}{Hz}. What is the period of oscillation?
+
+\ifprintanswers
+{\color{red}
+$f = \frac{1}{T} = \frac{1}{\SI{50}{Hz}} = \boxed{\SI{0.02}{s}}$
+
+\medskip
+}
+\fi
+
+\begin{randomizeoneparchoices}
+    \correctchoice \SI{0.02}{s}
+    \choice \SI{0.05}{s}
+    \choice \SI{50}{s}
+    \choice \SI{20}{s}
+\end{randomizeoneparchoices}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
 
 \question
 Two wave pulses of equal amplitude are moving towards each other on a string, as shown in the figure below.
@@ -371,12 +445,17 @@ What is the number of waves on the string shown in the figure?
 \question 
 Using a stop watch, a student measures the amount of time it takes for 10 full wave cycles to propagate through the window frame. Then, using Desmos, they calculate 10 cycles divided by the total measured time. This calculation determines the wave's
 
-\begin{randomizechoices}
+\begin{randomizeoneparchoices}
     \correctchoice frequency
     \choice wavelength
     \choice speed
     \choice period
-\end{randomizechoices}
+\end{randomizeoneparchoices}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
 
 \question \label{Q4}
 The student doubles the oscillation frequency and notes that the wavelength reduces to half the original value. What happened to the wave speed?
@@ -433,7 +512,7 @@ How many nodes and antinodes are shown in the figure?
 \begin{randomizechoices}
     \correctchoice 6 nodes, 5 antinodes
     \choice 5 nodes, 6 antinodes
-    \choice 2.5 nodes, antinodes
+    \choice 2.5 nodes, 3 antinodes
     \choice 3 nodes, 2.5 antinodes
 \end{randomizechoices}
 
@@ -487,40 +566,24 @@ Which of the following figures represents the reflected pulse?
 \end{tikzpicture}
 \end{center}
 
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Figure A
+    \choice Figure B
+    \choice Figure C
+    \correctchoice Figure D
+\end{randomizeoneparchoices}
+
 \question
 How do the pitch and amplitude of a sound wave produced by a meowing kitten compare to sound produced by a blue whale?
 
 \begin{randomizechoices}
     \correctchoice The kitten's sound has a higher pitch but smaller amplitude.
     \choice The kitten's sound has a lower pitch but greater amplitude.
-    \choice The kitten's sound has a higher pitcher and greater amplitude.
+    \choice The kitten's sound has a higher pitch and greater amplitude.
     \choice The kitten's sound has a lower pitch and smaller amplitude.
 \end{randomizechoices}
 
-\question
-What is the shortest length of an open pipe that resonates at a frequency of \SI{49.0}{Hz} The velocity of sound is \SI{343}{m/s}.
 
-\begin{center}
-\begin{tikzpicture}[y=6mm,x=7cm]
-    \draw (0,1) -- (1,1) (0,-1) -- (1,-1);
-    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{+cos(deg(2*pi*2*\x))});
-    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{-cos(deg(2*pi*2*\x))});
-    % \draw[domain=0:1,samples=100,densely dashed,black!25] plot(\x,{-sin(deg(2*pi*2.5*\x))});
-\end{tikzpicture}
-\end{center}
-
-\ifprintanswers
-{\color{red}
-$f = \frac{nv}{2L}$, where $n=1$ for shortest pipe, and $v = \SI{343}{m/s}$ is sound speed. $\Rightarrow \quad L = \frac{nv}{2f} = \frac{(1)(\SI{343}{m/s})}{2(\SI{49}{Hz})} = \boxed{\SI{3.5}{m}}$
-}
-\fi
-
-\begin{randomizechoices}
-    \choice \SI{1.75}{m}
-    \correctchoice \SI{3.50}{m}
-    \choice \SI{14.0}{m}
-    \choice \SI{22.0}{m}
-\end{randomizechoices}
 
 \question
 The energy of a sound wave is most closely related to its
@@ -576,6 +639,79 @@ Sound waves cannot carry energy through
     \choice a mirror
 \end{randomizechoices}
 
+\begin{EnvUplevel}
+\textbf{Question \ref{longitudinal-wave}--\ref{transverse-wave}.} The figure below shows two waves.
+
+\begin{center}
+\tikzset{declare function={f(\x)=sin(540*\x);}}
+\begin{tikzpicture}[y=7mm,x=8mm]
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+     \draw[|<->|] (0.6,1.3) -- (6.6,1.3) node[above,pos=0.5] {$\lambda$};
+     \node[below=5mm] at (current bounding box.south) {\textbf{Wave 1}};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=4mm,y=1cm]
+    \draw[domain=0:2.5*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[densely dashed,lightgray] (0,0) -- (2.5*2*pi,0);
+    \draw[|<->|] (pi/2,1.2) -- (5*pi/2,1.2) node[above,pos=0.5] {$\lambda$};
+    \draw[thick,<->] (9*pi/2,0) -- (9*pi/2,1) node[right=-2pt,pos=0.5] {$X$};
+    \node[below=5mm] at (current bounding box.south) {\textbf{Wave 2}};
+\end{tikzpicture}
+\end{center}
+
+\end{EnvUplevel}
+
+\question \label{longitudinal-wave}
+What type of wave is Wave 2?
+
+\begin{randomizechoices}
+    \correctchoice transverse wave
+    \choice longitudinal wave
+    \choice newtonian wave
+    \choice seismic wave
+\end{randomizechoices}
+
+
+\question \label{transverse-wave}
+(L-Level only.) What type of wave is Wave 1?
+
+\begin{randomizeoneparchoices}
+    \choice transverse wave
+    \correctchoice longitudinal wave
+    \choice newtonian wave
+    \choice seismic wave
+\end{randomizeoneparchoices}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
+
+\question
+(K-Level only.) What is the shortest length of an open pipe that resonates at a frequency of \SI{49.0}{Hz} The velocity of sound is \SI{343}{m/s}.
+
+\begin{center}
+\begin{tikzpicture}[y=6mm,x=7cm]
+    \draw (0,1) -- (1,1) (0,-1) -- (1,-1);
+    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{+cos(deg(2*pi*2*\x))});
+    \draw[thick,domain=0:1,samples=100,smooth] plot(\x,{-cos(deg(2*pi*2*\x))});
+    % \draw[domain=0:1,samples=100,densely dashed,black!25] plot(\x,{-sin(deg(2*pi*2.5*\x))});
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+{\color{red}
+$f = \frac{nv}{2L}$, where $n=1$ for shortest pipe, and $v = \SI{343}{m/s}$ is sound speed. $\Rightarrow \quad L = \frac{nv}{2f} = \frac{(1)(\SI{343}{m/s})}{2(\SI{49}{Hz})} = \boxed{\SI{3.5}{m}}$
+}
+\fi
+
+\begin{randomizechoices}
+    \choice \SI{1.75}{m}
+    \correctchoice \SI{3.50}{m}
+    \choice \SI{14.0}{m}
+    \choice \SI{22.0}{m}
+\end{randomizechoices}
 
 
 

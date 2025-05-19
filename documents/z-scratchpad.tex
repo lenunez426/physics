@@ -8,43 +8,55 @@
 
 \begin{document}
 
-
-
 \begin{center}
-\begin{tikzpicture}[y=3mm,x=3mm]
-    \draw[step=0.5,black!15] (-6,-2) grid (6,6);
-    \draw[domain=-6:0,samples=120,thick] plot (\x,{4*exp(-(\x+3)^2)});
-    \node[above] at (-3,4) {$\rightarrow$};
-    \draw[domain=0:6,samples=120,thick] plot (\x,{4*exp(-(\x-3)^2)});
-    \node[above] at (+3,4) {$\leftarrow$};
-    \draw (0,6) -- (0,-2) node[below] {$x=0$};
-\end{tikzpicture}
+    \begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,10},
+        clip=false,
+        minor x tick num=1,
+        ]
+        \node[above=-2pt] at (-8,0) {\resizebox{5mm}{!}{\faTree}};
+        \fill (-5,0) circle (2pt) node[above=2pt] {A};
+        \fill (-2,0) circle (2pt) node[above=2pt] {B};
+        \fill (0,0) circle (2pt) node[above=2pt] {C};
+        \fill (4,0) circle (2pt) node[above=2pt] {D};
+        \fill (7,0) circle (2pt) node[above=2pt] {E};
+        \node[above=-2pt] at (8,0) {\resizebox{5mm}{!}{\faHome}};
+    \end{axis}
+    \end{tikzpicture}
 \end{center}
 
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        width=0.8\textwidth,
+        axis lines = left,
+        axis y line=none,
+        xlabel = \textbf{Position (m)},
+        ymin=0, ymax=1, 
+        xmin=-10, xmax=10,
+        xtick={-10,-8,...,12},
+        clip=false,
+        ]
+        \node at (axis cs: -8,0.04)
+        {\Springtree[3]};
+        \node at (axis cs: 8,0.03)
+        {\huge \faHome};
+        \fill (axis cs: -5,0) circle[radius=3pt] node[above,inner sep=7pt] {A};
+        \fill (axis cs: -2,0) circle[radius=3pt] node[above,inner sep=7pt] {B};
+        \fill (axis cs: 0,0) circle[radius=3pt] node[above,inner sep=7pt] {C};
+        \fill (axis cs: 4,0) circle[radius=3pt] node[above,inner sep=7pt] {D};
+        \fill (axis cs: 7,0) circle[radius=3pt] node[above,inner sep=7pt] {E};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{A position axis with labeled points.}
+    \label{fig:PositionAxis} 
+\end{figure}
 
-\begin{center}
-\begin{tikzpicture}[y=3mm,x=3mm]
-    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
-    \draw[domain=-6:6,samples=120,thick] plot (\x,{4*exp(-(\x)^2) + 4*exp(-(\x)^2)});
-    \node[above] at (current bounding box.north) {\textbf{Graph A}};
-\end{tikzpicture}
-\begin{tikzpicture}[y=3mm,x=3mm]
-    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
-    \draw[domain=-6:6,samples=120,thick] plot (\x,{2*exp(-(\x)^2) + 2*exp(-(\x)^2)});
-    \node[above] at (current bounding box.north) {\textbf{Graph B}};
-\end{tikzpicture}
-\begin{tikzpicture}[y=3mm,x=3mm]
-    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
-    \draw[domain=-6:6,samples=120,thick] plot (\x,{-4*exp(-(\x)^2) - 4*exp(-(\x)^2)});
-    \node[above] at (current bounding box.north) {\textbf{Graph C}};
-\end{tikzpicture}
-\begin{tikzpicture}[y=3mm,x=3mm]
-    \draw[step=0.5,black!15] (-6,-8) grid (6,8);
-    \draw[domain=-6:6,samples=120,thick] plot (\x,{-2*exp(-(\x)^2) - 2*exp(-(\x)^2)});
-    \node[above] at (current bounding box.north) {\textbf{Graph D}};
-\end{tikzpicture}
-
-
-
-\end{center}
 \end{document}

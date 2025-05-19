@@ -28,16 +28,16 @@
 \newif\ifShowUnitXI                              %        
 \newif\ifShowUnitXII                             % 
 \ShowUnitItrue                                  %
-\ShowUnitIItrue                                 %
-\ShowUnitIIItrue                                %
-\ShowUnitIVtrue                                 %
-\ShowUnitVtrue                                  %
-\ShowUnitVItrue                                 %
-\ShowUnitVIItrue                                %
-\ShowUnitVIIItrue                                %
-\ShowUnitIXtrue                                 %
-\ShowUnitXtrue                                  %
-\ShowUnitXItrue                                 %
+\ShowUnitIIfalse                                 %
+\ShowUnitIIIfalse                                %
+\ShowUnitIVfalse                                 %
+\ShowUnitVfalse                                  %
+\ShowUnitVIfalse                                 %
+\ShowUnitVIIfalse                                %
+\ShowUnitVIIIfalse                                %
+\ShowUnitIXfalse                                 %
+\ShowUnitXfalse                                  %
+\ShowUnitXIfalse                                 %
 \ShowUnitXIIfalse                                %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -57,9 +57,8 @@
 
 \ifShowUnitI
 
-\subsection{Location and How Far}
+\subsection{Scalars and Vectors}
 
-\subsubsection{Position, Displacement, and Distance}
 
 A \textbf{\gls{scalar}} is \glsdesc{scalar}. \textbf{\Gls{magnitude}} means \glsdesc{magnitude}. Examples of scalars include a length of 100 miles, a mass of 4 kilograms, and a speed of 35 mph. Scalar notation is shown below.
 
@@ -176,7 +175,11 @@ Example 3 (You do):
     \end{tikzpicture}
 \end{center}
 
-\textbf{\Gls{position}} ($x$) is \glsdesc{position}. The mathematical symbol for position is $x$, and the base SI unit of position is the meter (m). The basic coordinate system for position is a number line called a position axis:
+\clearpage
+
+\subsection{Position and Displacement}
+
+\textbf{\Gls{position}} ($x$) is \glsdesc{position}. The mathematical symbol for position is $x$, and the base SI unit of position is the meter (m). The basic coordinate system for position is a number line called the position axis:
 
 \begin{center}
     \begin{tikzpicture}
@@ -222,7 +225,7 @@ A man starts at a reference point, labeled as Point A below. Then he walks to Po
 
 \textit{Solution:}
 
-(a) The man moves to the right, so his position changed in the rightward direction. We can also say it changed in the positive direction.
+(a) The change in position is rightward, or in the positive ($+$) direction.
 
 (b) Recall that magnitude means \glsdesc{magnitude}. We can find change in position by subtracting the first position from the second, exactly the way we do on a number line:
 
@@ -237,22 +240,24 @@ The man's change in position has a magnitude (size) of 4 meters. That is the sam
 
 \hfill $\blacksquare$
 
-The ``change in position'' we just saw in Example \ref{T7uFg} has a special name in physics. \textbf{\Gls{displacement}} ($\Delta x$) is \glsdesc{displacement}. Mathematically, it's
+The ``change in position'' in the previous example has a special name in physics. The Greek letter $\Delta$ (Delta) means ``change in.'' \textbf{\Gls{displacement}} ($\Delta x$) is \glsdesc{displacement}. Mathematically, it's
 
 \begin{equation}
     \Delta x = x_f - x_i
 \end{equation}
 
-where $x_f$ is the final position $x_i$ is the initial position.
+where $x_f$ is the final position, and $x_i$ is the initial position.
 
 
 \textbf{\Gls{distance}} ($d$) is \glsdesc{distance}.
 
-Example (I do): Ron Farr runs the following route in 10 seconds: 30 meters in the positive direction, 50 meters in the negative direction, and 15 meters in the positive direction. 
+\begin{example} \label{example-ron-farr}
+    Ron Farr runs the following route in 10 seconds: 30 meters in the positive direction, 50 meters in the negative direction, and 15 meters in the positive direction. (a) What is the total distance Ron ran? (b) What is his total displacement?
+\end{example}
 
-a) What is the distance Ron ran?
+\textit{Solution:}
 
-Solution: Start by drawing a picture:
+A sketch is useful.
 
 \begin{center}
     \begin{tikzpicture}
@@ -278,63 +283,127 @@ Solution: Start by drawing a picture:
     \end{tikzpicture}
 \end{center}
 
+(a) The distance is
+
 \begin{equation*}
     d = \SI{30}{m} + \SI{50}{m} + \SI{15}{m} = \boxed{\SI{95}{m}}
 \end{equation*}
 
-b) What is Ron's displacement?
-
-From the graph above,
+(b) For total displacement, take the sum of all displacements:
 
 \begin{equation*}
-    \Delta x = 30 - 50 + 15 = \boxed{\SI{-5}{m}}
+    \Delta x = \SI{30}{m} + (-\SI{50}{m}) + \SI{15}{m} = \boxed{\SI{-5}{m}}
 \end{equation*}
 
-c) What is his average speed?
+So, his displacement is $-5$ meters, or 5 meters to the left of his origin.
+
+\hfill $\blacksquare$
+
+\subsection{Speed and Velocity}
+
+\textbf{\Gls{speed}} is the \glsdesc{speed}. It's how fast an object is moving. Mathematically, \textbf{\gls{average speed}} is \glsdesc{average speed}. In equation form,
+
+\begin{equation}
+    \text{average speed} = \frac{\mathrm{distance}}{\mathrm{time}}
+\end{equation}
+
+The SI units of distance and time are meters and seconds, so the SI units of speed are meters per second~(m/s).
+
+\textbf{\Gls{velocity}} ($v$) is \glsdesc{velocity}, or the rate at which an object changes position. \textbf{\Gls{average velocity}} ($\bar{v}$) is \glsdesc{average velocity}. Mathematically, 
+
+\begin{equation} \label{average-velocity}
+    \bar{v} = \frac{\Delta x}{\Delta t} = \frac{\mathrm{displacement}}{\mathrm{time}}
+\end{equation}
+
+\begin{example}
+    Ron Farr (from Example \ref{example-ron-farr}) runs the following route in 10 seconds: 30 meters in the positive direction, 50 meters in the negative direction, and 15 meters in the positive direction. (a) What is his average speed? (b) What is his average velocity?
+\end{example}
+
+\textit{Solution:}
+
+In Example \ref{example-ron-farr}, we found the total distance traveled is $d = \SI{95}{m}$, and his displacement is $\SI{-5}{m}$.
+
+(a) His average speed is
 
 \begin{equation*}
     \text{speed} = \frac{\text{distance}}{\text{time}} = \frac{\SI{95}{m}}{\SI{10}{s}} = \boxed{\SI{9.5}{m/s}}
 \end{equation*}
 
-d) What is his average velocity?
+(b) Average velocity is
 
 \begin{equation*}
     v = \frac{\text{displacement}}{\text{time}} = \frac{\SI{-5}{m}}{\SI{10}{s}} = \boxed{\SI{-0.5}{m/s}}
 \end{equation*}
 
-\subsubsection{Displacement from a Reference Point}
+Average speed and average velocity are not the same thing! Moreover, these answers suggest that if Ron walked at a slow pace of \SI{0.5}{m/s} in the negative direction, he would end up in the same final location has he did in Example \ref{example-ron-farr}.
 
-\subsubsection{Position and Displacements using Multiple Representations}
+\hfill $\blacksquare$
 
-A \textbf{\gls{position vs. time graph}} is \glsdesc{position vs. time graph}. It shows an object's position at a range of times. For example, 
+\begin{example}
+    Find a formula for displacement in terms of velocity and time.
+\end{example}
+
+\textit{Solution:}
+
+Average velocity (Eq.\,\ref{average-velocity}) is
+
+\begin{equation*}
+    \bar{v} = \frac{\Delta x}{\Delta t}
+\end{equation*}
+
+We can write
+
+\begin{equation*}
+    \frac{\bar{v}}{1} = \frac{\Delta x}{\Delta t}
+\end{equation*}
+
+and cross-multiply:
+
+\begin{equation*}
+    (1)(\Delta x) = (\bar{v})(\Delta t)
+\end{equation*}
+
+Therefore,
+
+\begin{equation} \label{displacement2}
+    \Delta x = \bar{v} \Delta t
+\end{equation}
+
+
+That is, displacement equals average velocity multiplied by the time interval.
+
+\hfill $\blacksquare$
+
+\subsection{Position vs. Time Graphs}
+
+A \textbf{\gls{position vs. time graph}} is \glsdesc{position vs. time graph}. An example is shown below:
 
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[height=4cm,width=6cm,
+    \begin{axis}[height=5cm,width=7cm,
         axis lines=left,
-        ymin=0, ymax=5,
+        ymin=0, ymax=6,
         xmin=0, xmax=10,
         ylabel = {Position (m)},
         xlabel = {Time (s)},
         grid = both,
-        ytick={0,1,...,5},
+        ytick={0,1,...,6},
         xtick={0,1,...,10},
     ]
-    \addplot[black,very thick,domain=0:10] {2/5*x}; 
+    \addplot[black,very thick,domain=0:10] {0.5*x}; 
 \end{axis}
 \end{tikzpicture}
 \end{center}
 
-The graph above shows that the car traveled 2 meters in 5 seconds, and 4 meters in 10 seconds. In a position vs. time graph, we know where the car is at any time. This graph is one of the ten Multiple Representations.
 
 
 
-\begin{example}
+\begin{example} \label{DYQyq}
 The graph below shows the position of an object as a function of time. What is the object's displacement between $t = \SI{2}{s}$ and $t = \SI{5}{s}$?
 
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[width=8cm,height=6cm,
+    \begin{axis}[width=7cm,height=6cm,
         axis lines=left,
         ymin=0, ymax=10,
         xmin=0, xmax=10,
@@ -361,57 +430,222 @@ According to the graph, the position of the object at 2 seconds is 4 meters; thi
 
 \hfill $\blacksquare$
 
-\subsection{How Fast}
+\begin{example}
+The figure below shows the position of puck on a frictionless surface. Find the puck's average velocity. 
 
-\subsubsection{Velocity and Vectors}
 
-\textbf{\Gls{speed}} is \glsdesc{speed}. It's how hast an object is moving. Mathematically, we can define \textbf{\gls{average speed}} as \glsdesc{average speed}. In equation form,
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=7cm,
+        axis lines=left,
+        ymin=0, ymax=6,
+        xmin=0, xmax=10,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,1,...,6},
+        xtick={0,1,...,10},
+    ]
+    \addplot[black,very thick,domain=0:10] {2/5*x+1}; 
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
 
-\begin{equation}
-    \text{average speed} = \frac{\mathrm{distance}}{\mathrm{time}}
-\end{equation}
+\textit{Solution:}
 
-The SI units of distance and time are meters and seconds, so the SI units of speed are meters per second~(m/s).
+Average velocity is displacement over time:
 
-\textbf{\Gls{velocity}} ($v$) is \glsdesc{velocity}, or the rate at which an object changes position. \textbf{\Gls{average velocity}} ($\bar{v}$) is \glsdesc{average velocity}. Mathematically, 
+\begin{equation*}
+    \bar{v} = \frac{\Delta x}{\Delta t}
+\end{equation*}
 
-\begin{equation}
-    \bar{v} = \frac{\Delta x}{\Delta t} = \frac{\mathrm{displacement}}{\mathrm{time}}
-\end{equation}
+Graphically, $\Delta x$ is the ``rise'' and $\Delta t$ is the ``run'' between any two points on the graph, as shown below.
 
-\subsubsection{Calculating the Velocity of an Object}
 
-\subsubsection{Speed and Velocity using Multiple Representations}
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=7cm,
+        axis lines=left,
+        ymin=0, ymax=6,
+        xmin=0, xmax=10,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,1,...,6},
+        xtick={0,1,...,10},
+        clip=false
+    ]
+    \addplot[black,very thick,domain=0:10] {2/5*x+1}; 
+    \fill[red] (5,3) circle (2pt) node[above left] {$(5,3)$};
+    \fill[red] (10,5) circle (2pt) node[above left] {$(10,5)$};
+    \draw[red] (5,3) -- (10,3) node[below,pos=0.5] {$\Delta t$};
+    \draw[red] (10,3) -- (10,5) node[right,pos=0.5] {$\Delta x$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+But, rise over run is the same thing as the slope of the line! Therefore, \textbf{in a position vs. time graph, the slope of the line is the velocity}. Using the two coordinates from the figure, we get
+
+\begin{equation*}
+    \bar{v} = \text{slope} = \frac{\Delta x}{\Delta t} = \frac{\SI{4}{m/s} - \SI{2}{m/s}}{\SI{10}{s} - \SI{5}{s}} = \frac{\SI{2}{m/s}}{\SI{5}{s}} = \frac{2}{5}\,\text{m/s} = \boxed{\SI{0.4}{m/s}}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+
+
+\begin{example}
+Write the linear equation of motion for the line in the graph from Example \ref{DYQyq}.
+\end{example}
+
+\textit{Solution:}
+
+In algebra, we learned that the equation of a line on the $xy$ plane is
+
+\begin{equation*}
+    y = mx + b
+\end{equation*}
+
+In a position vs. time graph, position ($x$) is plotted on the $y$-axis, and time ($t$) is plotted on the $x$-axis. Also, we found the slope in Example \ref{DYQyq}, and we can see below that the $y$-intercept $b$ is 1 meter:
+
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,width=7cm,
+        axis lines=left,
+        ymin=0, ymax=6,
+        xmin=0, xmax=10,
+        ylabel = {Position, \textcolor{red}{$\boldsymbol{x}$} (m)},
+        xlabel = {Time, \textcolor{red}{$\boldsymbol{t}$} (s)},
+        grid = both,
+        ytick={0,1,...,6},
+        xtick={0,1,...,10},
+        clip=false,
+    ]
+    \addplot[black,very thick,domain=0:10] {2/5*x+1} node[above,pos=0.5,rotate=21.8] {\color{red} $\displaystyle m = \frac{2}{5} = 0.4$}; 
+    \fill[red] (0,1) circle (2pt) node[below right] {$b$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Therefore, the equation is
+
+\begin{equation*}
+    x = \left(\SI{0.4}{m/s}\right) t + \SI{1}{m}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+% \subsubsection{Speed and Velocity using Multiple Representations}
 
 A \textbf{\gls{velocity vs. time graph}} is \glsdesc{velocity vs. time graph}.
+
+\begin{example}
+The following graph\footnote{See \href{https://youtu.be/rfG8ce4nNh0?si=YnRiAhbPOc-2eW6s&t=162}{3Blue1Brown}, ``Integration and the fundamental theorem of calculus.''} shows the constant velocity of a car traveling in one direction as a function of time. What is the car's displacement in the first 8 seconds of motion?
 
 \begin{center}
 \begin{tikzpicture}
     \begin{axis}[width=8cm,height=5cm,
         axis lines=left,
-        ymin=0, ymax=5,
-        xmin=0, xmax=5,
+        ymin=0, ymax=25,
+        xmin=0, xmax=10,
         ylabel = {Velocity (m/s)},
         xlabel = {Time (s)},
         grid = both,
+        ytick={0,5,...,25},
         xtick={0,1,...,10},
-        ytick={0,1,...,5},
-        minor x tick num=1,
+        % minor x tick num=1,
     ]
-    \addplot[ultra thick,domain=0:10] plot {3};
+    \addplot[ultra thick,domain=0:10] plot {10};
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\end{example}
 
-\subsubsection{Predicting Displacement and Velocity}
+\textit{Solution:}
 
-\subsubsection{Constant Motion using Multiple Representations}
+Consider an analogy. The area of a 3- by 2-unit rectangle is 6. In general, the area of a rectangle is $A = bh$ where $b$ is the base and $h$ is the height.
 
-\subsubsection{Displacement from a Position vs. Time and Velocity vs. Graph}
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw[fill=black!15] (0,0) rectangle (3,2) node[below=1,pos=0.5] {3} node[left=1.5,pos=0.5] {2};
+    \node at (6,1) {$A = 3\times2 = 6$};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw[fill=black!15] (0,0) rectangle (3,2) node[below=1,pos=0.5] {$b$} node[left=1.5,pos=0.5] {$h$};
+    \node at (5,1) {$A = bh$};
+\end{tikzpicture}
+\end{center}
+
+In this car example, the area bounded by the velocity line is a rectangle with a base of 8 seconds and a height of 10 meters per second.
+
+\begin{center}
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=5cm,
+        axis lines=left,
+        ymin=0, ymax=25,
+        xmin=0, xmax=10,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,5,...,25},
+        xtick={0,1,...,10},
+        % minor x tick num=1,
+    ]
+    \addplot[ultra thick,domain=0:10] plot {10};
+    \begin{pgfonlayer}{background}
+        \fill[black!12] (0,0) rectangle (8,10);
+    \end{pgfonlayer}
+\end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\hspace{1cm}
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}[y=8mm,x=8mm]
+    \draw[fill=black!12] (0,0) rectangle (6,2) node[pos=0.5] {$\displaystyle \text{Area} = \SI{8}{s} \times \SI[per-mode=fraction]{10}{\meter\per\second}$};
+    \draw[yshift=-2mm,|<->|] (0,0) -- (6,0) node[below,pos=0.5] {$t = \SI{8}{s}$};
+    \draw[xshift=-2mm,|<->|] (0,0) -- (0,2) node[left,pos=0.5] {$v = \SI{10}{m/s}$};
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+In general, the area bounded by a velocity vs. time graph is found by multiplying time (the base) by velocity (the height):
+
+\begin{center}
+\begin{tikzpicture}[y=8mm,x=8mm]
+    \draw[fill=black!12] (0,0) rectangle (6,2) node[pos=0.5] {$\displaystyle \text{Area} = t\cdot v$} node[pos=0.5,below=1] {$t$} node[pos=0.5,left=3] {$v$};
+\end{tikzpicture}
+\end{center}
+
+But, wait! Equation \eqref{displacement2} states that the product of velocity and time is displacement: 
+
+\begin{equation*}
+    \Delta x = v t
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    \Delta x = \text{displacement} = \text{area under line in a velocity vs. time graph}
+\end{equation*}
+
+In a velocity vs. time graph, the area bounded under the velocity line equals the displacement of the object. Therefore, by the figures above, the area bounded is
+
+\begin{equation*}
+    \text{area} = \Delta x = \SI{8}{s} \times \SI[per-mode=fraction]{10}{\meter\per\second} = \boxed{\SI{80}{m}}
+\end{equation*}
+
+Therefore, the car's displacement is 80 meters. This problem encourages you to think of displacement geometrically in terms of the area under a velocity vs. time curve.
+
+\hfill $\blacksquare$
+
 
 \subsection{Mass and Inertia}
-
-\subsubsection{Defining Inertia and Mass}
 
 \textbf{\Gls{inertia}} is \glsdesc{inertia}. \textbf{\Gls{mass}} is \glsdesc{mass} (kg). Inertia is proportional to mass: the more mass an object has, the greater its inertia. 
 
@@ -434,13 +668,12 @@ A \textbf{\gls{velocity vs. time graph}} is \glsdesc{velocity vs. time graph}.
 % ]
 
 
-\subsubsection{Relating Inertia to Mass}
+
 
 \clearpage
 
 \subsection{Momentum}
 
-\subsubsection{Differentiating between Inertia and Momentum}
 
 \textbf{\Gls{momentum}} ($p$) is \glsdesc{momentum}. Mathematically, 
 
@@ -450,7 +683,6 @@ A \textbf{\gls{velocity vs. time graph}} is \glsdesc{velocity vs. time graph}.
 
 The SI unit of momentum is the combination of the units of mass and velocity: kilograms multiplied by meters per second, or $\mathrm{kg\cdot m/s}$. Objects usually don't change in mass but can change momentum with change in velocity. 
 
-\subsubsection{Momentum using Multiple Representations}
 
 A \textbf{\gls{momentum vs. time graph}} is \glsdesc{momentum vs. time graph}.
 
@@ -473,12 +705,8 @@ A \textbf{\gls{momentum vs. time graph}} is \glsdesc{momentum vs. time graph}.
 \end{tikzpicture}
 \end{center}
 
-
-\subsubsection{Calculating Momentum}
-
 \subsection{Kinetic Energy}
 
-\subsubsection{Differentiating between Momentum and Kinetic Energy}
 
 % [Watch Chris Farley on the Letterman show (\href{https://youtu.be/Nzl2lvO1aMs?feature=shared&t=101}{CLICK HERE}). Then fill in the blank below. On a sticky note, students fill in the blank in the following sentence: 
 
@@ -522,15 +750,9 @@ $m = \SI{0.25}{kg}$ and $v = \SI{1.5}{m/s}$. $\mathrm{KE} =\ ?$
 
 \hfill $\blacksquare$
 
-\subsubsection{Comparing Kinetic Energies of Different Objects}
 
-\subsubsection{Calculating Kinetic Energy}
+\subsection{Relative Motion}
 
-\subsection{Frame of Reference}
-
-\subsubsection{Relative Motion}
-
-\subsubsection{Calculating Relative Velocity}
 
 Hook: ``The Fast and the Furious'' (\href{https://youtu.be/yWiSjVHCT30?feature=shared&t=238}{click here}). Look at the velocity of the red car relative to the green car towards the end of the race.
 
