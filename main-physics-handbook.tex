@@ -144,7 +144,7 @@ The vectors are added graphically using the head-to-tail method:
 \begin{center}
 \begin{tikzpicture}[x=8mm,y=8mm]
     \draw[step=8mm,gray] (0,0) grid (10,3);
-    \draw[very thick,->] (0,2) -- ++(4,0) node[above,pos=0.5] {$\vec{A} = 4$};
+    \draw[very thick,->] (0,2) -- ++(4,0) node[above,pos=0.5] {$\vec{A}$};
     \draw[very thick,->,yshift=-4mm] (4,2) node[right] {$\vec{B}$} -- ++(-3,0) ;
     \draw[very thick,->] (0,0.5) -- ++(1,0) node[fill=white,right] {$\vec{A} + \vec{B}$};
 \end{tikzpicture}
@@ -160,22 +160,6 @@ Therefore the vector sum is 1 unit to the right.
 
 \hfill $\blacksquare$
 
-
-Example 3 (You do):
-
-\begin{center}
-    \begin{tikzpicture}
-        \draw[->,thick] (0,0) -- (4,0) node[above,pos=0.5] {$\vec{A} = \text{4 units right}$};
-        \draw[<-,thick] (0,0.8) -- ++(6,0) node[above,pos=0.5] {$\vec{B} = \text{6 units left}$};
-        \begin{scope}[xshift=10cm]
-            \draw[->,thick] (0,0) -- (4,0) node[right] {$\vec{A}$};
-            \draw[->,thick] (4,0.3) -- ++(-6,0) node[left] {$\vec{B}$};
-            \draw[->,very thick] (0,-0.1) -- ++(-2,0) node[below,pos=0.5] {$\vec{C}$} node[below=0.8cm,pos=-0.2] {$\vec{C} = \vec{A} + \vec{B} = \text{2 units left}$};
-        \end{scope}
-    \end{tikzpicture}
-\end{center}
-
-\clearpage
 
 \subsection{Position and Displacement}
 
@@ -430,7 +414,7 @@ According to the graph, the position of the object at 2 seconds is 4 meters; thi
 
 \hfill $\blacksquare$
 
-\begin{example}
+\begin{example} \label{flMbk}
 The figure below shows the position of puck on a frictionless surface. Find the puck's average velocity. 
 
 
@@ -537,9 +521,63 @@ Therefore, the equation is
 
 \hfill $\blacksquare$
 
-% \subsubsection{Speed and Velocity using Multiple Representations}
+\subsection{Velocity vs. Time Graphs}
 
-A \textbf{\gls{velocity vs. time graph}} is \glsdesc{velocity vs. time graph}.
+A \textbf{\gls{velocity vs. time graph}} is \glsdesc{velocity vs. time graph}. Beside velocity information, velocity vs. time graphs contain implicit position and displacement data.
+
+\begin{example}
+Make a velocity vs. time graph corresponding to the position vs. time graph below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=5cm,
+        axis lines=left,
+        ymin=0, ymax=10,
+        xmin=0, xmax=6,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,2,...,10},
+        xtick={0,1,...,6},
+        minor y tick num=1,
+        minor x tick num=1,
+    ]
+    \addplot[very thick,domain=0:5] {2*x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\textit{Solution:}
+
+In Example \ref{flMbk} we recalled how to find the slope of a line and learned that slope in a position vs. time graph is the velocity. The slope, or velocity, in the graph above is
+
+\begin{equation*}
+    v = \text{slope} = \SI{2.0}{m/s}
+\end{equation*}
+
+and this value is constant throughout the 5-second time interval. So, the velocity-time graph is as follows:
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=5cm,
+        axis lines=left,
+        ymin=0, ymax=4,
+        xmin=0, xmax=6,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,1,...,4},
+        xtick={0,1,...,6},
+        minor y tick num=1,
+        minor x tick num=1,
+    ]
+    \addplot[very thick,domain=0:5] {2};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\hfill $\blacksquare$
 
 \begin{example}
 The following graph\footnote{See \href{https://youtu.be/rfG8ce4nNh0?si=YnRiAhbPOc-2eW6s&t=162}{3Blue1Brown}, ``Integration and the fundamental theorem of calculus.''} shows the constant velocity of a car traveling in one direction as a function of time. What is the car's displacement in the first 8 seconds of motion?
@@ -651,21 +689,7 @@ Therefore, the car's displacement is 80 meters. This problem encourages you to t
 
 \textbf{\gls{Newton's first law of motion}} states that \glsdesc{Newton's first law of motion}.
 
-% [Begin with several demos of inertia without using the word ``inertia.''
 
-% \begin{enumerate}[itemsep=0pt,topsep=0pt]
-%     \item Stand a roll of painter's tape on the rim of a flask. Place penny on top of roll. Forcefully pull roll from under the penny and watch the penny land inside the flask.
-%     \item Place a stack of heavy textbooks on a cart. Place a light object (e.g. whiteboard eraser) on top of books. ``Crash'' the cart on a table and watch the eraser fly onto the table top away from the cart.
-%     \item In the middle of the night on March 26, 2024,  a cargo ship on a river near Baltimore lost all power and crashed into a bridge, killing 6 people.
-%     \item The sleeping Pokemon snorlax could not be removed from the edge of a creek.
-%     \item Messi (\href{https://www.youtube.com/watch?v=5PKXs8i_zSw&t=19s}{click here})
-%     \item Football (\href{https://www.youtube.com/watch?v=4TgpW0WZZ6U&t=55s}{click here})
-%     \item Basketball (\href{https://www.youtube.com/watch?v=IGBpvIXGMYQ&t=24s}{click here})
-%     \item Snowboard girl chased by a bear (\href{https://www.youtube.com/watch?v=vT_PNKg3v7s}{click here})
-% \end{enumerate}
-
-% Give students large paper and ask them to brainstorm: What do all these things have in common?
-% ]
 
 
 
