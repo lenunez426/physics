@@ -1,12 +1,26 @@
-\documentclass[../main-physics-workbook.tex]{subfiles}
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+%\usetikzlibrary{patterns}
+\usepackage[none]{hyphenat}
+\input{documents/physics-glossary}
+\setlength{\parindent}{0pt}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+%\usepackage{fontawesome5}
+
+
+% \documentclass[../main-physics-workbook.tex]{subfiles}
 \begin{document}
 
+\firstpageheader{Physics}{Unit 7: Two-Dimensional Motion}{Problems}
+\runningheader{Physics}{}{Unit 7 Problems}
+
 \setcounter{section}{7}
-\subsection{Factors That Affect Projectile Trajectory}
+\subsection*{PhET Simulation: Projectile Motion}
 
-\subsubsection{Trajectory, Hang Time, Max Height, and Range}
 
-\fbox{\fbox{
+\fbox{
 \begin{minipage}{0.6\textwidth}
 \textbf{Instructions}:
 \vspace{-1ex}
@@ -25,7 +39,11 @@
 \hspace{2pt}
 \includegraphics[height=2cm]{documents/figures/phet-projectile-lab.png}
 \end{minipage}
-}}
+}
+
+\medskip
+
+\textbf{Trajectory, Hang Time, Max Height, and Range}
 
 
 \begin{questions}
@@ -186,82 +204,46 @@ Using your table from Question \ref{Q1}, predict the time, range, and height for
 \end{tabu}
 \end{minipage}
 
-\question
-Give a real-world example of an object undergoing projectile motion. Then draw its trajectory and label the launch angle, apex, and maximum height.
+% \question
+% Give a real-world example of an object undergoing projectile motion. Then draw its trajectory and label the launch angle, apex, and maximum height.
 
-\begin{solutionorbox}[5cm]
-    Answers will vary.
-\end{solutionorbox}
-
-\question
-What is projectile motion?
-    
-\begin{randomizechoices}
-    \correctchoice The motion of an object projected into the air and moving under the influence of gravity.
-    \choice The motion of an object projected into the air and moving independently of gravity.
-    \choice The motion of an object projected only vertically upward into the air and moving under the influence of gravity.
-    \choice The motion of an object projected only horizontally into the air and moving independently of gravity.
-\end{randomizechoices}
-
-\question
-What is the shape of a trajectory?
-
-\begin{randomizechoices}
-    \correctchoice a parabola
-    \choice an ellipse
-    \choice a circle
-    \choice a line
-\end{randomizechoices}
-
-\question
-The point in a projectile's trajectory at which the object is at peak height is called
-
-\begin{randomizechoices}
-    \correctchoice the apex
-    \choice the trajectory
-    \choice the launch angle
-    \choice the maximum range
-\end{randomizechoices}
-
-\question
-What is the force experienced by a projectile after the initial force that launched it into the air?
-
-\begin{randomizechoices}
-    \choice The nuclear force
-    \correctchoice The gravitational force
-    \choice The electromagnetic force
-    \choice The contact force
-\end{randomizechoices}
-\end{questions}
+% \begin{solutionorbox}[4cm]
+%     Answers will vary.
+% \end{solutionorbox}
 
 
-\subsubsection{How Initial Velocity, Launch Height, Launch Angle, and Mass Affect Motion}
-
-\fbox{\fbox{
-\begin{minipage}{0.6\textwidth}
-\textbf{Instructions}:
-\vspace{-1ex}
-\begin{center}
-\begin{itemize}[itemsep=0pt]
-    \item Go to \href{https://phet.colorado.edu/en/simulations/projectile-motion}{phet.colorado.edu/en/simulations/projectile-motion}
-    \item Press play to enter the simulation.
-    \item Click the fourth panel, called ``Lab''
-    \smallskip
-\end{itemize}
-\end{center}
-\end{minipage}%
-\begin{minipage}{0.37\textwidth}
-\centering
-\includegraphics[height=2cm]{documents/figures/phet-projectile-play.png}
-\hspace{2pt}
-\includegraphics[height=2cm]{documents/figures/phet-projectile-lab.png}
-\end{minipage}
-}}
+\medskip
 
 
 
+\begin{EnvUplevel}
+    \textbf{Initial Velocity, Launch Height, Launch Angle, and Mass}
+\end{EnvUplevel}
 
-\begin{questions}
+
+
+% \fbox{\fbox{
+% \begin{minipage}{0.6\textwidth}
+% \textbf{Instructions}:
+% \vspace{-1ex}
+% \begin{center}
+% \begin{itemize}[itemsep=0pt]
+%     \item Go to \href{https://phet.colorado.edu/en/simulations/projectile-motion}{phet.colorado.edu/en/simulations/projectile-motion}
+%     \item Press play to enter the simulation.
+%     \item Click the fourth panel, called ``Lab''
+%     \smallskip
+% \end{itemize}
+% \end{center}
+% \end{minipage}%
+% \begin{minipage}{0.37\textwidth}
+% \centering
+% \includegraphics[height=2cm]{documents/figures/phet-projectile-play.png}
+% \hspace{2pt}
+% \includegraphics[height=2cm]{documents/figures/phet-projectile-lab.png}
+% \end{minipage}
+% }}
+
+
 
 \question
 Let's explore how changing initial speed affects projectile trajectory. In the parts below, change \textit{only} the initial speed and leave all other parameters the same.
@@ -296,11 +278,13 @@ Let's explore how changing initial speed affects projectile trajectory. In the p
 \end{tikzpicture}
 \end{center}
 
-\part How does changing the initial speed affect the trajectory, hang time, max height, and range of a projectile? Cite evidence from your graph and measurements from the simulation to support your answer.
+
+
+\part How does changing the initial speed affect the trajectory, hang time, max height, and range of a projectile? Cite evidence from your graph and measurements to support your answer.
 
 \ifprintanswers
 \else
-\fillwithlines{4cm}
+\fillwithlines{35mm}
 \fi
 
 \begin{solution}
@@ -325,7 +309,7 @@ Locate the $\boldsymbol{+}$ symbol on the center of the cannon. Click-and-drag t
 The object has a greater hang time and higher apex when it is launched from 3 meters compared to ground level.
 \end{solution}
 
-\part Fire the cannon successively from launch heights of \SI{0}{m}, \SI{3}{m}, \SI{6}{m}, \SI{9}{m}, \SI{12}{m}, and \SI{15}{m}. Then sketch the six trajectories below. What similarities do you see? What differences?
+\part Fire the cannon successively from launch heights of \SI{0}{m}, \SI{3}{m}, \SI{6}{m}, \SI{9}{m}, \SI{12}{m}, and \SI{15}{m}. Then sketch the six trajectories below. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -408,7 +392,7 @@ Click $\boldsymbol{\circlearrowleft}$ to reset default settings, and let's explo
 
 \ifprintanswers
 \else
-\fillwithlines{3cm}
+\fillwithlines{14mm}
 \fi
 
 \begin{solution}
@@ -416,11 +400,11 @@ Click $\boldsymbol{\circlearrowleft}$ to reset default settings, and let's explo
 \end{solution}
 
 
-\part How does changing the launch angle affect the maximum range? (\textit{Caution}: Read the table carefully.)
+\part How does changing the launch angle from \ang{25} to \ang{40} affect the maximum range? What happens to the range from \ang{50} to \ang{90}?
 
 \ifprintanswers
 \else
-\fillwithlines{3cm}
+\fillwithlines{14mm}
 \fi
 
 
@@ -435,143 +419,71 @@ Of all angles available in the simulation, which angle yields the largest possib
 \end{parts}
 
 \question
-You'll now explore how the mass of the projectile affects its trajectory. The mass of the projectile may be changed in the settings box in the upper right corner. 
-
-\begin{parts}
-\part Make a prediction for the following question. It's OK if your prediction turns out to be wrong.
-
-\begin{center}
-    \bfseries How does changing the projectile's mass affect its trajectory?
-\end{center}
-
-\textit{My prediction}:
+Does changing the mass of the projectile affect the hang time, apex height, maximum range, or trajectory? How?
 
 \ifprintanswers
 \else
-\fillwithlines{3cm}
+\fillwithlines{14mm}
 \fi
 
 \begin{solution}
-    Predictions will vary.
+    Mass has no affect on hang time, apex height, etc.
 \end{solution}
 
-\part Design and test an experiment in which \textit{only} the mass is varied and other parameters are left constant, so that you may test how mass affects the trajectory. Summarize your experiment and findings below.
+% \question
+% You'll now explore how the mass of the projectile affects its trajectory. The mass of the projectile may be changed in the settings box in the upper right corner. 
 
+% \begin{parts}
+% \part Make a prediction for the following question. It's OK if your prediction turns out to be wrong.
 
-\begin{solutionorbox}[10cm]
-    Designs will vary.
-\end{solutionorbox}
+% \begin{center}
+%     \bfseries How does changing the projectile's mass affect its trajectory?
+% \end{center}
 
+% \textit{My prediction}:
+
+% \ifprintanswers
+% \else
+% \fillwithlines{3cm}
+% \fi
 
 % \begin{solution}
-%     The tables and graphs will be identical to the ones above.
+%     Predictions will vary.
 % \end{solution}
 
-\part How does changing mass affect the the trajectory, hang time, max height, and range of a projectile? Use evidence from your experiment to support your answer.
+% \part Design and test an experiment in which \textit{only} the mass is varied and other parameters are left constant, so that you may test how mass affects the trajectory. Summarize your experiment and findings below.
+
+
+% \begin{solutionorbox}[10cm]
+%     Designs will vary.
+% \end{solutionorbox}
+
+
+% \part How does changing mass affect the the trajectory, hang time, max height, and range of a projectile? Use evidence from your experiment to support your answer.
+
+% \ifprintanswers
+% \else
+% \fillwithlines{4cm}
+% \fi
+
+% \begin{solution}
+%     Mass does not affect a trajectory (assuming negligible air resistance).
+% \end{solution}
+% \end{parts}
+
+
+
+% \subsection*{Horizontal and Vertical Components of Projectiles}
+
+% \subsubsection*{Describing Vertical and Horizontal Motion Using Multiple Representations}
 
 \ifprintanswers
 \else
-\fillwithlines{4cm}
+\clearpage
 \fi
 
-\begin{solution}
-    Mass does not affect a trajectory (assuming negligible air resistance).
-\end{solution}
-\end{parts}
-
-\clearpage
-
-\question
-Decreasing the initial speed of a cannonball will cause the hang time to 
-
-\begin{randomizechoices}
-    \correctchoice decrease
-    \choice increase
-    \choice remain constant
-    \choice become negative
-\end{randomizechoices}
-
-\question
-Which of the following increases the apex height?
-
-\begin{randomizechoices}
-    \correctchoice increasing the initial speed
-    \choice increasing the mass
-    \choice decreasing the angle
-    \choice decreasing the initial speed
-\end{randomizechoices}
-
-\question
-The launch height affects all of the following EXCEPT
-
-\begin{randomizechoices}
-    \correctchoice the horizontal position of the apex
-    \choice the vertical position of the apex
-    \choice the hang time
-    \choice the maximum range
-\end{randomizechoices}
-
-\question
-How does increasing the launch angle affect the maximum range?
-
-\begin{randomizechoices}[keeplast]
-    \choice It increases the range.
-    \choice It decreases the range.
-    \choice It has no effect range.
-    \correctchoice We can't know without knowing whether the angle is greater than or less than \ang{45}.
-\end{randomizechoices}
-
-\question
-Increasing the mass will affect which of the following quantities?
-
-\begin{randomizechoices}[keeplast]
-    \choice hang time
-    \choice maximum range
-    \choice apex height
-    \correctchoice none of the above
-\end{randomizechoices}
-
-\question
-The maximum range of a projectile will increase if the launch angle changes from 
-
-\begin{randomizechoices}
-    \correctchoice \ang{25} to \ang{35}
-    \choice \ang{40} to \ang{50}
-    \choice \ang{60} to \ang{70}
-    \choice \ang{75} to \ang{85}
-\end{randomizechoices}
-
-\question
-To decrease the hang time, we can
-
-\begin{randomizechoices}
-    \correctchoice decrease the initial speed
-    \choice increase the launch height
-    \choice increase the launch angle from \ang{30} to \ang{60}
-    \choice decrease the projectile mass
-\end{randomizechoices}
-
-\question
-To maximize the range of a projectile, set the angle to 
-
-\begin{randomizechoices}[keeplast,norandomize]
-    \choice \ang{0}
-    \correctchoice \ang{45}
-    \choice \ang{90}
-    \choice any angle
-\end{randomizechoices}
-\end{questions}
-
-\clearpage
-
-\subsection{Horizontally Launched Projectiles}
-
-\subsubsection{Describing Vertical and Horizontal Motion Using Multiple Representations}
-
-\clearpage
-\subsubsection{Horizontal and Vertical Components with Vector Addition}
-
-\fbox{\fbox{
+\begin{EnvUplevel}
+\fbox{
 \begin{minipage}{0.6\textwidth}
 \textbf{Instructions}:
 \vspace{-1ex}
@@ -590,27 +502,44 @@ To maximize the range of a projectile, set the angle to
 \hspace{2pt}
 \includegraphics[height=2cm]{documents/figures/phet-projectile-vectors.png}
 \end{minipage}
-}}
+}
 
-\begin{questions}
+\medskip
+
+
+\textbf{Horizontal and Vertical Components}
+
+\end{EnvUplevel}
+
 \question \label{KU3Mnf}
 In this question we'll explore the horizontal and vertical components of the projectile's velocity.
 
 \begin{parts}
 \part Follow these steps:
 
+
+
 \begin{itemize}
-    \item Un-check the \texttt{Air Resistance} box. (Leave it blank.) Raise the cannon to a height of \SI{11}{m}.
+    \item Adjust the simulation's settings disable air resistance and enable the velocity vectors, as follows:
+    \begin{itemize}[itemsep=0pt,topsep=2pt]
+        \item[] $\square$ Air Resistance
+        \item[] \tikz{\draw (0,0) circle (3.5pt)} Total
+        \item[] \tikz{\draw (0,0) circle (3.5pt); \fill circle (1pt);} Components
+        \item[] \checkbox{1} Velocity Vectors
+        \item[] $\square$ Acceleration Vectors
+        \item[] $\square$ Force Vectors
+    \end{itemize}
+    \item Raise the cannon to a height of \SI{11}{m}.
     \item Set the launch angle to \ang{0} and the \texttt{Initial Speed} to \SI{10}{m/s}.
-    \item Click the \texttt{Components} option, and check the \texttt{Velocity Vectors} box.
     \item Click the magnifying glass symbol to zoom out.
     \item Press \texttt{Pause} ({\small \faPause}).
     \item Press the \texttt{Fire} button.
     %The initial velocity, which is entirely horizontal is displayed. Notice that vertical velocity is not shown because it's zero.
     %\item Sketch the horizontal and vertical velocity vectors of this snapshot in a motion map. 
     \item To the right of the \texttt{Play} ({\small \faPlay}) button there is the \texttt{Step} button. Press the \texttt{Step} button several times to view the evolution of the horizontal and vertical velocity vectors across time.
-    \item \label{LSagnx} Draw the the horizontal and vertical components of velocity in your motion map at each point below. Label horizontal components as $v_x$ and vertical ones as $v_y$. Ensure the horizontal and vertical components are relatively to scale.
 \end{itemize}
+
+Now draw the the horizontal and vertical components of velocity in your motion map at each point below. Label horizontal components as $v_x$ and vertical ones as $v_y$. Ensure the horizontal and vertical components are relatively to scale.
 
 \medskip
 
@@ -658,6 +587,11 @@ In this question we'll explore the horizontal and vertical components of the pro
     It remains constant. Initially $v_{ix}$ points to the right and continues pointing rightward with the same magnitude throughout the trajectory.
 \end{solution}
 
+\ifprintanswers
+\else
+\clearpage
+\fi
+
 \part How does the vertical component of the velocity change throughout the trajectory?  Use the words ``magnitude'' and ``direction'' in your description.
 
 \ifprintanswers
@@ -672,7 +606,7 @@ In this question we'll explore the horizontal and vertical components of the pro
 
 \question
 \begin{parts}
-\part Repeat the steps in Question \ref{KU3Mnf} but instead of focusing on the velocity vectors, analyze the acceleration vectors. Draw the horizontal and vertical components of acceleration below. Label the horizontal and vertical components as $a_x$ and $a_y$, respectively. 
+\part Repeat the steps in Question \ref{KU3Mnf} but instead of showing the velocity vectors, display the \underline{acceleration vectors}. Draw the horizontal and vertical components of acceleration below. Label the horizontal and vertical components as $a_x$ and $a_y$, respectively. 
 
 \medskip
 
@@ -811,8 +745,8 @@ Click $\boldsymbol{\circlearrowleft}$ to reset default settings. Follow the step
 \end{tikzpicture}
 \end{center}
 
-\part Describe the vertical and horizontal motion of a projectile with a launch angle greater than zero.
-Cite your sketch from the previous part as evidence. Finally, comment on how your analysis changes with a non-zero launch angle .
+\part Describe the vertical and horizontal vectors shown in parts (a) and (b).
+Cite your sketch from the previous part as evidence.
 
 \ifprintanswers
 \else
@@ -825,6 +759,135 @@ Cite your sketch from the previous part as evidence. Finally, comment on how you
     The vertical component of velocity $v_y$ changes. It starts point up and decreases in magnitude as the object reaches the apex. At the apex, the $v_y$ is zero. After the apex, the vertical component of velocity points down and increases in magnitude in the downward (negative) direction.
 \end{solution}
 \end{parts}
+
+
+\end{questions}
+
+\clearpage
+
+\section*{Additional Problems}
+
+\begin{questions}
+
+\question
+What is projectile motion?
+    
+\begin{randomizechoices}
+    \correctchoice The motion of an object projected into the air and moving under the influence of gravity.
+    \choice The motion of an object projected into the air and moving independently of gravity.
+    \choice The motion of an object projected only vertically upward into the air and moving under the influence of gravity.
+    \choice The motion of an object projected only horizontally into the air and moving independently of gravity.
+\end{randomizechoices}
+
+\question
+What is the shape of a trajectory?
+
+\begin{randomizechoices}
+    \correctchoice a parabola
+    \choice an ellipse
+    \choice a circle
+    \choice a line
+\end{randomizechoices}
+
+\question
+The point in a projectile's trajectory at which the object is at peak height is called
+
+\begin{randomizechoices}
+    \correctchoice the apex
+    \choice the trajectory
+    \choice the launch angle
+    \choice the maximum range
+\end{randomizechoices}
+
+\question
+What is the force experienced by a projectile after the initial force that launched it into the air?
+
+\begin{randomizechoices}
+    \choice The nuclear force
+    \correctchoice The gravitational force
+    \choice The electromagnetic force
+    \choice The contact force
+\end{randomizechoices}
+
+\question
+Decreasing the initial speed of a cannonball will cause the hang time to 
+
+\begin{randomizechoices}
+    \correctchoice decrease
+    \choice increase
+    \choice remain constant
+    \choice become negative
+\end{randomizechoices}
+
+\question
+Which of the following increases the apex height?
+
+\begin{randomizechoices}
+    \correctchoice increasing the initial speed
+    \choice increasing the mass
+    \choice decreasing the angle
+    \choice decreasing the initial speed
+\end{randomizechoices}
+
+\question
+The launch height affects all of the following EXCEPT
+
+\begin{randomizechoices}
+    \correctchoice the horizontal position of the apex
+    \choice the vertical position of the apex
+    \choice the hang time
+    \choice the maximum range
+\end{randomizechoices}
+
+\question
+How does increasing the launch angle affect the maximum range?
+
+\begin{randomizechoices}[keeplast]
+    \choice It increases the range.
+    \choice It decreases the range.
+    \choice It has no effect range.
+    \correctchoice We can't know without knowing whether the angle is greater than or less than \ang{45}.
+\end{randomizechoices}
+
+\question
+Increasing the mass will affect which of the following quantities?
+
+\begin{randomizechoices}[keeplast]
+    \choice hang time
+    \choice maximum range
+    \choice apex height
+    \correctchoice none of the above
+\end{randomizechoices}
+
+\question
+The maximum range of a projectile will increase if the launch angle changes from 
+
+\begin{randomizechoices}
+    \correctchoice \ang{25} to \ang{35}
+    \choice \ang{40} to \ang{50}
+    \choice \ang{60} to \ang{70}
+    \choice \ang{75} to \ang{85}
+\end{randomizechoices}
+
+\question
+To decrease the hang time, we can
+
+\begin{randomizechoices}
+    \correctchoice decrease the initial speed
+    \choice increase the launch height
+    \choice increase the launch angle from \ang{30} to \ang{60}
+    \choice decrease the projectile mass
+\end{randomizechoices}
+
+\question
+To maximize the range of a projectile, set the angle to 
+
+\begin{randomizechoices}[keeplast,norandomize]
+    \choice \ang{0}
+    \correctchoice \ang{45}
+    \choice \ang{90}
+    \choice any angle
+\end{randomizechoices}
 
 \question
 The horizontal component of velocity of a horizontally launched projectile
@@ -875,35 +938,19 @@ The magnitude of the vertical component of acceleration in projectile motion
     \choice decreases
     \choice is zero
 \end{randomizechoices}
+
 \end{questions}
 
 \clearpage
 
-\subsubsection{Word Problems About Horizontally Launched Projectiles}
+\subsection*{Horizontally Launched Projectiles}
 
 \begin{questions}
-
 \question 
 A stone is thrown horizontally at a speed of \SI{5.0}{m/s} from the top of a cliff that is \SI{78.4}{m} tall. 
 
 \begin{parts}
 \part How long does it take the stone to reach the bottom of the cliff?
-
-\begin{center}
-\begin{table}[h!]
-\centering
-\renewcommand{\arraystretch}{1.2} % Adjust row height for the entire table
-\setlength{\extrarowheight}{0pt}  % Reset extra row height for specific rows
-\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4.5cm}|>{\centering\arraybackslash}m{3cm}|} 
-\hline
-\textbf{Variables} & \textbf{Equation} & \textbf{Substitution} & \textbf{Solution} \\
-\hline
-\rule{0pt}{4.5cm} & & & \\
-\hline
-\end{tabular}
-\end{table}
-\end{center}
-
 
 \begin{solution}
 The stone's vertical displacement is \SI{-78.4}{m}, and the vertical component of initial velocity ($v_{iy}$) for a horizontally launched projectile is zero. In sum, the knowns and unknown are
@@ -927,7 +974,7 @@ Substitution leads to
     -\SI{78.4}{m} = 0t - \frac{1}{2}(\SI{10}{m/s^2})t^2
 \end{equation*}
 
-or
+which simplifies to
 
 \begin{equation*}
     -\SI{78.4}{m} = -\left(\SI{5}{m/s^2}\right) t^2
@@ -940,6 +987,27 @@ Solving for $t$ leads to
 \end{equation*}
 
 \end{solution}
+
+\ifprintanswers
+\else
+\begin{center}
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.2} % Adjust row height for the entire table
+\setlength{\extrarowheight}{0pt}  % Reset extra row height for specific rows
+\begin{tabular}{|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4.5cm}|>{\centering\arraybackslash}m{3cm}|} 
+\hline
+\textbf{Variables} & \textbf{Equation} & \textbf{Substitution} & \textbf{Solution} \\
+\hline
+\rule{0pt}{4.5cm} & & & \\
+\hline
+\end{tabular}
+\end{table}
+\end{center}
+\fi
+
+
+
 
 \part How far from the base of the cliff does the stone strike the ground?
 
@@ -1122,7 +1190,6 @@ Therefore, solving for time leads to
 \end{equation*}
 \end{solution}
 
-\vspace{-1em}
 
 \part How fast was it going when it left the road?
 
@@ -1511,10 +1578,11 @@ Therefore, the displacement is
 \noindent \textbf{Step 2}: Measure the height of the table.
 
 \begin{center}
+\def\arraystretch{1.5}
     \begin{tabular}{|c|}
         \hline
-         \textbf{table height} (m)\\
-         \hline \\[1em]
+         \textbf{table height} \\ \hline
+         {\ifprintanswers \color{red} \else \color{white} \fi \SI{0.85}{m} }\\
          \hline
     \end{tabular}
 \end{center}
@@ -1538,20 +1606,40 @@ Therefore, the displacement is
 
 \fbox{
 \begin{minipage}{0.7\textwidth}
-    \centering \smallskip
-    \textbf{CALCULATIONS}
+    \begin{center}
+        \textbf{CALCULATIONS}
+    \end{center}
+    
+    \ifprintanswers
+    {
+    \color{red}
+    Let $v_{iy} = 0$, $g = \SI{10}{m/s^2}$, and $\Delta y = -\SI{0.85}{m}$.
+    
+    \begin{align*}
+        \Delta y &= v_i t - gt^2 \\[1ex]
+        &= -\frac{1}{2} g t^2
+    \end{align*}
+
+    \begin{equation*}
+        t = \sqrt{\frac{-2 \Delta y}{g}} = \sqrt{\frac{-2 (\SI{-0.85}{m})}{\SI{10}{m/s^2}}} = \boxed{\SI{0.41}{s}}
+    \end{equation*}
+    }
+    \else
     \vspace{5cm}
+    \fi
 \end{minipage}}%
 \hspace{5mm}
 \begin{minipage}{0.25\textwidth}
 \begin{center}
+\def\arraystretch{1.5}
     \begin{tabular}{|c|}
         \hline
-         \textbf{hang time} (s)\\
-         \hline \\[1em]
+         \textbf{hang time} \\ \hline
+         {\ifprintanswers \color{red} \else \color{white} \fi \SI{0.41}{s} }\\
          \hline
     \end{tabular}
-\end{center} 
+\end{center}
+
 \end{minipage}
 
 \medskip
@@ -1568,17 +1656,33 @@ Therefore, the displacement is
 
 \fbox{
 \begin{minipage}{0.7\textwidth}
-    \centering \smallskip
-    \textbf{CALCULATIONS}
+    \begin{center}
+        \textbf{CALCULATIONS}
+    \end{center}
+    \ifprintanswers
+    {
+    \color{red}
+    Let $v_{ix} = \SI{1.2}{m/s}$ and $t = \SI{0.41}{s}$ (see hang time).
+    
+
+    \begin{align*}
+        \Delta x &= v_{ix} t  \\[1ex]
+        &= (\SI{1.2}{m/s})(\SI{0.41}{s}) \\[1ex]
+        &= \boxed{\SI{0.49}{m}}
+    \end{align*}
+    }
+    \else
     \vspace{3cm}
+    \fi
 \end{minipage}}%
 \hspace{5mm}
 \begin{minipage}{0.25\textwidth}
 \begin{center}
+\def\arraystretch{1.5}
     \begin{tabular}{|c|}
         \hline
-         \textbf{horizontal range} (m)\\
-         \hline \\[1em]
+         \textbf{horizontal range} \\ \hline
+         {\ifprintanswers \color{red} \else \color{white} \fi $\SI{0.49}{m} = \SI{49}{cm}$ }\\
          \hline
     \end{tabular}
 \end{center}
@@ -1621,11 +1725,11 @@ Therefore, the displacement is
 
 \clearpage
 
-\subsection{Circular Motion}
+\subsection*{Circular Motion}
 
-\subsubsection{Uniform Circular Motion Using Multiple Representations}
+\subsubsection*{Uniform Circular Motion Using Multiple Representations}
 
-\subsubsection{Quantities of Circular Motion}
+\subsubsection*{Quantities of Circular Motion}
 
 
 
@@ -1884,11 +1988,11 @@ An 89-kg system consisting of a bicycle and rider are rounding a turn at \SI{16}
 \end{questions}
 
 
-\subsection{Circular Motion and Orbiting Bodies}
+\subsection*{Circular Motion and Orbiting Bodies}
 
-\subsubsection{How Radius and Mass Affects Orbiting Systems}
+\subsubsection*{How Radius and Mass Affects Orbiting Systems}
 
-\subsection{Other}
+\subsection*{Other}
 
 \begin{questions}
 
@@ -2230,7 +2334,7 @@ Memo, the goalkeeper, wants to kick a soccer ball as far down the field as possi
             ymin=0, ymax=18,
             % axis line style={draw=none},
             ]
-            \draw[dashed,domain=0:16,variable=\x,samples=200] plot ({\x},{f(\x)}) node {\faSoccerBallO};
+            \draw[dashed,domain=0:16,variable=\x,samples=200] plot ({\x},{f(\x)});% node {\faSoccerBallO};
             \draw (1.5,0) arc (0:60:1.5) node[right=2pt,pos=0.8] {$\theta$};
             \end{axis}
         \end{tikzpicture}

@@ -7,16 +7,16 @@
 %\Kleveltrue
 \Klevelfalse
 
+\addpoints
+
 \setrandomizerseed{1}
 \bracketedpoints
 
-\firstpageheader{Physics\\Test on Unit 3: Changing Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
-\runningheader{}{}{Physics L Unit 3 Test}
+\header{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics FRQ Test on Unit 3: Changing Motion}
+% \header{Physics}{Test on Unit 3}{Changing Motion}
 
-\ifKlevel
-    \firstpageheader{Physics K}{Unit 3: Changing Motion}{Test}
-    \runningheader{}{}{Physics K Unit 3 Test}
-\fi
+% \firstpageheader{\bfseries DO NOT WRITE ON THIS DOCUMENT}{}{Physics Test on Unit 3: Changing Motion}
+% \runningheader{\bfseries DO NOT WRITE ON THIS DOCUMENT}{}{Physics Test Unit 3}
 
 \begin{document}
 \begin{questions}
@@ -35,80 +35,74 @@ What is the acceleration of a 90.0\,kg race-car driver while the race car is acc
 A cart is given an initial push up the ramp and is stopped at its highest point.
 
 \begin{center}
-    \begin{tikzpicture}
-        \begin{scope}[rotate=10,transform shape]
-            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
-            \draw[above=9mm] (3,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
-            \draw[fill=white,above=2mm] (3.4,0) circle (2mm);
-            \draw[fill=white,above=2mm] (4.1,0) circle (2mm);
-            \draw[fill=black!15,above=1pt] (0,0) rectangle (1,1.5) node[pos=0.5,above=7.5mm,align=left] {motion\\detector};
-            \draw (9,0) node[above=2mm,align=left] {Highest point};
-            \draw[thick,->] (3,1.2) -- ++(2,0) node[above,pos=0.5] {Initial push};
+\begin{tikzpicture}[rotate=+8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) node[above left,align=left] {motion\\detector} rectangle ++(5,4mm);
+        \begin{scope}[shift={(10,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (17,1.3mm) -- ++(6,0) node[above,pos=0.5] {$\vec{v}$};
         \end{scope}
-    \end{tikzpicture}
+    \end{axis}
+\end{tikzpicture}
 \end{center}
 
 Which of the following $x$ vs $t$ graphs represents the motion of the cart moving ONLY up the ramp.
 
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=5,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={$x$},
-            y label style={rotate=-90},
-            xlabel={$t$},
-            title={Graph A},
-        ]
-            \addplot[domain=0:2,very thick,black] {x^2};
-        \end{axis}
-    \end{tikzpicture}
-    \hspace{2em}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=5,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={$x$},
-            y label style={rotate=-90},
-            xlabel={$t$},
-            title=Graph B,
-        ]
-            \addplot[domain=0:2,very thick,black] {4*x - x^2};
-        \end{axis}
-    \end{tikzpicture}
-    \hspace{2em}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=5,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={$x$},
-            y label style={rotate=-90},
-            xlabel={$t$},
-            title={Graph C}
-        ]
-            \addplot[domain=0:2,very thick,black] {(x-2)^2};
-        \end{axis}
-    \end{tikzpicture}
-\end{center}
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[->] (0,0) node[below left=-2pt] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+    \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,\x^2);
+    \node at (0.6,1.2) {Graph A};
+    \begin{scope}[shift={(1.7,0)}]
+        \draw[->] (0,0) node[below left=-2pt] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+        \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+        \draw[very thick,domain=0:1,smooth] plot(\x,{-(\x-1)^2+1});
+        \node at (0.6,1.2) {Graph B};
+    \end{scope}
+    \begin{scope}[shift={(3.4,0)}]
+        \draw[->] (0,0) node[below left=-2pt] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+        \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+        \draw[very thick,domain=0:1,smooth] plot(\x,{-\x^2+1});
+        \node at (0.6,1.2) {Graph C};
+    \end{scope}
+    \begin{scope}[shift={(5.1,0)}]
+        \draw[->] (0,0) node[below left=-2pt] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+        \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+        \draw[very thick,domain=0:1,smooth]  plot(\x,{(\x-1)^2});
+        \node at (0.6,1.2) {Graph D};
+    \end{scope}
+\end{tikzpicture}
+\end{EnvUplevel}
 
-\begin{randomizeoneparchoices}[norandomize,keeplast] %...DO NOT REMOVE NORANDOMIZE
+\ifprintanswers
+\textcolor{red}{Graph B}
+\fi
+
+\scalebox{0}{
+\begin{randomizeoneparchoices}[norandomize] %...DO NOT REMOVE NORANDOMIZE
     \choice Graph A
     \correctchoice Graph B
     \choice Graph C
-    \choice no correct graph
+    \choice Graph D
 \end{randomizeoneparchoices}
+}
 
 \question 
-\phantom{.}
+Consider the table below.
 
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -121,7 +115,7 @@ Which of the following $x$ vs $t$ graphs represents the motion of the cart movin
     \end{tabular}
 \end{center}
 
-Study the data table above. What is the acceleration of the object?
+What is the acceleration of the object?
 
 \begin{randomizeoneparchoices}[norandomimze]
     \choice \SI{16}{m/s^2}   
@@ -130,54 +124,15 @@ Study the data table above. What is the acceleration of the object?
     \choice \SI{8}{m/s^2}  
 \end{randomizeoneparchoices}
 
-\question 
-\phantom{.}
-
-\begin{center}
-    \begin{tikzpicture}
-        \begin{scope}[rotate=-10,transform shape]
-            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.1,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
-            \draw[above=9mm] (3,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
-            \draw[fill=white,above=2mm] (3.4,0) circle (2mm);
-            \draw[fill=white,above=2mm] (4.1,0) circle (2mm);
-            \draw[fill=black!15,above=1pt] (0,0) rectangle (1,1.5) node[pos=0.5,above=7.5mm,align=left] {motion\\detector};
-        \end{scope}
-    \end{tikzpicture}
-\end{center}
-
-Study the ramp and cart illustrated above. (Assume the 0 position is the reference point.) Which of the following best describes the motion of cart when it is released?
-
-\begin{randomizechoices}
-    \choice negative velocity, positive acceleration
-    \correctchoice positive velocity, positive acceleration
-    \choice negative velocity, negative acceleration
-    \choice positive velocity, negative acceleration
-\end{randomizechoices}
-
-
-% \begin{randomizeoneparchoices}[norandomize,] %...DO NOT REMOVE NORANOMDIZE
-%     \correctchoice Graph A
-%     \choice Graph B
-%     \choice Graph C
-%     \choice Graph D
-% \end{randomizeoneparchoices}
 
 \question
 Which of the following statements best describes the motion of the object depicted below?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
-    \begin{axis}[height=4.5cm,
-        width=4.5cm,
-        ymin=0,ymax=5,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis lines=left,
-        ylabel={Position},
-        xlabel={Time},
-    ]
-        \addplot[domain=0:2,very thick,black] {4*x - x^2};
-    \end{axis}
+\begin{tikzpicture}[x=2cm,y=2cm]
+        \draw (0,0) -- (0,1.2) node[pos=0.5,above,rotate=90] {Position};
+        \draw (0,0) -- (1.2,0) node[pos=0.5,below] {Time};
+        \draw[very thick,domain=0:1,smooth] plot(\x,{-(\x-1)^2+1});
 \end{tikzpicture}
 \end{center}
 
@@ -188,25 +143,26 @@ Which of the following statements best describes the motion of the object depict
     \choice The object is moving in the negative direction at a constant speed.  
 \end{randomizechoices}
 
+\clearpage
 
 \question
-\phantom{.}
+The arrow in the figure below represents the direction of the object's velocity.
 
 \begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=12cm,height=2.5cm,
-            axis lines=none,
-            xmin=0,xmax=9,
-            ymin=0,ymax=1,
-            clip=false,
-            ]
-            \draw[domain=0:3,samples=7,only marks,mark=*] plot({\x^2},{0});
-            \draw[ultra thick,->,above=5mm] (3,0) -- ++(2,0);
-        \end{axis}
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[width=12cm,height=2.5cm,
+        axis lines=none,
+        xmin=0,xmax=9,
+        ymin=0,ymax=1,
+        clip=false,
+        ]
+        \draw[domain=0:3,samples=7,only marks,mark=*] plot({\x^2},{0});
+        \draw[ultra thick,->,shift={(0,5mm)}] (3,0) -- ++(2,0);
+    \end{axis}
+\end{tikzpicture}
 \end{center}
 
-The arrow represents the direction of the object's velocity in the image above. Which of the following statements best describes the motion of the object depicted above?
+ Which of the following statements best describes the motion of the object depicted above?
 
 \begin{randomizechoices}
     \choice The acceleration of the object is zero.
@@ -217,13 +173,13 @@ The arrow represents the direction of the object's velocity in the image above. 
 
 
 \question
-A tow rope is pulling a 1200\,kg truck at \SI{3.6}{m/s^2}. What is the force the rope is exerting on the truck?
+When a tow rope pulls on a 1200\,kg truck, the truck's acceleration is \SI{3.6}{m/s^2}. What is the net force on the truck?
 
 \begin{randomizeoneparchoices}
-    \correctchoice \SI{4320}{m/s^2}
-    \choice \SI{333}{m/s^2}
-    \choice \SI{299}{m/s^2}
-    \choice \SI{8400}{m/s^2}
+    \correctchoice \SI{4320}{N}
+    \choice \SI{333}{N}
+    \choice \SI{299}{N}
+    \choice \SI{8400}{N}
 \end{randomizeoneparchoices}
 
 % \begin{solutionorbox}[3cm]
@@ -239,7 +195,7 @@ A tow rope is pulling a 1200\,kg truck at \SI{3.6}{m/s^2}. What is the force the
 \begin{center}
     \begin{tabular}{|c|c|}
         \hline
-        Time (s) & Velocity (m/s) \\ \hline
+        \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
         0 & 10\\ \hline
         1 & 5\\ \hline
         2 & 0\\ \hline
@@ -270,20 +226,19 @@ Given the above velocity and time data above, determine what the object’s velo
 
 \bigskip
 \hrule
-\clearpage
 
 \question
-\phantom{.}
+The car pictured below is moving to the right and slowing down (decreasing velocity).
 
 \begin{center}
-    \begin{tikzpicture}
-        \foreach \i in {0,5,7.5,8.75}{
-            \node at (\i,0) {\reflectbox{\twemoji[width=8mm]{automobile}}};
-        }
-    \end{tikzpicture}    
+\begin{tikzpicture}
+    \foreach \i in {0,5,7.5,8.75}{
+        \node at (\i,0) {\reflectbox{\twemoji[width=8mm]{automobile}}};
+    }
+\end{tikzpicture}    
 \end{center}
 
-The car pictured above is moving to the right and slowing down (decreasing velocity). Which of the following is TRUE about the acceleration of the object and the net force acting on it.
+Which of the following is TRUE about the acceleration of the object and the net force acting on it.
 
 \begin{randomizechoices}
     \correctchoice The object has a positive velocity and negative acceleration.
@@ -293,7 +248,7 @@ The car pictured above is moving to the right and slowing down (decreasing veloc
 \end{randomizechoices}
 
 \question
-\phantom{.}
+Consider the graph below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -368,23 +323,27 @@ An object that has negative acceleration must be\dots
     \choice maintaining a constant speed
 \end{randomizechoices}
 
-
 \question
-A car travels from A to B at a constant 100\,km/hr.
+A hippo requires more net force to achieve an acceleration of \SI{-2}{m/s^2} than an average sized mouse.
 
-\begin{center}
-    \includegraphics[width=6cm]{physics/figures/figure-unit-3-car-curve.png}
-\end{center}
-
-Which of the following describes the car’s acceleration?
-\clearpage
-
-\begin{randomizechoices}[keeplast]
-    \correctchoice The car is accelerating because it changes direction.
-    \choice The car is accelerating because it moves at constant speed.
-    \choice The car is not accelerating because it went away from the reference point.
-    \choice none of the above
+\begin{randomizechoices}[norandomize]
+    \correctchoice True
+    \choice False
 \end{randomizechoices}
+
+
+% \question
+% A car travels from A to B at a constant 100\,km/hr.
+
+
+% Which of the following describes the car’s acceleration?
+
+% \begin{randomizechoices}[keeplast]
+%     \correctchoice The car is accelerating because it changes direction.
+%     \choice The car is accelerating because it moves at constant speed.
+%     \choice The car is not accelerating because it went away from the reference point.
+%     \choice none of the above
+% \end{randomizechoices}
 
 \question 
 Which of the following pair of graphs demonstrates an object moving away from the reference point with a decreasing velocity?
@@ -397,36 +356,16 @@ Which of the following pair of graphs demonstrates an object moving away from th
 
 \vspace{1ex}
 
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=0,ymax=5,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis lines=left,
-        ylabel={$x$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-    ]
-        \addplot[domain=0:2,very thick,black] {(x-2)^2};
-    \end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={$v$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-        clip=false
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-x};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[->] (0,0) node[left] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+    \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,\x^2);
+    \begin{scope}[shift={(1.5,0.6)}]
+        \draw[->] (0,-0.6) -- (0,0.6) node[pos=0.8,left] {$v$};
+        \draw[->] (0,0) node[left] {0} -- (1.2,0);
+        \node[below] at (0.6,-0.6) {$t$};
+        \draw[very thick,domain=0:1,smooth] plot(\x,0.5*\x);
+    \end{scope}
 \end{tikzpicture}
 \end{minipage}%
 \begin{minipage}{0.45\textwidth}
@@ -435,36 +374,16 @@ Which of the following pair of graphs demonstrates an object moving away from th
 
 \vspace{1ex}
 
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=0,ymax=5,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis lines=left,
-        ylabel={$x$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-    ]
-        \addplot[domain=0:2,very thick,black] {4*x - x^2};
-    \end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={$v$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-        clip=false
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-x+2.5};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[->] (0,0) node[left] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+    \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,{-(\x-1)^2+1});
+\begin{scope}[shift={(1.5,0.6)}]
+    \draw[->] (0,-0.6) -- (0,0.6) node[pos=0.8,left] {$v$};
+    \draw[->] (0,0) node[left] {0} -- (1.2,0);
+    \node[below] at (0.6,-0.6) {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,-0.45*\x+0.45);
+\end{scope}
 \end{tikzpicture}
 \end{minipage}
 
@@ -476,36 +395,16 @@ Which of the following pair of graphs demonstrates an object moving away from th
 
 \vspace{1ex}
 
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=0,ymax=5,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis lines=left,
-        ylabel={$x$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-    ]
-        \addplot[domain=0:2,very thick,black] {4*x-x^2};
-    \end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={$v$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-        clip=false
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-x};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[->] (0,0) node[left] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+    \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,{-\x^2+1});
+\begin{scope}[shift={(1.5,0.6)}]
+    \draw[->] (0,-0.6) -- (0,0.6) node[pos=0.8,left] {$v$};
+    \draw[->] (0,0) node[left] {0} -- (1.2,0);
+    \node[below] at (0.6,-0.6) {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,-0.5*\x);
+\end{scope}
 \end{tikzpicture}
 \end{minipage}%
 \begin{minipage}{0.45\textwidth}
@@ -514,42 +413,26 @@ Which of the following pair of graphs demonstrates an object moving away from th
 
 \vspace{1ex}
 
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=0,ymax=5,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis lines=left,
-        ylabel={$x$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-    ]
-        \addplot[domain=0:2,very thick,black] {(x-2)^2};
-    \end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={$v$},
-        y label style={rotate=-90},
-        xlabel={$t$},
-        clip=false
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-x+2.5};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[->] (0,0) node[left] {0} -- (0,1.2) node[pos=0.5,left] {$x$};
+    \draw[->] (0,0) -- (1.2,0) node[pos=0.5,below] {$t$};
+    \draw[very thick,domain=0:1,smooth]  plot(\x,{(\x-1)^2});
+\begin{scope}[shift={(1.5,0.6)}]
+    \draw[->] (0,-0.6) -- (0,0.6) node[pos=0.8,left] {$v$};
+    \draw[->] (0,0) node[left] {0} -- (1.2,0);
+    \node[below] at (0.6,-0.6) {$t$};
+    \draw[very thick,domain=0:1,smooth] plot(\x,0.5*\x-0.5);
+\end{scope}
 \end{tikzpicture}
 \end{minipage}
 
+\ifprintanswers
+\textcolor{red}{Pair B}
+\fi
 
-{\color{white}
-\begin{randomizeoneparchoices}[norandomize,]
+
+\scalebox{0}{
+\begin{randomizeoneparchoices}[norandomize]
     \choice Pair A
     \correctchoice Pair B
     \choice Pair C
@@ -558,36 +441,56 @@ Which of the following pair of graphs demonstrates an object moving away from th
 }
 
 
-
-
 \question
 What is happening in this graph?
 
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=4cm,
-            height=4cm,
-            axis y line=left,
-            axis x line=center,
-            ymin=-2,ymax=2,
-            xmin=0,xmax=2,
-            ytick={-2,-1,...,2},
-            xtick=\empty,
-            ylabel={Velocity},
-            xlabel={$t$},
-            ]
-            \draw[very thick] (0,0) -- (1.8,-1.8);
-        \end{axis}
-    \end{tikzpicture}%
-    \hspace{1cm}
-    \begin{tikzpicture}[scale=0.8,rotate=10,transform shape]
-            \draw (0,0) rectangle ++(10,-0.5) node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
-            \draw[above=9mm] (8,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
-            \draw[fill=white,above=2mm] (8.4,0) circle (2mm);
-            \draw[fill=white,above=2mm] (9.1,0) circle (2mm);
-            \draw[above=0.5cm,ultra thick,->] (8,0) -- ++(-1.5,0);
-    \end{tikzpicture}
-\end{center}
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=4cm,
+        height=4cm,
+        axis y line=left,
+        axis x line=center,
+        ymin=-2,ymax=2,
+        xmin=0,xmax=2,
+        ytick={-2,-1,...,2},
+        xtick=\empty,
+        ylabel={Velocity},
+        xlabel={$t$},
+        ]
+        \draw[very thick] (0,0) -- (1.8,-1.8);
+    \end{axis}
+\end{tikzpicture}%
+\hspace{5mm}
+\begin{tikzpicture}[rotate=+8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) rectangle ++(5,4mm);
+        \begin{scope}[shift={(105,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (-2,1.3mm) -- ++(-6,0) node[above,pos=0.5] {$\vec{v}$};
+        \end{scope}
+    \end{axis}
+\end{tikzpicture}
+% \begin{tikzpicture}[scale=0.8,rotate=10,transform shape]
+%         \draw (0,0) rectangle ++(10,-0.5) node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
+%         \draw[above=9mm] (8,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
+%         \draw[fill=white,above=2mm] (8.4,0) circle (2mm);
+%         \draw[fill=white,above=2mm] (9.1,0) circle (2mm);
+%         \draw[above=0.5cm,ultra thick,->] (8,0) -- ++(-1.5,0);
+% \end{tikzpicture}
+\end{EnvUplevel}
 
 \begin{randomizechoices}
     \choice negative velocity, positive acceleration, increasing speed
@@ -629,6 +532,68 @@ A runner moves according to the velocity vs time graph shown below. What is the 
     \end{tikzpicture}
 \end{minipage}
 
+\question 
+While driving a car due west, a student brakes to stop for a red traffic light. The direction of the acceleration of the car is to the 
+
+\begin{randomizeoneparchoices}
+    \correctchoice east
+    \choice north
+    \choice south
+    \choice west
+\end{randomizeoneparchoices}
+
+\question
+A toy car is given an initial velocity of \SI{5.0}{m/s} and experiences a constant acceleration of \SI{2.0}{m/s^2}. What is the final velocity after \SI{6.0}{s}?
+
+\begin{randomizeoneparchoices}
+    \correctchoice \SI{17}{m/s}
+    \choice \SI{10}{m/s}
+    \choice \SI{12}{m/s}
+    \choice \SI{16}{m/s}
+\end{randomizeoneparchoices}
+
+\question
+Average acceleration is defined as the
+
+\begin{randomizechoices}
+    \correctchoice change in velocity divided by the time interval
+    \choice change in position divided by the time interval
+    \choice change in distance divided by the time interval
+    \choice change in momentum divided by the time interval
+\end{randomizechoices}
+
+\question 
+A car moving with a velocity of $+\SI{10}{m/s}$ experiences an acceleration to the right. What happens to the car?
+
+\begin{randomizechoices}
+    \choice The velocity of the car will be unaffected.
+    \correctchoice It will speed up.
+    \choice It will slow down.
+\end{randomizechoices}
+
+\question
+Alyssa pushes object A with a force of \SI{80}{N}. She then pushes object B with an equal force of \SI{80}{N}.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (0,0) rectangle (2,2) node[pos=0.5,align=center] {A\\ \SI{100}{kg}};
+    \begin{scope}[shift={(4,0)}]
+        \draw[fill=black!10] (0,0) rectangle (1.5,1.5) node[pos=0.5,align=center] {B\\ \SI{50}{kg}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Which object experiences a greater acceleration?
+
+\begin{randomizechoices}
+    \correctchoice Object B
+    \choice Object A
+    \choice They experience equal accelerations.
+    \choice Neither object accelerates.
+\end{randomizechoices}
+
+
+\end{questions}
 
 
 % \question
@@ -637,17 +602,20 @@ A runner moves according to the velocity vs time graph shown below. What is the 
 
 \clearpage
 
-\thispagestyle{headandfoot}
-\header{Physics\\Test on Unit 3: Changing Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+% \thispagestyle{headandfoot}
+% \header{Physics\\Test on Unit 3: Changing Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
 
+\begin{questions}
+\begingradingrange{myrange} 
+\question
+The following shows a velocity vs. time graph, and a student's \textbf{\underline{incorrect}} calculation of the object's average acceleration using two data points.
 
-
-\question[2]
-The following shows a velocity vs. time graph, and a student's INCORRECT calculation of the object's average acceleration using two data points.
-
-\begin{minipage}{0.45\textwidth}
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{0.4\textwidth}
+\centering
 \begin{tikzpicture}
-\begin{axis}[width=7cm,height=6cm,
+\begin{axis}[width=6cm,height=5cm,
     axis lines=left,
     % axis x line=center,
     xlabel = {Time (s)},
@@ -660,29 +628,64 @@ The following shows a velocity vs. time graph, and a student's INCORRECT calcula
     xmajorgrids=true,
 ]
     \addplot[very thick,black,domain=0:10] {-3/2*\x+18};
-    \fill (4,12) circle (2pt);
-    \fill (8,6) circle (2pt);
+    \fill (4,12) circle (2.5pt);
+    \fill (8,6) circle (2.5pt);
     \end{axis}
 \end{tikzpicture}
 \end{minipage}%
-\begin{minipage}{0.45\textwidth}
+\hspace{1cm}
+\begin{minipage}{0.25\textwidth}
 \begin{align*}
     a = \frac{\Delta v}{\Delta t} &= \frac{v_f - v_i}{t_f - t_i} \\[1ex]
     &=  \frac{8 - 4}{6 - 12} \\[1ex] 
-    &= \boxed{\SI{-0.67}{m/s^2}}
+    &= \boxed{\SI{0.67}{m/s^2}}
 \end{align*}
 \end{minipage}
+\end{EnvUplevel}
 
-Explain why the student's calculation is wrong. Then calculate the actual acceleration of the object.
+\smallskip
 
-\begin{solutionorbox}[6cm]
+\begin{parts}
+\part[1] List 1 thing that is correct about the student's work.
+
+\begin{solution}
+    The student used the right formula for average acceleration.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{21mm}
+\fi
+
+\part[2] List 2 things that are \textbf{incorrect} about the student's work.
+
+\begin{solution}
+Answers may vary:
+
+\begin{itemize}[itemsep=0pt]
+    \item The difference $6-12$ is negative so their answer should have been negative.
+    \item The difference in the numerator $8 - 4$ is the change in time, which belongs in the denominator. 
+    \item The difference in the denominator $6 - 12$ is the change in velocity which belongs in the numerator.
+    \item The student should have included units in the fraction.
+\end{itemize}
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{28mm}
+\fi
+
+\part[2] Re-write the student's steps correctly, and calculate the object's average acceleration.
+
+
+\begin{solutionorbox}[4cm]
 \phantom{.}
 
-\textbf{1 point earned}: For identifying that the numbers were plugged into the fraction incorrectly or for indicating that the fraction should be flipped.
+% \textbf{1 point earned}: For identifying that the numbers were plugged into the fraction incorrectly or for indicating that the fraction should be flipped.
 
-In the numerator, the student calculated change in time, and they calculated change in velocity in the denominator. Therefore, since acceleration is change in velocity vs. change in time, the fraction should be flipped.
+% In the numerator, the student calculated change in time, and they calculated change in velocity in the denominator. Therefore, since acceleration is change in velocity vs. change in time, the fraction should be flipped.
 
-\textbf{1 point earned}: For correctly computing average acceleration:
+% \textbf{1 point earned}: For correctly computing average acceleration:
 
 \begin{align*}
     a = \frac{\Delta v}{\Delta t} &= \frac{v_f - v_i}{t_f - t_i} \\[1ex]
@@ -692,29 +695,68 @@ In the numerator, the student calculated change in time, and they calculated cha
 
 or $a = -\frac{3}{2} \mathrm{m/s^2}$.
 \end{solutionorbox}
+\end{parts}
 
-\question[2]
-If an 80\,kg cannonball accelerates from rest to \SI{28}{m/s} in 2 seconds, what is the net force on the cannonball?
+\hfill \textit{Continued on next page\ldots}
 
-\begin{solutionorbox}[6cm]
-\phantom{.}
+\vspace*{\fill}
 
-\textbf{1 point earned}: For computing acceleration:
+\ifprintanswers
+\else
+\begin{mdframed}[backgroundcolor=black!8]
+    \centering
+    \textbf{\texttt{TEACHER USE ONLY}}\\[1em]
+    \partialgradetable{myrange}[h][questions]
+\end{mdframed}
+\fi
 
+\clearpage
+
+
+\question
+When a force $F_\mathrm{A}$ is applied on an 80\,kg cannonball in the $+x$ direction, the cannonball accelerates from rest to \SI{28}{m/s} in 2.0 seconds. 
+
+\begin{parts}
+\part[1] Draw a free body diagram for the \textbf{\underline{horizontal}} force(s) on the cannonball.
+
+\begin{solutionorbox}[2cm]
+\begin{center}
+\begin{tikzpicture}
+    \fill (0,0) circle (4pt);
+    \draw[thick,->] (0,0) -- (2,0) node[right] {$F_\mathrm{A}$};
+\end{tikzpicture}
+\end{center}
+\end{solutionorbox}
+
+\part[2] Calculate the ball's acceleration.
+
+\begin{solutionorbox}[4cm]
 \begin{equation*}
-    a = \frac{\Delta v}{\Delta t} = \SI{14}{m/s^2}
+    a = \frac{\Delta v}{\Delta t} = \frac{\SI{28}{m/s}}{\SI{2.0}{s}}  = \boxed{\SI{14}{m/s^2}}
 \end{equation*}
 
-\textbf{1 point earned}: For computing net force:
+\end{solutionorbox}
 
+\part[2] What is the net force on the cannonball?
+
+\begin{solutionorbox}[4cm]
+\phantom{.}
 \begin{equation*}
     F_\mathrm{net} = ma = (\SI{80}{kg})(\SI{14}{m/s^2}) = \boxed{\SI{1120}{N}}
 \end{equation*}
 \end{solutionorbox}
+\end{parts}
+
+\endgradingrange{myrange} 
+
 
 \clearpage
 
-\header{Physics}{}{Unit 3 Test}
+\end{questions}
+
+% \header{Physics}{}{Unit 3 Test}
+
+\begin{questions}
 
 \question [2]
 Consider the table below.
@@ -742,7 +784,7 @@ Does this table represent an object that is accelerating? How do you know? Expla
 \textbf{1 point earned}: For stating that acceleration is the rate of change in velocity, so that a change in velocity implies acceleration.
 \end{solutionorbox}
 
-\question [2]
+\question [3]
 A cart moves on a straight track and its motion is recorded in the graph below.
 
 \begin{center}
@@ -768,18 +810,9 @@ A cart moves on a straight track and its motion is recorded in the graph below.
 Points A, B, and C represent three different instants in time. Rank these points according to the object's speed at those instants, from the fastest point to the slowest.
 
 \begin{solutionorbox}[6cm]
-\phantom{.}
-
-\textbf{1 point earned}: For ranking the points from fastest to slowest speed of the object as C, B, A. 
-
-\textbf{1 point earned}: For explaining that the steepness or slope of the curve at the points indicates the object's velocity; the object undergoes bigger changes in position for a small interval of time centered at C than it does for an equal interval of time centered at A.
+Rank: C, B, A
 \end{solutionorbox}
 
-\clearpage
-
-{\large
-\printkeytable
-}
 \end{questions}
 \end{document}
 

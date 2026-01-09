@@ -4,46 +4,602 @@
 
 \setrandomizerseed{1}
 
-\firstpageheader{Physics}{Unit 2: Force Interactions}{Test Review}
-\runningheader{}{}{}
+\firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics Review on Unit 2: Force Interactions}
 
 \begin{document}
-\section*{Know}
+\subsection*{Know}
 
 \begin{multicols}{3}
 \begin{enumerate}[itemsep=0pt]
     \item force
     % \item external force
     \item net force
-    \item gravity
-    \item friction
-    \item tension
+    \item gravitational force
+    \item frictional force
+    \item tension force
     \item normal force
     % \item spring force
     \item free body diagram
+    \item balanced forces
+    \item unbalanced forces
+    \item force pair
+    \item contact force
+    \item changing velocity
 \end{enumerate}
 \end{multicols}
 
-\section*{Understand}
+% \section*{Understand}
 
-\begin{itemize}[itemsep=0pt]
-    \item Identify the type of forces acting in a scenario, including gravitational, normal, frictional, applied, 
-    %spring,
-    and tension.
-    \item Identify and represent the force pairs of each interaction in a scenario .
-    \item Recognize that force pairs consist of exactly two forces (same type) resulting from one interaction between two objects.
-    \item Recognize that force pairs must be equal in magnitude and opposite in direction.
-    % \item Identify instances in which equal and opposite forces are not a force pair (e.g. $F_\text{g}$ and $F_\text{n}$ are not force pairs even when they are equal in magnitude and opposite in direction).
-    \item Diagram the forces acting on an object using a free-body diagram.
-    \item Explain the effects of balanced forces on the motion of an object.
-    \item Explain the effects of unbalanced forces on the motion of an object.
-    \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of constant velocity, constant momentum, constant KE, and balanced forces.
-    \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of changing velocity, changing momentum, changing KE, and unbalanced forces.
-\end{itemize}
+% \begin{itemize}[itemsep=0pt]
+%     \item Identify the type of forces acting in a scenario, including gravitational, normal, frictional, applied, 
+%     %spring,
+%     and tension.
+%     \item Identify and represent the force pairs of each interaction in a scenario .
+%     \item Recognize that force pairs consist of exactly two forces (same type) resulting from one interaction between two objects.
+%     \item Recognize that force pairs must be equal in magnitude and opposite in direction.
+%     % \item Identify instances in which equal and opposite forces are not a force pair (e.g. $F_\text{g}$ and $F_\text{n}$ are not force pairs even when they are equal in magnitude and opposite in direction).
+%     \item Diagram the forces acting on an object using a free-body diagram.
+%     \item Explain the effects of balanced forces on the motion of an object.
+%     \item Explain the effects of unbalanced forces on the motion of an object.
+%     \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of constant velocity, constant momentum, constant KE, and balanced forces.
+%     \item Connect by matching, interpreting, and generating Multiple Representations, the concepts of changing velocity, changing momentum, changing KE, and unbalanced forces.
+% \end{itemize}
 
-\section*{Do}
+\subsection*{Do}
 
 \begin{questions}
+
+\question
+The system shown below consists of a toy car resting on a table, and the table resting on the Earth. List the three force pairs. Use subscripts C, T, and E for the car, table, and Earth, respectively. For example, $F_\mathrm{AB}$ is the force on object A by object B.
+
+\vspace{-1em}
+
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}
+    \draw[pattern=north west lines] (-1.2,0) -- (-1,0) -- (-1,1) -- (1,1) -- (1,0) node[right=3mm,pos=0.5] {Table $T$} -- (1.2,0) -- (1.2,1.2) -- (-1.2,1.2) -- cycle;
+    \draw[pattern=north west lines] (-1.6,1.2) -- (1.6,1.2) -- (1.6,1.35) -- (-1.6,1.35) -- cycle;
+    \draw (0,2.05) node {\reflectbox{\twemoji[width=1.5cm]{police car}}} node[right=7mm] {Car $C$};
+    \begin{scope}[shift={(0,-1.6)}]
+        \node at (2.7,0.5) {Earth $E$};
+        \clip (0,0) -- (2,0) arc (0:180:2) -- cycle;
+        \node at (0,0) {\twemoji[width=4cm]{globe showing Americas}};
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{7cm}
+\centering
+\begin{enumerate}[itemsep=1em]
+    \item \fillin[$F_\mathrm{CT}$ and $F_\mathrm{TC}$][6cm]
+    \item \fillin[$F_\mathrm{CE}$ and $F_\mathrm{EC}$][6cm]
+    \item \fillin[$F_\mathrm{TE}$ and $F_\mathrm{ET}$][6cm]
+\end{enumerate}
+\end{minipage}
+\end{EnvUplevel}
+
+\question
+On the axes below, draw velocity vs.\,time graphs ($v$-$t$ graphs) representing the motion of a boat with balanced forces and with unbalanced forces.
+
+\ifprintanswers
+\textcolor{red}{\textit{Answers will vary.}}
+\fi
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=8,
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,8},
+        title={Balanced Forces}
+    ]
+        \ifprintanswers
+        \addplot[red,domain=0:8,ultra thick] {2};   
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=8,
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,8},
+        title={Unbalanced Forces}
+    ]
+        \ifprintanswers
+        \addplot[red,domain=0:8,ultra thick] {7/8*x - 3};   
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+A book lies at rest on your desk.
+
+\begin{parts}
+\part Are there any forces acting on the book?
+
+\begin{solution}
+    Yes, the force of gravity and the normal force.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\part Why is the book not moving?
+
+\begin{solution}
+    The forces are balanced.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question
+A bike rider loses control and strikes a haystack. What is the force pair to the bike pushing on the haystack?
+
+\ifprintanswers
+\begin{solution}
+    The haystack pushing on the bike.
+\end{solution}
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+Both objects below are in motion. For each diagram, explain whether the forces are balanced or unbalanced and whether the velocity is constant or changing. Justify your answers.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \node at (0,0) {\usymH{1F6B4}{1cm}};
+    \draw[very thick,->] (-1,0) -- ++(-2,0) node[above] {85\,N};
+    \draw[very thick,->] (+1,0) -- ++(+0.8,0) node[above] {25\,N};
+    \node[below] at (current bounding box.south) {Diagram A};
+\end{tikzpicture}
+\hspace{3cm}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \node at (0,0) {\reflectbox{\usymH{1F6A3}{1cm}}};
+    \draw[very thick,->] (-1.5,0) -- ++(-1,0) node[above] {25\,N};
+    \draw[very thick,->] (+1.5,0) -- ++(+1,0) node[above] {25\,N};
+    \node[below] at (current bounding box.south) {Diagram B};
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\begin{solution}
+    In Diagram A, the forces are balanced, so the object's velocity will change; specifically, the speed will increase to the left. In Diagram B, the forces are balanced, so the object's velocity stays constant.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{2.1cm}
+\fi
+
+\question
+A 15.0-N wooden block rests on a table. What is the force the table exerts on the block?
+
+\begin{solution}
+    The force of gravity is \SI{15}{N}. So the table exerts a normal force of \SI{15}{N}.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+Suppose you are traveling in a bus at highway speed on a nice summer day, and the momentum of an unlucky mosquito is suddenly changed when it splatters onto the front window.
+
+\vspace{-2em}
+
+\begin{center}
+\begin{tikzpicture}
+    \node at (0,0) {\reflectbox{\twemoji[height=2cm]{bus}}};
+    \node[rotate=90] at (1.5,0) {\twemoji[height=5mm]{mosquito}};
+\end{tikzpicture}
+\end{center}
+
+The force that the bus exerts on the mosquito is $F_\mathrm{MB}$, and the force that the mosquito exerts on the bus is $F_\mathrm{BM}$. How do the magnitudes of $F_\mathrm{MB}$ and $F_\mathrm{BM}$ compare (i.e., is one bigger than the other)?
+
+\begin{solution}
+    $F_\mathrm{MB} = F_\mathrm{BM}$ because are a third law force pair.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{14mm}
+\fi
+
+\question
+Imagine you are collecting velocity and time data for a bowling ball in motion.
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+    0 & 3 \\ \hline
+    3 & 3 \\ \hline
+    6 & 3 \\ \hline
+    9 & $v$ \\ \hline
+    12 & $v$ \\ \hline
+    15 & $v$ \\ \hline
+    18 & $v$ \\ \hline
+\end{tabular}
+\end{center}
+
+A contact force is applied to the ball \textit{only} during the time interval between $t=\SI{6}{s}$ and $t = \SI{9}{s}$, making the net force unbalanced. What is a possible value of $v$?
+
+\begin{solution}
+\textit{Answers will vary.}
+
+Velocity $v$ is anything other than 3, for example $v = \SI{2}{m/s}$.    
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+
+\question
+Draw a free body diagram for a tennis ball at rest on a table and one for a tennis ball rolling across a long patch of grass, where friction is significant.
+
+\begin{solutionorbox}[3cm]
+
+\begin{center}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt) node[right=2mm] {$v=0$};
+    \draw[thick,->] (0,0) -- (0,1);
+    \draw[thick,->] (0,0) -- (0,-1);
+\end{tikzpicture}
+\hspace{3cm}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+    \draw[thick,->] (0,0) -- (0,1);
+    \draw[thick,->] (0,0) -- (0,-1);
+    \draw[thick,->] (0,0) -- (-1.5,0);
+    \draw[->] (1,0) -- ++(0.7,0) node[above,pos=0.5] {$\vec{v}$};
+\end{tikzpicture}
+\end{center}
+\end{solutionorbox}
+
+\question
+The free body diagrams below show the forces on a moving toy skateboard at different times in its motion.
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=3mm]
+    \fill (0,0) circle (3pt);
+    \draw[->] (0,0) -- (0,2) node[above] {\SI{2}{N}};
+    \draw[->] (0,0) -- (0,-2) node[below] {\SI{2}{N}};
+    \draw[->] (0,0) -- (5,0) node[right] {\SI{5}{N}};
+    \draw[->] (0,0) -- (-8,0) node[left] {\SI{8}{N}};
+    \node[below] at (current bounding box.south) {Diagram X};
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}[x=3mm,y=3mm]
+    \fill (0,0) circle (3pt);
+    \draw[->] (0,0) -- (0,2) node[above] {\SI{2}{N}};
+    \draw[->] (0,0) -- (0,-2) node[below] {\SI{2}{N}};
+    \draw[->] (0,0) -- (5,0) node[right] {\SI{5}{N}};
+    \draw[->] (0,0) -- (-5,0) node[left] {\SI{5}{N}};
+    \node[below] at (current bounding box.south) {Diagram Y};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part In which diagram are the forces on the toy balanced (i.e. the toy is in equilibrium)?
+
+\begin{solution}
+    Diagram Y.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\part Based on your answer to part (a) above, select the correct statement from the following:
+
+\begin{randomizechoices}
+    \choice The skateboarder's velocity is changing with respect to time.
+    \correctchoice The skateboarder's position is changing with respect to time.
+    \choice The skateboarder's position is constant with respect to time.
+\end{randomizechoices}
+\end{parts}
+
+\question
+On the axes below, draw a velocity vs.\,time graph and a position vs.\,time graph representing an object with no kinetic energy. 
+
+\ifprintanswers
+\textcolor{red}{\textit{Answers will vary.}}
+\fi
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=8,
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,8},
+    ]
+        \ifprintanswers
+        \addplot[red,domain=0:8,ultra thick] {0};  
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=6cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=-5,ymax=5,
+        xmin=0,xmax=8,
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        ytick={-5,-4,...,5},
+        xtick={0,1,...,8},
+    ]
+        \ifprintanswers
+        \addplot[red,domain=0:8,ultra thick] {-2};   
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+On the axes provided below, draw momentum vs.\,time and kinetic energy vs.\,time graphs that satisfy each specified scenario.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw (0,0) -- (0,1) node[rotate=90,pos=0.5,above] {$p\ (\SI{}{kg\cdot m/s})$};
+    \draw (0,0) -- (1,0) node[pos=0.5,below] {$t\,(\mathrm{s})$};
+    \node[above,align=left] at (current bounding box.north) {\small Balanced Forces\\ \small Constant Momentum};
+    \ifprintanswers
+    \draw[red,thick] (0,0.6) -- ++(1,0);
+    \fi
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw (0,0) -- (0,1) node[rotate=90,pos=0.5,above] {KE (J)};
+    \draw (0,0) -- (1,0) node[pos=0.5,below] {$t\ (\mathrm{s})$};
+    \node[above,align=left] at (current bounding box.north) {\small Balanced Forces\\ \small Constant Kinetic Energy};
+    \ifprintanswers
+    \draw[red,thick] (0,0.6) -- ++(1,0);
+    \fi
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw (0,0) -- (0,1) node[rotate=90,pos=0.5,above] {$p\ (\SI{}{kg\cdot m/s})$};
+    \draw (0,0) -- (1,0) node[pos=0.5,below] {$t\ (\mathrm{s})$};
+    \node[above,align=left] at (current bounding box.north) {\small Unbalanced Forces\\ \small Changing Momentum};
+    \ifprintanswers
+    \draw[red,thick] (0,0) -- ++(0.9,0.7);
+    \fi
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw (0,0) -- (0,1) node[rotate=90,pos=0.5,above] {KE (J)};
+    \draw (0,0) -- (1,0) node[pos=0.5,below] {$t\ (\mathrm{s})$};
+    \node[above,align=left] at (current bounding box.north) {\small Unbalanced Forces\\ \small Changing Kinetic Energy};
+    \ifprintanswers
+    \draw[red,thick,domain=0:0.9] plot(\x,{\x^2});
+    \fi
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+Describe the motion of an object with balanced forces in the space below.
+
+\begin{solution}
+If the forces are balanced the object's velocity is constant, its position changes linearly with time, its motion map has equally spaced dots, and the momentum and kinetic energy are constant.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{14mm}
+\clearpage
+\fi
+
+
+\question
+In the space below, draw motion maps with the given specifications.
+
+\begin{EnvUplevel}
+\centering
+
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-0.5,-0.5) rectangle (10.5,0.5) node[below=4mm,pos=0.5,align=left] {\small Balanced Forces\\ \small Constant Momentum};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({\x},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({\x},0);
+    \fi
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw (-0.5,-0.5) rectangle (10.5,0.5) node[below=4mm,pos=0.5,align=left] {\small Unbalanced Forces\\ \small Changing Momentum};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \fi
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question 
+The free body diagram below describes the forces on the box. $F_1$ and $F_2$ are applied forces, and $F_f$ is the frictional force.
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \fill (0,0) circle (5pt);
+    \draw[thick,->] (0,2pt) -- ++(-2,0) node[above] {$F_2 = \SI{2}{N}$};
+    \draw[thick,->] (0,-2pt) -- ++(-7,0) node[above] {$F_1 = \SI{7}{N}$};
+    \draw[thick,->] (0,0) -- ++(3,0) node[above] {$F_f = \SI{3}{N}$};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the direction of motion, left ($-$) or right ($+$)? How do you know?
+
+\begin{solution}
+The direction moves to the left because friction is directed to the right and friction always opposes the direction of motion.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\part Calculate the net force. 
+
+\begin{solution}
+
+\begin{align*}
+    F_\mathrm{net} &= -F_1 - F_2 + F_f \\[1ex]
+    &= -\SI{7}{N} - \SI{2}{N} + \SI{3}{N} \\[1ex]
+    &= \boxed{\SI{-6}{N}}
+\end{align*}
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\part Does the velocity stay constant or does it change?
+
+\begin{solution}
+A non-zero net force implies unbalanced forces, so the velocity changes.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question %10
+The motion map for a shopping cart is shown below. What additional information do you need to know whether the object's speed is increasing or decreasing?
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[domain=-10:0,mark=*,only marks, samples=10,mark size=2.5pt] plot({0.1*\x^2},0);
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    We need to know the object's velocity direction. If the object moves the right, it's slowing down; if it moves leftward, it's speeding up.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\question %2
+A cable is used to hang a traffic light from a metal bar.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[thick] (0,0) -- (0,2);
+    \draw[fill=lightgray] (-1,2) rectangle (1,2.2);
+    \draw (0,0) node {\twemoji[height=1cm]{vertical traffic light}};
+\end{tikzpicture}
+\end{center}
+
+What type of force is the cable exerting on the traffic light? \fillin[tension force][6cm]
+
+\question %8
+A runner is running to the right and is increasing in speed over time. Draw a motion map for their motion. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (-0.5,-0.5) rectangle (10.5,0.5);
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \fi
+\end{tikzpicture}
+\end{center}
+
+\question %9
+When the all forces on an object are balanced, what can you conclude about the object's velocity, momentum, and kinetic energy?
+
+\begin{solution}
+    Velocity, momentum, and kinetic energy are constant when forces are balanced.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+Name the 5 types of force discussed in this unit and provide examples of each.
+
+\begin{solution}
+\textit{Answers will vary.}
+
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|l|}
+    \hline
+    \textbf{Force Type} & \textbf{Example} \\ \hline
+    Gravitational & Earth pulling down on an apple. \\ \hline
+    Normal & A table pushing up on a resting book. \\ \hline
+    Tension & A rope pulling up on a bucket's handle.\\ \hline
+    Friction & A bowling ball slowing down as it rolls across the floor. \\ \hline
+    Contact & A person pushing a shopping cart. \\ \hline
+\end{tabular}
+\end{center}
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{21mm}
+\fi
+
+\clearpage
+
+
+
+
+\end{questions}
+\end{document}
+
+
+
 
 \question %6
 A tennis ball strikes a racket. Which has a greater magnitude, the force of the racket on the ball or the force of the ball on the racket?
@@ -51,14 +607,6 @@ A tennis ball strikes a racket. Which has a greater magnitude, the force of the 
 \question %5
 A boxing glove exerts a force by striking someone's face. What is the force pair to the glove's push?
 
-\question %10
-The motion map for a shopping cart is shown below. What additional information do you need to know whether the object's speed is increasing or decreasing?
-
-\begin{center}
-    \begin{tikzpicture}[scale=0.7]
-        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3pt] plot({0.1*\x^2},0);
-    \end{tikzpicture}
-\end{center}
 
 
 \question \label{PbScd} %1
@@ -104,11 +652,7 @@ A box is placed on top of a skateboard, and the system is allowed to move down a
 
 (a) From point a to point b, are the forces balanced or unbalanced? (b) Is the object speeding up, slowing down, or moving at constant speed, from a to b? (c) From point b to point c, are the forces balanced or unbalanced? (d) Is the object speeding up, slowing down, or moving at constant speed, from b to c?
 
-\question %2
-A cable is used to hang a traffic light from a metal bar. What type of force is the cable exerting on the traffic light?
 
-\question %8
-A runner is running to the right and is increasing in speed over time. Draw a motion map for their motion. 
 
 \question %9
 When the all forces on an object are balanced, what can you conclude about the object's velocity, momentum, and kinetic energy?
@@ -122,20 +666,9 @@ Draw the force schema for the three force pairs in the scenario shown in Questio
 True or False? The horizontal forces on the truck below are balanced, so the truck's velocity will increase.
 
 \begin{center}
-    \begin{tikzpicture}
-        \draw (0,0) node {\reflectbox{\twemoji[height=3cm]{delivery truck}}};
-        \draw[thick,<-,left=1.5cm] (0,0) -- (-4,0) node[above,pos=0.5] {400\,N};  
-        \draw[thick,<-,right=1.5cm] (0,0) -- (+3,0) node[above,pos=0.5] {300\,N};  
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \draw (0,0) node {\reflectbox{\twemoji[height=3cm]{delivery truck}}};
+    \draw[thick,<-,shift={(-1.5cm,0)}] (0,0) -- (-4,0) node[above,pos=0.5] {400\,N};  
+    \draw[thick,<-,shift={(1.5cm,0)}] (0,0) -- (+3,0) node[above,pos=0.5] {300\,N};  
+\end{tikzpicture}
 \end{center}
-
-
-
-
-
-\end{questions}
-\end{document}
-
-
-
-

@@ -1,53 +1,641 @@
-% \documentclass[answers]{exam}
-% \input{global}
-% \input{problem-sets}
-% %\usetikzlibrary{backgrounds} %...For shading portions of graphs
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+%\usetikzlibrary{backgrounds} %...For shading portions of graphs
 
-% \setrandomizerseed{1}
+\setrandomizerseed{1}
 
-% \firstpageheader{Physics}{Unit 3: Changing Motion}{Problems}
-% \runningheader{Physics}{}{Unit 3 Problems}
+\firstpageheader{{{Name:\enspace\makebox[6cm]{\hrulefill}}}}{}{Physics Unit 3: Changing Motion}
+\runningheader{Physics}{Unit 3: Acceleration}{Problems}
 
-% \setlength{\columnsep}{2cm}
-% \setlength{\columnseprule}{1pt}
-% \usepackage[none]{hyphenat}
+\setlength{\columnsep}{2cm}
+\setlength{\columnseprule}{1pt}
+\usepackage[none]{hyphenat}
 
-\documentclass[../main-physics-problems.tex]{subfiles}
+% \documentclass[../main-physics-problems.tex]{subfiles}
 
 \begin{document}
-\subsection{Acceleration}
-\subsubsection{The Concept of Acceleration}
-\subsubsection{Zero Acceleration, Positive Acceleration, and Negative Acceleration}
-\subsubsection{Comparing Accelerations of Objects}
-\subsubsection{Determining Change in Velocity and Acceleration from Multiple Representations}
-\subsubsection{Representations of Changing Motion}
-\subsubsection{Predicting Change in Velocity and Acceleration using Number Sense}
-\subsection{Newton’s Law of Acceleration}
-\subsubsection{The Relationship between Net Force and Acceleration}
-\subsubsection{The Relationship between Mass and Acceleration}
-\subsubsection{The Effects of Changing Net Force on Mass or Acceleration}
-\subsubsection{Solving Problems using Newton’s Second Law}
 
-\subsection*{Representing Acceleration Ramp Lab}
+
+\subsection*{Lab: Acceleration on a Ramp}
 
 \begin{questions}
 \question
-Place the motion sensor at the top of the ramp, and place the cart in front of the sensor.
+Observe the motion of the cart starting from rest and rolling down the incline with the motion sensor at the top.
+
+\vspace{-1em}
 
 \begin{center}
-    \begin{tikzpicture}
-        \begin{scope}[rotate=-10,transform shape]
-            \draw (0,0) rectangle ++(10,-0.5) ;%node[pos=0.12,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
-            \draw[above=9mm] (3,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
-            \draw[fill=white,above=2mm] (3.4,0) circle (2mm);
-            \draw[fill=white,above=2mm] (4.1,0) circle (2mm);
-            \draw[fill=black!15,above=1pt] (0,0) rectangle (1,1.5) node[pos=0.5,above=7.5mm,align=left] {motion\\detector};
-            % \draw (9,0) node[above=2mm,align=left] {Highest point};
-            % \draw[thick,->] (3,1.2) -- ++(2,0) node[above,pos=0.5] {Initial push};
+\begin{tikzpicture}[rotate=-8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) node[above left,align=left] {motion\\detector} rectangle ++(5,4mm);
+        \begin{scope}[shift={(10,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (17,1.3mm) -- ++(6,0) node[above,pos=0.5] {$\vec{v}$};
         \end{scope}
-    \end{tikzpicture}
+    \end{axis}
+\end{tikzpicture}
 \end{center}
+
+\vspace{-2em}
+
+\begin{parts}
+\part Is the cart speeding up or slowing down? \fillin[speeding up][6cm]
+
+\part Draw a motion map for the cart. 
+\tikz[x=7mm,y=7mm]{
+    \draw (-1.6,-0.3) rectangle (12,0.3);
+    \node at (-1,0) {\SI{0}{cm}};
+    \node at (11.2,0) {\SI{120}{cm}};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \fi
+}
+
+
+\part Draw the position vs.\,time, the velocity vs.\,time, and acceleration vs.\,time graphs.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,0) -- (0,1.2) node[rotate=90,pos=0.5,above] {Position (m)};
+    \draw (0,0) -- (1.2,0) node[pos=0.5,below] {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,\x^2);
+    \fi
+    \begin{scope}[shift={(2,0.6)}]
+        \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Velocity (m/s)};
+        \draw (0,0) -- (1.2,0);
+        \node[below] at (0.6,-0.6) {Time (s)};
+        \ifprintanswers
+            \draw[very thick,red,domain=0:1,smooth] plot(\x,0.5*\x);
+        \fi
+    \end{scope}
+    \begin{scope}[shift={(4,0.6)}]
+        \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Acceleration (\SI{}{m/s^2})};
+        \draw (0,0) -- (1.2,0);
+        \node[below] at (0.6,-0.6) {Time (s)};
+        \ifprintanswers
+            \draw[very thick,red,domain=0:1,smooth] plot(\x,0.25);
+        \fi
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part Is the velocity positive or negative? How do you know? 
+
+\begin{solution}
+    Positive. The object moves away from the origin.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+
+% \fillin[positive; motion is away from the origin][6cm]
+\end{parts}
+
+\question
+Observe the motion of the cart as you give the cart an initial push up the ramp and stop it at its highest point with the motion sensor at the bottom.
+
+\vspace{-1em}
+
+\begin{center}
+\begin{tikzpicture}[rotate=+8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) node[above left,align=left] {motion\\detector} rectangle ++(5,4mm);
+        \begin{scope}[shift={(10,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (17,1.3mm) -- ++(6,0) node[above,pos=0.5] {$\vec{v}$};
+        \end{scope}
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2em}
+
+\begin{parts}
+\part Is the cart speeding up or slowing down? \fillin[slowing down][6cm]
+
+\part Draw a motion map for the cart.
+\tikz[x=7mm,y=7mm]{
+    \draw (2,-0.3) rectangle (-11.8,0.3);
+    \node at (1.1,0) {120\,cm};
+    \node at (-11,0) {0\,cm};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({-0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({-0.1*\x^2},0);
+    \fi
+}
+
+\part Draw the position vs.\,time, the velocity vs.\,time, and acceleration vs.\,time graphs.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,0) -- (0,1.2) node[rotate=90,pos=0.5,above] {Position (m)};
+    \draw (0,0) -- (1.2,0) node[pos=0.5,below] {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,{-(\x-1)^2+1});
+    \fi
+\begin{scope}[shift={(2,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Velocity (m/s)};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,-0.5*\x+0.5);
+    \fi
+\end{scope}
+\begin{scope}[shift={(4,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Acceleration (\SI{}{m/s^2})};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,-0.25);
+    \fi
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part Is the velocity positive or negative? How do you know? 
+
+\begin{solution}
+    Positive. The object moves away from the origin.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\clearpage
+\fi
+
+\end{parts}
+
+
+\question
+Observe the motion of the cart starting from rest and rolling down the incline with the sensor at the bottom.
+
+\begin{center}
+\begin{tikzpicture}[rotate=+8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) node[above left,align=left] {motion\\detector} rectangle ++(5,4mm);
+        \begin{scope}[shift={(105,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (-2,1.3mm) -- ++(-6,0) node[above,pos=0.5] {$\vec{v}$};
+        \end{scope}
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2em}
+
+\begin{parts}
+\part Is the cart speeding up or slowing down? \fillin[speeding up][6cm]
+
+\part Draw a motion map for the cart.
+\tikz[x=7mm,y=7mm]{
+    \draw (2,-0.3) rectangle (-11.8,0.3);
+    \node at (1.1,0) {120\,cm};
+    \node at (-11,0) {0\,cm};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({-0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({-0.1*\x^2},0);
+    \fi
+}
+
+\part Draw the position vs.\,time, the velocity vs.\,time, and acceleration vs.\,time graphs.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,0) -- (0,1.2) node[rotate=90,pos=0.5,above] {Position (m)};
+    \draw (0,0) -- (1.2,0) node[pos=0.5,below] {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,{-\x^2+1});
+    \fi
+\begin{scope}[shift={(2,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Velocity (m/s)};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,-0.5*\x);
+    \fi
+\end{scope}
+\begin{scope}[shift={(4,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Acceleration (\SI{}{m/s^2})};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,-0.25);
+    \fi
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part Is the velocity positive or negative? How do you know? 
+
+\begin{solution}
+    Negative. The object moves towards the origin.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\end{parts}
+
+\question
+Observe the motion of the cart after you give it an initial push up the ramp and stop it at its highest point, with the sensor at the top.
+
+
+\begin{center}
+\begin{tikzpicture}[rotate=-8,scale=0.9,transform shape]
+    \begin{axis}[width=12cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (cm)},
+        ymin=0, ymax=1, 
+        xmin=0, xmax=122,
+        xtick={0,10,...,120},
+        clip=false,
+        minor x tick num=4,
+        ]
+        \draw[fill=lightgray,opacity=0.5] (0,-1mm) rectangle (122,1mm);
+        \draw[fill=gray] (0,1mm) node[above left,align=left] {motion\\detector} rectangle ++(5,4mm);
+        \begin{scope}[shift={(105,2.6mm)}]
+            \draw (0,0) rectangle ++(15,5mm);
+            \draw[fill=black!10] (3,0) circle (4pt);
+            \draw[fill=black!10] (12,0) circle (4pt);
+            \draw[thick,->] (-2,1.3mm) -- ++(-6,0) node[above,pos=0.5] {$\vec{v}$};
+        \end{scope}
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-2em}
+
+\begin{parts}
+\part Is the cart speeding up or slowing down? \fillin[slowing down][6cm]
+
+\part Draw a motion map for the cart.
+\tikz[x=7mm,y=7mm]{
+    \draw (-1.6,-0.3) rectangle (12,0.3);
+    \node at (-1,0) {\SI{0}{cm}};
+    \node at (11.2,0) {\SI{120}{cm}};
+    \ifprintanswers
+    \draw[red,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \else
+    \draw[white,domain=0:10,mark=*,only marks, samples=10,mark size=2pt] plot({0.1*\x^2},0);
+    \fi
+}
+
+
+\part Draw the position vs.\,time, the velocity vs.\,time, and acceleration vs.\,time graphs.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,0) -- (0,1.2) node[rotate=90,pos=0.5,above] {Position (m)};
+    \draw (0,0) -- (1.2,0) node[pos=0.5,below] {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth]  plot(\x,{(\x-1)^2});
+    \fi
+\begin{scope}[shift={(2,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Velocity (m/s)};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,0.5*\x-0.5);
+    \fi
+\end{scope}
+\begin{scope}[shift={(4,0.6)}]
+    \draw (0,-0.6) -- (0,0.6) node[rotate=90,pos=0.5,above] {Acceleration (\SI{}{m/s^2})};
+    \draw (0,0) -- (1.2,0);
+    \node[below] at (0.6,-0.6) {Time (s)};
+    \ifprintanswers
+        \draw[very thick,red,domain=0:1,smooth] plot(\x,0.25);
+    \fi
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part Is the velocity positive or negative? How do you know? 
+
+\begin{solution}
+    Negative. The object moves towards the origin.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\end{parts}
 \end{questions}
+
+\clearpage
+
+\subsection*{PhET Simulation: Forces and Motion}
+
+Go to PhET Simulation: Forces and Motion (\href{https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_all.html}{click here}). Click the second panel, called ``Motion.''
+
+
+\begin{mdframed}
+\noindent \textbf{Steps for Resetting the Simulation:}
+
+\vspace{-1ex}
+
+\begin{enumerate}[itemsep=0pt]
+    \item Press the orange reset button $\left(\,\circlearrowright\,\right)$.
+    \item Check all the boxes:
+    \begin{itemize}[itemsep=0pt]
+        \item[] \checkbox{1} Force
+        \item[] \checkbox{1} Values
+        \item[] \checkbox{1} Masses
+        \item[] \checkbox{1} Speed
+        \item[] \checkbox{1} Stopwatch
+    \end{itemize}
+    \item Press the pause $\left(\,\text{\faPause}\,\right)$ button once for the \underline{simulation}.
+    \item Press the play $\left(\,\text{\faPlay}\,\right)$ button once for the \underline{stopwatch}.
+\end{enumerate}
+
+\noindent The steps above ensure the simulation and stopwatch are synchronized so that the stopwatch starts at the same time as the simulation. The simulation is now set for data collection.
+\end{mdframed}
+
+\begin{questions}
+\question
+Follow the ``Steps for Resetting the Simulation'' listed above. 
+
+\begin{parts}
+
+\part
+The system in this simulation is the box on the skateboard. Keep the same box on the skateboard at all times. Do not add or remove anything from the skateboard. What is the mass of the box?
+
+\ifprintanswers
+{\color{red} $m = \SI{50}{kg}$} 
+\else
+\fillwithlines{7mm}
+\fi
+
+\part \label{part-a}
+The initial speed of the system is the speed when the time on the stopwatch reads \texttt{00:00.00}. What is the initial velocity?
+
+\ifprintanswers
+{\color{red} $v_i = 0$} 
+\else
+\fillwithlines{7mm}
+\fi
+
+\part \label{part-b}
+Press the\ \faForward\  button once to add 50 newtons of net force on the system. Run the simulation with \ \faPlay\ and use the step button $\left(\,\rotatebox[origin=c]{-90}{\faEject}\,\right)$ to pause the simulation \underline{exactly} when the stopwatch reads \texttt{00:04.00}. Let the final velocity be the velocity after this 4-second time interval. What is the final velocity?
+
+\ifprintanswers
+{\color{red} $v_f = \SI{4.0}{m/s}$}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part
+The system's average acceleration is the change in velocity over the change in time:
+
+\begin{equation}
+    a = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{\Delta t}
+\end{equation}
+
+Use the velocities from parts \eqref{part-a} and \eqref{part-b} to calculate the system's acceleration.
+
+\begin{solutionorbox}[2cm]
+    
+\end{solutionorbox}
+
+\part 
+Summarize the physical quantities used in this simulation by filling in the table below:
+
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Net Force} (N) & \textbf{Mass} (kg) & \textbf{Acceleration} ($\mathrm{m/s^2}$)\\ \hline
+     & & \\ \hline
+\end{tabular}
+\end{center}
+
+\part
+Fill in the blanks below:
+
+\bigskip
+
+\textit{When a net force of \fillin[50][2cm]\ newtons is exerted on a box of mass \fillin[50][2cm]\ kilograms,\\[1ex]
+the acceleration of the box is \fillin[1.0][2cm]\ $\mathrm{m/s^2}$.}
+\end{parts}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
+
+\question
+
+\begin{parts}
+\part 
+For each row in the table below, calculate the change in velocity and acceleration of the \SI{50}{kg} box after the given net force $F_\mathrm{net}$ is applied for a 4.0-second time interval. \underline{Note:} After each row, following the ``Steps for Resetting the Simulation'' from the previous page.
+
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+% Define a macro for conditional table entries
+\newcommand{\answertableentry}[5]{%
+  \ifprintanswers
+    #1 & #2 & #3 & \textcolor{red}{#4} & \textcolor{red}{#5} \\ \hline
+  \else
+    #1 & #2 & #3 & \textcolor{white}{#4} & \textcolor{white}{#5} \\ \hline
+  \fi
+}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \thead{\textbf{Net Force}, $F_\mathrm{net}$\\(N)} & \thead{\textbf{Mass}, $m$\\(kg)} & \thead{\textbf{Time Interval}, $\Delta t$\\(s)} & \thead{\textbf{Change in Velocity}, $\Delta v$\\(m/s)} & \thead{\textbf{Acceleration}, $a$\\$\left(\mathrm{m/s^2}\right)$}\\ \hline
+  \answertableentry{50}{50}{4.0}{4.0}{1.0}
+  \answertableentry{100}{50}{4.0}{8.0}{2.0}
+  \answertableentry{150}{50}{4.0}{0}{}
+  \answertableentry{200}{50}{4.0}{0}{0}
+  % \answertableentry{250}{50}{4.0}{0}{0}
+  \answertableentry{300}{50}{4.0}{0}{0}
+  \answertableentry{400}{50}{4.0}{0}{0}
+  \answertableentry{500}{50}{4.0}{40.0}{10.0}
+\end{tabular}
+\egroup
+\end{center}
+
+\medskip
+
+\part
+Make a graph of net force vs.\,acceleration using the data in the table above.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=8cm,
+        axis lines=left,
+        ylabel={Net Force (N)},
+        xlabel={Acceleration $\left(\mathrm{m/s^2}\right)$},
+        ymin=0,ymax=500,
+        xmin=0,xmax=10,
+        ytick={0,100,...,500},
+        xtick={0,1,...,10},
+        grid=both,
+        minor y tick num=1,
+        title={Net Force vs. Acceleration of a 50-kg box}
+    ]
+        \ifprintanswers
+        \addplot[red,very thick,mark=*] coordinates{(1,50)(2,100)(3,150)(4,200)(6,300)(8,400)(10,500)};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\question
+Select any new mass other than \SI{50}{kg}. Apply 5 different net forces and calculate that system's acceleration. Fill in the table and graph below. Repeat the ``Steps for Resetting the Simulation'' as needed.
+
+\begin{EnvUplevel}
+\centering
+
+\begin{minipage}{7.5cm}
+\centering
+\bgroup
+\def\arraystretch{1.5}
+% Define a macro for conditional table entries
+\newcommand{\answertableentry}[3]{%
+  \ifprintanswers
+    \textcolor{red}{#1} & \textcolor{red}{#2} & \textcolor{red}{#3} \\ \hline
+  \else
+    \textcolor{white}{#1} & \textcolor{white}{#2} & \textcolor{white}{#3} \\ \hline
+  \fi
+}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \thead{\textbf{Net Force}, $F_\mathrm{net}$\\(N)} & \thead{\textbf{Mass}, $m$\\(kg)} & \thead{\textbf{Acceleration}, $a$\\$\left(\mathrm{m/s^2}\right)$}\\ \hline
+  \answertableentry{0}{0}{0}
+  \answertableentry{0}{0}{0}
+  \answertableentry{0}{0}{0}
+  \answertableentry{0}{0}{0}
+  \answertableentry{0}{0}{0}
+\end{tabular}
+\egroup
+\end{minipage}%
+\hspace{5mm}
+\begin{minipage}{6.5cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6.5cm,
+        axis lines=left,
+        ylabel={Net Force (N)},
+        xlabel={Acceleration $\left(\mathrm{m/s^2}\right)$},
+        ymin=0,ymax=500,
+        xmin=0,xmax=10,
+        ytick={0,100,...,500},
+        xtick={0,1,...,10},
+        grid=both,
+        minor y tick num=1,
+        yticklabel=\empty,
+        xticklabel=\empty,
+    ]
+        \ifprintanswers
+        \addplot[red,very thick,mark=*] coordinates{(1,50)(2,100)(3,150)(4,200)(6,300)(8,400)(10,500)};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{EnvUplevel}
+
+
+\question
+Using patterns from your tables and graphs, synthesize an equation for net force $F_{\mathrm{net}}$ of an object in terms of the object's mass $m$ and acceleration $a$. The equation should start $F_\mathrm{net} = $ \hfill .
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\end{questions}
+
+
+\clearpage
+
+\subsection*{Change in Momentum}
+
+\begin{questions}
+\question
+An \SI{0.080}{kg} egg is dropped from rest and reaches a velocity of \SI{4.4}{m/s}. Calculate the egg's change in momentum.
+
+\begin{solution}
+We know
+
+\vspace{-1em}
+\begin{align*}
+    m &= \SI{0.08}{kg} \\[1ex]
+    v_i &= \SI{0}{m/s} \\[1ex]
+    v_f &= \SI{4.4}{m/s} \\[1ex]
+\end{align*}
+
+Thus, the change in momentum is
+
+\vspace{-1em}
+\begin{align*}
+    \Delta p &= m (v_f - v_i) \\[1ex]
+    &= (\SI{0.08}{kg})(\SI{4.4}{m/s} - \SI{0}{m/s}) \\[1ex]
+    &= \boxed{\SI{0.352}{kg\cdot m/s}}
+\end{align*}
+
+\hfill $\blacksquare$
+\end{solution}
+
+
+\end{questions}
+
+\clearpage
 
 \begin{questions}
 \begin{EnvUplevel}

@@ -1,4 +1,4 @@
-\documentclass[]{exam}
+\documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
 \usepackage[none]{hyphenat}
@@ -9,13 +9,15 @@
 
 \versionKleveltrue
 
-\firstpageheader{Physics L\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
-\runningheader{Physics L}{}{Unit 4 Review}
+% \firstpageheader{Physics L\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+% \runningheader{Physics L}{}{Unit 4 Review}
 
-\ifversionKlevel
-    \firstpageheader{Physics K\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
-    \runningheader{Physics K}{}{Unit 4 Review}
-\fi
+% \ifversionKlevel
+%     \firstpageheader{Physics K\\Review on Unit 4: Impulse and Work}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+%     \runningheader{Physics K}{}{Unit 4 Review}
+% \fi
+
+\firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics Review on Unit 4: Work and Impulse}
 
 \begin{document}
 \section*{Know}
@@ -36,26 +38,26 @@
 \end{enumerate}
 \end{multicols}
 
-\section*{Understand}
+%\section*{Understand}
 
-How do you\dots
+% How do you\dots
 
-\begin{itemize}[itemsep=0pt,topsep=2pt]
-    \item calculate an object's change in momentum from its change in velocity?
-    \item describe the relationship between the size of a net force on an object to the object’s change in momentum?
-    \item describe the relationship between how long the force is applied and an object’s change in momentum?
-    \item explain the real-life applications of the relationship between $F_\text{net}$ and $t$ in producing a given change in momentum (i.e. safety equipment, catapult plane launch)?
-    \item solve problems utilizing the Impulse-Momentum Theorem, $F_\text{net} \Delta t = \Delta p$?
-    \item identify if a net force is doing work on an object based on there being a component of the net force parallel to displacement?
-    \item identify if a net force is doing work on an object based on a change in kinetic energy?
-    \item calculate the net work done on an object?
-    \item describe the relationship between the size of the net force and an object's changing kinetic energy?
-    \item describe the relationship between the displacement over which the net force is applied and the changing kinetic energy of an object?
-    \item solve problems using the work-energy theorem, $W_\text{net} = \Delta \mathrm{KE}$?
-    \item compare the power of various situations with differing time, work, and $\Delta \mathrm{KE}$? (Note: only change one variable at a time)
-    \item calculate the power based on the work and time?
-    \item calculate the power based on change in kinetic energy?
-\end{itemize}
+% \begin{itemize}[itemsep=0pt,topsep=2pt]
+%     \item calculate an object's change in momentum from its change in velocity?
+%     \item describe the relationship between the size of a net force on an object to the object’s change in momentum?
+%     \item describe the relationship between how long the force is applied and an object’s change in momentum?
+%     \item explain the real-life applications of the relationship between $F_\text{net}$ and $t$ in producing a given change in momentum (i.e. safety equipment, catapult plane launch)?
+%     \item solve problems utilizing the Impulse-Momentum Theorem, $F_\text{net} \Delta t = \Delta p$?
+%     \item identify if a net force is doing work on an object based on there being a component of the net force parallel to displacement?
+%     \item identify if a net force is doing work on an object based on a change in kinetic energy?
+%     \item calculate the net work done on an object?
+%     \item describe the relationship between the size of the net force and an object's changing kinetic energy?
+%     \item describe the relationship between the displacement over which the net force is applied and the changing kinetic energy of an object?
+%     \item solve problems using the work-energy theorem, $W_\text{net} = \Delta \mathrm{KE}$?
+%     \item compare the power of various situations with differing time, work, and $\Delta \mathrm{KE}$? (Note: only change one variable at a time)
+%     \item calculate the power based on the work and time?
+%     \item calculate the power based on change in kinetic energy?
+% \end{itemize}
 
 \section*{Do}
 
@@ -264,6 +266,11 @@ The velocity vs time graph below shows the motion of a \SI{12}{kg} object.
 \end{tikzpicture}
 \end{center}
 
+\ifprintanswers
+\else
+\clearpage
+\fi
+
 What is the object's change in momentum during this time?
 
 \begin{solutionorbox}[5cm]
@@ -313,13 +320,54 @@ Chase, the 15-kg dog, slides across a slippery floor at \SI{4}{m/s}. He gets bum
 \begin{solutionorbox}[3cm]
 By the work-energy theorem,
 
-\vspace{-1em}
 \begin{align*}
     W_\text{net} = \Delta \mathrm{KE} &= \frac{1}{2}mv_f^2 - \frac{1}{2}m v_i^2 \\[1ex]
     &= \frac{1}{2} (\SI{15}{kg}) (\SI{12}{m/s})^2 - \frac{1}{2} (\SI{15}{kg}) (\SI{4}{m/s})^2 \\[1ex]
     &= \boxed{\SI{960}{J}}
 \end{align*}   
 \end{solutionorbox}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
+
+\question
+Justin Thyme is traveling down Lake Avenue at 32.9\,m/s in his 1722-kg 1992 Camaro. He spots a police car with a radar gun and quickly slows down to a legal speed of 19.4\,m/s.
+
+\begin{parts}
+\part 
+Determine the initial kinetic energy of the Camaro.
+
+\begin{solutionorbox}[1.5cm]
+\begin{equation*}
+    K_i = \frac{1}{2}mv_i^2 = \frac{1}{2}(\SI{1722}{kg})(\SI{32.9}{m/s})^2 = \boxed{\SI{9.32e5}{J}}
+\end{equation*}
+\end{solutionorbox}
+
+\part 
+Determine the kinetic energy of the Camaro after slowing down.
+
+\begin{solutionorbox}[1.5cm]
+\begin{equation*}
+    K_f = \frac{1}{2}mv_f^2 = \frac{1}{2}(\SI{1722}{kg})(\SI{19.4}{m/s})^2 = \boxed{\SI{3.24e5}{J}}
+\end{equation*}
+\end{solutionorbox}
+
+\part Determine the amount of work done on the Camaro during the deceleration.
+
+\begin{solutionorbox}[1.5cm]
+\begin{align*}
+    W &= \Delta K \\[1ex]
+    &= K_f - K_i \\[1ex]
+    &= \SI{3.24e5}{J} - \SI{9.32e5}{J} \\[1ex]
+    &= \boxed{\SI{-6.08e5}{J}}
+\end{align*}
+\end{solutionorbox}
+
+\end{parts}
+
+
 
 \question
 The graph below shows the net force on a scooter as a function of time.
@@ -343,23 +391,35 @@ The graph below shows the net force on a scooter as a function of time.
 \end{tikzpicture}
 \end{center}
 
-At time $t=0$, the velocity of the scooter is \SI{10}{m/s}. The scooter's mass is \SI{90}{kg}. (a) What is the average force on the scooter during the time interval? (b) Using this average force, calculate the scooter's final velocity.
+At time $t=0$, the velocity of the scooter is \SI{10}{m/s}. The scooter's mass is \SI{90}{kg}. 
 
+\begin{parts}
+\part What is the average force on the scooter during the time interval?
 
-\begin{solutionorbox}[6cm]
-    (a) Since the force starts at 0 and linearly increases to 900, the force must be half of 900, or
-
-    \begin{equation*}
-        F_\text{ave} = \SI{450}{N}
-    \end{equation*}
-
-(b) The impulse-momentum theorem states
+\begin{solutionorbox}[1.5cm]
+The average force is
 
 \begin{equation*}
-    F_\text{ave} \Delta t = m (v_f - v_i)
+    F_\mathrm{ave} = \frac{\SI{0}{N} + \SI{900}{N}}{2} = \boxed{\SI{450}{N}}
+\end{equation*}
+\end{solutionorbox}
+
+\part Using this average force, calculate the scooter's final velocity.
+
+\begin{solutionorbox}[4.5cm]
+The impulse-momentum theorem states
+
+\begin{equation*}
+    F_\text{ave} \Delta t = \Delta p =  m (v_f - v_i)
 \end{equation*}
 
-Solving this equation for the final velocity leads to
+where the known values in this problem are $F_\mathrm{ave} = \SI{450}{N}$, $\Delta t = \SI{3.0}{s}$, $m = \SI{90}{kg}$, and \\$v_i = \SI{10}{m/s}$. Dividing both sides by mass leads to
+
+\begin{equation*}
+    v_f - v_i = \frac{F_\mathrm{ave} \Delta t}{m}
+\end{equation*}
+
+Finally, adding initial velocity to both sides results in 
 
 \begin{align*}
     v_f &= \frac{F_\text{ave} \Delta t}{m} + v_i \\[1ex]
@@ -367,6 +427,7 @@ Solving this equation for the final velocity leads to
         &= \boxed{\SI{25}{m/s}}
 \end{align*}
 \end{solutionorbox}
+\end{parts}
 
 \fi
 

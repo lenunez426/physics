@@ -1,0 +1,599 @@
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\usepackage[none]{hyphenat}
+\setlength{\columnseprule}{0pt}
+
+\setrandomizerseed{1}
+
+% \newif\ifversionKlevel
+
+% \versionKlevelfalse
+
+\firstpageheader{{Name:\enspace\makebox[5cm]{\hrulefill}}}{}{Physics Review on Unit 1: Constant Motion}
+% \runningheader{Physics}{}{Unit 1 Review}
+
+
+% \firstpageheader{Physics\\Review on Unit 1: Constant Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+% \runningheader{Physics}{}{Unit 1 Review}
+
+% \ifversionKlevel
+%     \firstpageheader{Physics K\\Review on Unit 1: Constant Motion}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+%     \runningheader{Physics K}{}{Unit 1 Review}
+% \fi
+
+\begin{document}
+\subsubsection*{Know}
+
+\begin{multicols}{3}
+\begin{enumerate}[itemsep=0pt]
+    \item position
+    \item distance
+    \item displacement
+    \item magnitude
+    \item speed
+    \item velocity
+    \item motion map
+    \item position vs.\,time
+    \item velocity vs.\,time
+    \item relative velocity
+    \item momentum
+    \item kinetic energy
+\end{enumerate}
+\end{multicols}
+
+% \section*{Understand}
+
+% How do you\dots
+
+% \begin{itemize}[itemsep=0pt,topsep=2pt]
+%     \item 
+% \end{itemize}
+
+\subsubsection*{Do}
+
+\begin{questions}
+\question
+Below is the position versus time data tables for 3 Dune Buggy Cart runs. The starting point is the reference point for each cart.
+
+\begin{EnvUplevel}
+\def\arraystretch{1.3}
+\centering
+\begin{minipage}{5cm}
+    \centering
+    \textbf{Cart 1} 
+    \medskip
+    
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        0.0 & 0.0 \\ \hline
+        1.0 & 5.0 \\ \hline
+        2.0 & 10.0 \\ \hline
+        3.0 & 15.0 \\ \hline
+        4.0 & $x$ \\ \hline
+    \end{tabular}
+\end{minipage}%
+\hspace{2mm}%
+\begin{minipage}{5cm}
+    \centering
+    \textbf{Cart 2} 
+    \medskip
+    
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        0.0 & $-8.0$ \\ \hline
+        1.0 & $-4.0$ \\ \hline
+        2.0 & 0.0 \\ \hline
+        3.0 & 4.0 \\ \hline
+        4.0 & 8.0 \\ \hline
+    \end{tabular}
+\end{minipage}%
+\hspace{2mm}%
+\begin{minipage}{5cm}
+    \centering
+    \textbf{Cart 3} 
+    \medskip
+    
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Time} (s) & \textbf{Position} (m) \\ \hline
+        0.0 & 0.0 \\ \hline
+        1.0 & 2.0 \\ \hline
+        2.0 & 4.0 \\ \hline
+        3.0 & 6.0 \\ \hline
+        4.0 & 8.0 \\ \hline
+    \end{tabular}
+\end{minipage}%
+\end{EnvUplevel}
+
+\medskip
+
+\begin{parts}
+    \part Based on the data, determine the value of $x$ as shown for Cart 1. \fillin[20.0][2cm]
+    \part Which cart is running in the negative direction for at least, part of its motion? \fillin[none][2cm]
+    \part Rank the carts from fastest to slowest. \fillin[Cart 1][2cm]\,, \fillin[Cart 2][2cm]\,, and \fillin[Cart 3][2cm]
+    \part Assume all three dune buggies started at the same time and each maintained its constant speed. In which order will they arrive at a position of \SI{25}{m}? \fillin[Cart 1][2cm]\,, \fillin[Cart 2][2cm]\,, and \fillin[Cart 3][2cm]
+    \part Which cart started behind the starting line? \fillin[Cart 2][2cm]
+\end{parts}
+
+\question
+Determine the mathematical relationship (equation) that describes the data in the graph below from 0 to 2 Seconds. (\textit{Hint:} Convert the algebraic equation $y = mx + b$ into a physics equation. In the graph, what is plotted on the $y$-axis?  What is the slope ($m$)? What is plotted on the $x$-axis? What is the $y$-intercept ($b$)?)
+
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=4.5cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=10,
+        xmin=0,xmax=6,
+        ytick={0,2,...,10},
+        xtick={0,1,...,6},
+        minor x tick num = 1,
+        grid=both,
+    ]
+        \addplot[mark=*,black,thick] coordinates{(0,8)(2,2)(3,6)(5,6)(6,2)};
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\fbox{
+\begin{minipage}{7cm}
+    \hfill
+    
+    \ifprintanswers
+    {\color{red}
+    \begin{equation*}
+        \bar{v} = \frac{\Delta x}{\Delta t} = \frac{\SI{2}{m} - \SI{8}{m}}{\SI{2}{s} - \SI{0}{s}} = -\SI[per-mode=fraction]{3}{\meter\per\second}
+    \end{equation*}
+
+    \medskip
+
+    \begin{equation*}
+        x(t) = \left(-\SI[per-mode=fraction]{3}{\meter\per\second}\right) + \SI{8}{m}
+    \end{equation*}
+    
+    \vspace{1cm}
+    }
+    \else
+    \vspace{4cm}
+    \fi
+\end{minipage}}
+\end{EnvUplevel}
+
+\question
+A man rides in a car traveling north on a highway going \SI{25}{m/s}. A truck traveling south approaches the car going \SI{20}{m/s}. From the perspective of the man in the car, at what speed is the approaching truck traveling?
+
+\begin{solutionorbox}[2.5cm]
+Let $v_{cg} = \SI{25}{m/s}$ be the velocity of the car with relative to the ground, and $v_{tg} = -\SI{20}{m/s}$ be the velocity of the truck relative to the ground. Let $v_{tc}$ be the velocity of the truck relative to the car. For inertial frames with relative motion,
+
+\begin{equation*}
+    v_{tg} = v_{cg} + v_{tc}    
+\end{equation*}
+
+Substituting knowns,
+
+\begin{equation*}
+    \SI{-20}{m/s} = \SI{25}{m/s} + v_{tc}
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    v_{tc} = \SI{-20}{m/s} - \SI{25}{m/s} = \SI{-45}{m/s}
+\end{equation*}
+
+From the car's perspective, the truck's speed is the magnitude of the relative velocity: 
+
+\begin{equation*}
+    \text{relative speed} = \left|-\SI{45}{m/s}\right| = \boxed{\SI{45}{m/s}}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+For a \SI{45}{kg} boy riding his bicycle at a constant speed of \SI{25}{m/s}, show all possible ways we can represent their motion in the space below.
+
+\begin{solutionorbox}[5cm]
+
+\centering
+\begin{minipage}{4.3cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=4cm,
+        height=4cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=100,
+        xmin=0,xmax=4,
+        grid=both,
+    ]
+        \addplot[very thick,mark=*,samples=5,domain=0:4] {25*x}; 
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{10.2cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=10cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=25, 
+        xmin=0, xmax=100,
+        xtick={0,10,...,100},
+        minor x tick num=1,
+        clip=false,
+        ]
+            \pgfplotsinvokeforeach{0,25,50,75,100}{
+                \draw[thick,->] (#1,1) -- ++(6mm,0);
+                \draw[fill=black] (#1,1) circle (2pt);
+            }
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}%
+
+\begin{tikzpicture}
+    \begin{axis}[width=4cm,
+        height=4cm,
+        axis lines=left,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=0,ymax=50,
+        xmin=0,xmax=4,
+        grid=both,
+        ytick={0,10,...,50}
+    ]
+        \addplot[very thick,domain=0:4] {25}; 
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[width=4cm,
+        height=4cm,
+        axis lines=left,
+        ylabel={Momentum (\SI{}{kg\cdot m/s})},
+        xlabel={Time (s)},
+        ymin=0,ymax=2000,
+        xmin=0,xmax=4,
+        grid=both,
+        ytick={0,500,...,2000}
+    ]
+        \addplot[very thick,domain=0:4] {1125}; 
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[width=4cm,
+        height=4cm,
+        axis lines=left,
+        ylabel={Kinetic Energy (J)},
+        xlabel={Time (s)},
+        ymin=0,ymax=20000,
+        xmin=0,xmax=4,
+        grid=both,
+        ytick={0,5000,...,20000}
+    ]
+        \addplot[very thick,domain=0:4] {14062.5}; 
+    \end{axis}
+\end{tikzpicture}
+\end{solutionorbox}
+
+\question
+Study the position ($x$) vs.\,time($t$) graphs for cars A, B, C below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,height=4cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=4,
+        xmin=0,xmax=5,
+        ytick={0,1,...,4},
+        xtick={0,1,...,5},
+        grid=both,
+        clip=false,
+    ]
+        \draw[very thick] (0,0) -- (4.5,1.5) node[right] {A};
+        \draw[very thick] (0,0) -- (4,3.5) node[right] {B};
+        \draw[very thick] (0,0) -- (2,3.5) node[right] {C};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part Which car has the lowest velocity? \fillin[Car A][3cm]
+\part What explanation(s) can you offer to justify your answer in part (a) above? 
+
+\begin{solution}
+In a position vs.\,time graph, the slope is the velocity. Therefore, the steepest line represents the greatest velocity.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{1.4cm}
+\fi
+\end{parts}
+
+\question
+On the diagram below, the dots represent 1-second intervals. The motion maps for a dog and a cat are indicated. The owner's home is located at $x = \SI{0}{m}$.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=14cm,
+        axis lines = left,
+        axis y line=none,
+        xlabel = {Position (m)},
+        ymin=0, ymax=25, 
+        xmin=0, xmax=10,
+        xtick={0,1,...,10},
+        minor x tick num=1,
+        clip=false,
+        ]
+            \pgfplotsinvokeforeach{0,1,2,3,4}{
+                \draw[thick,->] (#1,1) -- ++(6mm,0);
+                \draw[fill=black] (#1,1) circle (2pt);
+            }
+            \pgfplotsinvokeforeach{10,7.75,5.5}{
+                \draw[thick,->] (#1,2) -- ++(-1.2cm,0);
+                \draw[fill=black] (#1,2) circle (2pt);
+            }
+            \node[left=2pt] at (0,1) {dog};
+            \node[right=2pt] at (10,2) {cat};
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\begin{parts}
+\part Which has a greater magnitude of velocity, the dog or the cat? How do you know?
+
+\begin{solution}
+    The cat, because it undergoes a greater displacement each second.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{14mm}
+\fi
+
+\part Which is moving towards the owner’s home? \fillin[cat][3cm]
+\part What is the displacement of the dog after 2 seconds of motion? \fillin[\SI{2}{m}][3cm]
+\part What is the displacement of the cat after 2 seconds of motion? \fillin[\SI{-4.5}{m}][3cm]
+\part What is the dog’s velocity from $t = \SI{0}{s}$ to $t = \SI{2}{s}$ in the above motion map? \fillin[\SI{1}{m/s}][3cm]
+\part What is the cat’s velocity from $t = \SI{0}{s}$ to $t = \SI{2}{s}$ in the above motion map? \fillin[\SI{-2.25}{m/s}][3cm]
+\end{parts}
+
+\question
+Consider the graph below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=4.5cm,
+        axis lines=left,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=0,ymax=50,
+        xmin=0,xmax=22,
+        ytick={0,10,...,50},
+        xtick={0,2,...,22},
+        grid=both
+    ]
+        \addplot[domain=0:20,samples=5,mark=*] {2*x};
+        \ifprintanswers
+            \begin{pgfonlayer}{background}
+                \draw[fill=red!15] (0,0) -- (20,40) -- (20,0) -- cycle;
+            \end{pgfonlayer}
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the instantaneous velocity at 10 seconds? 
+
+\begin{solution}
+    $v = \SI{20}{m/s}$
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\part What is the displacement of the object depicted above from $t = \SI{0}{s}$ to $t = \SI{20}{s}$?
+
+\begin{solutionorbox}[2.5cm]
+    In a velocity vs.\,time graph, displacement is the area bounded by the curve (see figure above). Displacement is the area of a triangle, given by
+
+    \begin{equation*}
+        \Delta x = \frac{1}{2} (\SI{40}{m/s})(\SI{20}{s}) = \boxed{\SI{400}{m}}
+    \end{equation*}
+\end{solutionorbox}
+\end{parts}
+
+
+\question
+The toy trucks and toy cars with given masses move at the speeds shown by the arrows. 
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \draw[very thick,->] (0.3,0) -- ++(1.5,0) node[above,pos=0.7] {\SI{2}{m/s}};
+    \node at (0,0) {\reflectbox{\usymH{1F69B}{16pt}}} node[above=8pt] {\SI{5}{kg}} node[below=10pt] {A};
+    \begin{scope}[shift={(4,0)}]
+        \draw[very thick,->] (0.4,0) -- ++(1.5,0) node[above,pos=0.7] {\SI{12.5}{m/s}};
+        \node at (0,0) {\reflectbox{\usymH{1F699}{16pt}}} node[above=8pt] {\SI{0.8}{kg}} node[below=10pt] {B};
+    \end{scope}
+    \begin{scope}[shift={(8,0)}]
+        \draw[very thick,->] (0.3,0) -- ++(1.5,0) node[above,pos=0.7] {\SI{5}{m/s}};
+        \node at (0,0) {\reflectbox{\usymH{1F69A}{16pt}}} node[above=8pt] {\SI{2}{kg}} node[below=10pt] {C};
+    \end{scope}
+    \begin{scope}[shift={(12,0)}]
+        \draw[very thick,->] (0.4,0) -- ++(1.5,0) node[above,pos=0.7] {\SI{20}{m/s}};
+        \node at (0,0) {\reflectbox{\usymH{1F697}{16pt}}} node[above=8pt] {\SI{0.5}{kg}} node[below=10pt] {D};
+    \end{scope}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\begin{parts}
+\part Which toy vehicle has the greatest kinetic energy? (Show your work)
+
+\begin{solutionorbox}[3.5cm]
+The kinetic energy of each vehicle is
+
+\begin{align*}
+    K_A &= \frac{1}{2}mv^2 = \frac{1}{2}(\SI{5}{kg})(\SI{2}{m/s})^2 = \SI{10}{J} \\[1em]
+    K_B &= \frac{1}{2}mv^2 = \frac{1}{2}(\SI{0.8}{kg})(\SI{12.5}{m/s})^2 = \SI{62.5}{J} \\[1em]
+    K_C &= \frac{1}{2}mv^2 = \frac{1}{2}(\SI{2}{kg})(\SI{5}{m/s})^2 = \SI{25}{J} \\[1em]
+    K_D &= \frac{1}{2}mv^2 = \frac{1}{2}(\SI{0.5}{kg})(\SI{20}{m/s})^2 = \boxed{\SI{100}{J}}
+\end{align*}
+\end{solutionorbox}
+\part Which toy vehicle has the greatest momentum? (Show your work)
+
+\begin{solutionorbox}[3.5cm]
+The momentum of each vehicle is
+
+\begin{align*}
+    p_A &= ma = (\SI{5}{kg})(\SI{2}{m/s}) = \SI{10}{kg\cdot m/s} \\[1em]
+    p_B &= ma = (\SI{0.8}{kg})(\SI{12.5}{m/s}) = \SI{10}{kg\cdot m/s} \\[1em]
+    p_C &= ma = (\SI{2}{kg})(\SI{5}{m/s}) = \SI{10}{kg\cdot m/s} \\[1em]
+    p_D &= ma = (\SI{0.5}{kg})(\SI{20}{m/s}) = \SI{10}{kg\cdot m/s}
+\end{align*}
+
+So they all have the same momentum.
+
+\end{solutionorbox}
+\part Which toy vehicle has the greatest inertia?
+
+\begin{solution}
+    Truck A has the greatest inertia because it has the greatest mass.
+\end{solution}
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question
+A skateboarder mounted their skateboard at a position \SI{5}{m} from the reference (zero) point and then moves with a constant velocity of \SI{1.5}{m/s} in the positive direction. Find their
+
+\begin{parts}
+\part displacement ($\Delta x$) after 8 seconds 
+
+\begin{solutionorbox}[1.5cm]
+
+\begin{equation*}
+    \Delta x = \bar{v}t = (\SI{1.5}{m/s})(\SI{8}{s}) = \boxed{\SI{12}{m}}
+\end{equation*}
+\end{solutionorbox}
+
+\part position ($x$) after 8 seconds
+
+\begin{solutionorbox}[1.5cm]
+By $\Delta x = x_f - x_0$,
+
+\begin{equation*}
+    x_f = \Delta x + x_0 = \SI{12}{m} + \SI{5}{m} = \boxed{\SI{17}{m}}
+\end{equation*}
+\end{solutionorbox}
+
+\end{parts}
+
+\question
+How would the momentum of an object change if its velocity was doubled?
+
+\begin{solution}
+    Because momentum is proportional to velocity, the momentum would double.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+How would the kinetic energy of an object change if its velocity was doubled?
+
+\begin{solution}
+    Because kinetic energy is proportional to velocity squared, the kinetic energy would quadruple.
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{14mm}
+\fi
+
+\question
+An object moves \SI{7}{cm} east from the origin, then \SI{3}{cm} south, and finally \SI{6}{cm} west.
+
+\begin{parts}
+\part Draw a vector diagram to illustrate the motion.
+
+\begin{solutionorbox}[2cm]
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw[thick,->] (0,0) -- (7,0) node[above,pos=0.5] {7\,cm east};
+    \draw[thick,->] (7,0) -- (7,-3) node[pos=0.5,right] {3\,cm south};
+    \draw[thick,->] (7,-3) -- (1,-3) node[below,pos=0.5] {6\,cm west};
+    \draw[densely dashed,->,thick,gray] (0,0) -- (1,-3) node[left,pos=0.5] {3.16\,cm};
+\end{tikzpicture}
+\end{center}
+\end{solutionorbox}
+
+\part Use your diagram to determine the object’s total distance traveled. \fillin[\SI{16}{cm}][3cm]
+
+\part Determine the object's displacement. \fillin[3.16\,cm][3cm]
+\end{parts}
+
+\question
+Use the graph to answer the questions below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=6.5cm,height=5.5cm,
+        axis lines=left,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=0,ymax=50,
+        xmin=0,xmax=12,
+        ytick={0,10,...,50},
+        xtick={0,2,...,12},
+        minor y tick num=1,
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+    ]
+        \draw[very thick] (0,0)  -- (2,20) -- (4,20) node[below,pos=0.15] {B} node[below] {C} -- (5,40) -- (8,40) node[below,pos=0.15] {D} node[below,pos=0.85] {E} -- (10,20) -- (11,20) node[below,pos=0] {F} node[below] {G} -- (12,30) node[left] {H};
+        \node at (0.7,2.8) {A};
+    \end{axis}
+\end{tikzpicture}
+
+\begin{parts}
+    \part What is the displacement from A -- F (0 -- 10 seconds)? \fillin[\SI{20}{m}][4cm]
+    \part What is the velocity from A -- B (0 -- 2 seconds)? \fillin[\SI{10}{m/s}][4cm]
+    \part During which time interval is the object stationary? \fillin[B--C, D--E, F--G][4cm]
+    \part During which time interval is the velocity greatest? \fillin[C--D][4cm]
+    \part When is the object moving in the negative direction? \fillin[E--F][4cm]
+\end{parts}
+\end{center}
+\vspace{-1em}
+
+
+\end{questions}
+\end{document}
+
+        % \draw[->] (10,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        % \draw[->] (8,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        % \draw[->] (6,1) --++ (-1,0) node[above,pos=0.5] {$v$};
+        % \fill (10,1) circle (3pt) node[right=3pt] {start};
+        % \fill (8,1) circle (3pt);
+        % \fill (6,1) circle (3pt);
+        % \fill (4,1) circle (3pt);

@@ -2,7 +2,22 @@
 \usepackage{OutilsGeomTikz}
 
 %...Theorem for examples
-\theoremstyle{definition}
+% \theoremstyle{definition}
+% \newtheorem{example}{Example}
+\newtheoremstyle{tight-highlight}
+  {6pt}   % Space above
+  {6pt}   % Space below
+  {\normalfont}  % Body font
+  {}      % Indent amount
+  {\bfseries}  % Theorem head font
+  {.}     % Punctuation after theorem head
+  { }     % Space after theorem head
+  {%
+    \setlength{\fboxsep}{1.5pt}% tighter box padding
+    \colorbox{black!20}{#1~#2#3}%
+  }
+
+\theoremstyle{tight-highlight}
 \newtheorem{example}{Example}
 \newtheorem{exercise}{Exercise}
 

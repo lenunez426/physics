@@ -9,20 +9,22 @@
 
 \versionKlevelfalse
 
-\firstpageheader{Physics\\Review on Unit 5: Force Analysis}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
-\runningheader{Physics}{}{Unit 4 Review}
+% \firstpageheader{Physics\\Review on Unit 5: Force Analysis}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+% \runningheader{Physics}{}{Unit 4 Review}
 
-\ifversionKlevel
-    \firstpageheader{Physics K\\Review on Unit 5: Force Analysis}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
-    \runningheader{Physics K}{}{Unit 4 Review}
-\fi
+% \ifversionKlevel
+%     \firstpageheader{Physics K\\Review on Unit 5: Force Analysis}{}{{Name:\enspace\makebox[5cm]{\hrulefill}}}
+%     \runningheader{Physics K}{}{Unit 4 Review}
+% \fi
+
+\firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics Review on Unit 5: Force Analysis}
 
 \begin{document}
-\section*{Know}
+\subsection*{Know}
 
 \begin{multicols}{3}
 \begin{enumerate}[itemsep=0pt]
-    \item Newton's universal law of gravitation
+    \item Newton's law of universal gravitation
     \item gravitational force
     \item weight
     \item mass
@@ -37,7 +39,7 @@
 \end{enumerate}
 \end{multicols}
 
-% \section*{Understand}
+% \subsection*{Understand}
 
 % How do you\dots
 
@@ -45,7 +47,7 @@
 %     \item 
 % \end{itemize}
 
-\section*{Do}
+\subsection*{Do}
 
 \begin{questions}
 \question 
@@ -64,7 +66,7 @@ It's the same as the weight of the book:
 \question 
 What is the weight of an 12 kilogram object on the surface of Earth?
 
-\begin{solutionorbox}[2cm]
+\begin{solutionorbox}[1cm]
 \begin{equation*}
     F_g = mg = (\SI{12}{kg})(\SI{10}{N/kg}) = \boxed{\SI{120}{N}}
 \end{equation*}
@@ -72,7 +74,7 @@ What is the weight of an 12 kilogram object on the surface of Earth?
 
 
 \question
-An object is on a rough, horizontal surface is pushed to the right at a constant speed. Write an equation that correctly describes the net force acting in the vertical direction. 
+An object is on a rough, horizontal surface is pushed to the right at a constant speed. Write net force equations that correctly describe the forces acting in the horizontal and vertical directions. 
 
 \begin{center}
     \begin{tikzpicture}
@@ -83,9 +85,10 @@ An object is on a rough, horizontal surface is pushed to the right at a constant
 \end{center}
 
 \begin{solutionorbox}[2cm]
-\begin{equation*}
-    F_\mathrm{N} - F_g = 0
-\end{equation*}
+\begin{align*}
+    F_{\mathrm{net},x} &= F_\mathrm{A} - F_f = 0 \\[1ex]
+    F_{\mathrm{net},y} &= F_\mathrm{N} - F_g = 0
+\end{align*}
 \end{solutionorbox}
 
 \question 
@@ -100,7 +103,36 @@ Peter Parker pulls an empty sled to the right at a constant speed. MJ then jumps
     The friction force is proportional to the normal force, so friction increases.
 \end{solution}
 
+\question
+Draw a free-body diagram of a ball falling with air resistance and speeding up.
+
+\begin{center}
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}[scale=0.75,transform shape]
+    \node at (0,0) {\twemoji[height=1cm]{tennis}};
+    \draw[black!80] (-0.6,0.2) -- ++(0,1)
+                    (+0.6,0.2) -- ++(0,1)
+                    (+0.75,0.4) -- ++(0,0.5)
+                    (-0.75,0.4) -- ++(0,0.5);
+    \draw[opacity=0] (0,0) -- (0,-2.2);
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    \ifprintanswers \color{red} \else \color{white} \fi
+    \draw[thick,->] (0,0) -- (0,-1) node[right] {$F_g$};
+    \draw[thick,->] (0,0) -- (0,0.5) node[right] {$F_d$};
+    \fill[black] (0,0) circle (3pt);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\ifprintanswers
+\else
 \clearpage
+\fi
 \question 
 Three objects with the same mass are sliding across a rough surface with no applied forces acting on any of them. The velocity vs time graph shown below depicts their motion. Which object experiences the greatest friction force?
 
@@ -139,11 +171,11 @@ Three objects with the same mass are sliding across a rough surface with no appl
 
 \ifprintanswers
 \else
-\fillwithlines{3cm}
+\fillwithlines{21mm}
 \fi
 
 \begin{solution}
-    The object's mass stays constant. The object's weight decreases under the smaller gravitational field strength on the Moon.
+    (a) The object's mass stays constant. (b) The object's weight decreases under the smaller gravitational field strength on the Moon.
 \end{solution}
 
 
@@ -171,27 +203,14 @@ An experiment is conducted on Planet X in which mass on a spring scale is varied
 
 What is the acceleration due to gravity on Planet X? (In other words, what is the strength of the gravitational field?)
 
-\begin{solution}
+\begin{solutionorbox}[4cm]
     The gravitational field strength is the slope of the graph:
 
 \begin{equation*}
-    g = \frac{\SI{12}{N} - 0}{\SI{8.0}{kg} - 0} = \boxed{\SI{1.5}{N/kg}}
+    g = \frac{\SI{21}{N} - 0}{\SI{15.0}{kg} - 0} = \boxed{\SI{1.4}{N/kg}}
 \end{equation*}
-\end{solution}
+\end{solutionorbox}
 
-
-\question
-Draw a free-body diagram of a ball falling with air resistance and speeding up.
-
-\begin{center}
-    \begin{tikzpicture}
-        \node at (0,0) {\twemoji[height=1cm]{tennis}};
-        \draw[black!80] (-0.6,0.2) -- ++(0,1)
-                        (+0.6,0.2) -- ++(0,1)
-                        (+0.75,0.4) -- ++(0,0.5)
-                        (-0.75,0.4) -- ++(0,0.5);
-    \end{tikzpicture}
-\end{center}
 
 
 \ifprintanswers
@@ -199,68 +218,68 @@ Draw a free-body diagram of a ball falling with air resistance and speeding up.
 \clearpage
 \fi
 
-\begin{solution}
-\begin{center}
-    \begin{tikzpicture}
-        \fill (0,0) circle (3pt);
-        \draw[->] (0,0) -- (0,0.6) node[above] {$F_d$};
-        \draw[->] (0,0) -- (0,-1.2) node[below] {$F_g$};
-    \end{tikzpicture}
-\end{center}
-\end{solution}
+% \begin{solution}
+% \begin{center}
+%     \begin{tikzpicture}
+%         \fill (0,0) circle (3pt);
+%         \draw[->] (0,0) -- (0,0.6) node[above] {$F_d$};
+%         \draw[->] (0,0) -- (0,-1.2) node[below] {$F_g$};
+%     \end{tikzpicture}
+% \end{center}
+% \end{solution}
 
-\question
-Which diagram best represents the gravitational forces, $F_g$, between a satellite, S, and Earth?
+% \question
+% Which diagram best represents the gravitational forces, $F_g$, between a satellite, S, and Earth?
 
-\begin{center}
-    \begin{tikzpicture}
-        \draw[->,white] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$}; %...for scaling; don't erase
-        \draw[->] (0,0) -- (0,+0.6+0.6) node[right] {$F_g$};
-        \draw[fill=white] (0,0) circle (6mm) node {Earth};
-        \begin{scope}[yshift=2.8cm]
-            \draw[->,white] (0,0) -- (0,0.3+0.6) node[right] {$F_g$}; %...for scaling; don't erase
-            \draw[->] (0,0) -- (0,-0.3-0.6) node[right] {$F_g$};
-            \draw[fill=white] (0,0) circle (3mm) node {S};
-            \node at (0,1.5) {\bfseries Diagram A};
-        \end{scope}
-    \end{tikzpicture}
-    \hspace{2em}
-    \begin{tikzpicture}
-        \draw[->] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$};
-        \draw[fill=white] (0,0) circle (6mm) node {Earth};
-        \begin{scope}[yshift=2.8cm]
-            \draw[->,white] (0,0) -- (0,0.3+0.6) node[right] {$F_g$}; %...for scaling; don't erase
-            \draw[->] (0,0) -- (0,-0.3-0.6) node[right] {$F_g$};
-            \draw[fill=white] (0,0) circle (3mm) node {S};
-            \node at (0,1.5) {\bfseries Diagram B};
-        \end{scope}
-    \end{tikzpicture}
-    \hspace{2em}
-    \begin{tikzpicture}
-        \draw[->] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$};
-        \draw[fill=white] (0,0) circle (6mm) node {Earth};
-        \begin{scope}[yshift=2.8cm]
-            \draw[->] (0,0) -- (0,0.3+0.6) node[right] {$F_g$};
-            \draw[fill=white] (0,0) circle (3mm) node {S};
-            \node at (0,1.5) {\bfseries Diagram C};
-        \end{scope}
-    \end{tikzpicture}
-    \hspace{2em}
-    \begin{tikzpicture}
-        \draw[->,white] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$}; %...for scaling; don't erase
-        \draw[->] (0,0) -- (0,+0.6+0.6) node[right] {$F_g$};
-        \draw[fill=white] (0,0) circle (6mm) node {Earth};
-        \begin{scope}[yshift=2.8cm]
-            \draw[->] (0,0) -- (0,0.3+0.6) node[right] {$F_g$};
-            \draw[fill=white] (0,0) circle (3mm) node {S};
-            \node at (0,1.5) {\bfseries Diagram D};
-        \end{scope}
-    \end{tikzpicture}
-\end{center}
+% \begin{center}
+%     \begin{tikzpicture}
+%         \draw[->,white] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$}; %...for scaling; don't erase
+%         \draw[->] (0,0) -- (0,+0.6+0.6) node[right] {$F_g$};
+%         \draw[fill=white] (0,0) circle (6mm) node {Earth};
+%         \begin{scope}[yshift=2.8cm]
+%             \draw[->,white] (0,0) -- (0,0.3+0.6) node[right] {$F_g$}; %...for scaling; don't erase
+%             \draw[->] (0,0) -- (0,-0.3-0.6) node[right] {$F_g$};
+%             \draw[fill=white] (0,0) circle (3mm) node {S};
+%             \node at (0,1.5) {\bfseries Diagram A};
+%         \end{scope}
+%     \end{tikzpicture}
+%     \hspace{2em}
+%     \begin{tikzpicture}
+%         \draw[->] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$};
+%         \draw[fill=white] (0,0) circle (6mm) node {Earth};
+%         \begin{scope}[yshift=2.8cm]
+%             \draw[->,white] (0,0) -- (0,0.3+0.6) node[right] {$F_g$}; %...for scaling; don't erase
+%             \draw[->] (0,0) -- (0,-0.3-0.6) node[right] {$F_g$};
+%             \draw[fill=white] (0,0) circle (3mm) node {S};
+%             \node at (0,1.5) {\bfseries Diagram B};
+%         \end{scope}
+%     \end{tikzpicture}
+%     \hspace{2em}
+%     \begin{tikzpicture}
+%         \draw[->] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$};
+%         \draw[fill=white] (0,0) circle (6mm) node {Earth};
+%         \begin{scope}[yshift=2.8cm]
+%             \draw[->] (0,0) -- (0,0.3+0.6) node[right] {$F_g$};
+%             \draw[fill=white] (0,0) circle (3mm) node {S};
+%             \node at (0,1.5) {\bfseries Diagram C};
+%         \end{scope}
+%     \end{tikzpicture}
+%     \hspace{2em}
+%     \begin{tikzpicture}
+%         \draw[->,white] (0,0) -- (0,-0.6-0.6) node[right] {$F_g$}; %...for scaling; don't erase
+%         \draw[->] (0,0) -- (0,+0.6+0.6) node[right] {$F_g$};
+%         \draw[fill=white] (0,0) circle (6mm) node {Earth};
+%         \begin{scope}[yshift=2.8cm]
+%             \draw[->] (0,0) -- (0,0.3+0.6) node[right] {$F_g$};
+%             \draw[fill=white] (0,0) circle (3mm) node {S};
+%             \node at (0,1.5) {\bfseries Diagram D};
+%         \end{scope}
+%     \end{tikzpicture}
+% \end{center}
 
-\begin{solution}
-    Diagram A
-\end{solution}
+% \begin{solution}
+%     Diagram A
+% \end{solution}
 
 
 \question
@@ -272,7 +291,7 @@ According to the Newton's universal law of gravitation, when the distance betwee
 \fi
 
 \begin{solution}
-    The gravitational force increases as 1 over the distance squared.
+    The gravitational force increases in proportion to the distance squared.
 \end{solution}
 
 
@@ -282,7 +301,7 @@ According to the Newton's universal law of gravitation, when the distance betwee
 \end{EnvUplevel}
 
 \begin{center}
-\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+\begin{tikzpicture}[x=1.1cm,y=1.1cm]
     \draw (0,0) -- (5.5,0);
     \draw[thick,fill=black!10] (2,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{20}{kg}};
     \begin{scope}[shift={(3.5,0.5)}]
@@ -296,19 +315,44 @@ According to the Newton's universal law of gravitation, when the distance betwee
 \question \label{Q24}
 What is the magnitude of the vertical component of the tension force?
 
-\begin{solution}
-By the Pythagorean theorem,
+\begin{solutionorbox}[1cm]
+
+\begin{center}
+\begin{tikzpicture}[x=4cm,y=4cm]
+    \draw[thick,->] (0,0) -- ({cos(37)},{sin(37)}) node[above,pos=0.5,rotate=37] {$F = \SI{90}{N}$};
+    \draw[thick,->] ({cos(37)},0) -- ++(0,{sin(37)}) node[right,pos=0.5] {$F_y$};
+    \draw[thick,->] (0,0) -- ({cos(37)},0) node[below,pos=0.5] {$F_x = \SI{72}{N}$};
+\end{tikzpicture}
+\end{center}
+
+By the Pythagorean theorem, the force relates to its components as
+
+\begin{equation*}
+    F_x^2 + F_y^2 = F^2
+\end{equation*}
+
+Plugging in values and solving for the vertical component leads to
 
 \begin{equation*}
     F_y = \sqrt{90^2 - 72^2} = \boxed{\SI{54}{N}}
 \end{equation*}
-\end{solution}
+\end{solutionorbox}
 
 
 \question \label{Q25}
 What is the magnitude of the normal force acting on the box?
 
-\begin{solution}
+\begin{solutionorbox}[1cm]
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \fill (0,0) circle (4pt);
+    \draw[thick,->] (-1.5pt,0) -- ++(0,1) node[left] {$F_\mathrm{N}$};
+    \draw[thick,->,densely dashed] (+1.5pt,0) -- ++(0,0.37) node[right] {$F_y$};
+    \draw[thick,->] (0,0) -- ++(0,-1.37) node[right] {$F_g$};
+    \draw[thick,->,densely dashed] (0,0) -- (0.5,0) node[right] {$F_x$};
+\end{tikzpicture}
+\end{center}
 The net force equation in the vertical direction states
 
 \begin{equation*}
@@ -323,59 +367,89 @@ where the weight of the box is
 
 Therefore, the normal force on the box is
 
-\begin{equation*}
-    F_\mathrm{N} = F_g - F_y = \SI{200}{N} - \SI{54}{N} = \boxed{\SI{146}{N}}
-\end{equation*}
-\end{solution}
+\begin{align*}
+    F_\mathrm{N} &= F_g - F_y \\[1ex]
+    &= \SI{200}{N} - \SI{54}{N} \\[1ex]
+    &= \boxed{\SI{146}{N}}
+\end{align*}
+\end{solutionorbox}
 
 \question
 The diagram shows two bowling balls, of different masses, separated by half a meter. 
 
-\begin{center}
-    \begin{tikzpicture}[x=8mm,y=8mm]
-        \draw (0,0) circle (1) node {\SI{6}{kg}} node[above=8mm] {\textbf{A}};
-        \draw (5,0) circle (1) node {\SI{8}{kg}} node[above=8mm] {\textbf{B}};
-        \begin{scope}[shift={(0,-1.2)}]
-            \draw[|<->|] (0,0) -- (5,0) node[below,pos=0.5] {\SI{0.5}{m}};
-        \end{scope}
-    \end{tikzpicture}
-\end{center}
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}[x=8mm,y=8mm]
+    \draw (0,0) circle (1) node {\SI{6}{kg}} node[above=8mm] {\textbf{A}};
+    \draw (5,0) circle (1) node {\SI{8}{kg}} node[above=8mm] {\textbf{B}};
+    \begin{scope}[shift={(0,-1.2)}]
+        \draw[|<->|] (0,0) -- (5,0) node[below,pos=0.5] {\SI{0.5}{m}};
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\fbox{
+\begin{minipage}{7cm}
+\centering
+\vspace{0.5cm}
+\begin{tikzpicture}[x=8mm,y=8mm]
+    \ifprintanswers
+        \draw[red,thick,->] (0,0) -- (1.5,0) node[right] {$F_g$};
+        \draw[red,thick,->] (5,0) -- ++(-1.5,0) node[left] {$F_g$};
+    \fi
+    \fill (0,0) circle (3pt) node[above=3pt] {A};
+    \fill (5,0) circle (3pt) node[above=3pt] {B};
+\end{tikzpicture}
+\vspace{0.5cm}
+\end{minipage}
+}
+\end{EnvUplevel}
 
-What is the magnitude of the gravitational force exerted by ball A on ball B?
+\begin{parts}
+\part Draw free-body diagrams consisting only of the gravitational forces the balls exert on each other, in the space provided above. 
 
-\begin{solutionorbox}[3cm]
+
+\part What is the magnitude of the gravitational force exerted by ball A on ball B?
+
+\begin{solutionorbox}[2cm]
 \begin{equation*}
     F_g = \frac{G m_1 m_2}{r^2} = \frac{\left(\SI{6.67e-11}{N\cdot m^2/kg^2}\right)(\SI{6}{kg})(\SI{8}{kg})}{(\SI{0.5}{m})^2} = \boxed{\SI{1.28e-8}{N}}
 \end{equation*}
 \end{solutionorbox}
-
+\end{parts}
 
 \question
-(K-level only) In the figure below, static friction prevents a box from sliding.
+In the figure below, static friction prevents a box from sliding. Draw the free-body diagram.
+
+% \begin{center}
+% \begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
+%     \draw (0,0) -- (5,0);
+%     \draw[fill=black!10] (2,0) rectangle ++(1,1);
+%     \end{tikzpicture}
+% \end{center}
 
 \begin{center}
+\begin{minipage}{3.5cm}
+\centering
 \begin{tikzpicture}[x=7mm,y=7mm,rotate=-37]
     \draw (0,0) -- (5,0);
     \draw[fill=black!10] (2,0) rectangle ++(1,1);
-    \end{tikzpicture}
-\end{center}
-
-Draw a free body diagram for this scenario.
-
-\begin{solution}
-\begin{center}
-\begin{tikzpicture}
-    \begin{scope}[x=1.5cm,y=1.5cm]
-            \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
-            \begin{scope}[rotate=-37]
-                \draw[thick,->] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
-                \draw[thick,->] (0,0) -- ({-sin(37)},0) node[left] {$F_f$};
-            \end{scope}
-            \fill[black] (0,0) circle (3pt);
-    \end{scope}
 \end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{3.5cm}
+\centering
+\begin{tikzpicture}[x=1.5cm,y=1.5cm,rotate=-37]
+    \ifprintanswers \color{red} \else \color{white} \fi
+        \draw[thick,->,rotate=37] (0,0) -- (0,-1) node[below] {$F_g$};
+        \draw[thick,->] (0,0) -- (0,{cos(37)}) node[above] {$F_\mathrm{N}$};
+        \draw[thick,->] (0,0) -- ({-sin(37)},0) node[left] {$F_f$};
+    \fill[black] (0,0) circle (3pt);
+\end{tikzpicture}
+\end{minipage}
 \end{center}
-\end{solution}
+
+
 
 
 
@@ -427,174 +501,157 @@ A rocket \twemoji[width=3.5mm]{rocket} is moving across various positions near t
 \end{tikzpicture}
 \end{center}
 
-Find the gravitational force on the rocket, in newtons, when the rocket is located at each of the following positions:
+Find the gravitational force on the rocket, in newtons, when the rocket is located at each of the Positions A through G. Show your work in the space below.
 
-\begin{parts}
-\part Position A
+\begin{solutionorbox}[9cm]
 
-\begin{solutionorbox}
-Let $F_0$ be the original force of gravity on the rocket, and $r_0$ be the rocket's original position. Let $F$ be the new gravitational force at a different position, and $r$ be the new position. If the masses of the objects do not change, then ratio of the new gravitational force to old is equal to the square of the ratio of the old force to the new:
+Let $F_0 = \SI{1440}{N}$ be the original force of gravity on the rocket, and $r_0$ be the distance corresponding to the rocket's original position. Let $F$ be the new gravitational force at a different position, and $r$ be the new position. 
+
+Newton's universal law of gravitation states
 
 \begin{equation*}
-    \frac{F}{F_0} = \left(\frac{r_0}{r}\right)^2
+    F_g = \frac{G m_1 m_2}{r^2}
 \end{equation*}
 
-So, the gravitational force at any position is
+and shows that gravitational force is inversely proportional to the distance squared:
 
 \begin{equation*}
-    \boxed{F = F_0 \left(\frac{r_0}{r}\right)^2}
+    F_g \propto \frac{1}{r^2}
 \end{equation*}
 
-At Position A, the rocket's distance is cut in half compared to the old distance. 
-
-The ratio of the old distance  so the ratio is
+Therefore, the new force as a proportion of the original force is given by
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{2}{1} = 2
+    \boxed{F = \frac{F_0}{\left(r/r_0\right)^2}}
+\end{equation*}
+
+At Position A, counting squares, we see that the rocket's distance is cut in half compared to the old distance. The ratio of the old distance so the ratio is
+
+\begin{equation*}
+    \frac{r}{r_0} = \frac{2}{4} = \frac{1}{2}
 \end{equation*}
 
 Therefore, the gravitational force at Position A is
 \vspace{-1ex}
 
 \begin{align*}
-    F_A &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{2}{1}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})(2^2) \\[1ex]
+    F_\mathrm{A} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(1/2)^2} \\[1ex]
+    &= \frac{F_0}{0.25} \\[1ex]
+    &= \frac{\SI{1440}{N}}{0.25} \\[1ex]
     &= \boxed{\SI{5760}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position B
 
-\begin{solutionorbox}
-At Position B, the rocket's distance is doubled compared to the old distance, so the ratio of the old distance to the new is 
+At Position B, the rocket's distance is doubled compared to the old distance:
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{1}{2}
+    \frac{r}{r_0} = \frac{8}{4} = \frac{2}{1}
 \end{equation*}
 
-Therefore, the gravitational force at Position B is
-\vspace{-1em}
+So,
 
 \begin{align*}
-    F_B &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1}{2}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1^2}{2^2}\right) \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1}{4}\right) \\[1ex]
+    F_\mathrm{B} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(2/1)^2} \\[1ex]
+    &= \frac{\SI{1440}{N}}{4} \\[1ex]
     &= \boxed{\SI{360}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position C
-
-\begin{solutionorbox}
-At Position C, the rocket's distance is tripled compared to the old distance. There are 4 squares between the center of the moon and the rocket in the original position. At Position C, there are 12 squares between the moon's center and rocket. Thus the distance has increased by a factor of $\frac{12}{4} = 3$, or triple. 
-
-The ratio of the original distance to the new is
+At Position C, counting squares, we see that the rocket's distance is tripled compared to the old distance:
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{4}{12} = \frac{1}{3}
+    \frac{r}{r_0} = \frac{12}{4} = \frac{3}{1}
 \end{equation*}
 
-Therefore, the gravitational force at Position C is
-\vspace{-1em}
+Therefore,
 
 \begin{align*}
-    F_C &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1}{3}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1^2}{3^2}\right) \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{1}{9}\right) \\[1ex]
+    F_\mathrm{C} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(3/1)^2} \\[1ex]
+    &= \frac{\SI{1440}{N}}{9} \\[1ex]
     &= \boxed{\SI{160}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position D
 
-\begin{solutionorbox}
-At Position D, the rocket's distance increases by a factor of $\frac{3}{2}$ compared to the old distance. There are 4 squares between the center of the moon and the rocket in the original position. At Position D, there are 6 squares between the moon's center and rocket. Therefore, the distance has increased by a factor of $\frac{6}{4} = \frac{3}{2}$. 
-
-The ratio of the original distance to the new is
+At Position D,
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{4}{6}
+    \frac{r}{r_0} = \frac{6}{4} = \frac{3}{2}
 \end{equation*}
 
-Therefore, the gravitational force at Position C is
-\vspace{-1em}
+So,
 
 \begin{align*}
-    F_D &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{4}{6}\right)^2 \\[1ex]
+    F_\mathrm{D} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(3/2)^2} \\[1ex]
+    &= \frac{\SI{1440}{N}}{2.25} \\[1ex]
     &= \boxed{\SI{640}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position E
-
-\begin{solutionorbox}
-At Position E, the rocket's distance increases by a factor of $\frac{7}{2}$ compared to the old distance. There are 4 squares between the center of the moon and the rocket in the original position. At Position E, there are 14 squares between the moon's center and rocket. Therefore, the distance has increased by a factor of $\frac{14}{4} = \frac{7}{2}$. 
-
-The ratio of the original distance to the new is
+At Position E,
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{4}{14} 
+    \frac{r}{r_0} = \frac{14}{4} 
 \end{equation*}
 
-Therefore, the gravitational force at Position E is
-\vspace{-1em}
+Thus,
 
 \begin{align*}
-    F_E &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{4}{14}\right)^2 \\[1ex]
+    F_\mathrm{E} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(14/4)^2} \\[1ex]
+    &= \frac{\SI{1440}{N}}{12.25} \\[1ex]
     &= \boxed{\SI{118}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position F
 
-\begin{solutionorbox}
-At Position F, the rocket's distance increases by a factor of $\frac{5}{2}$ compared to the old distance. There are 4 squares between the center of the moon and the rocket in the original position. At Position F, there are 10 squares between the moon's center and rocket. Therefore, the distance has increased by a factor of $\frac{10}{4} = \frac{5}{2}$. 
-
-The ratio of the original distance to the new is
+At Position F, 
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{4}{10} 
+    \frac{r_0}{r} = \frac{10}{4} 
 \end{equation*}
 
-Therefore, the gravitational force at Position F is
-\vspace{-1em}
+So,
 
 \begin{align*}
-    F_F &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{4}{10}\right)^2 \\[1ex]
+    F_\mathrm{F} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{(10/4)^2} \\[1ex]
+    &= \frac{\SI{1440}{N}}{6.25} \\[1ex]
     &= \boxed{\SI{230}{N}}
 \end{align*}
-\end{solutionorbox}
 
-\part Position G (K-level only)
 
-\begin{solutionorbox}
-At Position G, the rocket's distance increases by a factor of $\frac{6.32}{4}$ compared to the old distance. There are 4 squares between the center of the moon and the rocket in the original position. At Position G, there are $\sqrt{6^2+2^2} = 6.32$ squares between the moon's center and rocket. Therefore, the distance has increased by a factor of $\frac{6.32}{4}$. 
+At Position G, the new distance has a magnitude of $\sqrt{6^2 + 2^2}$, as shown below.
 
-The ratio of the original distance to the new is
+\begin{center}
+\begin{tikzpicture}[x=6mm,y=6mm]
+    \draw (0,0) -- (6,0) node[below,pos=0.5] {$6$};
+    \draw (6,0) -- (6,2) node[right,pos=0.5] {$2$};
+    \draw (0,0) -- (6,2) node[above,pos=0.5,rotate=18] {$\sqrt{6^2 + 2^2}$};
+    \node[opacity=0.7] at (0,0) {\twemoji[width=8mm]{full moon}};
+    \fill (6,2) circle (2pt) node[above left] {G};
+\end{tikzpicture}
+\end{center}
+
+The ratio of distances is
 
 \begin{equation*}
-    \frac{r_0}{r} = \frac{4}{6.32} 
+    \frac{r}{r_0} = \frac{\sqrt{6^2 + 2^2}}{4} 
 \end{equation*}
 
-Therefore, the gravitational force at Position F is
-\vspace{-1em}
+Therefore,
 
 \begin{align*}
-    F_F &= F_0 \left(\frac{r_0}{r}\right)^2 \\[1ex]
-    &= (\SI{1440}{N})\left(\frac{4}{6.32}\right)^2 \\[1ex]
+    F_\mathrm{G} &= \frac{F_0}{\left(r/r_0\right)^2} \\[1ex]
+    &= \frac{F_0}{\left(\displaystyle \frac{\sqrt{6^2 + 2^2}}{4}\right)^2} \\[1ex]
+    &= \frac{F_0}{\left(6^2 + 2^2\right)/4^2} \\[1ex]
+    &= \frac{F_0}{2.5} \\[1ex]
+    &= \frac{\SI{1440}{N}}{2.5} \\[1ex]
     &= \boxed{\SI{576}{N}}
 \end{align*}
 \end{solutionorbox}
 
-\end{parts}
 
-% \clearpage
 \question
 The object is accelerated rightward by an applied force parallel to the rough surface. Draw the free-body diagram, and write the net force equations in horizontal and vertical directions.
 

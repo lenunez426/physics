@@ -1,6 +1,8 @@
 \documentclass[answers,dvipsnames]{exam}
+\usepackage{countriesofeurope} %...MUST BE BEFORE \INPUT{GLOBAL} AND \INPUT{PROBLEM-SETS }
 \input{global}
 \input{problem-sets}
+
 
 \setrandomizerseed{1}
 
@@ -9,6 +11,76 @@
 
 \begin{document}
 \begin{questions}
+
+\question %45
+Sonic the Hedgehog moves in a straight line with an initial velocity of \SI{15}{m/s} and constant acceleration of \SI{30}{m/s^2}. What is his displacement after 5 seconds of moving?
+
+\ifprintanswers
+\bgroup
+\color{red}
+\begin{flalign*}
+    \Delta x = v_{i} t + \frac{1}{2}at^2 &&
+\end{flalign*}
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{450}{m}
+    \choice \SI{525}{m}
+    \choice \SI{75}{m}
+    \choice \SI{375}{m}
+\end{randomizechoices}
+
+
+\question
+Sonic the Hedgehog moves in a straight line with an initial velocity of \SI{15}{m/s} and constant acceleration of \SI{30}{m/s^2}. What is his velocity after 5 seconds of motion?
+
+\ifprintanswers
+\bgroup
+\color{red}
+\begin{flalign*}
+    v_f = v_i + a t &&
+\end{flalign*}
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{165}{m/s}
+    \choice \SI{150}{m/s}
+    \choice \SI{105}{m/s}
+    \choice \SI{210}{m/s}
+\end{randomizechoices}
+
+
+\question
+An airplane moving at \SI{50}{m/s} at a northern point above the country of England accelerates southward at \SI{0.10}{m/s^2}. It travels \SI{910}{km} in a straight line, reaching the southern point. How fast is the airplane moving at the southern point?
+
+
+\begin{center}
+\begin{tikzpicture}
+    % \node at (0,0) {\EUCountry[]{GreatBritain}};
+    \node at (0,0) {\EUCountry[Scale=10,outline,fillcolor=black!20,linecolor=black]{GreatBritain}};
+    \draw[thick,<-] (1.5,-1.5)  -- ++(0,2.7) node[right,pos=0.5] {\SI{910}{km}} node[above=8mm,rotate=180] {\resizebox{5mm}{!}{\usym{1F6E7}}};
+\end{tikzpicture}
+\end{center}
+
+\ifprintanswers
+\bgroup
+\color{red}
+\begin{flalign*}
+    v_f^2 &= v_i^2 + 2 a \Delta x && \\[1ex]
+    v_f &= \sqrt{v_i^2 + 2a \Delta x}
+\end{flalign*}
+\egroup
+\fi
+
+\begin{randomizechoices}
+    \correctchoice \SI{430}{m/s}
+    \choice \SI{307}{m/s}
+    \choice \SI{184}{m/s}
+    \choice \SI{945}{m/s}
+\end{randomizechoices}
+
 
 \question 
 Hugo throws a ball straight down off a cliff. One second later his friend, Arthur, throws a ball straight up. Which velocity vs time graph below could depict the motion of Hugo’s ball in the scenario given?
@@ -43,15 +115,23 @@ Hugo throws a ball straight down off a cliff. One second later his friend, Arthu
     \end{tikzpicture}
 \end{center}
 
-\begin{randomizechoices}[norandomize]
+\begin{randomizeoneparchoices}[norandomize]
     \choice Graph A
     \choice Graph B
     \choice Graph C
     \correctchoice Graph D
-\end{randomizechoices}
+\end{randomizeoneparchoices}
 
 \question
-A car is moving at \SI{20}{m/s} when the driver spots a deer in the road. He brakes to come to a complete stop in 15 seconds.  What is the distance the car traveled once the driver started braking?
+A car is moving at \SI{20}{m/s} when the driver spots a deer in the road. He applies the brakes and comes to a complete stop in 15 seconds.  What is the distance the car traveled once the driver started braking?
+
+\ifprintanswers
+{\color{red}
+\begin{flalign*}
+    \Delta x = \frac{1}{2}\left(v_i + v_f\right) t &&  
+\end{flalign*}
+}
+\fi
 
 \begin{randomizechoices}[norandomize]
     \choice \SI{35}{m}
@@ -61,7 +141,16 @@ A car is moving at \SI{20}{m/s} when the driver spots a deer in the road. He bra
 \end{randomizechoices}
 
 \question
-A \SI{20}{kg} rock sits on the edge of a \SI{80}{m} high cliff.  What would the final velocity of the rock be if it is dropped from the edge of the cliff?
+A \SI{20}{kg} rock is dropped off the edge of a \SI{80}{m} high cliff.  What is the rock's velocity right before striking the ground?
+
+\ifprintanswers
+{\color{red}
+\begin{flalign*}
+    v_f^2 &= v_i^2 - 2g\Delta y && \\[1ex]
+    v_f &= \sqrt{-2g\Delta y} &&
+\end{flalign*}
+}
+\fi
 
 \begin{randomizechoices}[norandomize]
     \choice \SI{1600}{m/s}
@@ -98,22 +187,23 @@ Using the information above, determine the acceleration of the ball.
 What is the acceleration of the car from 0 seconds to 4 seconds?
 
 \begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[width=6cm,
-            height=6cm,
-            xmin=0,xmax=6,
-            ymin=0,ymax=15,
-            xlabel={Time (s)},
-            ylabel={Velocity (m/s)},
-            xtick={0,2,...,6},
-            ytick={0,5,...,15},
-            minor tick num=1,
-            grid=both,
-            ]
-            \addplot[black,very thick]
-                coordinates{(0,0)(4,10)(6,10)};
-        \end{axis}
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[width=6cm,
+        height=6cm,
+        axis lines=left,
+        xmin=0,xmax=6,
+        ymin=0,ymax=15,
+        xlabel={Time (s)},
+        ylabel={Velocity (m/s)},
+        xtick={0,2,...,6},
+        ytick={0,5,...,15},
+        minor tick num=1,
+        grid=both,
+        ]
+        \addplot[black,very thick]
+            coordinates{(0,0)(4,10)(6,10)};
+    \end{axis}
+\end{tikzpicture}
 \end{center}
 
 \begin{randomizechoices}[norandomize]
@@ -123,16 +213,16 @@ What is the acceleration of the car from 0 seconds to 4 seconds?
     \choice \SI{2.0}{m/s^2}
 \end{randomizechoices}
 
-\question
-As an object is moving upwards, what is true about the object’s motion? \textbf{Select 2 answers.}
+% \question
+% As an object is moving upwards, what is true about the object’s motion? \textbf{Select 2 answers.}
 
 
-\begin{randomizechoices}[norandomize]
-    \choice The velocity and acceleration are both decreasing.
-    \choice Positive work is being done by the force of gravity on the object.
-    \correctchoice Impulse from the force of gravity is causing the ball’s velocity to decrease.
-    \correctchoice The velocity and acceleration are in opposite directions.
-\end{randomizechoices}
+% \begin{randomizechoices}[norandomize]
+%     \choice The velocity and acceleration are both decreasing.
+%     \choice Positive work is being done by the force of gravity on the object.
+%     \correctchoice Impulse from the force of gravity is causing the ball’s velocity to decrease.
+%     \correctchoice The velocity and acceleration are in opposite directions.
+% \end{randomizechoices}
 
 \question
 A rock is dropped from a cliff of the same height on the earth (\SI{9.8}{m/s^2}) and on Jupiter (\SI{25}{m/s^2}). Which will take longer to fall to the ground? On Earth or Jupiter?
@@ -165,7 +255,7 @@ An object moving vertically that has negative acceleration and a negative veloci
 \end{randomizechoices}
 
 \begin{EnvUplevel}
-    Compare the motion of the three rocks below. Select the choice that best answer the questions below. Answer choices may be used more than once.
+    \textbf{Questions \ref{vKRPd}--\ref{louIV}.} Compare the motion of the three rocks below. Select the choice that best answer the questions below. Answer choices may be used more than once.
 \end{EnvUplevel}
 
 \begin{center}
@@ -178,7 +268,7 @@ An object moving vertically that has negative acceleration and a negative veloci
     \end{tabular}
 \end{center}
 
-\question
+\question \label{vKRPd}
 Which rock(s) will hit the ground in the shortest amount of time?
 
 \begin{randomizechoices}[norandomize]
@@ -220,7 +310,7 @@ Which rock(s) will reach the highest point?
 \end{randomizechoices}
 
 
-\question
+\question \label{louIV}
 Which rock(s) will have the smallest Kinetic Energy when striking the ground?
 
 \begin{randomizechoices}[norandomize]
@@ -231,7 +321,7 @@ Which rock(s) will have the smallest Kinetic Energy when striking the ground?
 \end{randomizechoices}
 
 \begin{EnvUplevel}
-    Compare the motion of the four objects below. Select the choice that best answers the question. Answers may be used more than once. 
+    \textbf{Questions \ref{RnxrP}--\ref{aOLAP}.} Compare the motion of the four objects below. Select the choice that best answers the question. Answers may be used more than once. 
 \end{EnvUplevel}
 
 \begin{center}
@@ -243,7 +333,7 @@ Which rock(s) will have the smallest Kinetic Energy when striking the ground?
     \end{tabular}
 \end{center}
 
-\question
+\question \label{RnxrP}
 Which object(s) has the greatest momentum at the highest point of it’s motion?
 
 \begin{randomizechoices}[norandomize]
@@ -276,7 +366,7 @@ Which object(s) will experience the greatest impulse from the force of gravity d
 
 
 
-\question
+\question \label{aOLAP}
 Which object(s) will have the greatest final velocity when striking the ground?
 
 \begin{randomizechoices}[norandomize]
@@ -284,6 +374,8 @@ Which object(s) will have the greatest final velocity when striking the ground?
     \correctchoice Option B
     \choice Option C
 \end{randomizechoices}
+
+
 
 \question
 Answer the questions that follow. The initial velocity of a \SI{3}{kg} ball sent upward from the ground, is \SI{12}{m/s}. 
@@ -312,7 +404,7 @@ Answer the questions that follow. The initial velocity of a \SI{3}{kg} ball sent
 \printkeytable
 \bigskip
 
-\textbf{NOTE:} Question 6 has 2 correct answers. Only one of the them is shown in the table above.
+
 
 
 

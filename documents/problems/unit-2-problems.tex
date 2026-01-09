@@ -1,30 +1,73 @@
-% \documentclass[answers]{exam}
-% \input{global}
-% \input{problem-sets}
-% \input{documents/physics-glossary}
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\input{documents/physics-glossary}
+% \usepackage{fontawesome5}
+\usepackage{figchild}
 
-% \setrandomizerseed{1}
+\setrandomizerseed{1}
 
-% \firstpageheader{Physics}{Unit 2: Force Interactions}{Problems}
-% \runningheader{}{}{}
+\firstpageheader{Physics}{Unit 2: Force Interactions}{Problems}
+\runningheader{}{}{}
 
 
-\documentclass[../main-physics-problems.tex]{subfiles}
+% \documentclass[../main-physics-problems.tex]{subfiles}
 
 \begin{document}
 
-\subsection{Interacting Objects}
+\section*{Interacting Objects}
 
-\subsubsection{Types of Force}
-\subsubsection{Representing Force Pairs in Interactions}
-\subsubsection{Force Pairs as Two Forces of the Same Type}
-\subsubsection{Instances in which Forces are Not a Force Pair}
+\subsection*{Force Interaction of Objects}
 
-\subsection{Constant Motion Model Based on Forces}
+\begin{questions}
+\question
+A basketball rests on a table, and the table rests on the Earth. Identify the third-law force pairs and non-pairs in this scenario.
 
-\subsubsection{Free-Body Diagrams}
-\subsubsection{Effects of Balanced and Unbalanced Forces}
-\subsubsection{Constant and Changing Velocity, Momentum, Kinetic Energy, and Forces}
+\begin{center}
+\begin{tikzpicture}
+    \draw[pattern=north west lines] (-1.2,0) -- (-1,0) -- (-1,1) -- (1,1) -- (1,0) node[right=3mm,pos=0.5] {Table $T$} -- (1.2,0) -- (1.2,1.2) -- (-1.2,1.2) -- cycle;
+    \draw[pattern=north west lines] (-1.6,1.2) -- (1.6,1.2) -- (1.6,1.35) -- (-1.6,1.35) -- cycle;
+    \draw (0,1.6) node {\resizebox{6mm}{!}{\faHockeyPuck}} node[above=2mm] {Puck $P$};
+    \begin{scope}[shift={(0,-2.75)}]
+        \clip (0,0) -- (3,0) arc (0:180:3) -- cycle;
+        \node at (0,0) {\twemoji[width=6cm]{globe showing Americas}};
+        \node at (2,0.5) {Earth $E$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\question
+A bird is sitting motionless on a perch, at some height above the Earth. Select all force pairs that apply to this system.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,1.12) node {\fcBirdB{0.7}{black}{1}};
+    \draw[thick,fill=lightgray] (-1.4,0) rectangle (1,-0.08);
+    \begin{scope}[shift={(0,-2.5)}]
+        \clip (0,0) -- (2,0) arc (0:180:2) -- cycle;
+        \node at (0,0) {\twemoji[width=4cm]{globe showing Americas}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{questions}
+
+
+\clearpage
+
+
+
+\end{document}
+
+\subsubsection*{Types of Force}
+\subsubsection*{Representing Force Pairs in Interactions}
+\subsubsection*{Force Pairs as Two Forces of the Same Type}
+\subsubsection*{Instances in which Forces are Not a Force Pair}
+
+\subsection*{Constant Motion Model Based on Forces}
+
+\subsubsection*{Free-Body Diagrams}
+\subsubsection*{Effects of Balanced and Unbalanced Forces}
+\subsubsection*{Constant and Changing Velocity, Momentum, Kinetic Energy, and Forces}
 
 \begin{questions}
 
@@ -209,7 +252,7 @@ The net force on an object is $\bvec{F}_{\text{net}} = \SI{-25}{N}$. If the appl
 
 \clearpage
 \begin{EnvUplevel}
-    \subsection{Force Pairs}
+    \subsection*{Force Pairs}
 \end{EnvUplevel}
 
 \question
@@ -266,7 +309,7 @@ A quiet moment during a test is interrupted as a physics book falls from a table
 
 \clearpage
 \begin{EnvUplevel}
-    \subsection{Interactions of Objects}
+    \subsection*{Interactions of Objects}
 \end{EnvUplevel}
 
 \question
@@ -567,7 +610,7 @@ A baseball player slows as they slide into the base.
 
 \clearpage
 \begin{EnvUplevel}
-    \subsection{Free-Body Diagrams}
+    \subsection*{Free-Body Diagrams}
 \end{EnvUplevel}
 
 \question
@@ -1045,7 +1088,7 @@ and is graphed below:
 
 \clearpage
 \begin{EnvUplevel}
-    \subsection{Balanced and Unbalanced Forces (Part I)}
+    \subsection*{Balanced and Unbalanced Forces (Part I)}
 
     \textbf{Questions \ref{cTXNT}--\ref{HPDAU}.} Access the PhET Simulation: Forces and Motion (\href{https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_all.html}{CLICK HERE}).
 
@@ -1658,10 +1701,10 @@ Consider the motion map below. The arrow indicates the object's velocity.
 Consider the motion map below. The arrow indicates the object's velocity.
 
 \begin{center}
-    \begin{tikzpicture}
-        \draw[domain=0:10,mark=*,only marks, samples=6] plot({0.1*\x^2},0);
-        \draw[thick, <-] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \draw[domain=0:10,mark=*,only marks, samples=6] plot({0.1*\x^2},0);
+    \draw[thick, <-] (5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+\end{tikzpicture}
 \end{center}
 
 \begin{parts}
@@ -1895,7 +1938,7 @@ The table below depicts the motion of an object.
 
 \clearpage
 \begin{EnvUplevel}
-    \subsection{Balanced Forces (Part II): Quiz a Friend Activity}
+    \subsection*{Balanced Forces (Part II): Quiz a Friend Activity}
 \end{EnvUplevel}
 
 \question

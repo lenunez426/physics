@@ -14,36 +14,40 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%...Hide or show unit contents below:            %
-\newif\ifShowUnitI                               %
-\newif\ifShowUnitII                              %        
-\newif\ifShowUnitIII                             %        
-\newif\ifShowUnitIV                              %        
-\newif\ifShowUnitV                               %        
-\newif\ifShowUnitVI                              %        
-\newif\ifShowUnitVII                             %        
-\newif\ifShowUnitVIII                            %        
-\newif\ifShowUnitIX                              %        
-\newif\ifShowUnitX                               %        
-\newif\ifShowUnitXI                              %        
-\newif\ifShowUnitXII                             % 
-\ShowUnitItrue                                  %
-\ShowUnitIIfalse                                 %
-\ShowUnitIIIfalse                                %
-\ShowUnitIVfalse                                 %
-\ShowUnitVfalse                                  %
-\ShowUnitVIfalse                                 %
-\ShowUnitVIIfalse                                %
-\ShowUnitVIIIfalse                                %
-\ShowUnitIXfalse                                 %
-\ShowUnitXfalse                                  %
-\ShowUnitXIfalse                                 %
-\ShowUnitXIIfalse                                %
+%...Hide or show unit contents below:            
+\newif\ifShowUnitI                               
+\newif\ifShowUnitII                                      
+\newif\ifShowUnitIII                                     
+\newif\ifShowUnitIV                                      
+\newif\ifShowUnitV                                       
+\newif\ifShowUnitVI                                      
+\newif\ifShowUnitVII                                     
+\newif\ifShowUnitVIII                                    
+\newif\ifShowUnitIX                                      
+\newif\ifShowUnitX                                       
+\newif\ifShowUnitXI                                      
+\newif\ifShowUnitXII
+\newif\ifShowUnitXIII
+\newif\ifShowUnitXIV
+\ShowUnitItrue                                  
+\ShowUnitIItrue                                 
+\ShowUnitIIItrue                                
+\ShowUnitIVtrue                                 
+\ShowUnitVtrue                                  
+\ShowUnitVItrue                                 
+\ShowUnitVIItrue                              
+\ShowUnitVIIItrue                               
+\ShowUnitIXfalse                                 
+\ShowUnitXfalse                                  
+\ShowUnitXIfalse                                 
+\ShowUnitXIIfalse  
+\ShowUnitXIIIfalse
+\ShowUnitXIVfalse  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\title{The Handbook: Ideas in Physics}
+\title{Physics}
 \author{Cypress Springs High School}
 \date{Updated on \today}
 
@@ -51,8 +55,8 @@
 
 \maketitle
 \tableofcontents
-
 \clearpage
+
 \section{Constant Motion}
 
 \ifShowUnitI
@@ -85,9 +89,9 @@ A \textbf{\gls{vector}} is \glsdesc{vector}. Directions include north (N), south
 A vector is drawn as an arrow. The length of the arrow is the magnitude, and the arrowhead is the direction. The \textbf{\gls{tail}} is the \glsdesc{tail}, and the \textbf{\gls{head}} is the \glsdesc{head}.
 
 \begin{center}
-    \begin{tikzpicture}
-        \draw[->,thick] (0,0) node[left] {tail} -- (4,0) node[right] {head} node[below,pos=0.5] {vector};
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \draw[->,thick] (0,0) node[left] {tail} -- (4,0) node[right] {head} node[below,pos=0.5] {vector};
+\end{tikzpicture}
 \end{center}
 
 The \textbf{\gls{head-to-tail method}} is \glsdesc{head-to-tail method}.
@@ -96,8 +100,8 @@ The \textbf{\gls{head-to-tail method}} is \glsdesc{head-to-tail method}.
     Vector $\vec{A}$ is 4 units to the right. Vector $\vec{B}$ is 3 units to the right, as shown below. Add vectors $\vec{A}$ and $\vec{B}$.
 
 \begin{center}
-\begin{tikzpicture}[x=8mm,y=8mm]
-    \draw[step=8mm,gray] (0,0) grid (10,3);
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[step=7mm,gray] (0,0) grid (10,3);
     \draw[very thick,->] (0,2) -- ++(4,0) node[above=1pt,pos=0.5,fill=white] {$A = 4$};
     \draw[very thick,->] (0,1) -- ++(3,0) node[above=1pt,pos=0.5,fill=white] {$B = 3$};
 \end{tikzpicture}
@@ -109,8 +113,8 @@ The \textbf{\gls{head-to-tail method}} is \glsdesc{head-to-tail method}.
 First, the vectors are added graphically using the head-to-tail method:
 
 \begin{center}
-\begin{tikzpicture}[x=8mm,y=8mm]
-    \draw[step=8mm,gray] (0,0) grid (10,3);
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[step=7mm,gray] (0,0) grid (10,3);
     \draw[very thick,->] (0,2) -- ++(4,0) node[above,pos=0.9] {$\vec{A}$};
     \draw[very thick,->] (0,2) ++(4,0) -- ++(3,0) node[above,pos=0.9] {$\vec{B}$};
     \draw[very thick,->] (0,1) -- ++(7,0) node[fill=white,below=1pt,pos=0.5] {$A + B = 7$};
@@ -129,8 +133,8 @@ Therefore, the sum is
     Vector $\vec{A}$ is 4 units to the right. Vector $\vec{B}$ is 3 units to the left, as shown below. Add vectors $\vec{A}$ and $\vec{B}$.
 
 \begin{center}
-\begin{tikzpicture}[x=8mm,y=8mm]
-    \draw[step=8mm,gray] (0,0) grid (10,3);
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[step=7mm,gray] (0,0) grid (10,3);
     \draw[very thick,->] (0,2) -- ++(4,0) node[above=1pt,pos=0.5,fill=white] {$A = 4$};
     \draw[very thick,<-] (0,1) -- ++(3,0) node[above=1pt,pos=0.5,fill=white] {$B = 3$};
 \end{tikzpicture}
@@ -142,8 +146,8 @@ Therefore, the sum is
 The vectors are added graphically using the head-to-tail method:
 
 \begin{center}
-\begin{tikzpicture}[x=8mm,y=8mm]
-    \draw[step=8mm,gray] (0,0) grid (10,3);
+\begin{tikzpicture}[x=7mm,y=7mm]
+    \draw[step=7mm,gray] (0,0) grid (10,3);
     \draw[very thick,->] (0,2) -- ++(4,0) node[above,pos=0.5] {$\vec{A}$};
     \draw[very thick,->,yshift=-4mm] (4,2) node[right] {$\vec{B}$} -- ++(-3,0) ;
     \draw[very thick,->] (0,0.5) -- ++(1,0) node[fill=white,right] {$\vec{A} + \vec{B}$};
@@ -387,7 +391,7 @@ The graph below shows the position of an object as a function of time. What is t
 
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[width=7cm,height=6cm,
+    \begin{axis}[width=6cm,height=5cm,
         axis lines=left,
         ymin=0, ymax=10,
         xmin=0, xmax=10,
@@ -395,7 +399,8 @@ The graph below shows the position of an object as a function of time. What is t
         xlabel = {Time (s)},
         grid = both,
         xtick={0,1,...,10},
-        ytick={0,1,...,10},
+        ytick={0,2,...,10},
+        minor y tick num=1,
     ]
     \addplot[black,very thick]
         coordinates{(0,0)(4,8)(8,8)(10,4)};
@@ -595,7 +600,7 @@ The following graph\footnote{See \href{https://youtu.be/rfG8ce4nNh0?si=YnRiAhbPO
         xtick={0,1,...,10},
         % minor x tick num=1,
     ]
-    \addplot[ultra thick,domain=0:10] plot {10};
+    \addplot[very thick,domain=0:10] plot {10};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -685,25 +690,88 @@ Therefore, the car's displacement is 80 meters. This problem encourages you to t
 
 \subsection{Mass and Inertia}
 
-\textbf{\Gls{inertia}} is \glsdesc{inertia}. \textbf{\Gls{mass}} is \glsdesc{mass} (kg). Inertia is proportional to mass: the more mass an object has, the greater its inertia. 
+\textbf{\Gls{mass}} is \glsdesc{mass} (kg). 
+
+\begin{center}
+\begin{minipage}{6cm}
+\centering
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt) node[right=3pt] {$m_\text{\tiny H} = \SI{1.67e-27}{kg}$};
+    \node[below=1ex] at (current bounding box.south) {1 Hydrogen atom};  
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{5cm}
+\centering
+\begin{tikzpicture}
+    \pgfmathsetseed{1}
+  % Define the square area
+  % \draw (-1,-1) rectangle ++(2,2);
+  
+  % Clip to the square so points stay inside
+  \begin{scope}
+    \clip (-1,-1) rectangle ++(2,2);
+    % Randomly scatter 100 points inside the square
+    \foreach \i in {1,...,100}{
+      \fill (rand, rand) circle (1.5pt);
+    }
+  \end{scope}
+  \node[below=1mm] at (current bounding box.south) {Many Hydrogen atoms}; 
+  \node[above=1mm] at (current bounding box.north) {Gas cloud}; 
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+For example, in the figure above, the mass of the gas cloud is the sum of the total mass of all its constituent Hydrogen atoms. 
+
+\begin{example}
+    Suppose the gas cloud in the figure above contains 6000 moles of hydrogen. By Avogadro's number, 1 mole equals \num{6.02e23} atoms. Find the mass of the gas cloud.
+\end{example}
+
+\textit{Solution:}
+
+The number of hydrogen atoms that constitute the gas cloud is
+
+\begin{align*}
+    N &= \SI{6000}{mol} \\[1ex]
+    &= \SI{6000}{mol} \times \frac{\SI{6.02e23}{atoms}}{\SI{1}{mol}} \\[1ex]
+    &= \SI{3.612e27}{atoms}
+\end{align*}
+
+The total mass of the system is
+
+\begin{equation*}
+    m = N m_\text{\tiny H} = \left(\SI{3.612e27}{atoms}\right) \left(\SI{1.67e-27}{kg}\right) = \boxed{\SI{6.0}{kg}}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+\textbf{\Gls{inertia}} is \glsdesc{inertia}. 
+
+Inertia is proportional to mass: the more mass an object has, the greater its inertia. 
 
 \textbf{\gls{Newton's first law of motion}} states that \glsdesc{Newton's first law of motion}.
 
+% \begin{enumerate}[itemsep=0pt,topsep=0pt]
+%     \item Stand a roll of painter's tape on the rim of a flask. Place penny on top of roll. Forcefully pull roll from under the penny and watch the penny land inside the flask.
+%     \item Place a stack of heavy textbooks on a cart. Place a light object (e.g. whiteboard eraser) on top of books. ``Crash'' the cart on a table and watch the eraser fly onto the table top away from the cart.
+%     \item In the middle of the night on March 26, 2024,  a cargo ship on a river near Baltimore lost all power and crashed into a bridge, killing 6 people.
+%     \item The sleeping Pokemon snorlax could not be removed from the edge of a creek.
+%     \item Messi (\href{https://www.youtube.com/watch?v=5PKXs8i_zSw&t=19s}{click here})
+%     \item Football (\href{https://www.youtube.com/watch?v=4TgpW0WZZ6U&t=55s}{click here})
+%     \item Basketball (\href{https://www.youtube.com/watch?v=IGBpvIXGMYQ&t=24s}{click here})
+%     \item Snowboard girl chased by a bear (\href{https://www.youtube.com/watch?v=vT_PNKg3v7s}{click here})
+% \end{enumerate}
 
 
-
-
-
-\clearpage
 
 \subsection{Momentum}
 
 
 \textbf{\Gls{momentum}} ($p$) is \glsdesc{momentum}. Mathematically, 
 
-\begin{equation*}
+\begin{equation}
     p = mv
-\end{equation*}
+\end{equation}
 
 The SI unit of momentum is the combination of the units of mass and velocity: kilograms multiplied by meters per second, or $\mathrm{kg\cdot m/s}$. Objects usually don't change in mass but can change momentum with change in velocity. 
 
@@ -740,10 +808,10 @@ A \textbf{\gls{momentum vs. time graph}} is \glsdesc{momentum vs. time graph}.
 
 % ]
 
-\textbf{\Gls{kinetic energy}} (KE) is \glsdesc{kinetic energy}. Mathematically, it's defined as
+\textbf{\Gls{kinetic energy}} ($K$) is \glsdesc{kinetic energy}. Mathematically, it's defined as
 
 \begin{equation*}
-    \mathrm{KE} = \frac{1}{2} m v^2
+    K = \frac{1}{2} m v^2
 \end{equation*}
 
 where $m$ is mass in kilograms and $v$ is speed in meters per second. According to this equation, since the SI base units of mass and velocity are the kilogram and the meter per second, respectively, kinetic energy has units of
@@ -765,36 +833,85 @@ A 250-gram cart travels at 3.2 meters per second. Calculate its kinetic energy.
 \end{example}
 
 \textit{Solution:}
-
-$m = \SI{0.25}{kg}$ and $v = \SI{1.5}{m/s}$. $\mathrm{KE} =\ ?$
+In base SI units, mass is $m = \SI{0.250}{kg}$.
 
 \begin{equation*}
-    \mathrm{KE} = \frac{1}{2} mv^2 = \frac{1}{2}(\SI{0.25}{kg})(\SI{1.5}{m/s})^2 = \boxed{\SI{1.28}{J}} 
+    K = \frac{1}{2} mv^2 = \frac{1}{2}(\SI{0.25}{kg})(\SI{3.2}{m/s})^2 = \boxed{\SI{1.28}{J}} 
 \end{equation*}
 
 \hfill $\blacksquare$
 
-
 \subsection{Relative Motion}
 
 
-Hook: ``The Fast and the Furious'' (\href{https://youtu.be/yWiSjVHCT30?feature=shared&t=238}{click here}). Look at the velocity of the red car relative to the green car towards the end of the race.
+% Hook: ``The Fast and the Furious'' (\href{https://youtu.be/yWiSjVHCT30?feature=shared&t=238}{click here}). Look at the velocity of the red car relative to the green car towards the end of the race.
 
 % \textbf{Frame of Reference}: the point of view from which we look at a motion.
 
 Examples of a frame of reference are:
 
-\begin{itemize}[itemsep=0pt,topsep=0pt]
-    \item Person sitting in a car
-    \item Person looking at the car from the sidewalk
-    \item Person riding a bike in the opposite direction
-\end{itemize}
+% \begin{itemize}[itemsep=0pt,topsep=0pt]
+%     \item Person sitting in a car
+%     \item Person looking at the car from the sidewalk
+%     \item Person riding a bike in the opposite direction
+% \end{itemize}
 
 \textbf{Relative speed} is how fast or slow an object appears to be moving to another object.
 
 % When objects move together: add their velocities
 
 % When objects move apart: subtract their velocities.
+
+In the figure below, Alice, who belongs to frame A, stands at rest on the street. She observes Bob, in Frame B, moving at speed $v_{BA}$ relative to her frame. A pelican $P$ moves relative to both frames.
+
+\begin{center}%...Borrowed from Halliday & Resnick 4-6 Relative Motion
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,0) -- (0,1) node[above] {$y$} node[above=5mm] {Frame A};
+    \draw (0,0) -- (3.5,0) node[right] {$x$};
+    \begin{scope}[shift={(1,0.1)}]
+        \draw (0,0) -- (0,0.9) node[above] {$y$} node[above=5mm] {Frame B};
+        \draw (0,0) -- (3,0) node[right] {$x$}; 
+        \draw[ultra thick,->] (0,0) -- (1,0) node[above] {$\vec{v}_{BA}$};
+        \fill[lightgray] (0,0) circle (2pt);
+        \draw (2,0) node[above=-4pt] {\tiny $|$} node [above=3pt] {$x_{PB}$};
+        \draw[fill=lightgray] (2,0.75) circle (1.5mm) node[right=1.5mm] {$P$};
+    \end{scope}
+    \fill[lightgray] (0,0) circle (2pt) node[below=2pt,black] {0};
+    \draw (1,0) node[below=-4pt] {\tiny $|$} node [below=3pt] {$x_{BA}$};
+    \draw (3,0) node[below=-4pt] {\tiny $|$} node [below=3pt] {$x_{PA} = x_{PB} + x_{BA}$};
+\end{tikzpicture}
+\end{center}
+
+Let the velocity of Frame B (Bob) relative to Frame A (Alice) be $\vec{v}_{BA}$. 
+
+\begin{equation*}
+    v_{PA} = v_{PB} + v_{BA}
+\end{equation*}
+
+This result generalizes for vectors in one dimension:
+
+\begin{equation} \label{77nBP}
+    \vec{v}_{PA} = \vec{v}_{PB} + \vec{v}_{BA}
+\end{equation}
+
+\begin{example}
+    If Bob, from the figure above, moves at \SI{32}{m/s} away from Alice, and Alice measures particle P to be moving at \SI{45}{m/s} in the $-x$-direction, what is the particle's velocity relative to Frame B?
+\end{example}
+
+\textit{Solution:}
+Equation \eqref{77nBP} yields
+
+\begin{equation*}
+    \SI{-45}{m/s}= v_{PB} + \SI{32}{m/s}
+\end{equation*}
+
+Thus,
+
+\begin{equation*}
+    v_{PB} = \SI{-77}{m/s}
+\end{equation*}
+
+\hfill $\blacksquare$
 
 
 \fi
@@ -806,9 +923,8 @@ Examples of a frame of reference are:
 \ifShowUnitII
 \setcounter{example}{0}
 
-\subsection{Interacting Objects}
+\subsection{Types of Force}
 
-\subsubsection{Types of Force}
 
 A \textbf{\gls{force}} is \glsdesc{force}. Being vectors, forces are represented by arrows. The length of the arrow is the magnitude of the force. For example, force $\vec{F}_1$ below has a magnitude of 5 newtons, and the magnitude of $\vec{F}_2$ is \SI{8}{N}.
 
@@ -821,8 +937,7 @@ A \textbf{\gls{force}} is \glsdesc{force}. Being vectors, forces are represented
 \end{tikzpicture}
 \end{center}
 
-In this unit, there are six forces you should know: the gravitational force, the normal force, the frictional force, the applied force, the spring force, and tension.
-
+In this unit, there are six forces you should know: the gravitational force, the normal force, the frictional force, the applied force, the spring force, and the tension force.
 
 The \textbf{\gls{gravitational force}} ($F_g$) is \glsdesc{gravitational force}. In the case below, there is a force of gravity on the ball. 
 
@@ -834,7 +949,7 @@ The \textbf{\gls{gravitational force}} ($F_g$) is \glsdesc{gravitational force}.
 \end{tikzpicture}
 \end{center}
 
-Where does the force $F_\mathrm{g}$ come from? It comes from Earth, which gravitationally pulls the ball down. The gravitational force will be explore in more detail in Unit 5.
+Where does the force $F_\mathrm{g}$ come from? It comes from Earth, which gravitationally pulls the ball down. The gravitational force will be explored in more detail in Unit 5: Force Analysis.
 
 A \textbf{\gls{normal force}} ($F_\text{N}$) is \glsdesc{normal force}. In the case of a baseball, if the ball is rested on a flat surface like a bed, the normal force is the upward force exerted by the bed on the ball:
 
@@ -892,7 +1007,7 @@ One example of tension is tetherball, the sport where a ball is connect by a rop
 
 When the rope is taught, there is a tension force on the ball, and another tension force of equal magnitude is exerted on the pole, to keep the ball in motion.
 
-Here's another example:
+Another example involving tension is a game of tug-of-war, shown below.
 
 \begin{center}
 \begin{tikzpicture}
@@ -911,71 +1026,9 @@ Here's another example:
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Representing Force Pairs in Interactions}
+\subsection{Free-Body Diagrams}
 
-Let $F_\text{box-table}$ be the force on the box by the table, and $F_\text{table-box}$ be the force on the box by the table. In general, $F_\text{A-B}$ is the force on object A by object B. 
-
-$F_\text{box-table}$ is a reaction to the action of $F_\text{table-box}$. They have the same magnitude but opposite directions.
-
-We call $F_\text{box-table}$ and $F_\text{table-box}$ force pairs.
-
-
-\begin{center}
-    \begin{tikzpicture}
-        \clip (-6,6) rectangle ++(12,2);    
-        \node at (0,0) {\twemoji[width=16cm]{globe showing Americas}};  
-    \end{tikzpicture}
-\end{center}
-
-
-\begin{center}
-    \begin{tikzpicture}
-        \draw (0,0) node[above=-1pt] {\twemoji[height=1cm]{notebook}};
-        \draw[ultra thick] (-3,0) -- ++(6,0) node[below] {table};
-    \end{tikzpicture}
-\end{center}
-
-Let $F_\text{book-table}$ by the force on the book by the table; $F_\text{table-book}$, the force on the table by the book, etc.
-
-\begin{center}
-    \begin{tikzpicture}
-        \coordinate (earth) at (0,0); 
-        \coordinate (table) at ({4},0); 
-        \coordinate (book) at ({4*cos(60)},{4*sin(60)}); 
-        \draw (book) node[above] {book};
-        \draw (table) node[right] {table};
-        \draw (earth) node[left] {earth};
-        \draw[ultra thick,<->] (book)  -- (table) node[right=3pt,pos=0.1] {$F_\text{book-table}$} node[right=3pt,pos=0.8] {$F_\text{table-book}$};
-        \draw[ultra thick,<->] (book) -- (earth) node[left=3pt,pos=0.1] {$F_\text{book-earth}$} node[left=3pt,pos=0.8] {$F_\text{earth-book}$};
-        \draw[ultra thick,<->] (earth) -- (table) node[below=3pt,pos=0.2] {$F_\text{earth-table}$} node[below=3pt] {$F_\text{table-earth}$} ;
-    \end{tikzpicture}
-\end{center}
-
-An object can be involved in multiple force interactions.
-
-Any one interaction is between two objects and involves two forces.
-
-Newton's action-reaction law: ``For every action, there is an equal but opposite reaction.''
-
-Forces always come in pairs.
-
-Each force in a force pair is the same magnitude (size or strength) but acts in opposite directions.
-
-The force on the book from the table (FBT) is equal  to the force on the table from the book (FTB) but the book pushes down on the table and the table pushes up on the book. Equal but opposite.
-
-The force on the book from the table (FBE) is equal  to the force on the table from the book (FEB) but the book pushes down on the table and the table pushes up on the book. Equal but opposite.
-
-The force on the book from the table (FTE ) is equal  to the force on the table from the book (FET) but the book pushes down on the table and the table pushes up on the book. Equal but opposite.
-
-\subsubsection{Force Pairs as Two Forces of the Same Type}
-
-\subsubsection{Instances in which Forces are Not a Force Pair}
-
-\subsection{Constant Motion Model Based on Forces}
-
-\subsubsection{Free-Body Diagrams}
-
-A \textbf{\gls{free body diagram}} is \glsdesc{free body diagram}. They are a tool for analyzing net force and predicting motion. A free body diagram is focused on one object only and shows a moment in time. It includes the forces acting \textit{on} the object but no forces \textit{by} the object. It consists of a dot with arrows (force vectors) coming off the object for every force interaction, as shown below.
+A \textbf{\gls{free body diagram}} is \glsdesc{free body diagram}. They are a tool for analyzing net force and predicting motion. A free body diagram is focused on one object only and shows a moment in time, as shown below.
 
 \begin{center}
 \begin{tikzpicture}[x=1.2cm,y=1.2cm]
@@ -987,9 +1040,275 @@ A \textbf{\gls{free body diagram}} is \glsdesc{free body diagram}. They are a to
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Effects of Balanced and Unbalanced Forces}
+The free-body diagram includes the forces acting \textit{on} the object but no forces \textit{by} the object. It consists of a dot with arrows (force vectors) coming off the object for every force interaction, as shown below.
 
-\subsubsection{Multiple Representations for Constant and Changing Velocity, Momentum, Kinetic Energy, and Forces}
+\begin{example}
+    Name all the forces and their directions shown in the free-body diagram above.
+\end{example}
+
+\textit{Solution:}
+
+The free-body diagram includes the normal force ($F_\mathrm{N}$) pointing up, the applied force ($F$) pointing right, the gravitational force ($F_g$) pointing down, and the frictional force ($F_f$) pointing left. 
+
+\hfill $\blacksquare$
+
+On a flat surface, the normal force $F_\mathrm{N}$ equals the gravity force $F_g$ in magnitude. But $F_\mathrm{N}$ is affected by inclining the surface on which the object rests, as shown below.
+
+\begin{figure}[H]
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,thick] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-20]
+    \draw (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->,thick] (0,0) -- (0,{3*cos(20)}) node[above] {$F_\mathrm{N}$};
+    \draw[rotate around={20:(2.5,-1)}] (-2.5,-1) node[above,shift={(5mm,0)}] {\ang{20}} -- (2.5,-1);
+    \draw[->,rotate=20,] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=20] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-40]
+    \draw (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->,thick] (0,0) -- (0,{3*cos(40)}) node[above] {$F_\mathrm{N}$};
+    \draw[rotate around={40:(2.5,-1)}] (-1,-1) node[above,shift={(5mm,0)}] {\ang{40}} -- (2.5,-1);
+    \draw[->,rotate=40] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=40] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-60]
+    \draw (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->,thick] (0,0) -- (0,{3*cos(60)}) node[right] {$F_\mathrm{N}$};
+    \draw[rotate around={60:(2.5,-1)}] (-1,-1) node[above,shift={(5mm,0)}] {\ang{60}} -- (2.5,-1);
+    \draw[->,rotate=60] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=60] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-75]
+    \draw (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->,thick] (0,0) -- (0,{3*cos(75)}) node[right=2pt] {$F_\mathrm{N}$};
+    \draw[rotate around={75:(2.5,-1)}] (-0.5,-1) node[above,shift={(5mm,0)}] {\ang{75}} -- (2.5,-1);
+    \draw[->,rotate=75] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=75] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}
+\caption{The normal force on a box changes as the angle of incline changes.}
+\label{Zmibb}
+\end{figure}
+
+\begin{example}
+According to Figure \ref{Zmibb}, how does the magnitude and direction of the normal force vector $F_\mathrm{N}$ change as the surface becomes more inclined?
+\end{example}
+
+\textit{Solution:}
+The magnitude of the normal force decreases as the angle of incline decreases. The direction of the normal changes relative to the observer but remains perpendicular to the surface.
+
+\hfill $\blacksquare$
+
+For a free-body diagram on an inclined surface, it is useful to break the gravity force vector $F_g$ in two mutually perpendicular components: one that is parallel to the surface, and one that is perpendicular to the surface. 
+
+Let $F_{g,\parallel}$ be the parallel component of the gravity force $F_g$, and $F_{g,\perp}$ be the perpendicular component. These components of gravity, for the cases displayed in Figure \ref{Zmibb}, are shown below:
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw[opacity=0.2] (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-20]
+    \draw[opacity=0.2] (-2.5,-1) -- (2.5,-1);
+    \draw[opacity=0.2,rotate around={20:(2.5,-1)}] (-2.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,{3*cos(20)}) node[above] {$F_\mathrm{N}$};
+    \draw[->,rotate=20,opacity=0.1] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=20] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (0,0) -- ({3*sin(20)},0) node[right] {$F_{g,\parallel}$};
+    \draw[->] (0,0) -- (0,{-3*cos(20)}) node[below] {$F_{g,\perp}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-40]
+    \draw[opacity=0.2] (-2.5,-1) -- (2.5,-1);
+    \draw[opacity=0.2,rotate around={40:(2.5,-1)}] (-1,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,{3*cos(40)}) node[above] {$F_\mathrm{N}$};
+    \draw[->,rotate=40,opacity=0.1] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=40] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (0,0) -- ({3*sin(40)},0) node[right] {$F_{g,\parallel}$};
+    \draw[->] (0,0) -- (0,{-3*cos(40)}) node[below] {$F_{g,\perp}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-60]
+    \draw[opacity=0.2] (-2.5,-1) -- (2.5,-1);
+    \draw[opacity=0.2,rotate around={60:(2.5,-1)}] (-1,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,{3*cos(60)}) node[right] {$F_\mathrm{N}$};
+    \draw[->,rotate=60,opacity=0.1] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=60] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (0,0) -- ({3*sin(60)},0) node[below] {$F_{g,\parallel}$};
+    \draw[->] (0,0) -- (0,{-3*cos(60)}) node[below] {$F_{g,\perp}$};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{3cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=5mm,rotate=-75]
+    \draw[opacity=0.2] (-2.5,-1) -- (2.5,-1);
+    \draw[opacity=0.2,rotate around={75:(2.5,-1)}] (-0.5,-1) -- (2.5,-1);
+    \fill (0,0) circle (2pt);
+    \draw[thick] (-1,-1) rectangle (1,1);
+    \draw[->] (0,0) -- (0,{3*cos(75)}) node[right=2pt] {$F_\mathrm{N}$};
+    \draw[->,rotate=75,opacity=0.1] (0,0) -- (0,-3) node[below] {$F_g$};
+    \draw[->,opacity=0,rotate=75] (0,0) -- (0,+3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (0,0) -- ({3*sin(75)},0) node[below] {$F_{g,\parallel}$};
+    \draw[->] (0,0) -- (0,{-3*cos(75)}) node[left=2pt] {$F_{g,\perp}$};
+\end{tikzpicture}
+\end{minipage}%
+\caption{The components $F_{g,\parallel}$ and $F_{g,\perp}$ of the gravity force change as the angle incline changes.}
+\label{txqna}
+\end{figure}
+
+\begin{example}
+In Figure \ref{txqna}, how do the parallel and perpendicular components of the gravitational force on the box change as the surface becomes more inclined?
+\end{example}
+
+\textit{Solution:}
+As the angle of incline increases, the parallel component $F_{g,\parallel}$ increases in magnitude, and the perpendicular component $F_{g,\perp}$ decreases in magnitude.
+
+\hfill $\blacksquare$
+
+\begin{example}
+According to Figure \ref{txqna}, what appears to be the relationship between the normal force and the perpendicular component of gravity?
+\end{example}
+
+\textit{Solution:}
+The figure shows that $F_\mathrm{N}$ are $F_{g,\perp}$ are always equal in magnitude and opposite and direction.
+
+\hfill $\blacksquare$
+
+
+\subsection{Newton's Third Law and Interacting Force Pairs}
+\textbf{\gls{Newton's third law of motion}} states that \glsdesc{Newton's third law of motion}. ``For every action, there is an equal but opposite reaction.'' This law represents a certain symmetry in nature: Forces always occur in pairs, and one body cannot exert a force on another without experiencing a force itself.
+%This third law, sometimes known as the action-reaction law, is summarized 
+
+For example, in 2022 Astros pitcher Phil Maton exerted a large force by punching a locker, and the locker instantaneously returned a force of equal magnitude, resulting in Maton fracturing a bone in his right hand. There was a force pair interaction between Maton's hand and the locker.
+
+\begin{center}
+    \includegraphics[width=5cm]{documents/figures/maton.jpeg}
+\end{center}
+
+The following are rules for interacting force pairs:
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item An object can be involved in multiple force interactions.
+    \item Any one interaction is between two objects and involves two forces.
+    \item Forces always come in pairs.
+    \item Each force in a force pair is the same magnitude (size or strength) but acts in opposite directions.
+\end{itemize}
+
+\bigskip
+
+\begin{example}
+A basketball rests on a table, and the table rests on the Earth. Identify the third-law force pairs and non-force-pairs in this scenario.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[pattern=north west lines] (-1.2,0) -- (-1,0) -- (-1,1) -- (1,1) -- (1,0) node[right=3mm,pos=0.5] {Table $T$} -- (1.2,0) -- (1.2,1.2) -- (-1.2,1.2) -- cycle;
+    \draw[pattern=north west lines] (-1.6,1.2) -- (1.6,1.2) -- (1.6,1.35) -- (-1.6,1.35) -- cycle;
+    \draw (0,1.85) node {\twemoji[width=1cm]{basketball}} node[above=7mm] {Basketball $B$};
+    \begin{scope}[shift={(0,-2.75)}]
+        \clip (0,0) -- (3,0) arc (0:180:3) -- cycle;
+        \node at (0,0) {\twemoji[width=6cm]{globe showing Americas}};
+        \node at (2,0.5) {Earth $E$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\textit{Solution:}
+
+Force pairs occur only between two interacting objects.
+
+\begin{center}
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}
+    \draw (0,0) node[opacity=0.5] {\twemoji[width=2cm]{globe showing Americas}};
+    \draw[very thick,->] (0,0) -- (0,1.5) node[right] {$\vec{F}_{EB}$};
+    \draw (0,4) node[opacity=0.5] {\twemoji[width=1cm]{basketball}};
+    \draw[very thick,->] (0,4) -- ++(0,-1.5) node[right] {$\vec{F}_{BE}$};
+    \node[above] at (current bounding box.north) {Force Pair};
+\end{tikzpicture}  
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}
+    \draw[pattern=north west lines] (-1.6,0) -- (1.6,0) -- (1.6,0.15) -- (-1.6,0.15) -- cycle;
+    \draw (0,0.65) node[opacity=0.5] {\twemoji[width=1cm]{basketball}};
+    \draw[very thick,->] (0,0.65) -- ++(0,1.5) node[right] {$\vec{F}_{BT}$};
+    \draw[very thick,->] (0,0) -- ++(0,-1.5) node[right] {$\vec{F}_{TB}$};
+    \node[above] at (current bounding box.north) {Force Pair};
+\end{tikzpicture}
+\end{minipage}%
+\hspace{2mm}
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}
+    \draw[white] (-1.6,0) -- (1.6,0) -- (1.6,0.15) -- (-1.6,0.15) -- cycle;
+    \draw (0,0.65) node[opacity=0.5] {\twemoji[width=1cm]{basketball}};
+    \draw[very thick,->] (0,0.65) -- ++(0,1.5) node[right] {$\vec{F}_{BT}$};
+    \draw[very thick,->] (0,0.65) -- ++(0,-1.5) node[right] {$\vec{F}_{BE}$};
+    \node[above] at (current bounding box.north) {NOT Force Pair};
+\end{tikzpicture}
+\end{minipage}%
+\end{center}
+
+
+
+
+
+
 
 % \begin{example}
 % What is the weight of a 12\,kg box?
@@ -1034,18 +1353,18 @@ A \textbf{\gls{free body diagram}} is \glsdesc{free body diagram}. They are a to
 
 % \hfill $\blacksquare$
 
+\subsection{Balanced and Unbalanced Forces}
+
 \fi
 
 \clearpage
 
-\section{The Law of Acceleration}
+\section{Changing Motion I: Acceleration}
 
 \ifShowUnitIII
 \setcounter{example}{0}
 
 \subsection{Acceleration}
-
-\subsubsection{The Concept of Acceleration}
 
 \textbf{\Gls{acceleration}} ($a$) is \glsdesc{acceleration}. Mathematically, \textbf{\gls{average acceleration}} is \gls{average acceleration}:
 
@@ -1054,12 +1373,6 @@ A \textbf{\gls{free body diagram}} is \glsdesc{free body diagram}. They are a to
 \end{equation*}
 
 One of the best ways to study acceleration is to look at data, both quantitative and qualitative. 
-
-\subsubsection{Zero Acceleration, Positive Acceleration, and Negative Acceleration}
-
-\subsubsection{Comparing Accelerations of Objects}
-
-\subsubsection{Determining Change in Velocity and Acceleration from Multiple Representations}
 
 \begin{example}
 The graph below shows the velocities of Car A and Car B as a function of time. Describe the acceleration of each car.
@@ -1117,20 +1430,16 @@ The car's displacement between $t = \SI{0}{s}$ and $t = \SI{1}{s}$ is \SI{1}{m}.
 
 \hfill $\blacksquare$
 
-\subsubsection{Representations of Changing Motion}
 
-\subsubsection{Predicting Change in Velocity and Acceleration using Number Sense}
+\subsection{Newton's Second Law of Motion}
 
-\subsection{Newton's Law of Acceleration}
-
-\subsubsection{The Relationship between Net Force and Acceleration}
-
-\textbf{\Gls{net force}} ($F_\text{net}$) is \glsdesc{net force}. Mathematically, it can be related to acceleration as
+\textbf{\Gls{net force}} ($F_\text{net}$) is related to \glsdesc{net force}. Mathematically, it can be related to acceleration as
 
 \begin{equation*}
     F_\text{net} = ma
 \end{equation*}
 
+Often, it's pronounced ``F equals M A.''
 
 \begin{example}
 In a game of tug of war, Blue Team applies a 300-newton force to the left, and Red Team applies a 350\,N force to the right. Calculate the net force. Assume the positive direction is to the right.
@@ -1163,96 +1472,102 @@ or 100 newtons to the left.
 
 \hfill $\blacksquare$
 
-\subsubsection{The Relationship between Mass and Acceleration}
+\subsection{Change in Momentum}
 
-\subsubsection{The Effects of Changing Net Force on Mass or Acceleration}
+Momentum is $p = mv$. Momentum changes if there is a change in velocity, $\Delta v$. Change in momentum is given by $\Delta p = p_f - p_i$ and by
 
-\subsubsection{Solving Problems using Newton's Second Law}
+\begin{align}
+    \Delta p &= m \Delta v \label{TuKpz} \\[1ex]
+    &= m \left(v_f - v_i\right) \notag
+\end{align}
+
+\begin{example} \label{tbjCT}
+The velocity of a \SI{15}{kg} object changes according to the function $v(t) = \left(\SI{0.5}{m/s^2}\right)t + \SI{2}{m/s}$. What is the change in momentum during the entire time shown in the graph below?
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4.5cm,width=5.5cm,
+        axis lines=left,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=0,ymax=8,
+        xmin=0,xmax=8,
+        ytick={0,2,...,8},
+        xtick={0,1,...,8},
+        minor y tick num=1,
+        grid=both,
+    ]
+        \addplot[very thick, domain=0:8] {2+0.5*x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\textit{Solution:}
+
+According to the graph, the initial and final velocities are $v_i = \SI{20}{m/s}$ and $v_f = \SI{60}{m/s}$. By Equation \eqref{TuKpz},
+
+\begin{align*}
+    \Delta p &= m \Delta v \\[1ex]
+    &= m (v_f - v_i) \\[1ex]
+    &= (\SI{15}{kg})(\SI{6}{m/s} - \SI{2}{m/s}) \\[1ex]
+    &= \boxed{\SI{60}{kg\cdot m/s}}
+\end{align*}
+
+\subsection{Change in Kinetic Energy}
+
+Kinetic energy is $K = \frac{1}{2} mv^2$. Kinetic energy changes if velocity changes. Change in kinetic energy is given by $\Delta K = K_f - K_i$ and by
+
+\begin{align} \label{h5Vlx}
+    \Delta K &= \frac{1}{2}m v_f^2 - \frac{1}{2} m v_i^2 \\[1ex]
+    &= \frac{1}{2} m \left(v_f^2 - v_i^2\right) \notag
+\end{align}
+
+\begin{example}
+The graph representing the motion of the same \SI{15}{kg} object from Example \ref{tbjCT} is repeated below.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4.5cm,width=5.5cm,
+        axis lines=left,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=0,ymax=8,
+        xmin=0,xmax=8,
+        ytick={0,2,...,8},
+        xtick={0,1,...,8},
+        minor y tick num=1,
+        grid=both,
+    ]
+        \addplot[very thick, domain=0:8] {2+0.5*x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+Now calculate the change in kinetic energy of the object.
+\end{example}
+
+\textit{Solution:}
+
+By Equation \eqref{h5Vlx},
+
+\begin{align*}
+    \Delta K &= \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2 \\[1ex]
+    &= \frac{1}{2}(\SI{15}{kg})\left(\SI{6}{m/s}\right)^2 - \frac{1}{2}(\SI{15}{kg})\left(\SI{2}{m/s}\right)^2 \\[1ex]
+    &= \boxed{\SI{240}{J}}
+\end{align*}
 
 \clearpage
 
 \fi
 
-\section{Impulse and Work}
+\section{Changing Motion II: Impulse and Work}
 
 \ifShowUnitIV
 \setcounter{example}{0}
 
-\subsection{Changing Momentum}
-
-\subsubsection{Relating Change in Momentum to Change in Velocity}
-
-Recall that momentum is
- 
-\begin{equation*}
-    p = m v
-\end{equation*}
-
-and its units are \SI{}{kg\cdot m/s}. Change in an object's momentum is 
-
-\begin{equation*}
-    \Delta p = p_f - p_i
-\end{equation*}
-
-where $p_f$ is final momentum and $p_i$ is initial momentum. Assuming an object's mass does not change, then an object changes momentum if it changes velocity:
-
-\begin{equation*}
-    \Delta p = m \Delta v = m(v_f - v_i)
-\end{equation*}
-
-\begin{example}
-An \SI{0.080}{kg} egg is drop from rest and reaches a velocity of \SI{4.4}{m/s}. Calculate the egg's change in momentum.
-\end{example}
-
-\textit{Solution:}
-
-We know
-
-\vspace{-1em}
-\begin{align*}
-    m &= \SI{0.08}{kg} \\[1ex]
-    v_i &= \SI{0}{m/s} \\[1ex]
-    v_f &= \SI{4.4}{m/s} \\[1ex]
-\end{align*}
-
-Thus, the change in momentum is
-
-\vspace{-1em}
-\begin{align*}
-    \Delta p &= m (v_f - v_i) \\[1ex]
-    &= (\SI{0.08}{kg})(\SI{4.4}{m/s} - \SI{0}{m/s}) \\[1ex]
-    &= \boxed{\SI{0.352}{kg\cdot m/s}}
-\end{align*}
-
-\hfill $\blacksquare$
-
-Make a list of all physics key terms we have used since the beginning of the school year. List may include: position, velocity, speed, time, acceleration, momentum, kinetic energy, force, etc. 
-
-\textbf{Example 2}. An egg is dropped from rest and reaches a final velocity of \SI{4.4}{m/s} right before striking a pillow. An identical egg is dropped from the same height and reaches the same final velocity. 
-
-\begin{center}
-\begin{tikzpicture}
-    \node at (0,0) {\twemoji[width=2cm]{1f6cf}};
-    \node at (-0.5,2) {\twemoji[height=5mm]{egg}};
-\end{tikzpicture}
-\hspace{2cm}
-\begin{tikzpicture}
-    \node at (0,0) {\phantom{\twemoji[width=2cm]{1f6cf}}};
-    \node at (-0.5,2) {\twemoji[height=5mm]{egg}};
-    \draw (-2,0) -- ++(4,0) node[below,pos=0.5] {concrete floor};
-\end{tikzpicture}
-\end{center}
-
-The first egg survives the fall while the second egg breaks. Why? Use ideas from the physics terms in the previous activity to arrive at an explanation.
-
-[Transition to the The Egg Drop activity at physicsclassroom.com (\href{https://www.physicsclassroom.com/physics-interactives/momentum-and-collisions/egg-drop/egg-drop-interactive}{CLICK HERE}). Find the spreadsheet in Schoology. Get them started on the spreadsheet, then have them finish it.]
-
-
-
-\subsubsection{The Relationship between Net Force and Momentum}
-
-\subsubsection{The Relationship between Time and Momentum}
-
+\subsection{Impulse}
 \textbf{\Gls{impulse}} ($J$) is \glsdesc{impulse}. Mathematically, it is 
 
 \begin{equation*}
@@ -1272,51 +1587,23 @@ Therefore, impulse-momentum theorem is also written as
 \end{equation*}
 
 
+\subsection{Work}
 
 
-\subsubsection{Real-Life Applications of Impulse and Momentum}
-
-\subsubsection{Solving Problems Using the Impulse-Momentum Theorem}
-
-\subsection{Changing Kinetic Energy}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=7cm,height=6cm,
-    % axis lines=left,
-    ybar,
-    symbolic x coords={initial, final},
-    xtick=data,
-    ylabel={Kinetic Energy (J)},
-    ymin=0, ymax=10,
-    ytick={0,1,...,10},
-    bar width=35pt,
-    enlarge x limits=0.5,
-    ymajorgrids=true,
-    tick pos=left,
-    title={Change in Kinetic Energy}
-]
-\addplot[black,fill=black!20] coordinates {(initial,8) (final,2)};
-\end{axis}
-\end{tikzpicture}
-\end{center}
 
 \textbf{\Gls{work}} is \glsdesc{work}.
 
-\begin{example}
-A \SI{12}{N} force is applied on a box, and the box moves a distance of 7 meters. What is the work done on the box?
-\end{example}
+% \begin{example}
+% A \SI{12}{N} force is applied on a box, and the box moves a distance of 7 meters. What is the work done on the box?
+% \end{example}
 
 
-\textit{Solution:}
+% \textit{Solution:}
 
 \hfill $\blacksquare$
 
 More specifically, work is the component of the force in the direction of the displacement, multiplied by the displacement.
 
-\subsubsection{Identifying if a Net Force is Doing Work}
-
-\subsubsection{Calculating Net Work}
 
 \begin{example} \label{HKavsZ}
 Jacob applies a force of \SI{72.0}{N} on a box and pushes it a distance of \SI{25.0}{m}. How much work is done on the box?
@@ -1324,20 +1611,20 @@ Jacob applies a force of \SI{72.0}{N} on a box and pushes it a distance of \SI{2
 
 \begin{center}
     \begin{tikzpicture}
-    \begin{scope}[xshift=-4mm,yshift=-2mm]
-        \draw[dashed] (0,0) rectangle (4mm,4mm);
+    \begin{scope}[shift={(-0.5,0)},yshift=-2mm]
+        \draw[dashed] (0,0) rectangle (5mm,5mm);
     \end{scope}
-    \begin{scope}[xshift=6cm,yshift=-2mm]
-        \draw[fill=black!20] (0,0) rectangle (4mm,4mm);
+    \begin{scope}[shift={(6,0)},yshift=-2mm]
+        \draw[fill=black!20] (0,0) rectangle (5mm,5mm);
     \end{scope}
     \draw[ultra thick, ->] (0,0) -- (2,0) node[above=2pt] {$F$};
-    \draw[->, dashed] (0,0) -- (6,0) node[above left=2pt] {$d$};
+    \draw[->, dashed] (0,-0.5) -- ++(6,0) node[below,pos=0.5] {$d$};
     \end{tikzpicture}
 \end{center}
 
 \textit{Solution:} 
 
-We are given the quantities of force and distance: $F = \SI{72.0}{N}$ and $d = \SI{25.0}{m}$. The unknown quantity we want to find is work. By Equation~(\ref{y0Z6Cw}), 
+We are given the quantities of force and distance: $F = \SI{72.0}{N}$ and $d = \SI{25.0}{m}$. The unknown quantity we want to find is work.
 
 \begin{equation*}
     W = F d = \left(\SI{72.0}{N}\right)\left(\SI{25.0}{m}\right) = \SI{1800}{J}
@@ -1382,15 +1669,33 @@ Therefore, the work done is
 
 \hfill $\blacksquare$
 
-\subsubsection{The Relationship between Net Force and Kinetic Energy}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=7cm,height=6cm,
+    % axis lines=left,
+    ybar,
+    symbolic x coords={initial, final},
+    xtick=data,
+    ylabel={Kinetic Energy (J)},
+    ymin=0, ymax=10,
+    ytick={0,1,...,10},
+    bar width=35pt,
+    enlarge x limits=0.5,
+    ymajorgrids=true,
+    tick pos=left,
+    title={Change in Kinetic Energy}
+]
+\addplot[black,fill=black!20] coordinates {(initial,8) (final,2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\subsubsection{The Relationship between Displacement and Kinetic Energy}
+\subsection{Power}
+Power is work divided by time.
 
-\subsubsection{Solving Problems using the Work-Energy Theorem}
-
-\subsubsection{Comparing the Power of Various Situations}
-
-\subsubsection{Calculating Power}
+\begin{equation}
+    P = \frac{W}{t}
+\end{equation}
 
 \fi
 
@@ -1403,26 +1708,26 @@ Therefore, the work done is
 
 \subsection{Newton's Law of Universal Gravitation}
 
-\subsubsection{The Law of Gravitation}
-
 \textbf{\gls{Newton's universal law of gravitation}} \glsdesc{Newton's universal law of gravitation}.
 
 \begin{center}
-    \begin{tikzpicture}[rotate=10]
-        \draw (0,0) circle (5mm) node[above=5mm] {$m_1$};
-        \draw[|<->|,above=2mm] (0,0) -- (8,0) node[above,pos=0.5] {$r$};
-        \draw (8,0) circle (8mm) node[above=8mm] {$m_2$};
-        \fill (0,0) circle (2pt);
-        \fill (8,0) circle (2pt);
-        \draw[thick,->,right=1mm] (0,0) -- (2,0) node[below,pos=0.8] {$F_g$};
-        \draw[thick,->,left=1mm] (8,0) -- (6,0) node[below,pos=0.8] {$F_g$};
-    \end{tikzpicture}
+\begin{tikzpicture}[rotate=10]
+    \begin{scope}[shift={(0,0.18)}]
+        \draw[|<->|] (0,0) -- (8,0) node[above,pos=0.5] {$d$};
+    \end{scope}
+    \draw (0,0) circle (5mm) node[above=5mm] {$m_1$};
+    \draw (8,0) circle (8mm) node[above=8mm] {$m_2$};
+    \fill (0,0) circle (2pt);
+    \fill (8,0) circle (2pt);
+    \draw[thick,->,right=1mm] (0,0) -- (2,0) node[below,pos=0.5] {$F_g$};
+    \draw[thick,->,left=1mm] (8,0) -- (6,0) node[below,pos=0.5] {$F_g$};
+\end{tikzpicture}
 \end{center}
 
 The magnitude of the gravitational force is
 
 \begin{equation*}
-    F_g  = G\frac{m_1 m_2}{r^2}
+    F_g  = \frac{G m_1 m_2}{d^2}
 \end{equation*}
 
 where $G$ is the \textbf{\gls{gravitational constant}}, \glsdesc{gravitational constant}, and is equal to
@@ -1439,16 +1744,13 @@ Consider two spheres of mass \SI{100.0}{kg} and \SI{400.0}{kg} whose centers are
 We are given two masses and the distance between them: $m_1 = \SI{100.0}{kg}$, $m_2 = \SI{400}{kg}$, $r = \SI{4.00}{m}$. Also, remember that $G = \SI{6.67e-11}{N\,m^2/kg^2}$. By Newton's law of universal gravitation, the gravitational force is
 
 \begin{equation*}
-    F = \frac{G m_1 m_2}{r^2} = 
+    F = \frac{G m_1 m_2}{d^2} = 
     \frac{\left(\SI[per-mode=fraction]{6.67e-11}{\newton\meter\tothe{2}\per\kilogram\tothe{2}}\right) (\SI{100}{kg}) (\SI{400}{kg})}{\left(\SI{4.00}{m}\right)^2} = 
     \boxed{\SI{1.67e-7}{N}}
 \end{equation*}
 
 \hfill $\blacksquare$
 
-
-
-\subsubsection{Comparing Acceleration of Two Masses using Gravitation}
 
 \begin{example}
 When a small asteroid of mass $m$ is a distance $D$ from a larger asteroid of mass $M$, the gravitational force on $m$ by $M$ is $F$. What is the gravitational force when they are a distance $2D$ apart? State your answer in terms of the original force $F$.
@@ -1472,95 +1774,37 @@ When a small asteroid of mass $m$ is a distance $D$ from a larger asteroid of ma
 
 \textit{Solution}:
 
-In Figure 1, the gravitational force is
+In Figure 1, by Newton's law of gravitational, the gravitational force is
 
 \begin{equation*}
-    F = \frac{GmM}{D^2}
+    F_1 = \frac{GmM}{D^2}
 \end{equation*}
 
-Let $F^\prime$ be the force in Figure 2, when the distance has doubled. Then,
+Let $F_2$ be the force in Figure 2, when the distance has doubled. Then,
 
-\begin{equation*}
-    F^\prime = \frac{G m M}{(2D)^2} = \frac{GmM}{4D^2}
-\end{equation*}
+\begin{align*}
+    F_2 &= \frac{G m M}{(2D)^2} \\[1.5ex]
+    &= \frac{GmM}{4D^2} \\[1.5ex]
+    &= \frac{1}{4} \cdot \frac{GmM}{D^2} \\[1.5ex]
+    &= \frac{1}{4} F_1
+\end{align*}
 
-To find the factor of change, we take the ratio $F^\prime/F$:
-
-\begin{equation*}
-    \frac{F^\prime}{F} = \frac{\left(\displaystyle \frac{GmM}{4D^2}\right)}{\left(\displaystyle \frac{GmM}{D^2}\right)} = \left(\frac{\cancel{GmM}}{4\cancel{D^2}}\right) \left(\frac{\cancel{D^2}}{\cancel{GmM}}\right) = \frac{1}{4}
-\end{equation*}
-
-which reduces to
-
-\begin{equation*}
-    \frac{F^\prime}{F} = \frac{1}{4}
-\end{equation*}
-
-Therefore,$F^\prime = \frac{F}{4}$. That is, the gravitational force in Figure 2 is $\frac{1}{4}$ of the force in Figure 1. \hfill $\blacksquare$
-
-\subsubsection{Ranking the Gravitational Force at Various Distances}
-
-\subsubsection{Ranking the Gravitational Force of Various Masses}
-
-\subsubsection{The Gravitational Field}
-
-In general, the strength of the gravitational field on the surface of a massive planetary body is given by
-
-\begin{equation*}
-    g = \frac{GM}{R^2}
-\end{equation*}
-
-where $G = \SI{6.67e-11}{N\cdot m^2/kg^2}$ is the gravitational constant, $M$ is the planet's mass, and $R$ is the planet's radius.
-
-\begin{example}
-    Find the \textit{exact} value, rounded to one decimal place, of the gravitational field strength on Earth. The mass and radius of Earth are $M = \SI{5.97e24}{kg}$ and $R = \SI[group-separator={,}]{6378000}{m}$. 
-\end{example}
-
-\textit{Solution:}
-
-\begin{equation*}
-    g = \frac{GM}{R^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg^2})(\SI{5.97e24}{kg})}{(\SI{6.378e6}{m})^2} = \boxed{\SI{9.8}{N/kg}}
-\end{equation*}
-
-\hfill $\blacksquare$
-
-\subsubsection{Calculating Force using the Law of Gravitation}
-
-\subsubsection{The Gravitational Field Strength of Earth, g}
+So, $F_2$ is 4 times weaker than $F_1$. That is, in Figure 2, the gravitational force decreases by a factor of 4 compared to Figure 1, when the distance is doubled. \hfill $\blacksquare$
 
 
-The gravitational field strength, $g$:
+\subsection{Mass and Weight}
 
-\begin{equation*}
-    g = \SI{10}{N/kg} \qquad \text{(on Earth)}
-\end{equation*}
+Recall that \textbf{\gls{mass}} is \glsdesc{mass}. It does not change based on location. In equations it is represented as $m$.
 
-\subsubsection{Mass and Weight}
+\textbf{\Gls{weight}} is \glsdesc{weight}. 
 
-\textbf{\Gls{mass}} is \glsdesc{mass}. It does not change based on location. In equations it is represented as $m$.
-
-\textbf{\Gls{weight}} is \glsdesc{weight}. Being a force, weight is measured in newtons. It changes depending on location. In equations weight can be represented as $w$, $F_w$, or $F_g$.
-
-\begin{center}
-    \begin{tabular}{c|c}
-        \textbf{Weight} & \textbf{Mass} \\ \hline
-        force of gravity on an object & amount of matter \\ \hline
-        measured in newtons (N) & measured in kilograms (kg) \\ \hline
-        variable: $w$ & variable: $m$ \\ \hline
-        vector (magnitude and direction) & scalar (magnitude only) \\ \hline
-        e.g., $w = \SI{120}{N}$ down & e.g., $m = \SI{5}{kg}$ \\ \hline
-        subject to change & does not change (constant) 
-    \end{tabular}
-\end{center}
-
-
-Using a spring scale, you can plot the weight (force of gravity) as a function of mass, using a variety of masses, as shown below.
+Using a force sensor, you can plot the weight (force of gravity) as a function of mass, using a variety of masses, as shown below.
 
 \begin{center}
 \begin{minipage}[c][5cm][c]{0.3\textwidth}
 \centering
 \begin{tikzpicture}
-    \draw[decorate,decoration={coil,segment length=3pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {spring scale} -- ++(0,-2);
+    \draw[decorate,decoration={coil,segment length=3pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {force sensor} -- ++(0,-2);
     \begin{scope}[shift={(-0.5,-3)}]
         \draw[fill=black!10] (0,0) rectangle (1,1) node[pos=0.5] {\SI{5}{kg}};
         \draw [thick,->,yshift=-1mm] (0.5,0) -- ++(0,-1) node[below] {$F_g$};
@@ -1586,21 +1830,30 @@ Using a spring scale, you can plot the weight (force of gravity) as a function o
 \end{minipage}
 \end{center}
 
-On Earth, the slope of this graph is about \SI{10}{N/kg}, because the gravitational field strength $g$ is \SI{10}{N/kg}.
+The slope of this graph is about \SI{10}{N/kg} and represents the strength of the gravitational field near the surface of the Earth. Therefore, weight is defined mathematically as
 
-\subsubsection{Calculating Force using Mass and Gravitational Field Strength}
+\begin{equation}
+    F_g = mg
+\end{equation}
 
-Weight, or the force of gravity on an object of mass $m$, is calculated as
+where $g = \SI{10}{N/kg}$ is the gravitational field strength. Being a force, weight is measured in newtons. It changes depending on location. 
 
-\begin{equation*}
-    F_g = m g
-\end{equation*}
+Below is a table comparing and contrasting weight and mass.
 
-In words,
+\begin{center}
+\def\arraystretch{1.5}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Weight} & \textbf{Mass} \\ \hline
+        force of gravity on an object & amount of matter \\ \hline
+        measured in newtons (N) & measured in kilograms (kg) \\ \hline
+        variable: $F_g$ & variable: $m$ \\ \hline
+        vector (magnitude and direction) & scalar (magnitude only) \\ \hline
+        e.g., $F_g = \SI{120}{N}$ down & e.g., $m = \SI{5}{kg}$ \\ \hline
+        subject to change & does not change (constant) \\ \hline
+    \end{tabular}
+\end{center}
 
-\begin{equation*}
-    \text{weight} = \text{mass} \times \SI{10}{N/kg}
-\end{equation*}
 
 \begin{example}
 What is the weight of a 12\,kg box?
@@ -1609,14 +1862,35 @@ What is the weight of a 12\,kg box?
 \textit{Solution:}
 
 \begin{equation*}
-    w = mg = (\SI{12}{kg})(\SI{10}{m/s^2}) = \boxed{\SI{120}{N}}    
+    F_g = mg = (\SI{12}{kg})(\SI{10}{m/s^2}) = \boxed{\SI{120}{N}}    
 \end{equation*}
 
 \hfill $\blacksquare$
 
-\subsection{Forces from Surfaces}
+\subsection{The Gravitational Field}
 
-\subsubsection{Normal Force and Frictional Force}
+In general, the strength of the gravitational field on the surface of a massive planetary body is given by
+
+\begin{equation*}
+    g = \frac{GM}{R^2}
+\end{equation*}
+
+where $G = \SI{6.67e-11}{N\cdot m^2/kg^2}$ is the gravitational constant, $M$ is the planet's mass, and $R$ is the planet's radius.
+
+\begin{example}
+    Find the \textit{exact} value, rounded to one decimal place, of the gravitational field strength on Earth. The mass and radius of Earth are $M = \SI{5.97e24}{kg}$ and $R = \SI[group-separator={,}]{6378000}{m}$. 
+\end{example}
+
+\textit{Solution:}
+
+\begin{equation*}
+    g = \frac{GM}{R^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg^2})(\SI{5.97e24}{kg})}{(\SI{6.378e6}{m})^2} = \boxed{\SI{9.8}{N/kg}}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+
+\subsection{Forces from Surfaces}
 
 A \textbf{\gls{contact force}} is \glsdesc{contact force}. Examples of contact forces include:
 
@@ -1695,8 +1969,6 @@ The amount of friction acting on an object is determined by the roughness of the
 
 Friction is also related to the normal force. If the normal force increases due to a change in the scenario, then friction will increase too. 
 
-\subsubsection{Why the Normal and Gravitational Forces are not Force Pairs}
-
 \begin{example}
 A 3\,kg book rests on a table. Find the normal force.
 \end{example}
@@ -1730,19 +2002,10 @@ and the direction is up.
 
 \hfill $\blacksquare$
 
-\subsubsection{How Motion, Surfaces, and the Normal Force affect the Frictional Force}
 
 \subsection{Applied Forces}
 
-\subsubsection{Tension Force}
-
-\subsubsection{Identifying other Applied Forces}
-
 \subsection{Analyzing Forces using Motion}
-
-\subsubsection{Free Body Diagrams from Word Problems}
-
-\subsubsection{Net Resultant Force using Vector Addition}
 
 A \textbf{\gls{vector}} is \glsdesc{vector}. Vectors are represented by arrows. Consider vector $\vec{A}$ with a magnitude of 5 units at \ang{60} above the horizontal, shown below. The magnitude of this vector is
 
@@ -1853,12 +2116,6 @@ Various examples of vector and their components are shown above, but it's often 
 
 \hfill $\blacksquare$
 
-\subsubsection{Solving for Unknown Force, Mass, or Acceleration}
-
-\subsubsection{Solving for Other Unknowns}
-
-
-
 \fi
 
 \clearpage
@@ -1868,51 +2125,166 @@ Various examples of vector and their components are shown above, but it's often 
 
 \ifShowUnitVI
 
-\subsection{Free Fall Concepts}
-
-\subsubsection{Gravitational Field Strength and Acceleration due to Gravity on Earth}
-
-% \textit{Learning expectation}: \glsdesc{OSLE 6.1.a}
-
-\textbf{\Gls{free fall}} is \glsdesc{free fall}.
-
-\subsubsection{Why Objects near Earth's Surface Fall at the
-Same Rate}
+% \subsection{Free Fall Concepts}
 
 
-% \textit{Learning expectation}: \glsdesc{OSLE 6.1.b}
+\subsection{Kinematic Equations}
 
-\subsubsection{Final Velocity and Time in Free Fall}
+The \textbf{\gls{kinematic equations}} are \glsdesc{kinematic equations}. They may be derived from the work-energy theorem and impulse-momentum theorem as follows.
 
+\begin{example}
+    Use the work-energy theorem to derive a kinematic equation.
+\end{example}
 
-% \textit{Learning expectation}: \glsdesc{OSLE 6.1.c}
+\textit{Solution:}
 
-\subsubsection{Motion of Objects Dropped or Thrown using Multiple Representations}
+The work-energy theorem is
 
+\begin{equation*}
+    W = \Delta K
+\end{equation*}
 
-% \textit{Learning expectation}: \glsdesc{OSLE 6.1.d}
+where
 
-\subsubsection{Gravitational Force, Impulse, and Work Done by Earth}
+\begin{equation*}
+    W = F \Delta x
+\end{equation*}
 
+and
 
-% \textit{Learning expectation}: \glsdesc{OSLE 6.1.e}
+\begin{equation*}
+    \Delta K = \frac{1}{2}m v_f^2 - \frac{1}{2} m v_i^2
+\end{equation*}
 
-\subsection{Solving Constant Acceleration Problems}
+By Newton's second law,
 
-\subsubsection{Describing What is Known About Motion}
+\begin{equation*}
+    F = ma
+\end{equation*}
 
-The \textbf{\gls{kinematic equations}} are \glsdesc{kinematic equations}. They are
+so that
+
+\begin{equation*}
+    ma \Delta x = \frac{1}{2}m v_f^2 - \frac{1}{2} m v_i^2
+\end{equation*}
+
+Solving this equation for the term $v_f^2$ results in one of the kinematic equations:
+
+\begin{equation*}
+    \boxed{v_f^2 = v_i^2 + 2 a \Delta x}
+\end{equation*}
+
+Note that this equation does not depend on mass.
+
+\hfill $\blacksquare$
+
+\begin{example}
+    Use the impulse-momentum theorem to derive a kinematic equation.
+\end{example}
+
+\textit{Solution:}
+
+The impulse-momentum theorem states
+
+\begin{equation*}
+    F t = \Delta p
+\end{equation*}
+
+where 
+
+\begin{equation*}
+    \Delta p = m v_f - m_i
+\end{equation*}
+
+By Newton's second law,
+
+\begin{equation*}
+    F = ma
+\end{equation*}
+
+so that
+
+\begin{equation*}
+    ma t = m v_f - mv_i
+\end{equation*}
+
+Solving this equation for final velocity leads to the kinematic equation
+
+\begin{equation*}
+    \boxed{v_f = v_i + at}
+\end{equation*}
+
+Note that this is a re-arrangement of the law of acceleration,
+
+\begin{equation*}
+    a = \frac{\Delta v}{t}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+The two kinematic equations derived in the examples above may be combined to synthesize the four equations for uniformly accelerated motion. These equations are summarized below:
 
 \begin{align}
-    v_f &= v_i + at \\[1ex]
-    \Delta x &= v_i t + \frac{1}{2}at^2 \\[1ex]
-    v_f^2 &= v_i^2 + 2 a \Delta x \\[1ex]
-    \Delta x &= \frac{1}{2} \left(v_i + v_f\right) t
+    v_f &= v_i + a t \label{Ty1d0} \\[1ex]
+    \Delta x &= v_i t + \frac{1}{2}a t^2 \label{bxVcq} \\[1ex]
+    v_f^2 &= v_i^2 + 2 a \Delta x \label{UOYTP} \\[1ex]
+    \Delta x &= \frac{1}{2} \left(v_i + v_f\right) \label{vGg8T} t
 \end{align}
 
-where $v_f$ is final velocity, $v_i$ is initial velocity, $a$ is acceleration, $t$ is time, and $\Delta x$ is displacement. 
+where $v_f$ is final velocity, $v_i$ is initial velocity, $a$ is acceleration, $\Delta t$ is the time interval during which the acceleration occurred, and $\Delta x$ is displacement. All units are in meters, seconds, meters per second, or $\mathrm{m/s^2}$.
 
-The kinematic equations for one-dimensional free fall motion are
+\begin{example} %...Taken from PhysicsClassroom.com
+    A car coasts into a hill at \SI{17.0}{m/s}. It slows down with a uniform acceleration of \SI{-1.0}{m/s^2}. (a) What is the car's speed after \SI{5.0}{s}? (b) What is the car's displacement after \SI{5.0}{s}? (c) What is the car's speed after \SI{10.0}{s}? (d) What is the car's displacement after \SI{10.0}{s}?
+\end{example}
+
+\textit{Solution:}
+First, we list the known variables, identify the unknown, and evaluate which equation is needed to solve the problem. 
+
+(a) The known and unknown variables are:
+
+\begin{align*}
+    v_i &= \SI{17}{m/s} \\[1ex]
+    a &= \SI{-1.0}{m/s^2} \\[1ex]
+    \Delta t &= \SI{5.0}{s} \\[1ex]
+    v_f &=\: \text{?}
+\end{align*}
+
+These are related by Equation \eqref{Ty1d0}, which gives the answer:
+
+\begin{align*}
+    v_f &= v_i + a \Delta t \\[1ex]
+    &= \SI{17}{m/s} + \left(\SI{-1.0}{m/s^2}\right)(\SI{5.0}{s}) \\[1ex]
+    &= \boxed{\SI{12}{m/s}}
+\end{align*}
+
+(b) By Equation \eqref{bxVcq}, the displacement is
+
+\begin{align*}
+    \Delta x &= v_i \Delta t + \frac{1}{2}a \Delta t^2 \\[1ex]
+    &= (\SI{17}{m/s}) (\SI{5.0}{s}) + \frac{1}{2} \left(\SI{-1.0}{m/s^2}\right)(\SI{5.0}{s})^2 \\[1ex]
+    &= \boxed{\SI{72.5}{m}}
+\end{align*}
+
+(c) If now $\Delta t = \SI{10}{s}$, then the velocity is
+
+\begin{align*}
+    v_f &= v_i + a \Delta t \\[1ex]
+    &= \SI{17}{m/s} + \left(\SI{-1.0}{m/s^2}\right)(\SI{10.0}{s}) \\[1ex]
+    &= \boxed{\SI{7}{m/s}}
+\end{align*}
+
+(d) And with $\Delta t = \SI{10}{s}$, displacement is now
+
+\begin{align*}
+    \Delta x &= v_i \Delta t + \frac{1}{2}a \Delta t^2 \\[1ex]
+    &= (\SI{17}{m/s}) (\SI{10}{s}) + \frac{1}{2} \left(\SI{-1.0}{m/s^2}\right)(\SI{10}{s})^2 \\[1ex]
+    &= \boxed{\SI{120}{m}}
+\end{align*}
+
+\hfill $\blacksquare$
+
+
+\textbf{\Gls{free fall}} is \glsdesc{free fall}. By setting $a = -g$, the kinematic equations for one-dimensional free fall motion are
 
 \begin{align}
     v_f &= v_i - gt \label{xgXRE} \\[1ex]
@@ -1923,9 +2295,6 @@ The kinematic equations for one-dimensional free fall motion are
 
 where $g = \SI{10}{m/s^2}$ is the strength of the gravitational field near the surface of the Earth, also known as the acceleration due to gravity.
 
-\subsubsection{Solving for Unknown Quantities: Horizontal Motion}
-
-\subsubsection{Solving for Unknown Quantities: Vertical Motion}
 
 \begin{example}
     The JP Morgan Chase Tower is the tallest building in Houston. If you drop a bowling ball from rest from the top of the building, it takes 7.81 seconds for it to strike the ground below. How tall is the building?
@@ -1981,8 +2350,6 @@ Therefore, it take 12.9 seconds for the ball to strike the ground.
 \hfill $\blacksquare$
 
 
-\subsubsection{Multi-Step Problems with Kinematic Equations}
-
 \fi
 
 \clearpage
@@ -1991,9 +2358,7 @@ Therefore, it take 12.9 seconds for the ball to strike the ground.
 
 \ifShowUnitVII
 
-\subsection{Factors That Affect Projectile Trajectory}
-\subsubsection{Trajectory, Hang Time, Max Height, and Range}
-\subsubsection{How Initial Velocity, Launch Height, Launch Angle, and Mass Affect Motion}
+\subsection{Projectile Motion}
 
 
 \Glsdesc{projectile} is called a \textbf{\gls{projectile}}. Thus, \textbf{\gls{projectile motion}} is \glsdesc{projectile motion}. The \textbf{\gls{trajectory}} is \glsdesc{trajectory}. The shape of a trajectory is a parabola, shown below:
@@ -2059,11 +2424,6 @@ A projectile may be launched at different velocities, from different heights, an
 A projectile has horizontal and vertical motions. These are independent, meaning they don't influence one another. Vertical and horizontal motions are analyzed them separately, along perpendicular axes.
 
 \subsection{Horizontally Launched Projectiles}
-\subsubsection{Describing Vertical and Horizontal Motion Using Multiple Representations}
-
-\subsubsection{Horizontal and Vertical Components with Vector Addition}
-
-\subsubsection{Word Problems About Horizontally Launched Projectiles}
 
 A \textbf{\gls{horizontally launched projectile}} is, as the name suggests, \glsdesc{horizontally launched projectile}. The figure below is a motion map showing similarities and differences between a dropped object and a horizontally launched one.
 
@@ -2240,9 +2600,6 @@ The negative indicates the direction of the $y$-component of velocity is downwar
 
 \subsection{Circular Motion}
 
-\subsubsection{Uniform Circular Motion Using Multiple Representations}
-
-\subsubsection{Quantities of Circular Motion}
 
 \begin{example}
 A car moves at a constant linear speed of \SI{24}{m/s} in a circular road of radius \SI{18}{m}. Calculate the car's centripetal acceleration.
@@ -2296,11 +2653,8 @@ Therefore, when the speed is halved, the acceleration decreases to $\frac{1}{4}$
 
 \hfill $\blacksquare$
 
-
-
 \subsection{Circular Motion and Orbiting Bodies}
 
-\subsubsection{How Radius and Mass Affects Orbiting Systems}
 
 \fi
 
@@ -2312,12 +2666,9 @@ Therefore, when the speed is halved, the acceleration decreases to $\frac{1}{4}$
 
 \subsection{Physical Systems}
 
-\subsubsection{Choices for a System}
-
 A \textbf{\gls{system}} is \glsdesc{system}.
 
-\subsubsection{Energy Stored in the Arrangement of Particles}
-\subsubsection{Gravitational and Elastic Potential Energy}
+\subsection{Gravitational and Elastic Potential Energy}
 
 \textbf{\Gls{gravitational potential energy}} ($E_g$) is \glsdesc{gravitational potential energy}.
 
@@ -2402,14 +2753,6 @@ We are given mass and height: $m = \SI{2.0}{kg}$, $h = \SI{15}{m}$, and gravity 
 
 \hfill $\blacksquare$
 
-\subsubsection{Comparing Potential Energy}
-\subsubsection{Multiple Representations for Total Mechanical Energy}
-\subsubsection{Effects of Changing Physical Quantities on Energy}
-\subsubsection{Calculations of Total Mechanical Energy}
-
-
-
-
 
 
 % \textit{YouTube}: ``Chris Farley -- Greatest Entrance Ever'' by MyTalkShowHeroes (\href{https://youtu.be/_z9kdqDwA80}{link}). Watch the first 1:00 min. What does Chris Farley have a lot of? Energy. More specifically, kinetic energy.
@@ -2422,7 +2765,7 @@ We are given mass and height: $m = \SI{2.0}{kg}$, $h = \SI{15}{m}$, and gravity 
 \textbf{mechanical energy} is the sum of kinetic energy and potential energy. The law of conservation of mechanical energy says that for a closed system energy is conserved. This law is expressed as
 
 \begin{equation} \label{QyLUh5}
-    \mathrm{ME} = \mathrm{KE} + \mathrm{PE} = \mathrm{constant}
+    \mathrm{ME} = K + \mathrm{PE} = \mathrm{constant}
 \end{equation}
 
 but is more usefully written as
@@ -2431,7 +2774,7 @@ but is more usefully written as
     \mathrm{KE_i} + \mathrm{PE_i} = \mathrm{KE_f} + \mathrm{PE_f}
 \end{equation}
 
-If we replace each $\mathrm{KE}$ and $\mathrm{PE}$ with $\frac{1}{2}mv^2$ and $mgh$, respectively, the law of conservation of energy becomes
+If we replace each $K$ and $\mathrm{PE}$ with $\frac{1}{2}mv^2$ and $mgh$, respectively, the law of conservation of energy becomes
 
 \begin{equation} \label{ZSmSin}
     \frac{1}{2} m v_i^2 + mgh_i  = 
@@ -2516,7 +2859,7 @@ At the end of Example \ref{mUfgIz} we concluded that his kinetic energy at the b
 But his kinetic energy is
 
 \begin{equation*}
-    \mathrm{KE} = \frac{1}{2} m v^2
+    K = \frac{1}{2} m v^2
 \end{equation*}
 
 Substituting the given values leads to 
@@ -2533,26 +2876,9 @@ If we solve this equation for speed ($v$) then his speed is
 
 \hfill $\blacksquare$
 
-\subsection{Energy is Conserved}
+\subsection{Conservation of Energy}
 
-\subsubsection{Energy of a System Before and After an Event}
-
-\subsubsection{Law of Conservation of Energy}
-
-\subsubsection{Power (Revisited)}
-
-
-\subsection{Momentum is Conserved}
-
-\subsubsection{Momentum, Force, and Impulse in Collisions and Explosions}
-
-\subsubsection{Total Momentum Before and After Collisions and Explosions}
-
-\subsubsection{Law of Conservation of Momentum}
-
-\subsubsection{Solving for Unknown Quantities using Conservation of Momentum}
-
-
+\subsection{Conservation of Momentum}
 
 \begin{example}\label{EvkSMv}
 A 0.057-kg tennis ball moves at $-\SI{12}{m/s}$ when it gets struck to a new velocity of $+\SI{48}{m/s}$. What is the ball's change in momentum?
@@ -2898,14 +3224,431 @@ Therefore, the final velocity of the system is (rounding up) \SI{-0.13}{m/s}; th
 
 \clearpage
 
+\section{Oscillatory Motion}
+\ifShowUnitVIII
+
+\subsection{Oscillating Motion}
+
+To \textbf{\gls{oscillate}} means \glsdesc{oscillate}. A \textbf{\gls{medium}} is \glsdesc{medium}. 
+
+\subsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
+
+\textbf{\Gls{simple harmonic motion}} (SHM) is \glsdesc{simple harmonic motion}.
+
+A \textbf{\gls{simple harmonic oscillator}} is \glsdesc{simple harmonic oscillator}. The figure below shows such a oscillator, a mass attached to a spring. Before the mass is released, it is held in place without any compression or stretching on the string. After the mass is released, gravity does work on the mass, and the spring is stretched until the downward force of gravity is balanced by the upward force by the spring. The amplitude is shown below.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[decorate,decoration={coil,segment length=2pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {before release} -- ++(0,-1.5);
+    \draw[densely dashed] (-1,-1.5) -- ++(6,0);
+    \draw[densely dashed] (-1,-3.5) -- ++(6,0);
+    \begin{scope}[shift={(-0.5,-2.5)}]
+        \draw[fill=black!10] (0,0) rectangle (1,1);
+    \end{scope}
+    \draw[shift={(4,0)},decorate,decoration={coil,segment length=3pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {after release} -- ++(0,-3.5);
+    \begin{scope}[shift={(3.5,-4.5)}]
+        \draw[fill=black!10] (0,0) rectangle (1,1);
+        \draw[<->] (-0.5,1) -- ++(0,2) node[above,pos=0.5,rotate=90] {amplitude}; 
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+The \textbf{\gls{amplitude}} is \glsdesc{amplitude}. A ruler may be used to measure the oscillator's amplitude. A stopwatch is used to measure the oscillator's period and frequency. The \textbf{\gls{period}} ($T$) is \glsdesc{period}, and \textbf{\gls{frequency}} ($f$) is \glsdesc{frequency}. They are inversely related:
+
+\begin{equation} \label{9WT68r}
+    f = \frac{1}{T} \hspace{2em} 
+    T = \frac{1}{f}
+\end{equation}
+
+As period increases, frequency decreases, and vice-versa. Period is measured in seconds. Frequency is measured in 1 over seconds, or Hertz (Hz). Thus, \SI{1}{Hz} is equivalent is 1/s.
+
+% \begin{center}
+%     \begin{tabular}{cl|cc}
+%     \hline
+%     \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
+%     \hline\hline
+%         $f$ & frequency & hertz & \si{\Hz}\\
+%         $T$ & period & second & s\\
+%     \hline
+%     \end{tabular}
+% \end{center}
+
+\begin{example}
+    A transverse wave completes 1 wave cycle every 0.25 seconds. What is the frequency of the wave?
+\end{example}
+
+\textit{Solution}: 
+
+We are given the period of the wave: $T = \SI{0.25}{s}$. By Equation \ref{9WT68r}, its frequency is
+
+\begin{equation*}
+    f = \frac{1}{T} = \frac{1}{0.25} = \SI{4}{\Hz}\ .
+\end{equation*}
+
+Therefore, this wave completes 4 wave cycles every second.
+
+\hfill $\blacksquare$
+
+\begin{example}
+    If a wave completes exactly $3 \frac{1}{3}$ wave cycles every second, what is the period of oscillation of the wave? 
+\end{example}
+
+\textit{Solution}: 
+
+We are given the wave's frequency as 3 and one-third hertz, or $f = 3\frac{1}{3}\,\text{Hz}$. This mixed number is written as an improper\footnote{See \href{https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions}{Section 4.1} of \textit{OpenStax: Prealgebra 2e} for a review on mixed numbers and improper fractions.} fraction as
+
+\begin{equation*}
+    3 \frac{1}{3} = \frac{10}{3} = 3.\overline{3}
+\end{equation*}
+
+So, the frequency is $f = \frac{10}{3}\,\text{Hz}$. The period, by Equation~\eqref{9WT68r}, is
+
+\begin{equation*}
+    T = \frac{1}{f} = \frac{1}{\frac{10}{3}} = \frac{3}{10}  = \SI{0.3}{s}
+\end{equation*}
+
+Therefore, it takes this wave 0.3 seconds to complete one wave cycle. 
+
+\hfill $\blacksquare$
+
+Pendulums?
+
+\fi
+
+\clearpage
+
+\section{Mechanical Waves}
+\ifShowUnitX
+
+\subsection{Transverse Waves}
+
+
+A \textbf{\gls{transverse wave}} is \glsdesc{transverse wave}. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{scope}[shift={(4.1,-1.43)},x=5mm,y=5mm]]
+    % \draw (-2,2.85) -- ++(6,0);
+    \draw[ultra thick,brown] (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \clip (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \node at (2,3.1) {\twemoji[height=4cm]{national park}};
+    \end{scope}
+    \draw[x=3mm,y=1cm,domain=0:2.75*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=3mm,y=1cm,domain=0:2.75*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \draw[thick,->] (pi/3,1.3) -- ++(1.5,0) node[above,pos=0.5] {wave velocity};
+    % \draw (0,0) -- (2*pi,0);
+\end{tikzpicture}
+\end{center}
+
+The measurements of a transverse wave are shown below.
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=1.5cm]
+    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[->] (0,0) -- (3.3*2*pi,0) node[above,align=center] {propagation\\direction};
+    \draw[domain=2*pi:4*pi,smooth,ultra thick, red] plot (\x,{sin(\x r)});
+    \draw[<->,yshift=3pt] (2*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
+    \draw[dashed] (2*pi,0) -- ++(0,1.1) (4*pi,0) -- ++(0,1.1);
+    \draw[<->,yshift=-3pt] (3*pi/2,-1) -- ++(2*pi,0);
+    \draw[dashed] (3*pi/2,0) -- ++(0,-1.1) (7*pi/2,0) -- ++(0,-1.1);
+    \draw[<->] (pi/2,0) -- ++(0,1) node[above] {amplitude};
+    \draw[<-,xshift=1pt,yshift=1pt] (9*pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
+    \draw[<-,xshift=-1pt,yshift=-1pt] (11*pi/2,-1) -- ++ (-1.5,-0.3) node[below] {trough};
+    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
+\end{tikzpicture}
+\end{center}
+
+\textbf{\Gls{wavelength}} is \glsdesc{wavelength}. \textbf{\Gls{frequency}} is \glsdesc{frequency}. \textbf{\Gls{wave velocity}} is \glsdesc{wave velocity}. 
+
+A \textbf{\gls{wave cycle}} is \glsdesc{wave cycle}.
+
+\begin{center}
+\begin{tikzpicture}[x=3.5mm,y=1cm]
+\draw[domain=0:6*2*pi,samples=200,lightgray] plot (\x,{sin(\x r)});
+\draw[lightgray] (0,0) -- (6*2*pi,0);
+\draw[domain=0:2*pi,smooth,ultra thick, red] plot (\x,{sin(\x r)});
+\draw[<->,yshift=3pt] (0,1) -- ++(2*pi,0) node[above,pos=0.5] {1 wave cycle};
+\draw[dashed] (0,0) -- ++(0,1.1) (2*pi,0) -- ++(0,1.1);
+\draw[domain=7*pi/2:11*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
+\draw[<->,yshift=-3pt] (7*pi/2,-1) -- ++(2*pi,0);
+\draw[dashed] (7*pi/2,0) -- ++(0,-1.1) (11*pi/2,0) -- ++(0,-1.1);
+\draw[domain=13*pi/2:17*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
+\draw[<->,yshift=3pt] (13*pi/2,1) -- ++(2*pi,0);
+\draw[dashed] (13*pi/2,0) -- ++(0,1.1) (17*pi/2,0) -- ++(0,1.1);
+\draw[domain=18.5*pi/2:22.5*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
+\draw[<->,yshift=-3pt] (18.5*pi/2,-1) -- ++(2*pi,0);
+\draw[dashed] (18.5*pi/2,0) -- ++(0,-1.1) (22.5*pi/2,0) -- ++(0,-1.1);
+\end{tikzpicture}
+\end{center}
+
+
+\begin{example}
+    How many wave cycles are shown in the wave below?
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+    xmin=0,xmax=6,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\textit{Solution}: 
+
+There are exactly 3 wave cycles. In the figure below, the first wave cycle in highlighted in red. The end points of the subsequent wave cycles are labeled as points 2 and 3.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+    xmin=0,xmax=6,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw[dashed] (0,0) -- (6,0);
+    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[ultra thick, red] plot[domain=0:2*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[fill=black] (0,0) circle (2pt) 
+        (2,0) circle (2pt) node[above left] {1}
+        (4,0) circle (2pt) node[above left] {2}
+        (6,0) circle (2pt) node[above left] {3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\hfill $\blacksquare$
+
+
+\begin{example}
+How many wave cycles are shown below? 
+\end{example}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.5cm,
+    xmin=0,xmax=9,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw plot[domain=0.5*pi:0.5*pi + 4.5*2*pi, samples=200] (\x/pi,{sin(\x r)});
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\textit{Solution}: 
+
+There are 4.5 wave cycles. Note that the 4th wave begins at a crest but finish a half-wave cycle later at a trough.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.5cm,
+    xmin=0,xmax=9,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw plot[domain=0.5*pi:0.5*pi + 4.5*2*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[ultra thick, red] plot[domain=0.5*pi:0.5*pi + 2*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[dashed] (0.5,1) -- ++ (axis direction cs: 0.5+4.5*2,0);
+    \draw[fill=black] (0.5,1) circle (2pt)
+        (0.5+2,1) circle (2pt) node[above] {1}
+        (0.5+2*2,1) circle (2pt) node[above] {2}
+        (0.5+3*2,1) circle (2pt) node[above] {3}
+        (0.5+4*2,1) circle (2pt) node[above] {4}
+        (0.5+4.5*2,-1) circle (2pt) node[below] {4.5};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\hfill $\blacksquare$
+
+Wave velocity is calculated by multiplying a wave's frequency by its wavelength. The formula is
+
+\begin{equation} \label{UeynWL}
+    v = f \lambda
+\end{equation}
+
+where $f$ is frequency in Hz and $\lambda$ is wavelength in meters.
+
+
+% \begin{center}
+%     \begin{tabular}{cl|cc}
+%     \hline
+%     \textbf{Symbol} & \textbf{Quantity} & \textbf{Base SI Unit} & \textbf{Unit Symbol}  \\
+%     \hline\hline
+%         $v$ & wave velocity & meter per second & \si{\meter/\second}\\
+%         $f$ & frequency & hertz & \si{\Hz}\\
+%         $\lambda$ & wavelength & meter & m\\
+%     \hline
+%     \end{tabular}
+%     \label{fig:Unit10_Table}
+% \end{center}
+
+\begin{example}
+The frequency of a wave is 2.5 hertz, and its wavelength is 3.0 meters. Calculate the wave velocity.
+\end{example}
+
+\textit{Solution}: 
+
+We are given the frequency and wavelength: $f = \SI{2.5}{Hz}$ and $\lambda = \SI{3.0}{m}$. So, wave velocity is
+
+\begin{align*}
+    v &= f \lambda \\[1ex]
+    &= (\SI{2.5}{Hz})(\SI{3.0}{m}) \\[1ex]
+    &= \boxed{\SI{7.5}{m/s}}
+\end{align*}
+
+Thus, this wave moves at a speed of 7.5 meters per second.
+
+\hfill $\blacksquare$
+
+% \begin{example}
+%     The period of a wave is 0.78 seconds. Its wavelength is 1.1 meters. What is the wave's velocity?
+% \end{example}
+
+% Solution: We are given period and wavelength: $T = \SI{0.78}{s}$ and $\lambda = \SI{1.1}{m}$. The wave's frequency, is
+
+% \begin{equation*}
+%     f = \frac{1}{T} = \frac{1}{0.78} = \SI{1.28}{Hz}
+% \end{equation*}
+
+
+% Therefore, the wave velocity (Eq.~\ref{UeynWL}) is
+
+% \begin{equation*}
+%     v = f \lambda = (1.28)(1.1) = \SI{1.4}{m/s}
+% \end{equation*}
+
+% This wave travels at 1.4 meters per second.
+
+% Solution:End
+
+\subsection{Constructive and Destructive Interference}
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-2)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + sin(\x r)}) node[right] {Resultant};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r - pi r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,0) node[right] {Resultant};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{0.3*cos(\x*5 r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + 0.3*cos(\x*5 r)}) node[right] {Resultant};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Longitudinal Waves}
+
+A \textbf{\gls{longitudinal wave}} is \glsdesc{longitudinal wave}.
+
+\begin{center}
+    \tikzset{declare function={f(\x)=sin(540*\x);}}
+    \begin{tikzpicture}
+     \draw[->] (-0.5,0) -- (10,0);
+     \draw[very thick, domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
+     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
+     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Sound}
+
+\begin{center}
+    \begin{tikzpicture}[
+        declare function={a(\x)=0*\x+2;},
+        declare function={b(\x)=0*\x;}
+    ]
+    \begin{axis}[
+        domain=0:5,
+        axis lines=middle,
+        axis equal image,
+        xtick=\empty, ytick=\empty,
+        axis line style={draw=none},
+        enlargelimits=true,
+        clip mode=individual, clip=false
+    ]
+    \addplot [black, only marks, mark=*, samples=300, mark size=0.75,domain=0:2]
+        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
+        
+    \addplot [black, only marks, mark=*, samples=50, mark size=0.75,domain=2.5:4.5]
+        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
+    \draw[thick] (axis cs: 0,0) rectangle (axis cs: 2,2);
+    \draw[thick] (axis cs: 2.5,0) rectangle (axis cs: 4.5,2);
+    \node at (axis cs: 1,2.2) {\small \textbf{HIGH DENSITY}};
+    \node at (axis cs: 3.5,2.2) {\small \textbf{LOW DENSITY}};
+    \end{axis}
+    \end{tikzpicture}
+    \captionsetup{type=figure,margin=1in,font=scriptsize}
+    \captionof{figure}{Particles in two boxes of identical size. The air density is higher in the box with more particles.}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7.5cm,width=7.5cm,
+      cycle list={
+        only marks,mark size=1pt\\
+        only marks,mark size=1pt\\
+      },
+      xmin=0,xmax=8,
+      ymin=-4,ymax=4,
+      domain=270:360+90,
+      samples=150,
+      axis line style={draw=none},
+      ticks=none,
+      clip=false,
+    ]
+    \draw[dashed,->] (0,0) -- (6,0);
+    \addplot ({(0.2+0.07*rand)*cos(x)},{(0.2+0.07*rand)*sin(x)});
+    \addplot ({(1.0+0.07*rand)*cos(x)},{(1.0+0.07*rand)*sin(x)});
+    \addplot ({(2.0+0.10*rand)*cos(x)},{(2.0+0.10*rand)*sin(x)});
+    \addplot ({(3.0+0.12*rand)*cos(x)},{(3.0+0.12*rand)*sin(x)});
+    \addplot ({(4.0+0.12*rand)*cos(x)},{(4.0+0.12*rand)*sin(x)});
+    
+    \draw[<-,ultra thick] (3.5,2) -- ++(axis direction cs: 1,0.5) node[right] {compression};
+    \draw[<-,ultra thick] (2.5,-2.5) -- ++(axis direction cs: 2,1) node[right] {rarefaction};
+    
+    \node[align=left,left=1em] at (0,0) {sound\\ source};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\fi
+
+\clearpage
 
 \section{Conservation of Charge}
 
-\ifShowUnitIX
+\ifShowUnitXI
 
-\subsection{Charges and Matter}
+% \subsection{Charges and Matter}
 
-\subsubsection*{The Millikan's Oil Drop Experiment}
+\subsection{The Millikan's Oil Drop Experiment}
 
 \textbf{\Gls{electric charge}} is \glsdesc{electric charge}.
 
@@ -2921,21 +3664,14 @@ The \textbf{\gls{elementary charge}} ($e$) is the \glsdesc{elementary charge}. I
 
 where C is for coulombs, the base SI unit of electric charge.
 
-\subsubsection{Particles that Contribute Positive, Negative, or No Charge}
-
 Protons contribute to positive charge, electrons to negative. Neutrons are neutral because their charge is zero. 
 
-\subsubsection{Neutral Objects}
 
 A neutral object has no charge, or a charge or zero.
 
 A large object is neutral if it has the same number of positive and negative charge.
 
-\subsubsection{Determining Charge}
-
-\subsubsection{Two Objects Attract, Repel, or Have No Interaction}
-
-\subsubsection{The Electric Field}
+\subsection{The Electric Field}
 
 The \textbf{\gls{electric field}} \glsdesc{electric field}.
 
@@ -2975,9 +3711,8 @@ The \textbf{\gls{electric field}} \glsdesc{electric field}.
 
 \end{center}
 
-\subsection{Transfer of Charge}
+\subsection{Conservation of Charge}
 
-\subsubsection{Charge is Conserved}
 
 The \textbf{\gls{law of conservation of charge}} \glsdesc{law of conservation of charge}.
 
@@ -3011,27 +3746,11 @@ We are given the number of excess electrons: $n = 25$. We know the elementary ch
     q = - n e = -25\,(\num{1.6e-19}) = \SI{-4.0e-18}{C}
 \end{equation*}
 
-\subsubsection{Only Electrons are Transferred}
-
-\subsubsection{Charging by Induction and Conduction}
-
 \textbf{\Gls{induction}} involves \glsdesc{induction}.
-
-\subsubsection{Polarization}
 
 \textbf{\Gls{polarization}} is the \glsdesc{polarization}.
 
-\subsubsection{The Electroscope}
-
-\subsubsection{Known and Unknown Charges}
-
-\subsubsection{Distributions of Charge}
-
 \subsection{Coulomb's Law}
-
-\subsubsection{Free Body Diagrams for Two Charged Objects}
-
-\subsubsection{Electric Force, Charges, and Distance}
 
 Two charges always exert a \href{https://phet.colorado.edu/en/simulations/coulombs-law}{mutual force} on each other. The charges may be a proton and an electron, or they may be macroscopic objects like a balloon and a shirt. Opposite charges generate an attractive force, and like charges, a repulsive one. 
 
@@ -3232,17 +3951,11 @@ This equation is solved for distance $r$ as follows:
 \end{align*}
 
 
-
-\subsubsection{Electric Force and Gravitational Force}
-
-\subsubsection{How Changing Charge or Distance Affects the Electric Force}
-
-
 \clearpage
 
 \subsection{Simple Circuits}
 
-\subsubsection*{Electric Current}
+
 
 \textbf{\Gls{electric current}} ($I$) is \glsdesc{electric current}. Mathematically, electric current is the rate at which electric charge moves through a point in a wire per unit time:
 
@@ -3299,8 +4012,6 @@ The current in the lightning is
 The negative sign reflects the fact that electrons carry the negative charge. Thus, although the electrons flow from the cloud to the ground, the positive current is defined to flow from the ground to the cloud.
 
 \hfill $\blacksquare$
-
-\subsubsection{Components for a Simple Circuit}
 
 An \textbf{\gls{electric circuit}} is a \glsdesc{electric circuit}. A \textbf{\gls{simple circuit}} is \glsdesc{simple circuit}. A \textbf{\gls{resistor}} is a \glsdesc{resistor}. \textbf{\Gls{voltage}} is \glsdesc{voltage}.
 
@@ -3375,28 +4086,14 @@ Elements like lamps and resistors cause resistance in a circuit. \textbf{resista
 \end{circuitikz}
 \end{center}
 
-
-
-
-
-
-
-\subsubsection{Electrical Power}
-
 \textbf{\Gls{electric power}} is \glsdesc{electric power}.
 
-
-
 A circuit \textbf{\gls{in series}} is \glsdesc{in series}.
-
-\subsubsection{Equivalent Resistance in Series}
 
 An \textbf{\gls{equivalent resistor}} is the \glsdesc{equivalent resistor}.
 
 
-
 A circuit \textbf{\gls{in parallel}} is \glsdesc{in parallel}.
-
 
 
 \fi
@@ -3405,56 +4102,38 @@ A circuit \textbf{\gls{in parallel}} is \glsdesc{in parallel}.
 
 \section{Electromagnetic Induction}
 
-\ifShowUnitX
+\ifShowUnitXII
 
-\subsection{Magnet}
-
-\subsubsection{North and South Pole}
+\subsection{Magnets}
 
 A \textbf{\gls{magnetic dipole}} is the \glsdesc{magnetic dipole}.
 
-\subsubsection{Two Magnets Attract or Repel}
-
-\subsubsection{Classifying Materials as Magnetic or Nonmagnetic}
 
 \subsection{Magnetic Fields}
 
-\subsubsection{Magnetic Fields Around Magnets}
 
 The \textbf{\gls{magnetic field}} consists of \glsdesc{magnetic field}.
 
-\subsection{Compass}
-
-\subsubsection{How a Compass Points in the Direction of the Magnetic Field}
 
 \textbf{\Gls{electromagnetic induction}} is the \glsdesc{electromagnetic induction}.
 
-\subsubsection{Faraday's Law}
+\subsection{Faraday's Law}
 
 \textbf{\gls{Faraday's law}} is \glsdesc{Faraday's law}.
 
 \clearpage
 
-\subsection{Electromagnet}
-
-\subsubsection{How Electromagnets Generate Magnetic Fields}
+\subsection{Electromagnets}
 
 An \textbf{\gls{electromagnet}} is a \glsdesc{electromagnet}.
 
-\subsubsection{Making an Electromagnet Stronger}
 
 \subsection{Transformers}
 
 A \textbf{\gls{transformer}} is a \glsdesc{transformer}.
 
-\subsubsection{Diagram of a Transformer}
-
-\subsubsection{Changing Voltage while Conserving Energy}
-
-\subsubsection{Stepping Voltage Up or Down}
 
 \subsection{Generators and Motors}
-
 
 A \textbf{\gls{generator}} is a \glsdesc{generator}
 
@@ -3464,431 +4143,11 @@ An \textbf{\gls{electric motor}} is a \glsdesc{electric motor}.
 
 \clearpage
 
+\section{Electromagnetic Waves}
 
-\section{Simple Harmonic Motion and Waves}
-
-\ifShowUnitXI
-\subsection{Oscillating Motion}
-
-\subsubsection{An Oscillating Medium}
-
-To \textbf{\gls{oscillate}} means \glsdesc{oscillate}. A \textbf{\gls{medium}} is \glsdesc{medium}. 
-
-\subsubsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
-
-\textbf{\Gls{simple harmonic motion}} (SHM) is \glsdesc{simple harmonic motion}.
-
-A \textbf{\gls{simple harmonic oscillator}} is \glsdesc{simple harmonic oscillator}. The figure below shows such a oscillator, a mass attached to a spring. Before the mass is released, it is held in place without any compression or stretching on the string. After the mass is released, gravity does work on the mass, and the spring is stretched until the downward force of gravity is balanced by the upward force by the spring. The amplitude is shown below.
-
-\begin{center}
-\begin{tikzpicture}
-    \draw[decorate,decoration={coil,segment length=2pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {before release} -- ++(0,-1.5);
-    \draw[densely dashed] (-1,-1.5) -- ++(6,0);
-    \draw[densely dashed] (-1,-3.5) -- ++(6,0);
-    \begin{scope}[shift={(-0.5,-2.5)}]
-        \draw[fill=black!10] (0,0) rectangle (1,1);
-    \end{scope}
-    \draw[shift={(4,0)},decorate,decoration={coil,segment length=3pt,post length=2mm,pre length=0mm,amplitude=3mm}] (0,0) node[above] {after release} -- ++(0,-3.5);
-    \begin{scope}[shift={(3.5,-4.5)}]
-        \draw[fill=black!10] (0,0) rectangle (1,1);
-        \draw[<->] (-0.5,1) -- ++(0,2) node[above,pos=0.5,rotate=90] {amplitude}; 
-    \end{scope}
-\end{tikzpicture}
-\end{center}
-
-The \textbf{\gls{amplitude}} is \glsdesc{amplitude}. A ruler may be used to measure the oscillator's amplitude. A stopwatch is used to measure the oscillator's period and frequency. The \textbf{\gls{period}} ($T$) is \glsdesc{period}, and \textbf{\gls{frequency}} ($f$) is \glsdesc{frequency}. They are inversely related:
-
-\begin{equation} \label{9WT68r}
-    f = \frac{1}{T} \hspace{2em} 
-    T = \frac{1}{f}
-\end{equation}
-
-As period increases, frequency decreases, and vice-versa. Period is measured in seconds. Frequency is measured in 1 over seconds, or Hertz (Hz). Thus, \SI{1}{Hz} is equivalent is 1/s.
-
-% \begin{center}
-%     \begin{tabular}{cl|cc}
-%     \hline
-%     \textbf{Symbol} & \textbf{Quantity} & \textbf{SI Base Unit} & \textbf{Unit Symbol}  \\
-%     \hline\hline
-%         $f$ & frequency & hertz & \si{\Hz}\\
-%         $T$ & period & second & s\\
-%     \hline
-%     \end{tabular}
-% \end{center}
-
-\begin{example}
-    A transverse wave completes 1 wave cycle every 0.25 seconds. What is the frequency of the wave?
-\end{example}
-
-\textit{Solution}: 
-
-We are given the period of the wave: $T = \SI{0.25}{s}$. By Equation \ref{9WT68r}, its frequency is
-
-\begin{equation*}
-    f = \frac{1}{T} = \frac{1}{0.25} = \SI{4}{\Hz}\ .
-\end{equation*}
-
-Therefore, this wave completes 4 wave cycles every second.
-
-\hfill $\blacksquare$
-
-\begin{example}
-    If a wave completes exactly $3 \frac{1}{3}$ wave cycles every second, what is the period of oscillation of the wave? 
-\end{example}
-
-\textit{Solution}: 
-
-We are given the wave's frequency as 3 and one-third hertz, or $f = 3\frac{1}{3}\,\text{Hz}$. This mixed number is written as an improper\footnote{See \href{https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions}{Section 4.1} of \textit{OpenStax: Prealgebra 2e} for a review on mixed numbers and improper fractions.} fraction as
-
-\begin{equation*}
-    3 \frac{1}{3} = \frac{10}{3} = 3.\overline{3}
-\end{equation*}
-
-So, the frequency is $f = \frac{10}{3}\,\text{Hz}$. The period, by Equation~\eqref{9WT68r}, is
-
-\begin{equation*}
-    T = \frac{1}{f} = \frac{1}{\frac{10}{3}} = \frac{3}{10}  = \SI{0.3}{s}
-\end{equation*}
-
-Therefore, it takes this wave 0.3 seconds to complete one wave cycle. 
-
-\hfill $\blacksquare$
-
-\subsubsection{How Changes to Medium and Energy Affects SHM}
-
-Pendulums?
-
-\subsection{Transverse Waves}
-
-\subsubsection{Measurements of a Transverse Wave}
-
-A \textbf{\gls{transverse wave}} is \glsdesc{transverse wave}. 
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{scope}[shift={(4.1,-1.43)},x=5mm,y=5mm]]
-    % \draw (-2,2.85) -- ++(6,0);
-    \draw[ultra thick,brown] (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
-    \clip (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
-    \node at (2,3.1) {\twemoji[height=4cm]{national park}};
-    \end{scope}
-    \draw[x=3mm,y=1cm,domain=0:2.75*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-    \draw[x=3mm,y=1cm,domain=0:2.75*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \draw[thick,->] (pi/3,1.3) -- ++(1.5,0) node[above,pos=0.5] {wave velocity};
-    % \draw (0,0) -- (2*pi,0);
-\end{tikzpicture}
-\end{center}
-
-The measurements of a transverse wave are shown below.
-
-\begin{center}
-\begin{tikzpicture}[x=5mm,y=1.5cm]
-    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
-    \draw[->] (0,0) -- (3.3*2*pi,0) node[above,align=center] {propagation\\direction};
-    \draw[domain=2*pi:4*pi,smooth,ultra thick, red] plot (\x,{sin(\x r)});
-    \draw[<->,yshift=3pt] (2*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
-    \draw[dashed] (2*pi,0) -- ++(0,1.1) (4*pi,0) -- ++(0,1.1);
-    \draw[<->,yshift=-3pt] (3*pi/2,-1) -- ++(2*pi,0);
-    \draw[dashed] (3*pi/2,0) -- ++(0,-1.1) (7*pi/2,0) -- ++(0,-1.1);
-    \draw[<->] (pi/2,0) -- ++(0,1) node[above] {amplitude};
-    \draw[<-,xshift=1pt,yshift=1pt] (9*pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
-    \draw[<-,xshift=-1pt,yshift=-1pt] (11*pi/2,-1) -- ++ (-1.5,-0.3) node[below] {trough};
-    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
-\end{tikzpicture}
-\end{center}
-
-\textbf{\Gls{wavelength}} is \glsdesc{wavelength}. \textbf{\Gls{frequency}} is \glsdesc{frequency}. \textbf{\Gls{wave velocity}} is \glsdesc{wave velocity}. 
-
-A \textbf{\gls{wave cycle}} is \glsdesc{wave cycle}.
-
-\begin{center}
-\begin{tikzpicture}[x=3.5mm,y=1cm]
-\draw[domain=0:6*2*pi,samples=200,lightgray] plot (\x,{sin(\x r)});
-\draw[lightgray] (0,0) -- (6*2*pi,0);
-\draw[domain=0:2*pi,smooth,ultra thick, red] plot (\x,{sin(\x r)});
-\draw[<->,yshift=3pt] (0,1) -- ++(2*pi,0) node[above,pos=0.5] {1 wave cycle};
-\draw[dashed] (0,0) -- ++(0,1.1) (2*pi,0) -- ++(0,1.1);
-\draw[domain=7*pi/2:11*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
-\draw[<->,yshift=-3pt] (7*pi/2,-1) -- ++(2*pi,0);
-\draw[dashed] (7*pi/2,0) -- ++(0,-1.1) (11*pi/2,0) -- ++(0,-1.1);
-\draw[domain=13*pi/2:17*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
-\draw[<->,yshift=3pt] (13*pi/2,1) -- ++(2*pi,0);
-\draw[dashed] (13*pi/2,0) -- ++(0,1.1) (17*pi/2,0) -- ++(0,1.1);
-\draw[domain=18.5*pi/2:22.5*pi/2,smooth,ultra thick, red] plot (\x,{sin(\x r)});
-\draw[<->,yshift=-3pt] (18.5*pi/2,-1) -- ++(2*pi,0);
-\draw[dashed] (18.5*pi/2,0) -- ++(0,-1.1) (22.5*pi/2,0) -- ++(0,-1.1);
-\end{tikzpicture}
-\end{center}
-
-
-\begin{example}
-    How many wave cycles are shown in the wave below?
-\end{example}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=4cm,
-    xmin=0,xmax=6,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
-\textit{Solution}: 
-
-There are exactly 3 wave cycles. In the figure below, the first wave cycle in highlighted in red. The end points of the subsequent wave cycles are labeled as points 2 and 3.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=4cm,
-    xmin=0,xmax=6,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw[dashed] (0,0) -- (6,0);
-    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[ultra thick, red] plot[domain=0:2*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[fill=black] (0,0) circle (2pt) 
-        (2,0) circle (2pt) node[above left] {1}
-        (4,0) circle (2pt) node[above left] {2}
-        (6,0) circle (2pt) node[above left] {3};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\hfill $\blacksquare$
-
-
-\begin{example}
-How many wave cycles are shown below? 
-\end{example}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.5cm,
-    xmin=0,xmax=9,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw plot[domain=0.5*pi:0.5*pi + 4.5*2*pi, samples=200] (\x/pi,{sin(\x r)});
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
-\textit{Solution}: 
-
-There are 4.5 wave cycles. Note that the 4th wave begins at a crest but finish a half-wave cycle later at a trough.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.5cm,
-    xmin=0,xmax=9,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw plot[domain=0.5*pi:0.5*pi + 4.5*2*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[ultra thick, red] plot[domain=0.5*pi:0.5*pi + 2*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[dashed] (0.5,1) -- ++ (axis direction cs: 0.5+4.5*2,0);
-    \draw[fill=black] (0.5,1) circle (2pt)
-        (0.5+2,1) circle (2pt) node[above] {1}
-        (0.5+2*2,1) circle (2pt) node[above] {2}
-        (0.5+3*2,1) circle (2pt) node[above] {3}
-        (0.5+4*2,1) circle (2pt) node[above] {4}
-        (0.5+4.5*2,-1) circle (2pt) node[below] {4.5};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\hfill $\blacksquare$
-
-\subsubsection{Changing the Transverse Medium}
-
-\subsubsection{The Relationship Between Frequency, Wave Velocity, and Wavelength}
-
-Wave velocity is calculated by multiplying a wave's frequency by its wavelength. The formula is
-
-\begin{equation} \label{UeynWL}
-    v = f \lambda
-\end{equation}
-
-where $f$ is frequency in Hz and $\lambda$ is wavelength in meters.
-
-
-% \begin{center}
-%     \begin{tabular}{cl|cc}
-%     \hline
-%     \textbf{Symbol} & \textbf{Quantity} & \textbf{Base SI Unit} & \textbf{Unit Symbol}  \\
-%     \hline\hline
-%         $v$ & wave velocity & meter per second & \si{\meter/\second}\\
-%         $f$ & frequency & hertz & \si{\Hz}\\
-%         $\lambda$ & wavelength & meter & m\\
-%     \hline
-%     \end{tabular}
-%     \label{fig:Unit10_Table}
-% \end{center}
-
-\begin{example}
-The frequency of a wave is 2.5 hertz, and its wavelength is 3.0 meters. Calculate the wave velocity.
-\end{example}
-
-\textit{Solution}: 
-
-We are given the frequency and wavelength: $f = \SI{2.5}{Hz}$ and $\lambda = \SI{3.0}{m}$. So, wave velocity is
-
-\begin{align*}
-    v &= f \lambda \\[1ex]
-    &= (\SI{2.5}{Hz})(\SI{3.0}{m}) \\[1ex]
-    &= \boxed{\SI{7.5}{m/s}}
-\end{align*}
-
-Thus, this wave moves at a speed of 7.5 meters per second.
-
-\hfill $\blacksquare$
-
-% \begin{example}
-%     The period of a wave is 0.78 seconds. Its wavelength is 1.1 meters. What is the wave's velocity?
-% \end{example}
-
-% Solution: We are given period and wavelength: $T = \SI{0.78}{s}$ and $\lambda = \SI{1.1}{m}$. The wave's frequency, is
-
-% \begin{equation*}
-%     f = \frac{1}{T} = \frac{1}{0.78} = \SI{1.28}{Hz}
-% \end{equation*}
-
-
-% Therefore, the wave velocity (Eq.~\ref{UeynWL}) is
-
-% \begin{equation*}
-%     v = f \lambda = (1.28)(1.1) = \SI{1.4}{m/s}
-% \end{equation*}
-
-% This wave travels at 1.4 meters per second.
-
-% Solution:End
-
-\subsubsection{Constructive and Destructive Interference}
-
-\begin{center}
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-2)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + sin(\x r)}) node[right] {Resultant};
-\end{tikzpicture}
-
-\bigskip
-
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r - pi r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,0) node[right] {Resultant};
-\end{tikzpicture}
-
-\bigskip
-
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{0.3*cos(\x*5 r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + 0.3*cos(\x*5 r)}) node[right] {Resultant};
-\end{tikzpicture}
-\end{center}
-
-\subsection{Longitudinal Waves}
-
-\subsubsection{Differences between Transverse and Longitudinal Waves}
-
-A \textbf{\gls{longitudinal wave}} is \glsdesc{longitudinal wave}.
-
-\begin{center}
-    \tikzset{declare function={f(\x)=sin(540*\x);}}
-    \begin{tikzpicture}
-     \draw[->] (-0.5,0) -- (10,0);
-     \draw[very thick, domain=0.1:9.5,variable=\x,samples=500] plot
-     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
-     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
-     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
-     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
-    \end{tikzpicture}
-\end{center}
-
-\subsubsection{Sound as a Longitudinal Wave}
-
-\begin{center}
-    \begin{tikzpicture}[
-        declare function={a(\x)=0*\x+2;},
-        declare function={b(\x)=0*\x;}
-    ]
-    \begin{axis}[
-        domain=0:5,
-        axis lines=middle,
-        axis equal image,
-        xtick=\empty, ytick=\empty,
-        axis line style={draw=none},
-        enlargelimits=true,
-        clip mode=individual, clip=false
-    ]
-    \addplot [black, only marks, mark=*, samples=300, mark size=0.75,domain=0:2]
-        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
-        
-    \addplot [black, only marks, mark=*, samples=50, mark size=0.75,domain=2.5:4.5]
-        {0.5*(a(x)+b(x)) + 0.5*rand*(a(x)-b(x))};
-    \draw[thick] (axis cs: 0,0) rectangle (axis cs: 2,2);
-    \draw[thick] (axis cs: 2.5,0) rectangle (axis cs: 4.5,2);
-    \node at (axis cs: 1,2.2) {\small \textbf{HIGH DENSITY}};
-    \node at (axis cs: 3.5,2.2) {\small \textbf{LOW DENSITY}};
-    \end{axis}
-    \end{tikzpicture}
-    \captionsetup{type=figure,margin=1in,font=scriptsize}
-    \captionof{figure}{Particles in two boxes of identical size. The air density is higher in the box with more particles.}
-\end{center}
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=7.5cm,width=7.5cm,
-      cycle list={
-        only marks,mark size=1pt\\
-        only marks,mark size=1pt\\
-      },
-      xmin=0,xmax=8,
-      ymin=-4,ymax=4,
-      domain=270:360+90,
-      samples=150,
-      axis line style={draw=none},
-      ticks=none,
-      clip=false,
-    ]
-    \draw[dashed,->] (0,0) -- (6,0);
-    \addplot ({(0.2+0.07*rand)*cos(x)},{(0.2+0.07*rand)*sin(x)});
-    \addplot ({(1.0+0.07*rand)*cos(x)},{(1.0+0.07*rand)*sin(x)});
-    \addplot ({(2.0+0.10*rand)*cos(x)},{(2.0+0.10*rand)*sin(x)});
-    \addplot ({(3.0+0.12*rand)*cos(x)},{(3.0+0.12*rand)*sin(x)});
-    \addplot ({(4.0+0.12*rand)*cos(x)},{(4.0+0.12*rand)*sin(x)});
-    
-    \draw[<-,ultra thick] (3.5,2) -- ++(axis direction cs: 1,0.5) node[right] {compression};
-    \draw[<-,ultra thick] (2.5,-2.5) -- ++(axis direction cs: 2,1) node[right] {rarefaction};
-    
-    \node[align=left,left=1em] at (0,0) {sound\\ source};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\subsubsection{Resonance and Vibrating Objects}
-\subsubsection{Doppler Effect}
+\ifShowUnitXIII
 
 \subsection{Electromagnetic Waves}
-
-\subsubsection{Electromagnetic Waves as Transverse Waves}
 
 An \textbf{\gls{electromagnetic wave}} is \glsdesc{electromagnetic wave}. These waves are also known as \textbf{\gls{electromagnetic radiation}}. A graphic of an electromagnetic wave is shown below.
 
@@ -3914,8 +4173,6 @@ An \textbf{\gls{electromagnetic wave}} is \glsdesc{electromagnetic wave}. These 
     \end{tikzpicture}
 \end{center}
 
-
-\subsubsection{Ranking Electromagnetic Radiation by Frequency}
 
 \begin{center}
 % \pgfplotsset{width=14cm, height=7cm}
@@ -3978,8 +4235,6 @@ An \textbf{\gls{electromagnetic wave}} is \glsdesc{electromagnetic wave}. These 
 \end{tikzpicture}
 \label{TBWcbi}
 \end{center}
-
-\subsubsection{Applications of Electromagnetic Radiation}
 
 \textbf{Radio Waves}
 
@@ -4044,7 +4299,6 @@ A kernel of popcorn is made of about \href{https://www.scientificamerican.com/ar
 
 \subsection{Visible Light}
 
-\subsubsection{Visible Light as Electromagnetic Waves}
 
 One nanometer is one billionth of a meter (m):
 
@@ -4069,8 +4323,6 @@ Using Equation \eqref{LLLSU7}, 600 nanometers is converted to meters as
 \end{align*}
 
 \hfill $\blacksquare$
-
-\subsubsection{How we Perceive Colors Based on Frequency}
 
 Visible light is the only region of the electromagnetic spectrum that is perceivable by human eyes. Wavelengths of visible light range from about \SI{380}{nm} (violet) to \SI{750}{nm} (red). The frequencies corresponding to these wavelengths are \SI{4.0e14}{Hz} at the red end to \SI{7.9e14}{Hz} at the violet end. This is a very narrow range, since the EM spectrum spans about 20 orders of magnitude.
 
@@ -4103,21 +4355,17 @@ Visible light is the only region of the electromagnetic spectrum that is perceiv
 \label{lyOjge}
 \end{center}
 
-\subsubsection{Ranking Colors by Frequency}
-\subsubsection{Emission Spectrum of Atoms}
-
 \subsection{Optics}
 
-\subsubsection{Ray Diagrams}
-\subsubsection{Plane Mirrors}
-\subsubsection{Thin Convex Lenses}
 \fi
+
+
 
 \clearpage
 
 \section{Quantum Physics}
 
-\ifShowUnitXII
+\ifShowUnitXIV
 
 Quantum stuff goes here.
 
@@ -4304,7 +4552,7 @@ Students should be able to use equations to help solve for an unknown or to supp
 
 \clearpage
 
-\section*{Reference Sheet}
+\section*{Equation Sheet}
 
 \begin{center}
 \bgroup

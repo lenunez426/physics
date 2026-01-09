@@ -1,4 +1,4 @@
-\documentclass[]{exam}
+\documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
 \usepackage{mdframed}
@@ -6,21 +6,244 @@
 \setrandomizerseed{1}
 
 
-\firstpageheader{}{\large\textbf{DO NOT WRITE ON THIS DOCUMENT}}{}
-\runningheader{}{}{}
+% \firstpageheader{}{\large\textbf{DO NOT WRITE ON THIS DOCUMENT}}{}
+% \runningheader{}{}{}
 
 
 \begin{document}
 \begin{questions}
-\question 
-After a satellite is launched into frictionless space, the amount of force needed to keep it moving at a constant speed equals
+
+\question
+A child riding a bicycle at \SI{15}{m/s} accelerates at \SI{3.0}{m/s^2} for \SI{4.0}{s}. What is the child's speed at the end of this \SI{4.0}{s} interval?
 
 \begin{randomizechoices}
-    \choice one half the force with which it was fired.	
-    \choice the same amount of force with which it was fired.
-    \choice twice the force with which it was fired.	
-    \correctchoice zero, no force is necessary to keep it moving.
+    \choice \SI{12}{m/s}
+    \correctchoice \SI{27}{m/s}
+    \choice \SI{3.0}{m/s}
+    \choice \SI{7.0}{m/s}
 \end{randomizechoices}
+
+\question
+Two carts collide and bounce off one another. The diagram below shows their motion after the collision.
+
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (7,0);
+    \begin{scope}[shift={(1.5,0.15)}]
+        \draw (0,0) rectangle ++(1.2,0.8) node[pos=0.5] {\SI{1}{kg}};
+        \draw[fill=white] (0.3,0) circle (0.15);
+        \draw[fill=white] (0.9,0) circle (0.15);
+        \draw[thick,->] (0,0.4) -- ++(-0.8,0);
+    \end{scope}
+    \begin{scope}[shift={(4,0.15)}]
+        \draw (0,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
+        \draw[fill=white] (0.4,0) circle (0.15);
+        \draw[fill=white] (1.1,0) circle (0.15);
+        \draw[thick,->] (1.5,0.5) -- ++(0.8,0);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Which cart will have the greatest magnitude of acceleration and why?
+
+\begin{randomizechoices}
+    \choice The \SI{1}{kg} cart because the force from the \SI{2}{kg} cart will push a greater amount on it.	
+    \correctchoice The \SI{1}{kg} cart because its smaller mass will be affected more by the force from the \SI{2}{kg} cart than the larger \SI{2}{kg} cart will be from the \SI{1}{kg} cart.	
+    \choice The \SI{2}{kg} cart because the force from the \SI{1}{kg} cart will push a greater amount on it.
+    \choice The \SI{2}{kg} cart because its larger mass will be affected more by the force of the \SI{1}{kg} cart than the smaller \SI{1}{kg} cart will be from the \SI{2}{kg} cart.    
+\end{randomizechoices}
+
+\question
+The data represented in the velocity vs. time graph below is from a car traveling along a flat straight road.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=7cm,height=4cm,
+        axis lines=left,
+        ymin=0, ymax=5,
+        xmin=0, xmax=6,
+        ylabel = {Velocity (m/s)},
+        xlabel = {Time (s)},
+        grid = both,
+        xtick={0,1,...,10},
+        ytick={0,1,...,6},
+        minor x tick num=1,
+        title={Velocity vs. Time}
+    ]
+    \addplot[very thick,domain=0:5,mark=*,samples=6] plot {3};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+What is the total displacement of the car between 0 second and 5 seconds?
+
+\begin{randomizechoices}
+    \choice \SI{0}{m}
+    \choice \SI{3}{m}
+    \choice \SI{5}{m}
+    \correctchoice \SI{15}{m}
+\end{randomizechoices}
+
+\clearpage
+
+\question
+The data represented in the position vs. time graph below was collected from a cart moving along a horizontal track.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,width=6cm,
+        axis lines=left,
+        ymin=0, ymax=80,
+        xmin=0, xmax=6,
+        ylabel = {Position (m)},
+        xlabel = {Time (s)},
+        grid = both,
+        ytick={0,20,...,80},
+        xtick={0,1,...,6},
+        clip=false,
+    ]
+    \addplot[very thick] coordinates {(0,40)(1,40)(2,60)(4,60)(5,0)}; 
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+During which time interval is the cart moving with the greatest speed?
+
+\begin{randomizechoices}
+    \choice Between 0 to 1 seconds	
+    \choice Between 1 to 2 seconds
+    \choice Between 2 to 4 seconds
+    \correctchoice Between 4 to 5 seconds
+\end{randomizechoices}
+
+\question
+The velocity vs. time data table below represents the motion of a \SI{2}{kg} object.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+         0 & 0 \\ \hline
+         1 & 1 \\ \hline
+         2 & 2 \\ \hline
+         3 & 3 \\ \hline
+         4 & 4 \\ \hline
+         5 & 5 \\ \hline
+         6 & 6 \\ \hline
+    \end{tabular}
+\end{center}
+
+Determine the force acting on the object from 2 to 4 seconds.
+
+\begin{randomizechoices}
+    \correctchoice \SI{2}{N}
+    \choice \SI{6}{N}
+    \choice \SI{3}{N}
+    \choice \SI{1}{N}
+\end{randomizechoices}
+
+\question
+A student pushes a 12-kg block on a frictionless, horizontal surface. If the block is initially at rest, what is the speed of the block after the student pushes the block for 5 seconds with an acceleration of \SI{2.0}{m/s^2}?
+
+\begin{randomizechoices}
+    \choice \SI{2.0}{m/s}
+    \choice \SI{6.0}{m/s}
+    \correctchoice \SI{10}{m/s}
+    \choice \SI{60}{m/s}
+\end{randomizechoices}
+
+\clearpage
+
+\question
+A car has an oil drip. As the car moves in the positive direction, it drips oil at a regular rate, leaving a trail of spots on the road. The oil drop pattern is shown in the figure below.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[domain=-10:0,mark=*,only marks, samples=8,mark size=3pt] plot({0.1*\x^2},0);
+    \draw[thick, <-] (-5,0.6) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
+    \node[above=4pt] at (-10,0) {Start};
+    \node[above=4pt] at (0,0) {Finish};
+\end{tikzpicture}
+\end{center}
+
+
+Choose the description that best matches the motion of the car.
+
+\begin{randomizechoices}
+    \choice The car is slowing down with a positive acceleration.
+    \choice The car is speeding up with a positive acceleration.
+    \choice The car is speeding up with a negative acceleration.
+    \correctchoice The car is slowing down with a negative acceleration.
+\end{randomizechoices}
+
+\question
+Two carts collide and bounce off one another. The diagram below shows their motion after the collision.
+
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (7,0);
+    \begin{scope}[shift={(1.5,0.15)}]
+        \draw (0,0) rectangle ++(1.2,0.8) node[pos=0.5] {\SI{1}{kg}};
+        \draw[fill=white] (0.3,0) circle (0.15);
+        \draw[fill=white] (0.9,0) circle (0.15);
+        \draw[thick,->] (0,0.4) -- ++(-0.8,0);
+    \end{scope}
+    \begin{scope}[shift={(4,0.15)}]
+        \draw (0,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
+        \draw[fill=white] (0.4,0) circle (0.15);
+        \draw[fill=white] (1.1,0) circle (0.15);
+        \draw[thick,->] (1.5,0.5) -- ++(0.8,0);
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+If the average force during the collision on the \SI{1}{kg} cart from the \SI{2}{kg} cart is \SI{-4}{N}, what is the average force on the \SI{2}{kg} cart from the \SI{1}{kg} cart?
+
+\begin{randomizechoices}
+    \correctchoice \SI{4}{N}
+    \choice \SI{8}{N}
+    \choice \SI{2}{N}
+    \choice \SI{1}{N}
+\end{randomizechoices}
+
+\question
+The object illustrated below is moving horizontally. The magnitudes of the applied force $F_\mathrm{A}$ and the frictional force $F_f$ are equal.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (5,0);
+    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
+    \fill (2,0.5) circle (2pt);
+    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
+    \draw[->] (2,0.5) -- ++(+1.5,0) node[above,pos=0.9] {$+$} node[right] {$F_\mathrm{A}$};
+    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
+\end{tikzpicture}
+\end{center}
+\vspace{-1ex}
+
+ The object must be moving with 
+
+\begin{randomizechoices}
+    \correctchoice constant, positive velocity.
+    \choice constant, negative velocity.
+    \choice decreasing velocity.
+    \choice increasing velocity.
+\end{randomizechoices}
+
+\question
+An air bag is used to safely decrease the momentum of a driver in a car accident. The air bag reduces the magnitude of the force acting on the driver by
+
+\begin{randomizechoices}	
+    \choice decreasing the distance over which the force acts on the driver.	
+    \choice increasing the rate of acceleration of the driver.	
+    \choice decreasing the mass of the driver.	
+    \correctchoice increasing the amount of time the force acts on the driver.
+\end{randomizechoices}
+
+
 
 \question
 For each diagram below: The force, $F$, equals 100 Newtons, the mass of the box is 20 kilograms, and all surfaces are frictionless. In which situation will the box experience the greatest acceleration?
@@ -59,6 +282,119 @@ For each diagram below: The force, $F$, equals 100 Newtons, the mass of the box 
 \end{randomizeoneparchoices}
 
 \question
+The chart below is a record of the instantaneous velocities at the given times for a toy car used in a laboratory investigation.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+         \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
+         0 & $+3$ \\ \hline
+         1 & $+1$ \\ \hline
+         2 & $-1$ \\ \hline
+         3 & $-3$ \\ \hline
+    \end{tabular}
+\end{center}
+
+Which of the following statements is supported by the data?
+
+\begin{randomizechoices}
+    \choice From 0 seconds to 1 seconds, the car is speeding up.
+    \choice From 1 second to 2 seconds, the car has a constant velocity.
+    \choice From 2 seconds to 3 seconds, the car is slowing down.
+    \correctchoice From 0 seconds to 3 seconds, the velocity is changing at a constant rate.
+\end{randomizechoices}
+
+\question 
+After a satellite is launched into frictionless space, the amount of force needed to keep it moving at a constant speed equals
+
+\begin{randomizechoices}
+    \choice one half the force with which it was fired.	
+    \choice the same amount of force with which it was fired.
+    \choice twice the force with which it was fired.	
+    \correctchoice zero, no force is necessary to keep it moving.
+\end{randomizechoices}
+
+\question
+Four forces act on an object as shown in the free body diagram below. $F_f$ is equal in magnitude to $F$. $F_\mathrm{N}$ is equal in magnitude to $F_g$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (5,0);
+    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
+    \fill (2,0.5) circle (2pt);
+    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
+    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
+    \draw[->] (2,0.5) -- ++(+1.5,0) node[right] {$F$};
+    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
+\end{tikzpicture}
+\end{center}
+
+Which graph below best represents the velocity of this object?
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,-0.6) -- (0,0.6) node[above,pos=0.5,rotate=90] {Velocity};
+    \draw (0,0) -- (1.2,0) node[below,pos=0.8] {Time};
+    \draw[very thick] (0,0.5) -- (1,0);
+    \node[above] at (current bounding box.north) {Graph A};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,-0.6) -- (0,0.6) node[above,pos=0.5,rotate=90] {Velocity};
+    \draw (0,0) -- (1.2,0) node[below,pos=0.8] {Time};
+    \draw[very thick] (0,0.3) -- (1,0.3);
+    \node[above] at (current bounding box.north) {Graph B};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,-0.6) -- (0,0.6) node[above,pos=0.5,rotate=90] {Velocity};
+    \draw (0,0) -- (1.2,0) node[below,pos=0.8] {Time};
+    \draw[very thick] (0,-0.5) -- (1,0.5);
+    \node[above] at (current bounding box.north) {Graph C};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,-0.6) -- (0,0.6) node[above,pos=0.5,rotate=90] {Velocity};
+    \draw (0,0) -- (1.2,0) node[below,pos=0.8] {Time};
+    \draw[very thick] (0,0) -- (1,0.5);
+    \node[above] at (current bounding box.north) {Graph D};
+\end{tikzpicture}
+\end{center}
+
+\scalebox{0}{
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Graph A
+    \correctchoice Graph B
+    \choice Graph C
+    \choice Graph D
+\end{randomizeoneparchoices}
+}
+
+
+\question
+The diagram below shows a \SI{4.0}{kg} object accelerating at \SI{2.0}{m/s^2} on a rough horizontal surface. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (8,0);
+    \begin{scope}[shift={(3,0)}]
+        \draw[thick,->] (2,0.5) -- ++(+1.5,0) node[right] {$F_\mathrm{A} = \SI{50}{N}$};
+        \draw[thick,->] (0,0.5) -- ++(-1.5,0) node[left] {$F_f$};
+        \draw[thick,fill=black!10] (0,0) rectangle ++(2,1.2) node[pos=0.5] {\SI{4.0}{kg}};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+What is the magnitude of the frictional force $F_f$ acting on the object?
+
+\begin{randomizechoices}
+    \choice \SI{58}{N}
+    \correctchoice \SI{42}{N}
+    \choice \SI{2}{N}
+    \choice \SI{8}{N}
+\end{randomizechoices}
+
+\question
 The bar chart below shows the kinetic energy of a 3-kg object at two different points in time.
 
 \begin{center}
@@ -91,162 +427,6 @@ Based on the data, calculate the work that was done on the object during this ti
     \choice $-\SI{18}{J}$
 \end{randomizechoices}
 
-\question
-The data represented in the velocity vs. time graph below is from a car traveling along a flat straight road.
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[width=8cm,height=5cm,
-        axis lines=left,
-        ymin=0, ymax=5,
-        xmin=0, xmax=6,
-        ylabel = {Velocity (m/s)},
-        xlabel = {Time (s)},
-        grid = both,
-        xtick={0,1,...,10},
-        ytick={0,1,...,6},
-        minor x tick num=1,
-    ]
-    \addplot[ultra thick,domain=0:5,mark=*,samples=6] plot {3};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-What is the total displacement of the car between 0 second and 5 seconds?
-
-\begin{randomizechoices}
-    \choice \SI{0}{m}
-    \choice \SI{3}{m}
-    \choice \SI{5}{m}
-    \correctchoice \SI{15}{m}
-\end{randomizechoices}
-
-\question
-A child riding a bicycle at \SI{15}{m/s} accelerates at \SI{3.0}{m/s^2} for \SI{4.0}{s}. What is the child's speed at the end of this \SI{4.0}{s} interval?
-
-\begin{randomizechoices}
-    \choice \SI{12}{m/s}
-    \correctchoice \SI{27}{m/s}
-    \choice \SI{3.0}{m/s}
-    \choice \SI{7.0}{m/s}
-\end{randomizechoices}
-
-\question
-The velocity vs. time data table below represents the motion of a \SI{2}{kg} object.
-
-\begin{center}
-    \begin{tabular}{|c|c|}
-        \hline
-         \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
-         0 & 0 \\ \hline
-         1 & 1 \\ \hline
-         2 & 2 \\ \hline
-         3 & 3 \\ \hline
-         4 & 4 \\ \hline
-         5 & 5 \\ \hline
-         6 & 6 \\ \hline
-    \end{tabular}
-\end{center}
-
-Determine the force acting on the object from 2 to 4 seconds.
-
-\begin{randomizechoices}
-    \correctchoice \SI{2}{N}
-    \choice \SI{6}{N}
-    \choice \SI{3}{N}
-    \choice \SI{1}{N}
-\end{randomizechoices}
-
-\question
-The chart below is a record of the instantaneous velocities at the given times for a toy car used in a laboratory investigation.
-
-\begin{center}
-    \begin{tabular}{|c|c|}
-        \hline
-         \textbf{Time} (s) & \textbf{Velocity} (m/s) \\ \hline
-         0 & $+3$ \\ \hline
-         1 & $+1$ \\ \hline
-         2 & $-1$ \\ \hline
-         3 & $-3$ \\ \hline
-    \end{tabular}
-\end{center}
-
-Which of the following statements is supported by the data?
-
-\begin{randomizechoices}
-    \choice From 0 seconds to 1 seconds, the car is speeding up.
-    \choice From 1 second to 2 seconds, the car has a constant velocity.
-    \choice From 2 seconds to 3 seconds, the car is slowing down.
-    \correctchoice From 0 seconds to 3 seconds, the velocity is changing at a constant rate.
-\end{randomizechoices}
-
-\clearpage
-
-\question
-The data represented in the position vs. time graph below was collected from a cart moving along a horizontal track.
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=5cm,width=7cm,
-        axis lines=left,
-        ymin=0, ymax=80,
-        xmin=0, xmax=6,
-        ylabel = {Position (m)},
-        xlabel = {Time (s)},
-        grid = both,
-        ytick={0,20,...,80},
-        xtick={0,1,...,6},
-        clip=false,
-    ]
-    \addplot[very thick] coordinates {(0,40)(1,40)(2,60)(4,60)(5,0)}; 
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-During which time interval is the cart moving with the greatest speed?
-
-\begin{randomizechoices}
-    \choice Between 0 to 1 seconds	
-    \choice Between 1 to 2 seconds
-    \choice Between 2 to 4 seconds
-    \correctchoice Between 4 to 5 seconds
-\end{randomizechoices}
-
-\question
-An air bag is used to safely decrease the momentum of a driver in a car accident. The air bag reduces the magnitude of the force acting on the driver by
-
-\begin{randomizechoices}	
-    \choice decreasing the distance over which the force acts on the driver.	
-    \choice increasing the rate of acceleration of the driver.	
-    \choice decreasing the mass of the driver.	
-    \correctchoice increasing the amount of time the force acts on the driver.
-\end{randomizechoices}
-
-\question
-The object illustrated below is moving horizontally. 
-
-\begin{center}
-\begin{tikzpicture}
-    \draw (0,0) -- (5,0);
-    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
-    \fill (2,0.5) circle (2pt);
-    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
-    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
-    \draw[->] (2,0.5) -- ++(+1.5,0) node[above,pos=0.9] {$+$} node[right] {$F_\mathrm{A}$};
-    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
-\end{tikzpicture}
-\end{center}
-
-The magnitudes of the applied force $F_\mathrm{A}$ and the frictional force $F_f$ are equal. The object must be moving with 
-
-\begin{randomizechoices}
-    \correctchoice constant, positive velocity.
-    \choice constant, negative velocity.
-    \choice decreasing velocity.
-    \choice increasing velocity.
-\end{randomizechoices}
-
-\clearpage
 
 \question
 The velocity vs. time graph below represents the motion of a 4 kg cart along a straight line.
@@ -264,10 +444,12 @@ The velocity vs. time graph below represents the motion of a 4 kg cart along a s
         xtick={0,1,...,4},
         minor x tick num=1,
     ]
-    \addplot[ultra thick] coordinates {(0,6)(1,6)(1.25,3)(3.5,3)};
+    \addplot[very thick] coordinates {(0,6)(1,6)(1.25,3)(3.5,3)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
+
+\clearpage
 
 What is the change in momentum of the \SI{4}{kg} cart between $t = 0$ and $t = 3$ seconds?
 
@@ -283,18 +465,18 @@ The graph below shows the force exerted on a box sliding across the floor with a
 
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[width=7cm,height=5cm,
+    \begin{axis}[width=6cm,height=5cm,
         axis lines=left,
         ymin=0, ymax=120,
-        xmin=0, xmax=30,
+        xmin=0, xmax=25,
         ylabel = {Force (N)},
         xlabel = {Displacement (m)},
         grid = both,
         ytick={0,20,...,120},
-        xtick={0,5,...,30},
+        xtick={0,5,...,25},
         grid=both
     ]
-    \addplot[ultra thick] coordinates {(0,100)(20,100)(30,0)};
+    \addplot[ultra thick] coordinates {(0,100)(20,100)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -309,48 +491,16 @@ What is the change in kinetic energy of the box as it slides through a displacem
 \end{randomizechoices}
 
 
-\clearpage
-
 \question
-Two carts collide and bounce off one another. The diagram below shows their motion after the collision.
-
-
-\begin{center}
-\begin{tikzpicture}
-    \draw (0,0) -- (7,0);
-    \begin{scope}[shift={(1.5,0.15)}]
-        \draw (0,0) rectangle ++(1.2,0.8) node[pos=0.5] {\SI{1}{kg}};
-        \draw[fill=white] (0.3,0) circle (0.15);
-        \draw[fill=white] (0.9,0) circle (0.15);
-        \draw[thick,->] (0,0.4) -- ++(-0.8,0);
-    \end{scope}
-    \begin{scope}[shift={(4,0.15)}]
-        \draw (0,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
-        \draw[fill=white] (0.4,0) circle (0.15);
-        \draw[fill=white] (1.1,0) circle (0.15);
-        \draw[thick,->] (1.5,0.5) -- ++(0.8,0);
-    \end{scope}
-\end{tikzpicture}
-\end{center}
-
-Which cart will have the greatest magnitude of acceleration and why?
+A constant braking force of \SI{10}{N} is applied for \SI{5}{s} to stop a \SI{2.5}{kg} cart.  Calculate the cart's change in momentum.
 
 \begin{randomizechoices}
-    \choice The \SI{1}{kg} cart because the force from the \SI{2}{kg} cart will push a greater amount on it.	
-    \correctchoice The \SI{1}{kg} cart because its smaller mass will be affected more by the force from the \SI{2}{kg} cart than the larger \SI{2}{kg} cart will be from the \SI{1}{kg} cart.	
-    \choice The \SI{2}{kg} cart because the force from the \SI{1}{kg} cart will push a greater amount on it.
-    \choice The \SI{2}{kg} cart because its larger mass will be affected more by the force of the \SI{1}{kg} cart than the smaller \SI{1}{kg} cart will be from the \SI{2}{kg} cart.    
+    \choice \SI{12.5}{kg\cdot m/s}
+    \choice \SI{25}{kg\cdot m/s}
+    \correctchoice \SI{50}{kg\cdot m/s}
+    \choice \SI{125}{kg\cdot m/s}
 \end{randomizechoices}
 
-\question
-A student pushes a 12-kg block on a frictionless, horizontal surface. If the block is initially at rest, what is the speed of the block after the student pushes the block for 5 seconds with an acceleration of \SI{2.0}{m/s^2}?
-
-\begin{randomizechoices}
-    \choice \SI{2.0}{m/s}
-    \choice \SI{6.0}{m/s}
-    \correctchoice \SI{10}{m/s}
-    \choice \SI{60}{m/s}
-\end{randomizechoices}
 
 \question
 A force is applied to a block, causing it to accelerate along a horizontal, frictionless surface. The energy gained by the block is equal to the
@@ -361,200 +511,6 @@ A force is applied to a block, causing it to accelerate along a horizontal, fric
     \choice momentum given to the block.
     \choice power applied to the block.
 \end{randomizechoices}
-
-\question
-Two carts collide and bounce off one another. The diagram below shows their motion after the collision.
-
-
-\begin{center}
-\begin{tikzpicture}
-    \draw (0,0) -- (7,0);
-    \begin{scope}[shift={(1.5,0.15)}]
-        \draw (0,0) rectangle ++(1.2,0.8) node[pos=0.5] {\SI{1}{kg}};
-        \draw[fill=white] (0.3,0) circle (0.15);
-        \draw[fill=white] (0.9,0) circle (0.15);
-        \draw[thick,->] (0,0.4) -- ++(-0.8,0);
-    \end{scope}
-    \begin{scope}[shift={(4,0.15)}]
-        \draw (0,0) rectangle ++(1.5,1) node[pos=0.5] {\SI{2}{kg}};
-        \draw[fill=white] (0.4,0) circle (0.15);
-        \draw[fill=white] (1.1,0) circle (0.15);
-        \draw[thick,->] (1.5,0.5) -- ++(0.8,0);
-    \end{scope}
-\end{tikzpicture}
-\end{center}
-
-If the average force during the collision on the \SI{1}{kg} cart from the \SI{2}{kg} cart is \SI{-4}{N}, what is the average force on the \SI{2}{kg} cart from the \SI{1}{kg} cart?
-
-\begin{randomizechoices}
-    \correctchoice \SI{4}{N}
-    \choice \SI{8}{N}
-    \choice \SI{2}{N}
-    \choice \SI{1}{N}
-\end{randomizechoices}
-
-\clearpage
-
-\question
-A car has an oil drip. As the car moves in the positive direction, it drips oil at a regular rate, leaving a trail of spots on the road. The oil drop pattern is shown in the figure below.
-
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-    \draw[domain=-10:0,mark=*,only marks, samples=8,mark size=3pt] plot({0.1*\x^2},0);
-    % \draw[thick, <-] (-5,0.5) -- ++(-1,0) node[above,pos=0.5] {$\vec{v}$};
-    \node[above=3pt] at (-10,0) {Start};
-    \node[above=3pt] at (0,0) {Finish};
-\end{tikzpicture}
-\end{center}
-
-Choose the description that best matches the motion of the car.
-
-\begin{randomizechoices}
-    \choice The car is slowing down with a positive acceleration.
-    \choice The car is speeding up with a positive acceleration.
-    \choice The car is speeding up with a negative acceleration.
-    \correctchoice The car is slowing down with a negative acceleration.
-\end{randomizechoices}
-
-\question
-Four forces act on an object as shown in the free body diagram below. $F_f$ is equal in magnitude to $F$. $F_\mathrm{N}$ is equal in magnitude to $F_g$.
-
-\begin{center}
-\begin{tikzpicture}
-    \draw (0,0) -- (5,0);
-    \draw[thick,fill=black!10] (1.5,0) rectangle ++(1,1);
-    \fill (2,0.5) circle (2pt);
-    \draw[->] (2,0.5) -- ++(0,+1.3) node[above] {$F_\mathrm{N}$};
-    \draw[->] (2,0.5) -- ++(0,-1.3) node[below] {$F_g$};
-    \draw[->] (2,0.5) -- ++(+1.5,0) node[right] {$F$};
-    \draw[->] (2,0.5) -- ++(-1.5,0) node[left] {$F_f$};
-\end{tikzpicture}
-\end{center}
-
-Which graph below best represents the velocity of this object?
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Velocity},
-        % y label style={rotate=-90},
-        xlabel={$t$},
-        clip=false,
-        title={Graph A}
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-x+2.5};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMENT
-    \end{axis}
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Velocity},
-        % y label style={rotate=-90},
-        xlabel={Time},
-        clip=false,
-        title={Graph B}
-    ]
-        \addplot[domain=0:2.5,very thick,black] {1.5};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Velocity},
-        % y label style={rotate=-90},
-        xlabel={Time},
-        clip=false,
-        title={Graph C}
-    ]
-        \addplot[domain=0:2.5,very thick,black] {-1.5 + 1.5*x};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}
-    \begin{axis}[height=4cm,
-        width=4cm,
-        ymin=-3,ymax=3,
-        xmin=0,xmax=3,
-        ticks=none,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Velocity},
-        % y label style={rotate=-90},
-        xlabel={Time},
-        clip=false,
-        title={Graph D}
-    ]
-        \addplot[domain=0:2.5,very thick,black] {x};
-        \draw (0,-3) node[below,white] {$t$}; %...FOR ALIGNMNET
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-{\color{white} \tiny
-\begin{randomizeoneparchoices}[norandomize]
-    \choice Graph A
-    \correctchoice Graph B
-    \choice Graph C
-    \choice Graph D
-\end{randomizeoneparchoices}
-}
-
-\question
-A constant braking force of \SI{10}{N} is applied for \SI{5}{s} to stop a \SI{2.5}{kg} cart.  Calculate the cart's change in momentum.
-
-\begin{randomizeoneparchoices}
-    \choice \SI{12.5}{kg\cdot m/s}
-    \choice \SI{25}{kg\cdot m/s}
-    \correctchoice \SI{50}{kg\cdot m/s}
-    \choice \SI{125}{kg\cdot m/s}
-\end{randomizeoneparchoices}
-
-\question
-The diagram below shows a \SI{4.0}{kg} object accelerating at \SI{2.0}{m/s^2} on a rough horizontal surface. 
-
-\begin{center}
-\begin{tikzpicture}
-    \draw (0,0) -- (8,0);
-    \begin{scope}[shift={(3,0)}]
-        \draw[thick,->] (2,0.5) -- ++(+1.5,0) node[right] {$F_\mathrm{A} = \SI{50}{N}$};
-        \draw[thick,->] (0,0.5) -- ++(-1.5,0) node[left] {$F_f$};
-        \draw[thick,fill=black!10] (0,0) rectangle ++(2,1.2) node[pos=0.5] {\SI{4.0}{kg}};
-    \end{scope}
-\end{tikzpicture}
-\end{center}
-
-What is the magnitude of the frictional force $F_f$ acting on the object?
-
-\begin{randomizechoices}
-    \choice \SI{58}{N}
-    \correctchoice \SI{42}{N}
-    \choice \SI{2}{N}
-    \choice \SI{8}{N}
-\end{randomizechoices}
-
-\clearpage
-\printkeytable
 
 
 \end{questions}

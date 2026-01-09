@@ -1,4 +1,4 @@
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \usepackage{mdframed}
@@ -9,15 +9,17 @@
 
 \newif\ifversionKlevel
 
-\versionKleveltrue
-
-\header{Physics L\\Test on Unit 5: Force Analysis}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\versionKleveltrue %...do NOT remove
 
 \ifversionKlevel
-    \header{Physics K\\Test on Unit 5: Force Analysis}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\header{{Name:\enspace\makebox[6cm]{\hrulefill}}\\{Physics}}{}{Test on Unit 5:\\Force Analysis}
+\else
+\header{{Name:\enspace\makebox[6cm]{\hrulefill}}\\{Physics L}}{}{Test on Unit 5:\\Force Analysis}
 \fi
 
+
 \begin{document}
+\subsection*{Multiple Choice Questions}
 
 \begin{questions}
 
@@ -113,6 +115,27 @@ When an object is transported from Earth to the Moon
     \choice its weight stays the same and its mass changes    
 \end{randomizechoices}
 
+\question
+The figure shows a block being pulled along the floor.
+
+\begin{center}
+\begin{tikzpicture}[x=6mm,y=6mm]
+    \draw[very thick,->] (-1,0) -- ++(-1,0) node[left,align=center] {Friction\\{\SI{10}{N}}};
+    \draw[very thick,->] (1,0) -- ++(5,0) node[right,align=center] {Pull\\{\SI{50}{N}}};
+    \draw[fill=black!12] (-1,-1) rectangle (1,1) node[pos=0.5] {\SI{20}{kg}};
+    \draw (-5,-1) -- (8,-1);
+\end{tikzpicture}
+\end{center}
+
+What is the acceleration of the block?
+
+\begin{randomizeoneparchoices}
+    \choice \SI{6}{m/s^2}
+    \choice \SI{4}{m/s^2}
+    \choice \SI{3}{m/s^2}
+    \correctchoice \SI{2}{m/s^2}
+\end{randomizeoneparchoices}
+
 
 \question 
 This graph shows weight versus mass for a group of objects on planet X.
@@ -120,7 +143,7 @@ This graph shows weight versus mass for a group of objects on planet X.
 \begin{center}
     \begin{tikzpicture}
         \begin{axis}[width=6cm,
-            height=6cm,
+            height=5.5cm,
             xmin=0,xmax=16,
             ymin=0,ymax=26,
             xlabel={Mass (kg)},
@@ -167,8 +190,43 @@ A free-body diagram of a ball falling with air resistance would show
     \choice a downward arrow to represent the force of air resistance.
 \end{randomizechoices}
 
-
+\ifprintanswers
+\else
 \clearpage
+\fi
+
+
+\question
+An object experiences a net force that changes its motion, shown in the momentum vs time graph below. 
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,width=6cm,
+        axis y line=left,
+        axis x line=center,
+        ymin=-20,ymax=20,
+        xmin=0,xmax=20,
+        ylabel={Momentum ($\mathrm{kg\cdot m/s}$)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs:1,0.5)},right},
+        ytick={-20,-10,...,20},
+        xtick={0,5,...,20},
+        grid=both
+    ]
+        \addplot[very thick,domain=0:10] {2*x};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+If the object has a mass of \SI{5}{kg}, what is the net force on the object?
+
+\begin{randomizechoices}
+    \correctchoice \SI{2}{N}
+    \choice \SI{10}{N}
+    \choice \SI{20}{N}
+    \choice \SI{200}{N}
+\end{randomizechoices}
+
 \question
 Which diagram best represents the gravitational forces, $F_g$, between a satellite, S, and Earth?
 
@@ -238,16 +296,21 @@ According to the Newton’s Law of Universal Gravitation, when the distance betw
 \end{randomizechoices}
 
 
-\question %...NOTE: The original problem read, ``As a meteor moves from a distance of \SI{6000}{km} to a distance of \SI{3000} km from the center of Earth, the magnitude of the gravitational force between the meteor and Earth becomes...'' This problem is physically unreasonable, since Earth's radius is 6378 km, which immplies the meteor would be traveling inside of Earth. So, the numbers below have been changed to conform to reality.
+% \question %...NOTE: The original problem read, ``As a meteor moves from a distance of \SI{6000}{km} to a distance of \SI{3000} km from the center of Earth, the magnitude of the gravitational force between the meteor and Earth becomes...'' This problem is physically unreasonable, since Earth's radius is 6378 km, which immplies the meteor would be traveling inside of Earth. So, the numbers below have been changed to conform to reality.
 
-As a meteor moves from a distance of \SI[group-separator={,}]{20000}{km} to a distance of \SI[group-separator={,}]{10000}{km} from the center of Earth, the magnitude of the gravitational force between the meteor and Earth becomes
+% As a meteor moves from a distance of \SI[group-separator={,}]{20000}{km} to a distance of \SI[group-separator={,}]{10000}{km} from the center of Earth, the magnitude of the gravitational force between the meteor and Earth becomes
 
-\begin{randomizeoneparchoices}[norandomize]
-    \correctchoice 4 times as great
-    \choice 64 times as great
-    \choice 1/8 as great
-    \choice 8 times as great
-\end{randomizeoneparchoices}
+% \begin{randomizeoneparchoices}[norandomize]
+%     \correctchoice 4 times as great
+%     \choice 64 times as great
+%     \choice 1/8 as great
+%     \choice 8 times as great
+% \end{randomizeoneparchoices}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
 
 \question
 Earth’s mass is approximately 81 times the mass of the moon.  If the earth exerts a gravitational force of magnitude $F$ on the Moon, the magnitude of the gravitational force of the moon on the earth is
@@ -258,6 +321,34 @@ Earth’s mass is approximately 81 times the mass of the moon.  If the earth exe
     \choice less than $F$
     \choice not enough information to tell
 \end{randomizechoices}
+
+\question
+Each of the objects pictured below starts at the origin and experiences a net force during a time interval of $\Delta t = \SI{7}{s}$. The figure below (a motion map) shows the objects at 1-second time intervals.
+
+\begin{center}
+\begin{tikzpicture}[x=12cm,y=7mm]
+    \draw[domain=-1:0,mark=square*,blue!70,only marks,samples=7,mark size=1.2mm] plot({\x^2},0);
+    \draw[domain=0:1,mark=square*,green!70,only marks, samples=7,mark size=1.2mm] plot({\x-1},-1);
+    \draw[domain=0:0.5,mark=square*,yellow!90!black,only marks, samples=7,mark size=1.2mm] plot({\x-1},-2);
+    \draw[domain=-1:0,mark=square*,red!80,only marks, samples=7,mark size=1.2mm] plot({-1-\x^2},-3);
+    \draw[thick,->] (-1,-4.3) node[left] {origin} -- ++(1,0) node[below,pos=0.5] {Position};
+    \draw (-1.01,-0.18) -- ++(1.02,0) node[left,pos=0,shift={(-3pt,3pt)}] {\bfseries A};
+    \draw (-1.01,-1.18) -- ++(1.02,0) node[left,pos=0,shift={(-3pt,3pt)}] {\bfseries B};
+    \draw (-1.01,-2.18) -- ++(1.02,0) node[left,pos=0,shift={(-3pt,3pt)}] {\bfseries C};
+    \draw (-1.01,-3.18) -- ++(1.02,0) node[left,pos=0,shift={(-3pt,3pt)}] {\bfseries D};
+\end{tikzpicture}
+\end{center}
+
+Which of the objects experiences the greatest magnitude of net force during the 7 second time interval?
+
+\begin{randomizeoneparchoices}[norandomize]
+    \choice A
+    \choice B
+    \choice C
+    \choice D
+    \correctchoice A and D
+    \choice A and B
+\end{randomizeoneparchoices}
 
 \bigskip
 \hrule\hrule
@@ -320,7 +411,7 @@ What is the magnitude of the gravitational force exerted by ball A on ball B?
     \choice \SI{24.5}{N}
 \end{randomizeoneparchoices}
 
-\ifversionKlevel
+
 \question
 In the figure below, static friction prevents a box from sliding.
 
@@ -418,12 +509,34 @@ Which of the following represents the net force equation in the vertical directi
     \choice $F_{\mathrm{net},y} = F_y - F_g = 0$
     \choice $F_{\mathrm{net},y} = F_\mathrm{N} - F_y - F_g = 0$
 \end{randomizechoices}
+
+\question
+What is a free-body diagram?
+
+\begin{randomizechoices}
+    \choice a diagram showing only objects in free-fall
+    \correctchoice a diagram showing all external forces acting on an object
+    \choice a diagram showing only balanced forces acting on an object
+    \choice a diagram showing mass and acceleration information only
+\end{randomizechoices}
+
+\clearpage
+
+\ifprintanswers
+\printkeytable
 \fi
 
 \clearpage
 
+\end{questions}
+
+\subsection*{Free Response Questions}
+
+\begin{questions}
+
 \begingradingrange{myrange} 
-\question[6]
+
+\question[5]
 Mia is pulling up a \SI{20}{kg} bucket of water with an acceleration of \SI{1}{m/s^2} to quench her thirst. 
 
 \begin{center}
@@ -449,10 +562,6 @@ Mia is pulling up a \SI{20}{kg} bucket of water with an acceleration of \SI{1}{m
 \end{tikzpicture}
 \end{center}
 
-% \begin{solutionorbox}[4cm]
-
-% \end{solutionorbox}
-
 \part Write the $F_\mathrm{net}$ equation for the bucket.
 \vspace{-1ex}
 
@@ -467,8 +576,13 @@ Mia is pulling up a \SI{20}{kg} bucket of water with an acceleration of \SI{1}{m
 \part Solve for the tension in the cable as the bucket is being pulled up.
 
 \begin{solutionorbox}[7cm]
-If $F_\mathrm{T} - F_g = ma_y$, then
-\vspace{-1em}
+We know
+
+\begin{equation*}
+    F_{\mathrm{net},y} = F_\mathrm{T} - F_g = ma_y
+\end{equation*}
+
+Adding weight $F_g$ to both sides results in
 
 \begin{align*}
     F_\mathrm{T} &= ma_y + F_g \\[1ex]
@@ -491,10 +605,9 @@ If $F_\mathrm{T} - F_g = ma_y$, then
 \fi
 
 
-
 \clearpage
 
-\question[2]
+\question[5]
 The figure below shows the same rocket at two different positions, P and Q, relative to a planet. When the rocket is located at Point P, the gravitational force on the rocket by the planet is \SI{72}{N}. 
 
 \ifversionKlevel
@@ -519,8 +632,8 @@ The figure below shows the same rocket at two different positions, P and Q, rela
 \end{center}
 \fi
 
-
-(a) Use a checkmark below to indicate whether the magnitude of the gravitational force increases, decreases, or stays the same when the rocket moves from Point P to Point Q. 
+\begin{parts}
+\part Use a checkmark below to indicate whether the magnitude of the gravitational force increases, decreases, or stays the same when the rocket moves from Point P to Point Q. 
 
 \begin{center}
     \large
@@ -531,114 +644,145 @@ The figure below shows the same rocket at two different positions, P and Q, rela
 \end{center}
 
 
-(b) Find the magnitude of the gravitational force, in newtons (N), on the rocket when it is at Point Q.
+\part Find the magnitude of the gravitational force, in newtons (N), on the rocket when it is at Point Q.
 
 \ifversionKlevel
-    \begin{solutionorbox}[7cm]
-    The distance between the P and the center of Earth is 5 grid units. The distance between Q and the center of Earth is 3 units. So, the distance between P and Q decreases by a factor of 
+    \begin{solutionorbox}[13cm]
+    Let $F_0 = \SI{72}{N}$ be the original force of gravity on the rocket, and $d_0$ be the distance corresponding to the rocket's original position. 
+    %Let $F$ be the new gravitational force at a different position, and $r$ be the new position. 
+
+    Newton's universal law of gravitation states
     
     \begin{equation*}
-        \frac{r}{r_0} = \frac{3}{5}
+        F_g = \frac{G m_1 m_2}{d^2}
     \end{equation*}
     
-    By Newton's universal law of gravitation,
+    and shows that gravitational force is inversely proportional to the distance squared:
     
     \begin{equation*}
-        F_g = \frac{Gm_1 m_2}{r^2}
+        F_g \propto \frac{1}{d^2}
     \end{equation*}
     
-    force is inversely proportional to distance squared. So, at point Q the original force is change by a factor of 
+    Therefore, the new force $F$ with new distance $d$ as a proportion of the original force is given by
+    
+    \begin{equation} \label{Otve2}
+        F = \frac{F_0}{\left(d/d_0\right)^2}
+    \end{equation}
+
+    At Position P, the original distance is $d_0 = \sqrt{4^2 + 3^2} = 5$ units, as shown below.
+    
+    \begin{center}
+    \begin{tikzpicture}[x=6mm,y=6mm]
+        \draw (0,0) -- (-4,0) node[below,pos=0.5] {$4$};
+        \draw (-4,0) -- (-4,3) node[left,pos=0.5] {$3$};
+        \draw (0,0) -- (-4,3) node[above,pos=0.5,rotate=-37] {$\sqrt{4^2 + 3^2}$};
+        \node[opacity=0.7] at (0,0) {\twemoji[width=8mm]{globe showing Americas}};
+        \fill (-4,3) circle (3pt) node[above right] {P};
+    \end{tikzpicture}
+    \end{center}
+    
+    At Position Q, the new distance is 3 units. The ratio of the old distance so the ratio is
     
     \begin{equation*}
-        F_\mathrm{Q} \propto \frac{1}{\left(\displaystyle \frac{r}{r_0}\right)^2} = \frac{1}{\left(\displaystyle \frac{3}{5}\right)^2}
+        \frac{d}{d_0} = \frac{3}{\sqrt{4^2 + 3^2}} = \frac{3}{5}
     \end{equation*}
     
-    Therefore, the the force a Q is
+    Therefore, by Equation \eqref{Otve2}, the gravitational force at Position Q is
     
-    \begin{equation*}
-        F_\mathrm{Q} = F_\mathrm{P} \times \frac{1}{\left(\displaystyle \frac{3}{5}\right)^2} = \SI{72}{N} \times \frac{1}{\left(\displaystyle \frac{3}{5}\right)^2} = \boxed{\SI{200}{N}}
-    \end{equation*}
+    \begin{align*}
+        F_\mathrm{Q} &= \frac{F_0}{\left(d/d_0\right)^2} \\[1ex]
+        &= \frac{F_0}{(3/5)^2} \\[1ex]
+        &= \frac{\SI{72}{N}}{0.36} \\[1ex]
+        &= \boxed{\SI{200}{N}}
+    \end{align*}
     \end{solutionorbox}
 \else
-    \begin{solutionorbox}[10cm]
-    The distance between the P and the center of Earth is 6 grid units. The distance between Q and the center of Earth is 3 units. So, the distance between P and Q decreases by a factor of 
+    \begin{solutionorbox}[15cm]
+    Let $F_0 = \SI{72}{N}$ be the original force of gravity on the rocket, and $r_0 = 6$ units be the distance corresponding to the rocket's original position. 
+    %Let $F$ be the new gravitational force at a different position, and $r$ be the new position. 
+
+    Newton's universal law of gravitation states
     
     \begin{equation*}
-        \frac{r}{r_0} = \frac{3}{6} = \frac{1}{2}
+        F_g = \frac{G m_1 m_2}{d^2}
     \end{equation*}
     
-    By Newton's universal law of gravitation,
+    and shows that the gravitational force is inversely proportional to the distance squared:
     
     \begin{equation*}
-        F_g = \frac{Gm_1 m_2}{r^2}
+        F_g \propto \frac{1}{d^2}
     \end{equation*}
     
-    force is inversely proportional to distance squared. So, at point Q the original force is change by a factor of 
+    Therefore, the new force $F$ with new distance $d$ as a proportion of the original force is given by
+    
+    \begin{equation} \label{Otve2}
+        F = \frac{F_0}{\left(d/d_0\right)^2}
+    \end{equation}
+
+    At Position P, the original distance is 6 units, as shown in the figure above. At Position Q, the new distance is 3 units. The ratio of the old distance so the ratio is
     
     \begin{equation*}
-        F_\mathrm{Q} \propto \frac{1}{\left(\displaystyle \frac{r}{r_0}\right)^2} = \frac{1}{\left(\displaystyle \frac{1}{2}\right)^2}
+        \frac{d}{d_0} = \frac{3}{6}
     \end{equation*}
     
-    Therefore, the the force a Q is
+    Therefore, by Equation \eqref{Otve2}, the gravitational force at Position Q is
     
-    \begin{equation*}
-        F_\mathrm{Q} = F_\mathrm{P} \times \frac{1}{\left(\displaystyle \frac{1}{2}\right)^2} = \SI{72}{N} \times \frac{1}{\left(\displaystyle \frac{1}{2}\right)^2} = \boxed{\SI{288}{N}}
-    \end{equation*}
+    \begin{align*}
+        F_\mathrm{Q} &= \frac{F_0}{\left(d/d_0\right)^2} \\[1ex]
+        &= \frac{F_0}{(3/6)^2} \\[1ex]
+        &= \frac{\SI{72}{N}}{0.25} \\[1ex]
+        &= \boxed{\SI{288}{N}}
+    \end{align*}
     \end{solutionorbox}
 \fi
-
-
-
-\ifversionKlevel
-
-\ifprintanswers
-    \clearpage
-\fi
-
-\question[2]
-The object below is accelerated rightward by an applied force parallel to the rough surface. Friction is significant. Draw the free-body diagram, and write the net force equations in horizontal and vertical directions.
-
-\begin{center}
-\begin{minipage}[c][4cm][c]{0.5\textwidth}
-\begin{tikzpicture}[x=7mm,y=7mm,remember picture]
-    \draw (-1.5,0) -- ++(4,0);
-    \draw[fill=black!10] (0,0) rectangle ++(1,1);
-    \draw[thick,->] (1,0.5) -- ++(1.2,0) node[right] {$F$};
-    \ifprintanswers
-    \color{red}
-    \else
-    \color{white}
-    \fi
-    \begin{scope}[xshift=4.5cm,x=1cm,y=1cm]
-        \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
-        \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
-        \draw[thick,->] (0,0) -- (1.5,0) node[right] {$F$};
-        \draw[thick,->] (0,0) -- (-0.7,0) node[left] {$F_f$};
-        \fill[black] (0,0) circle (3pt);  
-    \end{scope}
-\end{tikzpicture}
-\end{minipage}%
-\hspace{2em}
-\begin{minipage}[c][4cm][c]{0.35\textwidth}
-    \Large
-    \begin{align*}
-        F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F - F_f = m a_x \fi} \\[1ex]
-        F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N}  - F_g = 0 \fi}
-    \end{align*}
-\end{minipage}
-\end{center}
-\fi
+\end{parts}
 
 \endgradingrange{myrange} 
 
-\ifprintanswers
-    \printkeytable
-\fi
-
-
-
-
-
-
 \end{questions}
+
+% \subsection*{Free Response Questions}
+
+% \begin{questions}
+
+% \question[2]
+% The object below is accelerated rightward by an applied force parallel to the rough surface. Friction is significant. Draw the free-body diagram, and write the net force equations in horizontal and vertical directions.
+
+% \begin{center}
+% \begin{minipage}[c][4cm][c]{0.5\textwidth}
+% \begin{tikzpicture}[x=7mm,y=7mm,remember picture]
+%     \draw (-1.5,0) -- ++(4,0);
+%     \draw[fill=black!10] (0,0) rectangle ++(1,1);
+%     \draw[thick,->] (1,0.5) -- ++(1.2,0) node[right] {$F$};
+%     \ifprintanswers
+%     \color{red}
+%     \else
+%     \color{white}
+%     \fi
+%     \begin{scope}[xshift=4.5cm,x=1cm,y=1cm]
+%         \draw[thick,->] (0,0) -- (0,+1) node[above] {$F_\mathrm{N}$};
+%         \draw[thick,->] (0,0) -- (0,-1) node[below] {$F_g$};
+%         \draw[thick,->] (0,0) -- (1.5,0) node[right] {$F$};
+%         \draw[thick,->] (0,0) -- (-0.7,0) node[left] {$F_f$};
+%         \fill[black] (0,0) circle (3pt);  
+%     \end{scope}
+% \end{tikzpicture}
+% \end{minipage}%
+% \hspace{2em}
+% \begin{minipage}[c][4cm][c]{0.35\textwidth}
+%     \Large
+%     \begin{align*}
+%         F_{\mathrm{net},x} &= {\ifprintanswers \color{red} F - F_f = m a_x \fi} \\[1ex]
+%         F_{\mathrm{net},y} &= {\ifprintanswers \color{red} F_\mathrm{N}  - F_g = 0 \fi}
+%     \end{align*}
+% \end{minipage}
+% \end{center}
+
+
+
+
+
+
+
+% \end{questions}
 \end{document}

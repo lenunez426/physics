@@ -1,4 +1,4 @@
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \usepackage{mdframed}
@@ -14,10 +14,14 @@
 \header{Physics L\\Test on Unit 4: Impulse and Work}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
 
 \ifversionKlevel
-    \header{Physics K\\Test on Unit 4: Impulse and Work}{}{Name:\enspace\makebox[5cm]{\hrulefill}}
+\header{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics Test on Unit 4: Impulse and Work}
+% \header{Physics}{Test on Unit 3}{Changing Motion}
+
 \fi
 
 \begin{document}
+
+\subsection*{Multiple Choice Questions}
 \begin{questions}
 
 \question 
@@ -112,7 +116,7 @@ Which of the following representations of motion depicts an object with constant
     \end{tikzpicture}
 \end{center}
 
-{\color{white} \tiny \vspace{-3em}
+\scalebox{0}{
 \begin{randomizeoneparchoices}[norandomize]
     \correctchoice \phantom{Graph A}
     \choice \phantom{Graph B}
@@ -180,6 +184,11 @@ The average net force shown in the graph below acts on a \SI{5}{kg} object for 1
             grid=both,
         ]
             \draw[very thick] (0,3) -- ++(10,0);
+            \ifprintanswers
+            \begin{pgfonlayer}{background}
+                \fill[red!12] (0,0) rectangle (10,3);
+            \end{pgfonlayer}
+            \fi
         \end{axis}
     \end{tikzpicture}
 \end{center}
@@ -244,12 +253,12 @@ The box in the picture below is moving to the left (the negative direction). The
 
 The net force is applied to the box which gets displaced \SI{5}{m} to the left.  What is the net work done on the object? 
 
-\begin{randomizeoneparchoices}[norandomize]
+\begin{randomizechoices}[norandomize]
     \choice $-\SI{2}{N\cdot m}$
     \choice $+\SI{2}{N\cdot m}$
     \correctchoice $-\SI{50}{N\cdot m}$
     \choice $+\SI{50}{N\cdot m}$
-\end{randomizeoneparchoices}
+\end{randomizechoices}
 
 \clearpage
 
@@ -337,13 +346,14 @@ The velocity vs time graph below shows the motion of a \SI{10}{kg} object.
 
 What is the object's change in momentum during this time?
 
-\begin{randomizeoneparchoices}[norandomize]
+\begin{randomizechoices}[norandomize]
     \choice $+\SI{200}{kg\cdot m/s}$
     \choice $+\SI{5}{kg\cdot m/s}$
     \choice $-\SI{200}{kg\cdot m/s}$
     \correctchoice $+\SI{400}{kg\cdot m/s}$
-\end{randomizeoneparchoices}
+\end{randomizechoices}
 
+\clearpage
 
 \question
 A cart is pushed across the floor during a time period of 5 seconds.  The net force on the box is shown in the graph below.
@@ -521,12 +531,17 @@ Solving for work, we get
 \end{solution}
 \fi
 
+\end{questions}
 
 \clearpage
 
+\subsection*{Free Response Questions}
+
+\begin{questions}
+
 \begingradingrange{myrange} 
-\question[2]
-The \SI{1000}{kg} car below is moving at \SI{30}{m/s}.
+\question[6]
+The \SI{1000}{kg} car below is moving at \SI{30}{m/s}. A net force brings the car to rest in 5 seconds.
 
 
 \begin{center}
@@ -537,101 +552,73 @@ The \SI{1000}{kg} car below is moving at \SI{30}{m/s}.
     \end{tikzpicture}    
 \end{center}
 
-It comes to a stop in 5 seconds.  What is the average force on the car during this time?
 
-\begin{solutionorbox}[6cm]
+\begin{parts}
 
-\textbf{\color{red} 1 point earned}: For writing the given information and/or invoking the impulse-momentum theorem: \medskip
+\part 
+Calculate the initial momentum of the car. Then calculate the car's change in momentum.
 
-We know $m = \SI{1000}{kg}$, $\Delta v = \SI{-30}{m/s}$, and $\Delta t = \SI{5}{s}$. \medskip
-
-
-By the impulse-momentum theorem,
-
+\begin{solutionorbox}[2.5cm]
 \begin{equation*}
-    F_\mathrm{net} \Delta t = \Delta p = m \Delta v
+    p_i = m v_i = (\SI{1000}{kg})(\SI{30}{m/s}) = \boxed{\SI{30000}{kg\cdot m/s}}
 \end{equation*}
 
-\textbf{\color{red} 1 point earned}: For manipulating equation or arrive at the correct answer:
-
-Therefore,
-
-\vspace{-1em}
-\begin{align*}
-    F_\mathrm{net} &= \frac{m \Delta v}{\Delta t} \\[1ex]
-    &= \frac{(\SI{1000}{kg})(-\SI{30}{m/s})}{\SI{5}{s}} \\[1ex]
-    &= \boxed{\SI{-6000}{N}}
-\end{align*}
+\begin{equation*}
+    \Delta p = p_f - p_i = 0 - \SI{30000}{kg\cdot m/s} = \boxed{\SI{-30000}{kg\cdot m/s}}
+\end{equation*}
 \end{solutionorbox}
 
-% \begin{randomizechoices}[norandomize]
-%     \correctchoice \SI{6000}{N}
-%     \choice \SI{3000}{N}
-%     \choice \SI[group-separator={,}]{15000}{N}
-%     \choice \SI{1600}{N}
-% \end{randomizechoices}
+\part Write an equation relating the force on the car, the time during which the force acts, and the change in the car's momentum. (\textit{Hint:} What's the impulse-momentum theorem?)
 
-\question[2]
-Use the word bank below to complete the following sentences. You may use a word more than once.
-\vspace{-1ex}
-
-\begin{center}
-\begin{minipage}{0.6\textwidth}
-\large
-\centering
-    Impulse is equal to \\[1ex] \fillin[force][3cm] multiplied by \fillin[time][3cm].
-
-    \vspace{1.5em}
-    
-    Work is equal to\\[1ex] \fillin[force][3cm] multiplied by \fillin[displacement][3cm].
-\end{minipage}%
-\fbox{
-\begin{minipage}{0.35\textwidth}
-\centering
-\textbf{\underline{Word Bank}}
-\vspace{-1em}
-\setlength\columnsep{10pt}
-\begin{multicols*}{2}
-    acceleration\\
-    displacement\\
-    kinetic energy\\
-    force\\
-    gravity\\
-    inertia\\
-    mass\\
-    momentum\\
-    position\\
-    time\\
-    velocity\\
-    weight\\    
-\end{multicols*}
-\end{minipage}}
-\end{center}
-
-\begin{solution}
-
-\textbf{\color{red} 1 point earned}: For stating that impulse is the product of force and time.
-
-\textbf{\color{red} 1 point earned}: For stating that work is the product of force and displacement.
-\end{solution}
+\ifprintanswers
+{\color{red}
+\begin{flalign*}
+    F \Delta t = \Delta p &&
+\end{flalign*}
+}
+\else
+\fillwithlines{7mm}
+\fi
 
 
-\question[2]
+\part Find the magnitude of the force on the car during the time interval.
+
+\begin{solutionorbox}[5.5cm]
+Above, we found $\Delta p = \SI{-30000}{kg\cdot m/s}$. By the impulse-momentum theorem,
+
+\begin{equation*}
+    F_\mathrm{net} \Delta t = \Delta p 
+\end{equation*}
+
+Dividing both sides by the time interval leads to 
+
+\begin{align*}
+    F_\mathrm{net} &= \frac{\Delta p}{\Delta t} \\[1ex]
+    &= \frac{\SI{-30000}{kg\cdot m/s}}{\SI{5}{s}} \\[1ex]
+    &= \SI{-6000}{N}
+\end{align*}
+
+Therefore, the magnitude of the force is $\boxed{\SI{6000}{N}}$
+\end{solutionorbox}
+\end{parts}
+
+\question[4]
 Two identical eggs are dropped from the exact same height. Egg A lands on a concrete floor and breaks. Egg B lands on a pillow and survives. Each egg will lose the same amount of momentum after coming to rest on its surface. Use the impulse-momentum theorem to explain why Egg A breaks while Egg B survives.
 
 \ifprintanswers
 \else
-\fillwithlines{3cm}
+\fillwithlines{28mm}
 \fi
 
 \begin{solution}
 
-\textbf{\color{red} 1 point earned}: For explaining (in words and/or equations) that the force on the egg at impact is governed by the impulse-momentum theorem: $F_\mathrm{ave} \Delta t = \Delta p$.
+\textbf{\color{red} 2 points}: For explaining (in words and/or equations) that the force on the egg at impact is governed by the impulse-momentum theorem: $F_\mathrm{ave} \Delta t = \Delta p$.
 
- \textbf{\color{red} 1 point earned}: For explaining that the pillow increases the time interval during which the pillow's force on the egg occurs, thus decreasing the magnitude of this force.
+ \textbf{\color{red} 2 points}: For explaining that the pillow increases the time interval during which the pillow's force on the egg occurs, thus decreasing the magnitude of this force.
 
  Alternatively, the student gets credit for explaining this in terms of the concrete floor, with a smaller time interval of contact yielding a larger force.
 \end{solution}
+\endgradingrange{myrange} 
 
 \vspace*{\fill}
 
@@ -644,10 +631,16 @@ Two identical eggs are dropped from the exact same height. Egg A lands on a conc
 \end{mdframed}
 \fi
 
-\ifversionKlevel
+\end{questions}
+
 \clearpage
 
-\question[2]
+\subsection*{Free Response Questions}
+
+\begin{questions}
+
+\begingradingrange{myrangeII} 
+\question[6]
 A 50-kg little league baseball player slides on the ground to steal home base. Initially he is sliding at \SI{5}{m/s} when he experiences a negative acceleration due to friction and begins to slow down. His kinetic energy vs time graph is shown below.
 
 \begin{center}
@@ -669,40 +662,107 @@ A 50-kg little league baseball player slides on the ground to steal home base. I
     \end{tikzpicture}
 \end{center}
 
-Use the information above to calculate the magnitude of the average power dissipated by friction.
+\begin{parts}
 
-\begin{solutionorbox}[12cm]
+\part Calculate the player's initial kinetic energy. Then find the change in his kinetic energy across the entire time interval.
 
-\textbf{\color{red} 1 point earned}: For using the work-energy theorem to calculate the work done on the player: \medskip
-
-We are given mass $m = \SI{50}{kg}$, initial velocity $v_i = \SI{5}{m/s}$, and a final velocity of $v_f = \SI{0}{m/s}$. 
-
-The net work done by friction on the player is the player's change in kinetic energy:
-
-\begin{align*}
-    W_\mathrm{net} = \Delta \mathrm{KE} &= \frac{1}{2}m v_f^2 - \frac{1}{2}m v_i^2 \\[1ex]
-    &= \frac{1}{2}(\SI{50}{kg}) \left(\SI{0}{m/s}\right)^2 - \frac{1}{2}(\SI{50}{kg}) \left(\SI{5}{m/s}\right)^2 \\[1ex]
-    &= \SI{-625}{J}
-\end{align*}
-
-\textbf{\color{red} 1 point earned}: For dividing net work by time to calculate power:
-
-According to the graph, the time interval during which work was done is $\Delta t = \SI{2.5}{s}$. Taking the absolute value, the power is
+\begin{solutionorbox}[2.5cm]
+\begin{equation*}
+    K_i = \frac{1}{2}m v_i^2 = \frac{1}{2}(\SI{50}{kg}) \left(\SI{5}{m/s}\right)^2 = \boxed{\SI{625}{J}}
+\end{equation*}
 
 \begin{align*}
-    P &= \frac{\left|W_\mathrm{net}\right|}{\Delta t} \\[1ex]
-    &= \frac{\SI{625}{J}}{\SI{2.5}{s}} \\[1ex]
-    &= \boxed{\SI{250}{W}}
+    \Delta K &= K_f - K_i \\[1ex]
+    &= \SI{0}{J} - \SI{625}{J} \\[1ex]
+    &= \boxed{\SI{-625}{J}}
 \end{align*}
 \end{solutionorbox}
+
+\part What is the work done on the player by the frictional force?
+
+\begin{solutionorbox}[1.5cm]
+By the work-energy theorem,
+
+\begin{equation*}
+    W = \Delta K = \boxed{\SI{-625}{J}}
+\end{equation*}
+\end{solutionorbox}
+
+\part Calculate the magnitude of the average power dissipated by friction.
+
+\begin{solutionorbox}[3cm]
+Above, we found $W = \SI{-625}{J}$. According to the graph, the time interval during which work was done is $\Delta t = \SI{2.5}{s}$. Therefore, power is
+
+\begin{align*}
+    P &= \frac{W}{\Delta t} \\[1ex]
+    &= \frac{\SI{-625}{J}}{\SI{2.5}{s}} \\[1ex]
+    &= \SI{-250}{W}
+\end{align*}
+
+Therefore, the magnitude of the power dissipated is $\boxed{\SI{250}{W}}$.
+\end{solutionorbox}
+\end{parts}
+
+
+
+\ifprintanswers
+\else
+\hfill \textit{Continued on next page\ldots}
+\vspace*{\fill}
+\begin{mdframed}[backgroundcolor=black!10]
+    \centering
+    \textbf{\small TEACHER USE ONLY}\\[1em]
+    \partialgradetable{myrangeII}[h][questions]
+\end{mdframed}
+\clearpage
 \fi
-\endgradingrange{myrange} 
-% \pointsinrange{myrange}
 
 
+\question[4]
+Use the word bank below to complete the following sentences. You may use a word more than once.
 
-% \hrule\hrule\hrule
-% \phantom{.} \hfill {\small \bfseries TEACHER USE ONLY} \hfill \phantom{.}
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{9cm}
+Impulse is equal to \\[1ex] \fillin[force][3cm] multiplied by \fillin[time][3cm].
+
+\vspace{1.5em}
+    
+Work is equal to\\[1ex] \fillin[force][3cm] multiplied by \fillin[displacement][3cm].
+\end{minipage}%
+\hspace{5mm}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\textbf{\underline{Word Bank}}
+\vspace{-1em}
+\setlength\columnsep{10pt}
+\begin{multicols*}{2}
+    acceleration\\
+    displacement\\
+    kinetic energy\\
+    force\\
+    gravity\\
+    inertia\\
+    mass\\
+    momentum\\
+    position\\
+    time\\
+    velocity\\
+    weight\\    
+\end{multicols*}
+\end{minipage}}
+\end{EnvUplevel}
+
+\begin{solution}
+
+\textbf{\color{red} 2 points}: For stating that impulse is the product of force and time.
+
+\textbf{\color{red} 2 points}: For stating that work is the product of force and displacement.
+\end{solution}
+\endgradingrange{myrangeII} 
+
+
 
 
 \end{questions}

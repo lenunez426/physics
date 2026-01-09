@@ -1,21 +1,39 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+% \documentclass[../main-physics-problems.tex]{subfiles}
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+\input{documents/physics-glossary}
+% \usepackage{fontawesome5}
+\usepackage{figchild}
+
+\setrandomizerseed{1}
+
+\firstpageheader{Physics}{Unit 4: Impulse and Work}{Problems}
+\runningheader{}{}{}
+
 \begin{document}
 
-\subsection{Changing Momentum}
-\subsubsection{Relating Change in Momentum to Change in Velocity}
-\subsubsection{The Relationship between Net Force and Momentum}
-\subsubsection{The Relationship between Time and Momentum}
-\subsubsection{Real-Life Applications of Impulse and Momentum}
-\subsubsection{Solving Problems Using the Impulse-Momentum Theorem}
-\subsection{Changing Kinetic Energy}
-\subsubsection{Identifying if a Net Force is Doing Work}
-\subsubsection{Calculating Net Work}
-\subsubsection{The Relationship between Net Force and Kinetic Energy}
-\subsubsection{The Relationship between Displacement and Kinetic Energy}
-\subsubsection{Solving Problems using the Work-Energy Theorem}
-\subsubsection{Comparing the Power of Various Situations}
-\subsubsection{Calculating Power}
+\begin{questions}
+\question
+An egg is dropped from rest and reaches a final velocity of \SI{4.4}{m/s} right before striking a pillow. An identical egg is dropped from the same height and reaches the same final velocity. 
 
+\begin{center}
+\begin{tikzpicture}
+    \node at (0,0) {\twemoji[width=2cm]{1f6cf}};
+    \node at (-0.5,2) {\twemoji[height=5mm]{egg}};
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}
+    \node at (0,0) {\phantom{\twemoji[width=2cm]{1f6cf}}};
+    \node at (-0.5,2) {\twemoji[height=5mm]{egg}};
+    \draw (-2,0) -- ++(4,0) node[below,pos=0.5] {concrete floor};
+\end{tikzpicture}
+\end{center}
+
+The first egg survives the fall while the second egg breaks. Why? Use ideas from the physics terms in the previous activity to arrive at an explanation.
+\end{questions}
+
+\clearpage
 \begin{questions}
 \question
 A force causes a \SI{70}{kg} football player to change his velocity by \SI{10}{m/s}. Determine the change in momentum experienced by the player.
@@ -198,7 +216,7 @@ The diagram below shows the net force applied to a box vs the box's displacement
 \end{randomizechoices}
 
 \question
-A \SI{200}{kg} crate is lifted to a \SI{3}{m} high platform by a forklift. Assuming that it was lifted with a net force of \S{10}{N}, how much net work was done on the crate?
+A \SI{200}{kg} crate is lifted to a \SI{3}{m} high platform by a forklift. Assuming that it was lifted with a net force of \SI{10}{N}, how much net work was done on the crate?
 
 \begin{randomizechoices}
     \correctchoice \SI{30}{J}
@@ -363,6 +381,8 @@ Use the net force and position data to find the work done on the ball by gravity
 \end{questions}
 
 \clearpage
+
+\subsection*{Changes in Momentum and Kinetic Energy}
 
 \begin{questions}
 \question
@@ -628,6 +648,7 @@ The mass is \SI{6}{kg}. Calculate the change in velocity, change in momentum, an
     \clearpage
 \fi
 
+\clearpage
 \question
 The mass is \SI{12}{kg}. Calculate the change in velocity, change in momentum, and change in kinetic energy. 
 

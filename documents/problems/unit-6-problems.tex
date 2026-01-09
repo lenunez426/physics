@@ -1,6 +1,394 @@
-\documentclass[../main-physics-problems.tex]{subfiles}
+\documentclass[answers]{exam}
+\input{global}
+\input{problem-sets}
+%\usetikzlibrary{patterns}
+\usepackage[none]{hyphenat}
+\input{documents/physics-glossary}
+\setlength{\parindent}{0pt}
+\theoremstyle{definition}
+\newtheorem{example}{Example}
+
 \begin{document}
+
 \setcounter{section}{6}
+\subsection{Kinematic Equations}
+
+\begin{questions}
+\question 
+Suppose that a net force of magnitude $F$ is exerted on a system of mass $m$. The system is displaced by an amount $\Delta x$ during a time interval $\Delta t$ with an acceleration of magnitude $a$.
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=5mm]
+    \draw[fill=black!20] (-1,-1) rectangle ++(2,2) node[pos=0.5,above=1] {$m$};
+    \draw (-8,-1) -- (5,-1);
+    \draw (-5,-1) node {$|$} node[below=1.5mm] {$x_i$};
+    \draw (0,-1) node {$|$} node[below=1.5mm] {$x_f$};
+    \draw[->,densely dashed] (-5,-2.5) -- (0,-2.5) node[pos=0.5,below] {$\Delta x$};
+    \draw[very thick,->] (0,0) -- (3,0) node[right] {$F$};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part \textit{Deriving a kinematic equation using the work-energy theorem.} 
+
+The work done on the system is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    W = F \Delta x
+\end{equation*}
+\egroup
+
+and change in kinetic energy of the system is 
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta K = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2
+\end{equation*}
+\egroup
+
+The work-energy theorem states
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    W = \Delta K
+\end{equation*}
+\egroup
+
+so that
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    F \Delta x = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2
+\end{equation*}
+\egroup
+
+But by Newton's second law, net force relates to mass and acceleration is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    F = ma
+\end{equation*}
+\egroup
+
+Therefore, the work-energy theorem may be written as
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    ma \Delta x = \frac{1}{2} m v_f^2 - \frac{1}{2} m v_i^2
+\end{equation*}
+\egroup
+
+Dividing both sides by mass leads to
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    a \Delta x = \frac{1}{2}  v_f^2 - \frac{1}{2}  v_i^2
+\end{equation*}
+\egroup
+
+Multiplying both sides by 2 yields
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    2a \Delta x = v_f^2 - v_i^2
+\end{equation*}
+\egroup
+
+Finally, adding the square of the initial velocity to both sides results in
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_i^2 + 2a \Delta x = v_f^2
+\end{equation*}
+\egroup
+
+Therefore, one kinematic equation is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \boxed{v_f^2 = v_i^2 + 2a \Delta x }
+\end{equation*}
+\egroup
+
+\part \textit{Deriving a kinematic equation using the impulse-momentum theorem.}
+
+The impulse imparted on the system is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    J = F \Delta t
+\end{equation*}
+\egroup
+
+and the change in momentum of the system is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta p = mv_f - m v_i
+\end{equation*}
+\egroup
+
+The impulse-momentum theorem states
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    J = \Delta p
+\end{equation*}
+\egroup
+
+so that
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+     F \Delta t = m v_f - m v_i
+\end{equation*}
+\egroup
+
+Net force relates to mass and acceleration, by Newton's second law, as
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    F = ma
+\end{equation*}
+\egroup
+
+Therefore, the impulse-momentum theorem may be written as
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+     ma \Delta t = m v_f - m v_i
+\end{equation*}
+\egroup
+
+Diving both sides by mass leads to
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+     a \Delta t = v_f - v_i
+\end{equation*}
+\egroup
+
+Finally, adding the initial velocity to both sides results in 
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+     v_i + a t = v_f
+\end{equation*}
+\egroup
+
+Therefore, a second kinematic equation is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+     \boxed{v_f = v_i + a t}
+\end{equation*}
+\egroup
+
+\part \textit{Synthesizing a third kinematic equation.}
+
+In the parts above, we showed that the work-energy theorem and impulse-momentum theorem lead to the kinematic equations
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{align*}
+    v_f^2 &= v_i^2 + 2a \Delta x \\[1ex]
+    v_f &= v_i + a t
+\end{align*}
+\egroup
+
+We may use the binomial identify $\left(a + b\right)^2 = a^2 + 2ab + b^2$ to square the kinematic equation $v_f = v_i + at$  as
+
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_f^2 = \left(v_i + at\right)^2 = v_i^2 + 2 v_i a t + a^2 t^2
+\end{equation*}
+\egroup
+
+Equating this result with the kinematic equation $v_f^2 = v_i^2 + 2a \Delta x$ shown above leads to 
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_i^2 + 2 v_i a t + a^2 t^2 = v_i^2 + 2a \Delta x
+\end{equation*}
+\egroup
+
+Subtracting the common term $v_i^2$ from both sides reduces the equation to
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    2 v_i a t + a^2 t^2 = 2a \Delta x
+\end{equation*}
+\egroup
+
+Diving both sides by 2 leads to
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_i a t + \frac{1}{2} a^2 t^2 = a \Delta x
+\end{equation*}
+\egroup
+
+Finally, dividing both sides by acceleration $a$ results in
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_i t + \frac{1}{2} a t^2 = \Delta x
+\end{equation*}
+\egroup
+
+Therefore, a third kinematic equation is
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \boxed{\Delta x = v_i t + \frac{1}{2} a t^2}
+\end{equation*}
+\egroup
+
+\part \textit{Synthesizing a fourth kinematic equation.}
+
+Staring with the kinematic equation
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_f = v_i + a t
+\end{equation*}
+\egroup
+
+we subtract $v_i$ from both sides to yield
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_f - v_i = a t
+\end{equation*}
+\egroup
+
+Diving both sides by time results in the acceleration equation
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    a = \frac{v_f - v_i}{t}
+\end{equation*}
+\egroup
+
+Substituting this acceleration equation into the kinematic equation
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta x = v_i t + \frac{1}{2} a t^2
+\end{equation*}
+\egroup
+
+leads to 
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta x = v_i t + \frac{1}{2} \left(\frac{v_f - v_i}{t}\right) t^2
+\end{equation*}
+\egroup
+
+By canceling one $t$, we get
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta x = v_i t + \frac{1}{2} \left(v_f - v_i\right) t
+\end{equation*}
+\egroup
+
+Distributing $\frac{1}{2} t$ into both velocity terms, we may write
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta x = v_i t + \frac{1}{2} v_f t - \frac{1}{2}v_i t
+\end{equation*}
+\egroup
+
+The terms containing initial velocity $v_i t  - \frac{1}{2} v_i t$ reduce to $\frac{1}{2}v_i t$ because
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    v_i t  - \frac{1}{2} v_i t = \frac{2}{2} v_i t - \frac{1}{2} v_i t = \frac{1}{2} v_i t
+\end{equation*}
+\egroup
+
+
+So, the kinematic equation reduces to 
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \Delta x = \frac{1}{2}v_i t + \frac{1}{2} v_f t
+\end{equation*}
+\egroup
+
+Finally, factoring $\frac{1}{2}t$ from each term results in
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{equation*}
+    \boxed{\Delta x = \frac{1}{2} \left(v_i + v_f\right) t}
+\end{equation*}
+\egroup
+
+\part \textit{Summary of the kinematic equations.}
+
+In sum, the four kinematic equations are
+
+\bgroup
+\ifprintanswers \color{red} \else \color{white} \fi
+\begin{align*}
+    v_f &= v_i + at \\[1ex]
+    \Delta x &= v_i t + \frac{1}{2} a t^2 \\[1ex]
+    v_f^2 &= v_i^2 + 2a \Delta x \\[1ex]
+    \Delta x &= \frac{1}{2} \left(v_i + v_f\right) t
+\end{align*}
+\egroup
+
+
+
+
+\end{parts}
+
+\end{questions}
+
+
+\clearpage
+
+
 \subsection{Free Fall Concepts}
 
 \subsubsection{Gravitational Field Strength and Acceleration due to Gravity on Earth}

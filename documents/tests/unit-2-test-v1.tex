@@ -1,60 +1,37 @@
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 
-\newif\ifversionKlevel
-
-%\versionKleveltrue
-\versionKlevelfalse
 
 \setrandomizerseed{1}
 \bracketedpoints
+\addpoints
 
 \setlength{\columnsep}{2cm}
 \setlength{\columnseprule}{1pt}
 \usepackage[none]{hyphenat}
 
-\firstpageheader{Physics L}{Unit 2: Force Interactions}{Test}
-\runningheader{}{}{}
+\setrandomizerseed{1}
 
-\ifversionKlevel
-    \firstpageheader{Physics K}{Unit 2: Force Interactions}{Test}
-    \runningheader{}{}{}
-\fi
+\header{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{Physics FRQ Test on Unit 2: Force Interactions}
+% \header{Physics}{Test on Unit 2}{Force Interactions}
+
+% \firstpageheader{\bfseries DO NOT WRITE ON THIS DOCUMENT}{}{Physics Test on Unit 2: Force Interactions}
+% \runningheader{\bfseries DO NOT WRITE ON THIS DOCUMENT}{}{Physics Test Unit 2}
+
 
 \begin{document}
 \begin{questions}
-
-% \question %...originally in unit 5: force analysis
-% The free body diagram below represents the forces acting on the box in the image beside it. Given the scenario in the image, which force is missing from the free body diagram?
-
-% \begin{center}
-%     \begin{tikzpicture}
-%         \node at (0,0) {\includegraphics[width=3cm]{z-other/L-physics/other/unit-6-projectile-motion/box.png}};
-%         \begin{scope}[xshift=4cm]
-%             \fill (0,0) circle (3pt);
-%             \draw[<->] (-1,0) node[left] {?} -- (1,0) node[right] {$f$};
-%             \draw[<->] (0,-1) node[below] {$F_g$} -- (0,1) node[above] {$F_N$};
-%         \end{scope}
-%     \end{tikzpicture}
-% \end{center}
-
-% \begin{randomizeoneparchoices}[norandomize]
-%     \choice frictional force
-%     \choice weight force
-%     \correctchoice tension force
-%     \choice normal force    
-% \end{randomizeoneparchoices}
 
 \question %...originally from unit 5: force analysis
 A box slides across a smooth frictionless floor as shown in the image below.  What forces act on the box?
 
 \begin{center}
-    \begin{tikzpicture}
-        \draw[fill=black!20] (0,0) rectangle (1,1) node[pos=0.5] {box};
-        \draw[right=1cm,above=0.5cm,thick] (0,0) -- (3,0) node[above,pos=0.5] {rope};
-        \draw[left=2cm] (0,0) -- (7,0);
-    \end{tikzpicture}
+\begin{tikzpicture}
+    \draw[fill=black!20] (0,0) rectangle (1,1) node[pos=0.5] {box};
+    \draw[shift={(1cm,0.5cm)},thick] (0,0) -- (3,0) node[above,pos=0.5] {rope};
+    \draw[left=2cm] (0,0) -- (7,0);
+\end{tikzpicture}
 \end{center}
 
 
@@ -66,12 +43,12 @@ A box slides across a smooth frictionless floor as shown in the image below.  Wh
 \end{randomizechoices}
 
 \question 
-A baby elephant stands on the bed. Which of the following is a correct force pair?
+A baby elephant stands on the bed. The system includes the elephant, the bed, and the Earth. Which of the following is a correct force pair?
 
 \begin{center}
     \begin{tikzpicture}
-        \node at (0,0) {\twemoji[width=3cm]{1f6cf}};
-        \draw[above=4.2mm,right=-6mm] (0,0) node {\twemoji[height=1.7cm]{elephant}};
+        \node at (0,0) {\twemoji[width=2cm]{1f6cf}};
+        \draw[shift={(1mm,4.2mm)}] (0,0) node {\twemoji[height=1.7cm]{elephant}};
     \end{tikzpicture}
 \end{center}
 
@@ -141,6 +118,11 @@ A paper is sitting at rest on your desk.  Which of the following statements best
     \correctchoice There are forces acting on the paper, but they are all balanced.
 \end{randomizechoices}
 
+\ifprintanswers
+\else
+\clearpage
+\fi
+
 \question
 A hockey player swings her hockey stick and strikes a puck.  Which of the following is the force pair to the stick pushing on the puck?
 
@@ -158,9 +140,9 @@ Which of the following best describes the following person's motion?
 
 \begin{center}
     \begin{tikzpicture}
-        \draw (0,0) node {\reflectbox{\twemoji[height=2.5cm]{person in motorized wheelchair}}};
-        \draw[thick,<-,left=1.5cm] (0,0) -- (-3,0) node[above,pos=0.5] {35\,N};  
-        \draw[thick,<-,right=1.5cm] (0,0) -- (+3,0) node[above,pos=0.5] {35\,N};  
+        \draw (0,0) node {\reflectbox{\twemoji[height=1.5cm]{person in motorized wheelchair}}};
+        \draw[thick,<-,shift={(-1.5cm,0)}] (0,0) -- (-3,0) node[above,pos=0.5] {35\,N};  
+        \draw[thick,<-,shift={(+1.5cm,0)}] (0,0) -- (+3,0) node[above,pos=0.5] {35\,N};  
     \end{tikzpicture}
 \end{center}
 
@@ -177,7 +159,7 @@ The picture below shows a student pulling in a rope that is attached to a wall.
 \begin{center}
 \begin{tikzpicture}
     \node at (0,0) {\resizebox{1cm}{!}{\Strichmaxerl[][180][20]}};
-    \node[gray] at (2.5,0.1) {\resizebox{5mm}{!}{\faTachometer}};
+    \node[gray] at (2.5,0.1) {\resizebox{5mm}{!}{\faTachometer*}};
     \draw (5,-0.6) rectangle ++(0.5,2) node[above] {wall};
     \draw (0,0) -- (2.3,0) (2.7,0) -- (5,0);
 \end{tikzpicture}
@@ -226,23 +208,31 @@ What happened during the time interval between 2--4 seconds?
 \question 
 Given the following image of a person on a bicycle, which of the following statements is correct about the cyclist’s motion?
 
-
-\begin{center}
-    \begin{tikzpicture}
-        \node at (0,0) {\reflectbox{\twemoji[height=2cm]{man biking}}};
-        \draw[thick,<-,right=1.5cm] (0,0) -- (1,0) node[above,pos=0.5] {5\,N};
-        \draw[thick,<-,left=1.5cm] (0,0) -- (-1,0) node[above,pos=0.5] {5\,N};
-        \draw[thick,<-,above=1.2cm] (0,0) -- (0,2) node[right,pos=0.5] {20\,N};
-        \draw[thick,<-,below=1.2cm] (0,0) -- (0,-2) node[right,pos=0.5] {20\,N};
-    \end{tikzpicture}
-\end{center}
-
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{5cm}
+\centering
+\begin{tikzpicture}
+    \node at (0,0) {\reflectbox{\twemoji[height=2cm]{man biking}}};
+    \draw[thick,<-,shift={(1.5cm,0)}] (0,0) -- (1,0) node[above,pos=0.5] {5\,N};
+    \draw[thick,<-,shift={(-1.5cm,0)}] (0,0) -- (-1,0) node[above,pos=0.5] {5\,N};
+    \draw[thick,<-,shift={(0,1.2cm)}] (0,0) -- (0,2) node[right,pos=0.5] {20\,N};
+    \draw[thick,<-,shift={(0,-1.2cm)}] (0,0) -- (0,-2) node[right,pos=0.5] {20\,N};
+\end{tikzpicture}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{10cm}
+\centering
 \begin{randomizechoices}
     \choice The person’s kinetic energy is changing with respect to time.
     \choice The person’s velocity is changing with respect to time.
     \correctchoice The person’s position is changing with respect to time.
     \choice The person’s momentum is changing with respect to time.
 \end{randomizechoices}
+\end{minipage}
+\end{EnvUplevel}
+
+
 
 \question 
 Which of the following graphs represents an object with no momentum?
@@ -341,6 +331,11 @@ Which of the following statements best represents the car’s motion?
     \correctchoice The forces on the car are unbalanced and the car’s momentum is changing.
 \end{randomizechoices}
 
+\ifprintanswers
+\else
+\clearpage
+\fi
+
 \question
 Given this car towing a trailer, what can you say about its motion?
 
@@ -365,8 +360,196 @@ Given this car towing a trailer, what can you say about its motion?
     \correctchoice The car’s forces are unbalanced so it has an overall change in its velocity.    
 \end{randomizechoices}
 
+\question
+A gust of wind pushes a spider dangling from a spider web. At the moment shown below, the spider is momentarily at rest.
 
-\ifversionKlevel
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) -- (-2,1);
+    \draw (0,0) node[rotate=-116] {\twemoji[height=5mm]{spider}};
+    \draw[very thick,->] (0.5,0) -- ++(1,0) node[above,pos=0.5] {$F_\mathrm{wind}$};
+\end{tikzpicture}
+\end{center}
+
+Let the system include the spider, spiderweb, wind, and Earth. Which of the following is NOT a force acting on the spider?
+
+\begin{randomizeoneparchoices}
+    \correctchoice normal force
+    \choice contact force
+    \choice gravitational force
+    \choice tension force
+\end{randomizeoneparchoices}
+
+\question
+Book B is resting on shelf S. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[rotate=45,fill=black!15] (0,0) rectangle ++(1.5,0.5) node[pos=0.5,rotate=45] {B}; 
+    \draw[shift={({1.5*cos(45)},0)},fill=black!20] (0,0) rectangle ++(2.2,1.7) node[pos=0.5] {S};
+    \begin{scope}[shift={(8,0.8)}]
+        \fill (0,0) circle (3pt);
+        \draw[thick,->] (0,0) -- ++(-2,0) node[left] {$\vec{F}_{\mathrm{BS}}$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+The mass of the shelf is greater than the mass of the book. How does the force on the book by the shelf, $F_{\mathrm{BS}}$, compare to the force on the shelf by the book, $F_\mathrm{SB}$?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice $F_\mathrm{BS} = F_\mathrm{SB}$
+    \choice $F_\mathrm{BS} > F_\mathrm{SB}$
+    \choice $F_\mathrm{BS} < F_\mathrm{SB}$
+    \choice It depends on the angle at which the book is inclined. 
+\end{randomizechoices}
+
+\question
+The figure below shows two force sensors, X and Y, with a rubber hand connecting their hooks. Sensor Y is set in reverse so that a pull to the left is registered as a negative force. 
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[lightgray,thick,rounded corners=1pt,shift={(1.05,-0.05)}] (0.25,0) rectangle ++(2.4,0.1);
+    \node[rotate=-90] at (1.15,0) {\huge \faQuestion};
+    \draw[fill=black!8] (-1,-0.6) rectangle ++(2,1.2) node[pos=0.5] {X};
+    \begin{scope}[shift={(5,0)}]
+        \node[rotate=90] at (-1.15,0) {\huge \faQuestion};
+        \draw[fill=black!8] (-1,-0.6) rectangle ++(2,1.2) node[pos=0.5] {Y};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+With the rubber band initially slack, a group of students hold sensor X in place, slowly pull sensor Y to the right while the rubber band becomes taut, then slowly allow sensor Y to return next to sensor X. Which of the following graphs shown the forces detected by each sensor as a function of time?
+
+\hfill \textit{Continued on next page\ldots}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[width=5.5cm,height=6.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Force (N)},
+        xlabel={Time (s)},
+        ymin=-6,ymax=6,
+        xmin=0,xmax=5,
+        ytick={-6,-4,...,6},
+        xtick={0,1,...,5},
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        legend style={font=\small},
+        legend pos=north west,
+        clip=false,
+    ]
+        \addplot[domain=0:5,red,thick,smooth] {5*exp(-(x-2.5)^2)};
+        \addplot[domain=0:5,blue,thick,smooth] {-2*exp(-(x-2.5)^2)};
+        \legend{X,Y};
+        \node[above] at (current bounding box.north) {\bfseries \large Graph A};
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[width=5.5cm,height=6.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Force (N)},
+        xlabel={Time (s)},
+        ymin=-6,ymax=6,
+        xmin=0,xmax=5,
+        ytick={-6,-4,...,6},
+        xtick={0,1,...,5},
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        legend style={font=\small},
+        legend pos=north west,
+        clip=false,
+    ]
+        \addplot[domain=0:5,red,thick,smooth] {2*exp(-(x-2.5)^2)};
+        \addplot[domain=0:5,blue,thick,smooth] {-5*exp(-(x-2.5)^2)};
+        \legend{X,Y};
+        \node[above] at (current bounding box.north) {\bfseries \large Graph B};
+    \end{axis}
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[width=5.5cm,height=6.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Force (N)},
+        xlabel={Time (s)},
+        ymin=-6,ymax=6,
+        xmin=0,xmax=5,
+        ytick={-6,-4,...,6},
+        xtick={0,1,...,5},
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        legend style={font=\small},
+        legend pos=north west,
+        clip=false,
+    ]
+        \addplot[domain=0:5,red,thick,smooth] {5*exp(-(x-2.5)^2)};
+        \addplot[domain=0:5,blue,thick,smooth] {-5*exp(-(x-2.5)^2)};
+        \legend{X,Y};
+        \node[above] at (current bounding box.north) {\bfseries \large Graph C};
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[width=5.5cm,height=6.5cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Force (N)},
+        xlabel={Time (s)},
+        ymin=-6,ymax=6,
+        xmin=0,xmax=5,
+        ytick={-6,-4,...,6},
+        xtick={0,1,...,5},
+        grid=both,
+        x label style={at={(axis description cs: 0.5,0)},anchor=north},
+        legend style={font=\small},
+        legend pos=north west,
+        clip=false,
+    ]
+        \addplot[domain=0:5,red,thick,smooth] {5*exp(-(x-2.5)^2)};
+        \addplot[domain=0:5,blue,thick,smooth] {-0.1*exp(-(x-2.5)^2)};
+        \legend{X,Y};
+        \node[above] at (current bounding box.north) {\bfseries \large Graph D};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\scalebox{0}{
+\begin{randomizeoneparchoices}[norandomize]
+    \choice Graph A
+    \choice Graph B
+    \correctchoice Graph C
+    \choice Graph D
+\end{randomizeoneparchoices}
+}
+
+\ifprintanswers
+{\bfseries \color{red} Answer: Graph C}
+\fi
+
+\question
+Find the net force in the free-body diagram below.
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=3mm]
+    \fill (0,0) circle (4pt);
+    \draw[thick,->] (0,0) -- (10,0) node[right] {\SI{10}{N}};
+    \draw[thick,->] (0,0) -- (-4,0) node[left] {\SI{4}{N}};
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}
+    \correctchoice \SI{6}{N}
+    \choice \SI{14}{N}
+    \choice \SI{10}{N}
+    \choice \SI{40}{N}
+\end{randomizeoneparchoices}
+
+
 \begin{EnvUplevel}
     \textbf{Questions \ref{71tbo}--\ref{3M4Xb}.} The free-body diagram below represents an object moving to the right.
 \end{EnvUplevel}
@@ -383,22 +566,21 @@ Given this car towing a trailer, what can you say about its motion?
 \question \label{71tbo}
 The object is\dots .
 
-\begin{randomizechoices}[norandomize,keeplast]
+\begin{randomizeoneparchoices}[norandomize,keeplast]
     \choice speeding up
     \correctchoice slowing down
     \choice moving at constant speed 
     \choice none of the above
-\end{randomizechoices}
+\end{randomizeoneparchoices}
 
 \question \label{3M4Xb}
-Are the force on the object balanced or unbalanced?
+Are the forces on the object balanced or unbalanced?
 
 \begin{randomizeoneparchoices}[norandomize]
     \choice balanced
     \correctchoice unbalanced
 \end{randomizeoneparchoices}
 
-\fi
 
 \clearpage
 
@@ -407,6 +589,184 @@ Are the force on the object balanced or unbalanced?
 \fi
 
 \clearpage
+
+
+
+\end{questions}
+
+\clearpage
+
+\begin{questions}
+
+\begingradingrange{myrange} 
+\question[5]
+For each scenario, identify the type of force involved. Write your answer in the space provided.
+
+\begin{enumerate} %...These scenarios were generated by ChatGPT.
+    \item A climber dangles from a rope, feeling the strain as the ground seems miles away. What type of force does the rope exert? \\[1ex]
+    \fillin[tension force][5cm]
+    \item An apple falls from a tree, accelerating as it heads toward the earth. \\[1ex]
+    \fillin[gravitational force][5cm]
+    \item A book rests peacefully on a table, perfectly balanced, resisting the pull downward. What type of force does the table exert? \\[1ex]
+    \fillin[normal force][5cm]
+    \item Superman pushes a car down the road. \\[1ex]
+    \fillin[applied force][5cm]
+    \item A skateboarder grinds to a halt, shoes scraping the pavement as momentum fades.\\[1ex]
+    \fillin[friction force][5cm]
+\end{enumerate}
+
+% \begin{solutionorlines}[7cm]
+% \phantom{.}
+
+% \begin{enumerate}
+%     \item Tension force. Tension is a force that acts along a connecting medium, in this case the rope.
+%     \item Gravitational force. Gravity is the force that pulls things downward towards the Earth.
+%     \item Normal force. The normal force is applied by the table in the upward direction to support the book's weight.
+%     \item Applied force. One car makes contact and pushes the other car.
+%     \item Friction force. Friction arises when the shoes make contact with the ground and opposes the skater's direction.
+% \end{enumerate}
+% \end{solutionorlines}
+
+
+\question
+A car is driving down a straight road. Its motion map is shown below.
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.7]
+        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3pt] plot({0.1*\x^2},0);
+        \node at (-11.5,0.3) {\reflectbox{\twemoji[width=8mm]{automobile}}};
+        \draw[thick,->] (-12,0.8) -- ++(1,0) node[above,pos=0.5] {$v$};
+    \end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part[2] What is happening to the magnitude of the car's velocity?
+
+\begin{solution}
+Give points for any one of the statements below.
+
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+    \item The velocity is decreasing in magnitude.
+    \item The velocity is changing.
+    \item The car is slowing down.
+\end{itemize}
+\end{solution}
+
+\ifprintanswers
+\else
+\fillwithlines{14mm}
+\fi
+
+\part[1] Are the forces on the car balanced or unbalanced? \fillin[unbalanced][6cm]
+\part[2] Draw one of the Multiple Representations of the object's motion.
+\end{parts}
+
+\begin{solutionorbox}[6cm]
+Any one of the representations below earns credit.
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=7,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Position},
+        xlabel={Time},
+    ]
+        \addplot[domain=0:2.5,ultra thick,black] {5*x - (100/(2*50))*x^2};
+    \end{axis}
+\end{tikzpicture}
+\hspace{1em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=6,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Velocity},
+        xlabel={Time},
+    ]
+        \addplot[domain=0:2.5,ultra thick,black] {5 - 100/50*x};
+    \end{axis}
+\end{tikzpicture}
+\hspace{1em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=300,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Momentum},
+        xlabel={Time},
+    ]
+        \addplot[domain=0:2.5,ultra thick,black] {50*5 - 100*x};
+    \end{axis}
+\end{tikzpicture}
+\hspace{1em}
+\begin{tikzpicture}
+    \begin{axis}[height=4cm,
+        width=4cm,
+        ymin=0,ymax=700,
+        xmin=0,xmax=3,
+        ticks=none,
+        axis lines=left,
+        ylabel={Kinetic Energy},
+        xlabel={Time},
+        clip=false,
+    ]
+        \addplot[domain=0:2.5,ultra thick,black] {0.5*50*(5 - 100*x/50)^2};
+    \end{axis}
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \draw[->] (0,-1) -- (0,1) node[above,rotate=90,pos=0.5] {Net Force};
+    \draw[->] (0,0) -- ++(2,0) node[right,] {Time};
+    \draw[ultra thick] (0,-0.5) -- ++(1.7,0);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+    \draw[->,thick] (0,0) -- (0,1);
+    \draw[->,thick] (0,0) -- (0,-1);
+    \draw[->,thick] (0,0) -- (-1.5,0);
+    \draw[->,thick] (0,0) -- (0.5,0);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+    \fill (0,0) circle (3pt);
+    \draw[->,thick] (0,0) -- (0,1);
+    \draw[->,thick] (0,0) -- (0,-1);
+    \draw[->,thick] (0,0) -- (-1.5,0);
+\end{tikzpicture}
+\end{center}
+
+\end{solutionorbox}
+
+\endgradingrange{myrange} 
+
+\vspace*{\fill}
+
+\ifprintanswers
+\else
+\begin{mdframed}[backgroundcolor=black!8]
+    \centering
+    \textbf{\texttt{TEACHER USE ONLY}}\\[1em]
+    \partialgradetable{myrange}[h][questions]
+\end{mdframed}
+\fi
+
+
+
+\end{questions}
+\end{document}
+
+
 
 \question[3]
 Draw the free-body diagram of an open laptop that is resting on a table. Include all forces on the laptop and label them correctly. 
@@ -450,129 +810,3 @@ A truck momentarily skids eastward along an bridge. Assume the frictional force 
 \end{tikzpicture}
 \end{center}    
 \end{solutionorbox}
-
-\clearpage
-\question[5]
-For each scenario, identify the type of force involved. Write your answer in the space provided.
-
-\begin{enumerate} %...These scenarios were generated by ChatGPT.
-    \item A climber dangles from a rope, feeling the strain as the ground seems miles away. What type of force does the rope exert? \\[1ex]
-    \fillin[tension force][5cm]
-    \item An apple falls from a tree, accelerating as it heads toward the earth. \\[1ex]
-    \fillin[gravity][5cm]
-    \item A book rests peacefully on a table, perfectly balanced, resisting the pull downward. What type of force does the table exert? \\[1ex]
-    \fillin[normal force][5cm]
-    \item Superman pushes a car down the road. \\[1ex]
-    \fillin[applied force][5cm]
-    \item A skateboarder grinds to a halt, shoes scraping the pavement as momentum fades.\\[1ex]
-    \fillin[friction force][5cm]
-\end{enumerate}
-
-% \begin{solutionorlines}[7cm]
-% \phantom{.}
-
-% \begin{enumerate}
-%     \item Tension force. Tension is a force that acts along a connecting medium, in this case the rope.
-%     \item Gravitational force. Gravity is the force that pulls things downward towards the Earth.
-%     \item Normal force. The normal force is applied by the table in the upward direction to support the book's weight.
-%     \item Applied force. One car makes contact and pushes the other car.
-%     \item Friction force. Friction arises when the shoes make contact with the ground and opposes the skater's direction.
-% \end{enumerate}
-% \end{solutionorlines}
-
-
-\question
-A car is driving down a straight road. Its motion map is shown below.
-
-\begin{center}
-    \begin{tikzpicture}[scale=0.7]
-        \draw[domain=-10:0,mark=*,only marks, samples=6,mark size=3pt] plot({0.1*\x^2},0);
-        \node at (-11.5,0.3) {\reflectbox{\twemoji[width=8mm]{automobile}}};
-        \draw[thick,->] (-12,0.8) -- ++(1,0) node[above,pos=0.5] {$v$};
-    \end{tikzpicture}
-\end{center}
-
-\begin{parts}
-    \part[1] Is the car speeding up, slowing down, or moving at a constant speed?
-    \part[1] Are the forces on the car balanced or unbalanced?
-    \part[2] Draw one of the Multiple Representations of the object's motion.
-\end{parts}
-
-\begin{solutionorbox}[7cm]
-(a) The car is slowing down, since the spacing between the dots is decreasing.
-
-(b) The forces are unbalanced, since the object's velocity is changing. 
-
-(c) Any one of the representations below:
-
-\begin{center}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=7,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={Position},
-            xlabel={Time},
-        ]
-            \addplot[domain=0:2.5,ultra thick,black] {5*x - (100/(2*50))*x^2};
-        \end{axis}
-    \end{tikzpicture}
-    \hspace{1em}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=6,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={Velocity},
-            xlabel={Time},
-        ]
-            \addplot[domain=0:2.5,ultra thick,black] {5 - 100/50*x};
-        \end{axis}
-    \end{tikzpicture}
-    \hspace{1em}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=300,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={Momentum},
-            xlabel={Time},
-        ]
-            \addplot[domain=0:2.5,ultra thick,black] {50*5 - 100*x};
-        \end{axis}
-    \end{tikzpicture}
-    \hspace{1em}
-    \begin{tikzpicture}
-        \begin{axis}[height=4cm,
-            width=4cm,
-            ymin=0,ymax=700,
-            xmin=0,xmax=3,
-            ticks=none,
-            axis lines=left,
-            ylabel={Kinetic Energy},
-            xlabel={Time},
-        ]
-            \addplot[domain=0:2.5,ultra thick,black] {0.5*50*(5 - 100*x/50)^2};
-        \end{axis}
-    \end{tikzpicture}
-
-    \bigskip
-
-    \begin{tikzpicture}
-        \draw[->] (0,-1) -- (0,1) node[above,rotate=90,pos=0.5] {Net Force};
-        \draw[->] (0,0) -- ++(2,0) node[right,] {Time};
-        \draw[ultra thick] (0,-0.5) -- ++(1.7,0);
-    \end{tikzpicture}
-\end{center}
-
-\end{solutionorbox}
-
-\end{questions}
-\end{document}
-
