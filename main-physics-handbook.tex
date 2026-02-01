@@ -3,6 +3,7 @@
 \input{global}
 \input{notes}
 \input{documents/physics-glossary}
+\usepackage{figchild}
 
 \usepackage{circuitikz}
 \ctikzset{bipoles/battery1/height=0.5}
@@ -37,18 +38,18 @@
 \ShowUnitVItrue                                 
 \ShowUnitVIItrue                              
 \ShowUnitVIIItrue                               
-\ShowUnitIXfalse                                 
-\ShowUnitXfalse                                  
-\ShowUnitXIfalse                                 
-\ShowUnitXIIfalse  
-\ShowUnitXIIIfalse
-\ShowUnitXIVfalse  
+\ShowUnitIXtrue                                 
+%\ShowUnitXtrue                                  
+% \ShowUnitXItrue                                 
+% \ShowUnitXIItrue  
+% \ShowUnitXIIItrue
+% \ShowUnitXIVtrue  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \title{Physics}
-\author{Cypress Springs High School}
+\author{The Handbook}
 \date{Updated on \today}
 
 \begin{document}
@@ -792,7 +793,7 @@ A \textbf{\gls{momentum vs. time graph}} is \glsdesc{momentum vs. time graph}.
         xtick={0,1,...,10},
         x label style={at={(axis description cs: 1,0.5)},anchor=west}
     ]
-    \addplot[ultra thick,domain=0:10] plot coordinates {(0,0)(4,4)(10,-4)};
+    \addplot[very thick,domain=0:10] plot coordinates {(0,0)(4,4)(10,-4)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -848,8 +849,6 @@ In base SI units, mass is $m = \SI{0.250}{kg}$.
 
 % \textbf{Frame of Reference}: the point of view from which we look at a motion.
 
-Examples of a frame of reference are:
-
 % \begin{itemize}[itemsep=0pt,topsep=0pt]
 %     \item Person sitting in a car
 %     \item Person looking at the car from the sidewalk
@@ -862,53 +861,94 @@ Examples of a frame of reference are:
 
 % When objects move apart: subtract their velocities.
 
-In the figure below, Alice, who belongs to frame A, stands at rest on the street. She observes Bob, in Frame B, moving at speed $v_{BA}$ relative to her frame. A pelican $P$ moves relative to both frames.
+In the figure below, Alice is in frame A standing at rest on the street. She observes Bob, who is in Frame B, moving at speed $v_\text{\tiny BA}$ relative to her frame. A pelican $P$ moves relative to both frames.
 
 \begin{center}%...Borrowed from Halliday & Resnick 4-6 Relative Motion
-\begin{tikzpicture}[x=2cm,y=2cm]
-    \draw (0,0) -- (0,1) node[above] {$y$} node[above=5mm] {Frame A};
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw (0,0) -- (0,1.2) node[above] {$y$} node[above=5mm] {Frame A};
     \draw (0,0) -- (3.5,0) node[right] {$x$};
-    \begin{scope}[shift={(1,0.1)}]
+
+    %...Alice
+    \fill[lightgray] (0,0) circle (2pt) node[left=2pt,black] {0} node[above right=-2.5pt,black] {\Strichmaxerl[2]} node[black,shift={(0.23,0.15)}] {\scriptsize Alice};
+    \draw (1,0) node {\tiny $|$};
+    \draw (3,0) node {\tiny $|$};
+    \draw[|-|,thick] (0,-0.1) -- (1,-0.1) node[below,pos=0.5] {$x_\text{\tiny BA}$};
+    \draw[|-|,thick] (0,-0.3) -- (3,-0.3) node[below,pos=0.5] {$x_\text{\tiny PA}$};
+
+    %...Bob
+    \begin{scope}[shift={(1,0.3)}]
         \draw (0,0) -- (0,0.9) node[above] {$y$} node[above=5mm] {Frame B};
         \draw (0,0) -- (3,0) node[right] {$x$}; 
-        \draw[ultra thick,->] (0,0) -- (1,0) node[above] {$\vec{v}_{BA}$};
-        \fill[lightgray] (0,0) circle (2pt);
-        \draw (2,0) node[above=-4pt] {\tiny $|$} node [above=3pt] {$x_{PB}$};
-        \draw[fill=lightgray] (2,0.75) circle (1.5mm) node[right=1.5mm] {$P$};
+        \draw[ultra thick,->] (0,0) -- (1,0) node[above] {$\vec{v}_\text{\tiny BA}$};
+        \fill[lightgray] (0,0) circle (2pt) node[above right=-2.5pt,black] {\Strichmaxerl[2]} node[black,shift={(0.23,0.15)}] {\scriptsize Bob};
+        \draw (2,0) node[above=-4pt] {\tiny $|$};
+        % \draw[fill=lightgray] (2,0.75) circle (1.5mm) node[right=1.5mm] {$P$};
+        \draw (2,0.75) node {\fcBirdE{0.02}{black}{0.5}} node[right=5mm] {Pelican};
+        \draw[|-|,thick] (0,-0.1) -- (2,-0.1) node[below,pos=0.5] {$x_\text{\tiny PB}$};
     \end{scope}
-    \fill[lightgray] (0,0) circle (2pt) node[below=2pt,black] {0};
-    \draw (1,0) node[below=-4pt] {\tiny $|$} node [below=3pt] {$x_{BA}$};
-    \draw (3,0) node[below=-4pt] {\tiny $|$} node [below=3pt] {$x_{PA} = x_{PB} + x_{BA}$};
 \end{tikzpicture}
 \end{center}
 
-Let the velocity of Frame B (Bob) relative to Frame A (Alice) be $\vec{v}_{BA}$. 
+
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|l|}
+    \hline
+    \thead{\bfseries Variable} & \thead{\bfseries What it means} \\ \hline
+    $x_\text{\tiny BA}$ & position of Bob relative to Alice \\ \hline
+    $x_\text{\tiny PA}$ & position of the Pelican relative to Alice \\ \hline
+    $x_\text{\tiny PB}$ & position of the Pelican relative to Bob \\ \hline
+    $v_\text{\tiny BA}$ & velocity of Bob as measured from Alice's reference frame \\ \hline
+\end{tabular}
+\end{center}
+
+Alice and Bob disagree on the Pelican's position. According to Bob, its position is $x_\text{\tiny PB}$. However, according to Alice, it's
 
 \begin{equation*}
-    v_{PA} = v_{PB} + v_{BA}
+    x_\text{\tiny PA} = x_\text{\tiny BA} + x_\text{\tiny PB}
 \end{equation*}
 
-This result generalizes for vectors in one dimension:
+Similarly, Alice and Bob disagree on the Pelican's velocity. Because velocity is the rate of change in position, the relative velocities follow the same form as above:
 
 \begin{equation} \label{77nBP}
-    \vec{v}_{PA} = \vec{v}_{PB} + \vec{v}_{BA}
+    v_\text{\tiny PA} = v_\text{\tiny BA} + v_\text{\tiny PB}
 \end{equation}
 
+where each variable is defined in the table below:
+
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|l|}
+    \hline
+    \thead{\bfseries Variable} & \thead{\bfseries What it means} \\ \hline
+    $v_\text{\tiny PA}$ & velocity of the Pelican relative to Alice \\ \hline
+    $v_\text{\tiny BA}$ & velocity of Bob relative to Alice \\ \hline
+    $v_\text{\tiny PB}$ & velocity of the Pelican relative to Bob \\ \hline
+\end{tabular}
+\end{center}
+
+
 \begin{example}
-    If Bob, from the figure above, moves at \SI{32}{m/s} away from Alice, and Alice measures particle P to be moving at \SI{45}{m/s} in the $-x$-direction, what is the particle's velocity relative to Frame B?
+    If Bob, from the figure above, moves at \SI{32}{m/s} away from Alice, and Alice claims the Pelican is moving at \SI{45}{m/s} in the $-x$-direction, what is the Pelican's velocity relative to Bob?
 \end{example}
 
 \textit{Solution:}
-Equation \eqref{77nBP} yields
+Equation \eqref{77nBP} for relative velocity is
 
 \begin{equation*}
-    \SI{-45}{m/s}= v_{PB} + \SI{32}{m/s}
+    v_\text{\tiny PA} = v_\text{\tiny BA} + v_\text{\tiny PB}
 \end{equation*}
 
-Thus,
+Substituting given values leads to
 
 \begin{equation*}
-    v_{PB} = \SI{-77}{m/s}
+    \SI{-45}{m/s} = \SI{32}{m/s} + v_\text{\tiny PB}
+\end{equation*}
+
+Solving for the Pelican's velocity from Bob's frame results in
+
+\begin{equation*}
+    v_\text{\tiny PB} = \SI{-45}{m/s} - \SI{32}{m/s} =  \boxed{\SI{-77}{m/s}}
 \end{equation*}
 
 \hfill $\blacksquare$
@@ -2003,9 +2043,7 @@ and the direction is up.
 \hfill $\blacksquare$
 
 
-\subsection{Applied Forces}
-
-\subsection{Analyzing Forces using Motion}
+\subsection{Analyzing Forces using Vectors}
 
 A \textbf{\gls{vector}} is \glsdesc{vector}. Vectors are represented by arrows. Consider vector $\vec{A}$ with a magnitude of 5 units at \ang{60} above the horizontal, shown below. The magnitude of this vector is
 
@@ -2233,6 +2271,8 @@ The two kinematic equations derived in the examples above may be combined to syn
 
 where $v_f$ is final velocity, $v_i$ is initial velocity, $a$ is acceleration, $\Delta t$ is the time interval during which the acceleration occurred, and $\Delta x$ is displacement. All units are in meters, seconds, meters per second, or $\mathrm{m/s^2}$.
 
+\subsection{Accelerated Horizontal Motion}
+
 \begin{example} %...Taken from PhysicsClassroom.com
     A car coasts into a hill at \SI{17.0}{m/s}. It slows down with a uniform acceleration of \SI{-1.0}{m/s^2}. (a) What is the car's speed after \SI{5.0}{s}? (b) What is the car's displacement after \SI{5.0}{s}? (c) What is the car's speed after \SI{10.0}{s}? (d) What is the car's displacement after \SI{10.0}{s}?
 \end{example}
@@ -2283,6 +2323,7 @@ These are related by Equation \eqref{Ty1d0}, which gives the answer:
 
 \hfill $\blacksquare$
 
+\subsection{Free-fall: Accelerated Vertical Motion}
 
 \textbf{\Gls{free fall}} is \glsdesc{free fall}. By setting $a = -g$, the kinematic equations for one-dimensional free fall motion are
 
@@ -2382,43 +2423,38 @@ Therefore, it take 12.9 seconds for the ball to strike the ground.
 There's a special name for the point at which a projectile reaches peak vertical position: The \textbf{\gls{apex}} is \glsdesc{apex}.
 
 
-
 A projectile may be launched at different velocities, from different heights, and at different angles, and these changes could produce changes in the trajectory.
 
 \begin{center}
-\begin{tikzpicture}[declare function={t(\x)=\x/(18*cos(45));}]
-    \begin{axis}[width=16cm,,height=10cm,
-        axis lines=none,
-        ylabel={$y$ (m)},
-        xlabel={$x$ (m)},
-        ymin=0,ymax=20,
-        xmin=0,xmax=45,
-        ytick={0,2,...,20},
-        xtick={0,5,...,45},
-        minor x tick num=1,
-        grid=both,
-        clip=false,
-    ]
-    \addplot[domain=0:40,red,thick] {trajectoryequation(x,18,45)+10};
-    \def\myscale{0.3}
+\begin{tikzpicture}[x=3.5mm,y=3.5mm,declare function={t(\x)=\x/(18*cos(45));}]
+    %...Draw red trajectory:
+    \draw[red,domain=0:40,thick,smooth] plot(\x,{trajectoryequation(\x,18,45)+10});
+
+    %...Draw velocity components
+    \def\vectorsize{0.3}
     \pgfplotsinvokeforeach{0,5,10,21,26,31,36,40}{
             \draw[fill=black] (#1,{trajectoryequation(#1,18,45)+10}) circle (2pt);
-            \draw[dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++(0,{\myscale*(18*sin(45) - 9.8*t(#1))});
-            \draw[dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\myscale*18*cos(45)},0);
-            \draw[thick,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\myscale*18*cos(45)},{0.3*(18*sin(45) - 9.8*t(#1))});
+            \draw[densely dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++(0,{\vectorsize*(18*sin(45) - 9.8*t(#1))});
+            \draw[densely dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\vectorsize*18*cos(45)},0);
+            \draw[thick,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\vectorsize*18*cos(45)},{0.3*(18*sin(45) - 9.8*t(#1))});
             }
-            
+
     %...For the apex:
     \draw[fill=black] (16.51,{trajectoryequation(16.51,18,45)+10}) circle (2pt);
-    \draw[thick,->] (16.51,{trajectoryequation(16.51,18,45)+10}) -- ++({\myscale*18*cos(45)},0);
+    \draw[thick,->] (16.51,{trajectoryequation(16.51,18,45)+10}) -- ++({\vectorsize*18*cos(45)},0);
 
     %...For the initial point:
-    \draw (0,{trajectoryequation(0,18,45)+10}) ++ (0,{\myscale*(18*sin(45))}) node[above] {$v_{iy}$};
-    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\myscale*(18*cos(45))},0) node[right] {$v_{ix}$};
-    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\myscale*(18*cos(45))},{\myscale*(18*sin(45))}) node[above left] {$v_i$};
-    \end{axis}
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ (0,{\vectorsize*(18*sin(45))}) node[above] {$v_{iy}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\vectorsize*(18*cos(45))},0) node[right] {$v_{ix}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\vectorsize*(18*cos(45))},{\vectorsize*(18*sin(45))}) node[above left] {$v_i$};
+
+    %...For the intermediate point:
+    \node[left] at (31,9) {$v_y$};
+    \node at (34,13) {$v_x$};
+    \node at (34.5,10) {$v$};
 \end{tikzpicture}
 \end{center}
+
 
 
 A projectile has horizontal and vertical motions. These are independent, meaning they don't influence one another. Vertical and horizontal motions are analyzed them separately, along perpendicular axes.
@@ -2625,9 +2661,11 @@ An object moves with constant speed $v_0$ in a circle of radius $r_0$ and experi
     \draw[densely dashed] (0,0) circle (1);
     \draw (0,0) -- (1,0) node[below,pos=0.5] {$r_0$};
     \fill (0,0) circle (1pt);
-    \draw[thick,->] ({cos(45)},{sin(45)}) -- ++({-cos(45)},{sin(45)}) node[pos=1.1] {$v_0$};
-    \draw[thick,->] ({cos(45)},{sin(45)}) -- ++({-0.7*cos(45)},{-0.7*sin(45)}) node[pos=0.8,left=3pt] {$a_0$};
-    \fill ({cos(45)},{sin(45)}) circle (3pt);
+    \begin{scope}[shift={({cos(45)},{sin(45)})},rotate around={45:(0,0)}]
+        \draw[thick,->] (0,0) -- (0,1) node[left] {$v_0$};
+        \draw[thick,->] (0,0) -- (-0.8,0) node[above left,pos=0.8] {$a_0$};
+        \fill (0,0) circle (3pt);
+    \end{scope}
 \end{tikzpicture}
 \end{center}
 
@@ -2653,8 +2691,6 @@ Therefore, when the speed is halved, the acceleration decreases to $\frac{1}{4}$
 
 \hfill $\blacksquare$
 
-\subsection{Circular Motion and Orbiting Bodies}
-
 
 \fi
 
@@ -2664,11 +2700,9 @@ Therefore, when the speed is halved, the acceleration decreases to $\frac{1}{4}$
 
 \ifShowUnitVIII
 
-\subsection{Physical Systems}
+\subsection{Gravitational and Elastic Potential Energy}
 
 A \textbf{\gls{system}} is \glsdesc{system}.
-
-\subsection{Gravitational and Elastic Potential Energy}
 
 \textbf{\Gls{gravitational potential energy}} ($E_g$) is \glsdesc{gravitational potential energy}.
 
@@ -2760,9 +2794,9 @@ We are given mass and height: $m = \SI{2.0}{kg}$, $h = \SI{15}{m}$, and gravity 
 \clearpage
 % Kinetic energy moved to unit 1!!!
 
-%\subsection{Conservation of Mechanical Energy} \label{KRxiCV}
+\subsection{Conservation of Mechanical Energy} \label{KRxiCV}
 
-\textbf{mechanical energy} is the sum of kinetic energy and potential energy. The law of conservation of mechanical energy says that for a closed system energy is conserved. This law is expressed as
+\textbf{Mechanical energy} is the sum of kinetic energy and potential energy. The law of conservation of mechanical energy says that for a closed system energy is conserved. This law is expressed as
 
 \begin{equation} \label{QyLUh5}
     \mathrm{ME} = K + \mathrm{PE} = \mathrm{constant}
@@ -2875,8 +2909,6 @@ If we solve this equation for speed ($v$) then his speed is
 \end{equation*}
 
 \hfill $\blacksquare$
-
-\subsection{Conservation of Energy}
 
 \subsection{Conservation of Momentum}
 
@@ -3609,33 +3641,7 @@ A \textbf{\gls{longitudinal wave}} is \glsdesc{longitudinal wave}.
 \end{center}
 
 \begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=7.5cm,width=7.5cm,
-      cycle list={
-        only marks,mark size=1pt\\
-        only marks,mark size=1pt\\
-      },
-      xmin=0,xmax=8,
-      ymin=-4,ymax=4,
-      domain=270:360+90,
-      samples=150,
-      axis line style={draw=none},
-      ticks=none,
-      clip=false,
-    ]
-    \draw[dashed,->] (0,0) -- (6,0);
-    \addplot ({(0.2+0.07*rand)*cos(x)},{(0.2+0.07*rand)*sin(x)});
-    \addplot ({(1.0+0.07*rand)*cos(x)},{(1.0+0.07*rand)*sin(x)});
-    \addplot ({(2.0+0.10*rand)*cos(x)},{(2.0+0.10*rand)*sin(x)});
-    \addplot ({(3.0+0.12*rand)*cos(x)},{(3.0+0.12*rand)*sin(x)});
-    \addplot ({(4.0+0.12*rand)*cos(x)},{(4.0+0.12*rand)*sin(x)});
-    
-    \draw[<-,ultra thick] (3.5,2) -- ++(axis direction cs: 1,0.5) node[right] {compression};
-    \draw[<-,ultra thick] (2.5,-2.5) -- ++(axis direction cs: 2,1) node[right] {rarefaction};
-    
-    \node[align=left,left=1em] at (0,0) {sound\\ source};
-    \end{axis}
-\end{tikzpicture}
+\includegraphics[width=7cm]{documents/figures/sound-wave.png}
 \end{center}
 
 \fi
@@ -4374,6 +4380,7 @@ Quantum stuff goes here.
 \clearpage
 
 \section*{Multiple Representations in the Physics Classroom}
+\addcontentsline{toc}{section}{Multiple Representations in the Physics Classroom}
 
 When students can interpret and use any of these representations interchangeably, they have a deeper understanding of the topics being discussed.  In addition, it helps the students to have multiple ways to approach a problem rather than just memorizing a set of steps.  Let’s break down what representations are appropriate for physics instruction:
 
@@ -4553,6 +4560,8 @@ Students should be able to use equations to help solve for an unknown or to supp
 \clearpage
 
 \section*{Equation Sheet}
+\addcontentsline{toc}{section}{Equation Sheet}
+
 
 \begin{center}
 \bgroup
@@ -4719,6 +4728,7 @@ Students should be able to use equations to help solve for an unknown or to supp
 
 
 
-
+\phantomsection
+\addcontentsline{toc}{section}{Glossary}
 \printnoidxglossaries
 \end{document}

@@ -1,3458 +1,2827 @@
-% \documentclass[../main-physics-workbook.tex]{subfiles}
-\documentclass[]{exam}
+%\documentclass[../main-physics-workbook.tex]{subfiles}
+
+%...For a standalone document, un-comment lines below and recompile here:
+\documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
 \input{documents/physics-glossary}
-\usepackage{makecell}
-\usepackage{setspace}
+\setcounter{section}{9}
+\usepackage{circuitikz}
+\ctikzset{bipoles/battery1/height=0.5}
+\ctikzset{bipoles/battery1/width=0.25}
+\ctikzset{bipoles/resistor/height=0.15}
+\ctikzset{bipoles/resistor/width=0.4}
+\ctikzset{bipoles/cuteswitch/thickness=0.3,bipoles/cuteswitch/shape=circ}
+\ctikzset{bipoles/bulb/height=0.4,bipoles/bulb/width=0.4}
+\usepackage{bohr}
 
-\setcounter{section}{11}
+\header{Name:\enspace\makebox[5cm]{\hrulefill}}{}{}
+
 \begin{document}
 
-\subsection*{Waves Inquiry}
+
+
+\textbf{\Large Charges and Matter}
+
+\subsection{The Millikan's Oil Drop Experiment}
+
+\textbf{Questions \ref{6YGfUm}--\ref{Q68N4Y}.} Watch ``Charge of an Electron: Millikan's Oil Drop Experiment'' by Tyler DeWitt on YouTube (\href{https://youtu.be/2HhaQtvICe8}{click here}), then answer the exercises below.
 
 \begin{questions}
-\question 
-Define a wave.
+\question \label{6YGfUm}
+In what year did Millikan and Fletcher conduct the oil drop experiment?
 
-\fillwithlines{8mm}
-
-\question 
-When a wave travels through a medium it transfers \fillin[energy ] but \fillin[matter ] is not transferred along with the wave. How is this demonstrated in a wave pool?
-
-\fillwithlines{2cm}
-
-
-\question 
-In terms of waves, describe what is meant by the ``medium'' in which a wave travels and give 4 examples.
-
-\question 
-Explain the difference between mechanical waves and non-mechanical (electromagnetic) waves. Give at least three examples of each.
-
-\fillwithlines{2cm}
-
-\question 
-In a transverse wave the particles move \fillin[perpendicular ] relative to the direction the wave moves. Draw a diagram of a transverse wave. Label the direction the particles move along with the direction the wave moves.                 
-
-
-\question 
-In a longitudinal wave the particles move \fillin[parallel ] relative to the direction the wave moves. Draw a diagram of a longitudinal wave. Label the direction the particles move along with the direction the wave moves.                      
-
-
-\question 
-Define a pulse.
-
-\fillwithlines{1.5cm}
 
 \question
-Label the components of each wave using the following terms:
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \rule{2cm}{0.15mm}.
 
-\begin{center}
-\begin{tabular}{ccc}
-     amplitude & wavelength (transverse) &  \\
-     crest & wavelength (longitudinal) & compression \\
-     trough & rarefaction & resting position (equilibrium)
-\end{tabular}
-\end{center}
-
-
-\begin{center}
-\begin{tikzpicture}[x=5mm,y=1.5cm]
-    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
-    \draw[densely dashed,lightgray] (0,0) -- (3.3*2*pi,0);
-    \bgroup
-    \ifprintanswers
-    \color{red}
-    \else
-    \color{white}
-    \fi
-    \draw[<-,xshift=1pt,yshift=1pt] (pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
-    \draw[<-,xshift=-1pt,yshift=-1pt] (3*pi/2,-1) -- ++ (-1.5,-0.2) node[left] {trough};
-    \draw[<->,yshift=3pt] (2.5*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
-    \draw[<->] (9*pi/2,0) node[below] {amplitude} -- ++(0,1) ;
-    \egroup
-    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
-\end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \tikzset{declare function={f(\x)=sin(540*\x);}}
-    \begin{tikzpicture}
-     \draw[->] (-0.5,0) -- (10,0);
-     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
-     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
-    \bgroup
-    \ifprintanswers
-    \color{red}
-    \else
-    \color{white}
-    \fi
-     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
-     \node[below] at (6.5,-1) {compression};
-     \node[below] at (3.4,-1) {rarefaction};
-    \egroup
-     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
-     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
-    \end{tikzpicture}
-\end{center}
 
 \question
-Define period.
+The Millikan's oil drop experiment involves balancing tiny drops of oil by using gravity and \rule{2cm}{0.15mm}.
+
+
 
 \question
-State the period for each of the following:
+Two parts of the equipment used by Millikan are the \rule{2cm}{0.15mm} and the \rule{2cm}{0.15mm}.
+
+
+\question
+Which force acts downward on the oil drop?
+
+
+\question
+Which plate--the positively or the negatively charged---will the positive oil drop be attracted to? Explain.
+
+
+\question
+What force pushes the oil drop in the opposite direction of gravity?
+
+
+\question
+When the voltage is too HIGH, the oil drop moves \rule{2cm}{0.15mm}.
+
+
+\question
+When the voltage is too LOW, the oil drop moves \rule{2cm}{0.15mm}.
+
+
+\question
+What happens to the oil drop when the voltage through the apparatus is just right?
+
+
+\question
+The force of gravity on the drop depends only on the \rule{2cm}{0.15mm} of the drop.
+
+
+\question
+What 2 factors does the force of electricity on the drop depend on?
+
+
+\question \label{Q68N4Y}
+What is the charge of 1 electron?
+
+\end{questions}
+
+
+
+\clearpage
+\subsection*{The Electric Field}
+
+\begin{questions}
+
+\question
+Go to the \href{https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html}{PhET Simulation: Charges and Fields}. Check only the following boxes: \checkbox{1} Electric Field, \checkbox{1}~Voltage, \checkbox{1} Grid. In this simulation, you may place charges onto the provided grid. The yellow sensor, when placed at any location, measures the magnitude (size) and direction of the electric field due to one or more charges.
 
 \begin{parts}
-\part Earth orbiting the Sun: \fillin[1 year] 
-\part Small hand of a clock: \fillin[1 hour]
-\end{parts}
-
-\question
-The following figure represents the graph of a mouse on a bungee cord. Answer the questions below using the graph.
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=7cm,
-        width=12cm,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Position (m)},
-        xlabel={Time (s)},
-        x label style={at={(axis description cs: 1,0.5)},right},
-        ymin=-8,ymax=8,
-        xmin=0,xmax=3,
-        ytick={-8,-6,...,8},
-        xtick={0,0.25,...,3},
-        grid=both,
-        clip=false,
-        ]
-        \addplot[thick,domain=0:3,samples=150] {6*cos(deg(2*pi*x)};
-        \fill (0,6) circle (2pt) node[above right] {A};
-        \fill (0.25,0) circle (2pt) node[above right] {B};
-        \fill (0.5,-6) circle (2pt) node[below right] {C};
-        \fill (0.75,0) circle (2pt) node[above right] {D};
-        \fill (1,6) circle (2pt) node[above right] {E};
-        \fill (1.25,0) circle (2pt) node[above right] {F};
-        \fill (1.5,-6) circle (2pt) node[below right] {G};
-        \fill (1.75,0) circle (2pt) node[above right] {H};
-        \fill (2,6) circle (2pt) node[above right] {I};
-        \fill (2.25,0) circle (2pt) node[above right] {J};
-        \fill (2.5,-6) circle (2pt) node[below right] {K};
-        \fill (2.75,0) circle (2pt) node[above right] {L};
-        \fill (3,6) circle (2pt) node[above right] {M};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part What point is 1 full cycle after Point A?
-
-\part What point is a half-cycle after Point G?
-
-\part If C represents the lowest point of the mouse's bungee cycle, then where is it at D?
-
-\part What is the period of the mouse's oscillations? How is this period determined?
-\end{parts}
-
-\question Define frequency.
-
-\question
-The formula for period is
-
-\begin{equation*}
-    T = \frac{\text{total time}}{\text{total number of cycles}}
-\end{equation*}
-
-What are the units used to measure period?
-
-\question
-The formula for frequency is
-
-\begin{equation*}
-    f = \frac{\text{total number of cycles}}{\text{total time}}
-\end{equation*}
-
-What are the units used to measure frequency?
-
-\question
-How are frequency and period related mathematically? Write the relationship as a formula.
-
-\begin{solutionorbox}[2cm]
-\begin{equation*}
-    T = \frac{1}{f} \qquad f = \frac{1}{T}
-\end{equation*}
-\end{solutionorbox}
-
-\question
-Calculate the period and frequency for each situation.
-
-\begin{parts}
-\part A pendulum swings back and forth 8 times in 5 seconds.
-
-\begin{solutionorbox}[2cm]
-    
-\end{solutionorbox}
-
-\part It takes 30 seconds for a man to make one complete loop around the track.
-
-\begin{solutionorbox}[2cm]
-    
-\end{solutionorbox}
-\end{parts}
-
-\question 
-How is the energy of a wave relation to the wave amplitude?
-
-\question
-How is this evident in wave surfing?
-
-\question
-If a pendulum is in equilibrium position, work must be done to the system in order to add energy into the system to make the pendulum swing. Which of the following graphs represent the greatest amount of energy added to the system? Explain why. 
+\part In the PhET Simulation, place a positive charge aligned with the center of the grid. Then place sensors at each of the points shown in the grid below. \textbf{NOTE:} Place all items \textit{exactly} on the grid line intersections as shown. Then use the space below to draw the electric field vectors exactly to scale as shown in the simulation. Finally, repeat these steps for a single negative charge.
 
 \begin{EnvUplevel}
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=7cm,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Position (m)},
-        xlabel={Time (s)},
-        x label style={at={(axis description cs: 0.5,0)},below},
-        ymin=-2,ymax=4,
-        xmin=0,xmax=2,
-        ytick={-2,-1,...,4},
-        xtick={0,1,2},
-        minor x tick num=1,
-        grid=both,
-        clip=false,
-        title={Graph 1}
-        ]
-        \addplot[thick,domain=0:2,samples=200] {2*cos(deg(8*pi*x)) + 1};
-    \end{axis}
+    \draw (-4,-4) grid (4,4);
+    \draw[step=0.2,ultra thin,black!20] (-4,-4) grid (4,4);
+    \draw[thick] (-4,-4) rectangle (4,4);
+    \fill[white] (0,0) circle (0.2cm);
+    \node at (0,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (-2,+2) -- ++(-0.75,+0.75);
+    \draw[ultra thick,->] (-2.4,0) -- ++(-1.5,0);
+    \draw[ultra thick,->] (-2,-2) -- ++(-0.75,-0.75);
+    \draw[ultra thick,->] (0,-2.4) -- ++(0,-1.5);
+    \draw[ultra thick,->] (+2,-2) -- ++(+0.75,-0.75);
+    \draw[ultra thick,->] (+2.4,0) -- ++(+1.5,0);
+    \draw[ultra thick,->] (+2,+2) -- ++(+0.75,+0.75);
+    \draw[ultra thick,->] (0,+2.4) -- ++(0,+1.5);
+    \egroup
+    \fi
+
+    \fill (-2,+2) circle (3pt);
+    \fill (-2.4,0) circle (3pt);
+    \fill (-2,-2) circle (3pt);
+    \fill (0,-2.4) circle (3pt);
+    \fill (+2,-2) circle (3pt);
+    \fill (+2.4,0) circle (3pt);
+    \fill (+2,+2) circle (3pt);
+    \fill (0,+2.4) circle (3pt);
+    \draw[ultra thick,<->] (-3,-4) -- (-1,-4) node[above,pos=0.5] {1 meter};
 \end{tikzpicture}
-\hspace{5mm}
+\hspace{2mm}
 \begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=7cm,
-        axis y line=left,
-        axis x line=center,
-        ylabel={Position (m)},
-        xlabel={Time (s)},
-        x label style={at={(axis description cs: 0.5,0)},below},
-        ymin=-3,ymax=3,
-        xmin=0,xmax=2,
-        ytick={-3,-2,...,3},
-        xtick={0,1,2},
-        minor x tick num=1,
-        grid=both,
-        clip=false,
-        title={Graph 2}
-        ]
-        \addplot[thick,domain=0:2,samples=200] {-cos(deg(4*pi*x))};
-    \end{axis}
+    \draw (-4,-4) grid (4,4);
+    \draw[step=0.2,ultra thin,black!20] (-4,-4) grid (4,4);
+    \draw[thick] (-4,-4) rectangle (4,4);
+    \fill[white] (0,0) circle (0.2cm);
+    \node at (0,0) {\resizebox{0.4cm}{!}{\faMinusCircle}};
+
+
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (-2,+2) -- ++(+0.75,-0.75);
+    \draw[ultra thick,->] (-2.4,0) -- ++(+1.5,0);
+    \draw[ultra thick,->] (-2,-2) -- ++(+0.75,+0.75);
+    \draw[ultra thick,->] (0,-2.4) -- ++(0,+1.5);
+    \draw[ultra thick,->] (+2,-2) -- ++(-0.75,+0.75);
+    \draw[ultra thick,->] (+2.4,0) -- ++(-1.5,0);
+    \draw[ultra thick,->] (+2,+2) -- ++(-0.75,-0.75);
+    \draw[ultra thick,->] (0,+2.4) -- ++(0,-1.5);
+    \egroup
+    \fi
+
+    \fill (-2,+2) circle (3pt);
+    \fill (-2.4,0) circle (3pt);
+    \fill (-2,-2) circle (3pt);
+    \fill (0,-2.4) circle (3pt);
+    \fill (+2,-2) circle (3pt);
+    \fill (+2.4,0) circle (3pt);
+    \fill (+2,+2) circle (3pt);
+    \fill (0,+2.4) circle (3pt);
+    \draw[ultra thick,<->] (-1,-4) -- (1,-4) node[above,pos=0.5] {1 meter};
 \end{tikzpicture}
 \end{center}
 \end{EnvUplevel}
 
-\question 
-How does the velocity of a wave relate to the frequency of a wave? The figures below show systems of waves set up in strings, fixed on both ends, under tension. Each set was produced in 1.0 seconds. All the strings have identical tension and length. The variables in each situation is the amplitude and the number of waves present. Rank the wavelength, frequency and velocity of each wave from least to greatest.
+\part 
+Draw the electric field vectors to scale for each of the points below when a positive and negative charge are assembled in the configuration below.
 
 \begin{center}
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{15*sin(deg(2*pi*1.5*\x))}) node[left,pos=0] {A};
-    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-15*sin(deg(2*pi*1.5*\x))});
-\end{tikzpicture}
-
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{12*sin(deg(2*pi*2*\x))}) node[left,pos=0] {B};
-    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-12*sin(deg(2*pi*2*\x))});
-\end{tikzpicture}
-
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100,smooth] plot(\x,{10*sin(deg(2*pi*2.5*\x))}) node[left,pos=0] {C};
-    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-10*sin(deg(2*pi*2.5*\x))});
-\end{tikzpicture}
-
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{16*sin(deg(2*pi*3.5*\x))}) node[left,pos=0] {D};
-    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-16*sin(deg(2*pi*3.5*\x))});
+\begin{tikzpicture}
+    \draw (-6,-4) grid (6,4);
+    \draw[step=0.2,ultra thin,black!20] (-6,-4) grid (6,4);
+    
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \draw[ultra thick,->] (0,0) -- (1.95,0);
+    \draw[ultra thick,->] (0,2) -- ++(1.15,0);
+    \draw[ultra thick,->] (-2,2) -- ++(1.02,1.4);
+    \draw[ultra thick,->] (-5,2) -- ++(-0.62,0.75);
+    \draw[ultra thick,->] (-4,-2) -- ++(-0.6,-1.45);
+    \draw[ultra thick,->] (0,-1) -- ++(1.6,0);
+    \draw[ultra thick,->] (5,-2) -- ++(-0.62,0.75);
+    \draw[ultra thick,->] (3,-2.6) -- ++(0.2,1.2);
+    \draw[ultra thick,->] (4,3) -- ++(-0.16,-0.75);
+    \egroup
+    \fi
+    
+    \fill[white] (-3,0) circle (0.2cm);
+    \node at (-3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill[white] (+3,0) circle (0.2cm);
+    \node at (+3,0) {\resizebox{0.4cm}{!}{\faMinusCircle}};
+    \fill (0,0.0) circle (3pt);
+    \fill (0,2) circle (3pt);
+    \fill (-2,2) circle (3pt);
+    \fill (-5,2) circle (3pt);
+    \fill (-4,-2) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (5,-2) circle (3pt);
+    \fill (3,-2.6) circle (3pt);
+    \fill (4,3) circle (3pt);
+    \draw[ultra thick,<->] (3,-4) -- (5,-4) node[above,pos=0.5] {1 meter};
 \end{tikzpicture}
 \end{center}
 
-\begin{solution}
-    Wavelength from least to greatest is Wave D, Wave C, Wave B, Wave A. Frequency from least to greatest to A, B, C, D. All waves have the same velocity because the string tension is the same for all waves. 
-\end{solution}
+\part 
+Draw the electric field vectors to scale for each of the points below when two positive charges are assembled in the configuration below.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw (-6,-4) grid (6,4);
+    \draw[step=0.2,ultra thin,black!20] (-6,-4) grid (6,4);
+    
+    \ifprintanswers
+    \bgroup
+    \color{red}
+    \node[above right,fill=white] (0,0) {$E=0$};
+    \draw[ultra thick,->] (0,2) -- ++(0,0.65);
+    \draw[ultra thick,->] (-2,2) -- ++(0.5,1.65);
+    \draw[ultra thick,->] (-5,2) -- ++(-0.9,0.8);
+    \draw[ultra thick,->] (-4,-2) -- ++(-0.92,-1.56);
+    \draw[ultra thick,->] (0,-1) -- ++(0,-0.6);
+    \draw[ultra thick,->] (5,-2) -- ++(0.9,-0.8);
+    \draw[ultra thick,->] (3,-2.6) -- ++(0.2,-1.4);
+    \draw[ultra thick,->] (4,3) -- ++(0.4,0.9);
+    \egroup
+    \fi
+    
+    \fill[white] (-3,0) circle (0.2cm);
+    \node at (-3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill[white] (+3,0) circle (0.2cm);
+    \node at (+3,0) {\resizebox{0.4cm}{!}{\faPlusCircle}};
+    \fill (0,0.0) circle (3pt);
+    \fill (0,2) circle (3pt);
+    \fill (-2,2) circle (3pt);
+    \fill (-5,2) circle (3pt);
+    \fill (-4,-2) circle (3pt);
+    \fill (0,-1) circle (3pt);
+    \fill (5,-2) circle (3pt);
+    \fill (3,-2.6) circle (3pt);
+    \fill (4,3) circle (3pt);
+    \draw[ultra thick,<->] (-1,-4) -- (1,-4) node[above,pos=0.5] {1 meter};
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\question
+Label each charge below with a positive ($+$) or negative ($-$) sign so that it correctly corresponds to the magnetic field lines shown.
+
+
+\begin{center}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-3b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-3a.pdf}
+    \fi
+    }
+\end{minipage}%
+\hspace{5mm}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-4b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-4a.pdf}
+    \fi
+    }
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{7cm}
+    \centering
+    \fbox{
+    \ifprintanswers
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-5b.pdf}
+    \else
+    \includegraphics[width=5.5cm]{documents/figures/electric-field-lines-5a.pdf}
+    \fi
+    }
+\end{minipage}%
+\hspace{2.5mm}
+\begin{minipage}{3.5cm}
+    \fbox{
+    \begin{tikzpicture}[x=1.5cm,y=1.5cm]
+        \begin{scope}[decoration={
+            markings,
+            mark=at position 0.6 with {\arrow{>}}}
+            ] 
+        \foreach \x in {0,45,...,315}{
+            \draw[postaction={decorate},rotate=\x] (0,0) -- (1,0);
+        }
+        \end{scope}
+        \draw[fill=white] (0,0) circle (3mm) node {\ifprintanswers \textcolor{red}{\large $+$} \else \fi};
+    \end{tikzpicture}
+    }
+\end{minipage}%
+\hspace{2.5mm}
+\begin{minipage}{3.5cm}
+    \fbox{
+    \begin{tikzpicture}[x=1.5cm,y=1.5cm]
+        \begin{scope}[decoration={
+            markings,
+            mark=at position 0.6 with {\arrow{<}}}
+            ] 
+        \foreach \x in {0,45,...,315}{
+            \draw[postaction={decorate},rotate=\x] (0,0) -- (1,0);
+        }
+        \end{scope}
+        \draw[fill=white] (0,0) circle (3mm) node {\ifprintanswers \textcolor{red}{\large $-$} \else \fi};
+    \end{tikzpicture}
+    }
+\end{minipage}
+\end{center}
 
 \end{questions}
 
 \clearpage
 
-\subsection*{Math Practice: Wave Characteristics}
+\textbf{\Large Transfer of Charge}
 
-The following terms and equations will be used to answer questions throughout this worksheet.
 
-\begin{equation*}
-    T = \frac{1}{f} \qquad v = f \lambda
-\end{equation*}
+\clearpage
 
-where $f$ is frequency, $T$ is period, $v$ is the speed of the wave, and $\lambda$ is the wavelength. 
+\textbf{\Large Coulomb’s Law}
 
+\subsection{Electric Force, Charges, and Distance}
 
 \begin{questions}
+% \question
+% Google the \textit{PhET Simulation} called \texttt{Coulomb's law} (or \href{https://phet.colorado.edu/en/simulations/coulombs-law}{click here}). Press \texttt{Play}, and select the \texttt{Macro Scale} panel. This simulation helps you understand Coulomb's law. (a) How does the magnitude and direction of the force on $q_1$ by $q_2$ compare to that of the force on $q_2$ by $q_1$? (b) What changes in the simulation cause the magnitude of the forces to increase? (c) What changes cause the magnitude of the force to decrease? (d) What changes cause the direction of the forces to change?
+
+\question
+Object A has a positive charge of \SI{6.0e-6}{C}. Object B has a positive charge of \SI{3.0e-6}{C}. The two objects are 0.03 meters apart. Calculate the electric force between the two objects. 
+
+\begin{solution}
+\begin{equation*}
+    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{6.0e-6}{C})(\SI{3.0e-6}{C})}{\left(\SI{0.03}{m}\right)^2} = \boxed{\SI{180}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+Two positive charges of \SI{6.0e-6}{C} are separated by 0.50 meters. Calculate the electric force between the two objects. 
+
+\begin{solution}
+\begin{equation*}
+    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)\left(\SI{6.0e-6}{C}\right)^2}{\left(\SI{0.50}{m}\right)^2} = \boxed{\SI{1.296}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+A negative charge of \SI{-6.0e-6}{C} exerts an attractive force of \SI{65}{N} on a second charge 0.05 meters away. What is the magnitude of the second charge?
+
+\begin{solution}
+Coulomb's law is
+
+\begin{equation*}
+    F_e = \frac{k\left|q_1q_2\right|}{r^2}
+\end{equation*}
+
+We know all variables except for $q_2$, which we can solve for algebraically as follows: Multiplying both sides by $r^2$ gives
+
+\begin{equation*}
+    F r^2 = k |q_1 q_2|
+\end{equation*}
+
+Dividing both sides by the produce $k q_1$ gives
+
+\begin{equation*}
+    |q_2| = \frac{F r^2}{k |q_1|} = \frac{(\SI{65}{N})(\SI{0.05}{m})^2}{(\SI{9e9}{N\cdot m^2/C^2})|(-\SI{6.0e-6}{C})|} = \boxed{\SI{3.0e-6}{C}}
+\end{equation*}
+\end{solution}
+
 \question 
-Find the frequency in hertz (Hz) for the following periods:
-
-\begin{parts}
-\part \SI{0.40}{s} 
-
-\ifprintanswers
-{\color{red}
-$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{0.40}{s}} = \boxed{\SI{2.5}{Hz}}$
-}
-\fi
-
-
-\part \SI{8}{s}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{8}{s}} = \boxed{\SI{0.125}{Hz}}$
-}
-\fi
-
-\part $1/30\,\text{s}$
-
-\ifprintanswers
-{\color{red}
-$\displaystyle f = \frac{1}{T} = \frac{1}{\frac{1}{30}\,\text{s}} = \boxed{\SI{30}{Hz}}$
-}
-\fi
-
-\part \SI{20}{s}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{20}{s}} = \boxed{\SI{0.05}{Hz}}$
-}
-\fi
-
-\end{parts}
-
-\question
-Find the period in seconds for the following frequencies:
-
-\begin{parts}
-\part \SI{0.4}{Hz}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{0.4}{Hz}} = \boxed{\SI{2.5}{s}}$
-}
-\fi
-
-\part \SI{8}{Hz}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{8}{Hz}} = \boxed{\SI{0.125}{s}}$
-}
-\fi
-
-\part \SI{90}{Hz}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{90}{Hz}} = \boxed{\SI{0.11}{s}}$
-}
-\fi
-
-\part \SI{1.034e-5}{Hz}
-
-\ifprintanswers
-{\color{red}
-$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{1.034e-5}{Hz}} = \boxed{\SI{9.671e4}{s}}$
-}
-\fi
-\end{parts}
-
-\question
-Find the frequency of a metronome if it is set to make 7 complete oscillations in 15 seconds. Round to the nearest hundredth.
+A force of \SI{-4.4e3}{N} exists between a positive charge of \SI{8.0e-4}{C} and a negative charge of \SI{-3.0e-4}{C}. What distance separates the charges?
 
 \begin{solution}
+Coulomb's law is
+
 \begin{equation*}
-    f = \frac{\text{cycles}}{\text{time}} = \frac{7}{\SI{15}{s}} = \boxed{\SI{0.47}{Hz}}
+    F = \frac{k q_1 q_2}{r^2}
+\end{equation*}
+
+Solving for distance leads to
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \sqrt{\frac{(\SI{9e9}{N\cdot m^2/C^2})(\SI{8.0e-4}{C})(\SI{-3.0e-4}{C})}{-\SI{4.4e3}{N}}} = \boxed{\SI{0.70}{m}} = \SI{70}{cm}
 \end{equation*}
 \end{solution}
 
-\question
-Sarah and a few of her friends went to the beach and saw that the distance between the crest of each wave is \SI{1.5}{m}. The waves hit the beach every 7 seconds. For each calculation below, round to the nearest hundredth.
 
-\begin{parts}
-\part Find the frequency of the waves. 
+\question \label{z4pMlx}
+Two objects with charges \SI{7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Is the electric force between them attractive or repulsive? (b) What is the magnitude of the electric force between the spheres?
 
 \begin{solution}
-\begin{equation*}
-    f = \frac{1}{T} = \frac{1}{\SI{7}{s}} = \boxed{\SI{0.143}{Hz}}
-\end{equation*}
+(a) Repulsive. 
+
+(b) \SI{786.6}{N}
 \end{solution}
 
-\part Find the speed of the waves.
+
+\question \label{TPIAio}
+Two metallic spheres with charges \SI{-7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Do the spheres attract each other, or do they repel? (b) What is the magnitude of the electric force between the spheres?
 
 \begin{solution}
-\begin{equation*}
-    v = f\lambda = (\SI{0.14}{Hz})(\SI{1.5}{m}) = \boxed{\SI{}{\SI{0.21}{m/s}}}
-\end{equation*}
-\end{solution}
-\end{parts}
+(a) Attract. 
 
-\question
-Calculate the period, in seconds, and frequency, in hertz, of a pendulum that swings back and forth 12 times in one minute.
+(b) \SI{786.6}{N}
+\end{solution}
+
+
+\question \label{mJu5SD}
+As shown below, two charges are placed near each other. (a) Are they attracted or repulsed? (b) What is the magnitude of the electric force between the charges?
+\vspace{-1em}
 
 \begin{center}
-%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
 \begin{tikzpicture}
-    \draw[lightgray] (-1,0) -- (1,0) (0,0) -- (0,{-3.5*sin(75)});
-    \fill[lightgray] (-1,0) rectangle (1,0.1);
-    \coordinate (P) at ({3*cos(70)},{-3*sin(70)});
-    \draw[thick] (0,0) -- (P) node[pos=0.65,above right] {$l$};
-    \fill (P) circle (2pt) node[right=2pt] {$m$};
-    \draw (0,-1) arc (270:290:1) node[below,pos=0.6] {$\theta$};
-    \draw[densely dashed] (P) arc (290:250:3);
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (2pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{8}{\micro C}};
+
+\begin{scope}[xshift=3.01*1.07 cm]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{9}{\micro C}};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+\node[above=6pt] at (3.01/2,0) {\SI{6}{cm}};
+\end{axis}
 \end{tikzpicture}
 \end{center}
 
 \begin{solution}
+(a) Repulsed. (b) \SI{179.8}{N}
+\end{solution}
+
+
+\question \label{NqU30G}
+(a) Are the charges below attracted or repulsed by each other? (b) Calculate the electrostatic force between them.
+\vspace{-1em}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (2pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-3.2}{\micro C}};
+
+\begin{scope}[xshift=3.01*1.07 cm]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{-2.5}{\micro C}};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+\node[above=6pt] at (3.01/2,0) {\SI{1.4}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{366.9}{N}
+\end{solution}
+
+
+\question \label{S2QW5m}
+When the two opposite charges shown below are placed near each other, the magnitude of the electrostatic force is \SI{44}{N}. What is the distance between the charges?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (3pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-680}{\micro C}};
+\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$\SI{44}{N}$};
+
+\begin{scope}[xshift=5.02*0.99 cm]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{180}{\micro C}};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{5.0}{m}
+\end{solution}
+
+
+\question \label{clmO0M}
+A \SI{-48}{\micro C} charge and a \SI{55}{\micro C} one are separated by an unknown distance. If the electrostatic force between the charges is \SI{8.2}{N}, what is the distance between the charges?
+
+\begin{solution}
+\SI{1.7}{m}
+\end{solution}
+
+\question \label{TrRzFe}
+Calculate the distance between the charges below if the force $F$ is \SI{7.52e-3}{N}.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+clip=false,
+xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+axis line style={draw=none},
+ticks=none,    
+]
+\fill (0,0) circle (3pt);
+\draw (0,0) circle (6mm) node[above=6mm] {\SI{-860}{\micro C}};
+\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
+
+\begin{scope}[xshift=5.02*0.99 cm]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{420}{\micro C}};
+    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
+\end{scope}
+
+\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\SI{657}{m}
+\end{solution}
+
+
+\question \label{bpbHHg}
+When a 0.0066-coulomb charge is placed near a 0.0044-coulomb one, they experience a mutual repulsive force with a magnitude of 74 newtons. What is the distance between the charges?
+
+\begin{solution}
+\SI{59.4}{m}
+\end{solution}
+
+
+
+\question \label{DOuqpT}
+Solve Exercise \ref{TrRzFe} analytically, which means using
+only algebraic symbols and manipulation, and no numbers. Your result should be an equation solved for $r$ in terms of $F$, $k$, $q_1$, and $q_2$.
+
+\begin{solution}
+$r = \sqrt{\frac{k |q_1 q_2|}{F}}$
+\end{solution}
+
+\end{questions}
+
+
+\clearpage
+
+\subsection{How Changing Charge or Distance Affects the Electric Force}
+
+\begin{questions}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, then what is the new force?
+
+\begin{solution}
+The ratio of the new force to the old force is
+
 \begin{equation*}
-    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{12}{cycles}} = \boxed{\SI{5.0}{s}}
+    \frac{F}{F_0} = \frac{(1)(1)(2)}{(1)^2} = 2
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    F = 2F_0 = \boxed{\SI{0.16}{N}}
+\end{equation*}
+
+\end{solution}
+
+
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.32}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.020}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0088}{N}$
+\end{solution}
+
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is quadrupled, then what is the new force?
+
+\begin{solution}
+$\SI{0.005}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is halved, then what is the new force?
+
+\begin{solution}
+\begin{equation*}
+    \frac{F}{F_0} = \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\frac{1}{2}\cdot\frac{1}{2}} = \frac{1}{\frac{1}{4}} = 4
 \end{equation*}
 
 \begin{equation*}
-    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{12}{cycles}}{\SI{60}{s}} = \boxed{\SI{0.20}{Hz}}
+    F = 4 F_0 = 4(\SI{0.08}{N}) = \boxed{\SI{0.32}{N}}
 \end{equation*}
 \end{solution}
 
 \question
-What is the period, in seconds, and frequency, in hertz, of a hear that beats 60 times in one minute?
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
 
 \begin{solution}
-\begin{equation*}
-    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{60}{cycles}} = \boxed{\SI{1}{s}}
-\end{equation*}
+$\SI{0.04}{N}$
+\end{solution}
 
-\begin{equation*}
-    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{60}{cycles}}{\SI{60}{s}} = \boxed{\SI{1}{Hz}}
-\end{equation*}
 
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.08}{N}$
 \end{solution}
 
 \question
-At the beach today, the waves were \SI{0.34}{m} apart and had a frequency of $1/10\,\text{Hz}$. Find the speed of the waves.
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is increased by a factor of four, and the distance separating the objects is doubled, then what is the new force?
 
 \begin{solution}
-We are given $\lambda = \SI{0.34}{m}$ and $f = \frac{1}{10}\,\text{Hz} = \SI{0.1}{Hz}$
+$\SI{0.08}{N}$
+\end{solution}
 
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is tripled, and the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0267}{N}$
+\end{solution}
+
+
+
+
+
+
+
+
+\question
+A balloon with a charge of \SI{4.0e-5}{C} is held a distance of \SI{0.10}{m} from a second balloon having the same charge. Calculate the magnitude of the repulsive force.
+
+\begin{solution}
 \begin{equation*}
-    v = f\lambda = (\SI{0.10}{Hz})(\SI{0.34}{m}) = \boxed{\SI{0.034}{m/s}}
+    F = \frac{kq_1q_2}{r^2} = \SI{1440}{N}
 \end{equation*}
 \end{solution}
 
 \question
-Callie and Chris go on a hike along the edge of the ocean. They stop to revel in the view below. Callie notices that 7 waves pass beneath them in 25 seconds, each wave being 3 meters apart. Calculate the period, frequency, wavelength, and speed of these ocean waves.
+Calculate the electrical force (in Newtons) exerted between a 22-gram with a charge of \SI{-2.6e-6}{\micro\coulomb} and a wool sweater with a charge of $+\SI{3.8}{\micro\coulomb}$. The separation distance is \SI{0.75}{m}.
 
 \begin{solution}
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2} = \SI{0.158}{N}
+\end{equation*}
+\end{solution}
+
+\question
+Suppose that two equally charged spheres attract each other with a force of \SI{-0.492}{N} (the negative sign indicating an attractive force) when placed a distance of \SI{29.1}{cm} from each other. Determine the charge of the spheres. 
+
+\begin{solution}
+Let $q$ be magnitude of the charge on each sphere. Then Coulomb's law gives
+
+\begin{equation*}
+    F = \frac{kq^2}{r^2}
+\end{equation*}
+
+Solving for $q$ leads to 
+
+\begin{equation*}
+    q = \sqrt{\frac{Fr^2}{k}} = \boxed{\SI{2.15e-6}{C}}
+\end{equation*}
+\end{solution}
+
+\question
+A $+\SI{5.0}{\micro\coulomb}$ charge and a $-\SI{6.0}{\micro\coulomb}$ charge experience an attractive force of $-\SI{0.72}{N}$ (the negative sign indicating an attractive force). Determine their separation distance.
+
+\begin{solution}
+Coulomb's law states
+
+\begin{equation*}
+    F = \frac{kq_1q_2}{r^2}
+\end{equation*}
+
+Solving for distance gives
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \boxed{\SI{0.61}{m}}
+\end{equation*}
+\end{solution}
+\end{questions}
+
+\clearpage
+
+
+
+\textbf{\Large Simple Circuits}
+
+\subsection{Electric Current}
+
+\begin{questions}
+\question
+A lightbulb is connect with wires to a battery. The electrons flow out of the \fillin[negative ] terminal and into the \fillin[positive ] terminal.
+
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+    \correctchoice \glsdesc{electric current}
+    \choice \glsdesc{resistance}
+\end{randomizechoices}
+
+
+\question
+The SI unit of electric current is the \dots\ .
+
+
+\question
+How can you express 1 \textit{ampere} in terms of a \textit{coulomb} and a \textit{second}?
+
+
+\question
+To calculate electric current, according to some equation, you should compute \dots\ in units of \dots\ divided by \dots\ in units of \dots .
+
+
+\question
+To help you understand the flow of electrons in electric current, what is the analogy provided in the text? Draw a sketch of this analogy.
+
+
+\question
+Give an example of a machine or device that uses a large current.
+
+
+\question
+Give an example of a machine or device that uses a small current.
+
+
+\question
+It takes 3.5 nanoseconds for 14 nanocoulombs of charge to flow through a section of a wire. Calculate the magnitude of electric current flowing through the wire.
+
+
+\question
+A total charge of \qty{0.0035}{C} flows through a component of a car's engine in a time interval of \qty{0.2}{s}. What is the magnitude of the electric current through the component?
+
+\end{questions}
+
+\clearpage
+
+\subsection{Components for a Simple Circuit}
+
+For the following exercises, please access the \href{https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html}{PhET Simulation: Circuit Construction Kit}. Click the Intro tab, and check the box called Labels.
+
+\begin{questions}
+
+
+% \question
+%     \href{https://photos.app.goo.gl/ntKqo9sznG9w7FiUA}{Click here} to view a photo of a real-world circuit. Then use \texttt{PhET} to simulation the circuit, which consists of two batteries, a switch, a lamp, and an ammeter, in series.
+% 
+
+\question
+The following circuit diagram represents a circuit ``in series.'' Copy this sketch in your notebook. Then create the circuit in the PhET Simulation. Then copy it in your notebook, labeling it ``Parallel Circuit.''
+
+
+\begin{center}
+\begin{circuitikz}
+\draw (0,0) to[bulb,l_={\SI{8}{\ohm}}]  (3,0) to[bulb,l_={\SI{12}{\ohm}}]  (3,2)
+      (0,2) to[battery1,l_=\SI{36}{V}] (0,0)
+      (0,2) to[cute closed switch] (3,2);
+\end{circuitikz}
+\end{center}
+
+\question
+Place an ammeter \textit{near} (not \textit{on}) the circuit. Then click-and-drag the crosshairs onto the wire to measure the current throughout all sections of wire.
+
+The current in the circuit is \fillin[\SI{1.80}{A}].
+
+\question
+Does the current change throughout different portions of wire in the series circuit? \fillin[No][3cm]
+
+\question
+The total current in the circuit is the current flowing out of the positive terminal of the battery.
+
+\begin{parts}
+\part \label{abc123}
+What is the total current? (\textit{Hint:} Use the ammeter.) \fillin[\SI{1.80}{A}][3cm]
+
+\part Find the total (equivalent) resistance in the circuit. 
+
+\begin{solutionorbox}[3cm]
+For resistors in series, 
+
 \begin{align*}
-    T &= \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{25}{s}}{\SI{7}{cycles}} = \boxed{\SI{3.6}{s}} \\[1ex]
-    f &= \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{7}{cycles}}{\SI{25}{s}} = \boxed{\SI{0.28}{Hz}} \\[1ex]
-    \lambda &= \boxed{\SI{3.0}{m}} \\[1ex] 
-    v &= f \lambda = (\SI{0.28}{Hz})(\SI{3.0}{m}) = \boxed{\SI{0.84}{m/s}}
+    R_{\mathrm{eq}} &= R_1 + R_2 \\[1ex]
+    &= \SI{8}{\ohm} + \SI{12}{\ohm} \\[1ex]
+    &= \boxed{\SI{20}{\ohm}}
+\end{align*}
+\end{solutionorbox}
+
+\part Use Ohm's law to show that connecting the battery's voltage to the total resistance produces the total current measured in part~(\ref{abc123}). 
+
+\begin{solutionorbox}[3cm]
+By Ohm's law
+
+\begin{align*}
+    I &= \frac{V}{R_\mathrm{eq}} \\[1ex]
+    &= \frac{\SI{36}{V}}{\SI{20}{\ohm}} \\[1ex]
+    &= \boxed{\SI{1.80}{A}}
 \end{align*}
 
-\end{solution}
+This is the same current measured by the ammeter.
+\end{solutionorbox}
+
+\end{parts}
+
+\question
+The following circuit is constructed ``in parallel'' because electrons can branch out to either light bulb at the junction. Open a new internet tab, and recreate this parallel circuit in the PhET Simulation. 
+
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm,y=1.8cm]
+    \draw (0,1) to[battery1,l_={\SI{36}{V}}] (0,0) -- (4,0) to[bulb,l_={\SI{12}{\ohm}}] (4,1) ;
+    \draw (2,1) to[bulb={\SI{8}{\ohm}}] (2,0);
+    \draw (0,1) to[cute closed switch] (2,1) to[cute closed switch] (4,1);
+    \draw[thick,<-,yshift=2pt] (2,1) -- ++(0,0.4) node[above] {Junction};
+\end{tikzpicture}
+\end{center}
+ 
+\question
+Place an ammeter near the circuit. Again, use the crosshairs to measure the current throughout all sections of wire. You may open and close the switches as needed in your investigation.
+
+In your notebook sketch, label the current in amperes (A) through various portions of wire in the circuit.
+
+
+\question
+Does the current change throughout the parallel circuit? \fillin[Yes].
+
+\question
+The total current in the circuit is the current coming out of the positive terminal of the battery. This total current is distributed across each ``branch'' of the circuit.
+
+\begin{parts}
+\part Use the ammeter to measure the total current? \fillin[\SI{7.50}{A}][3cm].
+\part Again, use the ammeter to measure the current through the \SI{8}{\ohm} resistor. \fillin[\SI{4.50}{A}][3cm]
+\part Measure the current through the \SI{12}{\ohm} resistor. \fillin[\SI{3.00}{A}][3cm]
+
+\part Find a mathematical relationship between the currents through the resistor and the total current in the circuit.
+
+\begin{solutionorbox}
+The total current is \SI{7.5}{A}, and the currents through each of the two resistors are \SI{4.5}{A} and \SI{3.0}{A}. Thus the relationship is
+
+\begin{equation*}
+    \SI{4.5}{A} + \SI{3.0}{A} = \SI{7.5}{A}
+\end{equation*}
+
+That is, the sum of the currents across each resistor equals the total current in the circuit.
+\end{solutionorbox}
+\end{parts}
+
+
+
+\question
+\begin{parts}
+\part Find the total (equivalent) resistance in the circuit. 
+
+\begin{solutionorbox}[3cm]
+For resistors in series, 
+
+
+\end{solutionorbox}
+
+
+\part Use Ohm's law to show that connecting the battery's voltage to the total resistance produces the total current measured in part~(\ref{abc123}).
+
+\begin{solutionorbox}[3cm]
+
+\end{solutionorbox}
+
+\end{parts}
+\end{questions}
+
+\clearpage
+
+\subsection{Circuits in Series}
+
+\begin{questions}
+\question
+Go to PhET Simulation: Circuit Construction Kit and build the circuit shown below. Points a through h are labeled for referencing current or voltages at those points. For example, $I_\mathrm{b}$ is the current through Point b, and $V_\mathrm{de}$ is the voltage (or potential difference) across Points d and e.
+
+Use the ammeter and voltmeters in the simulation to measure currents and voltages at or across the specified points, and record your values below:
+
+\begin{center}
+% \fbox{
+\begin{minipage}{5.5cm}
+\centering
+\begin{tikzpicture}[x=3cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0) to[R,l_={$R_2 = \SI{3}{\ohm}$}] (1,0) to[R={$R_1$},n=R1,-o]  (1,1)  -- (0,1);
+    \draw (R1.s) node[right]{\SI{2}{\ohm}};
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (2pt) node[above=1pt] {f};
+    \fill (0.25,0) circle (2pt) node[above=1pt] {g};
+    \fill (0,0.25) circle (2pt) node[left=1pt] {h};
+\end{tikzpicture}
+\end{minipage}
+%}
+\fbox{
+\begin{minipage}{4.0cm}
+\centering
+\begin{align*}
+    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  
+\end{align*}
+\end{minipage}}
+\fbox{
+\begin{minipage}{4.0cm}
+\centering
+\begin{align*}
+    V_\mathrm{de} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-2.00}{V}} }  \\[1ex]
+    V_\mathrm{fg} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-3.00}{V}} }  \\[1ex]
+    V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
+    V_\mathrm{gc} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  
+\end{align*}
+\end{minipage}}
+\end{center}
+
+\begin{parts}
+    \part What is the voltage drop across resistor $R_1$? \fillin[\SI{-2.00}{V}]
+    \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-3.00}{V}]
+    \part Measure the potential difference (or voltage) across the battery. \fillin[\SI{5.00}{V}]
+    \part Find the total resistance in circuit. \fillin[\SI{5.00}{\ohm}]
+    \part What is the total current? \fillin[\SI{1.00}{A}]
+\end{parts}
+
+
+\question
+\phantom{.}
+
+\begin{center}
+% \fbox{
+\begin{minipage}{9.5cm}
+\centering
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0);
+    \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (2,1) to[R={$R_3$},n=R3] (3,1) -- (3,0) -- (0,0);
+    \draw (R1.s) node[below] {\SI{2}{\ohm}};
+    \draw (R2.s) node[below] {\SI{2}{\ohm}};
+    \draw (R3.s) node[below] {\SI{1}{\ohm}};
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.2,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.8,1) circle (2pt) node[above=1pt] {c};
+    \fill (1.2,1) circle (2pt) node[above=1pt] {d};
+    \fill (1.8,1) circle (2pt) node[above=1pt] {e};
+    \fill (2.2,1) circle (2pt) node[above=1pt] {f};
+    \fill (2.8,1) circle (2pt) node[above=1pt] {g};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (1.5,0) circle (2pt) node[above=1pt] {j};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {k};
+\end{tikzpicture}
+\end{minipage}
+% }
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\begin{align*}
+    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{c} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{f} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    I_\mathrm{j} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
+    V_\mathrm{ka} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
+    V_\mathrm{hi} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{0.00}{V}} }  
+\end{align*}
+\end{minipage}
+}
+\end{center}
+
+\begin{parts}
+    \part Calculate the total resistance in the circuit. \fillin[\SI{6}{\ohm}]
+    \part What is the total current in the circuit? \fillin[\SI{1.00}{A}]
+    \part Measure the voltage drop across resistor $R_1$. \fillin[\SI{-2.00}{V}]
+    \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-2.00}{V}]
+    \part What is the potential difference across resistor $R_3$? \fillin[\SI{-1.00}{V}]
+\end{parts}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{3}{V}}] (0,0);
+    \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (1,0) -- (0,0);
+    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.25) circle (2pt) node[left=1pt] {g};
+    \draw (R1.s) node[below] {\SI{5}{\ohm}};
+    \draw (R2.s) node[left] {\SI{1}{\ohm}};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) to[R,l={$R_1 = \SI{5}{\ohm}$}] (1,1) to[R,l={$R_2 = \SI{1}{\ohm}$}] (1,0) to[R={$R_3 = \SI{2}{\ohm}$}] (0,0);
+\end{tikzpicture}
+\end{center}
+
+\end{questions}
+
+
+\clearpage
+
+\subsection{Circuits in Parallel}
+
+\begin{questions}
+\question
+\phantom{.}
+
+\begin{center}
+\fbox{
+\begin{minipage}{6.5cm}
+    \begin{tikzpicture}[x=2.5cm,y=2cm]
+        \draw (0,1) to[battery1,l={\SI{10}{V}}] (0,0);
+        \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
+        \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+        \draw (R1.s) node[right] {\SI{2}{\ohm}};
+        \draw (R2.s) node[right] {\SI{4}{\ohm}};
+        \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+        \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+        \fill (2,0.8) circle (2pt) node[right=1pt] {c};
+        \fill (2,0.2) circle (2pt) node[right=1pt] {d};
+        \fill (0.5,0) circle (2pt) node[below=1pt] {e};
+        \fill (1,0.8) circle (2pt) node[right=1pt] {f};
+        \fill (1,0.2) circle (2pt) node[right=1pt] {g};
+        \fill (0,0.2) circle (2pt) node[left=1pt] {h};
+    \end{tikzpicture}
+\end{minipage}
+}
+\fbox{
+\begin{minipage}{4cm}
+    \begin{align*}
+        I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{A}} } \\[1ex]
+        I_\mathrm{d} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{2.50}{A}} } \\[1ex]
+        I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
+        I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
+        V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{10.00}{A}} } 
+    \end{align*}
+\end{minipage}
+}
+\end{center}
+
+\begin{parts}
+\part What is the equivalent resistance of the circuit? \fillin[\SI{1.33}{\ohm}]
+\part What is the current through resistor $R_1$? \fillin[\SI{5.00}{A}]
+\part Measure the current through resistor $R_2$. \fillin[\SI{2.50}{A}]
+\part Find the total current in the circuit. \fillin[\SI{7.50}{A}]
+\part What is the voltage drop across $R_1$? \fillin[\SI{10}{V}]
+\part What is the voltage drop across $R_2$? \fillin[\SI{10}{V}]
+\end{parts}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{12}{V}}] (0,0);
+    \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (2,0) to[R={$R_2$},n=R2] (2,1);
+    \draw (R1.s) node[right] {\SI{2}{\ohm}};
+    \draw (R2.s) node[right] {\SI{4}{\ohm}};
+    \draw (R3.s) node[right] {\SI{3}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{8}{V}}] (0,0);
+    \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (R1.s) node[right] {\SI{10}{\ohm}};
+    \draw (R2.s) node[right] {\SI{40}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {f};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {g};
+\end{tikzpicture}
+\end{center}
+
+\question
+\phantom{.}
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,1) to[battery1,l={\SI{5}{V}}] (0,0);
+    \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (2,0) to[R={$R_2$},n=R2] (2,1);
+    \draw (R1.s) node[right] {\SI{10}{\ohm}};
+    \draw (R2.s) node[right] {\SI{10}{\ohm}};
+    \draw (R3.s) node[right] {\SI{10}{\ohm}};
+    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+\end{tikzpicture}
+\end{center}
 
 \end{questions}
 
 \clearpage
 
 
-\subsection*{Generating Waves Lab}
+\subsection{Resistors in Series and Parallel}
 
-\textbf{Purpose:} To determine the relationship between wavelength and frequency. 
-
-\bigskip
-
-\noindent \textit{Procedures:}
-
-\begin{enumerate}[itemsep=0pt,topsep=0pt]
-    \item Stretch the coil to a distance between 5 to 6 meters. Record the distance stretched below:
-
-    \begin{center}
-        \textbf{Distance coil was stretched}: \fillin[]\ m
-    \end{center}
-    
-    \item Oscillate the coil to start a standing wave that is $\frac{1}{2}$ wavelength long.
-    \item When you have a smooth wave, record the time it takes to complete 10 cycles, in the data table below. \textit{Note:} Moving your hand back and forth is one cycle. 
-    \item Repeat steps 2 and 3 for 1, 1.5, 2, and 2.5 wavelengths.
-\end{enumerate}
-
-\ifprintanswers
-
-\begin{center}
-\bgroup
-\newcolumntype{R}[1]{>{\color{red}}#1}
-\def\arraystretch{3}
-\begin{tabular}{|c|R{c}|R{c}|R{c}|R{c}|R{c}|R{c}|}
-    \hline
-    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
-    0.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*0.5*\x))})} & 12.0 & 0.83 & 1.20 & 10 & 8.33\\ \hline
-    1.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.0*\x))})} & 8.1 & 1.23 & 0.81 & 5.00 & 6.17\\ \hline
-    1.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.5*\x))})} & 4.6 & 2.17 & 0.46 & 3.33 & 7.25\\ \hline
-    2.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.0*\x))})} & 3.2 & 3.13 & 0.32 & 2.50 & 7.81\\ \hline
-    2.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.5*\x))})} & 2.4 & 4.17 & 0.24 & 2.00 & 8.33\\ \hline
-    3.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*3.0*\x))})} & 2.2 & 4.55 & 0.22 & 1.67 & 7.58\\ \hline
-\end{tabular}
-\egroup
-\end{center}
-
-\else
-
-\begin{center}
-\bgroup
-\def\arraystretch{3}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-    \hline
-    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
-    0.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))})} & & & & & \\ \hline
-    1.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))})} & & & & & \\ \hline
-    1.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))})} & & & & & \\ \hline
-    2.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))})} & & & & & \\ \hline
-    2.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))})} & & & & & \\ \hline
-    3.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))})} & & & & & \\ \hline
-\end{tabular}
-\egroup
-\end{center}
-
-\fi
-
-\uplevel{\textit{Analysis}}
+\textbf{Series Circuits}
 
 \begin{questions}
-\question
-Show one sample calculation for frequency.
+\question 
+In the circuit shown below, a voltage of \SI{6}{V} pushes charge through a single resistor of \SI{2}{\ohm}. According to Ohm's law, the current in the resistor (and therefore in the whole circuit) is \fillin[\SI{3}{A}].
 
-{\large
-\begin{equation*}
-    f = \frac{\text{10 cycles}}{\text{time}} 
-      = \frac{\text{10 cycles}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{8.1}{s} \qquad} 
-      = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad}
-\end{equation*}
-}
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) -- (1,1) to[R,l_={\SI{2}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
 
 \question
-Show one sample calculation for period.
+If a second identical resistor is added, as shown below, the \SI{6}{V} battery must push charge through a total resistance of \fillin[\SI{6}{\ohm}].
+The current in the circuit is then \fillin[\SI{1}{A}].
 
-{\large
-\begin{equation*}
-    T = \frac{1}{f} 
-    = \frac{1}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad} 
-    = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{0.81}{s} \qquad}
-\end{equation*}
-}
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) to[R,l_={\SI{3}{\ohm}}] (1,1) to[R,l_={\SI{3}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
 
 \question
-Show one sample calculation for determining the wavelength $\lambda$.
+The equivalent resistance of three \SI{4}{\ohm} resistors in series is \fillin[\SI{12}{\ohm}].
 
-{\large
-\begin{equation*}
-    \lambda = \frac{\text{distance stretched}}{\text{number of waves}} = \frac{\ifprintanswers \color{red} \else \color{white} \fi \SI{5.00}{m}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \text{2 waves} \qquad} = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{2.50}{m} \qquad}
-\end{equation*}
-}
+\question
+Does current flow \textit{through} a resistor, or \textit{across} a resistor? \fillin[through]
+
+Is voltage established \textit{through} a resistor, or \textit{across} a resistor? \fillin[across]
+
+
+\question
+Does current in the lamps occur simultaneously, or does charge flow first through one lamp, then the other, and finally the last in turn?
+
+\fillin[Simultaneously\hfill][0.9\textwidth]
+
+
+
+\question 
+Circuits A and B below are identical with all bulbs rated at equal wattage (therefore equal resistance). The only difference between the circuits is that Bulb 5 has a short circuit, as shown.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=1] (1,1) to[bulb,l_=2] (2,1) to[bulb,l_=3] (3,1) -- (3,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit A};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=4] (1,1) to[bulb,l_=5] (2,1) to[bulb,l_=6] (3,1) -- (3,0);
+    \draw[rounded corners=3mm] (1,1) -- (1.25,0.6) -- (1.5,0.4) -- (1.75,0.6) -- (2,1);
+    \fill (1,1) circle (1pt);
+    \fill (2,1) circle (1pt);
+    \node[above=2pt] at (current bounding box.north) {Circuit B};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part In which circuit is the current greater? \fillin[B]
+\part In which circuit are all three bulbs equally bright? \fillin[A]
+\part What bulbs are the brightest? \fillin[4 and 6]
+\part What bulb is the dimmest? \fillin[5]
+\part What bulbs have the largest voltage drops across them? \fillin[4 and 6]
+\part What circuit dissipates more power? \fillin[B]
+\part What circuit produces more light? \fillin[B]
+\end{parts}
+
+
+\uplevel{\textbf{Parallel Circuits}}
+
+\question
+In the circuit shown below, there is a voltage drop of \SI{6}{V} across each \SI{2}{\ohm} resistor. Points a through j are labeled for reference.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{2}{\ohm}}] (1,0);
+    \fill (0,0.8) circle (1.5pt) node[left] {a};
+    \fill (0.5,1) circle (1.5pt) node[above] {b};
+    \fill (1.5,1) circle (1.5pt) node[above] {c};
+    \fill (2,0.8) circle (1.5pt) node[right] {d};
+    \fill (2,0.2) circle (1.5pt) node[right] {e};
+    \fill (1.5,0) circle (1.5pt) node[below] {f};
+    \fill (0.5,0) circle (1.5pt) node[below] {g};
+    \fill (0,0.2) circle (1.5pt) node[left] {h};
+    \fill (1,0.8) circle (1.5pt) node[right] {i};
+    \fill (1,0.2) circle (1.5pt) node[right] {j};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part By Ohm's law, the current in each resistor is \fillin[\SI{3}{A}].
+\part The current through the battery, which is the sum of the currents in the resistors, is \fillin[\SI{6}{A}].
+\part Record the current through each of the points labeled in the figure.
+
+\begin{gather*}
+    I_\mathrm{a} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{b} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{c} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{d} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{e} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \\[1ex]
+    I_\mathrm{f} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{g} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{h} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{i} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{j} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} 
+\end{gather*}
+\end{parts}
+
+\question
+Which circuit below is \textit{not} equivalent to the circuit from the previous question?
+
+\begin{center}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0);
+    \draw (0,1) -- (1.5,1) -- (2,0.75) to[R] (2,0.25) -- (1.5,0);
+    \draw (1.5,1) -- (1,0.75) to[R] (1,0.25) -- (1.5,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit W};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) -- (0,0);
+    \draw (1,1) to[R] (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit X};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0) -- (1.5,0.25);
+    \draw (0,1) -- (1.5,1) -- (1.5,0.75) -- (1,0.75) to[R] (1,0.25) -- (2,0.25) to[R] (2,0.75) -- (1.5,0.75);
+    \node[above=2pt] at (current bounding box.north) {Circuit Y};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) to[R] (0,0);
+    \draw (1,1) -- (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit Z};
+\end{tikzpicture}
+\end{center}
+
+\question 
+Consider the parallel circuit below.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{1}{\ohm}}] (1,0);
+    \draw (2,1) -- (3,1) to[R={\SI{2}{\ohm}}] (3,0) -- (2,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part The voltage drop across each resistor is \fillin[\SI{6}{V}].
+\part Now consider the currents in each branch.
+
+\begin{itemize}[topsep=0pt]
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{1}{\ohm} resistor is \fillin[\SI{6}{A}].
+\end{itemize}
+
+\part The current through the battery, which equals the sum of the currents in each branch, is \fillin[\SI{12}{A}].
+
+\part The equivalent resistance of the circuit equals \fillin[\SI{0.5}{\ohm}].
+
+\end{parts}
+\end{questions}
 
 \clearpage
 
+\subsection{The Circuit Lab}
+
+\begin{questions}
+\question \label{Q1}
+Make a circuit with a battery, light bulb, and switch. Close the switch to make the light turn on, ensuring the circuit is connected correctly. 
+
 \question
-Graph wavelength vs. frequency, and wavelength vs. period in the space below.
+Disconnect the clips from the switch to use the free ends as probes and test the following items for conductivity. Write a C if the item is a conductor, or an I for if it's an insulator.
+
+\begin{center}
+    Paper \fillin[I][2em] \hspace{2em}
+    Lock nut \fillin[C][2em] \hspace{2em}
+    Penny \fillin[C][2em] \hspace{2em}
+    Paperclip \fillin[C][2em] \hspace{2em}
+    Glass \fillin[I][2em] \hspace{2em} \\[1ex]
+    Plastic \fillin[I][2em] \hspace{2em}
+    Cloth \fillin[I][2em] \hspace{2em}
+    Wood \fillin[I][2em] \hspace{2em}
+    Rubber \fillin[I][2em] \hspace{2em}
+\end{center}
+
+
+\question
+Connect clips wires to both sides of the battery. Unscrew and remove a light bulb from the holder. Use the free ends of the clips as probes and connect them the different points on the battery shown below.
 
 \begin{EnvUplevel}
+\vspace{-1em}
+\begin{center}
 \begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=8cm,
-        ylabel={Wavelength (m)},
-        xlabel={Frequency (Hz)},
-        axis lines=left,
-        ymin=0,ymax=10,
-        xmin=0,xmax=5,
-        ytick={0,2,...,10},
-        xtick={0,1,...,5},
-        minor y tick num=1,
-        minor x tick num=1,
-        grid=both,
-        clip=false,
-        tick label style={
-                /pgf/number format/fixed,
-                /pgf/number format/fixed zerofill,
-                /pgf/number format/precision=1}
-        ]
-        \ifprintanswers
-        \addplot[red,only marks] coordinates{(0.83,10)(1.23,5)(2.17,3.33)(3.13,2.5)(4.17,2)(4.55,1.67)};
-        \fi
-    \end{axis}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {A};
+    \draw[shift={(-0.5,-0.5)},<-,very thick] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$+$};
+    \draw[shift={(+0.5,-0.5)},<-,white,very thick] (0,0) -- (+0.8,0) node[right] {$-$};
+    \draw[shift={(0,+0.9)},<-,white,very thick] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
 \end{tikzpicture}
-\hspace{5mm}
 \begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=6.5cm,
-        ylabel={Wavelength (m)},
-        xlabel={Period (s)},
-        axis lines=left,
-        ymin=0,ymax=10,
-        xmin=0,xmax=2,
-        ytick={0,2,...,10},
-        xtick={0,0.5,...,2},
-        minor y tick num=1,
-        minor x tick num=2,
-        grid=both,
-        clip=false,
-        tick label style={
-                /pgf/number format/fixed,
-                /pgf/number format/fixed zerofill,
-                /pgf/number format/precision=1}
-        ]
-        \ifprintanswers
-        \addplot[red,only marks] coordinates{(1.20,10)(0.81,5)(0.46,3.33)(0.32,2.5)(0.24)(2.00)(0.22,1.67)};
-        \addplot[domain=0.2:1.3,red] {7.886*x - 0.188};
-        \fi
-    \end{axis}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {B};
+    \draw[shift={(-0.5,-0.5)},<-,very thick] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick,white] (0,0) -- (0,-0.8) node[below] {$+$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick] (0,0) -- (+0.8,0) node[right] {$+$};
+    \draw[shift={(0,+0.9)},<-,very thick,white] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
 \end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {C};
+    \draw[shift={(-0.5,-0.5)},<-,very thick,white] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$-$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick] (0,0) -- (+0.8,0) node[right] {$+$};
+    \draw[shift={(0,+0.9)},<-,very thick,white] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\begin{tikzpicture}
+    \node at (0,0) {\resizebox{1cm}{!}{\faLightbulbO}}  node[above left=7mm] {D};
+    \draw[shift={(-0.5,-0.5)},<-,very thick,white] (0,0) -- (-0.8,0) node[left] {$-$};
+    \draw[shift={(0,-0.9)},<-,very thick] (0,0) -- (0,-0.8) node[below] {$-$};
+    \draw[shift={(+0.5,-0.5)},<-,very thick,white] (0,0) -- (+0.8,0) node[right] {$-$};
+    \draw[shift={(0,+0.9)},<-,very thick] (0,0) -- (0,0.4) -- (0.6,0.4) node[right] {$+$};
+\end{tikzpicture}
+\end{center}
 \end{EnvUplevel}
 
-\question
-What is the proportional relationship between wavelength and frequency?
-
-\ifprintanswers
-{\color{red} Wavelength is inversely proportional to frequency: $\lambda \propto \frac{1}{f}$. 
-
-\vspace{-5mm}}
-\fi
-
-\fillwithlines{8mm}
+Which diagram above indicates the two parts of a light bulb that must be touched to complete the circuit? \fillin[B][2cm]
 
 \question
-What is the slope of the $\lambda$ vs $T$ graph? Include correct units. What is the significance (meaning) of this slope? \textit{Hint:} Look at the units.
+Re-create the closed circuit from Question \ref{Q1} (battery, bulb, and switch in series). Draw the circuit diagram below.
 
-\begin{solutionorbox}[2cm]
-According to the best fit line (see Python, scipy), the slope is \SI{7.886}{m/s}. Slope represents the speed of the wave. 
-\end{solutionorbox}
-
-\question
-Write the equation for the wavelength vs period graph. Do not use $x$ and $y$ in your equation, but $\lambda$ and $T$, and include units for your slope. 
-
-\ifprintanswers
-{\color{red} $\lambda = (\SI{7.886}{m/s}) T - \SI{0.188}{m}$
-
-\vspace{-5mm}
-}
-
-\fi
-
-\fillwithlines{8mm}
-
-
-
-\question
-Calculate the average velocity for all waves from the six values in the table in the previous page. Is there a trend of increasing or decreasing velocities as the frequency increases?
-
-\ifprintanswers
-{\color{red} $\bar{v} = \SI{7.58}{m/s}$. While there is some variation in velocities, overall trend is constant.
-
-\vspace{-5mm}
-}
-\fi
-
-\fillwithlines{8mm}
-
-\question
-How does the average velocity of all the waves compare to the slope for your graph? Is there any relationship between the two numbers?
-
-\ifprintanswers
-{\color{red}
-The average velocity is (approximately) the slope on the $\lambda$ vs $T$ graph.
-
-\vspace{-5mm}
-}
-\fi
-
-\fillwithlines{8mm}
-
-
-\question
-The wave shown below is traveling to the right with a frequency  of \SI{25.0}{Hz}. Find the amplitude, wavelength, period, and speed.
-
-\begin{EnvUplevel}
-\begin{minipage}{7.5cm}
-\centering
-\begin{tikzpicture}
-    \draw[domain=0:1,y=1cm,x=6cm,smooth] plot(\x,{cos(deg(2*pi*1.5*\x))});
-    \draw[black!15] (0,1.2) -- (0,-1.2) (0,0) -- (6,0);
-    \draw[thick,|<->|,yshift=-2mm] (0,-1) -- (2,-1) node[below,pos=0.5] {\SI{10}{cm}};
-    \draw[thick,|<->|,xshift=+2mm] (6,-1) -- (6,+1) node[right,pos=0.5] {\SI{18}{cm}};
-\end{tikzpicture}
-\end{minipage}
-\hspace{5mm}
-\fbox{
-\begin{minipage}{7.5cm}
-{
+\begin{center}
+\bgroup
 \ifprintanswers
 \color{red}
 \else
 \color{white}
 \fi
 
-\begin{align*}
-    A &= \SI{9}{cm} \\[1ex]
-    \lambda &= \SI{20}{cm} \\[1ex]
-    T &= \frac{1}{f} = \SI{0.040}{s} \\[1ex]
-    v &= f\lambda = \SI{500}{cm/s}
-\end{align*}
-}
-\end{minipage}
-
-}
-\end{EnvUplevel}
-
-
-
-\end{questions}
-
-\clearpage
-
-
-\subsection*{Wave Behavior and Sound}
-
-\bgroup
-
-\doublespacing
-\begin{questions}
-\question
-When a wave travels across a boundary from one medium to another, the pulse that strikes the boundary is called the \fillin[incident pulse][4cm].
-
-\question
-Some of the energy of the incident wave’s pulse is \fillin[transmitted][4cm] across the boundary, while some is reflected backward in what is known as the \fillin[reflected pulse][5cm].
-
-\question
-When a wave pulse hits a rigid boundary, the pulse is reflected back with almost exactly the same amplitude as the pulse of the incident wave, but the reflected pulse is \fillin[inverted].
-
-\question
-The law of \fillin[superposition][4cm] states that the displacement of a medium caused by two or more waves is the algebraic sum of the displacements caused by the individual waves. The result of the superposition of two or more waves is called \fillin[interference][4cm].
-
-\question
-A standing wave is produced when a wave that is traveling is reflected back upon itself. There are two main parts to a standing wave: an area of zero amplitude is called a \fillin[node], and an area of maximum amplitude is called an \fillin[antinode].
-
-\question
-Sound waves are pressure oscillations that are transmitted through matter. Sound waves travel through air because a vibrating source produces regular variations, or oscillations, in air pressure.
-
-\question
-Sound waves are longitudinal waves because the motion of the particles in air is parallel to the direction of the wave’s motion.
-
-\question
-\fillin[Pitch] is the highness or lowness of a sound and depends on the frequency of vibration. The human ear is not equally sensitive to all frequencies, and most people cannot hear sounds with frequencies below 20\,Hz or above 16,00\, Hz.
-
-\question
-The \fillin[loudness] of a sound wave is the intensity of the sound as perceived by the ear and interpreted by the brain and depends primarily on the amplitude of the pressure wave.
-
-\question
-The Doppler Effect. The change in frequency of sound caused by the movement of either the source, the detector, or both is called the Doppler effect.
-
-The Doppler effect can be described as the effect produced by a moving source of waves in which there is an apparent upward shift in frequency for observers towards whom the source is approaching and an apparent downward shift in frequency for observers from whom the source is receding.
-
-It is important to note that the effect does not result because of an actual change in the frequency of the source.
-
-\question
-In a 2-dimensional medium a transmitted wave can change direction. This is \fillin[refraction], the bending of a wave as it passes from one medium to another. 
-
-\question
-Resonance occurs when the frequency of sound waves exactly matches the natural frequency of an object. 
-\end{questions}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
 \egroup
-
-\clearpage
-
-\subsection*{Characteristics of Waves}
-
-\textbf{Questions \ref{Q1}--\ref{Q4}}. See the figure below. Then answer the next 4 questions that follow. 
-
-\begin{center}
-\tikzset{declare function={f(\x)=sin(540*\x);}}
-\begin{tikzpicture}[y=7mm,x=8mm]
-     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
-     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
-     \draw[|<->|] (0.6,1.3) -- (6.6,1.3) node[above,pos=0.5] {$\lambda$};
-     \node[below=5mm] at (current bounding box.south) {Wave 1};
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}[x=4mm,y=1cm]
-    \draw[domain=0:2.5*2*pi,samples=200] plot (\x,{sin(\x r)});
-    \draw[densely dashed,lightgray] (0,0) -- (2.5*2*pi,0);
-    \draw[|<->|] (pi/2,1.2) -- (5*pi/2,1.2) node[above,pos=0.5] {$\lambda$};
-    \draw[thick,<->] (9*pi/2,0) -- (9*pi/2,1) node[right=-2pt,pos=0.5] {$X$};
-    \node[below=5mm] at (current bounding box.south) {Wave 2};
-\end{tikzpicture}
 \end{center}
 
+What happens if you reverse the battery (by reversing the battery holder)?
 
-\begin{questions}
-\question \label{Q1}
-Which of the waves is a transverse wave?
-
-\begin{randomizechoices}[norandomize]
-    \choice Wave 1
-    \correctchoice Wave 2
-    \choice Both
-    \choice Neither
-\end{randomizechoices}
-
-\question 
-What does the parameter $\lambda$ represent?
-
-\begin{randomizechoices}
-    \correctchoice wavelength
-    \choice frequency
-    \choice wave speed
-    \choice amplitude
-\end{randomizechoices}
-
-\question 
-What does the parameter $X$ represent?
-
-\begin{randomizechoices}
-    \choice wavelength
-    \choice frequency
-    \choice wave speed
-    \correctchoice amplitude
-\end{randomizechoices}
-
-\question \label{Q4}
-Which is the longitudinal wave?
-
-\begin{randomizechoices}[norandomize]
-    \correctchoice Wave 1
-    \choice Wave 2
-    \choice Both
-    \choice Neither
-\end{randomizechoices}
-
-\bigskip
-
-\hrule
+\fillwithlines{8mm}
 
 \question
-The velocity of a wave depends on \fillin[medium]\ through which the wave passes.
-
-\question
-The number of waves passing a point each second is called the \fillin[frequency].
-
-\question
-A wave has a frequency of \SI{25}{Hz} with a wavelength of 2 meters. Find the wave's velocity.
-
-\question
-What is the frequency of a wave traveling at \SI{100}{m/s} with a wavelength of 5 meters?
-
-\question
-What is the wavelength of a wave traveling at \SI{250}{m/s} with a frequency of \SI{25}{Hz}?
-
-\question
-Two waves, A and B, have the same velocity. Wave A has a frequency twice that of Wave B. The wavelength of Wave B is \fillin[twice]\ the wavelength of Wave A.
-
-\question
-Waves A and B have the same wavelength. Wave A is traveling at a velocity twice that of Wave B. The frequency of wave B is \fillin[half] the frequency of Wave A. 
-
-\question
-A wave is traveling at a velocity of \SI{200}{m/s}. What is the wave's velocity when the frequency is halved?
-
-\end{questions}
-
-
-\clearpage
-
-\subsection{Lab: The Simple Harmonic Oscillator}
-
-\begin{questions}
-
-\question
-Acquire the following items:
-
-\begin{itemize}[topsep=0pt,itemsep=0pt]
-    \item spring
-    \item hanging masses (\SI{2}{g} -- \SI{1000}{g})
-    \item stopwatch
-    \item tape, calculator, and pencil
-\end{itemize}
-
-\begin{parts}
-\part Hold one end the spring with your hand at a constant height of 2 meters above the ground, letting the spring hang vertically so that a mass may be attached to the bottom.
-\medskip
-
-\begin{center}
-\begin{tikzpicture}
-    \draw[decorate,decoration={coil,
-        segment length=3pt,
-        %pre length=2mm,
-        post length=2mm,
-        amplitude=3mm
-        }] (0,0) -- (0,-2);
-    \draw[fill=lightgray] (-0.4,-2) rectangle (0.4,-3) node[pos=0.5] {\SI{1}{kg}};
-    \draw[densely dashed,<-] (0.7,-3) -- (2,-3);
-    \begin{scope}[shift={(4,0)}]
-        \draw[decorate,decoration={coil,
-            segment length=8pt,
-            %pre length=2mm,
-            post length=2mm,
-            amplitude=3mm
-            }] (0,0) -- (0,-5.5);
-            \draw[fill=lightgray] (-0.4,-5.5) rectangle (0.4,-6.5) node[pos=0.5] {\SI{1}{kg}};
-    \end{scope}
-    \draw[densely dashed,->] (1.9,-6.5) node[left] {lowest position} -- (3.2,-6.5);
-    \node[above=6pt] at (current bounding box.north) {SIMPLE HARMONIC OSCILLATOR};
-\end{tikzpicture}
-\end{center}
-
-
-\begin{itemize}[itemsep=0pt,topsep=0pt]
-    \item Attach a \SI{1000}{g} mass to the spring (taped if necessary) and release it from rest. Note the location of maximum displacement, which is when the spring reaches the lowest position.
-    \item Start the stopwatch when the mass is at the lowest point. Due to the spring force, the mass will first rise; it will then descend due to gravity. The back-and-forth movement is called an \textbf{oscillation}. One full trip back to the lowest point is one oscillation.
-    \item Stop the stopwatch when the mass has completed 10 oscillations. The \textbf{period} of oscillation is the amount of time it takes the mass to complete one oscillation. To calculate period, divide the total elapsed time in seconds by the number of oscillations (10). 
-    \item \textbf{Frequency} of oscillation is the number of oscillations per second. The base SI unit is the Hertz (Hz), defined as 1/s. Frequency is inversely related to period,
-
-    \begin{equation*}
-        T = \frac{1}{f}
-    \end{equation*}
-    
-    \item Using mass values in the table below, change the hanging mass to a lower values, and repeat the steps above. Then record the period and frequency of oscillations for each hanging mass.
-\end{itemize}
+Create the four circuits with the listed components, and draw the diagrams in the spaces below.
 
 \begin{EnvUplevel}
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 1:} battery, light bulb, switch.
 \begin{center}
 \bgroup
-\def\arraystretch{1.5}
-% \fbox{
-\begin{minipage}{7cm}
-\centering
-\begin{tabular}{|c|c|c|}
-    \hline
-    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
-    1000 & \hspace{2cm} &  \hspace{2cm} \\ \hline
-    900 & & \\ \hline
-    800 & & \\ \hline
-    700 & & \\ \hline
-    600 & & \\ \hline
-\end{tabular}
-\end{minipage}%
-% }%
-\hspace{5mm}
-% \fbox{
-\begin{minipage}{7cm}
-\centering
-\begin{tabular}{|c|c|c|}
-    \hline
-    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
-    500 & \hspace{2cm} & \hspace{2cm} \\ \hline
-    400 & & \\ \hline
-    300 & & \\ \hline
-    200 & & \\ \hline
-    100 & & \\ \hline
-\end{tabular}
-\end{minipage}
-% }
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
 \egroup
 \end{center}
+
+What happens if you unscrew the lightbulb?
+
+\vspace{3cm}
+% \fillin[The bulb turns off, and the circuit is open.][7.5cm]
+
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 2:} battery, 2 light bulbs, switch.
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0.5) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+How does this light's brightness compare to\\Circuit1 ? Explain.
+
+\vspace{2.5cm}
+
+% \fillin[Voltage and current has increased.][7.5cm]
+\end{minipage}
+}
 \end{EnvUplevel}
 
 \clearpage
 
-\part Graph the period of oscillation as a function of the hanging mass, below. 
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=7cm,
-        width=12cm,
-        axis lines=left,
-        ylabel={Period (s)},
-        xlabel={Mass (g)},
-        ymin=0,ymax=2.5,
-        xmin=0,xmax=1000,
-        ytick={0,0.5,...,2.5},
-        xtick={0,100,...,1000},
-        grid=both,
-        ]
-        \ifprintanswers
-        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {2*pi*sqrt(x/1000/10)};
-        \else
-        \fi
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part Now graph the frequency of oscillation as a function of the hanging mass.
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{axis}[height=7cm,
-        width=12cm,
-        axis lines=left,
-        ylabel={Frequency (Hz)},
-        xlabel={Mass (g)},
-        ymin=0,ymax=2,
-        xmin=0,xmax=1000,
-        ytick={0,0.4,...,2},
-        xtick={0,100,...,1000},
-        grid=both,
-        ]
-        \ifprintanswers
-        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {1/(2*pi*sqrt(x/1000/10))};
-        \else
-        \fi
-    \end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part Ask your teacher about the mathematical relationship between period and mass in simple harmonic motion. Then use mass and period values from the previous tables to compute the spring constant~$k$. Note: mass values in the table below are converted to kilograms. Finally, compute the average of the 10 spring constant calculations, $\bar{k}$, and record your answer below:
-
 \begin{EnvUplevel}
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 3:} 2 batteries, 1 light bulb, 1 switch
 \begin{center}
 \bgroup
-\def\arraystretch{1.5}
-% \fbox{
-\begin{minipage}{5cm}
-\centering
-\begin{tabular}{|c|c|}
-    \hline
-    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
-    1.0 & \hspace{2cm}  \\ \hline
-    0.9 & \\ \hline
-    0.8 & \\ \hline
-    0.7 & \\ \hline
-    0.6 & \\ \hline
-\end{tabular}
-\end{minipage}%
-%}%
-% \hspace{5mm}
-% \fbox{
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+How does this light's brightness compare to\\Circuit 1? Explain.
+
+\vspace{2cm}
+% \fillin[The bulb turns off, and the circuit is open.][7.5cm]
+
+\end{minipage}
+}%
+\fbox{
+\begin{minipage}{0.47\textwidth}
+\textbf{Circuit 4:} 2 batteries, 2 light bulbs, 1 switch
+\begin{center}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2.5cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0.5) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) -- (1,0) to[cute closed switch] (0,0);
+\end{tikzpicture}
+\egroup
+\end{center}
+
+What happens if you unscrew a light bulb? Is theres a series or a parallel circuit?
+
+\vspace{2cm}
+
+% \fillin[Voltage and current has increased.][7.5cm]
+\end{minipage}
+}
+\end{EnvUplevel}
+
+
+\begin{EnvUplevel}
+    \textbf{NOTE:} In the following activities, credit can only be earned when you invite your teacher to observe the result of your experiment.
+\end{EnvUplevel}
+
+\question
+Connect two bulbs in series. Then draw a circuit diagram for your circuit.
+
+\begin{center}
+\fbox{
 \begin{minipage}{6cm}
 \centering
-\begin{tabular}{|c|c|c|}
-    \hline
-    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
-    0.5 & \hspace{2cm} \\ \hline
-    0.4 & \\ \hline
-    0.3 & \\ \hline
-    0.2 & \\ \hline
-    0.1 & \\ \hline
-\end{tabular}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
+
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,1) to[battery1] (0,0); 
+    \draw (0,1) to[bulb] (1,1) to[bulb] (2,1) -- (2,0) to[cute closed switch] (0,0);
+\end{tikzpicture}  
+\egroup
 \end{minipage}
-% }
-\fbox{
+}
+\hspace{5mm}
 \begin{minipage}{4cm}
 \centering
-Average spring constant
-\bgroup
-\Large
-\vspace{1em}
-\begin{equation*}
-    \bar{k} = {\ifprintanswers \color{red} \else \color{white}\fi \SI{10}{N/m}}
-\end{equation*}
-\vspace{1em}
-\egroup
-\end{minipage}
-}
-\egroup
-\end{center}
-\end{EnvUplevel}
-\end{parts}
-
-\end{questions}
-
-% \subsubsection{Changes in an Oscillating Medium}
-
-% \subsubsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
-
-% \subsubsection{Effects of Changing the Medium and Energy on SHM}
-
-\clearpage
-
-\subsection{Wavelength, Wave Cycles, and Amplitude}
-
-
-\begin{questions}
-
-\begin{EnvUplevel}
-    \textbf{Questions \ref{first}--\ref{fifth}.} Count the number of wave cycles. Measurements can be in increments of $\frac{1}{2}$ a cycle.
-\end{EnvUplevel}
-
-\question \label{first}
-Number of wave cycles: \fillin[7]
-
-
-\begin{center}
-\begin{tikzpicture}[x=3mm,y=1cm]
-\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (0,-1) grid (16*pi,1);
-\draw[domain=pi:pi + 7*2*pi,samples=200] plot (\x,{sin(\x r)});
-\ifprintanswers
-    \color{red}
-    \draw[domain=pi:pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-    \fill (3*pi,0) circle (2pt) node [above right] {1};
-    \fill (5*pi,0) circle (2pt) node[above right] {2};
-    \fill (7*pi,0) circle (2pt) node[above right] {3};
-    \fill (9*pi,0) circle (2pt) node[above right] {4};
-    \fill (11*pi,0) circle (2pt) node[above right] {5};
-    \fill (13*pi,0) circle (2pt) node[above right] {6};
-    \fill (15*pi,0) circle (2pt) node[above right] {7};
-\fi
-\end{tikzpicture}
-\end{center}
-
-\question
-Number of wave cycles: \fillin[5]
-
-\begin{center}
-\begin{tikzpicture}[x=3mm,y=1cm]
-\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (-pi,-1) grid (11*pi,1);
-\draw[domain=0:5*2*pi,samples=200] plot (\x,{sin(\x r)});
-\ifprintanswers
-    \color{red}
-    \draw[domain=0:2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-    \fill (2*pi,0) circle (2pt) node [above left] {1};
-    \fill (4*pi,0) circle (2pt) node [above left] {2};
-    \fill (6*pi,0) circle (2pt) node [above left] {3};
-    \fill (8*pi,0) circle (2pt) node [above left] {4};
-    \fill (10*pi,0) circle (2pt) node [above left] {5};
-\fi
-\end{tikzpicture}
-\end{center}
-
-
-\question
-Number of wave cycles: \fillin[8.5]
-
-
-\begin{center}
-\begin{tikzpicture}[x=2.5mm,y=1cm]
-\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (-pi/2,-1) grid (19*pi,1);
-\draw[domain=0.5*pi:0.5*pi + 8.5*2*pi,samples=200] plot (\x,{sin(\x r)});
-\ifprintanswers
-    \color{red}
-    \draw[domain=0.5*pi:0.5*pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-    \fill (2.5*pi,1) circle (2pt) node [above=2pt] {1};
-    \fill (4.5*pi,1) circle (2pt) node [above=2pt] {2};
-    \fill (6.5*pi,1) circle (2pt) node [above=2pt] {3};
-    \fill (8.5*pi,1) circle (2pt) node [above=2pt] {4};
-    \fill (10.5*pi,1) circle (2pt) node [above=2pt] {5};
-    \fill (12.5*pi,1) circle (2pt) node [above=2pt] {6};
-    \fill (14.5*pi,1) circle (2pt) node [above=2pt] {7};
-    \fill (16.5*pi,1) circle (2pt) node [above=2pt] {8};
-    \draw[domain=0.5*pi + 8*2*pi:0.5*pi + 8.5*2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-    \fill (0.5*pi+8.5*2*pi,-1) circle (2pt) node [above right] {8.5};
-\fi
-\end{tikzpicture}
-\end{center}
-
-
-\question
-Count the total number of wave cycles. Then measure the amplitude and wavelength in grid units.
-
-Number of wave cycles: \fillin[3][1cm] \hfill Amplitude: \fillin[2 units] \hfill Wavelength: \fillin[8 units]
-
-\begin{center}
-\begin{tikzpicture}[x=6mm,y=1cm]
-\draw[black!20,ultra thin,xstep=0.25*pi,ystep=0.5] (0.25*pi,-1) grid ++(4*2*pi,2);    
-\draw[domain=1.5*pi:1.5*pi + 3*2*pi,samples=200] plot (\x,{sin(\x r)});
-\ifprintanswers
-    \color{red}
-    \draw[domain=1.5*pi:1.5*pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
-\fi
-\end{tikzpicture}
-\end{center}
-
-
-
-\question \label{fifth}
-Count the total number of wave cycles. Then measure the amplitude and wavelength in grid units.
-
-Number of wave cycles: \fillin[3.5][1cm] \hfill Amplitude: \fillin[10 units] \hfill Wavelength: \fillin[8 units]
-
-\begin{center}
-\begin{tikzpicture}[x=3mm,y=2cm]
-\draw[black!20,ultra thin,xstep=0.25*pi,ystep=0.1] (0,-1) grid (4.5*2*pi,1);    
-\draw[black!20,ultra thin] (0,-1) -- ++(4.5*2*pi,0);    
-\draw[domain=pi:pi + 3.5*2*pi,samples=200] plot (\x,{sin(\x r)});
-\end{tikzpicture}
-\end{center}
-
-\end{questions}
-\clearpage
-
-\subsection*{PhET Simulation: Wave on a String}
-
-
-Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html}{click here}). Set a wave to oscillate with the settings shown below. Leave all other settings at their default values.
-
-\begin{center}
-\begin{minipage}{0.15\textwidth}
-\begin{itemize}
-    \item[$\bigcirc$] Manual 
-    \item[$\bigodot$] \textbf{Oscillate}
-    \item[$\bigcirc$] Pulse
-\end{itemize}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.3\textwidth}
-\centering
-\begin{tikzpicture}[x=4mm,y=4mm]
-    \begin{scope}
-        \draw (0,0) -- (10,0);
-        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
-        \foreach \i in {0,1,...,10}{
-            \draw (\i,0) node {$|$};
-        }
-        \foreach \i in {0,5,10}{
-            \draw (\i,0) node {\Huge $|$};
-        }
-    \end{scope}
-    \node[above=1.5em] at (0,0) {None};
-    \node[above=2.5em] at (5,0) {Damping};
-    \node[above=1.5em] at (10,0) {Lots};
-    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
-\end{tikzpicture}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.15\textwidth}
-\centering
-\begin{itemize}
-    \item[$\bigcirc$] Fixed End 
-    \item[$\bigcirc$] Loose End
-    \item[$\bigodot$] \textbf{No End}
-\end{itemize}
-\end{minipage}%
-\hspace{1ex}
-\begin{minipage}{0.2\textwidth}
-\begin{itemize}
-    \item[\checkbox{1}] Rulers
-    \item[\checkbox{1}] Timer
-    \item[$\square$] Reference Line
-\end{itemize}
+Teacher's stamp of approval: \fillin[][2em]
 \end{minipage}
 \end{center}
 
 
 
-\begin{questions}
-    
 \question
-\textit{Measuring wave amplitude, wavelength, period, and frequency. }
-
-For each of the parts below use the play (\faPlay), pause (\faPause), and step (\faStepForward) buttons and the \texttt{Slow Motion} setting as needed to facilitate your measurements.
-
-\begin{parts}
-
-\part
-\textit{Measuring amplitude.} The dashed line is the vertical center of the wave, and amplitude is the vertical distance between the dashed line and the crest. Using the vertical ruler in the simulation, \textbf{measure} the wave's amplitude. 
-
-\smallskip
-
-\begin{center}
-\begin{minipage}{8cm}
-\centering
-\begin{tikzpicture}
-    \draw[densely dashed,x=6mm] (0,0) -- (2*2*pi,0);
-    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \begin{scope}[scale=0.5,shift={(1.9,0)}]
-        \tkzRegle[Rotation=90,Longueur=4,AfficheValeurs=false,CouleurFond=white,Opacite=0.5,Fond=true]
-    \end{scope}
-\end{tikzpicture}
-\end{minipage}%
-\hspace{1em}
-\fbox{
-\begin{minipage}{5cm}
-\centering
-\vspace{1cm}
-
-Amplitude = \fillin[0.75][1.5cm]\, cm 
-
-\vspace{1cm}
-\end{minipage}
-}
-\end{center}
-
-% Use the vertical ruler to measure the amplitude: \fillin[0.75]\ cm
-
-\part
-\textit{Measuring wavelength.} The wavelength of a wave may be measured as the horizontal distance between two adjacent crests. 
-
-\smallskip
-
-\begin{center}
-\begin{minipage}{8cm}
-\centering
-\begin{tikzpicture}
-    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \begin{scope}[scale=0.5,shift={(2,3.8)}]
-        \tkzRegle[Longueur=7.5,AfficheValeurs=false,CouleurFond=white,Opacite=1,Fond=true]
-    \end{scope}
-\end{tikzpicture}
-\end{minipage}%
-\hspace{1em}
-\fbox{
-\begin{minipage}{5cm}
-\centering
-\vspace{1cm}
-
-Wavelength = \fillin[4.2][1.5cm]\, cm 
-
-\vspace{1cm}
-\end{minipage}
-}
-\end{center}
-
-% Use the ruler to measure the wavelength: \fillin[4.2]\ cm
-
-\part 
-\textit{Measuring period and frequency.} Pause (\faPause) the wave, and step (\faStepForward) it forward so that a crest is exactly aligned at the window frame, as shown below. The window represents a reference point in space, so each time a new crest passes through the window, a wave cycle has been completed.
-
-\medskip
-
-\begin{center}
-\begin{tikzpicture}
-    \begin{scope}[shift={(7.45,-1.43)},x=5mm,y=5mm]]
-    \draw[ultra thick,brown] (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
-    \clip (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
-    \node at (2,3.1) {\twemoji[height=4cm]{national park}};
-    \end{scope}
-    \draw[x=6mm,y=1cm,domain=pi:2.25*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-    \draw[x=6mm,y=1cm,domain=pi:2.25*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \draw[<-,very thick] (2.75*pi,1) -- ++(1,0) node[right] {crest};
-\end{tikzpicture}
-\end{center}
-
-\clearpage
-
-\begin{itemize}
-    \item Press both the reset and the play buttons on the timer. (Note that it won't run until the simulation is played).
-    \item Press play (\faPlay) to the simulation.
-    \item Measure the time it takes exactly 10 subsequent crests to pass through the window (that's 10 wave cycles). Write the time in the space below.
-    \item \textit{Tip:} Switching to \texttt{Slow Motion} and using step (\faStepForward) may be useful. 
-\end{itemize}
-
-
+Connect two bulbs in parallel. Ensure that each bulb in your circuit can be switched on and off without affecting the second bulb. Draw a circuit diagram for your circuit.
 
 \begin{center}
 \fbox{
-\begin{minipage}{8cm}
+\begin{minipage}{6cm}
 \centering
-\vspace{1em}
+\bgroup
+\ifprintanswers
+\color{red}
+\else
+\color{white}
+\fi
 
-Time for 10 wave cycles: \fillin[6.67][1.5cm]\ seconds
-
-\vspace{1em}
+\begin{tikzpicture}[x=2cm,y=1cm]
+    \draw (0,0) to[battery1] (2,0);
+    \draw (0,0) -- (0,2) to[cute closed switch] (1,2) to[bulb] (2,2) -- (2,0);
+    \draw (0,1) to[cute open switch] (1,1) to[bulb] (2,1);
+\end{tikzpicture}  
+\egroup
 \end{minipage}
 }
-\end{center}
-
-The period ($T$) of the wave is the time it takes to complete one cycle. \textbf{Calculate} the wave's period by dividing the total time for 10 wave cycles by the number of cycles:
-
-
-\ifprintanswers
-\begin{equation*}
-    T = \frac{\textcolor{red}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{red}{0.667} \qquad \mathrm{s}}
-\end{equation*}
-\else
-\begin{equation*}
-    T = \frac{\textcolor{white}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{white}{0.667}\qquad \mathrm{s}}
-\end{equation*}
-\fi
-
-
-And, frequency ($f$) is defined as the number of wave cycles per second, so divide the number of waves (10) by the total time. Show your work and record the frequency below.
-
-\ifprintanswers
-\begin{equation*}
-    f = \frac{\text{10 wave cycles}}{\textcolor{red}{6.67}\ \mathrm{s}} = \boxed{\textcolor{red}{1.50}\qquad \mathrm{Hz}}
-\end{equation*}
-\else
-\begin{equation*}
-    f = \frac{\text{10 wave cycles}}{\textcolor{white}{6.67}\ \mathrm{s}} = \boxed{\textcolor{white}{1.50}\qquad \mathrm{Hz}}
-\end{equation*}
-\fi
-
-\end{parts}
-
-\question
-\textit{Measuring wave speed.} 
-
-\begin{parts}
-\part Pause (\faPause) and step (\faStepForward) the wave so that a crest aligns with the \SI{0}{cm} mark, as shown below.
-
-\begin{center}
-\begin{tikzpicture}
-    \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-    \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \draw[very thick,<-] (0.95,0.85) -- ++(0,-1) node[below] {crest};
-    \draw[thick,<->] (0.92,1.2) -- ++(2.6,0) node[above,pos=0.5] {$\Delta x$};
-    \begin{scope}[scale=0.87,shift={(1.05,3.5)}]
-        \tkzRegle[Longueur=8,AfficheValeurs=true,CouleurFond=white,Opacite=1,Fond=true]
-    \end{scope}
-    \begin{scope}[shift={(2.6,0)},opacity=0.1,transform shape]
-        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
-        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
-    \end{scope}
-\end{tikzpicture}
-\end{center}
-
-\begin{itemize}
-    \item Reset and play the timer.
-    \item Use the \texttt{Slow Motion}, play, and step buttons to record the time it takes the crest to be horizontally displaced by exactly $\Delta x = \SI{3.0}{cm}$. Record this time interval below:
-
-{
-\large
-\ifprintanswers
-\begin{equation*}
-    \Delta t = \textcolor{red}{0.48}\ \mathrm{s}
-\end{equation*}
-\else
-\begin{equation*}
-    \Delta t = \textcolor{white}{0.48}\ \mathrm{s}
-\end{equation*}
-\fi
-}
-
-    \item Speed $(v)$ is distance over time, so fill in the equation below and calculate the wave speed:
-
-\ifprintanswers
-\bgroup
-\large 
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\egroup
-\else
-\bgroup
-\large 
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\egroup
-\fi
-\end{itemize}
-
-
-
-\part Increase the amplitude to \SI{1.25}{cm}. Then, as previously done, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and use the average velocity equation to find wave speed:
-
-{
-\large
-\ifprintanswers
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\else
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
-\end{equation*}
-\fi
-}
-
-How does increasing amplitude affect the transverse wave speed?
-
-\ifprintanswers
-\else
-\fillwithlines{1.5cm}
-\fi
-
-\begin{solution}
-    Increasing the amplitude does not affect wave speed. It only affects the energy transported by the wave.
-\end{solution}
-
-\part
-Reset the amplitude back to the default, \SI{0.75}{cm}. Then change the tension in the string to low:
-
-\begin{center}
-\begin{tikzpicture}[x=4mm,y=4mm]
-    \begin{scope}
-        \draw (0,0) -- (10,0);
-        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
-        \foreach \i in {0,1,...,10}{
-            \draw (\i,0) node {$|$};
-        }
-        \foreach \i in {0,5,10}{
-            \draw (\i,0) node {\Huge $|$};
-        }
-    \end{scope}
-    \node[above=1.5em] at (0,0) {Low};
-    \node[above=2.5em] at (5,0) {Tension};
-    \node[above=1.5em] at (10,0) {High};
-    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
-\end{tikzpicture}
-\end{center}
-
-Once again, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and find the wave speed:
-
-{
-\large 
-\ifprintanswers
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{2.38}\ \mathrm{s}} = \boxed{\textcolor{red}{1.26}\ \mathrm{cm/s}}
-\end{equation*}
-\else
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{2.38}\ \mathrm{s}} = \boxed{\textcolor{white}{1.26}\ \mathrm{cm/s}}
-\end{equation*}
-\fi
-}
-
-How does decreasing the tension in the string affect the wave speed? 
-
-\ifprintanswers
-\else
-\fillwithlines{1.5cm}
-\fi
-
-\begin{solution}
-    Decreasing string tension also decreases the wave speed.
-\end{solution}
-
-\part
-Now change the tension in the string to medium. Then calculate the wave speed at medium tension below.
-
-
-
-\begin{center}
-\begin{minipage}{5cm}
-\centering
-\begin{tikzpicture}[x=4mm,y=4mm]
-    \begin{scope}
-        \draw (0,0) -- (10,0);
-        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
-        \foreach \i in {0,1,...,10}{
-            \draw (\i,0) node {$|$};
-        }
-        \foreach \i in {0,5,10}{
-            \draw (\i,0) node {\Huge $|$};
-        }
-    \end{scope}
-    \node[above=1.5em] at (0,0) {Low};
-    \node[above=2.5em] at (5,0) {Tension};
-    \node[above=1.5em] at (10,0) {High};
-    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (4.7,-1.2) rectangle (5.3,1.2);
-\end{tikzpicture}
-\end{minipage}%
 \hspace{5mm}
-\begin{minipage}{7cm}
+\begin{minipage}{4cm}
 \centering
-{
-\large 
-\ifprintanswers
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.80}\ \mathrm{s}} = \boxed{\textcolor{red}{3.75}\ \mathrm{cm/s}}
-\end{equation*}
-\else
-\begin{equation*}
-    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.80}\ \mathrm{s}} = \boxed{\textcolor{white}{3.75}\ \mathrm{cm/s}}
-\end{equation*}
-\fi
-}
+Teacher's stamp of approval: \fillin[][2em]
 \end{minipage}
 \end{center}
 
-
-
-
-
-
-
-
-\end{parts}
-
-
-\question
-\textit{Wave speed and string tension.} The speed of a wave on a string is given by
-
-\begin{equation*}
-    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
-\end{equation*}
-
-where $F_\mathrm{T}$ is the tension  of the string, and $\mu$ is the linear mass density, or the mass per unit length of string. Assume that this PhET uses a string with
-
-\begin{equation*}
-    \mu = \SI{0.10}{kg/m}
-\end{equation*}
-
-
-\begin{parts}
-\part 
-What is the speed of the wave on a string when the tension is \SI{79}{N}?
-
-\begin{solutionorbox}[2cm]
-\begin{equation*}
-    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}} = \sqrt{\frac{\SI{79}{N}}{\SI{0.10}{kg/m}}} = \boxed{\SI{28}{m/s}}
-\end{equation*}
-\end{solutionorbox}
-
-\part 
-Using wave speed found in the previous part, calculate the tension in the string at medium tension. (\textit{Hint}: First convert your speed from cm/s to m/s.)
-
-\begin{solutionorbox}[4cm]
-    
-\end{solutionorbox}
-
-\end{parts}
-
-
-
-\clearpage
-
-
-
-
-%\begin{parts}
-
-% \part 
-% The linear mass density of the string is $\mu = \SI{1.0}{g/cm}$. Calculate the tension in the string when it's set to low. Express the answer in newtons (N).
-
-% \begin{solutionorbox}[3cm]
-% In base SI units, the linear mass density is
-
-% \begin{equation*}
-%     \mu = \SI[per-mode=fraction]{1.0}{\gram\per\centi\meter} \times 
-%     \frac{\SI{1}{kg}}{\SI{1000}{g}} \times \frac{\SI{100}{cm}}{\SI{1}{m}} = \SI{0.1}{kg/m}
-% \end{equation*}
-
-% The wave speed on a string is related to tension and linear mass density as
-
-% \begin{equation*}
-%     v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
-% \end{equation*}
-
-% Solving for tension leads to
-
-% \begin{equation*}
-%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{1.26e-2}{m/s}\right)^2 =  \boxed{\SI{1.6e-5}{N}}
-% \end{equation*}
-% \end{solutionorbox}
-
-% \part 
-% Using the same linear mass density from the previous part, find the tension, in newtons, when tension is set to high. 
-
-
-
-% \begin{solutionorbox}[4cm]
-% From previous measurements, we know that when tension is high, the string speed is $v_\mathrm{string} = \SI{6.25}{cm/s} = \SI{6.25e-2}{m/s}$. Using the result from the previous part, tension is
-
-% \begin{equation*}
-%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{6.25e-2}{m/s}\right)^2 =  \boxed{\SI{3.9e-4}{N}}
-% \end{equation*}
-% \end{solutionorbox}
-
-
-%\end{parts}
-
-
-\clearpage
-
-\begin{EnvUplevel}
-    \subsubsection*{Checking for Understanding}
-\end{EnvUplevel}
-
-\question
-Amplitude is most closely related which of the following wave properties?
-
-\begin{randomizechoices}
-    \correctchoice energy
-    \choice wavelength
-    \choice frequency
-    \choice wave speed
-\end{randomizechoices}
-
-\question \label{XGViXs}
-The period of a wave is measured to be 4.85 seconds. What is the wave's frequency?
-
-
-\begin{solution}
-\SI{0.206}{Hz}
-\end{solution}
-
-
-
-
-\question \label{EeHAB4} 
-If the frequency of a wave is 8.53 hertz, what is its period of oscillation?
-
-
-\begin{solution}
-\SI{0.117}{s}
-\end{solution}
-
-\question \label{ldTSm3} 
-A bead on a string oscillates between a crest and trough of a transverse wave. The bead completes 20 cycles in 16 seconds. Calculate the wave's average period of oscillation. 
-
-
-\begin{solution}
-\SI{0.8}{s}
-\end{solution}
-
-\question \label{3rLSIq}
-What is the frequency of the wave described in Exercise \ref{ldTSm3}?
-
-
-\begin{solution}
-\SI{1.25}{Hz}
-\end{solution}
-
-\question \label{gz0LQL} 
-Every second, a transverse wave completes exactly five and four-sevenths of a wave cycle. Calculate the period of oscillation.
-
-
-\begin{solution}
-\SI{0.179}{s}
-\end{solution}
-
-\question \label{MITNpN} 
-Electromagnetic (EM) waves are transverse (but not mechanical) waves that oscillate at high frequencies. One type of EM waves is the radio wave, like those use detected by your car. Calculate the frequency of a radio wave whose period of oscillation is a tiny \SI[group-separator={\,}]{0.0001814}{s}.
-
-
-\begin{solution}
-    \SI{5513}{Hz}
-\end{solution}
-
-\question
-What two physical quantities are needed to calculate the velocity of a wave?
-
-
-\question \label{SKv3ek}
-The following wave has a frequency of \SI{2.70}{Hz} and propagates to the right. What is the velocity of the wave?
-
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=6cm,height=3cm,
-    xmin=0,xmax=3*2,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw plot[domain=0:3*2*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[<->] (2.5,1.1) -- ++(axis direction cs: 2,0) node[above,pos=0.5] {\SI{1.40}{m}};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
-\question \label{HcdmDZ}
-The wave below has a period of 11 seconds as it propagates rightwards. Calculate its wave velocity.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3cm,
-    xmin=0,xmax=4*2,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}]
-    \draw[lightgray] (0,0) -- (4*2,0);
-    \draw[lightgray,dashed] (1,0) -- ++(axis direction cs: 0,1.3) (5,0) -- ++(axis direction cs: 0,1.3);
-    \draw plot[domain=0:4*2*pi, samples=200] (\x/pi,{sin(\x r)});
-    \draw[<->] (1,1.2) -- ++(axis direction cs: 4,0) node[above,pos=0.5] {\SI{6.0}{m}};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
-\question \label{exdA2j}
-Calculate the velocity of a wave whose wavelength and period of oscillation are \SI{10.5}{m} and \SI{0.25}{s}, respectively. 
-
-
-\question \label{HoRqxe}
-What is the velocity of a wave whose frequency and wavelength are \SI{25}{Hz} and \SI{7.0}{m}, respectively?
-
-
-\question
-Access the \texttt{PhET Simulation} ``Waves Intro'' (\href{https://phet.colorado.edu/sims/html/waves-intro/latest/waves-intro_en.html}{click here}). Click the \texttt{Light} panel. 
-
-\begin{enumerate}
-\setlength\itemsep{0.1ex}
-    \item Press the \texttt{green} button on the laser to emit green light waves.
-    \item Click and drag the ruler tool from the upper-right-hand corner to measure the horizontal distance from the center of one bright spot to the next. \textbf{Tip}: by default, the ruler is set the measure the wavelength of green light.
-    \item Convert the given measurement from nanometers (nm) to meters (m), given that $\SI{1}{nm} = 10^{-9}\,\text{m}$.
-    \item If the wave travels at a speed of 300 million meters per second (\SI{3e8}{m/s}), what is the frequency of the light wave? Express the answer both in scientific notation and in decimal notation.
-\end{enumerate}
-\end{questions}
-
-\end{document}
-
-\clearpage
-
-
-
-
-\subsection{Desmos: The Wave Equation}
-
-\begin{questions}
-\question
-The sinusoidal wave function is
-
-\begin{equation*}
-    y(x,t) = A \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
-\end{equation*}
-
-
-To visualize wave motion, we will graph this function of position ($x$) and time ($t$). 
-
-\begin{parts}
-
-\part Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator} and define the following variables and their limits:
-
-\begin{align*}
-    A &= 2 \qquad 0.1 \leq A \leq 8 \\[1ex]
-    \lambda &= 5 \qquad 0.1 \leq \lambda \leq 10 \\[1ex]
-    f &= 1 \qquad 0.1 \leq f \leq 3\\[1ex]
-    t &= 0 \qquad 0 \leq t \leq 10\\[1ex]
-    y(x) &= A \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
-\end{align*}
-
-where $A$, $\lambda$, and $f$ are wave quantities. \textbf{Note:} You need to copy-and-paste the $\lambda$ symbol into Desmos by searching for ``lowercase lambda'' on Google. 
-
-\medskip
-
-Make a graph of what you see in Desmos below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=6cm,width=10cm,
-    axis lines=center,
-    ymin=-4,ymax=4,
-    xmin=-10,xmax=10,
-    ytick={-6,-4,...,6},
-    xtick={-10,-6,...,10},
-    minor y tick num=1,
-    minor x tick num=1,
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-10:10,samples=125,very thick, red] {2*sin(2*pi/5*deg(x))};
-    \fi
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part 
-Press the play (\faPlay) button in the cell containing the variable $A$ to animate this variable to different values between 0.1 and 10. How does varying $A$ affect the wave? What wave property does $A$ represent?
-
-\ifprintanswers
-\else
-\fillwithlines{2.0cm}
-\fi
-
-\part
-Reset $A$ back to 2. Then press the play (\faPlay) button in the $\lambda$ cell to animate $\lambda$. How does varying $\lambda$ affect the wave? What wave property does $\lambda$ represent?
-
-\ifprintanswers
-\else
-\fillwithlines{2.0cm}
-\fi
-
-
-\part
-Reset $\lambda$ to 5. Now press the play (\faPlay) to animate $f$. What happens?
-
-\ifprintanswers
-\else
-\fillwithlines{2.0cm}
-\fi
-
-\part
-Reset $f$ back to 1. Go to the $t=0$ cell, click open the animation properties ($\rightleftarrows$), and set the animation mode to play indefinitely ($\rightarrow$). Then press play (\faPlay) to animate $t$. Using the words ``wave,'' ``propagate,'' and ``wave speed,'' describe what you see in the space below.
-
-\ifprintanswers
-\else
-\fillwithlines{2.0cm}
-\fi
-
-\begin{solution}
-    \textit{Answers may vary.}
-
-    The wave propagates to the right with a constant wave speed.
-\end{solution}
-
-\part
-While $t$ is playing indefinitely, manually set the slider on $f$ to different values between 0.1 and 3. Now what do you notice? What wave quantity does $f$ represent?
-
-\ifprintanswers
-\else
-\fillwithlines{2.0cm}
-\fi
-
-\begin{solution}
-    \textit{Answers may vary.}
-
-    It's the frequency. When $f$ increases while $\lambda$ is held constant, the wave speed increases.
-\end{solution}
-
-\end{parts}
-
-\end{questions}
-
-
-
-\clearpage
-
-\subsection{Desmos: Constructive and Destructive Interference}
-
-\begin{questions}
-\question
-Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. In the first cell, define the variable $t = 0$ with limits from $-5$ to $5$:
-
-\begin{equation*}
-    t = 0 \qquad -5 \leq t \leq 5
-\end{equation*}
-
-Then define the following functions in cells 2 and 3:
-
-{\large
-\begin{align*}
-    F_1 &= 4 e^{-\left(x-t\right)^2} \\[1ex]
-    F_2 &= 4 e^{-\left(x+t\right)^2}
-\end{align*}
-}
-
-In cell 1, where $t$ is defined, press the play (\faPlay) button to begin looping $t$ forwards and backwards. Observe the motion of the pulses. Now follow the parts below.
-
-\begin{parts}
-\part
-Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-    clip=false,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1.5)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1mm}
-
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.75)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-0.75)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part 
-If cell 4, define the function $F_3 = F_1 + F_2$. Play (\faPlay) the $t$ cell to begin the loop, and pause and sketch $F_3$ at the same times below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2) + 4*exp(-(x+1.5)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1mm}
-
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick,red] {4*exp(-(x-0.75)^2) + 4*exp(-(x+0.75)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=4.0cm,width=8cm,
-    axis lines=center,
-    ymin=0,ymax=8,
-    xmin=-6,xmax=6,
-    ytick={0,2,...,8},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2) + 4*exp(-(x)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part
-What behavior do you see when the waves meet at the same location?
-
+% \begin{center}
+% \bgroup
 % \ifprintanswers
+% \color{red}
 % \else
-\fillwithlines{1.5cm}
+% \color{white}
 % \fi
 
-\part The function $F_3$ depicts the wave phenomenon called \fillin[constructive]\ interference.
+
+% \egroup
+% \end{center}
+
+% Teacher's stamp of approval: \fillin[][2em]
+
+\clearpage
+\question
+Experiment: Get a voltmeter and an ammeter from your teacher and make following measurements:
+
+\begin{parts}
+\part Create a series circuit with 1 battery, 1 switch, and 1 bulb.
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across the battery is \fillin[]
+    \item Total current through the circuit is \fillin[]
+    \item Introduce a blue or green resistor into the series. The current through the\\ circuit is now \fillin[]
+\end{itemize}
+
+\part Create a series circuit with 1 battery, 1 switch, and 2 different types of bulb.
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across the first bulb is \fillin[]
+    \item Voltage across the second bulb is \fillin[]
+\end{itemize}
+
+\part Construct a parallel circuit with 2 batteries and 2 different types of bulbs (or 1 bulb, 1 resistor).
+
+\begin{itemize}[itemsep=6pt]
+    \item Voltage across both batteries is \fillin[]
+    \item Voltage across the first bulb is \fillin[]
+    \item Voltage across the second bulb is \fillin[]
+    \item Current through the first bulb is \fillin[]
+    \item Current through the second bulb is \fillin[]
+\end{itemize}
+
+
+
+\end{parts}
+\end{questions}
+
+
+
+\clearpage
+
+\subsection{Electric Power and Resistance}
+
+\begin{questions}
+\question
+A \SI{1.5}{V} battery is connected to a small light bulb with a resistance of \SI{3.5}{\ohm}. What is the current in the bulb?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{1.5}{V}}{\SI{3.5}{\ohm}} = \boxed{\SI{0.43}{A}}
+\end{equation*}
+\end{solution}
+
+\question
+A stereo with a resistance of \SI{65}{\ohm} is connected across a potential difference of \SI{120}{V}. What is the current in this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{65}{\ohm}} = \boxed{\SI{1.85}{A}}
+\end{equation*}
+\end{solution}
+
+\question
+Find the current in the following devices when they are connected across a potential difference of \SI{120}{V}.
+
+\begin{parts}
+\part a hot plate with a resistance of \SI{48}{\ohm}
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{48}{\ohm}} = \boxed{\SI{2.5}{A}}
+\end{equation*}
+\end{solution}
+
+\part a microwave oven with a resistance of \SI{20}{\ohm}
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{20}{\ohm}} = \boxed{\SI{6}{A}}
+\end{equation*}
+\end{solution}
 \end{parts}
 
 \question 
-Hide the graph $F_3$ by pressing the button in cell 4. Then change the second function to negative, as
-
-{\large 
-\begin{equation*}
-    F_2 = -4e^{-(x+t)^2}
-\end{equation*}
-}
-
-Then in cell 1, press play (\faPlay) to set $t$ looping forward and backward.
-
-\begin{parts}
-
-\part
-Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
-\end{axis}
-\end{tikzpicture}%
-\hspace{2em}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
-\end{axis}
-\end{tikzpicture}
-
-\medskip
-
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
-\end{axis}
-\end{tikzpicture}%
-\hspace{2em}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part 
-Show $F_3$ by pressing the button in cell 4. Then graph $F_3 = F_1 + F_2$ for the same values of $t$ as the previous part. 
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2) + 4*exp(-(x+1)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1mm}
-
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2) + 4*exp(-(x+0.3)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
-\end{axis}
-\end{tikzpicture}
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[height=5.0cm,width=8cm,
-    axis lines=center,
-    ymin=-6,ymax=6,
-    xmin=-6,xmax=6,
-    ytick={-6,-4,...,6},
-    xtick={-6,-4,...,6},
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2) + 4*exp(-(x)^2)};
-    \fi
-    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
-    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\part
-What behavior do you see when the waves meet at the same location?
-% \ifprintanswers
-% \else
-\fillwithlines{1.5cm}
-% \fi
-
-\end{parts}
-
-
-\question
-Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. In the first cell, define the variable $t = 0$ with limits from $-5$ to $5$. Then, define wavelength $\lambda$, frequency $f$, and a coefficient $A$ as follows:
-
-\begin{align*}
-    & t = 0 \qquad -5 \leq t \leq 5 \\[1ex]
-    & \lambda = 2 \\[1ex]
-    & A = 0.2 \\[1ex]
-    & f = 1
-\end{align*}
-
-The pressure wave of a sound as a function of distance from the source may be modeled by a sinusoidal wave function combined with an exponential decay function; define this equation in the next cell:
-
-\begin{equation*}
-    f_1 = e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
-\end{equation*}
-
-Noise-cancellation technology in headphones works by recording the sound wave of an external source and producing a secondary sound wave in your ear that destructively interferes with the first wave to effectively cancel out the external noise.
-
-In the next cell, write an equation for a function $f_2$ that destructively interferes with sound wave $f_1$. Then plot $f_1 + f_2$ to show that the the first wave was canceled by the second.
+The current through a microwave oven is \SI{6.25}{A}. If the resistance of the oven's circuitry is \SI{17.6}{\ohm}, what is the potential difference across the oven?
 
 \begin{solution}
+Ohm's law states
+
 \begin{equation*}
-    f_2 = -e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
-\end{equation*}    
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R$ leads to
+
+\begin{equation*}
+    V = IR = (\SI{6.25}{A})(\SI{17.6}{\ohm}) = \boxed{\SI{110}{V}}
+\end{equation*}
 \end{solution}
 
 \question
-In a new tab, graph the following function and sketch it below:
+A typical color television draws \SI{2.5}{A} if current when connected across a potential difference of \SI{115}{V}. What is the effective resistance of the television set?
+
+\begin{solution}
+Ohm's law states
 
 \begin{equation*}
-    y(x) = \sin(x) - \frac{1}{9} \sin(3x) + \frac{1}{25} \sin(5x) - \frac{1}{49} \sin(7x) + \frac{1}{81} \sin(9x)
+    I = \frac{V}{R}
 \end{equation*}
 
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=6cm,width=10cm,
-    axis lines=center,
-    ymin=-4,ymax=4,
-    xmin=-10,xmax=10,
-    ytick={-6,-4,...,6},
-    xtick={-10,-6,...,10},
-    minor y tick num=1,
-    minor x tick num=1,
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=-10:10,samples=125,very thick, red] {sin(deg(x)) - 1/9*sin(3*deg(x)) + 1/25*sin(5*deg(x)) - 1/49*sin(7*deg(x)) + 1/81*sin(9*deg(x))};
-    \fi
-\end{axis}
-\end{tikzpicture}
-\end{center}
+Multiplying both sides by $R/I$ leads to
 
-Describe in words how the graph appears.
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{115}{V}}{\SI{2.5}{A}} = \boxed{\SI{46}{\ohm}}
+\end{equation*}
+\end{solution}
 
-\fillwithlines{2cm}
+\question
+The current in a certain resistor is \SI{0.50}{A} when it is connected to a potential difference of \SI{110}{V}. What is the current in this same resistor if
+
+\begin{parts}
+\part the operating potential difference is \SI{90.0}{V}?
+
+\begin{solution}
+Ohm's law is
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R/I$ leads to the resistance of the resistor:
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{110}{V}}{\SI{0.50}{A}} = \SI{220}{\ohm}
+\end{equation*}
+
+Therefore, by Ohm's law, the current with the new potential difference is
+
+\begin{equation*}
+    I = \frac{\SI{90.0}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.41}{A}}
+\end{equation*}
+
+\end{solution}
+\part the operating potential difference is \SI{130}{V}?
+
+\begin{solution}
+Using $R = \SI{220}{\ohm}$ from the previous part,
+
+
+\begin{equation*}
+    I = \frac{\SI{130}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.59}{A}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question
+A \SI{1050}{W} electric toaster operates on a household circuit of \SI{120}{V}. What is the resistance of the wire that makes up the heating element of the toaster?
+
+\begin{solution}
+Power is 
+
+\begin{equation*}
+    P = I V
+\end{equation*}
+
+Dividing both sides by voltage leads to 
+
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{1050}{W}}{\SI{120}{V}} = \SI{8.75}{A}
+\end{equation*}
+
+But Ohm's law is
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+Multiplying both sides by $R/I$ leads to the resistance
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{8.75}{A}} = \boxed{\SI{13.7}{\ohm}}
+\end{equation*}
+\end{solution}
+
+\question
+A small electronic device is rated at \SI{0.25}{W} when connect to \SI{120}{V}. What is the resistance of this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{0.25}{W}}{\SI{120}{V}} = \SI{2.1e-3}{A}
+\end{equation*}
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{2.1e-3}{A}} = \boxed{\SI{5.7e4}{\ohm}} = \SI{57}{k\ohm}
+\end{equation*}
+\end{solution}
+
+\question
+A calculator is rated at \SI{0.10}{W} when connected to a \SI{1.50}{V} battery. What is the resistance of this device?
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{P}{V} = \frac{\SI{0.10}{W}}{\SI{1.50}{V}} = \SI{0.067}{A}
+\end{equation*}
+
+\begin{equation*}
+    R = \frac{V}{I} = \frac{\SI{1.50}{V}}{\SI{0.067}{A}} = \boxed{\SI{22.5}{\ohm}} 
+\end{equation*}
+\end{solution}
+
+\question
+An electric heater is operated by applying a potential difference of \SI{50.0}{V} across a nichrome wire of total resistance \SI{8.00}{\ohm}.
+
+\begin{parts}
+\part Find the current in the wire.
+
+\begin{solution}
+\begin{equation*}
+    I = \frac{V}{R} = \frac{\SI{50.0}{V}}{\SI{8.00}{\ohm}} = \boxed{\SI{6.25}{A}}
+\end{equation*}
+\end{solution}
+
+\part Find the power rating of the heater.
+
+\begin{solution}
+\begin{equation*}
+    P = IV = (\SI{6.25}{A})(\SI{50.0}{V}) = \boxed{\SI{312.5}{W}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+
 
 \end{questions}
-
-
-
-
-% Watch ``Wave Machine Demonstration'' by \texttt{National STEM Centre} on \texttt{YouTube} (\href{https://youtu.be/VE520z_ugcU}{click here}).
-
-% \begin{questions}
-
-
-
-
-% \question \label{OIqgoJ}
-% Access the \texttt{PhET Simulation} ``Waves on a String'' (\href{https://phet.colorado.edu/en/simulations/wave-on-a-string}{click here}). Then take the following steps two create two pulses.
-    
-% \begin{enumerate}
-% \setlength\itemsep{0.1ex}
-%     \item Press the screen (on the play button) to start the simulation.
-%     \item Select the \texttt{Pulse} and \texttt{Loose End} options.
-%     \item Increase the \texttt{Amplitude} to \SI{1.25}{cm}.
-%     \item Decrease the \texttt{Damping} to \texttt{None}.
-%     \item Set the \texttt{Tension} to the medium value.
-%     \item Click the green pulse button twice, with a 1-second gap between the two clicks.
-%     \item When the two pulses overlap on the same side of the equilibrium line (above or below it), what happens to the string?
-%     \item When the two pulses are on opposite sides---for example, if one pulse is above the equilibrium line, and the other is below---what happens to the string?
-% \end{enumerate}
-
-% \begin{center}
-%     \includegraphics[width=12cm]{physics-2023-24/figures/Unit11_PhET_Wave2.png}
-% \end{center}
-
-
-% \begin{solution}
-% When two pulses converge on the same side of the equilibrium line, that portion of the string grows in height as the amplitudes of the two pulses add up. However, when pulses that are on opposite sides converge, the string momentarily flattens as the opposite amplitudes of the pulses cancel each other out.
-% \end{solution}
-
-
-
-% \begin{multicols*}{2}
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\leftarrow$} -- (9,0) -- (12,0);
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\rightarrow$} -- (8,1) node[above,pos=0.5] {$\leftarrow$} -- (8,0) -- (12,0);
-%         \draw[red, ultra thick,shift={(0,12)}] (0,0) -- (5,0) -- (5,2) -- (6,2) node[above,pos=0.5] {$\rightarrow$} -- (7,2) node[above,pos=0.5] {$\leftarrow$} -- (7,0) -- (12,0);
-%         \draw[red,ultra thick,shift={(0,8)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\leftarrow$} -- (8,1) node[above,pos=0.5] {$\rightarrow$} -- (8,0) -- (12,0);
-%         \draw[red,ultra thick,shift={(0,4)}] (0,0) -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\leftarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\rightarrow$} -- (9,0) -- (12,0);
-%     \fi
-% \end{tikzpicture}
-
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (9,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (9,0) -- (12,0);
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\rightarrow$} -- (6,0) -- (6,-1) -- (8,-1) node[below,pos=0.5] {$\leftarrow$} -- (8,0) -- (12,0);
-%         \draw[red, ultra thick,shift={(0,12)}] (0,0) -- (12,0);
-%         \draw[red,ultra thick,shift={(0,8)}] (0,0) -- (4,0) -- (4,-1) -- (6,-1) node[below,pos=0.5] {$\leftarrow$} -- (6,0) -- (6,1) -- (8,1) node[above,pos=0.5] {$\rightarrow$} -- (8,0) -- (12,0);
-%         \draw[red,ultra thick,shift={(0,4)}] (0,0) -- (3,0) -- (3,-1) -- (5,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\rightarrow$} -- (9,0) -- (12,0);
-%     \fi
-% \end{tikzpicture}
-
-% \vspace*{\fill}
-
-% \columnbreak
-
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (4,1) node[pos=0.5,above] {\large $\rightarrow$} -- (4,-1) -- (5,-1) -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (8,-1) -- (8,1) -- (9,1) node[pos=0.5,above] {\large $\leftarrow$} -- (9,0) -- (12,0);
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
-%     \fi
-% \end{tikzpicture}
-
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (4,1) node[pos=0.5,above] {\large $\rightarrow$} -- (4,-1) -- (5,-1) -- (5,0) -- (6,0) -- (7,0) -- (7,1) -- (8,1) node[pos=0.5,above] {\large $\leftarrow$} -- (8,-1) -- (9,-1)  -- (9,0) -- (12,0);
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
-%     \fi
-% \end{tikzpicture}
-
-% \vspace*{\fill}
-
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (2,0) -- (2,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (8,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (8,0) -- (12,0) ;
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
-%     \fi
-% \end{tikzpicture}
-
-% \question
-% .
-
-% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
-%     \draw[lightgray] (0,0) grid (12,24);
-%     \draw[gray] (6,0) -- (6,24);
-%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (2,0) -- (2,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,1) -- (8,1) node[pos=0.5,above] {\large $\leftarrow$} -- (8,0) -- (12,0) ;
-%     \node[left] at (0,4) {$t=4$};
-%     \node[left] at (0,8) {$t=3$};
-%     \node[left] at (0,12) {$t=2$};
-%     \node[left] at (0,16) {$t=1$};
-%     \ifprintanswers
-%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
-%     \fi
-% \end{tikzpicture}
-
-% \end{multicols*}
-
-% \end{questions}
 
 \clearpage
 
-
-
-\subsection{Longitudinal Waves}
-
+\subsection{Other}   
 \begin{questions}
-    
-\question
-Between a compression and a rarefaction, which is below atmospheric pressure?
-
 
 \question
-Name the part of a sound wave that is slightly above atmospheric pressure.
-
-
-\question
-Watch ``How Do Noise Canceling Headphones Work?'' by \texttt{Branch Education} on \texttt{YouTube} (\href{https://youtu.be/VIi04uD8LtY}{click here}). In your own words, briefly summarize how noise-cancelling headphones work. Use the terms defined in this section.
-
-
-\question \label{J5ZJhe}
-Whales emit deep sounds through the ocean. Find Table 14.1 in \texttt{OpenStax: Physics} (\href{https://openstax.org/books/physics/pages/14-1-speed-of-sound-frequency-and-wavelength#Table_14_01}{click here}). What is the speed of a sound wave through sea water? Between air and water, through which medium does sound travel faster?
-
+Watch ``Charge of an Electron: Millikan's Oil Drop Experiment'' by Tyler DeWitt on YouTube 
+%(\href{https://youtu.be/2HhaQtvICe8}{click here})
+and answer the exercises below.
 
 \question
-Access the table from Exercise \ref{J5ZJhe}. Identify the media through which sound waves travel the slowest and the fastest.
+In what year did Millikan and Fletcher conduct the oil drop experiment?
+
+\begin{randomizechoices}
+    \correctchoice 1913
+    \choice 1900
+    \choice 1897
+    \choice 1850
+\end{randomizechoices}
+
+\question
+J.~J.~Thompson discovered the electron, the fundamental particle of negative charge, in the year \fillin[][3cm]
+
+\begin{randomizechoices}
+    \choice 1913
+    \choice 1900
+    \correctchoice 1897
+    \choice 1850
+\end{randomizechoices}
+
+\question
+The Millikan's oil drop experiment involves balancing tiny drops of oil by using gravity and \fillin[][3cm].
+
+\begin{randomizechoices}
+    \correctchoice electricity
+    \choice magic
+    \choice magnetism
+    \choice tension
+\end{randomizechoices}
+
+\question
+Two parts of the equipment used by Millikan include an atomizer and 
+
+\begin{randomizechoices}
+    \correctchoice a microscope
+    \choice a power supply
+    \choice a telescope
+    \choice an oil dispenser
+\end{randomizechoices}
+
+\question
+Which force acts downward on the oil drop?
+
+\begin{randomizechoices}
+    \correctchoice gravity force
+    \choice electric force
+    \choice magnetic force
+    \choice tension force
+\end{randomizechoices}
+
+\question
+Which plate--the positively or the negatively charged---will the positive oil drop be attracted to? Explain.
+
+\begin{randomizechoices}
+    \correctchoice negative plate
+    \choice positive plate
+    \choice both the positive and negative plate
+    \choice neither the positive nor negative plate
+\end{randomizechoices}
+
+\question
+What force pushes the oil drop in the opposite direction of gravity?
+
+\begin{randomizechoices}
+    \choice gravity force
+    \correctchoice electric force
+    \choice magnetic force
+    \choice tension force
+\end{randomizechoices}
+
+\question
+When the voltage is too \textbf{high}, the oil drop moves
+
+\begin{randomizechoices}
+    \correctchoice up
+    \choice down
+    \choice left
+    \choice right
+\end{randomizechoices}
+
+\question
+When the voltage is too \textbf{low}, the oil drop moves
+
+\begin{randomizechoices}
+    \choice up
+    \correctchoice down
+    \choice left
+    \choice right
+\end{randomizechoices}
+
+\question
+What happens to the oil drop when the voltage through the apparatus is just right?
+
+\begin{randomizechoices}
+    \correctchoice The net force is zero, and the drop will float at rest.
+    \choice It accelerates toward the negative plate.
+    \choice It accelerates toward the positive plate.
+    \choice It evaporates, disappearing from view.
+\end{randomizechoices}
+
+\question
+What does the force of gravity on the drop depend on?
+
+\begin{randomizechoices}
+    \correctchoice mass of drop
+    \choice voltage on plates
+    \choice charge of drop
+    \choice distance between the plates
+\end{randomizechoices}
+
+\question
+What 2 factors does the force of electricity on the drop depend on?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice charge of drop and voltage on plates
+    \choice mass of drop and charge of drop
+    \choice voltage on plates and mass of drop
+    \choice none of the above
+\end{randomizechoices}
+
+\question 
+What is the unit used to measure charge?
+
+\begin{randomizechoices}
+    \correctchoice coulomb (C)
+    \choice voltage (V)
+    \choice newton (N)
+    \choice ampere (A)
+\end{randomizechoices}
+
+\question
+What is the charge of 1 electron?
+
+\begin{randomizechoices}
+    \correctchoice \SI{-1.60e-19}{C}
+    \choice \SI{1.60e-19}{C}
+    \choice \SI{-3.20e-19}{C}
+    \choice \SI{3.20e-19}{C}
+\end{randomizechoices}
 
 \end{questions}
-
 
 
 \clearpage
-\subsection{Electromagnetic Waves}
-
 \begin{questions}
+\question
+Like charges repel, and opposite charges attract.
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice True
+    \choice False
+\end{randomizechoices}
 
 \question
-Which of the following words best answers the question \textit{What is light}?
+An atom that loses electrons becomes negatively charged.
 
-
-\begin{center}
-    \textbf{
-    acceleration \hfill
-    charge \hfill
-    current \hfill
-    energy \hfill
-    force \hfill
-    momentum \hfill
-    position \hfill
-    velocity \hfill
-    }
-\end{center}
-
-
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
 
 \question
-Physicists have divided the electromagnetic spectrum into how many different regions?
+An atom that gains electrons becomes negatively charged.
 
-
-\question
-Name all the regions of the electromagnetic spectrum.
-
-
-\question
-What are some differences between the various types of electromagnetic radiation?
-
+\begin{randomizechoices}[norandomize]
+    \correctchoice True
+    \choice False
+\end{randomizechoices}
 
 \question
-How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
+Charging a neutral object by touching that object with a charged object is referred to as
 
-
-\question
-Can electromagnetic waves travel through empty space (that is, through a vacuum)?
-
-
-\question
-Create a table with the first column labeled ``visible'' and the second one ``invisible.'' Sort all regions of the electromagnetic spectrum into this table according to whether waves in those regions are visible or invisible to the human eye.
-
-
+\begin{randomizechoices}
+    \correctchoice conduction
+    \choice induction
+    \choice friction
+\end{randomizechoices}
 
 \question
-An electromagnetic wave consists of two oscillating fields that are perpendicular and in phase with each other. What are the names of each field?
+Charging an object without direct contact by bringing a charged object close to it is known as
 
-
-\question
-Generate a radio wave by wiggling an electron. Access the \texttt{PhET Simulation} ``Radio Waves \& Electromagnetic Fields'' (\href{https://phet.colorado.edu/en/simulations/radio-waves}{click here}). Click the play button in the center of the screen. Wiggle the electron, either in \texttt{Manual} or \texttt{Oscillate} mode. Observe how the oscillation of the electric charge results in the propagation in an electromagnetic wave. Use this simulation to explain, in your own words, how all electromagnetic radiation is generated.
-
-
-\question
-The first wave below represents an electromagnetic wave in the X-ray region of the spectrum. If the second wave is not an X-ray, what type of electromagnetic radiation does it represent?
-
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=3cm,
-    xmin=0,xmax=14,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
-    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
-    \node[above=2mm] at (3,1) {X-ray};
-    \begin{scope}[shift={(axis direction cs: 8,0)}]
-        \draw plot[domain=0:6*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
-        \draw[dashed,<->] (0.5*1/7,1.05) -- ++(axis direction cs: 2,0);
-        \node[above=2mm] at (3,1) {???};    
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-\end{center}
+\begin{randomizechoices}
+    \choice conduction
+    \correctchoice induction
+    \choice friction
+\end{randomizechoices}
 
 \question
-The first wave represents a microwave. If the second wave is an a different region of the spectrum, what type of electromagnetic wave is it?
+Charging an object through transfer of electrons by rubbing is referred to as charging by
 
+\begin{randomizechoices}
+    \choice conduction
+    \choice induction
+    \correctchoice friction
+\end{randomizechoices}
 
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=3cm,
-    xmin=0,xmax=14,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw plot[domain=0:6*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
-    \draw[dashed,<->] (0.5*1/7,1.05) -- ++(axis direction cs: 2,0);
-    \node[above=2mm] at (3,1) {Microwave};
-    \begin{scope}[shift={(axis direction cs: 8,0)}]
-        \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
-        \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
-        \node[above=2mm] at (3,1) {???};    
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\question \label{wqaTm6}
-When water molecules are bathed in electromagnetic radiation at just the right frequency, they get begin to vibrate and give off heat to their environment. What frequency must these waves have for this phenomenon to occur? Write the number in scientific and decimal notation.
 
 
 \question
-To what region of the electromagnetic spectrum do the waves from Exercise \ref{wqaTm6} belong? 
+Two positive charged particles will attract while two opposite charges will repel each other.
+
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
 
 
-\question
-What happens to the energy of electromagnetic radiation as frequency decreases?
-
-
-\question
-How do humans detect infrared radiation?
-
-
-\question
-Explain some applications of microwaves in astronomy. 
-
-
-\question
-Which type of electromagnetic wave has the longest wavelength of the whole spectrum?
-
-
-\question
-In what medical technology are radio waves used?
-
-\question
-Which type of electromagnetic radiation has the shortest wavelengths?
-
-
-\question
-Which form of EM radiation has the most penetrating ability?
-
-
-\question
-Why are high-frequency gamma rays more dangerous to humans than visible light?
 \end{questions}
-
-
-\subsection{Visible Light}
-
-\begin{questions}
-
-
-\question
-Explain Roy G.~Biv.
-
-
-\question
-Identify the name of the cells in your eyes that allow you to perceive color.
-
-
-\question
-What are the seven colors of the rainbow in order of increasing \textit{wavelength}?
-
-
-\question
-Between red and violet, which color represents the high-frequency limit of the visible spectrum?
-
-
-\question
-Which color represents the long-wavelength limit of the visible spectrum?
-
-
-\question
-Which region of the electromagnetic spectrum, apart from visible light, can bees see?
-
-
-\question
-Which animal can see infrared light?
-
-
-\question \label{lwLSKO}
-Sort the colors yellow, blue, and red from shortest wavelength to longest.
-
-
-
-\question
-Convert \SI{5798}{nm} to meters, writing in scientific notation.
-
-
-\question
-Sort the colors in Exercises \ref{lwLSKO} from lowest frequency to highest.
-
-
-\question
-What is the wavelength of a red light wave that has a frequency of \SI{4.746e14}{\Hz} if the wave travels through empty space at a speed of \SI{3.0e8}{m/s}? Express your answer in nanometers (nm).
-
-
-\question
-The Bacillus is a species of rod-shaped bacteria that are very common in nature. As shown below, a typical length is about 2 to 6 microns. Consider a green light wave, which has a wavelength of about 500 nanometers. About how many wave cycles of green light could fit along the length of the Bacillus below?
-
-
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=2.5cm,
-    xmin=0,xmax=12,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw plot[domain=0:4*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
-    \begin{scope}[shift={(axis direction cs: 8,0)}]
-        \draw plot[domain=0:4*pi, samples=200] (\x/pi,{sin(\x r)});   
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-
-\vspace{-1.5cm}
-
-\begin{tikzpicture}
-    \draw[fill=lightgray] (0,0) circle (0.5);
-    \begin{scope}[shift={(2,0)}]
-        \draw[fill=lightgray] (0,0) circle (0.5); 
-    \end{scope}
-    \fill[lightgray] (0,-0.5) rectangle ++(2,1) node[black,pos=0.5] {\textbf{bacillus}};
-    \draw (0,0.5) -- ++(2,0)
-          (0,-0.5) -- ++(2,0);
-    \draw[<->] (-0.5,0.7) -- ++(3,0) node[above,pos=0.5] {\SI{5}{\micro\meter}};
-\end{tikzpicture}
-\end{center}
-
-
-\question
-True or false? Light requires a medium to propagate.
-
-
-\question
-What is the value of $c$, the speed of light in a vacuum?
-
-
-\question
-Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn? To get full credit, show all your work.
-\end{questions}
-
-\subsection{Optics}
 
 {\large \textbf{Other}}
 
 \begin{questions}
-    
 \question
-The first wave below represents the electromagnetic wave for the color cyan, which is indicated in the visible spectrum below. The dashed double arrows are the same length. Which color could be represented by the second wave?
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=3cm,
-    xmin=0,xmax=24,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
-    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
-    \node[above=2mm] at (4.5,1) {cyan};
-    \begin{scope}[shift={(axis direction cs: 12,0)}]
-        \draw[dashed,<->] (0.5*632/490,1.05) -- ++(axis direction cs: 2,0);
-        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(490/632*\x r)});
-        \node[above=2mm] at (5,1) {???};    
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-
-\vspace{1em}
-
-\begin{tikzpicture}
-    \begin{axis}[width=14cm, height=7cm,
-        ymin=0,ymax=1,
-        height=3cm,
-        xmin=360,xmax=740,
-        yticklabels={},
-        ytick=\empty,
-        axis lines=left,
-        separate axis lines,
-        y axis line style=white,
-        x dir=reverse,
-        clip=false,
-        ticks=none,
-        axis line style={draw=none}
-        ]
-        \addplot[draw=none, name path=uv, forget plot] coordinates{(360,0)(360,0.5)};
-        \addplot[draw=none, name path=visible, forget plot] coordinates{(740,0)(740,0.5)};
-        \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
-        \draw[<-,thick] (490,0.5) -- ++(axis direction cs: 0,0.4) node[above] {cyan};
-    \end{axis}
-\end{tikzpicture}
-\end{center}
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \fillin[1897].
 
 \begin{randomizechoices}
-    \correctchoice red
-    \choice violet
-    \choice indigo
-    \choice ultraviolet 
+    \correctchoice 1897
+    \choice 1913
+    \choice 2005
+    \choice 1796
 \end{randomizechoices}
 
-\question 
-The first wave represents a green electromagnetic wave. The second wave is an electromagnetic wave that is invisible to the human eye. Assume the double dashed arrows are the same size. What type of electromagnetic wave could be represented by the second wave?
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=16cm,height=3cm,
-    xmin=0,xmax=24,
-    ymin=-1,ymax=1,
-    clip=false,
-    ticks=none,
-    axis line style={draw=none}
-    ]
-    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
-    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
-    \node[above=2mm] at (4.5,1) {green};
-    \begin{scope}[shift={(axis direction cs: 12,0)}]
-        \draw[dashed,<->] (0.5*200/550,1.05) -- ++(axis direction cs: 2,0);
-        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(550/200*\x r)});
-        \node[above=2mm] at (5,1) {???};    
-    \end{scope}
-\end{axis}
-\end{tikzpicture}
-\end{center}
+\question
+Millikan and Fletcher conducted the oil drop experiment 16 years after the discovery of the electron. What was the motivation for the experiment?
 
 \begin{randomizechoices}
-    \correctchoice ultraviolet
-    \choice microwave
-    \choice blue light
-    \choice gamma ray
-    \choice radio wave
+    \correctchoice To numerically calculate the charge on 1 electron.
+    \choice To re-discover the electron independently of Thompson.
+    \choice To measure the true size of 1 electron.
+    \choice To conduct an electrical current through drops of oil.
 \end{randomizechoices}
 
-
 \question
-The diagram below represents a transverse wave.
-
-\def\twopi{2*pi}
-
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=4cm,
-        axis lines=center,
-        clip=false,
-        ticks=none,
-        axis line style={draw=none},
-]
-\addplot [thick,
-    domain=0:1.5*\twopi, 
-    samples=200, 
-    color=black,
-]
-{sin(deg(x))};
-    \draw[black!50] (-1,0) -- ++(axis direction cs: 3*pi+2,0);
-    \fill (0,0) circle (2pt) node[below] {A};
-    \fill (pi/2,1) circle (2pt) node[above] {B};
-    \fill (pi,0) circle (2pt) node[below left] {C};
-    \fill (3*pi/2,-1) circle (2pt) node[below] {D};
-    \fill (2*pi,0) circle (2pt) node[above left] {E};
-    \fill (5*pi/2,1) circle (2pt) node[below] {F};
-    \fill (3*pi,0) circle (2pt) node[below] {G};
-
-\end{axis}
-\end{tikzpicture}
-
-The wavelength of the wave is equal to the distance between points \fillin .
+What did Millikan conclude was the magnitude of the charge on 1 electron, in units of coulombs? (This value is called the \textbf{elementary charge} or the fundamental unit of electric charge.)
 
 \begin{randomizechoices}
-    \correctchoice B and F
-    \choice A and G
-    \choice D and F
-    \choice C and E
+    \correctchoice \SI{1.60e-19}{C}
+    \choice \SI{8.99e9}{C}
+    \choice \SI{6.67e-11}{C}
+    \choice \SI{9.805e-6}{C}
 \end{randomizechoices}
 
 \question
- The energy of a sound wave is most closely related to its \fillin\ .
+What is the SI unit of electric charge?
 
- \begin{randomizechoices}
-     \correctchoice amplitude
-     \choice wavelength
-     \choice frequency
-     \choice period
+\begin{randomizechoices}
+\correctchoice coulomb (C)
+\choice joule (J)
+\choice newton (N)
+\choice meter per second (m/s)
 \end{randomizechoices}
 
 \question
-The diagram below represents a transverse wave.
+A neutral plastic strip is rubbed with cotton and acquires a positive charge. Which of the following statements is true of the positively-charged strip?
 
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=4cm,
-    ticks=none,
-    clip=false,
-    axis lines=center,
-]
-
-\addplot[
-    domain=pi:3*pi,
-    samples=100,
-    color=black,
-]
-{sin(deg(x))};
-    \fill (pi,1) circle (2pt) node[left] {D};
-    \fill (pi,0) circle (2pt) node[left] {A};
-    \fill (pi,-1) circle (2pt) node[left] {E};
-    
-\end{axis}
-\end{tikzpicture}
+\begin{randomizechoices}
+\choice It gained some electrons during the rubbing process.
+\correctchoice It lost some electrons to the cotton during the charging process.
+\choice It gained some protons during the rubbing process.
+\choice It lost some protons to the cotton during the charging process.
+\end{randomizechoices}
 
 
-
-
-\question %27
-Describe the electric and magnetic fields that make up an electromagnetic wave.
-
-\begin{center}
-    \centering
-    \scalebox{0.9}{
-    \begin{tikzpicture}[x={(-10:1cm)},y={(90:1cm)},z={(210:1cm)}]
-    % Axes
-    \draw (-1,0,0) node[above] {$x$} -- (5,0,0);
-    \draw (0,0,0) -- (0,2,0) node[above] {$y$};
-    \draw (0,0,0) -- (0,0,2) node[left] {$z$};
-    % Propagation
-    \draw[->,ultra thick] (5,0,0) -- node[above] {$c$} (6,0,0);
-    % Waves
-    \draw[blue,thick] plot[domain=0:4.5,samples=200] (\x,{cos(deg(pi*\x))},0);
-    \draw[red,thick] plot[domain=0:4.5,samples=200] (\x,0,{cos(deg(pi*\x))});
-    % Arrows
-    \foreach \x in {0.1,0.3,...,4.4} {
-      \draw[->,help lines] (\x,0,0) -- (\x,{cos(deg(pi*\x))},0);
-      \draw[->,help lines] (\x,0,0) -- (\x,0,{cos(deg(pi*\x))});
-    }
-    % Labels
-    \node[above right] at (0,1,0) {$\boldsymbol{E}$};
-    \node[below] at (0,0,1) {$\boldsymbol{B}$};
-    \end{tikzpicture}
-    }
-\end{center}
-
-\begin{choices}
-\choice They are perpendicular to and out of phase with each other.
-\CorrectChoice They are perpendicular to and in phase with each other.
-\choice They are parallel to and out of phase with each other.
-\choice They are parallel to and in phase with each other.
-\end{choices}
-
-% \begin{solution}
-% They are at right angles (OR \ang{90} OR perpendicular) to each other and they are in phase.
-% \end{solution}
 
 \question
-What are the 7 regions of the electromagnetic spectrum?
+Two neutral balloons can make contact with each other. But if you rub the two balloons on a sweater and then try to place them next to one another, they will automatically pull away from each other. Why does this phenomenon occur?
 
-
-\begin{choices}
-\choice infrared, hertz, joule, kilogram, energy, visible light, ultraviolet
-\choice gamma ray, microwave, mass, velocity, energy, speed, X-ray
-\choice newton, hertz, joule, velocity, energy, speed, X-ray
-\correctchoice radio, microwave, infrared, visible, ultraviolet, X-ray, gamma ray
-\end{choices}
-
-\question
-How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
-
-
-\begin{choices}
-\choice Wavelength increases.
-\choice Wavelength first increases and then decreases.
-\choice Wavelength first decreases and then increases.
-\CorrectChoice Wavelength decreases.
-\end{choices}
-
-\question
-Which portion of the electromagnetic spectrum is \textit{not invisible} to the human eye?
-
-\begin{choices}
-\choice microwave
-\choice infrared
-\CorrectChoice visible light
-\choice x-ray
-\end{choices}
-
-\question
-What are the 7 colors of visible light?
-
-\begin{choices}
-\choice magenta, cyan, yellow, green, brown, black, white
-\correctchoice red, orange, yellow, green, blue, indigo, violet
-\choice magenta, cyan, yellow, green, red, orange, white
-\choice red, orange, yellow, green, brown, cyan, pink
-\end{choices}
-
-\question
-If the first wave is green light, which color could be represented by the second wave?
-
-\begin{center}
-    \centering
-    \begin{tikzpicture}
-        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
-        \node at (3,1.2) {GREEN LIGHT WAVE};
-        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
-        \node at (10,1.2) {???};
-    \end{tikzpicture}
-\end{center}
-
-\begin{choices}
-\choice red
-\choice yellow
-\correctchoice blue
-\choice infrared
-\end{choices}
-
-
+\hspace{1cm}
 
 \clearpage
+\begin{randomizechoices}
+\choice Both balloons lose electrons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\choice Both balloons lose protons to the sweater, becoming negatively charged. Therefore, the balloons attract each other.
+\correctchoice Both balloons gain electrons from the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\choice Both balloons gain protons to the sweater, becoming negatively charged. Therefore, the balloons repel each other.
+\end{randomizechoices}
+
+
 
 
 \question
-In addition to visible light, bees can also see the \fillin\ region of the electromagnetic spectrum. 
+A neutral hydrogen atom has one proton and one electron. If you remove the electron, what will be the leftover sign of the charge?
 
-\begin{choices}
-\correctchoice ultraviolet
-\choice infrared
-\choice radio
-\choice X-ray
-\end{choices}
-
-
-\question % 2
-Consider these colors of light: 
-
-\begin{center}
-    \textbf{yellow, blue, red}
-\end{center}
-
-
-Put these light waves in order according to \textit{wavelength}, from shortest wavelength to longest wavelength.
-
-\begin{choices}
-\choice blue, yellow, red
-\choice red, yellow, blue
-\choice red, yellow, blue
-\CorrectChoice blue, yellow, red
-\end{choices}
-
-% \begin{solution}
-% Blue has the shortest wavelength and the highest frequency of the colors given while red has the longest wavelength and the smallest frequency.
-% \end{solution}
-
-\question % 2
-Consider these colors of light: 
-
-\begin{center}
-    \textbf{yellow, blue, red}
-\end{center}
-
-Put these light waves in order according to \textit{frequency}, from lowest frequency to highest frequency.
-
-\begin{choices}
-\choice blue, yellow, red
-\choice red, yellow, blue
-\choice blue, yellow, red
-\CorrectChoice red, yellow, blue
-\end{choices}
-
-\question
-Red light has a wavelength of \SI{700}{nm}. Assuming red light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of red light?
-
-\begin{choices}
-\choice \SI{2.3e-15}{Hz}
-\choice \SI{210}{Hz}
-\correctchoice \SI{4.3e14}{Hz}
-\choice \SI{4.76e-4}{Hz}
-\end{choices}
-
-\question
-Violet light has a wavelength of \SI{400}{nm}. Assuming violet light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of violet light?
-
-\begin{choices}
-\choice \SI{2.3e-15}{Hz}
-\choice \SI{210}{Hz}
-\correctchoice \SI{7.5e14}{Hz}
-\choice \SI{4.76e-4}{Hz}
-\end{choices}
-
-\clearpage
-\question 
-The first wave represents red light. Which EM wave could be represented by the other wave?
-
-\begin{center}
+\begin{minipage}{0.25\textwidth}
+    \begin{randomizechoices}
+    \choice Negative
+    \CorrectChoice Positive
+    \choice Zero
+    \choice Neutral
+    \end{randomizechoices}
+\end{minipage}%
+\hspace{5mm}%
+\begin{minipage}{0.2\textwidth}
     \centering
-    \begin{tikzpicture}
-        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
-        \node at (10,1.2) {???};
-        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
-        \node at (3,1.2) {RED LIGHT WAVE};
-    \end{tikzpicture}
-\end{center}
-
-\begin{choices}
-\choice green light
-\choice ultraviolet
-\choice X-ray
-\correctchoice infrared
-\end{choices}
-
-\question % 4
-In which region of the electromagnetic spectrum would you find radiation that is invisible to the human eye and has low energy?
-
-\begin{choices}
-\choice Long-wavelength and high-frequency region
-\CorrectChoice Long-wavelength and low-frequency region
-\choice Short-wavelength and high-frequency region
-\choice Short-wavelength and low-frequency region
-\end{choices}
+    \setbohr{insert-missing,nucleus-radius=2em,electron-radius=3pt}
+    \bohr{1}{}
+\end{minipage}
 
 \question
-Which scientist discovered infrared light?
+A balloon contains 80 million excess electrons. What is the net electric charge on the balloon?
 
-\begin{choices}
-\choice Albert Einstein (1905)
-\choice Isaac Newton (1661)
-\correctchoice William Herschel (1800)
-\choice Madam Curie (1903)
-\end{choices}
+\begin{randomizechoices}
+\choice \SI{-8.99e-9}{\coulomb}
+\choice \SI{-1.603e-19}{C}
+\choice \SI{-20.8e-28}{C}
+\correctchoice \SI{-1.28e-11}{C}
+\end{randomizechoices}
 
-\question %26
-Describe one way in which heat waves---infrared radiation---are different from sound waves.
+\question
+A speck of dust with excess electrons acquires a charge of \SI{-0.8}{nC}. How many excess electrons does it contain?
 
-\begin{choices}
-\choice Sound waves are transverse waves, whereas heat waves---infrared radiation---are longitudinal waves.
-\choice Sound waves have shorter wavelengths than heat waves.
-\CorrectChoice Sound waves require a medium, whereas heat waves---infrared radiation---do not.
-\choice Sound waves have higher frequencies than heat waves.
-\end{choices}
+\begin{randomizechoices}
+    \correctchoice \num{5000000000}
+    \choice \num{5e12}
+    \choice $0.000\,005$
+    \choice 50
+\end{randomizechoices}
 
-% \begin{solution}
-% Heat waves can travel across empty space and sound waves cannot.
-% \end{solution}
+\question
+What is the value of the Coulomb's constant?
 
+\begin{randomizechoices}
+    \correctchoice \num{8.99e9}
+    \choice \num{1.60e-19}
+    \choice \num{6.67e-11}
+    \choice \num{5.00e-6}
+\end{randomizechoices}
+
+\question
+Coulomb's law\ldots
+
+\begin{randomizechoices}
+    \correctchoice describes the electrostatic force between charged objects.
+    \choice describes the gravitational force between charged objects.
+    \choice states that opposite charges repel.
+    \choice states that like charges attract.
+\end{randomizechoices}
 \vspace{1em}
-\hrule 
+
 
 \clearpage
 \begin{EnvUplevel}
-\textbf{Read the prompt below. Then answer questions \ref{ques:fire_first} through \ref{ques:fire_last}.}
+\textbf{See the figure below, which shows two charged objects placed near each other. Then answer questions \ref{Vgjjc7}--\ref{Fxl8ta}.}
+% \textit{Reminder}: \mymu means $10^{-6}$, and 1 centimeter is 0.01 meter.
+\end{EnvUplevel}
 
-When you stand in front of an open fire, you can sense light waves with your eyes. You sense another type of electromagnetic radiation as heat.
+\vspace{-1em}
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-1.2,xmax=4,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (2pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {\SI{3.6}{\micro C}};
+    
+    \begin{scope}[xshift=3.01*1.24 cm]
+        \fill (0,0) circle (2pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {\SI{2.0}{\micro C}};
+    \end{scope}
+    
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
+    \node[above=6pt] at (3.01/2,0) {\SI{4.7}{cm}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{Vgjjc7}
+Since the objects are charged, there exists \fillin[][5cm] between them.
+
+\begin{randomizechoices}
+    \correctchoice an electrostatic force
+    \choice a gravitational force
+    \choice a distance
+    \choice a charge
+\end{randomizechoices}
+
+\question
+Are the two charges attracted or repulsed?
+
+\begin{randomizechoices}[keeplast]
+    \choice attracted
+    \correctchoice repulsed
+    \choice both attracted and repulsed
+    \choice neither attracted nor repulsed
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which option explains your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \choice opposite charges attract
+    \correctchoice like charges repel
+    \choice the positive charge causes attraction; the negative, repulsion
+    \choice the positive and negative cancel each other, removing all attraction and repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+What is the charge of the \SI{3.6}{\micro C} object in base units of coulombs?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.6e-6}{C}
+    \choice \SI{3.6e-9}{C}
+    \choice \SI{3.6e9}{C}
+    \choice \SI{3.6e16}{C}
+\end{randomizechoices}
+
+\question \label{Fxl8ta}
+Calculate the magnitude of the electrostatic force that the charged objects exert on each other.
+
+\begin{randomizechoices}
+    \correctchoice \SI{29.3}{N}
+    \choice \SI{3.25e-9}{N}
+    \choice \SI{1.37}{N}
+    \choice \SI{1.53e-10}{N}
+\end{randomizechoices}
+\vspace{1em}
+
+
+\clearpage
+\begin{EnvUplevel}
+     \textbf{Read the prompt below. Then answer questions \ref{yETfik}--\ref{b4zyju}.}
+
+    Two charges are placed next to each other. The first has a charge of -7.5 microcoulombs, and the second, 1.2 microcoulombs. The magnitude of the electrostatic force is 0.005 newtons.  
 \end{EnvUplevel}
 
 
-\question \label{ques:fire_first} %8
-How are the light waves and heat waves radiated by the fire the same, and how are they different?
-
-\begin{choices}
-\choice Both travel as waves, but only light waves are a form of electromagnetic radiation.
-\CorrectChoice Heat and light are both forms of electromagnetic radiation, but light waves have higher frequencies.
-\choice Heat and light are both forms of electromagnetic radiation, but heat waves have higher frequencies.
-\choice Heat and light are both forms of electromagnetic radiation, but light waves have higher wavelengths.
-\end{choices}
-
-% \begin{solution}
-% Heat and light waves are both forms of electromagnetic radiation, but they have different frequencies. Our eyes detect only the range of frequencies called visible light. The heat waves are easily absorbed by our body, but the light is mostly reflected.
-% \end{solution}
-
-\question %10
-What is this other type of radiation?
-
-\begin{choices}
-\choice Visible light rays
-\choice X-rays
-\choice Gamma rays
-\CorrectChoice Infrared rays
-\end{choices}
 
 
-\question \label{ques:fire_last} %10
-How is this other type of radiation different from light waves?
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3.7cm,
+    clip=false,
+    xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
+    axis line style={draw=none},
+    ticks=none,    
+]
+    \fill (0,0) circle (3pt);
+    \draw (0,0) circle (6mm) node[above=6mm] {$q_1$};
+    %\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
 
-\begin{choices}
-\choice The visible light rays have higher frequencies and shorter wavelengths than the light waves.
-\CorrectChoice The infrared rays have lower frequencies and longer wavelengths than the light waves.
-\choice The X-rays have lower frequencies and longer wavelengths than the light waves.
-\choice The gamma rays have higher frequencies and shorter wavelengths than the light waves.
-\end{choices}
+    \begin{scope}[xshift=5.02*0.99 cm]
+        \fill (0,0) circle (3pt);
+        \draw (0,0) circle (6mm) node[above=6mm] {$q_2$};
+        %\draw[->,thick] (0,0) -- ++(axis direction cs: -2,0) node[below] {$F$};
+    \end{scope}
+
+    \draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
+    \node[above=6pt] at (5.02/2,0) {$r$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{yETfik}
+Is the electrostatic force attractive or repulsive?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice attractive
+    \choice repulsive
+    \choice both
+    \choice neither
+    \choice none of the above
+\end{randomizechoices}
+
+\question
+Which of the following justifies your answer to the previous question?
+
+\begin{randomizechoices}[keeplast]
+    \correctchoice opposite charges attract
+    \choice like charges repel
+    \choice opposite charges generation attraction and repulsion
+    \choice like charges prevent attraction or repulsion
+    \choice none of the above
+\end{randomizechoices}
+
+\question \label{b4zyju}
+What is the distance between the charges?
+
+\begin{randomizechoices}
+    \correctchoice \SI{4.0}{m}
+    \choice \SI{8.9}{m}
+    \choice \SI{1.8e-9}{m}
+    \choice \SI{3.6e-7}{m}
+\end{randomizechoices}
 \vspace{1em}
 
-\hrule
 
-% \begin{solution}
-% Part A. We sense infrared waves as heat. Part B. We sense the light with our eyes and the heat with our whole body. The heat waves have lower frequency and longer wavelengths than the light waves. They are both forms of electromagnetic radiation.
-% \end{solution}
 
 \question
-What is the value of $c$, the speed of light in a vacuum?
+A \SI{-8e-6}{C} charge and \SI{9e-6}{C} charge are separated by \SI{3.0}{cm}. What is the magnitude of the electrostatic force between them?
+
+\begin{randomizechoices}
+        \correctchoice \SI{719}{N}
+        \choice \SI{21.5}{N}
+        \choice \SI{0.64}{N}
+        \choice \SI{8e-8}{N}
+\end{randomizechoices}
+
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+    \correctchoice electric charge that is moving
+    \choice a property of matter that causes objects to attract or repel
+    \choice the electric potential energy per unit charge
+    \choice schematic drawing of an electrical circuit 
+\end{randomizechoices}
+
+\question 
+What is the SI unit of electric current?
+
+\begin{randomizeoneparchoices}
+    \correctchoice ampere (A)
+    \choice coulomb (C)
+    \choice ohm ($\Omega$)
+    \choice volt (V)
+\end{randomizeoneparchoices}
+
+\question
+What is the function of the circuit component shown below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[rmeter,t=A] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice to measure current through a wire
+    \choice to measure voltage across a battery
+    \choice to measure resistance of a resistor
+    \choice to enable a circuit to be switched on or off
+\end{randomizechoices}
+
+\question
+Which circuit element is depicted in the symbol below?
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[R] (3,0);
+    \end{circuitikz}
+\end{center}
+
+\begin{randomizeoneparchoices}
+    \correctchoice resistor
+    \choice battery
+    \choice lamp
+    \choice switch
+    \choice zig-zag transistor
+\end{randomizeoneparchoices}
+
+\question
+What is the function of a resistor in a circuit?
+
+\begin{randomizechoices}
+    \correctchoice to oppose the passage of electric current
+    \choice to increase the passage of electric current
+    \choice to completely stop the passage of electric current
+    \choice to measure the passage of electric current
+\end{randomizechoices}
+
+\question
+What is current through the resistor in the circuit below? 
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (0,2) to[battery,l=$\SI{24}{V}$] (3,2)
+                -- (3,0) to[R=$\SI{8.0}{\ohm}$] (0,0);
+\end{circuitikz}
+\end{center}
+
+
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.0}{A}
+    \choice \SI{0.3}{A}
+    \choice \SI{32}{A}
+    \choice \SI{16}{A}
+\end{randomizechoices}
+
+\question
+Which set of resistors has the \textit{smallest} equivalent resistance?
+
+% \fbox{
+{\LARGE \textbf{A}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{1.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{2.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+    \end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \textbf{B}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{1.0}{\ohm}$] (2.5,0) to[R=$\SI{2.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+% \fbox{
+{\LARGE \textbf{C}}
+\begin{minipage}[c][3.5cm][c]{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) to[R=$\SI{2.0}{\ohm}$] (2.5,0) to[R=$\SI{3.0}{\ohm}$] (5,0);
+\end{circuitikz}
+\end{minipage}
+% }%
+% \fbox{
+{\LARGE \textbf{D}}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) -- (1,0) -- (1,1) to[R=$\SI{2.0}{\ohm}$] (4,1) -- (4,-1) to[R=$\SI{3.0}{\ohm}$] (1,-1) -- (1,0) (4,0) -- (5,0);
+\end{circuitikz}
+\end{minipage}
+% }
+
+\begin{oneparchoices}
+    \correctchoice \textbf{A}
+    \choice \textbf{B}
+    \choice \textbf{C}
+    \choice \textbf{D}
+\end{oneparchoices}
+
+\vspace{1em}
+
+
+
+\begin{EnvUplevel}
+    \textbf{Consider the circuit below. Then answer questions \ref{zaf0rk} through \ref{MMCLG2}.}
+\end{EnvUplevel}
+
+\begin{center}
+    \begin{circuitikz}
+        \draw (0,0) -- (3,0) to[R=$\SI{5}{\ohm}$] (3,2) -- (0,2) to[battery,l=$\SI{15}{V}$] (0,0)
+            (3,0) -- (5,0) to[R=$\SI{20}{\ohm}$] (5,2) -- (3,2);
+    \end{circuitikz}
+\end{center}
+
+
+\question \label{zaf0rk}
+What is the current through the \SI{5}{\ohm} resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.00}{A}
+    \choice \SI{0.80}{A}
+    \choice \SI{50.0}{A}
+    \choice \SI{0.20}{A}
+\end{randomizechoices}
+
+\question
+What is the current through the 20-ohm resistor?
+
+\begin{randomizechoices}
+    \correctchoice \SI{0.75}{A}
+    \choice \SI{60.0}{A}
+    \choice \SI{0.06}{A}
+    \choice \SI{12.0}{A}
+\end{randomizechoices}
+
+\question \label{MMCLG2}
+What is the current through the wires that are directly connected to the battery?
+
+\begin{randomizechoices}
+    \correctchoice \SI{3.75}{A}
+    \choice \SI{4.0}{A}
+    \choice \SI{0.25}{A}
+    \choice \SI{83.4}{A}
+\end{randomizechoices}
+
+\vspace{1em}
+
+
+
+
+\question
+An electric appliance draws 3.0 amperes of current when it is connected to a 21-volt source. What is the resistance of this appliance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{7.0}{\ohm}
+    \choice \SI{63}{\ohm}
+    \choice \SI{24}{\ohm}
+    \choice \SI{0.14}{\ohm}
+\end{randomizechoices}
+
+ \clearpage
+\question
+This diagram represents a circuit. What is the total resistance of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{41}{\ohm}] (3,3) to[R=\SI{15}{\ohm}] (0,3) to [battery,l=\SI{61}{V}] (0,0)
+            (3,0) -- (5,0) to[R=\SI{31}{\ohm}] (5,3) -- (3,3);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{33}{\ohm}
+    \choice \SI{87}{\ohm}
+    \choice \SI{25}{\ohm}
+    \choice \SI{28}{\ohm}
+\end{randomizechoices}
+
+\question
+Three resistors---4 ohms, 6 ohms, and 8 ohms---are connected in parallel in an electric circuit. The equivalent resistance of the circuit is \fillin\ .
+
+\begin{randomizechoices}
+    \correctchoice less than 4 ohms
+    \choice between 4 and 8 ohms
+    \choice between 10 and 18 ohms
+    \choice greater than 18 ohms
+\end{randomizechoices}
+
+
+\question 
+In which circuit represented below are meters properly connected to measure the current through resistor $R_1$ and the potential difference across resistor $R_2$?
+
+
+{\LARGE \textbf{A}}
+\begin{minipage}[c][4cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(2,0) to[rmeter,t=A] ++(2,0) to[R=$R_2$] ++(2,0) to[rmeter,t=V] ++(0,2) to[battery] ++(-6,0) -- ++(0,-2);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \textbf{B}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_1$] ++(3,0) to[R=$R_2$] ++(3,0) -- ++(0,2) to[battery] ++(-6,0) -- ++(0,-2) 
+    (0.5,0) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (3.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1);
+\end{circuitikz}
+\end{minipage}
+
+{\LARGE \textbf{C}}
+\begin{minipage}{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(0,2.5) to[R,a=$R_1$] ++(-3,0) -- ++(0,-2.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0.5,2.5) -- ++(0,-1) to[rmeter,t=A] ++(2,0) -- ++(0,1)
+    (0,2.5) -- ++(0,1.5) to[battery] ++(3,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}%
+\hspace{1em}
+{\LARGE \textbf{D}}
+\begin{minipage}[c][6cm][c]{0.45\textwidth}
+    \centering 
+    \begin{circuitikz}
+    \draw (0,0) to[R=$R_2$] ++(3,0) -- ++(1,0) -- ++(0,1.5) to[rmeter,t=A] ++(-2,0) to[R,a=$R_1$] ++(-2,0) -- ++(0,-1.5)
+    (0.5,0) -- ++(0,-1) to[rmeter,t=V] ++(2,0) -- ++(0,1)
+    (0,1.5) -- ++(0,1.5) to[battery] ++(4,0) -- ++(0,-1.5);
+\end{circuitikz}
+\end{minipage}
+
+\begin{oneparchoices}
+    \choice \textbf{A}
+    \choice \textbf{B}
+    \choice \textbf{C}
+    \correctchoice \textbf{D}
+\end{oneparchoices}
+
+
+\question
+The diagram below represents a circuit. What is the voltage of the battery when the ammeter reads 4.0 amperes?
+
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[battery] (3,0)
+            to[rmeter,t=A] ++(0,2) to[R=\SI{6.0}{\ohm}] ++(-3,0) -- ++(0,-2)
+            (3,2) -- ++(0,1.5) to[R=\SI{12}{\ohm}] ++(-3,0) -- ++(0,-1.5); 
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{16}{V}
+    \choice \SI{0.22}{V}
+    \choice \SI{1.0}{V}
+    \choice \SI{4.5}{V}
+\end{randomizechoices}
+
+
+
+\question
+A heater has a resistance of 10.0 ohms. It operates on \SI{120.0}{V}. What is the current through the resistance?
+
+\begin{randomizechoices}
+    \correctchoice \SI{12}{A}
+    \choice \SI{24}{A}
+    \choice \SI{120}{A}
+    \choice \SI{80}{A}
+\end{randomizechoices}
+
+\clearpage
+\question
+What is the current through the battery?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) to[R=\SI{4}{\ohm}] (0,3) to[battery,l=\SI{8}{V}] ++(3,0) -- ++(0,-3) to[R=\SI{4}{\ohm}] ++(-3,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1}{A}
+    \choice \SI{4}{A}
+    \choice \SI{8}{A}
+    \choice \SI{2}{A}
+\end{randomizechoices}
+
+
+
+
+\question
+The diagram below represents parts of an electric circuit containing three resistors. What is the equivalent resistance of this part of the circuit?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- ++(0,3) to[R=\SI{3.0}{\ohm}] ++(2,0) -- ++(0,-3) to[R=\SI{12}{\ohm}]  (0,0)
+    (-1,1.5) to[R=\SI{4.0}{\ohm}] ++(4,0);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{1.5}{\ohm}
+    \choice \SI{0.67}{\ohm}
+    \choice \SI{6.3}{\ohm}
+    \choice \SI{19}{\ohm}
+\end{randomizechoices}
+
+\clearpage
+\question
+In the circuit represented by the diagram below, what is the reading of the voltmeter V?
+
+\begin{center}
+\begin{circuitikz}
+    \draw (0,0) -- (3,0) to[R=\SI{10}{\ohm}] ++(0,3) to[R=\SI{20}{\ohm}] ++(-3,0) to[battery,l=\SI{60}{V}] (0,0)
+            (0.5,3) -- ++(0,1) to[rmeter,t=V] ++(2,0) -- ++(0,-1);
+\end{circuitikz}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice \SI{40}{V}
+    \choice \SI{2.0}{V}
+    \choice \SI{30}{V}
+    \choice \SI{20}{V}
+\end{randomizechoices}
+
+
+
+
+\question
+What happens to the electrostatic force between 2 charges if the distance between the charges is quadrupled?
 
 \begin{choices}
-\correctchoice \SI{3.0e8}{m/s} (3 million meters per second)
-\choice \SI{0.0}{m/s} (zero meters per second)
-\choice \SI{1.0e5}{m/s} (100 thousand meters per second)
-\choice \SI{584}{m/s} (584 meters per second)
+\choice the force \textit{decreases} to $1/4$ its original strength
+\choice the force \textit{increases} to 4 times its original strength
+\choice the force \textit{increases} to 16 times its original strength
+\correctchoice the force \textit{decreases} to $1/16$ its original strength
 \end{choices}
 
 \question
-When light travels through a physical medium, its speed is always \fillin[][0.8in]\ the speed of light ($c$).
+The magnitude of the attractive force between two charged objects is \SI{0.96}{N}. If the distance between the objects is quadrupled, what is the magnitude of the new force?
 
 \begin{choices}
-\choice greater than
-\choice equal to
-\choice negative
-\correctchoice less than
+\choice \SI{16.67}{N}
+\choice \SI{15.36}{N}
+\choice \SI{0.24}{N}
+\choice \SI{0.06}{N}
 \end{choices}
 
 \question
-Light travels in water at \fillin\ the value of $c$.
+Charging a neutral body by bringing it near a charged object is charging by \fillin\ .
 
 \begin{choices}
-\correctchoice $3/4$
-\choice $1/2$
-\choice $5/6$
-\choice $2/3$
+\choice friction
+\choice conduction
+\choice induction
+\choice VISA
 \end{choices}
 
 \question
-In air, light has a speed that is \fillin\ of $c$.
+Which of the following is the best list of insulators?
 
 \begin{choices}
-\choice 0.03 percent
-\choice 65.00 percent
-\correctchoice 99.97 percent
-\choice 87.50 percent
+\choice rubber, copper, plastic 
+\choice rubber, wood, plastic
+\choice rubber, copper, wood 
+\choice human body, copper, plastic
 \end{choices}
 
 \question
-Diamond slows light down to just \fillin\ of $c$.
+The force exerted between two charged spheres is \SI{64}{N}. What is the magnitude of the force when the distance between the spheres is tripled?
 
 \begin{choices}
-\correctchoice 41 percent
-\choice 33 percent
-\choice 61 percent
-\choice 74 percent
+\choice \SI{16.0}{N}
+\choice \SI{192.0}{N}
+\choice \SI{7.1}{N}
+\choice \SI{21.3}{N}
 \end{choices}
 
-\question %5
-Light travels at different speeds in different media. Put these media in order, from the slowest light speed to the fastest light speed: air, diamond, vacuum, water.
+\question
+Two identical spheres contain a charge of $q$. If each sphere then acquires a new charge of $3q$, and are held at a constant separation distance, how does the electric force between the spheres change?
 
 \begin{choices}
-\choice vacuum, diamond, air, water
-\choice diamond, air, water, vacuum
-\correctchoice diamond, water, air, vacuum
-\choice air, diamond, water, vacuum
+\choice It increases by a factor of 3.
+\choice It decreases to one-ninth its
+original value.
+\choice It increases by a factor of 9.
+\choice It decreases to one-third its
+original value.
+\choice It increases by a factor of 6.
 \end{choices}
 
-\question %28
-Explain how X-ray radiation can be harmful and how can it be a useful diagnostic tool.
+\question
+True or false? Although both are inverse square laws, the electric force is significantly stronger than gravitational force.
 
 \begin{choices}
-\choice Overexposure to X-rays can cause HIV, though normal levels of X-rays can be used for sterilizing needles.
-\CorrectChoice Overexposure to X-rays can cause cancer, though in limited doses X-rays can be used for imaging internal body parts.
-\choice Overexposure to X-rays causes diabetes, though normal levels of X-rays can be used for imaging internal body parts.
-\choice Overexposure to X-rays causes cancer, though normal levels of X-rays can be used for reducing cholesterol in the blood.
+\choice True
+\choice False
 \end{choices}
 
-\question %17
-Which type of electromagnetic radiation has the shortest wavelengths?
+\question
+True or false? Since the electric force and the gravitational force are inverse square laws, both types of forces can be either attractive or repulsive.
 
 \begin{choices}
-\CorrectChoice Gamma rays
-\choice Infrared waves
-\choice Blue light
-\choice Microwaves
-\end{choices}
-
-\question %18
-Which form of EM radiation has the most penetrating ability?
-
-\begin{choices}
-\choice red light
-\choice microwaves
-\choice gamma rays
-\choice infrared radiation
-\end{choices}
-
-
-\question % 3
-What is the location of gamma rays on the electromagnetic spectrum?
-
-\begin{choices}
-\choice At the high-frequency and long-wavelength end of the spectrum
-\CorrectChoice At the high-frequency and short-wavelength end of the spectrum
-\choice At the low-frequency and long-wavelength end of the spectrum
-\choice At the low-frequency and short-wavelength end of the spectrum
-\end{choices}
-
-\question %19
-Why are high-frequency gamma rays more dangerous to humans than visible light?
-
-\begin{choices}
-\choice Gamma rays have a lower frequency range than visible light.
-\choice Gamma rays have a longer wavelength range than visible light.
-\CorrectChoice Gamma rays have greater energy than visible light for penetrating matter.
-\choice Gamma rays have less energy than visible light for penetrating matter.
+\choice True
+\choice False
 \end{choices}
 
 
 
-\question %33
-Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn?
-
-\begin{choices}
-\choice \SI{7.94e9}{min}
-\choice \SI{3.4e4}{min}
-\choice \SI{3.4e-6}{min}
-\choice \SI{79.4}{min}
-\end{choices}
-
-
-\question %34
-A frequency of red light has a wavelength of \SI{700}{nm}. Violet light has a \fillin[higher] frequency and \fillin[shorter] wavelength than red light.
-
-\vspace{0.5em}
-
-\begin{choices}
-\choice lower; longer
-\CorrectChoice higher; shorter
-\choice lower; shorter
-\choice higher; longer
-\end{choices}
-
-% \begin{solution}
-% Violet light has a higher frequency and shorter wavelength than red light.
-% \end{solution}
-
-
-\question %34
-A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has lower frequencies than red light?
-
-\vspace{0.5em}
-
-\begin{choices}
-\choice ultraviolet radiation
-\choice x-ray radiation
-\CorrectChoice infrared radiation
-\choice violet light radiation
-
-\end{choices}
-
-% \begin{solution}
-% Infrared radiation or any other type of radiation in the low-frequency end of the spectrum.
-% \end{solution}
-
-\question %34
-A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has shorter wavelengths than violet light?
-
-\vspace{0.5em}
-
-\begin{choices}
-\choice infrared radiation
-\CorrectChoice ultraviolet radiation
-\choice red light radiation
-\choice microwave radiation
-\end{choices}
-
-% \begin{solution}
-% Ultraviolet radiation or any other type of radiation in the high-frequency end of the spectrum.
-% \end{solution}
-
-\question %22
-What is the wavelength of red light with a frequency of \SI{4.00e14}{\Hz}?
-
-\begin{choices}
-\choice \SI{2.50e14}{\meter}
-\choice \SI{4.00e15}{\meter}
-\choice \SI{2.50e6}{\meter}
-\CorrectChoice \SI{7.50e-7}{\meter}
-\end{choices}
-
-\begin{solution}
-The \textit{Known} quantities:
-
-\begin{itemize}
-    \item frequency: $f = \SI{4.00e14}{\Hz}$
-    \item speed of light: $c = \SI[per-mode=symbol]{3.00e8}{\meter\per\second}$
-\end{itemize}
-
-Frequency and wavelength are related to the speed of light by
-
-\begin{equation*}
-    c = f \lambda
-\end{equation*}
-
-Solving for wavelength,
-
-\begin{equation*}
-    \lambda = \frac{c}{f} = \SI{7.50e-7}{\meter}
-\end{equation*}
-\end{solution}
-
-\question %14
-Visible light has a range of wavelengths from about \SI{400}{nm} to \SI{800}{nm}. What is the range of frequencies for visible light?
-
-\begin{choices}
-\choice \SI{3.75e6}{\Hz} to \SI{7.50e6}{\Hz}
-\choice \SI{3.75}{\Hz} to \SI{7.50}{\Hz}
-\choice \SI{3.75e-7}{\Hz} to \SI{7.50e-7}{\Hz}
-\CorrectChoice \SI{3.75e14}{\Hz} to \SI{7.50e14}{\Hz}
-\end{choices}
-
-\begin{solution}
-The \textit{Known} quantities:
-
-\begin{itemize}
-    \item red limit of wavelength $\lambda_R = \SI{800}{\nano\meter} = \SI{800e-9}{\meter}$
-    \item violet limit of wavelength: $\lambda_V = \SI{400}{\nano\meter} = \SI{400e-9}{\meter}$
-    \item speed of light: $c = \SI{3.00e8}{\meter/\second}$
-\end{itemize}
-
-Frequency and wavelength are related to the speed of light by
-
-\begin{equation*}
-    c = f \lambda
-\end{equation*}
-
-Solving for frequency,
-
-\begin{equation*}
-    f = \frac{c}{\lambda}
-\end{equation*}
-
-The red and violet limits of frequency are
-
-\begin{align*}
-    f_R = \frac{c}{\lambda_R} = \SI{3.75e14}{\Hz}\\
-    \\
-    f_V = \frac{c}{\lambda_V} = \SI{7.50e14}{\Hz}\\
-\end{align*}
-\end{solution}
+\question
+If two-point charges that are 2000 meters apart have charge values of \SI{40}{C} and \SI{-40}{C}, respectively, what is the
+value of the electrostatic force between them? Coulomb's constant is  \SI{8.99e9}{N\,\cdot\,m^2/C^2}).
 
 \end{questions}
 
-
-
-
-
-
-
+\end{document}

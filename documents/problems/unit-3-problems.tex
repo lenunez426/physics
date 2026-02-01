@@ -408,7 +408,7 @@ Follow the ``Steps for Resetting the Simulation'' listed above.
 \begin{parts}
 
 \part
-The system in this simulation is the box on the skateboard. Keep the same box on the skateboard at all times. Do not add or remove anything from the skateboard. What is the mass of the box?
+The system in this simulation is the box on the skateboard. What is the mass of the box?
 
 \ifprintanswers
 {\color{red} $m = \SI{50}{kg}$} 
@@ -637,10 +637,9 @@ Thus, the change in momentum is
 
 \clearpage
 
+\subsection*{Interpreting Accelerated Motion on Graphs}
+
 \begin{questions}
-\begin{EnvUplevel}
-    \subsection*{Interpreting Accelerated Motion on Graphs}
-\end{EnvUplevel}
 
 \question
 Choose the position time graph that shows an object slowing down towards the origin.
@@ -935,10 +934,10 @@ Draw the position vs time graph and the velocity vs time graph for the situation
     \begin{tikzpicture}
         \begin{scope}[rotate=-10,transform shape]
             \draw (0,0) rectangle ++(10,-0.5) node[pos=0.1,below=-2pt] {0 position} node[pos=0.98,above] {$+$};
-            \draw[above=9mm] (8,0) rectangle ++(1.5,-0.7) node[pos=0.5,below=-3mm] {cart};
-            \draw[fill=white,above=2mm] (8.4,0) circle (2mm);
-            \draw[fill=white,above=2mm] (9.1,0) circle (2mm);
-            \draw[ultra thick,->,above=6mm] (8,0) -- ++(-2,0);
+            \draw[shift={(0,9mm)}] (8,0) rectangle ++(1.5,-0.7) node[pos=0.5,shift={(0,1mm)}] {cart};
+            \draw[fill=white,shift={(0,2mm)}] (8.4,0) circle (2mm);
+            \draw[fill=white,shift={(0,2mm)}] (9.1,0) circle (2mm);
+            \draw[ultra thick,->,shift={(0,6mm)}] (8,0) -- ++(-2,0);
         \end{scope}
     \end{tikzpicture}
 \end{center}
@@ -1307,11 +1306,14 @@ Which of the following velocity vs time graphs demonstrates an object speeding u
 \end{randomizeoneparchoices}
 }
 
+\end{questions}
+
 \clearpage
 
-\begin{EnvUplevel}
-    \subsection*{Calculating Acceleration from a v-t Graph}
-\end{EnvUplevel}
+
+\subsection*{Calculating Acceleration from a v-t Graph}
+
+\begin{questions}
 
 \question
 What is the acceleration of the motion shown in the graph below?
@@ -1542,11 +1544,13 @@ Draw the acceleration vs time graph that corresponds to the car's motion.
 \end{tikzpicture}
 \end{center}
 
+\end{questions}
 
 \clearpage
-\begin{EnvUplevel}
-    \subsection*{Acceleration Calculations}
-\end{EnvUplevel}
+
+\subsection*{Acceleration Calculations}
+
+\begin{questions}
 
 \question
 An airplane went from 120\,m/s to 180\,m/s in 4.0 seconds. What was its acceleration?
@@ -1701,6 +1705,8 @@ interval?
     \choice \SI{7}{m/s}
 \end{randomizechoices}
 
+\ifprintanswers \else \clearpage \fi
+
 \question
 The data represented in the velocity vs. time graph below is from a car traveling along a flat straight road.
 
@@ -1754,10 +1760,15 @@ The car is moving to the right and slowing down.
 
 The velocity is \fillin[positive][4cm] and the acceleration is \fillin[negative][4cm].
 
+\end{questions}
+
 \clearpage
-\begin{EnvUplevel}
-    \subsection*{Net Force = Mass times Acceleration}
-\end{EnvUplevel}
+
+
+
+\subsection*{Net Force Equals Mass Times Acceleration}
+
+\begin{questions}
 
 \question
 When the net force applied on a object increases, the acceleration will
@@ -1907,9 +1918,13 @@ Solving this for mass gives
 
 \clearpage
 
-\begin{EnvUplevel}
-    \subsection*{Acceleration Station Review (Station 5)}
-\end{EnvUplevel}
+\end{questions}
+
+
+\subsection*{Additional Practice}
+
+\begin{questions}
+
 
 \question
 A cart rolling down an incline for 5 seconds has an acceleration of \SI{4}{m/s^2}.  If the cart has a beginning velocity of \SI{2}{m/s}, what is its final velocity?
@@ -2187,9 +2202,6 @@ A sudden gust of wind increases the velocity of a sailboat relative to the water
     \choice \SI{-0.083}{m/s^2}
 \end{randomizechoices}
 
-\begin{EnvUplevel}
-    \subsection*{Net Force Exit Ticket}
-\end{EnvUplevel}
 
 \question
 If a net force of \SI{-5}{N} is acting on a 10\,kg object, what is the acceleration of the object?

@@ -1,8 +1,4 @@
-%\documentclass[../main-physics-problems.tex]{subfiles}
-
-
-%...For a standalone document, un-comment lines below and recompile here:
-\documentclass[]{exam}
+\documentclass[answers]{exam}
 \input{global}
 \input{problem-sets}
 \renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
@@ -10,26 +6,32 @@
 
 \begin{document}
 
-\subsection{Physical Systems}
+\firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}\\{Physics}}{}{Unit 8:\\Conservation in Mechanical Systems}
+\runningheader{Physics}{}{Unit 8}
 
-\subsubsection{Choices for a System}
-\subsubsection{Energy Stored in the Arrangement of Particles}
-\clearpage
 
-\subsubsection{Gravitational and Elastic Potential Energy}
+\subsection*{Desmos: Gravitational Potential Energy}
 
 \begin{questions}
 \question
-Recall Newton's universal law of gravitation:
+\textit{Warm-up}. Recall Newton's universal law of gravitation, which calculates the force of attraction:
 
 \begin{equation*}
     F_g = \frac{G m_1 m_2}{r^2}
 \end{equation*}
 
-where $G = \SI{6.67e-11}{N\cdot m^2/kg^2}$. Calculate the gravitational force by Earth on a 1.0 kilogram object resting on the surface of Earth. Earth's mass is \SI{5.97e24}{kg}, and the separation distance between Earth and object is Earth's radius, \SI{6.378e8}{m}.
+where $m_1$ and $m_2$ are masses in kilograms, $r$ is the distance in meters between the centers of mass, and $G = \SI{6.67e-11}{N\cdot m^2/kg^2}$ is the universal gravitational constant.
+
+\textbf{\underline{Calculate}} the gravitational force by Earth on a 1.0 kilogram object resting on the surface of Earth. Earth's mass is \SI{5.97e24}{kg}, and the separation distance between Earth and object is Earth's radius, \SI{6.378e8}{m}. \textbf{\underline{Round}} your answer to the nearest whole number.
+
+\begin{solutionorbox}[1.5cm]
+\begin{equation*}
+    F_g = \frac{G m_1 m_2}{r^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg})(\SI{1.00}{kg})(\SI{5.97e24}{kg})}{(\SI{7.378e6}{m})^2} = \SI{9.78}{N} \approx \boxed{\SI{10}{N}}
+\end{equation*}
+\end{solutionorbox}
 
 \question
-When two masses are separated by some distance, in addition to a mutual force of attraction, there is energy stored in the configuration; we call it gravitational potential energy $E_g$:
+\textit{Intro to GPE}. When two masses are separated by some distance, energy is stored in the configuration. This stored energy is called gravitational potential energy. The equation and figure below show that raising a bowling ball ($m_1$) above the surface of the Earth ($m_2$) stores energy ($E_g$).
 
 \bigskip
 
@@ -41,9 +43,9 @@ When two masses are separated by some distance, in addition to a mutual force of
 \end{minipage}%
 \begin{minipage}{0.4\textwidth}
 \centering
-\begin{tikzpicture}[scale=0.9,transform shape]
-    \draw (0,0) node[opacity=0.3] {\twemoji[width=5cm]{globe showing Americas}};
-    \draw (0,0) circle (2.5) node[right=2.5cm] {$m_2$};
+\begin{tikzpicture}[x=7mm,y=7mm,transform shape]
+    \draw (0,0) node[opacity=0.3] {\twemoji[width=3.5cm]{globe showing Americas}};
+    \draw (0,0) circle (2.5) node[right=2.5] {$m_2$};
     \draw[<->] (0,0) -- (0,2.5) node[right,pos=0.5] {$R$};
     \draw[<->,xshift=-4mm] (0,0) -- (0,3.5) node[left,pos=0.5] {$r$};
     \begin{scope}[shift={(0,2.5)}]
@@ -51,43 +53,42 @@ When two masses are separated by some distance, in addition to a mutual force of
         \fill[yshift=4pt] (0,1) circle (4pt) node[right=4pt] {$m_1$};
     \end{scope}
 \end{tikzpicture}
-
-\underline{Note:} Figure not to scale.
 \end{minipage}
 
-\bigskip
+Go to \href{https://www.desmos.com/scientific}{desmos.com/scientific}. Type the following variables in each cell:
+
+\bgroup
+\begin{center}
+\def\arraystretch{2.3}
+\begin{tabular}{|l|l|}
+    \hline
+    \thead{\textbf{Type this in Desmos}} & \thead{\textbf{What it means}} \\ \hline
+    $G = \num{6.8139e-11}$ \hspace{1cm} & slightly modified universal gravitational constant \\ \hline
+    $m_1 = 1.00$ & mass of a bowling ball (test mass) \\ \hline
+    $m_2 = \num{5.97e24}$ & mass of Earth \\ \hline
+    $R = \num{6.378e6}$ & radius of Earth \\ \hline
+    $h = 0 $ & height of $m_1$ above Earth's surface (initially zero) \\ \hline
+    $\displaystyle E_i = -\frac{G m_1 m_2}{R}$ & gravitational potential energy when $m_1$ is on Earth's surface \\ \hline
+    $\displaystyle E_f = - \frac{G m_1 m_2}{R+h}$ & gravitational potential energy when $m_1$ is raised to height $h$ \\ \hline
+    $E_{\mathrm{change}} = E_f - E_i$ & the \textit{exact} change in gravitational potential energy from $E_i$ to $E_f$ \\ \hline
+\end{tabular}
+\end{center}
+\egroup
+
+%Note: \footnote{Setting $G = \num{6.814e-11}$ makes $g = 10$.}
+
+\ifprintanswers
+\else
+\clearpage
+\fi
 
 
-Go to \href{https://www.desmos.com/scientific}{desmos.com/scientific}. Define the following variables in each cell:
-\vspace{-1em}
 
-\begin{align*}
-    & G = \num{6.8139e-11} \\[1ex]
-    & m_1 = 1.00 \\[1ex]
-    & m_2 = \num{5.97e24} \\[1ex]
-    & R = \num{6.378e6} \\[1ex]
-    & h = 0 
-\end{align*}
-
-where $G$ is a slightly modified\footnote{Setting $G = \num{6.814e-11}$ makes $g = 10$.} version of the universal gravitational constant, $m_1$ is a test mass (like a bowling ball), $m_2$ is the mass of the Earth in kilograms, $r$ is the Earth's radius in meters, and $h$ is the vertical position of the object relative to the surface of the Earth (i.e., the height above ground). 
-
-Next, define the initial and final gravitational potential energy between the Earth and test mass as
-
-\begin{align*}
-    E_i &= -\frac{G m_1 m_2}{R} \\[1ex]
-    E_f &= - \frac{G m_1 m_2}{R+h}
-\end{align*}
-
-where the term $r+h$ represents the Earth's radius plus the height to which the object has been raised.
-
-Finally, define the \textit{change} in gravitational potential energy as
-
-\begin{equation*}
-    E_{\mathrm{change}} = E_f - E_i
-\end{equation*}
+\textbf{\underline{NOTE}:} For all answers below, \textbf{\underline{ROUND}} to the nearest whole number.
 
 \begin{parts}
-\part Set the object position to $h = 0$, and list the initial, final, and change in gravitational potential energies below:
+\part 
+\textbf{\underline{Set}} the object position to $h = 0$, and \textbf{\underline{list}} the initial, final, and change in gravitational potential energies below:
 
 \begin{center}
 \bgroup
@@ -95,13 +96,13 @@ Finally, define the \textit{change} in gravitational potential energy as
 \begin{tabular}{|c|c|c|}
     \hline 
      \hspace{2.0cm} $E_i$ \hspace{2.0cm} & \hspace{2.0cm} $E_f$ \hspace{2.0cm} & \hspace{1cm} $E_\mathrm{change}$ \hspace{1.5cm} \phantom{.}\\ \hline
-     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $0.00$ \fi \\ \hline
+     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $0$ \fi \\ \hline
 \end{tabular}
 \egroup
 \end{center}
 
 \part 
-Now set $h = 1$, and list the energies below.
+\textbf{\underline{Set}} $h = 1$, and \textbf{\underline{list}} the energies below.
 
 \begin{center}
 \bgroup
@@ -109,13 +110,13 @@ Now set $h = 1$, and list the energies below.
 \begin{tabular}{|c|c|c|}
     \hline 
      \hspace{2.0cm} $E_i$ \hspace{2.0cm} & \hspace{2.0cm} $E_f$ \hspace{2.0cm} & \hspace{1cm} $E_\mathrm{change}$ \hspace{1.5cm} \phantom{.}\\ \hline
-     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780145$ \fi & \ifprintanswers \color{red} $+10.00$ \fi \\ \hline
+     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780145$ \fi & \ifprintanswers \color{red} $10$ \fi \\ \hline
 \end{tabular}
 \egroup
 \end{center}
 
-\part 
-Now set $h = 2$, and list the energies below.
+\part \textbf{\textit{}}
+\textbf{\underline{Set}} $h = 2$, and \textbf{\underline{list}} the energies below.
 
 \begin{center}
 \bgroup
@@ -123,14 +124,14 @@ Now set $h = 2$, and list the energies below.
 \begin{tabular}{|c|c|c|}
     \hline 
      \hspace{2.0cm} $E_i$ \hspace{2.0cm} & \hspace{2.0cm} $E_f$ \hspace{2.0cm} & \hspace{1cm} $E_\mathrm{change}$ \hspace{1.5cm} \phantom{.}\\ \hline
-     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780135$ \fi & \ifprintanswers \color{red} $+20.00$ \fi \\ \hline
+     \ifprintanswers \color{red} $-63780155$ \fi & \ifprintanswers \color{red} $-63780135$ \fi & \ifprintanswers \color{red} $20$ \fi \\ \hline
 \end{tabular}
 \egroup
 \end{center}
 
 
 \part 
-Change test mass $m_1$ and vertical position $h$ according to the following tables and record the change in gravitational potential energy, $E_\mathrm{change}$, in each case.
+\textbf{\underline{Change}} test mass $m_1$ and vertical position $h$ according to the following tables, and \textbf{\underline{record}} the change in gravitational potential energy, $E_\mathrm{change}$, in each case.
 
 \begin{center}
 \bgroup
@@ -170,29 +171,52 @@ Change test mass $m_1$ and vertical position $h$ according to the following tabl
 \egroup
 \end{center}
 
-\part \textit{Synthesis.} Look at the patterns in your data table and think about the mathematical relationship between mass $m_1$, height $h$, and change in gravitational potential energy $E_\mathrm{change}$. Then make a prediction for the equation for $E_\mathrm{change}$ in terms of $m_1$ and $h$.
+\medskip
+
+\part \textit{Synthesis.} Do you see the pattern in your data table above? \textbf{\underline{Create}} an equation for the change in gravitational potential energy $\Delta E_g$ in terms of mass $m_1$, height $h$, and any additional constants.
 
 \bgroup
 \Large
 \begin{equation*}
-    E_\mathrm{change} = \ifprintanswers \color{red} \else \color{white} \fi mh \times 10 = mgh
+    \Delta E_g = \ifprintanswers \color{red} \else \color{white} \fi mh \times 10
 \end{equation*}
 \egroup
 
 \part
-In words, express the equation you developed in the previous step. Start your sentence as, ``The change in gravitational potential energy equals \dots ''
+\textbf{\underline{Express}} the equation you created in the previous step, in words. Use the sentence stem below.
 
 \ifprintanswers
-{\color{red} The change in gravitational potential energy equals mass multiplied by height multiplied by 10; or mass multiplied by the acceleration due to gravity multiplied by height.}
+{\color{red} The change in gravitational potential energy equals mass multiplied by height multiplied by 10.
+
+\medskip}
 \else
-\fillwithlines{1.5cm}
+
+\medskip
+
+\textit{The change in gravitational potential energy equals}
+\vspace{-1.5em}
+\fillwithlines{14mm}
 \fi
+
+\part
+What physical quantity do you think the factor of 10 represents?
+
+\ifprintanswers
+\textcolor{red}{``In the past, 10 has been associated with $g = \SI{10}{N/kg} = \SI{10}{m/s^2}$, the strength of the gravitational field or gravitational acceleration, so I think the 10 is $g$. Therefore, $\Delta E_g = mgh$.''}
+\else
+\fillwithlines{14mm}
+\fi
+
 \end{parts}
 
+\ifprintanswers
+\else
 \clearpage
+\fi
+
 
 \question
-Let $h_0$ be a variable reference point above Earth's surface from which we may measure a change in gravitational potential energy. 
+\textit{Change in GPE relative to a reference line.} Let $h_0$ be a variable reference point above Earth's surface from which we may measure a change in gravitational potential energy. 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,transform shape]
@@ -210,57 +234,148 @@ Let $h_0$ be a variable reference point above Earth's surface from which we may 
 \end{tikzpicture}
 \end{center}
 
-For example, if the reference point is at sea level, then $h_0 = \SI{0}{m}$; if it's at the top of a 100-meter building, then $h_0 = \SI{100}{m}$; etc. Then update the cells for the initial and final gravitational potential energies as
+For example, if the reference point is at sea level, then $h_0 = \SI{0}{m}$. If it's at the top of a 100-meter building, then $h_0 = \SI{100}{m}$, etc. 
 
-\begin{align*}
-    E_i &= -\frac{G m_1 m_2}{R + h_0} \\[1ex]
-    E_f &= - \frac{G m_1 m_2}{R + h_0 + h}
-\end{align*}
+In Desmos, \textbf{\underline{set}} $m_1 = 1$ and  \textbf{\underline{update}} the cells for the initial and final gravitational potential energies:
 
-\begin{parts}
-\part The tallest building in Houston, the JP Morgan Chase Tower, is 305 meters tall. Houston is 15 meters above sea level. So, let's set the reference point at the top of the building, at $h_0 = 320$. Calculate the change in gravitational potential energy when $m_1$ is raised $h=10$ meters above the reference point.
+\bgroup
+\begin{center}
+\def\arraystretch{3}
+\begin{tabular}{|c|l|}
+    \hline
+    \thead{\textbf{Update these cells in Desmos}} & \thead{\textbf{What it means}} \\ \hline
+    $\displaystyle E_i = -\frac{G m_1 m_2}{R + h_0}$ & gravitational PE starting from reference $h_0$ \\ \hline
+    $\displaystyle E_f = - \frac{G m_1 m_2}{R + h_0 + h}$ & gravitational PE ending at $h_0 + h$ \\ \hline
+\end{tabular}
+\end{center}
+\egroup
 
-\bigskip
 
-$E_\mathrm{change} = $ \fillin[100.00]
-
-\bigskip
-
-Is the formula $\Delta E_g = mgh$ appropriate?
-
-\part 
-Mount Everest is \SI{8850}{m} above sea level. Set $h_0 = 8850$. 
+Houston is 15 meters above sea level, and the tallest building in Houston, the JP Morgan Chase Tower, is 305 meters tall. So, the top of the Chase Tower is 320 meters above sea level. Imagine standing on top of the tower and raising the bowling ball ($m_1$) to a height of 10 meters relative to the reference line.
 
 \begin{center}
 \begin{tikzpicture}
-    \draw (0,0) node {\twemoji[width=2.5cm]{mountain}};
+    \draw[rounded corners=2mm] (0,0) -- (3,0)  -- (5,1) -- (9,1) node[above,pos=0.3,align=left] {Houston\\ground level};
+    \draw[densely dashed] (3,0) -- (8.9,0) node[above,pos=0.5] {Sea level} node[below=5mm,pos=0.5] {\footnotesize Note: Figure is not to scale.};
+    \draw[|-|] (9.5,0) -- (9.5,5) node[pos=0.8,right,align=left] {$h_0 = \SI{320}{m}$\\reference height};
+    \fill (8.8,6) circle (1.5mm) node[left=1.5mm] {$m_1$};
+    \draw[thick,fill=gray] (8,1) rectangle (9,5) node[rotate=90,black,pos=0.5] {\bfseries \large Chase Tower};
+    \draw[|-|] (9.15,5) -- (9.15,6) node[right,pos=0.5] {$h = \SI{10}{m}$};
+    \node at (8.5,5.2) {\Strichmaxerl[1.5]};
+    \begin{pgfonlayer}{background}
+        \fill[cyan!20] (0,-1) rectangle (3,0) node[pos=0.5] {\reflectbox{\twemoji[width=6mm]{fish}}};
+    \end{pgfonlayer}
 \end{tikzpicture}
 \end{center}
 
-Now what is the change in gravitational potential energy when $m_1$ is raised $h=10$ meters above the reference point?
+\ifprintanswers
+\else
+\clearpage
+\fi
 
-\bigskip
+Make the following changes in Desmos:
 
-$E_\mathrm{change} = $ \fillin[99.72]
+\bgroup
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|l|}
+    \hline
+    \thead{\textbf{Update these cells in Desmos}} & \thead{\textbf{What it means}} \\ \hline
+    $\displaystyle h_0 = 320$ & the new reference point is at the top of the Chase Tower \\ \hline
+    $\displaystyle h = 10$ & raise the bowling ball 10 meters above the reference \\ \hline
+\end{tabular}
+\end{center}
+\egroup
 
-\bigskip
+\smallskip
 
-Is the formula $\Delta E_g = mgh$ appropriate?
+\begin{parts}
+\part 
+The \textit{exact} change in gravitational potential energy (PE) for this configuration is given by the cell containing $E_\mathrm{change}$ in Desmos. What is the change in gravitational PE? (Round to nearest whole.)
+
+\begin{center}
+    $E_\mathrm{change} = $ \fillin[100] \quad joules
+\end{center}
+
+\part
+What is the change in gravitational potential energy according to the formula $\Delta E_g = m g h$?
+
+\ifprintanswers
+\textcolor{red}{$\Delta E_g = mgh = (\SI{1}{kg})(\SI{10}{m/s^2})(\SI{10}{m}) = \SI{100}{J}$, so also 100 joules.}
+\else
+\fillwithlines{7mm}
+\fi
 
 \part 
-The International Space Station (ISS) orbits 400 kilometers above the surface of the Earth. Set the reference point at $h_0 = 400000$. What is the change in gravitational potential energy when $m_1$ is raised $h=10$ meters above the reference point?
+Is $mgh$ a good representation of the exact value $E_\mathrm{change}$? Why or why not?
 
-\bigskip
-
-$E_\mathrm{change} = $ \fillin[88.55]
-
-\bigskip
-
-Is the formula $\Delta E_g = mgh$ appropriate near the space station?
+\ifprintanswers
+\textcolor{red}{Yes because $E_\mathrm{change}$ in Desmos and $mgh$ both give the same answer of 100 joules.}
+\else
+\fillwithlines{14mm}
+\fi
 
 \end{parts}
 
+\question
+Mount Everest is \SI{8850}{m} above sea level ($h_0 = 8850$).
 
+\begin{parts}
+\part What is the \textit{exact} change in gravitational potential energy when the 1-kg ball is raised 10 meters above Mount Everest? (Round to the nearest whole number.)
+
+\ifprintanswers
+\textcolor{red}{$E_\mathrm{change} = 100$}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+Is $mgh$ a good representation of the exact value $E_\mathrm{change}$? Why or why not?
+
+\ifprintanswers
+\textcolor{red}{Since $\Delta E_g = mgh = (\SI{1}{kg})(\SI{10}{m/s^2})(\SI{10}{m}) = \SI{100}{J}$, the equation $mgh$ is a good representation of the exact value.}
+\else
+\fillwithlines{14mm}
+\fi
+
+\end{parts}
+
+\question
+The International Space Station (ISS) orbits 400 kilometers above the surface of the Earth ($h_0 = \num{400000}$).
+
+\begin{parts}
+    
+\part What is the \textit{exact} change in gravitational potential energy when the 1-kg ball is raised 10 meters above the ISS? (Round to the nearest whole number.)
+
+\ifprintanswers
+\textcolor{red}{$E_\mathrm{change} = 89$}
+\else
+\fillwithlines{7mm}
+\fi
+
+
+\part 
+Is $mgh$ a good representation of the exact value $E_\mathrm{change}$? Why or why not?
+
+\ifprintanswers
+\textcolor{red}{No. The true value is $E_\mathrm{change} = 89$ but $\Delta E_g = mgh$ still predicts \SI{100}{J}, so equation $mgh$ is a no longer a good representation of the exact value.}
+\else
+\fillwithlines{14mm}
+\fi
+\end{parts}
+
+\question \textit{Checking for understanding.} The expression $\Delta E_g = mgh$ is a good approximation for the \textit{exact} change in the gravitational potential energy\ldots
+
+\begin{randomizechoices}[norandomize]
+    \choice only if the reference line is at sea level.
+    \choice only if the reference line is below the International Space Station. 
+    \correctchoice only if the reference line is sufficiently near sea level (e.g., below Mount Everest).
+    \choice only if the reference line is far from sea level (e.g., above the ISS).
+    \choice at any distance beyond the Earth's surface.
+\end{randomizechoices}
+
+
+\clearpage
 
 \question \label{xxSTEr}
 What is the equation for gravitational potential energy? What is the SI unit of gravitational potential energy?

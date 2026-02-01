@@ -1,0 +1,1028 @@
+% \documentclass[../main-physics-workbook.tex]{subfiles}
+
+\documentclass[]{exam}
+\input{global}
+\input{problem-sets}
+\input{documents/physics-glossary}
+\usepackage{makecell}
+
+\setcounter{section}{10}
+
+\begin{document}
+
+
+
+
+
+\subsection{PhET Simulation: Magnets and Electromangets}
+
+\textbf{Directions:} Go to the \href{https://phet.colorado.edu/sims/html/magnets-and-electromagnets/latest/magnets-and-electromagnets_all.html}{PhET Simulation: Magnets and Electromagnets}.
+
+\begin{questions}
+\question
+Click on the panel called Bar Magnet. Click the reset ($\circlearrowleft$) button in the bottom right corner. By default, the magnetic field and compass are enabled. Check the field meter box, too:
+
+\begin{center}
+    \checkbox{1} Magnetic Field (B) \qquad
+    \checkbox{1} Compass \qquad
+    \checkbox{1} Field Meter
+\end{center}
+
+\begin{center}
+\ifprintanswers
+\begin{tikzpicture}
+    \node at (0,0) {\fcolorbox{red}{white}{\includegraphics[width=5cm]{documents/figures/magnetic-field-lines-1.pdf}}};
+\end{tikzpicture}
+\else
+\vspace{2cm}
+\begin{tikzpicture}
+    \fill[white] (-2,-0.4) rectangle (0,0.4);
+    \fill[black!20] (0,-0.4) rectangle (2,0.4);
+    \draw[rounded corners] (-2,-0.4) node[shift={(0.3,0.4)}] {\Large S} rectangle (2,0.4) node[shift={(-0.3,-0.4)}] {\Large N};
+    \draw (0,-0.4) -- (0,0.4);
+    \draw (3.1,-1.8) node {\rotatebox{-120}{\resizebox{10mm}{!}{\faCompass}}};
+    \draw[<-,thick] (3.23,-1.85) -- ++(0.8,-0.4) node[right] {B};
+    \draw (-4.9,-1.8) node {\resizebox{7mm}{!}{\faCrosshairs}} node[below=1em] {A};
+    \fill (0,-0.5) circle (1.5pt) node[below=1.5pt] {\footnotesize C};
+    \fill (0,0) circle (1.5pt) node[right=1pt] {\footnotesize D};
+\end{tikzpicture}
+\fi
+    
+\end{center}
+
+\begin{parts}
+\part Four points, A--D, are labeled for reference in the figure above.
+
+\begin{itemize}
+    \item Point A: the initial position of the field meter
+    \item Point B: the center of the initial position of the compass
+    \item Point C: the point below and just outside the magnet
+    \item Point D: the midpoint inside the magnet
+\end{itemize}
+
+Use the field meter measure and record the magnetic field at the four points below:
+
+\begin{equation*}
+    B_\mathrm{A} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{0.60}{G}} \hspace{1.3cm}
+    B_\mathrm{B} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{1.71}{G}} \hspace{1.3cm}
+    B_\mathrm{C} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{4.11}{G}} \hspace{1.3cm}
+    B_\mathrm{D} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{220.63}{G}} \hspace{1.3cm}
+\end{equation*}
+
+\medskip
+
+\part In the space provided above, draw the magnetic field lines surrounding the magnet. Use the compass for guidance, and arrows to indicate the direction of the field lines.
+
+\part Click the reset ($\circlearrowleft$) button and check the Earth box: \checkbox{1} Earth. Our home planet is a magnet, because it is surrounded by magnetic field lines. In the space below, \textbf{draw} the bar magnet, correctly labeling north and south magnetic poles, and \textbf{draw} the magnetic field lines surrounding the planet.
+
+\begin{center}
+\begin{tikzpicture}
+    \ifprintanswers
+    \node at (0,0) {\rotatebox{-90}{\fcolorbox{red}{white}{\includegraphics[width=7.4cm]{documents/figures/magnetic-field-lines-1.pdf}}}};
+    \node at (0,0) {\twemoji[width=3.2cm]{globe showing Americas}};
+    \else
+    \node[opacity=0] at (0,0) {\rotatebox{-90}{\fcolorbox{red}{white}{\includegraphics[width=7.4cm]{documents/figures/electric-field-lines-5a.pdf}}}};
+    \node[opacity=0.5] at (0,0) {\twemoji[width=3.2cm]{globe showing Americas}};
+    \fi
+\end{tikzpicture}
+\end{center}
+\end{parts}
+
+\clearpage
+
+\question
+Switch to the panel called Electromagnet (see the bar at the bottom of the screen). Check all the boxes:
+
+\begin{center}
+    \checkbox{1} Magnetic Field (B) \qquad
+    \checkbox{1} Electrons \qquad
+    \checkbox{1} Compass \qquad
+    \checkbox{1} Field Meter
+\end{center}
+
+\begin{parts}
+\part Read the field meter to record the magnetic field strength at the locations below:
+
+\begin{itemize}[itemsep=6pt,topsep=4pt]
+    \item The magnetic field at the initial position of the field meter is \fillin[\SI{1.44}{G}].
+    \item The magnetic field at the center of the initial position of the compass is \fillin[\SI{2.65}{G}].
+    \item The magnetic field inside the 4-coil electromagnet is \fillin[\SI{300.00}{G}].
+\end{itemize}
+
+\part Use the field meter to measure the magnetic field inside the electromagnetic coil as a function of the voltage in the battery. Record your data in the table and graph below.
+
+\begin{EnvUplevel}
+\begin{center}
+% \fbox{
+\begin{minipage}{6cm}
+\centering
+\bgroup
+\def\arraystretch{1.15}
+\begin{tabular}{|c|c|}
+    \hline
+    \thead{\textbf{Battery}\\ \textbf{Voltage} (V)} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} \\ \hline
+    $-5$ & {\ifprintanswers \color{red} 150 \fi} \\ \hline
+    $-4$ & {\ifprintanswers \color{red} 120 \fi} \\ \hline
+    $-3$ & {\ifprintanswers \color{red} 90 \fi} \\ \hline
+    $-2$ & {\ifprintanswers \color{red} 60 \fi} \\ \hline
+    $-1$ & {\ifprintanswers \color{red} 30 \fi} \\ \hline
+    $0$ & {\ifprintanswers \color{red} 0.00 \fi} \\ \hline
+    $1$ & {\ifprintanswers \color{red} 30 \fi} \\ \hline
+    $2$ & {\ifprintanswers \color{red} 60 \fi} \\ \hline
+    $3$ & {\ifprintanswers \color{red} 90 \fi} \\ \hline
+    $4$ & {\ifprintanswers \color{red} 120 \fi} \\ \hline
+    $5$ & {\ifprintanswers \color{red} 150 \fi} \\ \hline
+\end{tabular}
+\egroup
+\end{minipage}
+% }
+% \fbox{
+\begin{minipage}{8.5cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=8.5cm,
+        axis y line=center,
+        axis x line=left,
+        ylabel={Magnetic Field (G)},
+        xlabel={Battery Voltage (V)},
+        y label style={at={(axis description cs: 0.5,1)},above=0.5em},
+        x label style={at={(axis description cs: 0.7,0)},below=1.5em},
+        ymin=0,ymax=180,
+        xmin=-5,xmax=5,
+        ytick={0,30,...,180},
+        xtick={-5,-4,...,5},
+        grid=both,
+        % minor y tick num=1,
+        % minor x tick num=1,
+    ]
+        \ifprintanswers
+            \addplot[thick,red,mark=*,domain=-5:0,samples=6] {-30*x};
+            \addplot[thick,red,mark=*,domain=0:5,samples=6] {30*x};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+% }
+\end{center}
+\end{EnvUplevel}
+
+
+\part Click the reset ($\circlearrowleft$) button, and check \checkbox{1} Field Meter. Set the loops number to 1, and measure the magnetic field inside the coil. Then increase the loop number, and fill the table and graph below.
+
+\begin{EnvUplevel}
+\begin{center}
+% \fbox{
+\begin{minipage}{5cm}
+\centering
+\bgroup
+\def\arraystretch{1.2}
+\begin{tabular}{|c|c|}
+    \hline
+    \thead{\textbf{Number}\\ \textbf{of Loops}} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} \\ \hline
+    1 & {\ifprintanswers \color{red} 75.00 \fi} \\ \hline
+    2 & {\ifprintanswers \color{red} 150.00 \fi} \\ \hline
+    3 & {\ifprintanswers \color{red} 225.00 \fi} \\ \hline
+    4 & {\ifprintanswers \color{red} 300.00 \fi} \\ \hline
+\end{tabular}
+\egroup
+\end{minipage}
+% }
+% \fbox{
+\begin{minipage}{7.5cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6cm,
+        axis lines=left,
+        ylabel={Magnetic Field (G)},
+        xlabel={Number of Loops},
+        ymin=0,ymax=300,
+        xmin=0,xmax=4,
+        ytick={0,60,...,300},
+        xtick={0,1,...,4},
+        grid=both,
+        minor y tick num=1,
+        minor x tick num=1,
+    ]
+        \ifprintanswers
+        \addplot[thick,red,mark=*,domain=1:4,samples=4] {75*x};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+% }
+\end{center}
+\end{EnvUplevel}
+
+\part Numerically, what happens to the magnetic field in the coil when one loop is added to the electromagnet?
+
+\begin{solution}
+    Magnetic field increases by \SI{75}{G} with each loop.
+\end{solution}
+
+\fillwithlines{0.7cm}
+
+
+\part \textit{Predict:} What would be the strength of the magnetic field inside the coil if there were 9 loops in the electromagnet? Explain how you arrived at your claim.
+
+\fillwithlines{1.5cm}
+
+\begin{solution}
+    Since the magnetic field for one loop is \SI{75}{G}, the magnetic loop for 9 loops is $9\times \SI{75}{G} = \SI{675}{G}$.
+\end{solution}
+
+\end{parts}
+
+\clearpage
+
+\question
+Alternate the battery voltage between $\SI{-5}{V}$, \SI{0}{V}, and $+\SI{5}{V}$. Then
+
+\begin{itemize}
+    \item Place both the compass and field meter inside the coils of the electromagnet.
+    \item Record the magnitude of the magnetic field in the table below. 
+    \item Make the graph of magnetic field and voltage.
+    \item Specify the direction of the field inside the electromagnet as right, left, or none.
+\end{itemize}
+
+
+\begin{EnvUplevel}
+\begin{center}
+% \fbox{
+\begin{minipage}{6cm}
+\centering
+\bgroup
+\def\arraystretch{1.15}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \thead{\textbf{Battery}\\ \textbf{Voltage} (V)} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} & \thead{\textbf{Field}\\\textbf{Direction}} \\ \hline
+    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
+    $+5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{right} \fi \\ \hline
+    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
+    $-5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{left} \fi \\ \hline
+    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
+    $+5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{right} \fi \\ \hline
+    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
+    $-5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{left} \fi \\ \hline
+\end{tabular}
+\egroup
+\end{minipage}
+% }
+% \fbox{
+\begin{minipage}{8.5cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=8.5cm,
+        axis lines=left,
+        ylabel={Magnetic Field (G)},
+        xlabel={Battery Voltage (V)},
+        % y label style={at={(axis description cs: 0.5,1)},above=0.5em},
+        % x label style={at={(axis description cs: 0.7,0)},below=1.5em},
+        ymin=0,ymax=210,
+        xmin=0,xmax=7,
+        ytick={0,30,...,210},
+        xtick={0,1,...,7},
+        xticklabels={$0$,$+5$,$0$,$-5$,$0$,$+5$,$0$,$-5$},
+        grid=both,
+        % minor y tick num=1,
+        % minor x tick num=1,
+    ]
+        \ifprintanswers
+            \addplot[thick,red,mark=*] coordinates{(0,0)(1,150)(2,0)(3,150)(4,0)(5,150)(6,0)(7,150)};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+% }
+\end{center}
+\end{EnvUplevel}
+
+What happens to the direction of the magnetic field over time?
+
+\ifprintanswers
+{\color{red} It changes direction, oscillating between right and left.}
+\else
+\fillwithlines{1.5cm}
+\fi
+\end{questions}
+
+\clearpage
+
+\subsection{Electromagnetism Introduction}
+    
+\begin{questions}
+
+\question
+The location to which a compass points in the northern hemisphere---Hudson Bay, Canada---is known as
+
+\begin{randomizechoices}
+    \choice a magnet
+    \choice a permanent magnet
+    \choice a temporary magnet
+    \choice true north
+    \correctchoice magnetic north
+\end{randomizechoices}
+
+
+\question
+A \fillin[temporary magnet][4cm] becomes a magnet near a magnet, then loses its magnetism when moved away.
+
+\begin{randomizechoices}
+    \choice a magnet
+    \choice a permanent magnet
+    \correctchoice a temporary magnet
+    \choice true north
+    \choice magnetic north
+\end{randomizechoices}
+
+\question
+Anything that attracts or repels another magnet or magnetic material is called 
+
+\begin{randomizechoices}
+    \correctchoice a magnet
+    \choice a permanent magnet
+    \choice a temporary magnet
+    \choice true north
+    \choice magnetic north
+\end{randomizechoices}
+
+\question
+The North Pole, where maps point to as north, is referred to as 
+
+\begin{randomizechoices}
+    \choice a magnet
+    \choice a permanent magnet
+    \choice a temporary magnet
+    \correctchoice true north
+    \choice magnetic north
+\end{randomizechoices}
+
+\question
+A \fillin[permanent magnet][4cm], like lodestone and magnetite, does not lose its magnetism.
+
+\begin{randomizechoices}
+    \choice a magnet
+    \correctchoice a permanent magnet
+    \choice a temporary magnet
+    \choice true north
+    \choice magnetic north
+\end{randomizechoices}
+
+\question
+The center of an electromagnet is called 
+
+\begin{randomizechoices}
+    \choice a compass
+    \choice an electromagnet
+    \choice a magnetic field
+    \correctchoice the core
+    \choice the iron
+\end{randomizechoices}
+
+\question
+A(n) \fillin[compass] is a magnetic navigational device that point toward magnetic north.
+
+\begin{randomizechoices}
+    \correctchoice compass
+    \choice electromagnet
+    \choice magnetic field
+    \choice core
+    \choice iron
+\end{randomizechoices}
+
+\question
+The lines surrounding a magnet that represent magnetic forces are called
+
+\begin{randomizechoices}
+    \choice a compass
+    \choice an electromagnet
+    \correctchoice a magnetic field
+    \choice the core
+    \choice iron
+\end{randomizechoices}
+
+\question
+\fillin\ is the best magnetic substance, because more of it in an electromagnetic core makes the magnet stronger.
+
+\begin{randomizechoices}
+    \choice A compass
+    \choice An electromagnet
+    \choice A magnetic field
+    \choice The core
+    \correctchoice Iron
+\end{randomizechoices}
+
+\question 
+A magnet made using electricity is called
+
+\begin{randomizechoices}
+    \choice a compass
+    \correctchoice an electromagnet
+    \choice a magnetic field
+    \choice the core
+    \choice iron
+\end{randomizechoices}
+
+
+\end{questions}
+
+\clearpage
+
+\subsection{The Station Lab on Electromagnetism}
+
+\begin{questions}
+
+\question
+Magnetism Station Lab: Bar Magnets and Compass
+
+\textbf{Objective}: Students will observe how two bar magnets affect each other and use a compass alongside a bar magnet to generate magnetic field lines.
+
+\begin{parts}
+\part 
+First place the South pole of one magnet close to the North pole of the other. 
+
+\begin{center}
+\begin{tikzpicture}
+    \fill[white] (-2,-0.4) rectangle (0,0.4);
+    \fill[black!20] (0,-0.4) rectangle (2,0.4);
+    \draw[rounded corners] (-2,-0.4) node[shift={(0.3,0.4)}] {\Large S} rectangle (2,0.4) node[shift={(-0.3,-0.4)}] {\Large N};
+\end{tikzpicture}
+\end{center}
+
+Are the magnets repelling or attracting each other?
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\part 
+Now take both South poles and bring them close to each other. Are the magnets repelling or attracting each other? 
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\part 
+Try placing two like poles (North-North or South-South) right next to each other on the table and then let go of just one magnet. Describe what happens to the magnets when you let it go.
+
+\ifprintanswers
+\else
+\fillwithlines{1cm}
+\fi
+
+\part 
+Using the white sheet of paper provided and the compass, draw at least 2 complete magnetic field lines as illustrated by your teacher, and as shown by the diagram below.
+
+\begin{center}
+    \includegraphics[width=5cm]{documents/figures/magnetic-field-lines-1.pdf}
+\end{center}
+
+\end{parts}
+
+\question
+Magnetism Station Lab: Building an Electromagnet
+
+\textbf{Objective}: Students will construct a simple electromagnet using a battery, some wire, and a nail, and they will observe different methods of manipulating the strength of the magnet.
+
+\begin{parts}
+\part 
+To build your electromagnet, start by wrapping the wire around the nail a few times and then connect the two ends of the wire to the leads of the battery. With the wire connected to the battery, can you use the nail to pick up some paperclips? If so, how many can you pick up?
+
+\part 
+Now try adding a second battery (make sure the 2 batteries are properly oriented). Can you pick up more paperclips than before or less?
+
+\part 
+Now disconnect the wire and wrap it around the nail a few more times. When you reconnect the battery, can you pick up more paperclips than before or less?
+\end{parts}
+
+\question
+Magnetism Station Lab: Magnetic Field Lines
+
+\textbf{Objective}: Students will observe the shape of the magnetic field generated by a simple bar magnet using iron filings. Note: Before you begin, make sure that the magnet is separate from the apparatus and all the iron filings are settled.
+
+\begin{parts}
+\part Place the magnet in the cylinder and shake it to spread the iron filings. Draw the shape that the iron makes around the magnet below.
+
+\begin{solutionorbox}[4cm]
+    
+\end{solutionorbox}
+
+
+\part
+Now try pulling the magnet out most of the way so that just one end is still in the cylinder. Draw the shape of the field near the magnetic pole.
+
+\begin{solutionorbox}[4cm]
+    
+\end{solutionorbox}
+\end{parts}
+
+\question
+Magnetism Station Lab: Electromagnet
+
+\textbf{Objective}: Students will observe how a coil of wire can be used as an electromagnet. Note: Before you begin, make sure the coil of wire is disconnected from the battery and the metal core is placed in the center of the coil.
+
+
+\begin{parts}
+\part Without connecting the battery, touch the loose metal plate to the core. Is the plate attracted to the core or not?
+\part Now connect the two ends of the wire to the leads of the battery. Is the metal plate attracted to the coil/iron core or not? 
+\part Take the small permanent magnet and place it near the core of your electromagnet. Which pole of the magnet is attracted to the core? Which pole is repelled?
+\part Disconnect the battery, reconnect it in the opposite orientation, and repeat step 3. Has the polarity of your electromagnet changed or stayed the same?
+\end{parts}
+
+
+\question
+Magnetism Station Lab: Faraday’s Law
+
+\textbf{Objective}: Students will observe the effects of changing magnetic fields near conductors by waving a bar magnet around a coil of wire that is connected to a voltmeter. Note: Before you begin, make sure that your voltmeter is connected to both ends of the coil and its dial is turned to the smallest voltage scale, labeled ``200m''.
+
+\begin{parts}
+\part Take the bar magnet and wave it over the top of the coil of wire. Describe what happens to the voltmeter.
+\part Now try slowly moving the North pole of the magnet in and out of the coil. Is the voltage positive or negative when you push the magnet into the coil? What about when you pull the magnet out of the coil?
+\part Flip the magnet around and repeat step 2 so that the South pole is now moving in and out of the coil. Is the sign of the voltage the same as before or different?
+\part Now try moving the magnet faster into the coil. Does the voltage increase or decrease? What is the maximum voltage you can achieve?
+\end{parts}
+
+\question
+Magnetism Station Lab: Floating Magnet Tower
+
+\textbf{Objective}: Students will observe the interactions between permanent magnets by changing the polarity of individual magnets on a floating magnet tower. Note: Before you begin, make sure that the tower is setup so that none of the magnets are stuck together (all are repelling their neighbors).
+
+\begin{parts}
+\part 
+Try taking one of the magnets off the top of the tower. What happens to the rest of the magnets on the tower?
+
+\part 
+Now flip the magnet that you have removed upside-down and place it back on the tower. Does the magnet still float? Describe what happens to the rest of the tower.
+
+\part 
+Now take all the magnets off the tower and arrange them so that all but one of the magnets are stuck together. Place the magnets back on the tower so that the individual magnet is floating on top of the rest. Is the tower taller or shorter than when you started? What configuration makes the tower the tallest?
+\end{parts}
+
+\end{questions}
+
+\clearpage
+
+
+\subsection{Other}
+
+\begin{questions}
+\question
+Magnets are categorized as magnetic dipoles. What is meant by \textit{dipole}?
+
+\begin{randomizechoices}
+    \correctchoice That a bar magnet has two poles.
+    \choice That a bar magnet has one pole.
+    \choice That a bar magnet has no poles.
+    \choice That a bar magnet has infinitely many poles.
+\end{randomizechoices}
+
+\question
+What are the labels of the poles of a bar magnet?
+
+\begin{randomizechoices}
+\choice North only
+\choice North, south, east, and west
+\choice East and west
+\CorrectChoice North and south
+\end{randomizechoices}
+
+\question
+What do you get when you cut a bar magnet in half?
+
+\begin{randomizechoices}
+\choice One magnet with two south poles, and one magnet with two north poles.
+\choice Two objects that are not magnetic anymore.
+\choice It’s impossible to cut a magnet in half.
+\CorrectChoice Two magnets, each with a north and south pole.
+\end{randomizechoices}
+
+\question
+True or False? Earth generates a magnetic field which surrounds it.
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice True
+    \choice False
+\end{randomizechoices}
+
+\question
+The south geographic pole of Earth (in Antarctica) is near what type of \textit{magnetic} pole?
+
+\begin{randomizeoneparchoices}
+    \correctchoice north
+    \choice south
+    \choice east
+    \choice west
+\end{randomizeoneparchoices}
+
+
+\question
+What type of \textit{magnetic} pole is close to Earth's north \textit{geographic} pole (near Alaska)? 
+
+\begin{randomizeoneparchoices}
+\choice north
+\CorrectChoice south
+\choice east
+\choice west
+\end{randomizeoneparchoices}
+
+\question
+The \textit{magnetic} pole of Earth that is close to the \textit{geographic} South Pole is a\\ magnetic \fillin Pole.
+
+\begin{randomizechoices}
+\CorrectChoice North
+\choice South
+\choice East
+\choice West
+\end{randomizechoices}
+
+\question
+The \textit{magnetic} North Pole of Earth is close to the \textit{geographic} \fillin Pole.
+
+\begin{randomizechoices}
+\choice North
+\CorrectChoice South
+\choice East
+\choice West
+\end{randomizechoices}
+
+\question
+The \textit{magnetic} South Pole of Earth is close to the \textit{geographic} \fillin Pole.
+
+\begin{randomizechoices}
+\CorrectChoice North
+\choice South
+\choice East
+\choice West
+\end{randomizechoices}
+
+\question
+One way to visualize magnetic field lines around a magnet is by\ldots 
+
+\begin{randomizechoices}
+\choice using certified electromagnetic goggles.
+\choice attracting or repelling the magnet with a second magnet.
+\CorrectChoice sprinkling iron filings around the magnet.
+\choice brushing the magnet with glow-in-the-dark liquid and turning off the lights.
+\end{randomizechoices}
+
+\question
+Besides magnets, what other thing creates a magnetic field?
+
+\begin{randomizechoices}[norandomize]
+\choice Water.
+\choice The gravitational force.
+\CorrectChoice electric current (i.e., moving charges)
+\choice Nothing. Only magnets can create magnetic fields.
+\end{randomizechoices}
+
+\clearpage
+
+\question
+Where were the first known magnets discovered?
+
+\begin{randomizechoices}
+\choice Houston, TX
+\CorrectChoice Magnesia (present-day western Turkey)
+\choice London, England
+\choice The North Pole
+\end{randomizechoices}
+
+\question
+Suppose that equal parts of sand and iron powder are mixed together in a glass petri dish. What happens when a magnet is placed next to one side of the dish?
+
+\begin{randomizechoices}
+\CorrectChoice Magnet attracts the iron only
+\choice Magnet attracts the sand only
+\choice Magnet attracts both the sand and the iron
+\choice The magnet attracts the iron and repels the sand
+\end{randomizechoices}
+
+\question
+In which direction do magnetic field lines from a bar magnet flow?
+
+\begin{randomizechoices}
+\choice South to North
+\choice North to East
+\CorrectChoice North to South
+\choice South to West
+\end{randomizechoices}
+
+\question
+What is electric current?
+
+\begin{randomizechoices}
+\choice a current of water
+\CorrectChoice electric charges that are moving
+\choice directional field lines around a magnet
+\choice the atoms that make up a metal wire
+\end{randomizechoices}
+
+\question
+The SI units for electric current, amperes (A), are equivalent to which other units?
+
+\begin{randomizechoices}
+\CorrectChoice C/s
+\choice e/s
+\choice $-$e/s
+\choice C/$\mathrm{s^2}$
+\end{randomizechoices}
+
+\question
+The electrons in a straight wire flow downwards. In which direction does electric current flow?
+
+\begin{randomizeoneparchoices}
+\CorrectChoice up
+\choice down
+\choice $\bigodot$
+\choice $\bigotimes$
+\end{randomizeoneparchoices}
+
+\question
+The current in a straight wire flows to the right. In which direction do electrons flow?
+
+\question
+What is the purpose of the right-hand rule?
+
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\centering
+    \begin{tikzpicture}
+        \draw[ultra thick,->] (0,-2) -- ++(0,3.5) node[above] {$I$};
+        \begin{scope}[rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:280:1);
+        \end{scope}
+        \begin{scope}[yshift=2mm,rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:283:1.6);
+        \end{scope}
+        \begin{scope}[yshift=4mm,rotate around x=50]
+            \draw[red,very thick,->] (0,0) arc (90:286:2.2);
+        \end{scope}
+        \node[red] at (1.3,-0.5) {$\vec{B}$};
+    \end{tikzpicture}
+\end{minipage}%
+\hspace{1em}
+% \begin{minipage}{0.3\textwidth}
+%     \centering
+%         \includegraphics[width=3.6cm]{documents/figures/Unit10_RightHandRule.jpeg}
+% \end{minipage}
+\end{center}
+
+\begin{randomizechoices}
+\choice to show the direction of gravity
+\CorrectChoice to show the direction of magnetic field around a current-carrying wire
+\choice to show the direction of current between two magnets
+\choice to show the direction of magnetic field between two magnets
+\end{randomizechoices}
+
+\question
+What is the direction of the magnetic field when the current is
+
+\begin{center}
+    $\bigodot I$
+\end{center}
+
+\begin{randomizechoices}
+\choice {$\circlearrowright$}
+\CorrectChoice {$\circlearrowleft$}
+\choice $\bigodot$
+\choice $\bigotimes$
+\end{randomizechoices}
+
+\clearpage
+\question
+What is the direction of the magnetic field when the current is
+
+\begin{center}
+    $\bigotimes I$
+\end{center}
+
+\begin{randomizechoices}
+\CorrectChoice {$\circlearrowright$}
+\choice {$\circlearrowleft$}
+\choice $\bigodot$
+\choice $\bigotimes$
+\end{randomizechoices}
+
+\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{above} the wire?
+
+\begin{center}
+\begin{tikzpicture}
+\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
+\begin{scope}[yshift=3mm]
+    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Above};    
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}
+\choice left
+\choice right
+\choice out of the page %$\bigodot$
+\CorrectChoice into the page %$\bigotimes$
+\end{randomizeoneparchoices}
+
+\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{below} the wire?
+
+\begin{center}
+\begin{tikzpicture}
+\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
+\begin{scope}[yshift=-13mm]
+    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Below};    
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}
+\choice left
+\choice right
+\CorrectChoice out of the page %$\bigodot$
+\choice into the page %$\bigotimes$
+\end{randomizeoneparchoices}
+
+
+\question Electric current flows through a vertical wire. The surrounding magnetic field goes into and out of the page as shown below. In what direction do \textbf{ELECTRONS} through the wire flow?
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[ultra thick] (0,0) node[below] {down} -- ++(0,3) node[above] {up} ; 
+    \foreach \i in {0,0.5,...,1.5}
+        \foreach \j in {0.5,1.0,...,2.5}
+      {
+        \begin{scope}[xshift=-2cm]
+            \node at (\i,\j) {$\otimes$};
+        \end{scope}
+        \begin{scope}[xshift=0.5cm]
+            \node at (\i,\j) {$\odot$};
+        \end{scope}
+      }
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizeoneparchoices}
+    \correctchoice up
+    \choice down
+    \choice out of the page
+    \choice into the page
+\end{randomizeoneparchoices}
+
+\clearpage
+
+\vspace{1em}
+
+\hrule\hrule
+
+\begin{EnvUplevel}
+\textbf{Questions \ref{JAlbal} through \ref{JxMpCM} are OPTIONAL and are worth EXTRA CREDIT.} To get full credit, show all your work on a sheet of paper, express your answer with correct units, and box your answer.
+\end{EnvUplevel}
+
+\question \label{JAlbal}
+A wire carries 7.0 amperes of electric current. What is the magnetic field strength 4.5 centimeters outside the current-carrying wire? %Answer: 
+
+\begin{solution}
+    \SI{3.1e-5}{T}
+\end{solution}
+
+\question
+The magnitude of the magnetic field at a point outside a current-carrying wire is shown below. Calculate the distance, in meters, of the point above the wire.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[ultra thick,->] (0,0) -- (3,0) node[right] {$\SI{12}{A}$};
+        \draw[dashed] (1.5,0) -- ++(0,0.9);
+        \node[red] at (1.5,1) {$\bigodot$}; \node[black,right=4pt] at (1.5,1) {\SI{8e-7}{T}};
+    \end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    3.0 meters
+\end{solution}
+
+\question
+The magnetic field strength 3 millimeters outside a current-carrying wire is \num{5e-4} tesla. Calculate the electric current through the wire.
+
+\begin{solution}
+    \SI{7.5}{A}
+\end{solution}
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{LhsqrR} and \ref{JxMpCM} are in reference to the magnetic field equation:}
+\end{EnvUplevel}
+
+\begin{equation*}
+    B = \frac{\mymu_0 I}{2\pi r}
+\end{equation*}
+
+\question \label{LhsqrR}
+Solve the equation algebraically for distance. Show all your steps.
+
+\question \label{JxMpCM}
+Solve the equation algebraically for electric current. Show all your steps.
+
+
+\question
+What is the magnetic field strength at a distance of 3 m from a wire carrying a current of 2 A?
+
+\begin{randomizechoices}
+\CorrectChoice $1.3 \times 10^{-7}$ T
+\choice $6.7 \times 10^{-6}$ T
+\choice 6 T
+\choice 5 T
+\end{randomizechoices}
+
+\question
+What is the magnetic field strength at a distance of 0.05 m from a wire carrying a current of 7.3 A?
+
+\begin{randomizechoices}
+\choice $9.1 \times 10^{-5}$ T
+\CorrectChoice $2.9 \times 10^{-5}$ T
+\choice 0.05 T
+\choice 7.3 T
+\end{randomizechoices}
+
+
+\question
+What is a magnetic field?
+
+\begin{randomizechoices}
+\choice a field of magnets
+\CorrectChoice directional lines around a magnetic material that indicate the direction and magnitude of the magnetic force
+\choice a material or object that produces a magnetism
+\choice part of a magnet that exerts the strongest force on other magnets or magnetic material
+\end{randomizechoices}
+\end{questions}
+
+\end{document}
+
+
+
+
+\subsubsection{North and South Pole}
+
+\subsubsection{Two Magnets Attract or Repel}
+
+\subsubsection{Classifying Materials as Magnetic or Nonmagnetic}
+
+\subsection{Magnetic Fields}
+
+\subsubsection{Magnetic Fields Around Magnets}
+
+\subsubsection{Visualizing Magnetic Field Loops}
+
+\subsubsection{Predicting Attraction or Repulsion by Field Lines}
+
+\subsubsection{Magnetic Field Strength by Field Lines}
+
+\subsection{Compass}
+
+\subsubsection{How a Compass Points in the Direction of the Magnetic Field}
+
+\subsubsection{Earth's Magnetic and Geographic Poles}
+
+\subsection{Electromagnetic Fields}
+
+\subsubsection{Magnetic Fields and Moving Charges}
+
+\subsubsection{Magnetic Fields around Current Carrying Wires}
+
+\subsubsection{Representing Magnetic Fields Into and Out of the Page}
+
+\subsection{Electromagnetic Induction}
+
+\subsubsection{Changing Magnetic Fields and Induced Electrical Currents}
+
+\subsubsection{Faraday's Law}
+
+\clearpage
+
+\subsection{Electromagnet}
+
+\subsubsection{How Electromagnets Generate Magnetic Fields}
+
+\subsubsection{Making an Electromagnet Stronger}
+
+\subsection{Transformers}
+
+\subsubsection{Diagram of a Transformer}
+
+\subsubsection{Changing Voltage while Conserving Energy}
+
+\subsubsection{Stepping Voltage Up or Down}
+
+\subsection{Generators and Motors}
+
+\subsubsection{Converting Mechanical to Electrical Energy}
+
+\subsubsection{Inducing More or Less Current in a Generator}
+
+\subsubsection{Moving Charge in an External Magnetic Field}
+
+\subsubsection{Construction and Operation of a Motor and Generator}
+
+\subsubsection{Changing the Rotational Speed of a Motor}

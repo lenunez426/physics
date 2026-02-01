@@ -829,15 +829,15 @@ Which of the following increases the apex height?
     \choice decreasing the initial speed
 \end{randomizechoices}
 
-\question
-The launch height affects all of the following EXCEPT
+% \question
+% Increasing the launch height affects all of the following EXCEPT
 
-\begin{randomizechoices}
-    \correctchoice the horizontal position of the apex
-    \choice the vertical position of the apex
-    \choice the hang time
-    \choice the maximum range
-\end{randomizechoices}
+% \begin{randomizechoices}
+%     \correctchoice the horizontal position of the apex
+%     \choice the vertical position of the apex
+%     \choice the hang time
+%     \choice the maximum range
+% \end{randomizechoices}
 
 \question
 How does increasing the launch angle affect the maximum range?
@@ -904,7 +904,7 @@ The vertical component of velocity of a horizontally launched projectile
 
 \begin{randomizechoices}
     \choice remains constant throughout the trajectory
-    \choice increases in magnitude throughout the trajectory
+    \correctchoice increases in magnitude throughout the trajectory
     \choice decreases in magnitude throughout the trajectory
     \choice is zero throughout the trajectory
 \end{randomizechoices}
@@ -1725,11 +1725,306 @@ Therefore, the displacement is
 
 \clearpage
 
-\subsection*{Circular Motion}
+\subsection*{Student Worksheet: Investigating Circular Motion}
 
-\subsubsection*{Uniform Circular Motion Using Multiple Representations}
+\textbf{Learning Objectives}
 
-\subsubsection*{Quantities of Circular Motion}
+\begin{itemize}[itemsep=0pt]
+    \item Identify the relationship between velocity, radius, and centripetal acceleration.
+    \item Determine if mass affects centripetal acceleration in uniform circular motion.
+    \item Observe and describe the motion of an object when centripetal force is removed (inertia).
+\end{itemize}
+
+\smallskip
+
+\textbf{Simulation link}: \href{https://sites.google.com/cfisd.net/uniformcircularmotion/home}{https://sites.google.com/cfisd.net/uniformcircularmotion/home}
+
+\medskip
+
+\begin{mdframed}
+Note: In the simulation, to change a variable (e.g., velocity, radius), follow these steps:
+
+\begin{enumerate}[itemsep=0pt,topsep=2pt]
+    \item Press Pause
+    \item Change the value of a variable 
+    \item Press Reset
+\end{enumerate}
+\end{mdframed}
+
+\medskip
+
+\textbf{\large Activity 1: The Effect of Mass}
+
+\bigskip
+
+\textbf{Setup}: Set Velocity ($v$) to \SI{5.0}{m/s} and Radius ($r$) to \SI{100}{m}. Toggle Centripetal Force ON if necessary.
+
+\bigskip
+
+\textbf{Data Collection}: Use the simulation to investigate and record the values for acceleration and force in the data table below, using the mass values indicated. 
+
+\begin{center}
+% Define a macro for conditional table entries
+\newcommand{\answertableentry}[3]{%
+  \ifprintanswers
+    \textcolor{black}{#1} & \textcolor{red}{#2} & \textcolor{red}{#3} \\ \hline
+  \else
+    \textcolor{black}{#1} & \textcolor{white}{#2} & \textcolor{white}{#3} \\ \hline
+  \fi
+}
+\def\arraystretch{1.3}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \thead{\bfseries Mass ($m$) in kg} & \thead{\bfseries Acceleration ($a_c$) in \SI{}{m/s^2}} & \thead{\bfseries Force ($F_\mathrm{c}$) in N} \\ \hline
+    \answertableentry{1}{0.25}{0.25}
+    \answertableentry{2}{0.25}{0.50}
+    \answertableentry{3}{0.25}{0.75}
+    \answertableentry{4}{0.25}{1.25}
+\end{tabular}
+\end{center}
+
+\textbf{Analysis}:
+
+\begin{questions}
+\question
+Does changing the mass affect the centripetal acceleration? \fillin[No][6cm]
+
+\question
+How does the centripetal force change as the mass increases? \fillin[It increases proportionally][6cm]
+\end{questions}
+
+\bigskip
+
+\textbf{\large Activity 2: Acceleration vs. Radius}
+
+\bigskip
+
+\textbf{Setup}: Set Velocity ($v$) to \SI{10}{m/s} and Mass ($m$) to \SI{1.0}{kg}. Toggle Centripetal Force ON if necessary.
+
+\bigskip
+
+\textbf{Data Collection}: Use the simulation to investigate and record the values for acceleration in the data table below, using the radius values indicated. 
+
+\bigskip
+
+\textbf{Graphing Task}: On the graph sheet to the right of the data table, sketch a graph of centripetal acceleration vs.\:radius ($a_c$ on the $y$-axis vs.\:$r$ on the $x$-axis).
+
+\begin{center}
+% Define a macro for conditional table entries
+\newcommand{\answertableentry}[2]{%
+  \ifprintanswers
+    \textcolor{black}{#1} & \textcolor{red}{#2} \\ \hline
+  \else
+    \textcolor{black}{#1} & \textcolor{white}{#2} \\ \hline
+  \fi
+}
+\begin{minipage}{7cm}
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|}
+    \hline
+    \thead{\bfseries Radius ($r$)\\ \bfseries in m} & \thead{\bfseries Acceleration ($a_c$)\\ \bfseries in \SI{}{m/s^2}} \\ \hline
+    \answertableentry{50}{2.0}
+    \answertableentry{100}{1.0}
+    \answertableentry{150}{0.67}
+    \answertableentry{200}{0.50}
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=5.5cm,width=5.5cm,
+        axis lines=left,
+        ylabel={$a_c$ (\SI{}{m/s^2})},
+        xlabel={$r$ (m)},
+        ymin=0,ymax=2,
+        xmin=0,xmax=200,
+        ytick={0,0.5,...,2},
+        xtick={0,50,...,200},
+        grid=both,
+        minor y tick num=1,
+        minor x tick num=1,
+        ]
+        \ifprintanswers
+            \addplot[red,mark=*] coordinates{(50,2)(100,1)(150,0.67)(200,0.50)};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\textbf{Analysis}:
+
+\begin{questions}
+\question
+How would you describe the relationship between centripetal acceleration and radius as shown in your graph?
+
+
+\ifprintanswers
+\textcolor{red}{There is an inverse relationship. Centripetal acceleration decreases in proportion to $1/r$.}
+\else
+\fillwithlines{14mm}
+\fi
+   
+\end{questions}
+
+\bigskip
+
+\textbf{\large Activity 3: Acceleration vs.\: Velocity}
+
+\bigskip
+
+\textbf{Setup}: Set Radius ($r$) to \SI{100}{m} and Mass ($m$) to \SI{1.0}{kg}. Toggle Force ON.
+
+\bigskip
+
+\textbf{Graphing Task}: On the graph sheet to the right of the data table, sketch a graph of centripetal acceleration vs.\:velocity ($a_c$ on the $y$-axis vs.\:$v$ on the $x$-axis).
+
+\begin{center}
+% Define a macro for conditional table entries
+\newcommand{\answertableentry}[3]{%
+  \ifprintanswers
+    \textcolor{black}{#1} & \textcolor{black}{#2} & \textcolor{red}{#3} \\ \hline
+  \else
+    \textcolor{black}{#1} & \textcolor{black}{#2} & \textcolor{white}{#3} \\ \hline
+  \fi
+}
+
+\begin{minipage}{8cm}
+\centering
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|c|}
+    \hline
+    \thead{\bfseries Velocity ($v$)\\ \bfseries in m/s} & \thead{\bfseries Velocity\\ \bfseries Squared ($v^2$)\\ \bfseries in $\mathrm{m^2/s^2}$} & \thead{\bfseries Acceleration\\ ($a_c$) \bfseries in \SI{}{m/s^2}} \\ \hline
+    \answertableentry{2}{4}{0.04}
+    \answertableentry{4}{16}{0.16}
+    \answertableentry{6}{36}{0.36}
+    \answertableentry{8}{64}{0.64}
+    \answertableentry{10}{100}{1.00}
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{7cm}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=6.5cm,width=6.5cm,
+        axis lines=left,
+        ylabel={$a_c$ (\SI{}{m/s^2})},
+        xlabel={$v$ (m/s)},
+        ymin=0,ymax=1,
+        xmin=0,xmax=10,
+        ytick={0,0.2,...,1},
+        xtick={0,2,...,10},
+        grid=both,
+        minor y tick num=1,
+        minor x tick num=1,
+        ]
+        \ifprintanswers
+            \addplot[red,mark=*] coordinates{(2,0.04)(4,0.16)(6,0.36)(8,0.64)(10,1)};
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\textbf{Analysis}:
+
+\begin{questions}
+\question
+When you double the velocity (e.g., from 2 to 4), by what factor does the acceleration increase? 
+
+\ifprintanswers
+\textcolor{red}{It increases by a factor of $2^2$, or 4.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+Based on your data, which formula for centripetal acceleration seems correct?
+\begin{itemize}
+    \item[] $\square$ $\displaystyle a_c = \frac{v}{r}$
+    \item[] \ifprintanswers {\color{red} \checkbox{1} $\displaystyle a_c = \frac{v^2}{r}$} \else $\square$  $\displaystyle a_c = \frac{v^2}{r}$ \fi \vspace{6pt}
+    \item[] $\square$ $a_c = vr$
+\end{itemize}
+
+\question
+How would you describe the mathematical relationship between centripetal acceleration and velocity as shown in your graph?
+
+\ifprintanswers
+\textcolor{red}{The mathematical relationship is quadratic. Centripetal acceleration increases in proportion to the velocity squared.}
+\else
+\fillwithlines{14mm}
+\fi
+\end{questions}
+
+\bigskip
+
+\hfill \textit{Continued on next page\ldots}
+\clearpage
+
+\textbf{\large Activity 4: Inertia and Direction}
+
+\bigskip
+
+\textbf{Setup}: Set the simulation to Play. Watch the ball orbit.
+
+\begin{questions}
+\question
+\textbf{Top of the Circle}: Wait for the ball to reach the very top (12 o'clock) and pause it. Then toggle Centripetal Force OFF. Now click play and pause quickly before the velocity vector disappears.
+
+\medskip
+
+Describe the direction in which the ball moves.
+
+\ifprintanswers
+\textcolor{red}{It moves in a straight line to the left with constant speed.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+\textbf{Right Side:} Repeat the steps above for when the ball is at the far right (3 o'clock).
+
+\medskip
+
+Describe the direction in which the ball moves.
+
+\ifprintanswers
+\textcolor{red}{It moves upward in a straight line with constant speed.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\question
+\textbf{Synthesis}: On the circle below, draw an arrow showing the direction the ball would travel if the ``string'' (force) suddenly snapped when in the 4 different positions indicated. Arrows must begin at the ball and carry an arrowhead in its direction of motion.
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    \draw[thick] (0,0) circle (1);
+    \fill (0,1) circle (1mm);
+    \fill (-1,0) circle (1mm);
+    \fill ({cos(225)},{sin(225)}) circle (1mm);
+    \fill ({cos(315)},{sin(315)}) circle (1mm);
+    \begin{pgfonlayer}{background}
+    \bgroup
+    \ifprintanswers \color{red} \else \color{white} \fi
+        \draw[->,ultra thick,shift={(0,1)},rotate around={90:(0,0)}] (0,0) -- (0,1.5);
+        \draw[->,ultra thick,shift={(-1,0)},rotate around={180:(0,0)}] (0,0) -- (0,1.5);
+        \draw[->,ultra thick,shift={({cos(225)},{sin(225)})},rotate around={225:(0,0)}] (0,0) -- (0,1.5);
+        \draw[->,ultra thick,shift={({cos(315)},{sin(315)})},rotate around={315:(0,0)}] (0,0) -- (0,1.5);
+    \egroup
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+
+\begin{EnvUplevel}
+\textbf{Conclusion}: When an object is in circular motion, the acceleration and force always point \fillin[toward][3cm]\ (toward/away from) the center. If that force is removed, the object's \textbf{inertia} causes it to move in a \fillin[straight][3cm]\ line, \fillin[tangent][3cm]\ (tangent/perpendicular) to the circle.
+\end{EnvUplevel}
+\end{questions}
+
+
+\clearpage
+
+\subsection*{Other}
 
 
 
@@ -1984,6 +2279,35 @@ An 89-kg system consisting of a bicycle and rider are rounding a turn at \SI{16}
 
 
 
+
+\end{questions}
+
+\subsection*{Circular Motion}
+
+\begin{questions}
+\question
+Calculate the circumference of the circle below.
+
+\begin{center}
+\begin{tikzpicture}[x=1.5cm,y=1.5cm]
+    \draw (0,0) circle (1);
+    \draw (0,0) -- (1,0) node[above,pos=0.5] {\SI{4.0}{m}};
+\end{tikzpicture}
+\end{center}
+
+\question
+A remote control toy airplane is undergoing uniform circular motion, and its path is shown below. It takes 36 seconds complete one circular trip. Calculate the plane's linear speed.
+
+\bigskip
+
+\begin{minipage}{0.25\textwidth}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw[densely dashed] (0,0) circle (1);
+    \draw (0,0) -- (1,0) node[above,pos=0.5] {\SI{51}{m}};
+    \fill ({cos(45)},{sin(45)}) circle (3pt);
+    \draw[very thick,->,shift={({cos(45)},{sin(45)})},rotate around={45:(0,0)}] (0,0) -- (0,1) node[left] {$v$};
+\end{tikzpicture}
+\end{minipage}
 
 \end{questions}
 

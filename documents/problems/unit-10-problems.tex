@@ -1,1028 +1,3458 @@
 % \documentclass[../main-physics-workbook.tex]{subfiles}
-
 \documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \input{documents/physics-glossary}
 \usepackage{makecell}
+\usepackage{setspace}
 
 \setcounter{section}{10}
-
 \begin{document}
 
-
-
-
-
-\subsection{PhET Simulation: Magnets and Electromangets}
-
-\textbf{Directions:} Go to the \href{https://phet.colorado.edu/sims/html/magnets-and-electromagnets/latest/magnets-and-electromagnets_all.html}{PhET Simulation: Magnets and Electromagnets}.
+\subsection*{Waves Inquiry}
 
 \begin{questions}
+\question 
+Define a wave.
+
+\fillwithlines{8mm}
+
+\question 
+When a wave travels through a medium it transfers \fillin[energy ] but \fillin[matter ] is not transferred along with the wave. How is this demonstrated in a wave pool?
+
+\fillwithlines{2cm}
+
+
+\question 
+In terms of waves, describe what is meant by the ``medium'' in which a wave travels and give 4 examples.
+
+\question 
+Explain the difference between mechanical waves and non-mechanical (electromagnetic) waves. Give at least three examples of each.
+
+\fillwithlines{2cm}
+
+\question 
+In a transverse wave the particles move \fillin[perpendicular ] relative to the direction the wave moves. Draw a diagram of a transverse wave. Label the direction the particles move along with the direction the wave moves.                 
+
+
+\question 
+In a longitudinal wave the particles move \fillin[parallel ] relative to the direction the wave moves. Draw a diagram of a longitudinal wave. Label the direction the particles move along with the direction the wave moves.                      
+
+
+\question 
+Define a pulse.
+
+\fillwithlines{1.5cm}
+
 \question
-Click on the panel called Bar Magnet. Click the reset ($\circlearrowleft$) button in the bottom right corner. By default, the magnetic field and compass are enabled. Check the field meter box, too:
+Label the components of each wave using the following terms:
 
 \begin{center}
-    \checkbox{1} Magnetic Field (B) \qquad
-    \checkbox{1} Compass \qquad
-    \checkbox{1} Field Meter
+\begin{tabular}{ccc}
+     amplitude & wavelength (transverse) &  \\
+     crest & wavelength (longitudinal) & compression \\
+     trough & rarefaction & resting position (equilibrium)
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}[x=5mm,y=1.5cm]
+    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[densely dashed,lightgray] (0,0) -- (3.3*2*pi,0);
+    \bgroup
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+    \draw[<-,xshift=1pt,yshift=1pt] (pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
+    \draw[<-,xshift=-1pt,yshift=-1pt] (3*pi/2,-1) -- ++ (-1.5,-0.2) node[left] {trough};
+    \draw[<->,yshift=3pt] (2.5*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
+    \draw[<->] (9*pi/2,0) node[below] {amplitude} -- ++(0,1) ;
+    \egroup
+    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
-\ifprintanswers
+    \tikzset{declare function={f(\x)=sin(540*\x);}}
+    \begin{tikzpicture}
+     \draw[->] (-0.5,0) -- (10,0);
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+    \bgroup
+    \ifprintanswers
+    \color{red}
+    \else
+    \color{white}
+    \fi
+     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
+     \node[below] at (6.5,-1) {compression};
+     \node[below] at (3.4,-1) {rarefaction};
+    \egroup
+     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
+     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
+    \end{tikzpicture}
+\end{center}
+
+\question
+Define period.
+
+\question
+State the period for each of the following:
+
+\begin{parts}
+\part Earth orbiting the Sun: \fillin[1 year] 
+\part Small hand of a clock: \fillin[1 hour]
+\end{parts}
+
+\question
+The following figure represents the graph of a mouse on a bungee cord. Answer the questions below using the graph.
+
+\begin{center}
 \begin{tikzpicture}
-    \node at (0,0) {\fcolorbox{red}{white}{\includegraphics[width=5cm]{documents/figures/magnetic-field-lines-1.pdf}}};
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 1,0.5)},right},
+        ymin=-8,ymax=8,
+        xmin=0,xmax=3,
+        ytick={-8,-6,...,8},
+        xtick={0,0.25,...,3},
+        grid=both,
+        clip=false,
+        ]
+        \addplot[thick,domain=0:3,samples=150] {6*cos(deg(2*pi*x)};
+        \fill (0,6) circle (2pt) node[above right] {A};
+        \fill (0.25,0) circle (2pt) node[above right] {B};
+        \fill (0.5,-6) circle (2pt) node[below right] {C};
+        \fill (0.75,0) circle (2pt) node[above right] {D};
+        \fill (1,6) circle (2pt) node[above right] {E};
+        \fill (1.25,0) circle (2pt) node[above right] {F};
+        \fill (1.5,-6) circle (2pt) node[below right] {G};
+        \fill (1.75,0) circle (2pt) node[above right] {H};
+        \fill (2,6) circle (2pt) node[above right] {I};
+        \fill (2.25,0) circle (2pt) node[above right] {J};
+        \fill (2.5,-6) circle (2pt) node[below right] {K};
+        \fill (2.75,0) circle (2pt) node[above right] {L};
+        \fill (3,6) circle (2pt) node[above right] {M};
+    \end{axis}
 \end{tikzpicture}
-\else
-\vspace{2cm}
-\begin{tikzpicture}
-    \fill[white] (-2,-0.4) rectangle (0,0.4);
-    \fill[black!20] (0,-0.4) rectangle (2,0.4);
-    \draw[rounded corners] (-2,-0.4) node[shift={(0.3,0.4)}] {\Large S} rectangle (2,0.4) node[shift={(-0.3,-0.4)}] {\Large N};
-    \draw (0,-0.4) -- (0,0.4);
-    \draw (3.1,-1.8) node {\rotatebox{-120}{\resizebox{10mm}{!}{\faCompass}}};
-    \draw[<-,thick] (3.23,-1.85) -- ++(0.8,-0.4) node[right] {B};
-    \draw (-4.9,-1.8) node {\resizebox{7mm}{!}{\faCrosshairs}} node[below=1em] {A};
-    \fill (0,-0.5) circle (1.5pt) node[below=1.5pt] {\footnotesize C};
-    \fill (0,0) circle (1.5pt) node[right=1pt] {\footnotesize D};
-\end{tikzpicture}
-\fi
-    
 \end{center}
 
 \begin{parts}
-\part Four points, A--D, are labeled for reference in the figure above.
+\part What point is 1 full cycle after Point A?
 
-\begin{itemize}
-    \item Point A: the initial position of the field meter
-    \item Point B: the center of the initial position of the compass
-    \item Point C: the point below and just outside the magnet
-    \item Point D: the midpoint inside the magnet
-\end{itemize}
+\part What point is a half-cycle after Point G?
 
-Use the field meter measure and record the magnetic field at the four points below:
+\part If C represents the lowest point of the mouse's bungee cycle, then where is it at D?
+
+\part What is the period of the mouse's oscillations? How is this period determined?
+\end{parts}
+
+\question Define frequency.
+
+\question
+The formula for period is
 
 \begin{equation*}
-    B_\mathrm{A} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{0.60}{G}} \hspace{1.3cm}
-    B_\mathrm{B} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{1.71}{G}} \hspace{1.3cm}
-    B_\mathrm{C} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{4.11}{G}} \hspace{1.3cm}
-    B_\mathrm{D} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{220.63}{G}} \hspace{1.3cm}
+    T = \frac{\text{total time}}{\text{total number of cycles}}
 \end{equation*}
 
-\medskip
+What are the units used to measure period?
 
-\part In the space provided above, draw the magnetic field lines surrounding the magnet. Use the compass for guidance, and arrows to indicate the direction of the field lines.
+\question
+The formula for frequency is
 
-\part Click the reset ($\circlearrowleft$) button and check the Earth box: \checkbox{1} Earth. Our home planet is a magnet, because it is surrounded by magnetic field lines. In the space below, \textbf{draw} the bar magnet, correctly labeling north and south magnetic poles, and \textbf{draw} the magnetic field lines surrounding the planet.
+\begin{equation*}
+    f = \frac{\text{total number of cycles}}{\text{total time}}
+\end{equation*}
 
+What are the units used to measure frequency?
+
+\question
+How are frequency and period related mathematically? Write the relationship as a formula.
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    T = \frac{1}{f} \qquad f = \frac{1}{T}
+\end{equation*}
+\end{solutionorbox}
+
+\question
+Calculate the period and frequency for each situation.
+
+\begin{parts}
+\part A pendulum swings back and forth 8 times in 5 seconds.
+
+\begin{solutionorbox}[2cm]
+    
+\end{solutionorbox}
+
+\part It takes 30 seconds for a man to make one complete loop around the track.
+
+\begin{solutionorbox}[2cm]
+    
+\end{solutionorbox}
+\end{parts}
+
+\question 
+How is the energy of a wave relation to the wave amplitude?
+
+\question
+How is this evident in wave surfing?
+
+\question
+If a pendulum is in equilibrium position, work must be done to the system in order to add energy into the system to make the pendulum swing. Which of the following graphs represent the greatest amount of energy added to the system? Explain why. 
+
+\begin{EnvUplevel}
 \begin{center}
 \begin{tikzpicture}
-    \ifprintanswers
-    \node at (0,0) {\rotatebox{-90}{\fcolorbox{red}{white}{\includegraphics[width=7.4cm]{documents/figures/magnetic-field-lines-1.pdf}}}};
-    \node at (0,0) {\twemoji[width=3.2cm]{globe showing Americas}};
-    \else
-    \node[opacity=0] at (0,0) {\rotatebox{-90}{\fcolorbox{red}{white}{\includegraphics[width=7.4cm]{documents/figures/electric-field-lines-5a.pdf}}}};
-    \node[opacity=0.5] at (0,0) {\twemoji[width=3.2cm]{globe showing Americas}};
-    \fi
+    \begin{axis}[height=6cm,
+        width=7cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 0.5,0)},below},
+        ymin=-2,ymax=4,
+        xmin=0,xmax=2,
+        ytick={-2,-1,...,4},
+        xtick={0,1,2},
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        title={Graph 1}
+        ]
+        \addplot[thick,domain=0:2,samples=200] {2*cos(deg(8*pi*x)) + 1};
+    \end{axis}
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=7cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        x label style={at={(axis description cs: 0.5,0)},below},
+        ymin=-3,ymax=3,
+        xmin=0,xmax=2,
+        ytick={-3,-2,...,3},
+        xtick={0,1,2},
+        minor x tick num=1,
+        grid=both,
+        clip=false,
+        title={Graph 2}
+        ]
+        \addplot[thick,domain=0:2,samples=200] {-cos(deg(4*pi*x))};
+    \end{axis}
 \end{tikzpicture}
 \end{center}
+\end{EnvUplevel}
+
+\question 
+How does the velocity of a wave relate to the frequency of a wave? The figures below show systems of waves set up in strings, fixed on both ends, under tension. Each set was produced in 1.0 seconds. All the strings have identical tension and length. The variables in each situation is the amplitude and the number of waves present. Rank the wavelength, frequency and velocity of each wave from least to greatest.
+
+\begin{center}
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{15*sin(deg(2*pi*1.5*\x))}) node[left,pos=0] {A};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-15*sin(deg(2*pi*1.5*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{12*sin(deg(2*pi*2*\x))}) node[left,pos=0] {B};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-12*sin(deg(2*pi*2*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100,smooth] plot(\x,{10*sin(deg(2*pi*2.5*\x))}) node[left,pos=0] {C};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-10*sin(deg(2*pi*2.5*\x))});
+\end{tikzpicture}
+
+\begin{tikzpicture}[y=0.2mm,x=5cm]
+    \draw[domain=0:1,samples=100] plot(\x,{16*sin(deg(2*pi*3.5*\x))}) node[left,pos=0] {D};
+    \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-16*sin(deg(2*pi*3.5*\x))});
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+    Wavelength from least to greatest is Wave D, Wave C, Wave B, Wave A. Frequency from least to greatest to A, B, C, D. All waves have the same velocity because the string tension is the same for all waves. 
+\end{solution}
+
+\end{questions}
+
+\clearpage
+
+\subsection*{Math Practice: Wave Characteristics}
+
+The following terms and equations will be used to answer questions throughout this worksheet.
+
+\begin{equation*}
+    T = \frac{1}{f} \qquad v = f \lambda
+\end{equation*}
+
+where $f$ is frequency, $T$ is period, $v$ is the speed of the wave, and $\lambda$ is the wavelength. 
+
+
+\begin{questions}
+\question 
+Find the frequency in hertz (Hz) for the following periods:
+
+\begin{parts}
+\part \SI{0.40}{s} 
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{0.40}{s}} = \boxed{\SI{2.5}{Hz}}$
+}
+\fi
+
+
+\part \SI{8}{s}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{8}{s}} = \boxed{\SI{0.125}{Hz}}$
+}
+\fi
+
+\part $1/30\,\text{s}$
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\frac{1}{30}\,\text{s}} = \boxed{\SI{30}{Hz}}$
+}
+\fi
+
+\part \SI{20}{s}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle f = \frac{1}{T} = \frac{1}{\SI{20}{s}} = \boxed{\SI{0.05}{Hz}}$
+}
+\fi
+
 \end{parts}
+
+\question
+Find the period in seconds for the following frequencies:
+
+\begin{parts}
+\part \SI{0.4}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{0.4}{Hz}} = \boxed{\SI{2.5}{s}}$
+}
+\fi
+
+\part \SI{8}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{8}{Hz}} = \boxed{\SI{0.125}{s}}$
+}
+\fi
+
+\part \SI{90}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{90}{Hz}} = \boxed{\SI{0.11}{s}}$
+}
+\fi
+
+\part \SI{1.034e-5}{Hz}
+
+\ifprintanswers
+{\color{red}
+$\displaystyle T = \frac{1}{f} = \frac{1}{\SI{1.034e-5}{Hz}} = \boxed{\SI{9.671e4}{s}}$
+}
+\fi
+\end{parts}
+
+\question
+Find the frequency of a metronome if it is set to make 7 complete oscillations in 15 seconds. Round to the nearest hundredth.
+
+\begin{solution}
+\begin{equation*}
+    f = \frac{\text{cycles}}{\text{time}} = \frac{7}{\SI{15}{s}} = \boxed{\SI{0.47}{Hz}}
+\end{equation*}
+\end{solution}
+
+\question
+Sarah and a few of her friends went to the beach and saw that the distance between the crest of each wave is \SI{1.5}{m}. The waves hit the beach every 7 seconds. For each calculation below, round to the nearest hundredth.
+
+\begin{parts}
+\part Find the frequency of the waves. 
+
+\begin{solution}
+\begin{equation*}
+    f = \frac{1}{T} = \frac{1}{\SI{7}{s}} = \boxed{\SI{0.143}{Hz}}
+\end{equation*}
+\end{solution}
+
+\part Find the speed of the waves.
+
+\begin{solution}
+\begin{equation*}
+    v = f\lambda = (\SI{0.14}{Hz})(\SI{1.5}{m}) = \boxed{\SI{}{\SI{0.21}{m/s}}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+\question
+Calculate the period, in seconds, and frequency, in hertz, of a pendulum that swings back and forth 12 times in one minute.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}
+    \draw[lightgray] (-1,0) -- (1,0) (0,0) -- (0,{-3.5*sin(75)});
+    \fill[lightgray] (-1,0) rectangle (1,0.1);
+    \coordinate (P) at ({3*cos(70)},{-3*sin(70)});
+    \draw[thick] (0,0) -- (P) node[pos=0.65,above right] {$l$};
+    \fill (P) circle (2pt) node[right=2pt] {$m$};
+    \draw (0,-1) arc (270:290:1) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (290:250:3);
+\end{tikzpicture}
+\end{center}
+
+\begin{solution}
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{12}{cycles}} = \boxed{\SI{5.0}{s}}
+\end{equation*}
+
+\begin{equation*}
+    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{12}{cycles}}{\SI{60}{s}} = \boxed{\SI{0.20}{Hz}}
+\end{equation*}
+\end{solution}
+
+\question
+What is the period, in seconds, and frequency, in hertz, of a hear that beats 60 times in one minute?
+
+\begin{solution}
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{60}{s}}{\SI{60}{cycles}} = \boxed{\SI{1}{s}}
+\end{equation*}
+
+\begin{equation*}
+    f = \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{60}{cycles}}{\SI{60}{s}} = \boxed{\SI{1}{Hz}}
+\end{equation*}
+
+\end{solution}
+
+\question
+At the beach today, the waves were \SI{0.34}{m} apart and had a frequency of $1/10\,\text{Hz}$. Find the speed of the waves.
+
+\begin{solution}
+We are given $\lambda = \SI{0.34}{m}$ and $f = \frac{1}{10}\,\text{Hz} = \SI{0.1}{Hz}$
+
+\begin{equation*}
+    v = f\lambda = (\SI{0.10}{Hz})(\SI{0.34}{m}) = \boxed{\SI{0.034}{m/s}}
+\end{equation*}
+\end{solution}
+
+\question
+Callie and Chris go on a hike along the edge of the ocean. They stop to revel in the view below. Callie notices that 7 waves pass beneath them in 25 seconds, each wave being 3 meters apart. Calculate the period, frequency, wavelength, and speed of these ocean waves.
+
+\begin{solution}
+\begin{align*}
+    T &= \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{25}{s}}{\SI{7}{cycles}} = \boxed{\SI{3.6}{s}} \\[1ex]
+    f &= \frac{\text{number of cycles}}{\text{total time}} = \frac{\SI{7}{cycles}}{\SI{25}{s}} = \boxed{\SI{0.28}{Hz}} \\[1ex]
+    \lambda &= \boxed{\SI{3.0}{m}} \\[1ex] 
+    v &= f \lambda = (\SI{0.28}{Hz})(\SI{3.0}{m}) = \boxed{\SI{0.84}{m/s}}
+\end{align*}
+
+\end{solution}
+
+\end{questions}
+
+\clearpage
+
+
+\subsection*{Generating Waves Lab}
+
+\textbf{Purpose:} To determine the relationship between wavelength and frequency. 
+
+\bigskip
+
+\noindent \textit{Procedures:}
+
+\begin{enumerate}[itemsep=0pt,topsep=0pt]
+    \item Stretch the coil to a distance between 5 to 6 meters. Record the distance stretched below:
+
+    \begin{center}
+        \textbf{Distance coil was stretched}: \fillin[]\ m
+    \end{center}
+    
+    \item Oscillate the coil to start a standing wave that is $\frac{1}{2}$ wavelength long.
+    \item When you have a smooth wave, record the time it takes to complete 10 cycles, in the data table below. \textit{Note:} Moving your hand back and forth is one cycle. 
+    \item Repeat steps 2 and 3 for 1, 1.5, 2, and 2.5 wavelengths.
+\end{enumerate}
+
+\ifprintanswers
+
+\begin{center}
+\bgroup
+\newcolumntype{R}[1]{>{\color{red}}#1}
+\def\arraystretch{3}
+\begin{tabular}{|c|R{c}|R{c}|R{c}|R{c}|R{c}|R{c}|}
+    \hline
+    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
+    0.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*0.5*\x))})} & 12.0 & 0.83 & 1.20 & 10 & 8.33\\ \hline
+    1.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.0*\x))})} & 8.1 & 1.23 & 0.81 & 5.00 & 6.17\\ \hline
+    1.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*1.5*\x))})} & 4.6 & 2.17 & 0.46 & 3.33 & 7.25\\ \hline
+    2.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.0*\x))})} & 3.2 & 3.13 & 0.32 & 2.50 & 7.81\\ \hline
+    2.5 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*2.5*\x))})} & 2.4 & 4.17 & 0.24 & 2.00 & 8.33\\ \hline
+    3.0 & \tikz{\draw[thick,domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))}); \draw[domain=0:1,y=3.5mm,x=5.5cm,smooth,densely dashed] plot(\x,{-sin(deg(2*pi*3.0*\x))})} & 2.2 & 4.55 & 0.22 & 1.67 & 7.58\\ \hline
+\end{tabular}
+\egroup
+\end{center}
+
+\else
+
+\begin{center}
+\bgroup
+\def\arraystretch{3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
+    0.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))})} & & & & & \\ \hline
+    1.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))})} & & & & & \\ \hline
+    1.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))})} & & & & & \\ \hline
+    2.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.0*\x))})} & & & & & \\ \hline
+    2.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))})} & & & & & \\ \hline
+    3.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))})} & & & & & \\ \hline
+\end{tabular}
+\egroup
+\end{center}
+
+\fi
+
+\uplevel{\textit{Analysis}}
+
+\begin{questions}
+\question
+Show one sample calculation for frequency.
+
+{\large
+\begin{equation*}
+    f = \frac{\text{10 cycles}}{\text{time}} 
+      = \frac{\text{10 cycles}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{8.1}{s} \qquad} 
+      = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad}
+\end{equation*}
+}
+
+\question
+Show one sample calculation for period.
+
+{\large
+\begin{equation*}
+    T = \frac{1}{f} 
+    = \frac{1}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad} 
+    = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{0.81}{s} \qquad}
+\end{equation*}
+}
+
+\question
+Show one sample calculation for determining the wavelength $\lambda$.
+
+{\large
+\begin{equation*}
+    \lambda = \frac{\text{distance stretched}}{\text{number of waves}} = \frac{\ifprintanswers \color{red} \else \color{white} \fi \SI{5.00}{m}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \text{2 waves} \qquad} = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{2.50}{m} \qquad}
+\end{equation*}
+}
 
 \clearpage
 
 \question
-Switch to the panel called Electromagnet (see the bar at the bottom of the screen). Check all the boxes:
-
-\begin{center}
-    \checkbox{1} Magnetic Field (B) \qquad
-    \checkbox{1} Electrons \qquad
-    \checkbox{1} Compass \qquad
-    \checkbox{1} Field Meter
-\end{center}
-
-\begin{parts}
-\part Read the field meter to record the magnetic field strength at the locations below:
-
-\begin{itemize}[itemsep=6pt,topsep=4pt]
-    \item The magnetic field at the initial position of the field meter is \fillin[\SI{1.44}{G}].
-    \item The magnetic field at the center of the initial position of the compass is \fillin[\SI{2.65}{G}].
-    \item The magnetic field inside the 4-coil electromagnet is \fillin[\SI{300.00}{G}].
-\end{itemize}
-
-\part Use the field meter to measure the magnetic field inside the electromagnetic coil as a function of the voltage in the battery. Record your data in the table and graph below.
+Graph wavelength vs. frequency, and wavelength vs. period in the space below.
 
 \begin{EnvUplevel}
-\begin{center}
-% \fbox{
-\begin{minipage}{6cm}
-\centering
-\bgroup
-\def\arraystretch{1.15}
-\begin{tabular}{|c|c|}
-    \hline
-    \thead{\textbf{Battery}\\ \textbf{Voltage} (V)} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} \\ \hline
-    $-5$ & {\ifprintanswers \color{red} 150 \fi} \\ \hline
-    $-4$ & {\ifprintanswers \color{red} 120 \fi} \\ \hline
-    $-3$ & {\ifprintanswers \color{red} 90 \fi} \\ \hline
-    $-2$ & {\ifprintanswers \color{red} 60 \fi} \\ \hline
-    $-1$ & {\ifprintanswers \color{red} 30 \fi} \\ \hline
-    $0$ & {\ifprintanswers \color{red} 0.00 \fi} \\ \hline
-    $1$ & {\ifprintanswers \color{red} 30 \fi} \\ \hline
-    $2$ & {\ifprintanswers \color{red} 60 \fi} \\ \hline
-    $3$ & {\ifprintanswers \color{red} 90 \fi} \\ \hline
-    $4$ & {\ifprintanswers \color{red} 120 \fi} \\ \hline
-    $5$ & {\ifprintanswers \color{red} 150 \fi} \\ \hline
-\end{tabular}
-\egroup
-\end{minipage}
-% }
-% \fbox{
-\begin{minipage}{8.5cm}
-\centering
 \begin{tikzpicture}
     \begin{axis}[height=6cm,
-        width=8.5cm,
-        axis y line=center,
-        axis x line=left,
-        ylabel={Magnetic Field (G)},
-        xlabel={Battery Voltage (V)},
-        y label style={at={(axis description cs: 0.5,1)},above=0.5em},
-        x label style={at={(axis description cs: 0.7,0)},below=1.5em},
-        ymin=0,ymax=180,
-        xmin=-5,xmax=5,
-        ytick={0,30,...,180},
-        xtick={-5,-4,...,5},
+        width=8cm,
+        ylabel={Wavelength (m)},
+        xlabel={Frequency (Hz)},
+        axis lines=left,
+        ymin=0,ymax=10,
+        xmin=0,xmax=5,
+        ytick={0,2,...,10},
+        xtick={0,1,...,5},
+        minor y tick num=1,
+        minor x tick num=1,
         grid=both,
-        % minor y tick num=1,
-        % minor x tick num=1,
-    ]
+        clip=false,
+        tick label style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=1}
+        ]
         \ifprintanswers
-            \addplot[thick,red,mark=*,domain=-5:0,samples=6] {-30*x};
-            \addplot[thick,red,mark=*,domain=0:5,samples=6] {30*x};
-        \else
+        \addplot[red,only marks] coordinates{(0.83,10)(1.23,5)(2.17,3.33)(3.13,2.5)(4.17,2)(4.55,1.67)};
         \fi
     \end{axis}
 \end{tikzpicture}
-\end{minipage}
-% }
-\end{center}
+\hspace{5mm}
+\begin{tikzpicture}
+    \begin{axis}[height=6cm,
+        width=6.5cm,
+        ylabel={Wavelength (m)},
+        xlabel={Period (s)},
+        axis lines=left,
+        ymin=0,ymax=10,
+        xmin=0,xmax=2,
+        ytick={0,2,...,10},
+        xtick={0,0.5,...,2},
+        minor y tick num=1,
+        minor x tick num=2,
+        grid=both,
+        clip=false,
+        tick label style={
+                /pgf/number format/fixed,
+                /pgf/number format/fixed zerofill,
+                /pgf/number format/precision=1}
+        ]
+        \ifprintanswers
+        \addplot[red,only marks] coordinates{(1.20,10)(0.81,5)(0.46,3.33)(0.32,2.5)(0.24)(2.00)(0.22,1.67)};
+        \addplot[domain=0.2:1.3,red] {7.886*x - 0.188};
+        \fi
+    \end{axis}
+\end{tikzpicture}
 \end{EnvUplevel}
 
+\question
+What is the proportional relationship between wavelength and frequency?
 
-\part Click the reset ($\circlearrowleft$) button, and check \checkbox{1} Field Meter. Set the loops number to 1, and measure the magnetic field inside the coil. Then increase the loop number, and fill the table and graph below.
+\ifprintanswers
+{\color{red} Wavelength is inversely proportional to frequency: $\lambda \propto \frac{1}{f}$. 
+
+\vspace{-5mm}}
+\fi
+
+\fillwithlines{8mm}
+
+\question
+What is the slope of the $\lambda$ vs $T$ graph? Include correct units. What is the significance (meaning) of this slope? \textit{Hint:} Look at the units.
+
+\begin{solutionorbox}[2cm]
+According to the best fit line (see Python, scipy), the slope is \SI{7.886}{m/s}. Slope represents the speed of the wave. 
+\end{solutionorbox}
+
+\question
+Write the equation for the wavelength vs period graph. Do not use $x$ and $y$ in your equation, but $\lambda$ and $T$, and include units for your slope. 
+
+\ifprintanswers
+{\color{red} $\lambda = (\SI{7.886}{m/s}) T - \SI{0.188}{m}$
+
+\vspace{-5mm}
+}
+
+\fi
+
+\fillwithlines{8mm}
+
+
+
+\question
+Calculate the average velocity for all waves from the six values in the table in the previous page. Is there a trend of increasing or decreasing velocities as the frequency increases?
+
+\ifprintanswers
+{\color{red} $\bar{v} = \SI{7.58}{m/s}$. While there is some variation in velocities, overall trend is constant.
+
+\vspace{-5mm}
+}
+\fi
+
+\fillwithlines{8mm}
+
+\question
+How does the average velocity of all the waves compare to the slope for your graph? Is there any relationship between the two numbers?
+
+\ifprintanswers
+{\color{red}
+The average velocity is (approximately) the slope on the $\lambda$ vs $T$ graph.
+
+\vspace{-5mm}
+}
+\fi
+
+\fillwithlines{8mm}
+
+
+\question
+The wave shown below is traveling to the right with a frequency  of \SI{25.0}{Hz}. Find the amplitude, wavelength, period, and speed.
 
 \begin{EnvUplevel}
-\begin{center}
-% \fbox{
-\begin{minipage}{5cm}
-\centering
-\bgroup
-\def\arraystretch{1.2}
-\begin{tabular}{|c|c|}
-    \hline
-    \thead{\textbf{Number}\\ \textbf{of Loops}} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} \\ \hline
-    1 & {\ifprintanswers \color{red} 75.00 \fi} \\ \hline
-    2 & {\ifprintanswers \color{red} 150.00 \fi} \\ \hline
-    3 & {\ifprintanswers \color{red} 225.00 \fi} \\ \hline
-    4 & {\ifprintanswers \color{red} 300.00 \fi} \\ \hline
-\end{tabular}
-\egroup
-\end{minipage}
-% }
-% \fbox{
 \begin{minipage}{7.5cm}
 \centering
 \begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=6cm,
-        axis lines=left,
-        ylabel={Magnetic Field (G)},
-        xlabel={Number of Loops},
-        ymin=0,ymax=300,
-        xmin=0,xmax=4,
-        ytick={0,60,...,300},
-        xtick={0,1,...,4},
-        grid=both,
-        minor y tick num=1,
-        minor x tick num=1,
-    ]
-        \ifprintanswers
-        \addplot[thick,red,mark=*,domain=1:4,samples=4] {75*x};
-        \else
-        \fi
-    \end{axis}
+    \draw[domain=0:1,y=1cm,x=6cm,smooth] plot(\x,{cos(deg(2*pi*1.5*\x))});
+    \draw[black!15] (0,1.2) -- (0,-1.2) (0,0) -- (6,0);
+    \draw[thick,|<->|,yshift=-2mm] (0,-1) -- (2,-1) node[below,pos=0.5] {\SI{10}{cm}};
+    \draw[thick,|<->|,xshift=+2mm] (6,-1) -- (6,+1) node[right,pos=0.5] {\SI{18}{cm}};
 \end{tikzpicture}
 \end{minipage}
-% }
-\end{center}
-\end{EnvUplevel}
-
-\part Numerically, what happens to the magnetic field in the coil when one loop is added to the electromagnet?
-
-\begin{solution}
-    Magnetic field increases by \SI{75}{G} with each loop.
-\end{solution}
-
-\fillwithlines{0.7cm}
-
-
-\part \textit{Predict:} What would be the strength of the magnetic field inside the coil if there were 9 loops in the electromagnet? Explain how you arrived at your claim.
-
-\fillwithlines{1.5cm}
-
-\begin{solution}
-    Since the magnetic field for one loop is \SI{75}{G}, the magnetic loop for 9 loops is $9\times \SI{75}{G} = \SI{675}{G}$.
-\end{solution}
-
-\end{parts}
-
-\clearpage
-
-\question
-Alternate the battery voltage between $\SI{-5}{V}$, \SI{0}{V}, and $+\SI{5}{V}$. Then
-
-\begin{itemize}
-    \item Place both the compass and field meter inside the coils of the electromagnet.
-    \item Record the magnitude of the magnetic field in the table below. 
-    \item Make the graph of magnetic field and voltage.
-    \item Specify the direction of the field inside the electromagnet as right, left, or none.
-\end{itemize}
-
-
-\begin{EnvUplevel}
-\begin{center}
-% \fbox{
-\begin{minipage}{6cm}
-\centering
-\bgroup
-\def\arraystretch{1.15}
-\begin{tabular}{|c|c|c|}
-    \hline
-    \thead{\textbf{Battery}\\ \textbf{Voltage} (V)} & \thead{\textbf{Magnetic}\\ \textbf{Field} (G)} & \thead{\textbf{Field}\\\textbf{Direction}} \\ \hline
-    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
-    $+5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{right} \fi \\ \hline
-    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
-    $-5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{left} \fi \\ \hline
-    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
-    $+5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{right} \fi \\ \hline
-    $0$ & {\ifprintanswers \color{red} 0 \fi} & \ifprintanswers \textcolor{red}{none} \fi \\ \hline
-    $-5$ & {\ifprintanswers \color{red} 150 \fi} & \ifprintanswers \textcolor{red}{left} \fi \\ \hline
-\end{tabular}
-\egroup
-\end{minipage}
-% }
-% \fbox{
-\begin{minipage}{8.5cm}
-\centering
-\begin{tikzpicture}
-    \begin{axis}[height=6cm,
-        width=8.5cm,
-        axis lines=left,
-        ylabel={Magnetic Field (G)},
-        xlabel={Battery Voltage (V)},
-        % y label style={at={(axis description cs: 0.5,1)},above=0.5em},
-        % x label style={at={(axis description cs: 0.7,0)},below=1.5em},
-        ymin=0,ymax=210,
-        xmin=0,xmax=7,
-        ytick={0,30,...,210},
-        xtick={0,1,...,7},
-        xticklabels={$0$,$+5$,$0$,$-5$,$0$,$+5$,$0$,$-5$},
-        grid=both,
-        % minor y tick num=1,
-        % minor x tick num=1,
-    ]
-        \ifprintanswers
-            \addplot[thick,red,mark=*] coordinates{(0,0)(1,150)(2,0)(3,150)(4,0)(5,150)(6,0)(7,150)};
-        \else
-        \fi
-    \end{axis}
-\end{tikzpicture}
-\end{minipage}
-% }
-\end{center}
-\end{EnvUplevel}
-
-What happens to the direction of the magnetic field over time?
-
+\hspace{5mm}
+\fbox{
+\begin{minipage}{7.5cm}
+{
 \ifprintanswers
-{\color{red} It changes direction, oscillating between right and left.}
+\color{red}
 \else
-\fillwithlines{1.5cm}
+\color{white}
 \fi
+
+\begin{align*}
+    A &= \SI{9}{cm} \\[1ex]
+    \lambda &= \SI{20}{cm} \\[1ex]
+    T &= \frac{1}{f} = \SI{0.040}{s} \\[1ex]
+    v &= f\lambda = \SI{500}{cm/s}
+\end{align*}
+}
+\end{minipage}
+
+}
+\end{EnvUplevel}
+
+
+
 \end{questions}
 
 \clearpage
 
-\subsection{Electromagnetism Introduction}
-    
+
+\subsection*{Wave Behavior and Sound}
+
+\bgroup
+
+\doublespacing
 \begin{questions}
+\question
+When a wave travels across a boundary from one medium to another, the pulse that strikes the boundary is called the \fillin[incident pulse][4cm].
 
 \question
-The location to which a compass points in the northern hemisphere---Hudson Bay, Canada---is known as
-
-\begin{randomizechoices}
-    \choice a magnet
-    \choice a permanent magnet
-    \choice a temporary magnet
-    \choice true north
-    \correctchoice magnetic north
-\end{randomizechoices}
-
+Some of the energy of the incident wave’s pulse is \fillin[transmitted][4cm] across the boundary, while some is reflected backward in what is known as the \fillin[reflected pulse][5cm].
 
 \question
-A \fillin[temporary magnet][4cm] becomes a magnet near a magnet, then loses its magnetism when moved away.
-
-\begin{randomizechoices}
-    \choice a magnet
-    \choice a permanent magnet
-    \correctchoice a temporary magnet
-    \choice true north
-    \choice magnetic north
-\end{randomizechoices}
+When a wave pulse hits a rigid boundary, the pulse is reflected back with almost exactly the same amplitude as the pulse of the incident wave, but the reflected pulse is \fillin[inverted].
 
 \question
-Anything that attracts or repels another magnet or magnetic material is called 
-
-\begin{randomizechoices}
-    \correctchoice a magnet
-    \choice a permanent magnet
-    \choice a temporary magnet
-    \choice true north
-    \choice magnetic north
-\end{randomizechoices}
+The law of \fillin[superposition][4cm] states that the displacement of a medium caused by two or more waves is the algebraic sum of the displacements caused by the individual waves. The result of the superposition of two or more waves is called \fillin[interference][4cm].
 
 \question
-The North Pole, where maps point to as north, is referred to as 
-
-\begin{randomizechoices}
-    \choice a magnet
-    \choice a permanent magnet
-    \choice a temporary magnet
-    \correctchoice true north
-    \choice magnetic north
-\end{randomizechoices}
+A standing wave is produced when a wave that is traveling is reflected back upon itself. There are two main parts to a standing wave: an area of zero amplitude is called a \fillin[node], and an area of maximum amplitude is called an \fillin[antinode].
 
 \question
-A \fillin[permanent magnet][4cm], like lodestone and magnetite, does not lose its magnetism.
-
-\begin{randomizechoices}
-    \choice a magnet
-    \correctchoice a permanent magnet
-    \choice a temporary magnet
-    \choice true north
-    \choice magnetic north
-\end{randomizechoices}
+Sound waves are pressure oscillations that are transmitted through matter. Sound waves travel through air because a vibrating source produces regular variations, or oscillations, in air pressure.
 
 \question
-The center of an electromagnet is called 
-
-\begin{randomizechoices}
-    \choice a compass
-    \choice an electromagnet
-    \choice a magnetic field
-    \correctchoice the core
-    \choice the iron
-\end{randomizechoices}
+Sound waves are longitudinal waves because the motion of the particles in air is parallel to the direction of the wave’s motion.
 
 \question
-A(n) \fillin[compass] is a magnetic navigational device that point toward magnetic north.
-
-\begin{randomizechoices}
-    \correctchoice compass
-    \choice electromagnet
-    \choice magnetic field
-    \choice core
-    \choice iron
-\end{randomizechoices}
+\fillin[Pitch] is the highness or lowness of a sound and depends on the frequency of vibration. The human ear is not equally sensitive to all frequencies, and most people cannot hear sounds with frequencies below 20\,Hz or above 16,00\, Hz.
 
 \question
-The lines surrounding a magnet that represent magnetic forces are called
-
-\begin{randomizechoices}
-    \choice a compass
-    \choice an electromagnet
-    \correctchoice a magnetic field
-    \choice the core
-    \choice iron
-\end{randomizechoices}
+The \fillin[loudness] of a sound wave is the intensity of the sound as perceived by the ear and interpreted by the brain and depends primarily on the amplitude of the pressure wave.
 
 \question
-\fillin\ is the best magnetic substance, because more of it in an electromagnetic core makes the magnet stronger.
+The Doppler Effect. The change in frequency of sound caused by the movement of either the source, the detector, or both is called the Doppler effect.
 
-\begin{randomizechoices}
-    \choice A compass
-    \choice An electromagnet
-    \choice A magnetic field
-    \choice The core
-    \correctchoice Iron
+The Doppler effect can be described as the effect produced by a moving source of waves in which there is an apparent upward shift in frequency for observers towards whom the source is approaching and an apparent downward shift in frequency for observers from whom the source is receding.
+
+It is important to note that the effect does not result because of an actual change in the frequency of the source.
+
+\question
+In a 2-dimensional medium a transmitted wave can change direction. This is \fillin[refraction], the bending of a wave as it passes from one medium to another. 
+
+\question
+Resonance occurs when the frequency of sound waves exactly matches the natural frequency of an object. 
+\end{questions}
+\egroup
+
+\clearpage
+
+\subsection*{Characteristics of Waves}
+
+\textbf{Questions \ref{Q1}--\ref{Q4}}. See the figure below. Then answer the next 4 questions that follow. 
+
+\begin{center}
+\tikzset{declare function={f(\x)=sin(540*\x);}}
+\begin{tikzpicture}[y=7mm,x=8mm]
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+     \draw[|<->|] (0.6,1.3) -- (6.6,1.3) node[above,pos=0.5] {$\lambda$};
+     \node[below=5mm] at (current bounding box.south) {Wave 1};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=4mm,y=1cm]
+    \draw[domain=0:2.5*2*pi,samples=200] plot (\x,{sin(\x r)});
+    \draw[densely dashed,lightgray] (0,0) -- (2.5*2*pi,0);
+    \draw[|<->|] (pi/2,1.2) -- (5*pi/2,1.2) node[above,pos=0.5] {$\lambda$};
+    \draw[thick,<->] (9*pi/2,0) -- (9*pi/2,1) node[right=-2pt,pos=0.5] {$X$};
+    \node[below=5mm] at (current bounding box.south) {Wave 2};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{questions}
+\question \label{Q1}
+Which of the waves is a transverse wave?
+
+\begin{randomizechoices}[norandomize]
+    \choice Wave 1
+    \correctchoice Wave 2
+    \choice Both
+    \choice Neither
 \end{randomizechoices}
 
 \question 
-A magnet made using electricity is called
+What does the parameter $\lambda$ represent?
 
 \begin{randomizechoices}
-    \choice a compass
-    \correctchoice an electromagnet
-    \choice a magnetic field
-    \choice the core
-    \choice iron
+    \correctchoice wavelength
+    \choice frequency
+    \choice wave speed
+    \choice amplitude
 \end{randomizechoices}
 
+\question 
+What does the parameter $X$ represent?
+
+\begin{randomizechoices}
+    \choice wavelength
+    \choice frequency
+    \choice wave speed
+    \correctchoice amplitude
+\end{randomizechoices}
+
+\question \label{Q4}
+Which is the longitudinal wave?
+
+\begin{randomizechoices}[norandomize]
+    \correctchoice Wave 1
+    \choice Wave 2
+    \choice Both
+    \choice Neither
+\end{randomizechoices}
+
+\bigskip
+
+\hrule
+
+\question
+The velocity of a wave depends on \fillin[medium]\ through which the wave passes.
+
+\question
+The number of waves passing a point each second is called the \fillin[frequency].
+
+\question
+A wave has a frequency of \SI{25}{Hz} with a wavelength of 2 meters. Find the wave's velocity.
+
+\question
+What is the frequency of a wave traveling at \SI{100}{m/s} with a wavelength of 5 meters?
+
+\question
+What is the wavelength of a wave traveling at \SI{250}{m/s} with a frequency of \SI{25}{Hz}?
+
+\question
+Two waves, A and B, have the same velocity. Wave A has a frequency twice that of Wave B. The wavelength of Wave B is \fillin[twice]\ the wavelength of Wave A.
+
+\question
+Waves A and B have the same wavelength. Wave A is traveling at a velocity twice that of Wave B. The frequency of wave B is \fillin[half] the frequency of Wave A. 
+
+\question
+A wave is traveling at a velocity of \SI{200}{m/s}. What is the wave's velocity when the frequency is halved?
 
 \end{questions}
 
+
 \clearpage
 
-\subsection{The Station Lab on Electromagnetism}
+\subsection{Lab: The Simple Harmonic Oscillator}
 
 \begin{questions}
 
 \question
-Magnetism Station Lab: Bar Magnets and Compass
+Acquire the following items:
 
-\textbf{Objective}: Students will observe how two bar magnets affect each other and use a compass alongside a bar magnet to generate magnetic field lines.
+\begin{itemize}[topsep=0pt,itemsep=0pt]
+    \item spring
+    \item hanging masses (\SI{2}{g} -- \SI{1000}{g})
+    \item stopwatch
+    \item tape, calculator, and pencil
+\end{itemize}
 
 \begin{parts}
-\part 
-First place the South pole of one magnet close to the North pole of the other. 
+\part Hold one end the spring with your hand at a constant height of 2 meters above the ground, letting the spring hang vertically so that a mass may be attached to the bottom.
+\medskip
 
 \begin{center}
 \begin{tikzpicture}
-    \fill[white] (-2,-0.4) rectangle (0,0.4);
-    \fill[black!20] (0,-0.4) rectangle (2,0.4);
-    \draw[rounded corners] (-2,-0.4) node[shift={(0.3,0.4)}] {\Large S} rectangle (2,0.4) node[shift={(-0.3,-0.4)}] {\Large N};
+    \draw[decorate,decoration={coil,
+        segment length=3pt,
+        %pre length=2mm,
+        post length=2mm,
+        amplitude=3mm
+        }] (0,0) -- (0,-2);
+    \draw[fill=lightgray] (-0.4,-2) rectangle (0.4,-3) node[pos=0.5] {\SI{1}{kg}};
+    \draw[densely dashed,<-] (0.7,-3) -- (2,-3);
+    \begin{scope}[shift={(4,0)}]
+        \draw[decorate,decoration={coil,
+            segment length=8pt,
+            %pre length=2mm,
+            post length=2mm,
+            amplitude=3mm
+            }] (0,0) -- (0,-5.5);
+            \draw[fill=lightgray] (-0.4,-5.5) rectangle (0.4,-6.5) node[pos=0.5] {\SI{1}{kg}};
+    \end{scope}
+    \draw[densely dashed,->] (1.9,-6.5) node[left] {lowest position} -- (3.2,-6.5);
+    \node[above=6pt] at (current bounding box.north) {SIMPLE HARMONIC OSCILLATOR};
 \end{tikzpicture}
 \end{center}
 
-Are the magnets repelling or attracting each other?
 
-\ifprintanswers
-\else
-\fillwithlines{1cm}
-\fi
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Attach a \SI{1000}{g} mass to the spring (taped if necessary) and release it from rest. Note the location of maximum displacement, which is when the spring reaches the lowest position.
+    \item Start the stopwatch when the mass is at the lowest point. Due to the spring force, the mass will first rise; it will then descend due to gravity. The back-and-forth movement is called an \textbf{oscillation}. One full trip back to the lowest point is one oscillation.
+    \item Stop the stopwatch when the mass has completed 10 oscillations. The \textbf{period} of oscillation is the amount of time it takes the mass to complete one oscillation. To calculate period, divide the total elapsed time in seconds by the number of oscillations (10). 
+    \item \textbf{Frequency} of oscillation is the number of oscillations per second. The base SI unit is the Hertz (Hz), defined as 1/s. Frequency is inversely related to period,
 
-\part 
-Now take both South poles and bring them close to each other. Are the magnets repelling or attracting each other? 
+    \begin{equation*}
+        T = \frac{1}{f}
+    \end{equation*}
+    
+    \item Using mass values in the table below, change the hanging mass to a lower values, and repeat the steps above. Then record the period and frequency of oscillations for each hanging mass.
+\end{itemize}
 
-\ifprintanswers
-\else
-\fillwithlines{1cm}
-\fi
+\begin{EnvUplevel}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+% \fbox{
+\begin{minipage}{7cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
+    1000 & \hspace{2cm} &  \hspace{2cm} \\ \hline
+    900 & & \\ \hline
+    800 & & \\ \hline
+    700 & & \\ \hline
+    600 & & \\ \hline
+\end{tabular}
+\end{minipage}%
+% }%
+\hspace{5mm}
+% \fbox{
+\begin{minipage}{7cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (g) & Period (s) & Freq. (Hz) \\ \hline
+    500 & \hspace{2cm} & \hspace{2cm} \\ \hline
+    400 & & \\ \hline
+    300 & & \\ \hline
+    200 & & \\ \hline
+    100 & & \\ \hline
+\end{tabular}
+\end{minipage}
+% }
+\egroup
+\end{center}
+\end{EnvUplevel}
 
-\part 
-Try placing two like poles (North-North or South-South) right next to each other on the table and then let go of just one magnet. Describe what happens to the magnets when you let it go.
+\clearpage
 
-\ifprintanswers
-\else
-\fillwithlines{1cm}
-\fi
-
-\part 
-Using the white sheet of paper provided and the compass, draw at least 2 complete magnetic field lines as illustrated by your teacher, and as shown by the diagram below.
+\part Graph the period of oscillation as a function of the hanging mass, below. 
 
 \begin{center}
-    \includegraphics[width=5cm]{documents/figures/magnetic-field-lines-1.pdf}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis lines=left,
+        ylabel={Period (s)},
+        xlabel={Mass (g)},
+        ymin=0,ymax=2.5,
+        xmin=0,xmax=1000,
+        ytick={0,0.5,...,2.5},
+        xtick={0,100,...,1000},
+        grid=both,
+        ]
+        \ifprintanswers
+        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {2*pi*sqrt(x/1000/10)};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
 \end{center}
 
-\end{parts}
+\part Now graph the frequency of oscillation as a function of the hanging mass.
 
-\question
-Magnetism Station Lab: Building an Electromagnet
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[height=7cm,
+        width=12cm,
+        axis lines=left,
+        ylabel={Frequency (Hz)},
+        xlabel={Mass (g)},
+        ymin=0,ymax=2,
+        xmin=0,xmax=1000,
+        ytick={0,0.4,...,2},
+        xtick={0,100,...,1000},
+        grid=both,
+        ]
+        \ifprintanswers
+        \addplot[thick,domain=100:1000,only marks,samples=10,color=red] {1/(2*pi*sqrt(x/1000/10))};
+        \else
+        \fi
+    \end{axis}
+\end{tikzpicture}
+\end{center}
 
-\textbf{Objective}: Students will construct a simple electromagnet using a battery, some wire, and a nail, and they will observe different methods of manipulating the strength of the magnet.
+\part Ask your teacher about the mathematical relationship between period and mass in simple harmonic motion. Then use mass and period values from the previous tables to compute the spring constant~$k$. Note: mass values in the table below are converted to kilograms. Finally, compute the average of the 10 spring constant calculations, $\bar{k}$, and record your answer below:
 
-\begin{parts}
-\part 
-To build your electromagnet, start by wrapping the wire around the nail a few times and then connect the two ends of the wire to the leads of the battery. With the wire connected to the battery, can you use the nail to pick up some paperclips? If so, how many can you pick up?
-
-\part 
-Now try adding a second battery (make sure the 2 batteries are properly oriented). Can you pick up more paperclips than before or less?
-
-\part 
-Now disconnect the wire and wrap it around the nail a few more times. When you reconnect the battery, can you pick up more paperclips than before or less?
-\end{parts}
-
-\question
-Magnetism Station Lab: Magnetic Field Lines
-
-\textbf{Objective}: Students will observe the shape of the magnetic field generated by a simple bar magnet using iron filings. Note: Before you begin, make sure that the magnet is separate from the apparatus and all the iron filings are settled.
-
-\begin{parts}
-\part Place the magnet in the cylinder and shake it to spread the iron filings. Draw the shape that the iron makes around the magnet below.
-
-\begin{solutionorbox}[4cm]
-    
-\end{solutionorbox}
-
-
-\part
-Now try pulling the magnet out most of the way so that just one end is still in the cylinder. Draw the shape of the field near the magnetic pole.
-
-\begin{solutionorbox}[4cm]
-    
-\end{solutionorbox}
-\end{parts}
-
-\question
-Magnetism Station Lab: Electromagnet
-
-\textbf{Objective}: Students will observe how a coil of wire can be used as an electromagnet. Note: Before you begin, make sure the coil of wire is disconnected from the battery and the metal core is placed in the center of the coil.
-
-
-\begin{parts}
-\part Without connecting the battery, touch the loose metal plate to the core. Is the plate attracted to the core or not?
-\part Now connect the two ends of the wire to the leads of the battery. Is the metal plate attracted to the coil/iron core or not? 
-\part Take the small permanent magnet and place it near the core of your electromagnet. Which pole of the magnet is attracted to the core? Which pole is repelled?
-\part Disconnect the battery, reconnect it in the opposite orientation, and repeat step 3. Has the polarity of your electromagnet changed or stayed the same?
-\end{parts}
-
-
-\question
-Magnetism Station Lab: Faraday’s Law
-
-\textbf{Objective}: Students will observe the effects of changing magnetic fields near conductors by waving a bar magnet around a coil of wire that is connected to a voltmeter. Note: Before you begin, make sure that your voltmeter is connected to both ends of the coil and its dial is turned to the smallest voltage scale, labeled ``200m''.
-
-\begin{parts}
-\part Take the bar magnet and wave it over the top of the coil of wire. Describe what happens to the voltmeter.
-\part Now try slowly moving the North pole of the magnet in and out of the coil. Is the voltage positive or negative when you push the magnet into the coil? What about when you pull the magnet out of the coil?
-\part Flip the magnet around and repeat step 2 so that the South pole is now moving in and out of the coil. Is the sign of the voltage the same as before or different?
-\part Now try moving the magnet faster into the coil. Does the voltage increase or decrease? What is the maximum voltage you can achieve?
-\end{parts}
-
-\question
-Magnetism Station Lab: Floating Magnet Tower
-
-\textbf{Objective}: Students will observe the interactions between permanent magnets by changing the polarity of individual magnets on a floating magnet tower. Note: Before you begin, make sure that the tower is setup so that none of the magnets are stuck together (all are repelling their neighbors).
-
-\begin{parts}
-\part 
-Try taking one of the magnets off the top of the tower. What happens to the rest of the magnets on the tower?
-
-\part 
-Now flip the magnet that you have removed upside-down and place it back on the tower. Does the magnet still float? Describe what happens to the rest of the tower.
-
-\part 
-Now take all the magnets off the tower and arrange them so that all but one of the magnets are stuck together. Place the magnets back on the tower so that the individual magnet is floating on top of the rest. Is the tower taller or shorter than when you started? What configuration makes the tower the tallest?
+\begin{EnvUplevel}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+% \fbox{
+\begin{minipage}{5cm}
+\centering
+\begin{tabular}{|c|c|}
+    \hline
+    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
+    1.0 & \hspace{2cm}  \\ \hline
+    0.9 & \\ \hline
+    0.8 & \\ \hline
+    0.7 & \\ \hline
+    0.6 & \\ \hline
+\end{tabular}
+\end{minipage}%
+%}%
+% \hspace{5mm}
+% \fbox{
+\begin{minipage}{6cm}
+\centering
+\begin{tabular}{|c|c|c|}
+    \hline
+    Mass (kg) & $k$ (\SI{}{N/m}) \\ \hline
+    0.5 & \hspace{2cm} \\ \hline
+    0.4 & \\ \hline
+    0.3 & \\ \hline
+    0.2 & \\ \hline
+    0.1 & \\ \hline
+\end{tabular}
+\end{minipage}
+% }
+\fbox{
+\begin{minipage}{4cm}
+\centering
+Average spring constant
+\bgroup
+\Large
+\vspace{1em}
+\begin{equation*}
+    \bar{k} = {\ifprintanswers \color{red} \else \color{white}\fi \SI{10}{N/m}}
+\end{equation*}
+\vspace{1em}
+\egroup
+\end{minipage}
+}
+\egroup
+\end{center}
+\end{EnvUplevel}
 \end{parts}
 
 \end{questions}
 
+% \subsubsection{Changes in an Oscillating Medium}
+
+% \subsubsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
+
+% \subsubsection{Effects of Changing the Medium and Energy on SHM}
+
 \clearpage
 
+\subsection{Wavelength, Wave Cycles, and Amplitude}
 
-\subsection{Other}
 
 \begin{questions}
-\question
-Magnets are categorized as magnetic dipoles. What is meant by \textit{dipole}?
 
-\begin{randomizechoices}
-    \correctchoice That a bar magnet has two poles.
-    \choice That a bar magnet has one pole.
-    \choice That a bar magnet has no poles.
-    \choice That a bar magnet has infinitely many poles.
-\end{randomizechoices}
+\begin{EnvUplevel}
+    \textbf{Questions \ref{first}--\ref{fifth}.} Count the number of wave cycles. Measurements can be in increments of $\frac{1}{2}$ a cycle.
+\end{EnvUplevel}
 
-\question
-What are the labels of the poles of a bar magnet?
+\question \label{first}
+Number of wave cycles: \fillin[7]
 
-\begin{randomizechoices}
-\choice North only
-\choice North, south, east, and west
-\choice East and west
-\CorrectChoice North and south
-\end{randomizechoices}
-
-\question
-What do you get when you cut a bar magnet in half?
-
-\begin{randomizechoices}
-\choice One magnet with two south poles, and one magnet with two north poles.
-\choice Two objects that are not magnetic anymore.
-\choice It’s impossible to cut a magnet in half.
-\CorrectChoice Two magnets, each with a north and south pole.
-\end{randomizechoices}
-
-\question
-True or False? Earth generates a magnetic field which surrounds it.
-
-\begin{randomizechoices}[norandomize]
-    \correctchoice True
-    \choice False
-\end{randomizechoices}
-
-\question
-The south geographic pole of Earth (in Antarctica) is near what type of \textit{magnetic} pole?
-
-\begin{randomizeoneparchoices}
-    \correctchoice north
-    \choice south
-    \choice east
-    \choice west
-\end{randomizeoneparchoices}
-
-
-\question
-What type of \textit{magnetic} pole is close to Earth's north \textit{geographic} pole (near Alaska)? 
-
-\begin{randomizeoneparchoices}
-\choice north
-\CorrectChoice south
-\choice east
-\choice west
-\end{randomizeoneparchoices}
-
-\question
-The \textit{magnetic} pole of Earth that is close to the \textit{geographic} South Pole is a\\ magnetic \fillin Pole.
-
-\begin{randomizechoices}
-\CorrectChoice North
-\choice South
-\choice East
-\choice West
-\end{randomizechoices}
-
-\question
-The \textit{magnetic} North Pole of Earth is close to the \textit{geographic} \fillin Pole.
-
-\begin{randomizechoices}
-\choice North
-\CorrectChoice South
-\choice East
-\choice West
-\end{randomizechoices}
-
-\question
-The \textit{magnetic} South Pole of Earth is close to the \textit{geographic} \fillin Pole.
-
-\begin{randomizechoices}
-\CorrectChoice North
-\choice South
-\choice East
-\choice West
-\end{randomizechoices}
-
-\question
-One way to visualize magnetic field lines around a magnet is by\ldots 
-
-\begin{randomizechoices}
-\choice using certified electromagnetic goggles.
-\choice attracting or repelling the magnet with a second magnet.
-\CorrectChoice sprinkling iron filings around the magnet.
-\choice brushing the magnet with glow-in-the-dark liquid and turning off the lights.
-\end{randomizechoices}
-
-\question
-Besides magnets, what other thing creates a magnetic field?
-
-\begin{randomizechoices}[norandomize]
-\choice Water.
-\choice The gravitational force.
-\CorrectChoice electric current (i.e., moving charges)
-\choice Nothing. Only magnets can create magnetic fields.
-\end{randomizechoices}
-
-\clearpage
-
-\question
-Where were the first known magnets discovered?
-
-\begin{randomizechoices}
-\choice Houston, TX
-\CorrectChoice Magnesia (present-day western Turkey)
-\choice London, England
-\choice The North Pole
-\end{randomizechoices}
-
-\question
-Suppose that equal parts of sand and iron powder are mixed together in a glass petri dish. What happens when a magnet is placed next to one side of the dish?
-
-\begin{randomizechoices}
-\CorrectChoice Magnet attracts the iron only
-\choice Magnet attracts the sand only
-\choice Magnet attracts both the sand and the iron
-\choice The magnet attracts the iron and repels the sand
-\end{randomizechoices}
-
-\question
-In which direction do magnetic field lines from a bar magnet flow?
-
-\begin{randomizechoices}
-\choice South to North
-\choice North to East
-\CorrectChoice North to South
-\choice South to West
-\end{randomizechoices}
-
-\question
-What is electric current?
-
-\begin{randomizechoices}
-\choice a current of water
-\CorrectChoice electric charges that are moving
-\choice directional field lines around a magnet
-\choice the atoms that make up a metal wire
-\end{randomizechoices}
-
-\question
-The SI units for electric current, amperes (A), are equivalent to which other units?
-
-\begin{randomizechoices}
-\CorrectChoice C/s
-\choice e/s
-\choice $-$e/s
-\choice C/$\mathrm{s^2}$
-\end{randomizechoices}
-
-\question
-The electrons in a straight wire flow downwards. In which direction does electric current flow?
-
-\begin{randomizeoneparchoices}
-\CorrectChoice up
-\choice down
-\choice $\bigodot$
-\choice $\bigotimes$
-\end{randomizeoneparchoices}
-
-\question
-The current in a straight wire flows to the right. In which direction do electrons flow?
-
-\question
-What is the purpose of the right-hand rule?
 
 \begin{center}
+\begin{tikzpicture}[x=3mm,y=1cm]
+\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (0,-1) grid (16*pi,1);
+\draw[domain=pi:pi + 7*2*pi,samples=200] plot (\x,{sin(\x r)});
+\ifprintanswers
+    \color{red}
+    \draw[domain=pi:pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+    \fill (3*pi,0) circle (2pt) node [above right] {1};
+    \fill (5*pi,0) circle (2pt) node[above right] {2};
+    \fill (7*pi,0) circle (2pt) node[above right] {3};
+    \fill (9*pi,0) circle (2pt) node[above right] {4};
+    \fill (11*pi,0) circle (2pt) node[above right] {5};
+    \fill (13*pi,0) circle (2pt) node[above right] {6};
+    \fill (15*pi,0) circle (2pt) node[above right] {7};
+\fi
+\end{tikzpicture}
+\end{center}
+
+\question
+Number of wave cycles: \fillin[5]
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=1cm]
+\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (-pi,-1) grid (11*pi,1);
+\draw[domain=0:5*2*pi,samples=200] plot (\x,{sin(\x r)});
+\ifprintanswers
+    \color{red}
+    \draw[domain=0:2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+    \fill (2*pi,0) circle (2pt) node [above left] {1};
+    \fill (4*pi,0) circle (2pt) node [above left] {2};
+    \fill (6*pi,0) circle (2pt) node [above left] {3};
+    \fill (8*pi,0) circle (2pt) node [above left] {4};
+    \fill (10*pi,0) circle (2pt) node [above left] {5};
+\fi
+\end{tikzpicture}
+\end{center}
+
+
+\question
+Number of wave cycles: \fillin[8.5]
+
+
+\begin{center}
+\begin{tikzpicture}[x=2.5mm,y=1cm]
+\draw[black!20,ultra thin,xstep=pi/2,ystep=0.5] (-pi/2,-1) grid (19*pi,1);
+\draw[domain=0.5*pi:0.5*pi + 8.5*2*pi,samples=200] plot (\x,{sin(\x r)});
+\ifprintanswers
+    \color{red}
+    \draw[domain=0.5*pi:0.5*pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+    \fill (2.5*pi,1) circle (2pt) node [above=2pt] {1};
+    \fill (4.5*pi,1) circle (2pt) node [above=2pt] {2};
+    \fill (6.5*pi,1) circle (2pt) node [above=2pt] {3};
+    \fill (8.5*pi,1) circle (2pt) node [above=2pt] {4};
+    \fill (10.5*pi,1) circle (2pt) node [above=2pt] {5};
+    \fill (12.5*pi,1) circle (2pt) node [above=2pt] {6};
+    \fill (14.5*pi,1) circle (2pt) node [above=2pt] {7};
+    \fill (16.5*pi,1) circle (2pt) node [above=2pt] {8};
+    \draw[domain=0.5*pi + 8*2*pi:0.5*pi + 8.5*2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+    \fill (0.5*pi+8.5*2*pi,-1) circle (2pt) node [above right] {8.5};
+\fi
+\end{tikzpicture}
+\end{center}
+
+
+\question
+Count the total number of wave cycles. Then measure the amplitude and wavelength in grid units.
+
+Number of wave cycles: \fillin[3][1cm] \hfill Amplitude: \fillin[2 units] \hfill Wavelength: \fillin[8 units]
+
+\begin{center}
+\begin{tikzpicture}[x=6mm,y=1cm]
+\draw[black!20,ultra thin,xstep=0.25*pi,ystep=0.5] (0.25*pi,-1) grid ++(4*2*pi,2);    
+\draw[domain=1.5*pi:1.5*pi + 3*2*pi,samples=200] plot (\x,{sin(\x r)});
+\ifprintanswers
+    \color{red}
+    \draw[domain=1.5*pi:1.5*pi + 2*pi,smooth,ultra thick] plot (\x,{sin(\x r)});
+\fi
+\end{tikzpicture}
+\end{center}
+
+
+
+\question \label{fifth}
+Count the total number of wave cycles. Then measure the amplitude and wavelength in grid units.
+
+Number of wave cycles: \fillin[3.5][1cm] \hfill Amplitude: \fillin[10 units] \hfill Wavelength: \fillin[8 units]
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=2cm]
+\draw[black!20,ultra thin,xstep=0.25*pi,ystep=0.1] (0,-1) grid (4.5*2*pi,1);    
+\draw[black!20,ultra thin] (0,-1) -- ++(4.5*2*pi,0);    
+\draw[domain=pi:pi + 3.5*2*pi,samples=200] plot (\x,{sin(\x r)});
+\end{tikzpicture}
+\end{center}
+
+\end{questions}
+\clearpage
+
+\subsection*{PhET Simulation: Wave on a String}
+
+
+Go to \texttt{PhET Simulation: Wave on a String} (\href{https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html}{click here}). Set a wave to oscillate with the settings shown below. Leave all other settings at their default values.
+
+\begin{center}
+\begin{minipage}{0.15\textwidth}
+\begin{itemize}
+    \item[$\bigcirc$] Manual 
+    \item[$\bigodot$] \textbf{Oscillate}
+    \item[$\bigcirc$] Pulse
+\end{itemize}
+\end{minipage}%
+\hspace{1ex}
 \begin{minipage}{0.3\textwidth}
 \centering
-    \begin{tikzpicture}
-        \draw[ultra thick,->] (0,-2) -- ++(0,3.5) node[above] {$I$};
-        \begin{scope}[rotate around x=50]
-            \draw[red,very thick,->] (0,0) arc (90:280:1);
-        \end{scope}
-        \begin{scope}[yshift=2mm,rotate around x=50]
-            \draw[red,very thick,->] (0,0) arc (90:283:1.6);
-        \end{scope}
-        \begin{scope}[yshift=4mm,rotate around x=50]
-            \draw[red,very thick,->] (0,0) arc (90:286:2.2);
-        \end{scope}
-        \node[red] at (1.3,-0.5) {$\vec{B}$};
-    \end{tikzpicture}
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \begin{scope}
+        \draw (0,0) -- (10,0);
+        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+        \foreach \i in {0,1,...,10}{
+            \draw (\i,0) node {$|$};
+        }
+        \foreach \i in {0,5,10}{
+            \draw (\i,0) node {\Huge $|$};
+        }
+    \end{scope}
+    \node[above=1.5em] at (0,0) {None};
+    \node[above=2.5em] at (5,0) {Damping};
+    \node[above=1.5em] at (10,0) {Lots};
+    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
+\end{tikzpicture}
+\end{minipage}%
+\hspace{1ex}
+\begin{minipage}{0.15\textwidth}
+\centering
+\begin{itemize}
+    \item[$\bigcirc$] Fixed End 
+    \item[$\bigcirc$] Loose End
+    \item[$\bigodot$] \textbf{No End}
+\end{itemize}
+\end{minipage}%
+\hspace{1ex}
+\begin{minipage}{0.2\textwidth}
+\begin{itemize}
+    \item[\checkbox{1}] Rulers
+    \item[\checkbox{1}] Timer
+    \item[$\square$] Reference Line
+\end{itemize}
+\end{minipage}
+\end{center}
+
+
+
+\begin{questions}
+    
+\question
+\textit{Measuring wave amplitude, wavelength, period, and frequency. }
+
+For each of the parts below use the play (\faPlay), pause (\faPause), and step (\faStepForward) buttons and the \texttt{Slow Motion} setting as needed to facilitate your measurements.
+
+\begin{parts}
+
+\part
+\textit{Measuring amplitude.} The dashed line is the vertical center of the wave, and amplitude is the vertical distance between the dashed line and the crest. Using the vertical ruler in the simulation, \textbf{measure} the wave's amplitude. 
+
+\smallskip
+
+\begin{center}
+\begin{minipage}{8cm}
+\centering
+\begin{tikzpicture}
+    \draw[densely dashed,x=6mm] (0,0) -- (2*2*pi,0);
+    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \begin{scope}[scale=0.5,shift={(1.9,0)}]
+        \tkzRegle[Rotation=90,Longueur=4,AfficheValeurs=false,CouleurFond=white,Opacite=0.5,Fond=true]
+    \end{scope}
+\end{tikzpicture}
 \end{minipage}%
 \hspace{1em}
-% \begin{minipage}{0.3\textwidth}
-%     \centering
-%         \includegraphics[width=3.6cm]{documents/figures/Unit10_RightHandRule.jpeg}
-% \end{minipage}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\vspace{1cm}
+
+Amplitude = \fillin[0.75][1.5cm]\, cm 
+
+\vspace{1cm}
+\end{minipage}
+}
 \end{center}
 
-\begin{randomizechoices}
-\choice to show the direction of gravity
-\CorrectChoice to show the direction of magnetic field around a current-carrying wire
-\choice to show the direction of current between two magnets
-\choice to show the direction of magnetic field between two magnets
-\end{randomizechoices}
+% Use the vertical ruler to measure the amplitude: \fillin[0.75]\ cm
 
-\question
-What is the direction of the magnetic field when the current is
+\part
+\textit{Measuring wavelength.} The wavelength of a wave may be measured as the horizontal distance between two adjacent crests. 
+
+\smallskip
 
 \begin{center}
-    $\bigodot I$
+\begin{minipage}{8cm}
+\centering
+\begin{tikzpicture}
+    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=6mm,y=1cm,domain=0:1.8*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \begin{scope}[scale=0.5,shift={(2,3.8)}]
+        \tkzRegle[Longueur=7.5,AfficheValeurs=false,CouleurFond=white,Opacite=1,Fond=true]
+    \end{scope}
+\end{tikzpicture}
+\end{minipage}%
+\hspace{1em}
+\fbox{
+\begin{minipage}{5cm}
+\centering
+\vspace{1cm}
+
+Wavelength = \fillin[4.2][1.5cm]\, cm 
+
+\vspace{1cm}
+\end{minipage}
+}
 \end{center}
 
-\begin{randomizechoices}
-\choice {$\circlearrowright$}
-\CorrectChoice {$\circlearrowleft$}
-\choice $\bigodot$
-\choice $\bigotimes$
-\end{randomizechoices}
+% Use the ruler to measure the wavelength: \fillin[4.2]\ cm
 
-\clearpage
-\question
-What is the direction of the magnetic field when the current is
+\part 
+\textit{Measuring period and frequency.} Pause (\faPause) the wave, and step (\faStepForward) it forward so that a crest is exactly aligned at the window frame, as shown below. The window represents a reference point in space, so each time a new crest passes through the window, a wave cycle has been completed.
 
-\begin{center}
-    $\bigotimes I$
-\end{center}
-
-\begin{randomizechoices}
-\CorrectChoice {$\circlearrowright$}
-\choice {$\circlearrowleft$}
-\choice $\bigodot$
-\choice $\bigotimes$
-\end{randomizechoices}
-
-\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{above} the wire?
+\medskip
 
 \begin{center}
 \begin{tikzpicture}
-\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
-\begin{scope}[yshift=3mm]
-    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Above};    
-\end{scope}
+    \begin{scope}[shift={(7.45,-1.43)},x=5mm,y=5mm]]
+    \draw[ultra thick,brown] (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \clip (0,0) -- (0,5.7) -- (2.25,6.6) -- (2.24,-0.91) -- cycle;
+    \node at (2,3.1) {\twemoji[height=4cm]{national park}};
+    \end{scope}
+    \draw[x=6mm,y=1cm,domain=pi:2.25*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=6mm,y=1cm,domain=pi:2.25*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \draw[<-,very thick] (2.75*pi,1) -- ++(1,0) node[right] {crest};
 \end{tikzpicture}
 \end{center}
-
-\begin{randomizeoneparchoices}
-\choice left
-\choice right
-\choice out of the page %$\bigodot$
-\CorrectChoice into the page %$\bigotimes$
-\end{randomizeoneparchoices}
-
-\question Current in a wire flows to the left, as shown by the figure. What is the direction of the magnetic field in the region \textit{below} the wire?
-
-\begin{center}
-\begin{tikzpicture}
-\draw[ultra thick,<-] (0,0) node[left]{$I$} -- ++(5,0);
-\begin{scope}[yshift=-13mm]
-    \draw[dashed] (0,0) rectangle (5,1) node[pos=0.5]{Below};    
-\end{scope}
-\end{tikzpicture}
-\end{center}
-
-\begin{randomizeoneparchoices}
-\choice left
-\choice right
-\CorrectChoice out of the page %$\bigodot$
-\choice into the page %$\bigotimes$
-\end{randomizeoneparchoices}
-
-
-\question Electric current flows through a vertical wire. The surrounding magnetic field goes into and out of the page as shown below. In what direction do \textbf{ELECTRONS} through the wire flow?
-
-\begin{center}
-\begin{tikzpicture}
-    \draw[ultra thick] (0,0) node[below] {down} -- ++(0,3) node[above] {up} ; 
-    \foreach \i in {0,0.5,...,1.5}
-        \foreach \j in {0.5,1.0,...,2.5}
-      {
-        \begin{scope}[xshift=-2cm]
-            \node at (\i,\j) {$\otimes$};
-        \end{scope}
-        \begin{scope}[xshift=0.5cm]
-            \node at (\i,\j) {$\odot$};
-        \end{scope}
-      }
-\end{tikzpicture}
-\end{center}
-
-\begin{randomizeoneparchoices}
-    \correctchoice up
-    \choice down
-    \choice out of the page
-    \choice into the page
-\end{randomizeoneparchoices}
 
 \clearpage
 
+\begin{itemize}
+    \item Press both the reset and the play buttons on the timer. (Note that it won't run until the simulation is played).
+    \item Press play (\faPlay) to the simulation.
+    \item Measure the time it takes exactly 10 subsequent crests to pass through the window (that's 10 wave cycles). Write the time in the space below.
+    \item \textit{Tip:} Switching to \texttt{Slow Motion} and using step (\faStepForward) may be useful. 
+\end{itemize}
+
+
+
+\begin{center}
+\fbox{
+\begin{minipage}{8cm}
+\centering
 \vspace{1em}
 
-\hrule\hrule
+Time for 10 wave cycles: \fillin[6.67][1.5cm]\ seconds
 
-\begin{EnvUplevel}
-\textbf{Questions \ref{JAlbal} through \ref{JxMpCM} are OPTIONAL and are worth EXTRA CREDIT.} To get full credit, show all your work on a sheet of paper, express your answer with correct units, and box your answer.
-\end{EnvUplevel}
-
-\question \label{JAlbal}
-A wire carries 7.0 amperes of electric current. What is the magnetic field strength 4.5 centimeters outside the current-carrying wire? %Answer: 
-
-\begin{solution}
-    \SI{3.1e-5}{T}
-\end{solution}
-
-\question
-The magnitude of the magnetic field at a point outside a current-carrying wire is shown below. Calculate the distance, in meters, of the point above the wire.
-
-\begin{center}
-    \begin{tikzpicture}
-        \draw[ultra thick,->] (0,0) -- (3,0) node[right] {$\SI{12}{A}$};
-        \draw[dashed] (1.5,0) -- ++(0,0.9);
-        \node[red] at (1.5,1) {$\bigodot$}; \node[black,right=4pt] at (1.5,1) {\SI{8e-7}{T}};
-    \end{tikzpicture}
+\vspace{1em}
+\end{minipage}
+}
 \end{center}
 
-\begin{solution}
-    3.0 meters
-\end{solution}
+The period ($T$) of the wave is the time it takes to complete one cycle. \textbf{Calculate} the wave's period by dividing the total time for 10 wave cycles by the number of cycles:
+
+
+\ifprintanswers
+\begin{equation*}
+    T = \frac{\textcolor{red}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{red}{0.667} \qquad \mathrm{s}}
+\end{equation*}
+\else
+\begin{equation*}
+    T = \frac{\textcolor{white}{6.67}\ \mathrm{s}}{\text{10 wave cycles}} = \boxed{\textcolor{white}{0.667}\qquad \mathrm{s}}
+\end{equation*}
+\fi
+
+
+And, frequency ($f$) is defined as the number of wave cycles per second, so divide the number of waves (10) by the total time. Show your work and record the frequency below.
+
+\ifprintanswers
+\begin{equation*}
+    f = \frac{\text{10 wave cycles}}{\textcolor{red}{6.67}\ \mathrm{s}} = \boxed{\textcolor{red}{1.50}\qquad \mathrm{Hz}}
+\end{equation*}
+\else
+\begin{equation*}
+    f = \frac{\text{10 wave cycles}}{\textcolor{white}{6.67}\ \mathrm{s}} = \boxed{\textcolor{white}{1.50}\qquad \mathrm{Hz}}
+\end{equation*}
+\fi
+
+\end{parts}
 
 \question
-The magnetic field strength 3 millimeters outside a current-carrying wire is \num{5e-4} tesla. Calculate the electric current through the wire.
+\textit{Measuring wave speed.} 
+
+\begin{parts}
+\part Pause (\faPause) and step (\faStepForward) the wave so that a crest aligns with the \SI{0}{cm} mark, as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+    \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \draw[very thick,<-] (0.95,0.85) -- ++(0,-1) node[below] {crest};
+    \draw[thick,<->] (0.92,1.2) -- ++(2.6,0) node[above,pos=0.5] {$\Delta x$};
+    \begin{scope}[scale=0.87,shift={(1.05,3.5)}]
+        \tkzRegle[Longueur=8,AfficheValeurs=true,CouleurFond=white,Opacite=1,Fond=true]
+    \end{scope}
+    \begin{scope}[shift={(2.6,0)},opacity=0.1,transform shape]
+        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=30,thick,red,mark=*] plot (\x,{sin(\x r)});
+        \draw[x=6mm,y=1cm,domain=pi/2:2*2*pi,samples=6,thick,green,mark=*,only marks] plot (\x,{sin(\x r)});
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+    \item Reset and play the timer.
+    \item Use the \texttt{Slow Motion}, play, and step buttons to record the time it takes the crest to be horizontally displaced by exactly $\Delta x = \SI{3.0}{cm}$. Record this time interval below:
+
+{
+\large
+\ifprintanswers
+\begin{equation*}
+    \Delta t = \textcolor{red}{0.48}\ \mathrm{s}
+\end{equation*}
+\else
+\begin{equation*}
+    \Delta t = \textcolor{white}{0.48}\ \mathrm{s}
+\end{equation*}
+\fi
+}
+
+    \item Speed $(v)$ is distance over time, so fill in the equation below and calculate the wave speed:
+
+\ifprintanswers
+\bgroup
+\large 
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\egroup
+\else
+\bgroup
+\large 
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\egroup
+\fi
+\end{itemize}
+
+
+
+\part Increase the amplitude to \SI{1.25}{cm}. Then, as previously done, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and use the average velocity equation to find wave speed:
+
+{
+\large
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.48}\ \mathrm{s}} = \boxed{\textcolor{red}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.48}\ \mathrm{s}} = \boxed{\textcolor{white}{6.25}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+
+How does increasing amplitude affect the transverse wave speed?
+
+\ifprintanswers
+\else
+\fillwithlines{1.5cm}
+\fi
 
 \begin{solution}
-    \SI{7.5}{A}
+    Increasing the amplitude does not affect wave speed. It only affects the energy transported by the wave.
 \end{solution}
 
-\begin{EnvUplevel}
-    \textbf{Questions \ref{LhsqrR} and \ref{JxMpCM} are in reference to the magnetic field equation:}
-\end{EnvUplevel}
+\part
+Reset the amplitude back to the default, \SI{0.75}{cm}. Then change the tension in the string to low:
+
+\begin{center}
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \begin{scope}
+        \draw (0,0) -- (10,0);
+        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+        \foreach \i in {0,1,...,10}{
+            \draw (\i,0) node {$|$};
+        }
+        \foreach \i in {0,5,10}{
+            \draw (\i,0) node {\Huge $|$};
+        }
+    \end{scope}
+    \node[above=1.5em] at (0,0) {Low};
+    \node[above=2.5em] at (5,0) {Tension};
+    \node[above=1.5em] at (10,0) {High};
+    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
+\end{tikzpicture}
+\end{center}
+
+Once again, record the time it takes for a crest to be horizontally displaced by \SI{3}{cm}, and find the wave speed:
+
+{
+\large 
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{2.38}\ \mathrm{s}} = \boxed{\textcolor{red}{1.26}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{2.38}\ \mathrm{s}} = \boxed{\textcolor{white}{1.26}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+
+How does decreasing the tension in the string affect the wave speed? 
+
+\ifprintanswers
+\else
+\fillwithlines{1.5cm}
+\fi
+
+\begin{solution}
+    Decreasing string tension also decreases the wave speed.
+\end{solution}
+
+\part
+Now change the tension in the string to medium. Then calculate the wave speed at medium tension below.
+
+
+
+\begin{center}
+\begin{minipage}{5cm}
+\centering
+\begin{tikzpicture}[x=4mm,y=4mm]
+    \begin{scope}
+        \draw (0,0) -- (10,0);
+        \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+        \foreach \i in {0,1,...,10}{
+            \draw (\i,0) node {$|$};
+        }
+        \foreach \i in {0,5,10}{
+            \draw (\i,0) node {\Huge $|$};
+        }
+    \end{scope}
+    \node[above=1.5em] at (0,0) {Low};
+    \node[above=2.5em] at (5,0) {Tension};
+    \node[above=1.5em] at (10,0) {High};
+    \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (4.7,-1.2) rectangle (5.3,1.2);
+\end{tikzpicture}
+\end{minipage}%
+\hspace{5mm}
+\begin{minipage}{7cm}
+\centering
+{
+\large 
+\ifprintanswers
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{red}{3.0}\ \mathrm{cm}}{\textcolor{red}{0.80}\ \mathrm{s}} = \boxed{\textcolor{red}{3.75}\ \mathrm{cm/s}}
+\end{equation*}
+\else
+\begin{equation*}
+    v = \frac{\Delta x}{\Delta t} = \frac{\textcolor{white}{3.0}\ \mathrm{cm}}{\textcolor{white}{0.80}\ \mathrm{s}} = \boxed{\textcolor{white}{3.75}\ \mathrm{cm/s}}
+\end{equation*}
+\fi
+}
+\end{minipage}
+\end{center}
+
+
+
+
+
+
+
+
+\end{parts}
+
+
+\question
+\textit{Wave speed and string tension.} The speed of a wave on a string is given by
 
 \begin{equation*}
-    B = \frac{\mymu_0 I}{2\pi r}
+    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
 \end{equation*}
 
-\question \label{LhsqrR}
-Solve the equation algebraically for distance. Show all your steps.
+where $F_\mathrm{T}$ is the tension  of the string, and $\mu$ is the linear mass density, or the mass per unit length of string. Assume that this PhET uses a string with
 
-\question \label{JxMpCM}
-Solve the equation algebraically for electric current. Show all your steps.
+\begin{equation*}
+    \mu = \SI{0.10}{kg/m}
+\end{equation*}
+
+
+\begin{parts}
+\part 
+What is the speed of the wave on a string when the tension is \SI{79}{N}?
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}} = \sqrt{\frac{\SI{79}{N}}{\SI{0.10}{kg/m}}} = \boxed{\SI{28}{m/s}}
+\end{equation*}
+\end{solutionorbox}
+
+\part 
+Using wave speed found in the previous part, calculate the tension in the string at medium tension. (\textit{Hint}: First convert your speed from cm/s to m/s.)
+
+\begin{solutionorbox}[4cm]
+    
+\end{solutionorbox}
+
+\end{parts}
+
+
+
+\clearpage
+
+
+
+
+%\begin{parts}
+
+% \part 
+% The linear mass density of the string is $\mu = \SI{1.0}{g/cm}$. Calculate the tension in the string when it's set to low. Express the answer in newtons (N).
+
+% \begin{solutionorbox}[3cm]
+% In base SI units, the linear mass density is
+
+% \begin{equation*}
+%     \mu = \SI[per-mode=fraction]{1.0}{\gram\per\centi\meter} \times 
+%     \frac{\SI{1}{kg}}{\SI{1000}{g}} \times \frac{\SI{100}{cm}}{\SI{1}{m}} = \SI{0.1}{kg/m}
+% \end{equation*}
+
+% The wave speed on a string is related to tension and linear mass density as
+
+% \begin{equation*}
+%     v_\mathrm{string} = \sqrt{\frac{F_\mathrm{T}}{\mu}}
+% \end{equation*}
+
+% Solving for tension leads to
+
+% \begin{equation*}
+%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{1.26e-2}{m/s}\right)^2 =  \boxed{\SI{1.6e-5}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+% \part 
+% Using the same linear mass density from the previous part, find the tension, in newtons, when tension is set to high. 
+
+
+
+% \begin{solutionorbox}[4cm]
+% From previous measurements, we know that when tension is high, the string speed is $v_\mathrm{string} = \SI{6.25}{cm/s} = \SI{6.25e-2}{m/s}$. Using the result from the previous part, tension is
+
+% \begin{equation*}
+%     F_\mathrm{T} = \mu v_\mathrm{string}^2 = (\SI{0.1}{kg/m}) \left(\SI{6.25e-2}{m/s}\right)^2 =  \boxed{\SI{3.9e-4}{N}}
+% \end{equation*}
+% \end{solutionorbox}
+
+
+%\end{parts}
+
+
+\clearpage
+
+\begin{EnvUplevel}
+    \subsubsection*{Checking for Understanding}
+\end{EnvUplevel}
+
+\question
+Amplitude is most closely related which of the following wave properties?
+
+\begin{randomizechoices}
+    \correctchoice energy
+    \choice wavelength
+    \choice frequency
+    \choice wave speed
+\end{randomizechoices}
+
+\question \label{XGViXs}
+The period of a wave is measured to be 4.85 seconds. What is the wave's frequency?
+
+
+\begin{solution}
+\SI{0.206}{Hz}
+\end{solution}
+
+
+
+
+\question \label{EeHAB4} 
+If the frequency of a wave is 8.53 hertz, what is its period of oscillation?
+
+
+\begin{solution}
+\SI{0.117}{s}
+\end{solution}
+
+\question \label{ldTSm3} 
+A bead on a string oscillates between a crest and trough of a transverse wave. The bead completes 20 cycles in 16 seconds. Calculate the wave's average period of oscillation. 
+
+
+\begin{solution}
+\SI{0.8}{s}
+\end{solution}
+
+\question \label{3rLSIq}
+What is the frequency of the wave described in Exercise \ref{ldTSm3}?
+
+
+\begin{solution}
+\SI{1.25}{Hz}
+\end{solution}
+
+\question \label{gz0LQL} 
+Every second, a transverse wave completes exactly five and four-sevenths of a wave cycle. Calculate the period of oscillation.
+
+
+\begin{solution}
+\SI{0.179}{s}
+\end{solution}
+
+\question \label{MITNpN} 
+Electromagnetic (EM) waves are transverse (but not mechanical) waves that oscillate at high frequencies. One type of EM waves is the radio wave, like those use detected by your car. Calculate the frequency of a radio wave whose period of oscillation is a tiny \SI[group-separator={\,}]{0.0001814}{s}.
+
+
+\begin{solution}
+    \SI{5513}{Hz}
+\end{solution}
+
+\question
+What two physical quantities are needed to calculate the velocity of a wave?
+
+
+\question \label{SKv3ek}
+The following wave has a frequency of \SI{2.70}{Hz} and propagates to the right. What is the velocity of the wave?
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=6cm,height=3cm,
+    xmin=0,xmax=3*2,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw plot[domain=0:3*2*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[<->] (2.5,1.1) -- ++(axis direction cs: 2,0) node[above,pos=0.5] {\SI{1.40}{m}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\question \label{HcdmDZ}
+The wave below has a period of 11 seconds as it propagates rightwards. Calculate its wave velocity.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=3cm,
+    xmin=0,xmax=4*2,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}]
+    \draw[lightgray] (0,0) -- (4*2,0);
+    \draw[lightgray,dashed] (1,0) -- ++(axis direction cs: 0,1.3) (5,0) -- ++(axis direction cs: 0,1.3);
+    \draw plot[domain=0:4*2*pi, samples=200] (\x/pi,{sin(\x r)});
+    \draw[<->] (1,1.2) -- ++(axis direction cs: 4,0) node[above,pos=0.5] {\SI{6.0}{m}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\question \label{exdA2j}
+Calculate the velocity of a wave whose wavelength and period of oscillation are \SI{10.5}{m} and \SI{0.25}{s}, respectively. 
+
+
+\question \label{HoRqxe}
+What is the velocity of a wave whose frequency and wavelength are \SI{25}{Hz} and \SI{7.0}{m}, respectively?
 
 
 \question
-What is the magnetic field strength at a distance of 3 m from a wire carrying a current of 2 A?
+Access the \texttt{PhET Simulation} ``Waves Intro'' (\href{https://phet.colorado.edu/sims/html/waves-intro/latest/waves-intro_en.html}{click here}). Click the \texttt{Light} panel. 
 
-\begin{randomizechoices}
-\CorrectChoice $1.3 \times 10^{-7}$ T
-\choice $6.7 \times 10^{-6}$ T
-\choice 6 T
-\choice 5 T
-\end{randomizechoices}
-
-\question
-What is the magnetic field strength at a distance of 0.05 m from a wire carrying a current of 7.3 A?
-
-\begin{randomizechoices}
-\choice $9.1 \times 10^{-5}$ T
-\CorrectChoice $2.9 \times 10^{-5}$ T
-\choice 0.05 T
-\choice 7.3 T
-\end{randomizechoices}
-
-
-\question
-What is a magnetic field?
-
-\begin{randomizechoices}
-\choice a field of magnets
-\CorrectChoice directional lines around a magnetic material that indicate the direction and magnitude of the magnetic force
-\choice a material or object that produces a magnetism
-\choice part of a magnet that exerts the strongest force on other magnets or magnetic material
-\end{randomizechoices}
+\begin{enumerate}
+\setlength\itemsep{0.1ex}
+    \item Press the \texttt{green} button on the laser to emit green light waves.
+    \item Click and drag the ruler tool from the upper-right-hand corner to measure the horizontal distance from the center of one bright spot to the next. \textbf{Tip}: by default, the ruler is set the measure the wavelength of green light.
+    \item Convert the given measurement from nanometers (nm) to meters (m), given that $\SI{1}{nm} = 10^{-9}\,\text{m}$.
+    \item If the wave travels at a speed of 300 million meters per second (\SI{3e8}{m/s}), what is the frequency of the light wave? Express the answer both in scientific notation and in decimal notation.
+\end{enumerate}
 \end{questions}
 
 \end{document}
 
+\clearpage
 
 
 
-\subsubsection{North and South Pole}
 
-\subsubsection{Two Magnets Attract or Repel}
+\subsection{Desmos: The Wave Equation}
 
-\subsubsection{Classifying Materials as Magnetic or Nonmagnetic}
+\begin{questions}
+\question
+The sinusoidal wave function is
 
-\subsection{Magnetic Fields}
+\begin{equation*}
+    y(x,t) = A \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
+\end{equation*}
 
-\subsubsection{Magnetic Fields Around Magnets}
 
-\subsubsection{Visualizing Magnetic Field Loops}
+To visualize wave motion, we will graph this function of position ($x$) and time ($t$). 
 
-\subsubsection{Predicting Attraction or Repulsion by Field Lines}
+\begin{parts}
 
-\subsubsection{Magnetic Field Strength by Field Lines}
+\part Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator} and define the following variables and their limits:
 
-\subsection{Compass}
+\begin{align*}
+    A &= 2 \qquad 0.1 \leq A \leq 8 \\[1ex]
+    \lambda &= 5 \qquad 0.1 \leq \lambda \leq 10 \\[1ex]
+    f &= 1 \qquad 0.1 \leq f \leq 3\\[1ex]
+    t &= 0 \qquad 0 \leq t \leq 10\\[1ex]
+    y(x) &= A \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
+\end{align*}
 
-\subsubsection{How a Compass Points in the Direction of the Magnetic Field}
+where $A$, $\lambda$, and $f$ are wave quantities. \textbf{Note:} You need to copy-and-paste the $\lambda$ symbol into Desmos by searching for ``lowercase lambda'' on Google. 
 
-\subsubsection{Earth's Magnetic and Geographic Poles}
+\medskip
 
-\subsection{Electromagnetic Fields}
+Make a graph of what you see in Desmos below.
 
-\subsubsection{Magnetic Fields and Moving Charges}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=6cm,width=10cm,
+    axis lines=center,
+    ymin=-4,ymax=4,
+    xmin=-10,xmax=10,
+    ytick={-6,-4,...,6},
+    xtick={-10,-6,...,10},
+    minor y tick num=1,
+    minor x tick num=1,
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-10:10,samples=125,very thick, red] {2*sin(2*pi/5*deg(x))};
+    \fi
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\subsubsection{Magnetic Fields around Current Carrying Wires}
+\part 
+Press the play (\faPlay) button in the cell containing the variable $A$ to animate this variable to different values between 0.1 and 10. How does varying $A$ affect the wave? What wave property does $A$ represent?
 
-\subsubsection{Representing Magnetic Fields Into and Out of the Page}
+\ifprintanswers
+\else
+\fillwithlines{2.0cm}
+\fi
 
-\subsection{Electromagnetic Induction}
+\part
+Reset $A$ back to 2. Then press the play (\faPlay) button in the $\lambda$ cell to animate $\lambda$. How does varying $\lambda$ affect the wave? What wave property does $\lambda$ represent?
 
-\subsubsection{Changing Magnetic Fields and Induced Electrical Currents}
+\ifprintanswers
+\else
+\fillwithlines{2.0cm}
+\fi
 
-\subsubsection{Faraday's Law}
+
+\part
+Reset $\lambda$ to 5. Now press the play (\faPlay) to animate $f$. What happens?
+
+\ifprintanswers
+\else
+\fillwithlines{2.0cm}
+\fi
+
+\part
+Reset $f$ back to 1. Go to the $t=0$ cell, click open the animation properties ($\rightleftarrows$), and set the animation mode to play indefinitely ($\rightarrow$). Then press play (\faPlay) to animate $t$. Using the words ``wave,'' ``propagate,'' and ``wave speed,'' describe what you see in the space below.
+
+\ifprintanswers
+\else
+\fillwithlines{2.0cm}
+\fi
+
+\begin{solution}
+    \textit{Answers may vary.}
+
+    The wave propagates to the right with a constant wave speed.
+\end{solution}
+
+\part
+While $t$ is playing indefinitely, manually set the slider on $f$ to different values between 0.1 and 3. Now what do you notice? What wave quantity does $f$ represent?
+
+\ifprintanswers
+\else
+\fillwithlines{2.0cm}
+\fi
+
+\begin{solution}
+    \textit{Answers may vary.}
+
+    It's the frequency. When $f$ increases while $\lambda$ is held constant, the wave speed increases.
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+
+
 
 \clearpage
 
-\subsection{Electromagnet}
+\subsection{Desmos: Constructive and Destructive Interference}
 
-\subsubsection{How Electromagnets Generate Magnetic Fields}
+\begin{questions}
+\question
+Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. In the first cell, define the variable $t = 0$ with limits from $-5$ to $5$:
 
-\subsubsection{Making an Electromagnet Stronger}
+\begin{equation*}
+    t = 0 \qquad -5 \leq t \leq 5
+\end{equation*}
 
-\subsection{Transformers}
+Then define the following functions in cells 2 and 3:
 
-\subsubsection{Diagram of a Transformer}
+{\large
+\begin{align*}
+    F_1 &= 4 e^{-\left(x-t\right)^2} \\[1ex]
+    F_2 &= 4 e^{-\left(x+t\right)^2}
+\end{align*}
+}
 
-\subsubsection{Changing Voltage while Conserving Energy}
+In cell 1, where $t$ is defined, press the play (\faPlay) button to begin looping $t$ forwards and backwards. Observe the motion of the pulses. Now follow the parts below.
 
-\subsubsection{Stepping Voltage Up or Down}
+\begin{parts}
+\part
+Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
 
-\subsection{Generators and Motors}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+    clip=false,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1.5)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
+\end{axis}
+\end{tikzpicture}
 
-\subsubsection{Converting Mechanical to Electrical Energy}
+\vspace{1mm}
 
-\subsubsection{Inducing More or Less Current in a Generator}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.75)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-0.75)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
 
-\subsubsection{Moving Charge in an External Magnetic Field}
+\part 
+If cell 4, define the function $F_3 = F_1 + F_2$. Play (\faPlay) the $t$ cell to begin the loop, and pause and sketch $F_3$ at the same times below.
 
-\subsubsection{Construction and Operation of a Motor and Generator}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2) + 4*exp(-(x+1.5)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
+\end{axis}
+\end{tikzpicture}
 
-\subsubsection{Changing the Rotational Speed of a Motor}
+\vspace{1mm}
+
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick,red] {4*exp(-(x-0.75)^2) + 4*exp(-(x+0.75)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=4.0cm,width=8cm,
+    axis lines=center,
+    ymin=0,ymax=8,
+    xmin=-6,xmax=6,
+    ytick={0,2,...,8},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2) + 4*exp(-(x)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part
+What behavior do you see when the waves meet at the same location?
+
+% \ifprintanswers
+% \else
+\fillwithlines{1.5cm}
+% \fi
+
+\part The function $F_3$ depicts the wave phenomenon called \fillin[constructive]\ interference.
+\end{parts}
+
+\question 
+Hide the graph $F_3$ by pressing the button in cell 4. Then change the second function to negative, as
+
+{\large 
+\begin{equation*}
+    F_2 = -4e^{-(x+t)^2}
+\end{equation*}
+}
+
+Then in cell 1, press play (\faPlay) to set $t$ looping forward and backward.
+
+\begin{parts}
+
+\part
+Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves $F_1$ and $F_2$ below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
+\end{axis}
+\end{tikzpicture}%
+\hspace{2em}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
+\end{axis}
+\end{tikzpicture}
+
+\medskip
+
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
+\end{axis}
+\end{tikzpicture}%
+\hspace{2em}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part 
+Show $F_3$ by pressing the button in cell 4. Then graph $F_3 = F_1 + F_2$ for the same values of $t$ as the previous part. 
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2) + 4*exp(-(x+3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2) + 4*exp(-(x+1)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1mm}
+
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2) + 4*exp(-(x+0.3)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
+\end{axis}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\begin{axis}[height=5.0cm,width=8cm,
+    axis lines=center,
+    ymin=-6,ymax=6,
+    xmin=-6,xmax=6,
+    ytick={-6,-4,...,6},
+    xtick={-6,-4,...,6},
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2) + 4*exp(-(x)^2)};
+    \fi
+    \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
+    \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\part
+What behavior do you see when the waves meet at the same location?
+% \ifprintanswers
+% \else
+\fillwithlines{1.5cm}
+% \fi
+
+\end{parts}
+
+
+\question
+Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. In the first cell, define the variable $t = 0$ with limits from $-5$ to $5$. Then, define wavelength $\lambda$, frequency $f$, and a coefficient $A$ as follows:
+
+\begin{align*}
+    & t = 0 \qquad -5 \leq t \leq 5 \\[1ex]
+    & \lambda = 2 \\[1ex]
+    & A = 0.2 \\[1ex]
+    & f = 1
+\end{align*}
+
+The pressure wave of a sound as a function of distance from the source may be modeled by a sinusoidal wave function combined with an exponential decay function; define this equation in the next cell:
+
+\begin{equation*}
+    f_1 = e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
+\end{equation*}
+
+Noise-cancellation technology in headphones works by recording the sound wave of an external source and producing a secondary sound wave in your ear that destructively interferes with the first wave to effectively cancel out the external noise.
+
+In the next cell, write an equation for a function $f_2$ that destructively interferes with sound wave $f_1$. Then plot $f_1 + f_2$ to show that the the first wave was canceled by the second.
+
+\begin{solution}
+\begin{equation*}
+    f_2 = -e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
+\end{equation*}    
+\end{solution}
+
+\question
+In a new tab, graph the following function and sketch it below:
+
+\begin{equation*}
+    y(x) = \sin(x) - \frac{1}{9} \sin(3x) + \frac{1}{25} \sin(5x) - \frac{1}{49} \sin(7x) + \frac{1}{81} \sin(9x)
+\end{equation*}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=6cm,width=10cm,
+    axis lines=center,
+    ymin=-4,ymax=4,
+    xmin=-10,xmax=10,
+    ytick={-6,-4,...,6},
+    xtick={-10,-6,...,10},
+    minor y tick num=1,
+    minor x tick num=1,
+    grid=both,
+]
+    \ifprintanswers
+    \addplot[domain=-10:10,samples=125,very thick, red] {sin(deg(x)) - 1/9*sin(3*deg(x)) + 1/25*sin(5*deg(x)) - 1/49*sin(7*deg(x)) + 1/81*sin(9*deg(x))};
+    \fi
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Describe in words how the graph appears.
+
+\fillwithlines{2cm}
+
+\end{questions}
+
+
+
+
+% Watch ``Wave Machine Demonstration'' by \texttt{National STEM Centre} on \texttt{YouTube} (\href{https://youtu.be/VE520z_ugcU}{click here}).
+
+% \begin{questions}
+
+
+
+
+% \question \label{OIqgoJ}
+% Access the \texttt{PhET Simulation} ``Waves on a String'' (\href{https://phet.colorado.edu/en/simulations/wave-on-a-string}{click here}). Then take the following steps two create two pulses.
+    
+% \begin{enumerate}
+% \setlength\itemsep{0.1ex}
+%     \item Press the screen (on the play button) to start the simulation.
+%     \item Select the \texttt{Pulse} and \texttt{Loose End} options.
+%     \item Increase the \texttt{Amplitude} to \SI{1.25}{cm}.
+%     \item Decrease the \texttt{Damping} to \texttt{None}.
+%     \item Set the \texttt{Tension} to the medium value.
+%     \item Click the green pulse button twice, with a 1-second gap between the two clicks.
+%     \item When the two pulses overlap on the same side of the equilibrium line (above or below it), what happens to the string?
+%     \item When the two pulses are on opposite sides---for example, if one pulse is above the equilibrium line, and the other is below---what happens to the string?
+% \end{enumerate}
+
+% \begin{center}
+%     \includegraphics[width=12cm]{physics-2023-24/figures/Unit11_PhET_Wave2.png}
+% \end{center}
+
+
+% \begin{solution}
+% When two pulses converge on the same side of the equilibrium line, that portion of the string grows in height as the amplitudes of the two pulses add up. However, when pulses that are on opposite sides converge, the string momentarily flattens as the opposite amplitudes of the pulses cancel each other out.
+% \end{solution}
+
+
+
+% \begin{multicols*}{2}
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\leftarrow$} -- (9,0) -- (12,0);
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\rightarrow$} -- (8,1) node[above,pos=0.5] {$\leftarrow$} -- (8,0) -- (12,0);
+%         \draw[red, ultra thick,shift={(0,12)}] (0,0) -- (5,0) -- (5,2) -- (6,2) node[above,pos=0.5] {$\rightarrow$} -- (7,2) node[above,pos=0.5] {$\leftarrow$} -- (7,0) -- (12,0);
+%         \draw[red,ultra thick,shift={(0,8)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\leftarrow$} -- (8,1) node[above,pos=0.5] {$\rightarrow$} -- (8,0) -- (12,0);
+%         \draw[red,ultra thick,shift={(0,4)}] (0,0) -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\leftarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\rightarrow$} -- (9,0) -- (12,0);
+%     \fi
+% \end{tikzpicture}
+
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (9,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (9,0) -- (12,0);
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (4,0) -- (4,1) -- (6,1) node[above,pos=0.5] {$\rightarrow$} -- (6,0) -- (6,-1) -- (8,-1) node[below,pos=0.5] {$\leftarrow$} -- (8,0) -- (12,0);
+%         \draw[red, ultra thick,shift={(0,12)}] (0,0) -- (12,0);
+%         \draw[red,ultra thick,shift={(0,8)}] (0,0) -- (4,0) -- (4,-1) -- (6,-1) node[below,pos=0.5] {$\leftarrow$} -- (6,0) -- (6,1) -- (8,1) node[above,pos=0.5] {$\rightarrow$} -- (8,0) -- (12,0);
+%         \draw[red,ultra thick,shift={(0,4)}] (0,0) -- (3,0) -- (3,-1) -- (5,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (5,0) -- (7,0) -- (7,1) -- (9,1) node[pos=0.5,above] {\large $\rightarrow$} -- (9,0) -- (12,0);
+%     \fi
+% \end{tikzpicture}
+
+% \vspace*{\fill}
+
+% \columnbreak
+
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (4,1) node[pos=0.5,above] {\large $\rightarrow$} -- (4,-1) -- (5,-1) -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (8,-1) -- (8,1) -- (9,1) node[pos=0.5,above] {\large $\leftarrow$} -- (9,0) -- (12,0);
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
+%     \fi
+% \end{tikzpicture}
+
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (3,0) -- (3,1) -- (4,1) node[pos=0.5,above] {\large $\rightarrow$} -- (4,-1) -- (5,-1) -- (5,0) -- (6,0) -- (7,0) -- (7,1) -- (8,1) node[pos=0.5,above] {\large $\leftarrow$} -- (8,-1) -- (9,-1)  -- (9,0) -- (12,0);
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
+%     \fi
+% \end{tikzpicture}
+
+% \vspace*{\fill}
+
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (2,0) -- (2,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,-1) -- (8,-1) node[pos=0.5,below] {\large $\leftarrow$} -- (8,0) -- (12,0) ;
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
+%     \fi
+% \end{tikzpicture}
+
+% \question
+% .
+
+% \begin{tikzpicture}[step=1,x=4mm,y=4mm]
+%     \draw[lightgray] (0,0) grid (12,24);
+%     \draw[gray] (6,0) -- (6,24);
+%     \draw[ultra thick,shift={(0,20)}] (0,0) node[left] {$t = 0$} -- (2,0) -- (2,1) -- (5,1) node[pos=0.5,above] {\large $\rightarrow$} -- (5,0) -- (6,0) -- (7,0) -- (7,1) -- (8,1) node[pos=0.5,above] {\large $\leftarrow$} -- (8,0) -- (12,0) ;
+%     \node[left] at (0,4) {$t=4$};
+%     \node[left] at (0,8) {$t=3$};
+%     \node[left] at (0,12) {$t=2$};
+%     \node[left] at (0,16) {$t=1$};
+%     \ifprintanswers
+%         \draw[red,ultra thick,shift={(0,16)}] (0,0) -- (3,0);
+%     \fi
+% \end{tikzpicture}
+
+% \end{multicols*}
+
+% \end{questions}
+
+\clearpage
+
+
+
+\subsection{Longitudinal Waves}
+
+\begin{questions}
+    
+\question
+Between a compression and a rarefaction, which is below atmospheric pressure?
+
+
+\question
+Name the part of a sound wave that is slightly above atmospheric pressure.
+
+
+\question
+Watch ``How Do Noise Canceling Headphones Work?'' by \texttt{Branch Education} on \texttt{YouTube} (\href{https://youtu.be/VIi04uD8LtY}{click here}). In your own words, briefly summarize how noise-cancelling headphones work. Use the terms defined in this section.
+
+
+\question \label{J5ZJhe}
+Whales emit deep sounds through the ocean. Find Table 14.1 in \texttt{OpenStax: Physics} (\href{https://openstax.org/books/physics/pages/14-1-speed-of-sound-frequency-and-wavelength#Table_14_01}{click here}). What is the speed of a sound wave through sea water? Between air and water, through which medium does sound travel faster?
+
+
+\question
+Access the table from Exercise \ref{J5ZJhe}. Identify the media through which sound waves travel the slowest and the fastest.
+
+\end{questions}
+
+
+
+\clearpage
+\subsection{Electromagnetic Waves}
+
+\begin{questions}
+
+\question
+Which of the following words best answers the question \textit{What is light}?
+
+
+\begin{center}
+    \textbf{
+    acceleration \hfill
+    charge \hfill
+    current \hfill
+    energy \hfill
+    force \hfill
+    momentum \hfill
+    position \hfill
+    velocity \hfill
+    }
+\end{center}
+
+
+
+\question
+Physicists have divided the electromagnetic spectrum into how many different regions?
+
+
+\question
+Name all the regions of the electromagnetic spectrum.
+
+
+\question
+What are some differences between the various types of electromagnetic radiation?
+
+
+\question
+How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
+
+
+\question
+Can electromagnetic waves travel through empty space (that is, through a vacuum)?
+
+
+\question
+Create a table with the first column labeled ``visible'' and the second one ``invisible.'' Sort all regions of the electromagnetic spectrum into this table according to whether waves in those regions are visible or invisible to the human eye.
+
+
+
+\question
+An electromagnetic wave consists of two oscillating fields that are perpendicular and in phase with each other. What are the names of each field?
+
+
+\question
+Generate a radio wave by wiggling an electron. Access the \texttt{PhET Simulation} ``Radio Waves \& Electromagnetic Fields'' (\href{https://phet.colorado.edu/en/simulations/radio-waves}{click here}). Click the play button in the center of the screen. Wiggle the electron, either in \texttt{Manual} or \texttt{Oscillate} mode. Observe how the oscillation of the electric charge results in the propagation in an electromagnetic wave. Use this simulation to explain, in your own words, how all electromagnetic radiation is generated.
+
+
+\question
+The first wave below represents an electromagnetic wave in the X-ray region of the spectrum. If the second wave is not an X-ray, what type of electromagnetic radiation does it represent?
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=14,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (3,1) {X-ray};
+    \begin{scope}[shift={(axis direction cs: 8,0)}]
+        \draw plot[domain=0:6*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
+        \draw[dashed,<->] (0.5*1/7,1.05) -- ++(axis direction cs: 2,0);
+        \node[above=2mm] at (3,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question
+The first wave represents a microwave. If the second wave is an a different region of the spectrum, what type of electromagnetic wave is it?
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=14,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw plot[domain=0:6*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
+    \draw[dashed,<->] (0.5*1/7,1.05) -- ++(axis direction cs: 2,0);
+    \node[above=2mm] at (3,1) {Microwave};
+    \begin{scope}[shift={(axis direction cs: 8,0)}]
+        \draw plot[domain=0:6*pi, samples=200] (\x/pi,{sin(\x r)});
+        \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+        \node[above=2mm] at (3,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\question \label{wqaTm6}
+When water molecules are bathed in electromagnetic radiation at just the right frequency, they get begin to vibrate and give off heat to their environment. What frequency must these waves have for this phenomenon to occur? Write the number in scientific and decimal notation.
+
+
+\question
+To what region of the electromagnetic spectrum do the waves from Exercise \ref{wqaTm6} belong? 
+
+
+\question
+What happens to the energy of electromagnetic radiation as frequency decreases?
+
+
+\question
+How do humans detect infrared radiation?
+
+
+\question
+Explain some applications of microwaves in astronomy. 
+
+
+\question
+Which type of electromagnetic wave has the longest wavelength of the whole spectrum?
+
+
+\question
+In what medical technology are radio waves used?
+
+\question
+Which type of electromagnetic radiation has the shortest wavelengths?
+
+
+\question
+Which form of EM radiation has the most penetrating ability?
+
+
+\question
+Why are high-frequency gamma rays more dangerous to humans than visible light?
+\end{questions}
+
+
+\subsection{Visible Light}
+
+\begin{questions}
+
+
+\question
+Explain Roy G.~Biv.
+
+
+\question
+Identify the name of the cells in your eyes that allow you to perceive color.
+
+
+\question
+What are the seven colors of the rainbow in order of increasing \textit{wavelength}?
+
+
+\question
+Between red and violet, which color represents the high-frequency limit of the visible spectrum?
+
+
+\question
+Which color represents the long-wavelength limit of the visible spectrum?
+
+
+\question
+Which region of the electromagnetic spectrum, apart from visible light, can bees see?
+
+
+\question
+Which animal can see infrared light?
+
+
+\question \label{lwLSKO}
+Sort the colors yellow, blue, and red from shortest wavelength to longest.
+
+
+
+\question
+Convert \SI{5798}{nm} to meters, writing in scientific notation.
+
+
+\question
+Sort the colors in Exercises \ref{lwLSKO} from lowest frequency to highest.
+
+
+\question
+What is the wavelength of a red light wave that has a frequency of \SI{4.746e14}{\Hz} if the wave travels through empty space at a speed of \SI{3.0e8}{m/s}? Express your answer in nanometers (nm).
+
+
+\question
+The Bacillus is a species of rod-shaped bacteria that are very common in nature. As shown below, a typical length is about 2 to 6 microns. Consider a green light wave, which has a wavelength of about 500 nanometers. About how many wave cycles of green light could fit along the length of the Bacillus below?
+
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=2.5cm,
+    xmin=0,xmax=12,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw plot[domain=0:4*pi, samples=1200] (\x/pi,{sin(7/1*\x r)});
+    \begin{scope}[shift={(axis direction cs: 8,0)}]
+        \draw plot[domain=0:4*pi, samples=200] (\x/pi,{sin(\x r)});   
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{-1.5cm}
+
+\begin{tikzpicture}
+    \draw[fill=lightgray] (0,0) circle (0.5);
+    \begin{scope}[shift={(2,0)}]
+        \draw[fill=lightgray] (0,0) circle (0.5); 
+    \end{scope}
+    \fill[lightgray] (0,-0.5) rectangle ++(2,1) node[black,pos=0.5] {\textbf{bacillus}};
+    \draw (0,0.5) -- ++(2,0)
+          (0,-0.5) -- ++(2,0);
+    \draw[<->] (-0.5,0.7) -- ++(3,0) node[above,pos=0.5] {\SI{5}{\micro\meter}};
+\end{tikzpicture}
+\end{center}
+
+
+\question
+True or false? Light requires a medium to propagate.
+
+
+\question
+What is the value of $c$, the speed of light in a vacuum?
+
+
+\question
+Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn? To get full credit, show all your work.
+\end{questions}
+
+\subsection{Optics}
+
+{\large \textbf{Other}}
+
+\begin{questions}
+    
+\question
+The first wave below represents the electromagnetic wave for the color cyan, which is indicated in the visible spectrum below. The dashed double arrows are the same length. Which color could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {cyan};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*632/490,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(490/632*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{1em}
+
+\begin{tikzpicture}
+    \begin{axis}[width=14cm, height=7cm,
+        ymin=0,ymax=1,
+        height=3cm,
+        xmin=360,xmax=740,
+        yticklabels={},
+        ytick=\empty,
+        axis lines=left,
+        separate axis lines,
+        y axis line style=white,
+        x dir=reverse,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none}
+        ]
+        \addplot[draw=none, name path=uv, forget plot] coordinates{(360,0)(360,0.5)};
+        \addplot[draw=none, name path=visible, forget plot] coordinates{(740,0)(740,0.5)};
+        \addplot[shading=visiblelight, area legend] fill between[of=uv and visible];
+        \draw[<-,thick] (490,0.5) -- ++(axis direction cs: 0,0.4) node[above] {cyan};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice red
+    \choice violet
+    \choice indigo
+    \choice ultraviolet 
+\end{randomizechoices}
+
+\question 
+The first wave represents a green electromagnetic wave. The second wave is an electromagnetic wave that is invisible to the human eye. Assume the double dashed arrows are the same size. What type of electromagnetic wave could be represented by the second wave?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=16cm,height=3cm,
+    xmin=0,xmax=24,
+    ymin=-1,ymax=1,
+    clip=false,
+    ticks=none,
+    axis line style={draw=none}
+    ]
+    \draw[dashed,<->] (0.5,1.05) -- ++(axis direction cs: 2,0);
+    \draw plot[domain=0:10*pi, samples=200] (\x/pi,{sin(\x r)});
+    \node[above=2mm] at (4.5,1) {green};
+    \begin{scope}[shift={(axis direction cs: 12,0)}]
+        \draw[dashed,<->] (0.5*200/550,1.05) -- ++(axis direction cs: 2,0);
+        \draw plot[domain=0:10*pi, samples=500] (\x/pi,{sin(550/200*\x r)});
+        \node[above=2mm] at (5,1) {???};    
+    \end{scope}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{randomizechoices}
+    \correctchoice ultraviolet
+    \choice microwave
+    \choice blue light
+    \choice gamma ray
+    \choice radio wave
+\end{randomizechoices}
+
+
+\question
+The diagram below represents a transverse wave.
+
+\def\twopi{2*pi}
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+        axis lines=center,
+        clip=false,
+        ticks=none,
+        axis line style={draw=none},
+]
+\addplot [thick,
+    domain=0:1.5*\twopi, 
+    samples=200, 
+    color=black,
+]
+{sin(deg(x))};
+    \draw[black!50] (-1,0) -- ++(axis direction cs: 3*pi+2,0);
+    \fill (0,0) circle (2pt) node[below] {A};
+    \fill (pi/2,1) circle (2pt) node[above] {B};
+    \fill (pi,0) circle (2pt) node[below left] {C};
+    \fill (3*pi/2,-1) circle (2pt) node[below] {D};
+    \fill (2*pi,0) circle (2pt) node[above left] {E};
+    \fill (5*pi/2,1) circle (2pt) node[below] {F};
+    \fill (3*pi,0) circle (2pt) node[below] {G};
+
+\end{axis}
+\end{tikzpicture}
+
+The wavelength of the wave is equal to the distance between points \fillin .
+
+\begin{randomizechoices}
+    \correctchoice B and F
+    \choice A and G
+    \choice D and F
+    \choice C and E
+\end{randomizechoices}
+
+\question
+ The energy of a sound wave is most closely related to its \fillin\ .
+
+ \begin{randomizechoices}
+     \correctchoice amplitude
+     \choice wavelength
+     \choice frequency
+     \choice period
+\end{randomizechoices}
+
+\question
+The diagram below represents a transverse wave.
+
+\begin{tikzpicture}
+\begin{axis}[width=8cm,height=4cm,
+    ticks=none,
+    clip=false,
+    axis lines=center,
+]
+
+\addplot[
+    domain=pi:3*pi,
+    samples=100,
+    color=black,
+]
+{sin(deg(x))};
+    \fill (pi,1) circle (2pt) node[left] {D};
+    \fill (pi,0) circle (2pt) node[left] {A};
+    \fill (pi,-1) circle (2pt) node[left] {E};
+    
+\end{axis}
+\end{tikzpicture}
+
+
+
+
+\question %27
+Describe the electric and magnetic fields that make up an electromagnetic wave.
+
+\begin{center}
+    \centering
+    \scalebox{0.9}{
+    \begin{tikzpicture}[x={(-10:1cm)},y={(90:1cm)},z={(210:1cm)}]
+    % Axes
+    \draw (-1,0,0) node[above] {$x$} -- (5,0,0);
+    \draw (0,0,0) -- (0,2,0) node[above] {$y$};
+    \draw (0,0,0) -- (0,0,2) node[left] {$z$};
+    % Propagation
+    \draw[->,ultra thick] (5,0,0) -- node[above] {$c$} (6,0,0);
+    % Waves
+    \draw[blue,thick] plot[domain=0:4.5,samples=200] (\x,{cos(deg(pi*\x))},0);
+    \draw[red,thick] plot[domain=0:4.5,samples=200] (\x,0,{cos(deg(pi*\x))});
+    % Arrows
+    \foreach \x in {0.1,0.3,...,4.4} {
+      \draw[->,help lines] (\x,0,0) -- (\x,{cos(deg(pi*\x))},0);
+      \draw[->,help lines] (\x,0,0) -- (\x,0,{cos(deg(pi*\x))});
+    }
+    % Labels
+    \node[above right] at (0,1,0) {$\boldsymbol{E}$};
+    \node[below] at (0,0,1) {$\boldsymbol{B}$};
+    \end{tikzpicture}
+    }
+\end{center}
+
+\begin{choices}
+\choice They are perpendicular to and out of phase with each other.
+\CorrectChoice They are perpendicular to and in phase with each other.
+\choice They are parallel to and out of phase with each other.
+\choice They are parallel to and in phase with each other.
+\end{choices}
+
+% \begin{solution}
+% They are at right angles (OR \ang{90} OR perpendicular) to each other and they are in phase.
+% \end{solution}
+
+\question
+What are the 7 regions of the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice infrared, hertz, joule, kilogram, energy, visible light, ultraviolet
+\choice gamma ray, microwave, mass, velocity, energy, speed, X-ray
+\choice newton, hertz, joule, velocity, energy, speed, X-ray
+\correctchoice radio, microwave, infrared, visible, ultraviolet, X-ray, gamma ray
+\end{choices}
+
+\question
+How does wavelength change as frequency \textit{increases} across the electromagnetic spectrum?
+
+
+\begin{choices}
+\choice Wavelength increases.
+\choice Wavelength first increases and then decreases.
+\choice Wavelength first decreases and then increases.
+\CorrectChoice Wavelength decreases.
+\end{choices}
+
+\question
+Which portion of the electromagnetic spectrum is \textit{not invisible} to the human eye?
+
+\begin{choices}
+\choice microwave
+\choice infrared
+\CorrectChoice visible light
+\choice x-ray
+\end{choices}
+
+\question
+What are the 7 colors of visible light?
+
+\begin{choices}
+\choice magenta, cyan, yellow, green, brown, black, white
+\correctchoice red, orange, yellow, green, blue, indigo, violet
+\choice magenta, cyan, yellow, green, red, orange, white
+\choice red, orange, yellow, green, brown, cyan, pink
+\end{choices}
+
+\question
+If the first wave is green light, which color could be represented by the second wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {GREEN LIGHT WAVE};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice red
+\choice yellow
+\correctchoice blue
+\choice infrared
+\end{choices}
+
+
+
+\clearpage
+
+
+\question
+In addition to visible light, bees can also see the \fillin\ region of the electromagnetic spectrum. 
+
+\begin{choices}
+\correctchoice ultraviolet
+\choice infrared
+\choice radio
+\choice X-ray
+\end{choices}
+
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+
+Put these light waves in order according to \textit{wavelength}, from shortest wavelength to longest wavelength.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice red, yellow, blue
+\CorrectChoice blue, yellow, red
+\end{choices}
+
+% \begin{solution}
+% Blue has the shortest wavelength and the highest frequency of the colors given while red has the longest wavelength and the smallest frequency.
+% \end{solution}
+
+\question % 2
+Consider these colors of light: 
+
+\begin{center}
+    \textbf{yellow, blue, red}
+\end{center}
+
+Put these light waves in order according to \textit{frequency}, from lowest frequency to highest frequency.
+
+\begin{choices}
+\choice blue, yellow, red
+\choice red, yellow, blue
+\choice blue, yellow, red
+\CorrectChoice red, yellow, blue
+\end{choices}
+
+\question
+Red light has a wavelength of \SI{700}{nm}. Assuming red light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of red light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{4.3e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\question
+Violet light has a wavelength of \SI{400}{nm}. Assuming violet light moves at the speed of light in a vacuum, at \SI{3.0e8}{m/s}, what is the frequency of violet light?
+
+\begin{choices}
+\choice \SI{2.3e-15}{Hz}
+\choice \SI{210}{Hz}
+\correctchoice \SI{7.5e14}{Hz}
+\choice \SI{4.76e-4}{Hz}
+\end{choices}
+
+\clearpage
+\question 
+The first wave represents red light. Which EM wave could be represented by the other wave?
+
+\begin{center}
+    \centering
+    \begin{tikzpicture}
+        \draw[thick] plot[domain=0:3*2*pi, samples=500]  (\x/pi,{0.8*sin(3*\x r)});
+        \node at (10,1.2) {???};
+        \draw[thick] plot[domain=3.5*2*pi:6.5*2*pi, samples=500]  (\x/pi,{0.8*sin(\x r)});
+        \node at (3,1.2) {RED LIGHT WAVE};
+    \end{tikzpicture}
+\end{center}
+
+\begin{choices}
+\choice green light
+\choice ultraviolet
+\choice X-ray
+\correctchoice infrared
+\end{choices}
+
+\question % 4
+In which region of the electromagnetic spectrum would you find radiation that is invisible to the human eye and has low energy?
+
+\begin{choices}
+\choice Long-wavelength and high-frequency region
+\CorrectChoice Long-wavelength and low-frequency region
+\choice Short-wavelength and high-frequency region
+\choice Short-wavelength and low-frequency region
+\end{choices}
+
+\question
+Which scientist discovered infrared light?
+
+\begin{choices}
+\choice Albert Einstein (1905)
+\choice Isaac Newton (1661)
+\correctchoice William Herschel (1800)
+\choice Madam Curie (1903)
+\end{choices}
+
+\question %26
+Describe one way in which heat waves---infrared radiation---are different from sound waves.
+
+\begin{choices}
+\choice Sound waves are transverse waves, whereas heat waves---infrared radiation---are longitudinal waves.
+\choice Sound waves have shorter wavelengths than heat waves.
+\CorrectChoice Sound waves require a medium, whereas heat waves---infrared radiation---do not.
+\choice Sound waves have higher frequencies than heat waves.
+\end{choices}
+
+% \begin{solution}
+% Heat waves can travel across empty space and sound waves cannot.
+% \end{solution}
+
+\vspace{1em}
+\hrule 
+
+\clearpage
+\begin{EnvUplevel}
+\textbf{Read the prompt below. Then answer questions \ref{ques:fire_first} through \ref{ques:fire_last}.}
+
+When you stand in front of an open fire, you can sense light waves with your eyes. You sense another type of electromagnetic radiation as heat.
+\end{EnvUplevel}
+
+
+\question \label{ques:fire_first} %8
+How are the light waves and heat waves radiated by the fire the same, and how are they different?
+
+\begin{choices}
+\choice Both travel as waves, but only light waves are a form of electromagnetic radiation.
+\CorrectChoice Heat and light are both forms of electromagnetic radiation, but light waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but heat waves have higher frequencies.
+\choice Heat and light are both forms of electromagnetic radiation, but light waves have higher wavelengths.
+\end{choices}
+
+% \begin{solution}
+% Heat and light waves are both forms of electromagnetic radiation, but they have different frequencies. Our eyes detect only the range of frequencies called visible light. The heat waves are easily absorbed by our body, but the light is mostly reflected.
+% \end{solution}
+
+\question %10
+What is this other type of radiation?
+
+\begin{choices}
+\choice Visible light rays
+\choice X-rays
+\choice Gamma rays
+\CorrectChoice Infrared rays
+\end{choices}
+
+
+\question \label{ques:fire_last} %10
+How is this other type of radiation different from light waves?
+
+\begin{choices}
+\choice The visible light rays have higher frequencies and shorter wavelengths than the light waves.
+\CorrectChoice The infrared rays have lower frequencies and longer wavelengths than the light waves.
+\choice The X-rays have lower frequencies and longer wavelengths than the light waves.
+\choice The gamma rays have higher frequencies and shorter wavelengths than the light waves.
+\end{choices}
+\vspace{1em}
+
+\hrule
+
+% \begin{solution}
+% Part A. We sense infrared waves as heat. Part B. We sense the light with our eyes and the heat with our whole body. The heat waves have lower frequency and longer wavelengths than the light waves. They are both forms of electromagnetic radiation.
+% \end{solution}
+
+\question
+What is the value of $c$, the speed of light in a vacuum?
+
+\begin{choices}
+\correctchoice \SI{3.0e8}{m/s} (3 million meters per second)
+\choice \SI{0.0}{m/s} (zero meters per second)
+\choice \SI{1.0e5}{m/s} (100 thousand meters per second)
+\choice \SI{584}{m/s} (584 meters per second)
+\end{choices}
+
+\question
+When light travels through a physical medium, its speed is always \fillin[][0.8in]\ the speed of light ($c$).
+
+\begin{choices}
+\choice greater than
+\choice equal to
+\choice negative
+\correctchoice less than
+\end{choices}
+
+\question
+Light travels in water at \fillin\ the value of $c$.
+
+\begin{choices}
+\correctchoice $3/4$
+\choice $1/2$
+\choice $5/6$
+\choice $2/3$
+\end{choices}
+
+\question
+In air, light has a speed that is \fillin\ of $c$.
+
+\begin{choices}
+\choice 0.03 percent
+\choice 65.00 percent
+\correctchoice 99.97 percent
+\choice 87.50 percent
+\end{choices}
+
+\question
+Diamond slows light down to just \fillin\ of $c$.
+
+\begin{choices}
+\correctchoice 41 percent
+\choice 33 percent
+\choice 61 percent
+\choice 74 percent
+\end{choices}
+
+\question %5
+Light travels at different speeds in different media. Put these media in order, from the slowest light speed to the fastest light speed: air, diamond, vacuum, water.
+
+\begin{choices}
+\choice vacuum, diamond, air, water
+\choice diamond, air, water, vacuum
+\correctchoice diamond, water, air, vacuum
+\choice air, diamond, water, vacuum
+\end{choices}
+
+\question %28
+Explain how X-ray radiation can be harmful and how can it be a useful diagnostic tool.
+
+\begin{choices}
+\choice Overexposure to X-rays can cause HIV, though normal levels of X-rays can be used for sterilizing needles.
+\CorrectChoice Overexposure to X-rays can cause cancer, though in limited doses X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes diabetes, though normal levels of X-rays can be used for imaging internal body parts.
+\choice Overexposure to X-rays causes cancer, though normal levels of X-rays can be used for reducing cholesterol in the blood.
+\end{choices}
+
+\question %17
+Which type of electromagnetic radiation has the shortest wavelengths?
+
+\begin{choices}
+\CorrectChoice Gamma rays
+\choice Infrared waves
+\choice Blue light
+\choice Microwaves
+\end{choices}
+
+\question %18
+Which form of EM radiation has the most penetrating ability?
+
+\begin{choices}
+\choice red light
+\choice microwaves
+\choice gamma rays
+\choice infrared radiation
+\end{choices}
+
+
+\question % 3
+What is the location of gamma rays on the electromagnetic spectrum?
+
+\begin{choices}
+\choice At the high-frequency and long-wavelength end of the spectrum
+\CorrectChoice At the high-frequency and short-wavelength end of the spectrum
+\choice At the low-frequency and long-wavelength end of the spectrum
+\choice At the low-frequency and short-wavelength end of the spectrum
+\end{choices}
+
+\question %19
+Why are high-frequency gamma rays more dangerous to humans than visible light?
+
+\begin{choices}
+\choice Gamma rays have a lower frequency range than visible light.
+\choice Gamma rays have a longer wavelength range than visible light.
+\CorrectChoice Gamma rays have greater energy than visible light for penetrating matter.
+\choice Gamma rays have less energy than visible light for penetrating matter.
+\end{choices}
+
+
+
+\question %33
+Saturn is \SI{1.43e12}{m} from the Sun. How many minutes does it take the Sun’s light to reach Saturn?
+
+\begin{choices}
+\choice \SI{7.94e9}{min}
+\choice \SI{3.4e4}{min}
+\choice \SI{3.4e-6}{min}
+\choice \SI{79.4}{min}
+\end{choices}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Violet light has a \fillin[higher] frequency and \fillin[shorter] wavelength than red light.
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice lower; longer
+\CorrectChoice higher; shorter
+\choice lower; shorter
+\choice higher; longer
+\end{choices}
+
+% \begin{solution}
+% Violet light has a higher frequency and shorter wavelength than red light.
+% \end{solution}
+
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has lower frequencies than red light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice ultraviolet radiation
+\choice x-ray radiation
+\CorrectChoice infrared radiation
+\choice violet light radiation
+
+\end{choices}
+
+% \begin{solution}
+% Infrared radiation or any other type of radiation in the low-frequency end of the spectrum.
+% \end{solution}
+
+\question %34
+A frequency of red light has a wavelength of \SI{700}{nm}. Which type of radiation has shorter wavelengths than violet light?
+
+\vspace{0.5em}
+
+\begin{choices}
+\choice infrared radiation
+\CorrectChoice ultraviolet radiation
+\choice red light radiation
+\choice microwave radiation
+\end{choices}
+
+% \begin{solution}
+% Ultraviolet radiation or any other type of radiation in the high-frequency end of the spectrum.
+% \end{solution}
+
+\question %22
+What is the wavelength of red light with a frequency of \SI{4.00e14}{\Hz}?
+
+\begin{choices}
+\choice \SI{2.50e14}{\meter}
+\choice \SI{4.00e15}{\meter}
+\choice \SI{2.50e6}{\meter}
+\CorrectChoice \SI{7.50e-7}{\meter}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item frequency: $f = \SI{4.00e14}{\Hz}$
+    \item speed of light: $c = \SI[per-mode=symbol]{3.00e8}{\meter\per\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for wavelength,
+
+\begin{equation*}
+    \lambda = \frac{c}{f} = \SI{7.50e-7}{\meter}
+\end{equation*}
+\end{solution}
+
+\question %14
+Visible light has a range of wavelengths from about \SI{400}{nm} to \SI{800}{nm}. What is the range of frequencies for visible light?
+
+\begin{choices}
+\choice \SI{3.75e6}{\Hz} to \SI{7.50e6}{\Hz}
+\choice \SI{3.75}{\Hz} to \SI{7.50}{\Hz}
+\choice \SI{3.75e-7}{\Hz} to \SI{7.50e-7}{\Hz}
+\CorrectChoice \SI{3.75e14}{\Hz} to \SI{7.50e14}{\Hz}
+\end{choices}
+
+\begin{solution}
+The \textit{Known} quantities:
+
+\begin{itemize}
+    \item red limit of wavelength $\lambda_R = \SI{800}{\nano\meter} = \SI{800e-9}{\meter}$
+    \item violet limit of wavelength: $\lambda_V = \SI{400}{\nano\meter} = \SI{400e-9}{\meter}$
+    \item speed of light: $c = \SI{3.00e8}{\meter/\second}$
+\end{itemize}
+
+Frequency and wavelength are related to the speed of light by
+
+\begin{equation*}
+    c = f \lambda
+\end{equation*}
+
+Solving for frequency,
+
+\begin{equation*}
+    f = \frac{c}{\lambda}
+\end{equation*}
+
+The red and violet limits of frequency are
+
+\begin{align*}
+    f_R = \frac{c}{\lambda_R} = \SI{3.75e14}{\Hz}\\
+    \\
+    f_V = \frac{c}{\lambda_V} = \SI{7.50e14}{\Hz}\\
+\end{align*}
+\end{solution}
+
+\end{questions}
+
+
+
+
+
+
+

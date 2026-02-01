@@ -1,5 +1,5 @@
 % \documentclass[../main-physics-problems.tex]{subfiles}
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \input{documents/physics-glossary}
@@ -34,6 +34,9 @@ The first egg survives the fall while the second egg breaks. Why? Use ideas from
 \end{questions}
 
 \clearpage
+
+\subsection*{Impulse}
+
 \begin{questions}
 \question
 A force causes a \SI{70}{kg} football player to change his velocity by \SI{10}{m/s}. Determine the change in momentum experienced by the player.
@@ -184,12 +187,14 @@ The momentum of Object A is $p_A$, and the momentum of object B is $p_B$. What i
 \end{randomizechoices}
 \end{questions}
 
+\clearpage
 
-\textbf{Work}
+\subsection*{Work}
+
 \begin{questions}
 
 \question
-The diagram below shows the net force applied to a box vs the box's displacement. How much work was done on the box over its \SI{20}{m} displacement?
+The diagram below shows the net force applied to a box vs the box's displacement. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -207,6 +212,8 @@ The diagram below shows the net force applied to a box vs the box's displacement
     \end{axis}
 \end{tikzpicture}
 \end{center}
+
+How much work was done on the box over its \SI{20}{m} displacement?
 
 \begin{randomizechoices}
     \correctchoice \SI{2000}{J}
@@ -276,7 +283,13 @@ In Case 1 below, a force is exerted at \ang{30} above the horizontal as a box is
 \end{tikzpicture}
 \end{center}
 
+\end{questions}
+
 \clearpage
+
+\subsection*{Lab: Work Done by Gravity}
+
+\begin{questions}
 
 \question
 In the following procedure, you will record time, position, and velocity data of a falling object so that you can then measure energy and work on the ball. 
@@ -860,7 +873,8 @@ So, the final velocity must be $v_f = v_i + \Delta v = \SI{-14}{m/s}$. Thus,
 \end{questions}
 
 \clearpage
-\subsection*{Other}
+
+\subsection*{Additional Practice}
 
 \begin{questions}
 \question
@@ -886,7 +900,15 @@ Initially, a \SI{0.5}{kg} fruit bat travels at \SI{5}{m/s}. If it comes to rest 
 \SI{-2.5}{kg\,m/s}
 \end{solution}
 
-\textbf{Calculate the change in momentum.}
+\bigskip
+
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{VtoBkS}--\ref{4phY3A}}. Calculate the change in momentum.
+\end{EnvUplevel}
+
+
 
 \question \label{VtoBkS}
 Mass is \SI{40}{kg}. Final velocity is \SI{1}{m/s}. Initial velocity is \SI{97}{m/s}.
@@ -926,6 +948,9 @@ Initial velocity is \SI{17}{m/s}. Mass is \SI{5}{kg}. Final velocity is \SI{35}{
 \SI{90}{kg\,m/s}
 \end{solution}
 
+\bigskip
+
+\hrule
 
 \question
 What's the equation for net force in terms of momentum and time (the original Newton's 2nd Law)?
@@ -985,8 +1010,12 @@ A 2000-kg car is moving at \SI{35}{m/s}. The driver presses the gas pedal for 10
 \SI{4000}{N}
 \end{solution}
 
+\bigskip
+\hrule
 
-\textbf{Calculate the net force on the object.}
+\begin{EnvUplevel}
+    \textbf{Questions \ref{4Me32D}--\ref{I7jORB}.} Calculate the net force on the object.
+\end{EnvUplevel}
 
 \question \label{4Me32D}
 Mass is \SI{0.057}{kg}. Initial velocity is \SI{3}{m/s}. Final velocity is \SI{39}{m/s}. Elapsed time is \SI{8.5e-3}{s}.
@@ -1022,6 +1051,9 @@ Initial velocity is \SI{1}{m/s}. Elapsed time is \SI{2}{s}. Final velocity is \S
 \begin{solution}
 \SI{55}{N}
 \end{solution}
+
+\bigskip
+\hrule
 
 
 \question
@@ -1100,10 +1132,14 @@ How much work does a supermarket checkout attendant do on a can of soup he pushe
 \SI{3.0}{J}
 \end{solution}
 
+\bigskip
 
-\vspace{1em}
+\hrule
 
-\textbf{\ref{T4zIud}--\ref{KU49Fc} Calculate the work when a force causes an object to move some distance.}
+\begin{EnvUplevel}
+    \textbf{Questions \ref{T4zIud}--\ref{KU49Fc}.} Calculate the work when a force causes an object to move some distance.
+\end{EnvUplevel}
+
 
 \question \label{T4zIud}
 Force is \SI{84}{N}. Distance is \SI{32}{m}.
@@ -1142,6 +1178,10 @@ Force is \SI{59}{N}. Distance is \SI{62}{mm}.
 \begin{solution}
 \SI{3.66}{J}
 \end{solution}
+
+\bigskip
+
+\hrule
 
 
 \question \label{VMEVDL}
@@ -1210,7 +1250,13 @@ Mark also does \SI{10000}{J} of work to lift a TV, but it takes him 5 minutes to
 \SI{33.3}{W}
 \end{solution}
 
-\textbf{\ref{G7XVHK}--\ref{bPWZDf} Calculate power.}
+\bigskip
+\hrule
+
+\begin{EnvUplevel}
+    \textbf{Questions \ref{G7XVHK}--\ref{bPWZDf}.} Calculate power.
+\end{EnvUplevel}
+
 
 \question \label{G7XVHK}
 Work is \SI{88}{J}. Time is \SI{48}{s}.
@@ -1250,6 +1296,9 @@ Work is \SI{7.0}{J}. Time is \SI{55}{ms}.
 \SI{127.3}{W}
 \end{solution}
 
+\bigskip
+\hrule
+
 
 \question \label{RvNudw}
 Ruben's truck delivers \SI{1.49e5}{W} of power while dragging a tree across the road for 15 seconds. What is the work done on the tree?
@@ -1264,9 +1313,7 @@ Hercules generates one millions watts of power while doing \SI{625000}{} joules 
 \begin{solution}
 \SI{0.625}{s}
 \end{solution}
-\end{questions}
 
-\begin{questions}
 \question
 A boy pushes his wagon at constant speed along a level sidewalk. The graph below represents the relationship between the horizontal force exerted by the boy and the distance the wagon moves. What is the total work done by the boy in pushing the wagon 4.0 meters?
 
