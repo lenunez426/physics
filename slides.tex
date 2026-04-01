@@ -1,0 +1,114 @@
+% \setbeamerfont{alerted text}{series=\bfseries\large}
+\setbeamertemplate{navigation symbols}{}
+\usefonttheme[onlymath]{serif}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%...For highlighting
+\usepackage{xcolor, soul} 
+\makeatletter
+\let\HL\hl
+\renewcommand\hl{%
+  \let\set@color\beamerorig@set@color
+  \let\reset@color\beamerorig@reset@color
+  \HL}
+\makeatother
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\usepackage{amsmath}  %...for the equation* environment
+
+%...Tikz and PGF packages
+\usepackage{tikz}
+\usetikzlibrary{calc,math}
+\usetikzlibrary{patterns}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{backgrounds} %...For shading portions of graphs
+% \usetikzlibrary{math}
+\tikzset{>=latex} %...For pretty arrows
+\tikzset{
+    declare function = {trajectoryequationTEN(\x,\vi,\thetai)= tan(\thetai)*\x - 10*\x^2/(2*(\vi*cos(\thetai))^2);},
+    declare function = {trajectoryequation(\x,\vi,\thetai)= tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);},
+    declare function = {patheq(\x,\yi,\vi,\thetai)= \yi + tan(\thetai)*\x - 9.8*\x^2/(2*(\vi*cos(\thetai))^2);}
+} %...Plots the trajectory equation for projectile motion:
+
+
+\usetikzlibrary{positioning}
+\tikzset{onslide/.code args={<#1>#2}{%
+  \only<#1>{\pgfkeysalso{#2}} % \pgfkeysalso doesn't change the path
+}}
+
+%...SI Units
+\usepackage{siunitx}
+%\sisetup{per-mode=fraction}
+\usepackage{cancel}
+\DeclareSIUnit{\mile}{mi}
+
+%...New commands
+\newcommand{\cfu}{Check For Understanding }
+\newcommand{\tpo}{Three-Part Objective }
+\newcommand{\warmup}{Warm-Up (5 mins)}
+\newcommand{\mysolution}{{\color{red}\bfseries\textit{Solution}}}
+\let\oldtexttt\texttt% Store \texttt
+\renewcommand{\texttt}[2][black]{\textcolor{#1}{\ttfamily #2}}% 
+
+
+%...Symbols packages
+\usepackage{fontawesome} % for \faHome
+\usepackage{tikzsymbols} % for tree and stick figure
+\usepackage{twemojis} %...for twitter emojis
+\usepackage{utfsym}  %...for a basic star symbol
+
+%...Breaks long URLs
+\usepackage{xurl}
+
+%...Multiple columns for table of contents
+\usepackage{multicol}
+
+
+\newcommand{\threepartobj}[2]{
+    \large
+    We will {\color{red}\underline{#1}} using {\color{red}\underline{#2}}.
+}
+
+%...beamer specific
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \begin{multicols}{2}
+        \tableofcontents[currentsection]
+    \end{multicols}
+  \end{frame}
+}
+
+\setbeamerfont{frametitle}{size=\normalsize}
+
+%...Vector commands
+\newcommand{\bvec}[1]{\vec{\mathbf{#1}}}
+\newcommand{\bhat}[1]{\,\hat{\mathbf{#1}}}
+
+%...Advice for viewing slides in single-page view
+\newcommand{\notetoreader}{
+    \begin{frame}{NOTE TO READER}
+    \begin{center}
+        \Large
+        \textcolor{red}{\textbf{DO NOT ENABLE SCROLLING.}} \bigskip    
+    \end{center}
+    
+    Instead, enable \textcolor{Green}{\textbf{single page view}} (i.e., fullscreen or present mode) and use the arrow keys to advance the slides instantaneously.
+    \end{frame}
+}

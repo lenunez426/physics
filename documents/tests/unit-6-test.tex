@@ -1,4 +1,4 @@
-\documentclass[answers,dvipsnames]{exam}
+\documentclass[]{exam}
 \usepackage{countriesofeurope} %...MUST BE BEFORE \INPUT{GLOBAL} AND \INPUT{PROBLEM-SETS }
 \input{global}
 \input{problem-sets}
@@ -6,7 +6,7 @@
 
 \setrandomizerseed{1}
 
-\firstpageheader{Physics}{Unit 6: One-Dimensional Motion}{Summative Assessment}
+\firstpageheader{Physics\\}{Test\\}{Unit 6:\\One-Dimensional Motion}
 \runningheader{}{}{}
 
 \begin{document}
@@ -122,6 +122,8 @@ Hugo throws a ball straight down off a cliff. One second later his friend, Arthu
     \correctchoice Graph D
 \end{randomizeoneparchoices}
 
+\ifprintanswers \else \clearpage \fi
+
 \question
 A car is moving at \SI{20}{m/s} when the driver spots a deer in the road. He applies the brakes and comes to a complete stop in 15 seconds.  What is the distance the car traveled once the driver started braking?
 
@@ -223,6 +225,8 @@ What is the acceleration of the car from 0 seconds to 4 seconds?
 %     \correctchoice Impulse from the force of gravity is causing the ball’s velocity to decrease.
 %     \correctchoice The velocity and acceleration are in opposite directions.
 % \end{randomizechoices}
+
+\clearpage
 
 \question
 A rock is dropped from a cliff of the same height on the earth (\SI{9.8}{m/s^2}) and on Jupiter (\SI{25}{m/s^2}). Which will take longer to fall to the ground? On Earth or Jupiter?

@@ -5,8 +5,15 @@
 \input{documents/physics-glossary}
 \usepackage{makecell}
 \usepackage{setspace}
+\usepackage{fontawesome}
 
 \setcounter{section}{10}
+
+\firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}\\Physics}{}{Unit 10: Mechanical Waves}
+% \firstpageheader{Physics}{Unit 9: Oscillatory Motion}{Problems}
+\runningheader{{Name:\enspace\makebox[6cm]{\hrulefill}}\\Physics}{}{Unit 10: Mechanical Waves}
+
+
 \begin{document}
 
 \subsection*{Waves Inquiry}
@@ -15,41 +22,91 @@
 \question 
 Define a wave.
 
-\fillwithlines{8mm}
+\ifprintanswers
+\textcolor{red}{A wave is a disturbance that carries energy through matter or space without transferring matter.}
+\else
+\fillwithlines{14mm}
+\fi
 
 \question 
-When a wave travels through a medium it transfers \fillin[energy ] but \fillin[matter ] is not transferred along with the wave. How is this demonstrated in a wave pool?
+When a wave travels through a medium, it transfers \fillin[energy][4cm]. However, a wave does not transfer \fillin[matter][4cm]. How is this demonstrated in a wave pool?
 
-\fillwithlines{2cm}
+\ifprintanswers
+\textcolor{red}{Dropping a piece of rock in a pool produces ripples in all directions (energy transfer), but the water (matter) level remains the same.}
+\else
+\fillwithlines{14mm}
+\fi
 
 
 \question 
 In terms of waves, describe what is meant by the ``medium'' in which a wave travels and give 4 examples.
 
+\ifprintanswers
+\textcolor{red}{Medium is any substance through which the waves travel, like air, rock, rope, spring, and water.}
+\else
+\fillwithlines{14mm}
+\fi
+
 \question 
 Explain the difference between mechanical waves and non-mechanical (electromagnetic) waves. Give at least three examples of each.
 
-\fillwithlines{2cm}
+\ifprintanswers
+\textcolor{red}{Mechanical waves travel through a physical medium (water waves, sound waves, seismic waves); electromagnetic waves in addition, can travel through a vacuum (radio waves, microwaves, x-rays).}
+\else
+\fillwithlines{21mm}
+\fi
 
 \question 
-In a transverse wave the particles move \fillin[perpendicular ] relative to the direction the wave moves. Draw a diagram of a transverse wave. Label the direction the particles move along with the direction the wave moves.                 
+In a transverse wave the particles move \fillin[perpendicular][4cm]\  relative to the direction the wave moves. Draw a diagram of a transverse wave. Label the direction the particles move along with the direction the wave moves. Diagram:
+
+
+\begin{solutionorbox}[3cm]
+\begin{center}
+\begin{tikzpicture}
+    \draw[thick,domain=0:10,samples=100] {plot(\x,{sin(deg(2*pi*\x/(10/3)))})};
+    \draw[<->] (-0.5,-1) -- (-0.5,1) node[above,pos=0.5,rotate=90] {disturbance};
+    \draw[->] (0.83,1.2) -- ++(1.5,0) node[above,pos=0.5] {propagation};
+\end{tikzpicture}
+\end{center}
+\end{solutionorbox}
+
+
 
 
 \question 
-In a longitudinal wave the particles move \fillin[parallel ] relative to the direction the wave moves. Draw a diagram of a longitudinal wave. Label the direction the particles move along with the direction the wave moves.                      
+In a longitudinal wave the particles move \fillin[parallel][4cm]\ relative to the direction the wave moves. Draw a diagram of a longitudinal wave. Label the direction the particles move along with the direction the wave moves. Diagram:                   
+
+\begin{solutionorbox}[3cm]
+\begin{center}
+    \tikzset{declare function={f(\x)=sin(540*\x);}}
+    \begin{tikzpicture}
+     \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
+     ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
+     \draw[<->, thick] (-1.7,0.3) node[left] {disturbance} --  + (1,0);
+     \draw[->, thick]  (-1.7,-0.5) node[left] {propagation} -- + (1,0);
+    \end{tikzpicture}
+\end{center}
+\end{solutionorbox}
 
 
 \question 
 Define a pulse.
 
-\fillwithlines{1.5cm}
+\ifprintanswers
+\textcolor{red}{A single bump or disturbance that travels through a medium.}
+\else
+\fillwithlines{14mm}
+\fi
+
+
+\ifprintanswers \else \clearpage \fi
 
 \question
 Label the components of each wave using the following terms:
 
 \begin{center}
-\begin{tabular}{ccc}
-     amplitude & wavelength (transverse) &  \\
+\begin{tabular}{lll}
+     amplitude \hspace{5mm} & wavelength (transverse) \hspace{5mm} &  \\
      crest & wavelength (longitudinal) & compression \\
      trough & rarefaction & resting position (equilibrium)
 \end{tabular}
@@ -57,21 +114,16 @@ Label the components of each wave using the following terms:
 
 
 \begin{center}
-\begin{tikzpicture}[x=5mm,y=1.5cm]
-    \draw[domain=0:3*2*pi,samples=200] plot (\x,{sin(\x r)});
-    \draw[densely dashed,lightgray] (0,0) -- (3.3*2*pi,0);
-    \bgroup
-    \ifprintanswers
-    \color{red}
-    \else
-    \color{white}
-    \fi
-    \draw[<-,xshift=1pt,yshift=1pt] (pi/2,1) -- ++ (1.5,0.3) node[above] {crest};
-    \draw[<-,xshift=-1pt,yshift=-1pt] (3*pi/2,-1) -- ++ (-1.5,-0.2) node[left] {trough};
-    \draw[<->,yshift=3pt] (2.5*pi,1) -- ++(2*pi,0) node[above,pos=0.5] {wavelength};
-    \draw[<->] (9*pi/2,0) node[below] {amplitude} -- ++(0,1) ;
-    \egroup
-    \draw[<->] (-1.5,-0.45) -- ++(0,0.9) node[rotate=90,above=2pt,pos=0.5,align=center] {\small disturbance\\ \small direction}; 
+\begin{tikzpicture}[y=1.5cm]
+    \draw[thick,domain=0:10,samples=200] {plot(\x,{sin(deg(2*pi*\x/(10/3)))})};
+    \draw[densely dashed] (0,0) -- (10.5,0);
+    \begin{scope}
+        \ifprintanswers \color{red} \else \color{white} \fi
+        \draw[<-,shift={(0.05,0.05)}] (0.83,1) -- ++(0.8,0.5) node[above] {crest};
+        \draw[<-,shift={(-0.01,-0.05)}] (2.5,-1) -- ++(-0.8,-0.5) node[below] {trough};
+        \draw[<->,shift={(0,0.05)}] (4.17,1) -- (7.5,1) node[above,pos=0.5] {wavelength};
+        \draw[<->] (7.5,0.98) -- (7.5,0.02) node[below] {amplitude};
+    \end{scope}
 \end{tikzpicture}
 \end{center}
 
@@ -81,39 +133,42 @@ Label the components of each wave using the following terms:
      \draw[->] (-0.5,0) -- (10,0);
      \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
      ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
-    \bgroup
-    \ifprintanswers
-    \color{red}
-    \else
-    \color{white}
-    \fi
-     \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
-     \node[below] at (6.5,-1) {compression};
-     \node[below] at (3.4,-1) {rarefaction};
-    \egroup
-     \draw[<->, thick]      (-1.7,0.3) node[left] {disturbance} --  + (1,0);
-     \draw[->, thick]      (-1.7,-0.5) node[left] {propagation} -- + (1,0);
+    \begin{scope}
+        \ifprintanswers \color{red} \else \color{white} \fi
+        \draw[latex-latex, thick] (0.6,1.5) -- (6.5,1.5) node[midway,above]{\relax{wavelength}};
+        \node[below] at (6.5,-1) {compression};
+        \node[below] at (3.4,-1) {rarefaction};
+    \end{scope}
+     % \draw[<->, thick] (-1.7,0.3) node[left] {disturbance} --  + (1,0);
+     % \draw[->, thick]  (-1.7,-0.5) node[left] {propagation} -- + (1,0);
     \end{tikzpicture}
 \end{center}
 
 \question
 Define period.
 
+\ifprintanswers
+\textcolor{red}{The time it takes for one complete cycle.}
+\else
+\fillwithlines{14mm}
+\fi
+
+
 \question
 State the period for each of the following:
 
 \begin{parts}
-\part Earth orbiting the Sun: \fillin[1 year] 
-\part Small hand of a clock: \fillin[1 hour]
+\part Earth orbiting the Sun: \fillin[365 days] 
+\part Small hand of a clock: \fillin[12 hours]
 \end{parts}
 
 \question
-The following figure represents the graph of a mouse on a bungee cord. Answer the questions below using the graph.
+The following graph represents the position of a mouse on a bungee cord. Answer the questions below using the graph.
 
 \begin{center}
 \begin{tikzpicture}
-    \begin{axis}[height=7cm,
-        width=12cm,
+    \begin{axis}[height=6cm,
+        width=11cm,
         axis y line=left,
         axis x line=center,
         ylabel={Position (m)},
@@ -122,9 +177,10 @@ The following figure represents the graph of a mouse on a bungee cord. Answer th
         ymin=-8,ymax=8,
         xmin=0,xmax=3,
         ytick={-8,-6,...,8},
-        xtick={0,0.25,...,3},
+        xtick={0,0.5,...,3},
         grid=both,
         clip=false,
+        minor x tick num=1,
         ]
         \addplot[thick,domain=0:3,samples=150] {6*cos(deg(2*pi*x)};
         \fill (0,6) circle (2pt) node[above right] {A};
@@ -141,20 +197,37 @@ The following figure represents the graph of a mouse on a bungee cord. Answer th
         \fill (2.75,0) circle (2pt) node[above right] {L};
         \fill (3,6) circle (2pt) node[above right] {M};
     \end{axis}
+    \begin{scope}[shift={(12,1)}]
+        \draw[decorate,decoration={coil,segment length=1.5mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,3) -- (0,0);
+        \node[shift={(0,-2mm)}] at (0,0) {\twemoji[height=1cm]{mouse face}};
+    \end{scope}
 \end{tikzpicture}
 \end{center}
 
 \begin{parts}
-\part What point is 1 full cycle after Point A?
+\part What point is 1 full cycle after Point A? \fillin[E][2cm]
 
-\part What point is a half-cycle after Point G?
+\part What point is a half-cycle after Point G? \fillin[I][2cm]
 
-\part If C represents the lowest point of the mouse's bungee cycle, then where is it at D?
+\part If C represents the lowest point of the mouse's bungee cycle, then where is the mouse at D? 
+
+\ifprintanswers 
+\textcolor{red}{The mouse is at the equilibrium position.}
+\else \fillwithlines{7mm} \fi
 
 \part What is the period of the mouse's oscillations? How is this period determined?
+
+\ifprintanswers 
+\textcolor{red}{The period is 1 second. The period is determined by finding one wave cycle on the graph.}
+\else \fillwithlines{14mm} \fi
+
 \end{parts}
 
 \question Define frequency.
+
+\ifprintanswers 
+\textcolor{red}{The number of oscillations per second.}
+\else \fillwithlines{7mm} \fi
 
 \question
 The formula for period is
@@ -162,8 +235,9 @@ The formula for period is
 \begin{equation*}
     T = \frac{\text{total time}}{\text{total number of cycles}}
 \end{equation*}
+\vspace{1em}
 
-What are the units used to measure period?
+What are the units used to measure period? \fillin[seconds (s)][4cm]
 
 \question
 The formula for frequency is
@@ -171,17 +245,19 @@ The formula for frequency is
 \begin{equation*}
     f = \frac{\text{total number of cycles}}{\text{total time}}
 \end{equation*}
+\vspace{1em}
 
-What are the units used to measure frequency?
+What are the units used to measure frequency? \fillin[Hertz (Hz), or per seconds ($\mathrm{s^{-1}}$)][4cm]
 
 \question
 How are frequency and period related mathematically? Write the relationship as a formula.
 
-\begin{solutionorbox}[2cm]
-\begin{equation*}
-    T = \frac{1}{f} \qquad f = \frac{1}{T}
-\end{equation*}
-\end{solutionorbox}
+\ifprintanswers
+\textcolor{red}{$\displaystyle T = \frac{1}{f} \qquad f = \frac{1}{T}$}
+\else
+\fillwithlines{7mm}
+\fi
+
 
 \question
 Calculate the period and frequency for each situation.
@@ -189,31 +265,52 @@ Calculate the period and frequency for each situation.
 \begin{parts}
 \part A pendulum swings back and forth 8 times in 5 seconds.
 
-\begin{solutionorbox}[2cm]
-    
+\begin{solutionorbox}[1cm]
+\begin{equation*}
+    T = \frac{\text{total time}}{\text{number of cycles}} = \frac{\SI{5}{s}}{\SI{8}{cycles}} = \boxed{\SI{0.625}{s}}
+\end{equation*}
 \end{solutionorbox}
+
+% \ifprintanswers
+% \else
+% \fillwithlines{7mm}
+% \fi
+
 
 \part It takes 30 seconds for a man to make one complete loop around the track.
 
-\begin{solutionorbox}[2cm]
-    
+
+\begin{solutionorbox}[1cm]
+\begin{equation*}
+    f = \frac{\text{number of cycles}} {\text{total time}}= \frac{\SI{1}{cycle}}{\SI{30}{s}} = \boxed{\SI{0.033}{Hz}}
+\end{equation*}
 \end{solutionorbox}
+
 \end{parts}
 
 \question 
-How is the energy of a wave relation to the wave amplitude?
+How is the energy of a wave related to the wave amplitude?
+
+\ifprintanswers 
+\textcolor{red}{Energy is proportional to amplitude. The greater the energy, the bigger the amplitude.}
+\else \fillwithlines{14mm} \fi
 
 \question
-How is this evident in wave surfing?
+How is the relation between energy and amplitude evident in wave surfing?
+
+\ifprintanswers 
+\textcolor{red}{Larger waves cause more accidents by transferring more energy.}
+\else \fillwithlines{14mm} \clearpage \fi
+
 
 \question
-If a pendulum is in equilibrium position, work must be done to the system in order to add energy into the system to make the pendulum swing. Which of the following graphs represent the greatest amount of energy added to the system? Explain why. 
+If a simple harmonic oscillator is at the  equilibrium position, work must be done on the system in order to add energy to the system. Which of the following graphs represent the greatest amount of energy added to the system? Explain why. 
 
 \begin{EnvUplevel}
-\begin{center}
+\centering
 \begin{tikzpicture}
     \begin{axis}[height=6cm,
-        width=7cm,
+        width=7.5cm,
         axis y line=left,
         axis x line=center,
         ylabel={Position (m)},
@@ -234,7 +331,7 @@ If a pendulum is in equilibrium position, work must be done to the system in ord
 \hspace{5mm}
 \begin{tikzpicture}
     \begin{axis}[height=6cm,
-        width=7cm,
+        width=7.5cm,
         axis y line=left,
         axis x line=center,
         ylabel={Position (m)},
@@ -252,41 +349,73 @@ If a pendulum is in equilibrium position, work must be done to the system in ord
         \addplot[thick,domain=0:2,samples=200] {-cos(deg(4*pi*x))};
     \end{axis}
 \end{tikzpicture}
-\end{center}
 \end{EnvUplevel}
 
+\ifprintanswers 
+\textcolor{red}{Graph 1, because its amplitude is greater than that of Graph 2.}
+\else \fillwithlines{14mm} \fi
+
 \question 
-How does the velocity of a wave relate to the frequency of a wave? The figures below show systems of waves set up in strings, fixed on both ends, under tension. Each set was produced in 1.0 seconds. All the strings have identical tension and length. The variables in each situation is the amplitude and the number of waves present. Rank the wavelength, frequency and velocity of each wave from least to greatest.
+How does the velocity of a wave relate to the frequency of a wave? The figures below show systems of waves set up in strings, fixed on both ends, under tension. Each set was produced in 1.0 seconds. All the strings have identical tension and length. The variables are amplitude and the number of waves present. Rank the wavelength, frequency and velocity of each wave from least to greatest.
 
 \begin{center}
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{15*sin(deg(2*pi*1.5*\x))}) node[left,pos=0] {A};
+\begin{tikzpicture}[y=0.6mm,x=12cm]
+    \draw[domain=0:1,samples=100,thick] plot(\x,{15*sin(deg(2*pi*1.5*\x))}) node[left,pos=0] {A};
     \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-15*sin(deg(2*pi*1.5*\x))});
 \end{tikzpicture}
+\vspace{5mm}
 
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{12*sin(deg(2*pi*2*\x))}) node[left,pos=0] {B};
+\begin{tikzpicture}[y=0.6mm,x=12cm]
+    \draw[domain=0:1,samples=100,thick] plot(\x,{12*sin(deg(2*pi*2*\x))}) node[left,pos=0] {B};
     \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-12*sin(deg(2*pi*2*\x))});
 \end{tikzpicture}
+\vspace{5mm}
 
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100,smooth] plot(\x,{10*sin(deg(2*pi*2.5*\x))}) node[left,pos=0] {C};
+\begin{tikzpicture}[y=0.6mm,x=12cm]
+    \draw[domain=0:1,samples=100,thick] plot(\x,{10*sin(deg(2*pi*2.5*\x))}) node[left,pos=0] {C};
     \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-10*sin(deg(2*pi*2.5*\x))});
 \end{tikzpicture}
+\vspace{5mm}
 
-\begin{tikzpicture}[y=0.2mm,x=5cm]
-    \draw[domain=0:1,samples=100] plot(\x,{16*sin(deg(2*pi*3.5*\x))}) node[left,pos=0] {D};
+\begin{tikzpicture}[y=0.6mm,x=12cm]
+    \draw[domain=0:1,samples=100,thick] plot(\x,{16*sin(deg(2*pi*3.5*\x))}) node[left,pos=0] {D};
     \draw[domain=0:1,samples=100,densely dashed,lightgray] plot(\x,{-16*sin(deg(2*pi*3.5*\x))});
 \end{tikzpicture}
 \end{center}
+\vspace{5mm}
 
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{lcccccc}
+    \textbf{Wavelength:} & \textit{least} & \fillin[D][3em] & \fillin[C][3em] & \fillin[B][3em] & \fillin[A][3em] & \textit{greatest} \\
+    \textbf{Frequency:} & \textit{least} & \fillin[A][3em] & \fillin[B][3em] & \fillin[C][3em] & \fillin[D][3em] & \textit{greatest} \\
+    \ifprintanswers
+    \textbf{Velocity:} & \textit{least} 
+    & \fillin[][3em] 
+    & \fillin[][3em] 
+    & \rlap{\textcolor{red}{\hspace{-2.8cm} All waves have the same velocity.}}\fillin[][3em] 
+    & \fillin[][3em] 
+    & \textit{greatest} \\
+    \else
+    \textbf{Velocity:} & \textit{least} & \fillin[][3em] & \fillin[][3em] & \fillin[][3em] & \fillin[][3em] & \textit{greatest} \\
+    \fi
+\end{tabular}
+\end{center}
 \begin{solution}
-    Wavelength from least to greatest is Wave D, Wave C, Wave B, Wave A. Frequency from least to greatest to A, B, C, D. All waves have the same velocity because the string tension is the same for all waves. 
-\end{solution}
+    All waves have the same velocity because the string tension is the same for all waves, and wave speed is
 
+    \begin{equation*}
+        v = \sqrt{\frac{T}{\mu}} = f\lambda
+    \end{equation*}
+
+    where $T$ is tension and $\mu$ is linear mass density.
+\end{solution}
 \end{questions}
 
+\ifprintanswers
 \clearpage
+\fi
+
 
 \subsection*{Math Practice: Wave Characteristics}
 
@@ -433,7 +562,7 @@ Calculate the period, in seconds, and frequency, in hertz, of a pendulum that sw
 \end{solution}
 
 \question
-What is the period, in seconds, and frequency, in hertz, of a hear that beats 60 times in one minute?
+What is the period, in seconds, and frequency, in hertz, of a heart that beats 60 times in one minute?
 
 \begin{solution}
 \begin{equation*}
@@ -447,7 +576,7 @@ What is the period, in seconds, and frequency, in hertz, of a hear that beats 60
 \end{solution}
 
 \question
-At the beach today, the waves were \SI{0.34}{m} apart and had a frequency of $1/10\,\text{Hz}$. Find the speed of the waves.
+At the beach today, the waves are \SI{0.34}{m} apart and have a frequency of $1/10\,\text{Hz}$. Find the speed of the waves.
 
 \begin{solution}
 We are given $\lambda = \SI{0.34}{m}$ and $f = \frac{1}{10}\,\text{Hz} = \SI{0.1}{Hz}$
@@ -475,25 +604,34 @@ Callie and Chris go on a hike along the edge of the ocean. They stop to revel in
 \clearpage
 
 
-\subsection*{Generating Waves Lab}
+\subsection*{Lab: Generating Transverse Waves}
 
-\textbf{Purpose:} To determine the relationship between wavelength and frequency. 
+% \textbf{Purpose:} To determine the relationship between wavelength and frequency. 
 
-\bigskip
+% \bigskip
 
-\noindent \textit{Procedures:}
+% \noindent \textit{Procedures:}
+
+\medskip
+
+\begin{mdframed}
+\centering
+\textbf{Lab Procedures}
+\smallskip
 
 \begin{enumerate}[itemsep=0pt,topsep=0pt]
-    \item Stretch the coil to a distance between 5 to 6 meters. Record the distance stretched below:
+    \item Stretch the ends of the coil to a distance of 5 to 6 meters. Record the distance stretched below:
 
     \begin{center}
-        \textbf{Distance coil was stretched}: \fillin[]\ m
+        \textbf{Distance coil was stretched}: \fillin[5.0]\ meters
     \end{center}
     
     \item Oscillate the coil to start a standing wave that is $\frac{1}{2}$ wavelength long.
-    \item When you have a smooth wave, record the time it takes to complete 10 cycles, in the data table below. \textit{Note:} Moving your hand back and forth is one cycle. 
-    \item Repeat steps 2 and 3 for 1, 1.5, 2, and 2.5 wavelengths.
+    \item When you have a smooth wave, measure the time it takes to complete 10 cycles, and record your data in table below. \textit{Recall:} Moving your hand back and forth is one cycle. 
+    \item Repeat steps 2 and 3 for 1, 1.5, 2, 2.5, and 3.0 wavelengths.
+    \item Use the period formula $T = \frac{1}{f}$ and wave speed formula $v = f \lambda$ to fill the table below.
 \end{enumerate}
+\end{mdframed}
 
 \ifprintanswers
 
@@ -516,12 +654,12 @@ Callie and Chris go on a hike along the edge of the ocean. They stop to revel in
 
 \else
 
-\begin{center}
-\bgroup
+\begin{EnvUplevel}
+\centering
 \def\arraystretch{3}
 \begin{tabular}{|c|c|c|c|c|c|c|}
     \hline
-    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period}\\\textbf{(s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
+    \thead{\textbf{\# of}\\ \textbf{Waves}} & \thead{\textbf{Diagram of wave}} & \thead{\textbf{Time (s) for}\\ \textbf{10 cycles}} & \thead{\textbf{Frequency}\\ \textbf{(cycles/s)}} & \thead{\textbf{Period (s)}} & \thead{\textbf{Wavelength}\\\textbf{(m)}} & \thead{\textbf{Velocity}\\ \textbf{(m/s)}}\\ \hline
     0.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*0.5*\x))})} & & & & & \\ \hline
     1.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.0*\x))})} & & & & & \\ \hline
     1.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*1.5*\x))})} & & & & & \\ \hline
@@ -529,8 +667,7 @@ Callie and Chris go on a hike along the edge of the ocean. They stop to revel in
     2.5 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*2.5*\x))})} & & & & & \\ \hline
     3.0 & \color{white} \tikz{\draw[domain=0:1,y=3.5mm,x=5.5cm,smooth] plot(\x,{sin(deg(2*pi*3.0*\x))})} & & & & & \\ \hline
 \end{tabular}
-\egroup
-\end{center}
+\end{EnvUplevel}
 
 \fi
 
@@ -544,7 +681,7 @@ Show one sample calculation for frequency.
 \begin{equation*}
     f = \frac{\text{10 cycles}}{\text{time}} 
       = \frac{\text{10 cycles}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{8.1}{s} \qquad} 
-      = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad}
+      = \boxed{\rule{0pt}{3ex} \ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad}
 \end{equation*}
 }
 
@@ -555,7 +692,7 @@ Show one sample calculation for period.
 \begin{equation*}
     T = \frac{1}{f} 
     = \frac{1}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{1.23}{Hz} \qquad} 
-    = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{0.81}{s} \qquad}
+    = \boxed{\rule{0pt}{3ex} \ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{0.81}{s} \qquad}
 \end{equation*}
 }
 
@@ -564,7 +701,7 @@ Show one sample calculation for determining the wavelength $\lambda$.
 
 {\large
 \begin{equation*}
-    \lambda = \frac{\text{distance stretched}}{\text{number of waves}} = \frac{\ifprintanswers \color{red} \else \color{white} \fi \SI{5.00}{m}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \text{2 waves} \qquad} = \boxed{\ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{2.50}{m} \qquad}
+    \lambda = \frac{\text{distance stretched}}{\text{number of waves}} = \frac{\ifprintanswers \color{red} \else \color{white} \fi \SI{5.00}{m}}{\ifprintanswers \color{red} \else \color{white} \fi \qquad \text{2 waves} \qquad} = \boxed{\rule{0pt}{3ex} \ifprintanswers \color{red} \else \color{white} \fi \qquad \SI{2.50}{m} \qquad}
 \end{equation*}
 }
 
@@ -574,6 +711,7 @@ Show one sample calculation for determining the wavelength $\lambda$.
 Graph wavelength vs. frequency, and wavelength vs. period in the space below.
 
 \begin{EnvUplevel}
+\centering
 \begin{tikzpicture}
     \begin{axis}[height=6cm,
         width=8cm,
@@ -601,7 +739,7 @@ Graph wavelength vs. frequency, and wavelength vs. period in the space below.
 \hspace{5mm}
 \begin{tikzpicture}
     \begin{axis}[height=6cm,
-        width=6.5cm,
+        width=7cm,
         ylabel={Wavelength (m)},
         xlabel={Period (s)},
         axis lines=left,
@@ -619,7 +757,7 @@ Graph wavelength vs. frequency, and wavelength vs. period in the space below.
                 /pgf/number format/precision=1}
         ]
         \ifprintanswers
-        \addplot[red,only marks] coordinates{(1.20,10)(0.81,5)(0.46,3.33)(0.32,2.5)(0.24)(2.00)(0.22,1.67)};
+        \addplot[red,only marks] coordinates{(1.20,10)(0.81,5)(0.46,3.33)(0.32,2.5)(0.24,2.00)(0.22,1.67)};
         \addplot[domain=0.2:1.3,red] {7.886*x - 0.188};
         \fi
     \end{axis}
@@ -627,43 +765,46 @@ Graph wavelength vs. frequency, and wavelength vs. period in the space below.
 \end{EnvUplevel}
 
 \question
-What is the proportional relationship between wavelength and frequency?
+According to the data, what is the proportional relationship between wavelength and frequency?\\[1ex] Wavelength is \fillin[inversely proportional][8cm] the frequency.
 
-\ifprintanswers
-{\color{red} Wavelength is inversely proportional to frequency: $\lambda \propto \frac{1}{f}$. 
+% \begin{randomizechoices}
+%     \correctchoice inversely proportional to
+%     \choice proportional to 
+%     \choice proportional to the square of
+%     \choice inversely proportional to the
+% \end{randomizechoices}
 
-\vspace{-5mm}}
-\fi
+% \ifprintanswers
+% {\color{red} Wavelength is inversely proportional to frequency: $\lambda \propto \frac{1}{f}$. 
 
-\fillwithlines{8mm}
+% \vspace{-5mm}}
+% \fi
+
+% \fillwithlines{8mm}
 
 \question
-What is the slope of the $\lambda$ vs $T$ graph? Include correct units. What is the significance (meaning) of this slope? \textit{Hint:} Look at the units.
+What is the slope of the wavelength ($\lambda$) vs period ($T$) graph? Include correct units. 
+%What is the significance (meaning) of this slope? \textit{Hint:} Look at the units.
 
 \begin{solutionorbox}[2cm]
-According to the best fit line (see Python, scipy), the slope is \SI{7.886}{m/s}. Slope represents the speed of the wave. 
+According to the best fit line (see Desmos), the slope is \SI{7.886}{m/s}.
 \end{solutionorbox}
 
 \question
-Write the equation for the wavelength vs period graph. Do not use $x$ and $y$ in your equation, but $\lambda$ and $T$, and include units for your slope. 
+(a) Write the linear equation ($y = mx + b$) for the wavelength vs period graph, but do not use $x$ and $y$ in your equation. Instead, use $\lambda$ and $T$, and include units for your slope. (b) What physical quantity does the slope represent? \textit{Hint:} Look at the units.
 
 \ifprintanswers
-{\color{red} $\lambda = (\SI{7.886}{m/s}) T - \SI{0.188}{m}$
-
-\vspace{-5mm}
+{\color{red} (a) \quad $\lambda = (\SI{7.886}{m/s})\, T - \SI{0.188}{m}$ \quad (b) Slope represents the speed of the wave, since units are meters per second.
 }
-
+\else
+\fillwithlines{14mm}
 \fi
-
-\fillwithlines{8mm}
-
-
 
 \question
 Calculate the average velocity for all waves from the six values in the table in the previous page. Is there a trend of increasing or decreasing velocities as the frequency increases?
 
 \ifprintanswers
-{\color{red} $\bar{v} = \SI{7.58}{m/s}$. While there is some variation in velocities, overall trend is constant.
+{\color{red} $\bar{v} = \SI{7.58}{m/s}$. While there is some variation in velocities, the overall trend is constant.
 
 \vspace{-5mm}
 }
@@ -711,8 +852,8 @@ The wave shown below is traveling to the right with a frequency  of \SI{25.0}{Hz
 \begin{align*}
     A &= \SI{9}{cm} \\[1ex]
     \lambda &= \SI{20}{cm} \\[1ex]
-    T &= \frac{1}{f} = \SI{0.040}{s} \\[1ex]
-    v &= f\lambda = \SI{500}{cm/s}
+    T &= \frac{1}{f} = \frac{1}{\SI{25.0}{Hz}} = \SI{0.040}{s} \\[1ex]
+    v &= f\lambda = (\SI{25}{Hz})(\SI{20}{cm}) = \SI{500}{cm/s}
 \end{align*}
 }
 \end{minipage}
@@ -783,21 +924,23 @@ Resonance occurs when the frequency of sound waves exactly matches the natural f
 
 \begin{center}
 \tikzset{declare function={f(\x)=sin(540*\x);}}
-\begin{tikzpicture}[y=7mm,x=8mm]
+\begin{tikzpicture}[y=8mm,x=8mm]
      \draw[thick,domain=0.1:9.5,variable=\x,samples=500] plot
      ({\x-1.1*exp(-(\x-2)*(\x-2))-1.1*exp(-(\x-8)*(\x-8))},{f(\x)});
      \draw[|<->|] (0.6,1.3) -- (6.6,1.3) node[above,pos=0.5] {$\lambda$};
      \node[below=5mm] at (current bounding box.south) {Wave 1};
 \end{tikzpicture}
 \hspace{1cm}
-\begin{tikzpicture}[x=4mm,y=1cm]
-    \draw[domain=0:2.5*2*pi,samples=200] plot (\x,{sin(\x r)});
-    \draw[densely dashed,lightgray] (0,0) -- (2.5*2*pi,0);
-    \draw[|<->|] (pi/2,1.2) -- (5*pi/2,1.2) node[above,pos=0.5] {$\lambda$};
-    \draw[thick,<->] (9*pi/2,0) -- (9*pi/2,1) node[right=-2pt,pos=0.5] {$X$};
+\begin{tikzpicture}[y=1cm,x=7mm]
+    \draw[thick,domain=0:10,samples=200] {plot(\x,{sin(deg(2*pi*\x/4))})};
+    \draw[densely dashed] (0,0) -- (10,0);
+    \draw[<->,shift={(0,0.07)}] (1,1) -- (5,1) node[above,pos=0.5] {$\lambda$};
+    \draw[<->] (9,0) -- (9,1) node[right,pos=0.4] {X};
     \node[below=5mm] at (current bounding box.south) {Wave 2};
 \end{tikzpicture}
 \end{center}
+
+
 
 
 \begin{questions}
@@ -873,6 +1016,8 @@ A wave is traveling at a velocity of \SI{200}{m/s}. What is the wave's velocity 
 
 
 \clearpage
+
+
 
 \subsection{Lab: The Simple Harmonic Oscillator}
 
@@ -1786,7 +1931,7 @@ Access the \texttt{PhET Simulation} ``Waves Intro'' (\href{https://phet.colorado
 \end{enumerate}
 \end{questions}
 
-\end{document}
+
 
 \clearpage
 
@@ -1904,7 +2049,7 @@ While $t$ is playing indefinitely, manually set the slider on $f$ to different v
 
 \clearpage
 
-\subsection{Desmos: Constructive and Destructive Interference}
+\subsection*{Desmos: Constructive and Destructive Interference}
 
 \begin{questions}
 \question
@@ -1941,8 +2086,8 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     clip=false,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {4*exp(-(x-3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {1};
@@ -1959,8 +2104,8 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1.5)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-1.5)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+1.5)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {4*exp(-(x-1.5)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1.5}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {2};
@@ -1979,8 +2124,8 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.75)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x-0.75)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+0.75)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {4*exp(-(x-0.75)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.75}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {3};
@@ -1997,8 +2142,8 @@ Pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch the waves
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = 0}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.87) circle (2.5mm) node {4};
@@ -2089,7 +2234,7 @@ What behavior do you see when the waves meet at the same location?
 \fillwithlines{1.5cm}
 % \fi
 
-\part The function $F_3$ depicts the wave phenomenon called \fillin[constructive]\ interference.
+\part The function $F_3$ depicts the wave phenomenon called \fillin[constructive][4cm]\ interference.
 \end{parts}
 
 \question 
@@ -2119,8 +2264,8 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {-4*exp(-(x-3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -3}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {1};
@@ -2137,8 +2282,8 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+1)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-1)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+1)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {-4*exp(-(x-1)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -1}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {2};
@@ -2157,8 +2302,8 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x+0.3)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x-0.3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x+0.3)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {-4*exp(-(x-0.3)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t = -0.3}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {3};
@@ -2175,8 +2320,8 @@ Again, pause the animation at $t = -3$, $-1.5$, $-0.75$, and $0$. Then sketch th
     grid=both,
 ]
     \ifprintanswers
-    \addplot[domain=-6:6,samples=120,thick, red] {4*exp(-(x)^2)};
-    \addplot[domain=-6:6,samples=120,thick, red] {-4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, blue] {4*exp(-(x)^2)};
+    \addplot[domain=-6:6,samples=120,thick, green!60!black] {-4*exp(-(x)^2)};
     \fi
     \node[below left,fill=white] at (axis description cs: 1,1) {$\boxed{t =0}$};
     \draw[fill=black!20] (axis description cs: 0.05,0.91) circle (2.5mm) node {4};
@@ -2289,6 +2434,10 @@ Noise-cancellation technology in headphones works by recording the sound wave of
 
 In the next cell, write an equation for a function $f_2$ that destructively interferes with sound wave $f_1$. Then plot $f_1 + f_2$ to show that the the first wave was canceled by the second.
 
+\medskip
+
+Teacher stamp: \fillin[]
+
 \begin{solution}
 \begin{equation*}
     f_2 = -e^{-Ax} \sin\left(\frac{2\pi x}{\lambda} - 2\pi f t\right)
@@ -2328,6 +2477,8 @@ Describe in words how the graph appears.
 \end{questions}
 
 
+
+\end{document}
 
 
 % Watch ``Wave Machine Demonstration'' by \texttt{National STEM Centre} on \texttt{YouTube} (\href{https://youtu.be/VE520z_ugcU}{click here}).

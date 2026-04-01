@@ -77,7 +77,7 @@
         \vspace*{1cm}
         {\Huge\bfseries A Common Curriculum\\for High School Physics at CFISD\par}
         \vspace{1cm}
-        {\Large \bfseries by Luis Ernesto Nu\~{n}ez\par}
+        {\Large \bfseries by Luis Ernesto Nunez\par}
     \end{center}
     \vspace{1cm}
     {\large A Project Submitted in Partial Fulfillment of the Degree of\\Master of Science Teaching\\
@@ -86,7 +86,7 @@
     
     \vspace{1cm}
     
-    {\large \noindent Date:
+    {\large \noindent Date: February 16, 2026
     
     \vspace{1cm}
     
@@ -102,11 +102,12 @@
 
 % --- Abstract ---
 \section*{Abstract}
-This is where you write your abstract. It should summarize the project goals, methods, results, and significance.
+This capstone project is about the creation and integration of a high school physics curriculum at Cypress-Fairbanks Independent School District (CFISD). The three goals of the project were (1) to gather physics equations, definitions, and ideas from scattered locations in the cloud, and organize them into one unified, easily accessible location; (2) to create a textbook-like medium, containing both theory and problems, that suits the sequence and requirements of CFISD's new physics scope and sequence; and (3) to encourage teachers to create their own figures using \LaTeX, a powerful programming language for neatly typesetting documents. \LaTeX\ code was written and compiled in the website Overleaf, and a repository of the project was saved in GitHub. One product of this project is a textbook-inspired document, \textit{The Handbook}, that enables teachers to navigate the intellectual roadmap of a new physics sequence, which places energy, momentum, and force interactions at the forefront of all subsequent units. Other products include \textit{The Workbook}, a collection of more than eight \texttt{.tex} files with multiple choice and free response questions designed to check for student understanding; and tests, quizzes, and teacher solutions. 
 
 % --- Acknowledgments ---
 \section*{Acknowledgments}
-Thank those who contributed to your project: advisor, family, colleagues, institutions, etc.
+I would like to express my sincere gratitude to my advisor, Dr.\,Reiff, for encouraging and guiding me throughout my three-year journey toward earning this Master of Science in Teaching degree. I am also grateful to my colleagues at Cypress Springs High School and CFISD, whose feedback and suggestions are reflected in many of the physics problems included in this project. I extend special thanks to my former professors at Cal Poly Pomona and Penn State for encouraging me to apply to the MST program. I am deeply thankful to my amazing wife and two sons for their constant inspiration and support. Thank you to my in-laws for always standing by me and supporting my goals. Finally, I would like to thank my parents and brother in California for believing in me every step of the way.
+% Thank those who contributed to your project: advisor, family, colleagues, institutions, etc.
 
 % --------- TABLE OF CONTENTS ---------
 \tableofcontents
@@ -116,13 +117,26 @@ Thank those who contributed to your project: advisor, family, colleagues, instit
 % \mainmatter
 
 % --- Body of Project ---
-\epigraph{A ``file'' was originally---in sixteenth-century England---a wire on which slips and bills and notes and letters could be strung for preservation and reference. Then came file folders, file drawers, and file cabinets; then the electronic namesakes of all these; and the inevitable irony. Once a piece of information is \textit{filed}, it is statistically unlikely ever to be seen again by human eyes.}{James Gleick, \emph{The Information}}
+% \epigraph{A ``file'' was originally---in sixteenth-century England---a wire on which slips and bills and notes and letters could be strung for preservation and reference. Then came file folders, file drawers, and file cabinets; then the electronic namesakes of all these; and the inevitable irony. Once a piece of information is \textit{filed}, it is statistically unlikely ever to be seen again by human eyes.}{James Gleick, \emph{The Information}}
 
 \epigraph{Technologies are not mere exterior aids but also interior transformations of consciousness, and never more than when they affect the word.}{Walter Ong, \emph{Orality and Literacy}}
 
 \section{Purpose and Background}
-In 1906, \textit{A First Course in Physics}, one of the first modern physics textbooks, was published by Robert A. Millikan, the physicist who a few years later would partner with Harvey Fletcher to experimentally determine the charge on an electron. In the preface, he writes that the textbook ``has grown out of the actual needs of the elementary work in physics in the University of Chicago, particularly in the University High School of the School of Education and the affiliated secondary schools.'' Millikan writes that the book represents an aim ``to make high-school physics \ldots \textit{a simple and immediate presentation, in language which the student already understands, of the hows and whys of the physical world in which he lives}.'' Three chapters of this text cover much of the first semester of a modern high school physics course:
+In the present day, it's common for teachers to store curriculum files in the ``cloud.''  At the Cypress-Fairbanks Independent School District (CFISD), where I teach, physics materials are stored in a shared Google Drive. Each teacher is allotted 1 terabyte of storage space. Over the years we have accumulated hundreds of files that are scattered across countless locations in the drive. Hyperlinks further increase the multiplicity of files and locations, as files can be linked to other files. In addition to Google Drive, we also store gigs of material in \textit{Schoology}, our online learning management system. The medium of online storage tends to make users multiply and disperse its contents, rather than unify and minimize them. In our district, a single source of content, like a textbook or a \textit{Wikipedia}, that consolidates all curriculum material, does not exist. In \textit{The Information}, James Gleick traces the word ``file'' to England in the 1500s, when people would hang slips of paper on wire for easy recall and retention. The word evolved over the centuries, and 30 years ago it began to mean electronic locations where items could be stored in a computer. Gleick warns, ``Once a piece of information is \textit{filed}, it is statistically unlikely ever to be seen again by human eyes.''  The first purpose of this curriculum project is based on increasing the likelihood that teacher and student eyes \textit{will} see our physics content:
 
+\begin{mdframed}[backgroundcolor=black!20]
+    \textbf{Purpose 1:} To gather physics equations, definitions, and ideas from scattered locations in the cloud, and organize them into one unified, easily accessible location.
+\end{mdframed}
+
+
+
+% This curriculum project is an attempt to unify all high school physics content into one location. It enforces coherence and flow to our unique physics curriculum, by using print to flesh out the underlying sequence in words, equations, ideas, and problems.
+\clearpage
+
+The second and perhaps most important purpose of this capstone project deals with our district's decision in 2022 to reorganize the contents of a previously adopted ``traditional'' sequence. In 1906, \textit{A First Course in Physics}, one of the first modern physics textbooks, was published by Robert A. Millikan, the physicist who a few years later would partner with Harvey Fletcher to experimentally determine the charge on an electron. In the preface, he writes that the textbook ``has grown out of the actual needs of the elementary work in physics in the University of Chicago, particularly in the University High School of the School of Education and the affiliated secondary schools.'' Millikan writes that the book represents an aim ``to make high-school physics \ldots \textit{a simple and immediate presentation, in language which the student already understands, of the hows and whys of the physical world in which he lives}.'' Three chapters of this text cover much of the first semester of a modern high school physics course:
+
+\bgroup
+\small
 \begin{itemize}[topsep=-2pt,itemsep=-2pt]
     \item \texttt{CHAPTER I. MEASUREMENT.} (11 pages)
     \begin{itemize}[topsep=-2pt,itemsep=-2pt]
@@ -149,6 +163,7 @@ In 1906, \textit{A First Course in Physics}, one of the first modern physics tex
         \item[] Power and Energy
     \end{itemize}
 \end{itemize}
+\egroup
 
 %...Link: https://books.google.com/books?id=PLYXAAAAIAAJ&printsec=frontcover&source=gbs_ge_summary_r&cad=0#v=onepage&q=momentum&f=true
 
@@ -157,7 +172,7 @@ In 1906, \textit{A First Course in Physics}, one of the first modern physics tex
 %     primarily an attempt to give concrete expression to a rapidly spreading movement to make high-school physics, to a less extent that it has been in the past, either a condensed reproduction of college physics, or a mathematical and mechanical introduction to technical science, and to a greater extent than it has heretofore been, \textit{a simple and immediate presentation, in language which the student already understands, of the hows and whys of the physical world in which he lives}.
 % \end{quote}
 
-Compare this outline with the contents shown below of the widely used undergraduate textbooks of Halliday \& Resnick's \textit{Fundamentals of Physics} and Sears \& Zemansky's \textit{University Physics}, and we begin to see a common thread:
+Compare this outline with the contents shown below of the widely used undergraduate textbooks of Halliday \& Resnick's \textit{Fundamentals of Physics} and Sears \& Zemansky's \textit{University Physics}. Notice that they share a common sequence:
 
 \begin{center}
 \fbox{
@@ -216,9 +231,9 @@ College Board follows a similar content sequence for the eight units that compri
 }
 \end{center}
 
-The underlying flow to the sequence in many of the widely used physics curricula at both the high school and college levels appears to be: kinematics first, followed by forces, energy, and momentum. Throughout the 20th century, countless secondary textbooks and resources---like the \texttt{PhysicsClassroom.com}, Khan Academy, and \texttt{FlippingPhysics.com}---adopted the sequence outlined above as the underlying logic of their curricula. Moreover, tens of thousands of physics teachers and physics majors were academically nurtured to internalize the kinematics-forces-energy-momentum schema; myself included. As a freshman undergraduate physics major at the California State University Los Angeles, I found my first exposure to college-level mechanics in Sears \& Zemanzsky's \textit{University Physics}. Later, when I transferred to Cal Poly Pomona, I learned a ton of modern physics from Halliday and Resnick's \textit{Fundamentals of Physics}, a text which I still frequently reference to this day when teaching high school physics. Thousands of teachers or former students today know, or once knew, the outline of this ``traditional'' sequence of physics contents.
+The underlying flow to the sequence in many of the widely used physics curricula at both the high school and college levels appears to be: kinematics first, followed by forces, energy, and momentum. Throughout the 20th century, many secondary textbooks and resources---like the \texttt{PhysicsClassroom.com}, Khan Academy, and \texttt{FlippingPhysics.com}---adopted the sequence outlined above as the underlying logic of their curricula. In addition, tens of thousands of physics teachers and physics majors were academically trained to internalize the kinematics-forces-energy-momentum schema. As a freshman undergraduate physics major at the California State University Los Angeles, I found my first exposure to college-level mechanics in Sears \& Zemanzsky's \textit{University Physics}. Later, when I transferred to Cal Poly Pomona, I learned a ton of modern physics from Halliday and Resnick's \textit{Fundamentals of Physics}, a text which I still reference when teaching high school physics. Thousands of teachers or former students today know, or once knew, the outline of this ``traditional'' sequence of physics contents.
 
-But beginning in 2022, curriculum coaches and administrators at the Cypress-Fairbanks Independent School District (CFISD), where I teach, began to implement a scope and sequence for their physics courses that pedagogically and structurally deviated from a traditional sequence. These educators decided it was better for high school students to learn physics through an energy-and-momentum-first approach, so that energy and momentum topics could be ``spiraled'' throughout all topics in the curriculum. The 2025-2026 scope and sequence covering about a semester and a half is outlined below:
+But beginning in 2022, curriculum coaches and administrators at CFISD began to implement a scope and sequence for their physics courses that pedagogically and structurally deviated from the traditional sequence. These educators decided it was better for high school students to learn physics through an energy-and-momentum-first approach, so that energy and momentum topics could be ``spiraled'' throughout all topics in the curriculum. The 2025-2026 scope and sequence covering about a semester and a half is outlined below:
 
 \begin{center}
 \fbox{
@@ -231,23 +246,26 @@ But beginning in 2022, curriculum coaches and administrators at the Cypress-Fair
     \textbf{3} Changing Motion: Law of Acceleration\\
     \textbf{4} Changing Motion: Impulse and Work\\
     \textbf{5} Force Analysis\\
-    \textbf{6} 1D Motion\\
-    \textbf{7} 2D Motion\\
-    \textbf{8} Conservation of Mechanical Systems
+    \textbf{6} One-Dimensional Motion\\
+    \textbf{7} Two-Dimensional Motion\\
+    \textbf{8} Conservation in Mechanical Systems
 \end{minipage}
 }
 \end{center}
 
 The following outline fleshes out what is covered in these units and exposes why the newly proposed curriculum is a significant departure from the traditional; the list is comprehensive but not exhaustive:
 
+\bgroup
+\small
+
 \begin{itemize}[itemsep=-2pt,topsep=-2pt]
     \item Unit 1: Constant Motion
     \begin{itemize}[itemsep=-2pt,topsep=-2pt]
         \item covers kinematics of systems moving with constant or zero velocity ($a = 0$)
         \item introduces position and velocity graphs
-        \item introduces kinetic energy ($K = \frac{1}{2} m v^2$)
-        \item introduces momentum ($p = mv$)
-        \item \textbf{\underline{DOES NOT include}} potential energy
+        \item immediately introduces kinetic energy ($K = \frac{1}{2} m v^2$)
+        \item immediately introduces momentum ($p = mv$)
+        \item \textbf{\underline{DOES NOT include}} potential energy (see Unit 8)
     \end{itemize}
     \item Unit 2: Force Interactions
     \begin{itemize}[itemsep=-2pt,topsep=-2pt]
@@ -295,16 +313,64 @@ The following outline fleshes out what is covered in these units and exposes why
         \item conservation of energy
     \end{itemize}
 \end{itemize}
+\egroup
 
-For a physics major like me---whose schema of foundational physics knowledge flows from kinematics to forces, to energy, and to momentum---the deconstruction and re-construction of a physics curriculum as listed above may be a bit disorienting. My biggest challenge in learning to adopt the non-traditional sequence was the de-compartmentalization of forces and potential energy. The CFISD sequence covers many elementary ideas related to forces, but it scatters them across 3 or 4 units. For example, Newton's third law and first law are covered in Unit 2, but a student must wait till the next unit to learn about the second law. One must wait until Unit 5 to learn about the law of gravitation and net force equations, and it is forbidden to teach gravitational potential energy until the spring semester, where it is covered in Unit 8. Also, a teacher must remember to spiral in connections to momentum and energy, which were covered in the first unit, whenever possible in each of the subsequent units. The roadmap of the CFISD physics curriculum may appear confusing to a novice teacher.
+For a physics teacher---whose schema of foundational physics knowledge flows from kinematics to forces, to energy, and to momentum---the deconstruction and re-construction of a physics curriculum as listed above may be a bit disorienting. My biggest challenge in learning to adopt the non-traditional sequence was the de-compartmentalization of forces and potential energy. The CFISD sequence covers many elementary ideas related to forces, but it scatters them across 3 or 4 units. For example, Newton's third law and first law are covered in Unit 2, but a student must wait till the next unit to learn about the second law. One must wait until Unit 5 to learn about the law of gravitation and net force equations, and it is forbidden to teach gravitational potential energy until the spring semester, where it is covered in Unit 8. Also, a teacher must remember to spiral in connections to momentum and energy, which were covered in the first unit, whenever possible in each of the subsequent units. The roadmap of the CFISD physics curriculum may appear confusing to a novice teacher.
 
-Perhaps the biggest challenge of adopting the CFISD physics sequence is that the content of traditional textbooks and established online resources, especially PhysicsClassroom.com (for which our district pays a subscription), cannot be easily followed in a linear way. Long established resources do not disentangle Newton's laws of motion but teach them sequentially; do not place a large content gap between kinetic energy, on the one hand, and work and potential energy, on the other; do not expect students to know about momentum and kinetic energy before they learn about acceleration and Newton's second law. So, to try to implement PhysicsClassroom.com resources or the logic of Halliday \& Resnick's \textit{Fundamentals of Physics} in the CFISD curriculum is impractical. 
+Perhaps the biggest challenge of adopting the CFISD physics sequence is that the content of traditional textbooks and established online resources, especially PhysicsClassroom.com (for which our district pays a subscription), cannot be easily followed in a linear way. The establishment of cannonical resources do not disentangle Newton's laws of motion but teach them sequentially; do not place a large content gap between kinetic energy, on the one hand, and work and potential energy, on the other; do not expect students to know about momentum and kinetic energy before they learn about acceleration and Newton's second law. So, to try to implement PhysicsClassroom.com resources or the logic of Halliday \& Resnick's \textit{Fundamentals of Physics} in the CFISD curriculum is impractical. 
 
-When this new sequence was being pitched to CFISD teachers about 5 years ago, I asked the district curriculum coach, ``It would be nice to have a general outline for how to conduct such a course. Is there some textbook that adopts this new sequence?'' She answered something to the effect of, ``There is no textbook with this sequence. This is something new we want to try. All of the resources for this sequence will need to be arranged by our teachers in our district.'' In other words, the cannon of curriculum would need to largely constructed bottom-up.
+When this new sequence was being introduced to CFISD teachers about 5 years ago, a district curriculum coach was asked if there exists a textbook to help teachers maneuver the new sequence. They answered something to the effect of, ``There is no textbook with this sequence. This is something new we want to try. All of the resources for this sequence will need to be arranged by our teachers in our district.'' In other words, the new cannon of curriculum materials would need to be constructed from the bottom-up. Thus:
 
-This capstone project was born out of my desire and need to create a kind of manual for physics teachers at CFISD to be able to maneuver the roadmap of the new curriculum. In conjunction with my pursuit of a Master of Science Teaching degree at Rice University, over the past two years I have been working on a curriculum project that consists of two main parts. The first part is a live and growing document of lecture notes that lays out the new CFISD sequence of physics ideas in a textbook-like format. That document partially fulfills the role of the vacant textbook, which we were told does not exist for our sequence. The second part of my capstone project consists of a large bank of carefully sequenced questions, quizzes, and tests for the new curriculum. The question bank addresses the requirement that topics must be covered in a specific order with certain ones addressed early (kinetic energy, momentum, Newton's third law) and certain others addressed later (Newton's second law, net force equations, potential energy). This bank, as opposed to those found in a standard textbook, \textit{can} and should be taught linearly, since it is design with to align with the CFISD sequence.
+\begin{mdframed}[backgroundcolor=black!20]
+    \textbf{Purpose 2:} To create a textbook-like medium, containing both theory and problems, that suits the sequence and requirements of our new curriculum.
+\end{mdframed}
 
-In sum, it's not so much the de-construction, per-se, of the traditional physics sequence by CFISD educators that is problematic; rather, it's the consequential impracticability of external resources based on a more traditional sequence that is the major issue. My capstone project seeks to provide an ounce of relief in the administration of the CFISD curriculum in my classroom, and by extension to my campus and district. 
+This capstone project was born out of my desire and need to create a kind of manual for physics teachers at CFISD to be able to maneuver the roadmap of the new curriculum. In conjunction with my pursuit of a Master of Science Teaching degree at Rice University, over the past two years I have been working on a curriculum project that consists of two main parts. The first part is a live and growing document of lecture notes that lays out the new CFISD sequence of physics ideas in a textbook-like format. That document partially fulfills the role of the vacant textbook, which we were told does not exist for our sequence. The second part of my capstone project consists of a large bank of carefully sequenced questions, quizzes, and tests for the new curriculum. The question bank addresses the requirement that topics must be covered in a specific order with certain ones addressed early (kinetic energy, momentum, Newton's third law) and certain others addressed later (Newton's second law, net force equations, potential energy). This bank, as opposed to those found in a standard textbook, \textit{can} and should be taught sequentially, since it is design with to align with the CFISD sequence.
+
+In sum, the deconstruction of the traditional physics sequence by CFISD educators is not inherently problematic. Rather, the primary concern is that the new sequence makes the use of external resources based on the traditional sequence impractical. This capstone project seeks to provide an ounce of relief in the facilitation of the CFISD curriculum in my classroom, and by extension to my campus and district. 
+
+The third purpose is practical and artistic:
+
+\begin{mdframed}[backgroundcolor=black!20]
+    \textbf{Purpose 3:} To encourage teachers to create their own figures using \LaTeX.
+\end{mdframed}
+
+\LaTeX\ is a programming language used for preparing and typesetting documents. It's especially useful for producing mathematical and scientific documents because the code is designed to render equations and user-defined drawings, called \textit{TikZ pictures}. The figure below shows the parabolic trajectory of a projectile with horizontal and velocity components, and is not a screenshot or external image file; it is generated and ``exists'' within the same code that produced this document. 
+
+\begin{center}
+\begin{tikzpicture}[x=3.5mm,y=3.5mm,declare function={t(\x)=\x/(18*cos(45));}]
+    %...Draw red trajectory:
+    \draw[red,domain=0:40,thick,smooth] plot(\x,{trajectoryequation(\x,18,45)+10});
+
+    %...Draw velocity components
+    \def\vectorsize{0.3}
+    \pgfplotsinvokeforeach{0,5,10,21,26,31,36,40}{
+            \draw[fill=black] (#1,{trajectoryequation(#1,18,45)+10}) circle (2pt);
+            \draw[densely dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++(0,{\vectorsize*(18*sin(45) - 9.8*t(#1))});
+            \draw[densely dashed,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\vectorsize*18*cos(45)},0);
+            \draw[thick,->] (#1,{trajectoryequation(#1,18,45)+10}) -- ++({\vectorsize*18*cos(45)},{0.3*(18*sin(45) - 9.8*t(#1))});
+            }
+
+    %...For the apex:
+    \draw[fill=black] (16.51,{trajectoryequation(16.51,18,45)+10}) circle (2pt);
+    \draw[thick,->] (16.51,{trajectoryequation(16.51,18,45)+10}) -- ++({\vectorsize*18*cos(45)},0);
+
+    %...For the initial point:
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ (0,{\vectorsize*(18*sin(45))}) node[above] {$v_{iy}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\vectorsize*(18*cos(45))},0) node[right] {$v_{ix}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) ++ ({\vectorsize*(18*cos(45))},{\vectorsize*(18*sin(45))}) node[above left] {$v_i$};
+
+    %...For the intermediate point:
+    \node[left] at (31,9) {$v_y$};
+    \node at (34,13) {$v_x$};
+    \node at (34.5,10) {$v$};
+\end{tikzpicture}
+\end{center}
+
+\noindent The block of code that product this trajectory is found in the Appendix section below.
+
+The clarity and neatness of documents rendered with \LaTeX\ may convince may teachers to create and edit their own \textit{TikZ pictures} for use in their classes.
+
 
 
 
@@ -331,7 +397,7 @@ An overarching objective of this capstone project was to integrate high school p
     \vec{F}_g = -\frac{G m_1 m_2}{r^2}
 \end{equation}
 
-Aside from the \texttt{equation} environment, \texttt{tikzpicture} was the most heavily used environment. It allows a use to create geometrically oriented pictures. For example, to generate a write triangle, the following lines were written:
+Aside from the \texttt{equation} environment, \texttt{tikzpicture} was the most heavily used environment. It allows a user to create geometrically oriented pictures. For example, to generate a right triangle, the following lines were written:
 
 \begin{lstlisting}[language=TeX]
 \begin{tikzpicture}[x=4cm,y=4cm]
@@ -403,7 +469,7 @@ Aside from the \texttt{equation} environment, \texttt{tikzpicture} was the most 
 \end{tikzpicture}
 \end{center}
 
-\noindent Free-body diagrams:
+\noindent Free-body diagrams are made as follows.
 
 \begin{lstlisting}[language=TeX]
 \begin{tikzpicture}
@@ -547,7 +613,7 @@ In the preambles of all .tex files, a function was defined to represent the traj
     \end{scope}
     \draw (3,0) arc (0:180:3);
     \draw[densely dashed] (-2,3) 
-        node[left,align=center] {\small reference\\height} -- (2,3);
+        node[left,align=center] {\small zero\\ \small line} -- (2,3);
     \draw[<->] (0,0) -- (0,3) node[right,pos=0.5] {$R$};
     \draw[->] (0,3) -- (0,4) node[right,pos=0.5] {$h$};
     \fill[yshift=3pt] (0,4) circle (3pt) node[above=3pt] {$m$};
@@ -561,7 +627,7 @@ In the preambles of all .tex files, a function was defined to represent the traj
         \draw (0,0) node[opacity=0.3] {\twemoji[width=6cm]{globe showing Americas}};
     \end{scope}
     \draw (3,0) arc (0:180:3);
-    \draw[densely dashed] (-2,3) node[left,align=center] {\small reference\\height} -- (2,3);
+    \draw[densely dashed] (-2,3) node[left,align=center] {\small zero\\ \small line} -- (2,3);
     \draw[<->] (0,0) -- (0,3) node[right,pos=0.5] {$R$};
     % \draw[<->] (0,3) -- (0,4) node[right,pos=0.5] {$y_0$};
     \draw[->] (0,3) -- (0,4) node[right,pos=0.5] {$h$};
@@ -600,18 +666,73 @@ The table of contents is shown below.
 %``these selective exemplifications in order to make remarkably accurate factual guesses about untaught domains.'' (Hirsch 246).
 %...Hirsch Jr, E.D.. The Schools We Need: And Why We Don't Have Them (pp. 245-246). (Function). Kindle Edition.
 
-As mentioned in the Methodology section, \textit{The Handbook} was written entirely in \LaTeX, and, with the exception of only a few image files, all figures were generated internally from \LaTeX\ code.
 \clearpage
 
-\section{Impact}
-Interpret your results and compare with literature or expectations.
+As mentioned in the Methodology section, \textit{The Handbook} was written entirely in \LaTeX, and, with the exception of only a few image files, all figures were generated internally from \LaTeX\ code. As of this writing, the file is only 591 KB in size and is available for preview at \href{https://github.com/lenunez426/physics/blob/main/physics-handbook.pdf}{github.com/lenunez426/physics/blob/main/physics-handbook.pdf}.
+
+
+\subsection*{The Workbook}
+
+\textit{The Workbook} is a collection of files, one for each unit, that contains many practice problems. These problems are designed to check for understanding and enable student mastery of topics covered in class and in \textit{The Handbook}. The \texttt{.tex} files that comprise the \textit{Workbook} contain over 21,000 lines of code, covering Units 1 through 8. For most problems in the \textit{Workbook}, teacher solutions are available. To access files from the \textit{Workbook}, users should access the GitHub repository linked in the Relevant Websites below, clone a copy to Overleaf or a TeX compiler of their choice, and run the desired unit file. The keyword \texttt{[answers]} in the exam document class enables answers and solutions to be printed in red. Screenshots of student versions and teacher versions of lab-based and Desmos-based problem sets are shown below.
+
+\subsection*{Quizzes, Tests, and Other Results}
+Test and quizzes were produced for each unit. The \texttt{exam} document class in \LaTeX\ allows users to generate their own multiple choice (and free response) questions. Users begin a question with the \verb|\question| command, set answer choices within the \verb|randomizechoices| environment, and can even write answers and lengthy solutions in the \verb|solutions| environment, which stays hidden from view unless the user toggles for answers to be displayed. Screenshots of the first 2 pages of one of the tests is shown below.
+
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-acceleration-1.pdf}}
+\end{center}
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-acceleration-2.pdf}}
+\end{center}
+
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-acceleration-3.pdf}}
+\end{center}
+
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-acceleration-4.pdf}}
+\end{center}
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-test-1.pdf}}
+\end{center}
+
+\begin{center}
+\fbox{\includegraphics[width=0.95\textwidth]{documents/figures/workbook-test-2.pdf}}
+\end{center}
+
+
+\subsection*{How to Access The Handbook and Workbook}
+
+To access the files for the \textit{Handbook}, \textit{Workbook}, tests/quizzes, and other materials, the user needs to clone or download the contents of the GitHub repository found at\\ \href{https://github.com/lenunez426/physics/tree/main}{github.com/lenunez426/physics/tree/main}. The contents should then be uploaded to a compiler, like \textit{Overleaf}. To generate the PDF for \textit{The Handbook}, the user must compile the \texttt{main-physics-handbook.tex} file. The \textit{Workbook} files are located in the directory \texttt{documents/problems}, and the problems files are sorted according to each unit. Test are located in \texttt{documents/tests}.
+
+\begin{center}
+    \includegraphics[width=7cm]{documents/figures/overleaf.png}
+\end{center}
+
+
+
+\section{Impact and Conclusion}
+With a bit of familiarity with \LaTeX\ and GitHub, a user of this curriculum project may load \texttt{.tex} files into a compiler, like \textit{Overleaf}, and render PDF documents for a high school physics curriculum. The main product is called \textit{The Handbook}, which includes (as of this writing) over 62-pages of concisely written physics ideas, equations, definitions, and figures for the scope and sequence that support the expectations established at CFISD. Positive impacts of \textit{The Handbook} include: a shared text of common definitions, equations, and ideas; order and clarity in the sequence of topics; neat and clear geometric figures for user in PowerPoint slides; etc. Secondary products include \textit{The Workbook}, which contains hundreds of physics problems and solutions, as well as carefully arranged tests and quizzes. 
+
+Most of the contents in \textit{The Handbook} and \textit{The Workbook} were at some point scattered across innumerable locations in our shared Google Drive. Even with Google Drive's powerful search function, it wasn't always easy to access a given file. One of the motivations for this project was to harness the systematic prowess of \LaTeX\ and GitHub, to enforce order and ease of access to our curriculum documents. Another purpose was to give the first coherent and complete expression of CFISD's new physics curriculum, in print. The third goal was to, by virtue of example, show teachers the neat figures that can be made in \LaTeX\ and encourage them to make their own so-called \textit{tikzpictures}.
+
+Future work for this project includes the completion of \textit{Handbook} and \textit{Workbook} materials for Units 9 through 14 of our curriculum, which cover oscillatory motion, mechanical waves, conservation of charge, electromagnetic induction, electromagnetic waves, and quantum physics. While materials for these latter sections are patchy and sparse, the hope is that over the next academic year or two, these sections will be as fleshed out as the first 8 units of the course.
+
+
+
+
 
 \clearpage
 
 
-% --- Conclusions ---
-\section{Conclusions}
-Summarize key insights and implications for teaching or further development.
+% % --- Conclusions ---
+% \section{Conclusions}
+% Summarize key insights and implications for teaching or further development.
 
 % --------- BACK MATTER ---------
 % \backmatter
@@ -622,20 +743,95 @@ Summarize key insights and implications for teaching or further development.
 % \bibliographystyle{plain} % or another style: apalike, ieee, etc.
 % % \bibliography{yourbibfile} % Uncomment if using BibTeX
 % % Otherwise, list manually:
-\begin{itemize}[topsep=0pt,itemsep=0pt]
-  \item Author. *Title*. Journal, Year.
-  \item \url{https://example.com}
-\end{itemize}
+% \begin{itemize}[topsep=0pt,itemsep=0pt]
+%   \item Author. *Title*. Journal, Year.
+%   \item \url{https://example.com}
+% \end{itemize}
+
+\noindent College Board. \textit{AP Physics 1: Algebra-Based Course and Exam Description}. 
+
+College Board, 2024, apcentral.collegeboard.org. Accessed 15 Feb.\ 2026.
+
+
+\noindent GitHub. \textit{GitHub: Let’s Build from Here}. www.github.com. Accessed 15 Feb.\ 2026.
+
+
+\noindent Gleick, James. \textit{The Information: A History, a Theory, a Flood.} Pantheon Books, 2011.
+
+\noindent Halliday, David, Robert Resnick, and Jearl Walker. \textit{Fundamentals of Physics}. 
+
+10th ed., Wiley, 2013.
+
+
+\noindent Hirsch, E. D., Jr. \textit{The Schools We Need: And Why We Don’t Have Them}. Doubleday, 1996.
+
+\noindent Overleaf. \textit{Overleaf, Online LaTeX Editor}. www.overleaf.com. Accessed 15 Feb.\ 2026.
+
+\noindent Young, Hugh D., and Roger A. Freedman. \textit{University Physics with Modern Physics}. 
+
+14th ed., Pearson, 2016.
+
+
 
 % --- Appendix ---
 % \appendix
 
 \section{Relevant Websites}
 
-The GitHub repository is available at \href{https://github.com/lenunez426/physics}{https://github.com/lenunez426/physics}.
+The GitHub repository containing source code for \textit{The Handbook} and \textit{The Workbook} is available at \href{https://github.com/lenunez426/physics}{https://github.com/lenunez426/physics}.
+
+\clearpage
 
 \section{Appendix}
-Include developed web pages, teaching activities, or supplementary material.
+The \LaTeX\ code below was used to generate the projectile trajectory displayed at the end of the Purpose and Background section.
+
+\begin{lstlisting}
+\begin{center}
+\begin{tikzpicture}[x=3.5mm,y=3.5mm,
+    declare function={t(\x)=\x/(18*cos(45));}]
+    %...Draw red trajectory:
+    \draw[red,domain=0:40,thick,smooth] 
+        plot(\x,{trajectoryequation(\x,18,45)+10});
+
+    %...Draw velocity components
+    \def\vectorsize{0.3}
+    \pgfplotsinvokeforeach{0,5,10,21,26,31,36,40}{
+            \draw[fill=black] 
+                (#1,{trajectoryequation(#1,18,45)+10}) circle (2pt);
+            \draw[densely dashed,->] 
+                (#1,{trajectoryequation(#1,18,45)+10}) 
+                -- ++(0,{\vectorsize*(18*sin(45) - 9.8*t(#1))});
+            \draw[densely dashed,->] 
+                (#1,{trajectoryequation(#1,18,45)+10}) 
+                -- ++({\vectorsize*18*cos(45)},0);
+            \draw[thick,->] (#1,{trajectoryequation(#1,18,45)+10}) 
+                -- ++({\vectorsize*18*cos(45)},
+                {0.3*(18*sin(45) - 9.8*t(#1))});
+            }
+
+    %...For the apex:
+    \draw[fill=black] 
+        (16.51,{trajectoryequation(16.51,18,45)+10}) circle (2pt);
+    \draw[thick,->] (16.51,{trajectoryequation(16.51,18,45)+10}) 
+        -- ++({\vectorsize*18*cos(45)},0);
+
+    %...For the initial point:
+    \draw (0,{trajectoryequation(0,18,45)+10}) 
+        ++ (0,{\vectorsize*(18*sin(45))}) node[above] {$v_{iy}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) 
+        ++ ({\vectorsize*(18*cos(45))},0) node[right] {$v_{ix}$};
+    \draw (0,{trajectoryequation(0,18,45)+10}) 
+        ++ ({\vectorsize*(18*cos(45))},
+        {\vectorsize*(18*sin(45))}) node[above left] {$v_i$};
+
+    %...For the intermediate point:
+    \node[left] at (31,9) {$v_y$};
+    \node at (34,13) {$v_x$};
+    \node at (34.5,10) {$v$};
+\end{tikzpicture}
+\end{center}
+\end{lstlisting}
+% Include developed web pages, teaching activities, or supplementary material.
 
 % \section{Additional Materials}
 % Any other supporting documents or examples.

@@ -236,42 +236,42 @@
 
 
 % OPPOSITE, +1 +1
-\begin{tikzpicture}
-  \def\xmin{-3}
-  \def\xmax{3}
-  \def\ymax{3}
-  \def\a{1}
-  \def\q{+1}
-  \def\Q{+1}
-  \def\R{1.2}
-  \def\range{-1.99,-1.8,-1.4,-1.0,-0.6,-0.2,
-             0.2,0.6,1.0,1.4,1.8,1.99}
+% \begin{tikzpicture}
+%   \def\xmin{-3}
+%   \def\xmax{3}
+%   \def\ymax{3}
+%   \def\a{1}
+%   \def\q{+1}
+%   \def\Q{+1}
+%   \def\R{1.2}
+%   \def\range{-1.99,-1.8,-1.4,-1.0,-0.6,-0.2,
+%              0.2,0.6,1.0,1.4,1.8,1.99}
 
-    % \draw[red] (-2,-2) grid (2,2);
+%     % \draw[red] (-2,-2) grid (2,2);
   
-  % LINES
-  \EFieldLines
+%   % LINES
+%   \EFieldLines
   
-  % VECTORS
-  % \def\Cx{-1.42}
-  % \def\C{-1.0}
-  % \EVectorOnFieldLines
-  % \def\Cx{-0.85}
-  % \def\C{-0.6}
-  % \EVectorOnFieldLines
-  % \fill[Ecol] (0,0) circle (1pt) node[Ecol,above,scale=0.7] {$\mathbf{E}=0$};
+%   % VECTORS
+%   % \def\Cx{-1.42}
+%   % \def\C{-1.0}
+%   % \EVectorOnFieldLines
+%   % \def\Cx{-0.85}
+%   % \def\C{-0.6}
+%   % \EVectorOnFieldLines
+%   % \fill[Ecol] (0,0) circle (1pt) node[Ecol,above,scale=0.7] {$\mathbf{E}=0$};
   
-  % CHARGES
-  \draw[charge+] (-\a,0) circle (9pt) node[black,scale=1.0] {\color{red} \large $+$};
-  \draw[charge+] (+\a,0) circle (9pt) node[black,scale=1.0] {\color{red} \large $+$};
+%   % CHARGES
+%   \draw[charge+] (-\a,0) circle (9pt) node[black,scale=1.0] {\color{red} \large $+$};
+%   \draw[charge+] (+\a,0) circle (9pt) node[black,scale=1.0] {\color{red} \large $+$};
 
-  %...Points A through E:
-  % \fill[blue] (-2.5,1.2) circle (2pt) node[above=2pt] {A};
-  % \fill[blue] (-1.3,0.4) circle (2pt) node[above left=-1pt] {B};
-  % \fill[blue] (0,2.5) circle (2pt) node[below=2pt] {C};
-  % \fill[blue] (0,0) circle (2pt) node[below=2pt] {D};
-  % \fill[blue] (0.5,1.5) circle (2pt) node[above=2pt] {E};
-\end{tikzpicture}
+%   %...Points A through E:
+%   % \fill[blue] (-2.5,1.2) circle (2pt) node[above=2pt] {A};
+%   % \fill[blue] (-1.3,0.4) circle (2pt) node[above left=-1pt] {B};
+%   % \fill[blue] (0,2.5) circle (2pt) node[below=2pt] {C};
+%   % \fill[blue] (0,0) circle (2pt) node[below=2pt] {D};
+%   % \fill[blue] (0.5,1.5) circle (2pt) node[above=2pt] {E};
+% \end{tikzpicture}
 
 
 % % OPPOSITE, +2 +1 (equipotential surface)
@@ -297,27 +297,27 @@
 % \end{tikzpicture}
 
 
-% % OPPOSITE, +1 -1 (equipotential surface)
-% \begin{tikzpicture}
-%   \def\xmin{-3}
-%   \def\xmax{3}
-%   \def\ymax{3}
-%   \def\a{1}
-%   \def\q{+1}
-%   \def\Q{-1}
-%   \def\R{1.0}
-%   \def\range{0.05,0.2,0.6,1.0,1.4,1.8,1.98}
-%   \def\rangeEP{-1.8,-1.4,-1.0,-0.6,-0.2,0.0,0.2,0.6,1.0,1.4,1.8}
+% OPPOSITE, -1 +1 (equipotential surface)
+\begin{tikzpicture}
+  \def\xmin{-3}
+  \def\xmax{3}
+  \def\ymax{3}
+  \def\a{1}
+  \def\q{+1}
+  \def\Q{-1}
+  \def\R{1.0}
+  \def\range{0.05,0.2,0.6,1.0,1.4,1.8,1.98}
+  \def\rangeEP{-1.8,-1.4,-1.0,-0.6,-0.2,0.0,0.2,0.6,1.0,1.4,1.8}
   
-%   % LINES
-%   \EFieldLines
-%   \EEquipot
+  % LINES
+  \EFieldLines
+  % \EEquipot
   
-%   % CHARGES
-%   \draw[charge+] (-\a,0) circle (9pt) node[black,scale=1.0] {$+q$};
-%   \draw[charge-] (+\a,0) circle (9pt) node[black,scale=1.0] {$-q$};
+  % CHARGES
+  \draw[charge+] (-\a,0) circle (9pt) node[black,scale=1.0] {A};
+  \draw[charge-] (+\a,0) circle (9pt) node[black,scale=1.0] {B};
    
-% \end{tikzpicture}
+\end{tikzpicture}
 
 
 % % OPPOSITE, +1 +1 (equipotential surface)

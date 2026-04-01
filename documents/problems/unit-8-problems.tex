@@ -1,13 +1,27 @@
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \renewcommand{\thesubsubsection}{\thesubsection\alph{subsubsection}}
 \setcounter{section}{8}
+\usepackage{multirow}
+\usepackage{fontawesome}
+
+\usepackage{xcolor}
+
+\newcommand{\anscolor}{%
+  \ifprintanswers
+    \color{red}%
+  \else
+    \color{white}%
+  \fi
+}
+
 
 \begin{document}
 
 \firstpageheader{{Name:\enspace\makebox[6cm]{\hrulefill}}\\{Physics}}{}{Unit 8:\\Conservation in Mechanical Systems}
-\runningheader{Physics}{}{Unit 8}
+\runningheader{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{}
+% \runningheader{Physics}{}{Unit 8}
 
 
 \subsection*{Desmos: Gravitational Potential Energy}
@@ -22,11 +36,12 @@
 
 where $m_1$ and $m_2$ are masses in kilograms, $r$ is the distance in meters between the centers of mass, and $G = \SI{6.67e-11}{N\cdot m^2/kg^2}$ is the universal gravitational constant.
 
-\textbf{\underline{Calculate}} the gravitational force by Earth on a 1.0 kilogram object resting on the surface of Earth. Earth's mass is \SI{5.97e24}{kg}, and the separation distance between Earth and object is Earth's radius, \SI{6.378e8}{m}. \textbf{\underline{Round}} your answer to the nearest whole number.
+\textbf{\underline{Calculate}} the gravitational force by Earth on a 1.0 kilogram object resting on the surface of Earth. Earth's mass is \SI{5.97e24}{kg}, and the separation distance between Earth and object is Earth's radius, \SI{6.378e6}{m}. \textbf{\underline{Round}} your answer to the nearest whole number.
 
 \begin{solutionorbox}[1.5cm]
+
 \begin{equation*}
-    F_g = \frac{G m_1 m_2}{r^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg})(\SI{1.00}{kg})(\SI{5.97e24}{kg})}{(\SI{7.378e6}{m})^2} = \SI{9.78}{N} \approx \boxed{\SI{10}{N}}
+    F_g = \frac{G m_1 m_2}{r^2} = \frac{(\SI{6.67e-11}{N\cdot m^2/kg})(\SI{1.00}{kg})(\SI{5.97e24}{kg})}{(\SI{6.378e6}{m})^2} = \SI{9.78}{N} \approx \boxed{\SI{10}{N}}
 \end{equation*}
 \end{solutionorbox}
 
@@ -377,6 +392,865 @@ Is $mgh$ a good representation of the exact value $E_\mathrm{change}$? Why or wh
 
 \clearpage
 
+
+
+\subsection*{Demos: Mechanical Energy}
+
+\begin{questions}
+\question
+A 1-kilogram bowling ball is launched vertically upwards at \SI{18}{m/s}. During a time interval of 3.6 seconds, the ball reaches the apex and travels back to the launch point. Below you'll \textbf{\underline{make}} the following graphs:
+
+\begin{itemize}[itemsep=0pt]
+    \item kinetic energy vs. time ($K$ vs.\:$t$)
+    \item gravitational potential energy vs. time ($P$ vs.\:$t$), assuming the launch point is the zero line
+    \item mechanical energy vs. time ($E$ vs.\:$t$)
+\end{itemize}
+
+\textbf{\underline{Access}} the Desmos graphing calculator at \href{https://www.desmos.com/calculator}{desmos.com/calculator}. \textbf{\underline{Type}} the following variables and equations in each cell:
+
+\begin{EnvUplevel}
+\centering
+\begin{minipage}{2.5cm}
+\centering
+\begin{tikzpicture}
+    \draw[ultra thick,->] (0,0) -- (0,1) node[left,pos=0.8] {$v_0$};
+    \draw[densely dashed] (0,0) node[below,align=center] {launch\\point} -- (0,6.1) node[above] {apex};
+    \fill (0,4) circle (2mm) node[right=2mm] {\SI{1}{kg}};
+\end{tikzpicture}
+\end{minipage}%
+\begin{minipage}{13cm}
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|l|l|}
+    \hline
+    \thead{\textbf{Type this in Desmos}} & \thead{\textbf{What it means}} \\ \hline
+    $m = 1$ & mass of launched object \\ \hline
+    $g = 10 $ & magnitude of gravitational acceleration \\ \hline
+    $v_0 = 18$ & vertical launch speed \\ \hline
+    $v(t) = v_0 - gt$ & vertical velocity as a function of time $t$ \\ \hline
+    $K(t) = \frac{1}{2} m \left(v\left(t\right)\right)^2 $ & kinetic energy (KE) as a function of time $t$ \\ \hline
+    $h(t) = v_0 t - \frac{1}{2}g t^2$ & height as a function of time $t$ \\ \hline
+    $P(t) = mg h(t)$ & gravitational potential energy (PE) as a function of time $t$ \\ \hline
+    $E(t) = K(t) + P(t) $ & mechanical energy (ME) as a function of time $t$ \\ \hline
+\end{tabular}
+\end{minipage}
+\end{EnvUplevel}
+
+\bigskip
+
+\textbf{\underline{Disable}} the graphs for $v(t)$ and $h(t)$ by clicking the left margin of each cell so that only $K(t)$, $P(t)$, and $E(t)$ are visible. Next, \textbf{\underline{click}} the graph settings (\faWrench) and set the X-Axis and Y-Axis limits to
+
+\begin{equation*}
+    0 \leq x \leq 4 \qquad \text{and} \qquad
+    0 \leq y \leq 180
+\end{equation*}
+
+Finally, \textbf{\underline{sketch}} the kinetic energy, gravitational potential energy, and mechanical energy vs. time graphs in the space below.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[height=7cm,width=8cm,
+    axis lines=left,
+    ylabel={Energy (J)},
+    xlabel={Time (s)},
+    ymin=0,ymax=180,
+    xmin=0,xmax=4,
+    ytick={0,20,...,180},
+    xtick={0,0.5,...,4},
+    grid=both,
+    legend cell align=left,        % <---
+    legend style={
+        at={(0.45,0.5)},
+        anchor=center,
+        font=\small,
+    },
+]
+    \ifprintanswers
+    \addplot[very thick,domain=0:3.6,variable=t,red] {0.5*1*(18-10*t)^2};
+    \addplot[very thick,domain=0:3.6,variable=t,blue] {1*10*(18*t-0.5*10*t^2)};
+    \addplot[very thick,domain=0:3.6,variable=t] {0.5*1*(18-10*t)^2 + 1*10*(18*t-0.5*10*t^2)};
+    \legend{KE, GPE, ME}
+    \fi
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{questions}
+
+\clearpage
+
+\subsection*{PhET Simulation: Energy Skate Park [UNDER CONSTRUCTION]}
+
+
+
+%Today, you will use the Energy Skate Park Lab to explore energy transformations and determine how the position of a skater affects his speed, potential energy and kinetic energy. http://bit.ly/3ucY9zW
+
+\textbf{Beginning Observations}
+
+\begin{questions}
+
+\question
+Open the Energy Skate Park PhET Simulation. What can you change about the scenario within the simulation? 
+
+\begin{solution}
+    Mass, friction and gravity, speed, track
+\end{solution}
+
+\question
+There are two types of energy representations available. Open both. Draw or describe the two types.
+
+\begin{solution}
+- bar graphs () and pie charts ()
+\end{solution}
+  
+\question
+Select the track of your choice. Select “Pie Chart”  and click on  .   What storage forms of energy are shown in the graph and chart? List below as well as the definition of each.
+
+\begin{solution}
+- Kinetic (Energy due to motion); Potential (Energy due to position); Thermal (energy due to heat) and Total Mechanical (sum of PE and KE)
+\end{solution}
+
+
+\uplevel{\bfseries Part 1: Energy Transformations }
+
+\question
+Create your own track or select one of the pre-made tracks. make sure to turn off friction. Draw four points on your track that you would like to investigate.  Place a screenshot of your track below.
+
+\question
+Fill in the predictions column by sketching what you think the Energy pie chart will look like for the ball at your four points. Then, use the simulation to test your ideas and explain any differences. 
+Point	Prediction	Simulation	Explain Differences
+
+\begin{solution}
+1	
+ 	No difference, or just a little KE since it’s difficult to pause at the exact point.
+2	
+ 	Almost the same, more KE than PE since closer to the valley.
+3	
+ 	Equal amounts of PE and KE since 3 is half way down from 1.
+4	
+ 	Very similar. More PE since we went past the middle path.
+\end{solution}
+
+\question
+The Law of Conservation of Energy states that energy cannot be created or destroyed. Therefore, energy can only be transformed. Use this statement to answer the questions that follow.
+a) What type(s) of energy did the skater have at the skater’s highest point? 
+
+\begin{solution}
+    Only PE
+\end{solution}
+    
+\question    
+What type(s) of energy did the skater at his lowest point?
+
+\begin{solution}
+    Only KE
+\end{solution}
+
+\question   
+What type of energy transformation did you see between the highest and lowest point in the motion of the skater? 
+
+\begin{solution}
+    The PE was being transformed to KE
+\end{solution}
+
+\question
+What is the definition of mechanical energy? Was mechanical energy conserved?
+
+\begin{solution}
+    Sum of KE and PE in a system. Yes, the TME stayed the same at any of the 4 points.
+\end{solution}
+
+\question
+turn on friction and redo your predictions. then run the simulation again and fill out the table below
+Point	Prediction	Simulation	Explain Differences
+
+\begin{solution}
+1	
+ 	No difference
+2	
+ 	Had not experienced friction long enough as I thought.
+3	
+ 	No difference. Equal amounts of PE and KE, while thermal is less than both.
+4	
+ 	No Difference
+\end{solution}
+
+\question
+Did adding friction allow for conservation of mechanical energy? Did this violate the law of conservation of energy? why or why not.
+
+\begin{solution}
+    No. Because as time went on, the sum of PE and KE does not give us the total. This indicate that some of the energy is lost as heat. However, this did not violate the law since the total energy stayed constant.
+\end{solution}
+
+\uplevel{\bfseries Part 2: Relating Speed to Potential and Kinetic Energy}
+
+\question
+Label on the track where you predict the skater will is 
+
+a) at his maximum speed
+b) stopped
+c) going his average speed
+d) going slow
+e) going fast
+
+\question
+On the graph to the right label where you predict the skater is 
+a) at his maximum speed
+b) stopped
+c) going his average speed
+d) going slow
+e) going fast
+
+\question
+Test your ideas using the Double Well Roller Coaster track. 
+a) Make any modifications to your answers in RED on the images for Questions 4 and 5. 
+
+\question
+If one of your friends asked you for help in making sense of the type of graph in Question 5. How would you explain what it is showing? *Consider: What is on each axis?  What types of energy are being graphed?
+
+\begin{solution}
+    The graph shoes the transformation between KE and PE with position and indicates that as one decreases, the other increases with an equal amount, thus keeping the TME conserved. There is more PE at higher elevation positions and more KE at positions with lower elevation.
+\end{solution}
+
+\question
+Using the graph in Question 5, what can you say about the total energy of the skater? 
+
+\begin{solution}
+      It stays the same all the time. 
+\end{solution}
+
+\uplevel{\bfseries Post Lab}
+
+\question
+The diagram below shows a frictionless track. 
+
+Assume a skater were to complete the track. At which positions is the sum of the potential and kinetic energy the same? Explain. 
+
+\begin{solution}
+    At every position, since there is only a transformation from one into the other.
+\end{solution}
+
+\question
+Using the diagram in Question 7, assume that the skater moves from point 1 to point 2. What type of energy transformation would exist in the movement between those two points?
+
+\begin{solution}
+    As the skater moves from point 1-2, their PE continually decreases while their KE continually increases.
+\end{solution}
+\end{questions}
+
+
+\clearpage
+
+\subsection*{Lab: Momentum and Collisions}
+
+\begin{mdframed}
+\textbf{Setting up the collision lab.}
+\begin{enumerate}[topsep=0pt]
+    \item Set up the Dynamics Track so that it reads \SI{0}{cm} to \SI{121}{cm} from left to right.
+    \item Place the two carts on the track, with the $+x$ arrow pointing towards \SI{120}{cm}.
+
+    \begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[width=15cm,
+            axis y line=none,
+            axis x line=left,
+            ymin=0,ymax=1,
+            xmin=0,xmax=122,
+            xtick={0,10,...,120},
+            minor x tick num=9]
+            \draw[thick] (5,0) rectangle ++(20,1cm) node[pos=0.5,align=center] {Cart 1\\$\rightarrow +x$};
+            \draw[thick] (60,0) rectangle ++(20,1cm) node[pos=0.5,align=center] {Cart 2\\$\rightarrow +x$};
+        \end{axis}
+    \end{tikzpicture}
+    \end{center}
+
+    \item Label the left one \textit{Cart 1} and the other \textit{Cart 2}. Do \textbf{\underline{NOT}} change their order or direction.
+    \item Launch Graphical Analysis at \href{https://graphicalanalysis.app/}{graphicalanalysis.app/}.
+    \begin{itemize}
+        \item Click ``Sensor Data Collection'' and connect with ``Wireless'' using the Carts' barcode ID.
+        \item Enable ``Light Mode'' in the app preferences.
+        \item Select the ``1 Graph'' option, and change the $y$-axis to Velocity.
+        \item \textit{Test cart direction.} Press ``Collect'' and move each cart from left to right. Their velocities should be positive. If velocities are negative, reverse the axis in the app settings.
+    \end{itemize}
+    \item Locate the magnetic tabs on a cart's bumper. Practice reversing the magnets so that the carts stick together (inelastic collision) or repel each other (elastic collision).
+\end{enumerate}
+\textbf{\underline{Note}}: In the tables below, record \textbf{\underline{ALL}} values to at least 3 decimal places (e.g., \SI{0.391}{m/s}).
+\end{mdframed}
+
+\textbf{Inelastic Collisions}
+
+\textbf{\underline{Setup}:} For an inelastic collision, set the magnets so that the carts stick together. 
+
+\begin{questions}
+\question \label{nLPqE}
+\textit{Inelastic collision with Cart 2 initially at rest}. 
+
+\begin{parts}
+\part Measure the mass of Carts 1 and 2. Convert to kilograms (e.g., \SI{213}{g} equals \SI{0.213}{kg}), and record values in the table below.
+
+
+\part
+Place Cart 2 at rest in the middle of the track, and Cart 1 near \SI{0}{cm}. Click ``Collect'' and push Cart 1 so it rolls toward Cart 2. The carts will collide, stick together, and roll together.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (5,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1 ($m_1$)};
+        \draw[very thick,->] (27,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{1i}$};
+        \draw (60,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2 ($m_2$)} node[pos=0.5,right=11] {$\vec{v}_{2i} = 0$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries Before Collision};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (45,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw (65,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (88,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_f$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries After Collision};
+\end{tikzpicture}
+\end{EnvUplevel}
+
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.\\(See part (d) below for guidance on calculating momentum values.)
+
+\begin{EnvUplevel}
+\centering
+\def\arraystretch{2}
+%...This table was powered by ChatGPT.
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+
+    \multirow{2}{*}{1}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.388} & \multirow{2}{*}{{\anscolor 0.195}}
+      & {\anscolor 0.1135} & \multirow{2}{*}{{\anscolor 0.1145}}
+      & \multirow{2}{*}{{\anscolor 0.1135}}
+      & \multirow{2}{*}{{\anscolor 0.1145}} \\
+    \cline{2-4}\cline{6-6}
+      & Cart 2
+      & {\anscolor 0.29486} & {\anscolor 0.000} &
+      & {\anscolor 0.000} & & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+
+\part Calculate momentum ($p=mv$) values and record them in the table above, as follows:
+
+\begin{align*}
+    m_1 \text{ momentum before collision} &= m_1 \vec{v}_{1i} \\[1ex]
+    m_2 \text{ momentum before collision} &= m_2 \vec{v}_{2i} \\[1ex]
+    \text{total momentum before collision} &= m_1 \vec{v}_{1i} + m_2 \vec{v}_{2i} \\[1ex]
+    \text{total momentum after collision} &= (m_1 + m_2) \vec{v}_f
+\end{align*}
+
+
+\end{parts}
+
+
+\question
+\textit{Inelastic collision with Cart 2 initially in motion}.
+
+\begin{parts}
+\part Copy mass values to the table below from the previous table. 
+
+\part
+Place the Cart 2 in the middle of the track, and Cart 1 near \SI{0}{cm}. Click ``Collect'' and release both Carts 1 and 2 to roll to the right with Cart 2 at a slower velocity, so they collide.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (5,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw[very thick,->] (27,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{1i}$};
+        \draw (60,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (82,4mm) -- ++(5,0) node[pos=0.5,above] {$\vec{v}_{2i}$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries Before Collision};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (45,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw (65,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (88,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_f$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries After Collision};
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.
+
+\part
+Calculate momentum ($p=mv$) values and record them in the table.
+
+\begin{EnvUplevel}
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+
+    \multirow{2}{*}{2}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.450} & \multirow{2}{*}{{\anscolor 0.300}}
+      & {\anscolor 0.1316} & \multirow{2}{*}{{\anscolor 0.1762}}
+      & \multirow{2}{*}{{\anscolor 0.1761}}
+      & \multirow{2}{*}{{\anscolor 0.1762}} \\
+    \cline{2-4}\cline{6-6}
+      & Cart 2
+      & {\anscolor 0.29486} & {\anscolor 0.151} &
+      & {\anscolor 0.04452} & & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+\end{parts}
+
+\medskip
+
+\question
+\textit{Inelastic collision with mass added to Cart 2}.
+
+\begin{parts}
+\part
+Add two weights to Cart 2. Measure the new mass of Cart 2, and update mass values in the table below.
+
+\part
+Place Cart 2 at rest in the middle of the track, and Cart 1 near \SI{0}{cm}. Click ``Collect'' and push Cart 1 so it rolls toward Cart 2, like in Question \ref{nLPqE}(b) above.
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.
+
+\part Calculate momentum ($p=mv$) values and record them in the table.
+
+
+\begin{EnvUplevel}
+\def\arraystretch{2}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+
+    \multirow{2}{*}{3}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.480} & \multirow{2}{*}{{\anscolor 0.172}}
+      & {\anscolor 0.1404} & \multirow{2}{*}{{\anscolor 0.1439}}
+      & \multirow{2}{*}{{\anscolor 0.1404}}
+      & \multirow{2}{*}{{\anscolor 0.1439}} \\
+    \cline{2-4}\cline{6-6}
+      & Cart 2
+      & {\anscolor 0.54416} & {\anscolor 0.000} &
+      & {\anscolor 0.000} & & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+\end{parts}
+
+
+\begin{EnvUplevel}
+\textbf{Elastic Collisions}
+
+\textbf{\underline{Setup}:} For an elastic collision, set the magnets so that the carts bounce away from each other. 
+\end{EnvUplevel}
+
+
+\question \label{HrRIK}
+\textit{Elastic collision with Cart 2 initially at rest}. 
+
+\begin{parts}
+\part 
+Copy the original mass values for Carts 1 and 2 to the table below.
+
+\part
+Place Cart 2 at rest in the middle of the track, and Cart 1 near \SI{0}{cm}. Click ``Collect'' and gently push Cart 1 so it rolls toward Cart 2. The carts will collide and bounce off each other.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (5,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw[very thick,->] (27,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{1i}$};
+        \draw (60,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2} node[pos=0.5,right=11] {$\vec{v}_{2i} = 0$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries Before Collision};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (45,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw[very thick,->] (67,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{1f}$};
+        \draw (85,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (107,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{2f}$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries After Collision};
+\end{tikzpicture}
+\end{EnvUplevel}
+
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.
+
+\part Calculate momentum ($p=mv$) values and record them in the table. This time,
+
+\begin{equation*}
+    \text{total momentum after collision} = m_1 \vec{v}_{1f} + m_2 \vec{v}_{2f}
+\end{equation*}
+
+\begin{EnvUplevel}
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+
+    % Run 1
+    \multirow{2}{*}{4}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.342} & {\anscolor 0.000}
+      & {\anscolor 0.1000} & {\anscolor 0.000}
+      & \multirow{2}{*}{{\anscolor 0.1000}}
+      & \multirow{2}{*}{{\anscolor 0.09907}} \\
+    \cline{2-7}
+      & Cart 2
+      & {\anscolor 0.29486} & {\anscolor 0.000} & {\anscolor 0.336}
+      & {\anscolor 0.000} & {\anscolor 0.09907}
+      & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+\end{parts}
+
+\medskip
+
+\question
+\textit{Elastic collision with Cart 2 initially in motion}.
+
+\begin{parts}
+\part Copy mass values to the table below from the previous table. 
+
+\part
+Place Cart 1 near \SI{0}{cm} and Cart 2 on the opposite end. Click ``Collect'' and release both Carts 1 and 2 to roll towards each other, so that the carts move in opposite directions after the collision.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (15,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw[very thick,->] (37,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{1i}$};
+        \draw (85,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (83,4mm) -- ++(-10,0) node[pos=0.5,above] {$\vec{v}_{2i}$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries Before Collision};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}
+    \begin{axis}[width=15cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw (35,0) rectangle ++(20,8mm) node[pos=0.5] {Cart 1};
+        \draw[very thick,->] (33,4mm) -- ++(-10,0) node[pos=0.5,above] {$\vec{v}_{1f}$};
+        \draw (65,0) rectangle ++(20,8mm) node[pos=0.5,align=center] {Cart 2};
+        \draw[very thick,->] (87,4mm) -- ++(10,0) node[pos=0.5,above] {$\vec{v}_{2f}$};
+    \end{axis}
+    \node[above=1mm] at (current bounding box.north) {\bfseries After Collision};
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.
+
+\part
+Calculate momentum ($p=mv$) values and record them in the table.
+
+\begin{EnvUplevel}
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+    
+    % Run 2
+    \multirow{2}{*}{5}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.677} & {\anscolor 0.254}
+      & {\anscolor 0.1980} & {\anscolor 0.07427}
+      & \multirow{2}{*}{{\anscolor 0.2740}}
+      & \multirow{2}{*}{{\anscolor 0.2709}} \\
+    \cline{2-7}
+      & Cart 2
+      & {\anscolor 0.29486} & {\anscolor 0.258} & {\anscolor 0.667}
+      & {\anscolor 0.07607} & {\anscolor 0.1967}
+      & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+\end{parts}
+
+\medskip
+
+\question
+\textit{Elastic collision with mass added to Cart 2}.
+
+\begin{parts}
+\part
+Add two weights to Cart 2. Measure the new mass of Cart 2, and update mass values in the table below.
+
+\part
+Place Cart 2 at rest in the middle of the track, and Cart 1 near \SI{0}{cm}. Click ``Collect'' and push Cart 1 so it rolls toward Cart 2. The carts will collide and bounce off each other, like in Question \ref{HrRIK}(b). 
+
+\part 
+Collect velocity data from graphical analysis and record values in the data table below.
+
+\part Calculate momentum ($p=mv$) values and record them in the table.
+
+\begin{EnvUplevel}
+\centering
+\def\arraystretch{2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \thead{Run\\number} 
+    & \thead{Cart ID} 
+    & \thead{Mass of\\cart\\(kg)} 
+    & \thead{Velocity\\before\\collision\\(m/s)} 
+    & \thead{Velocity\\after\\collision\\(m/s)} 
+    & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+    & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+    \hline
+    
+    % Run 3
+    \multirow{2}{*}{6}
+      & Cart 1
+      & {\anscolor \hspace{2mm} 0.29242 \hspace{2mm}} & {\anscolor 0.401} & {\anscolor $-0.107$}
+      & {\anscolor 0.1173} & {\anscolor $-0.03129$}
+      & \multirow{2}{*}{{\anscolor 0.1173}}
+      & \multirow{2}{*}{{\anscolor 0.1200}} \\
+    \cline{2-7}
+      & Cart 2
+      & {\anscolor 0.54416} & {\anscolor 0.000} & {\anscolor 0.278}
+      & {\anscolor 0.000} & {\anscolor 0.1513}
+      & & \\ 
+    \hline
+\end{tabular}
+\end{EnvUplevel}
+
+\end{parts}
+
+\medskip
+
+\question
+\textit{Analysis.}
+If the total momentum for a system is the same before and after the collision, we say that momentum is conserved. Let's look for evidence of momentum conservation.
+
+Look at the last 2 columns of each of the tables above. For the two-cart system, let
+
+\begin{align*}
+    p_i &= \text{total momentum before collision} \\
+    p_f &= \text{total momentum after collision}
+\end{align*}
+
+\begin{parts}
+\part Use the formula
+
+\begin{equation*}
+    \text{percent difference} = \frac{\left|p_f - p_i\right|}{\frac{1}{2}\left(\left|p_i\right| + \left|p_f\right|\right)} \times 100
+\end{equation*}
+
+to calculate the percent difference in total momentum for each of the 6 trials, and record your values below. \textit{Tip:} Define variables in \href{https://www.desmos.com/scientific}{desmos.com/scientific} to streamline your calculations.
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+     & Run 1 & Run 2 & Run 3 & Run 4 & Run 5 & Run 6 \\ \hline
+    \% difference & {\anscolor 0.93} & {\anscolor 0.04} & {\anscolor 2.5} & {\anscolor 0.94} & {\anscolor 1.1} & {\anscolor 2.3} \\ \hline
+\end{tabular}
+\end{center}
+
+\part If the percent difference is less than 5\%, there is good evidence that momentum is conserved. Was momentum conserved in the 6 runs in this lab? Cite evidence from the table above.
+
+\ifprintanswers
+\else
+\fillwithlines{21mm}
+\fi
+
+\end{parts}
+
+
+\end{questions}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+%     \hline
+%     \thead{Run\\number} 
+%     & \thead{Cart ID} 
+%     & \thead{Mass of\\cart\\(kg)} 
+%     & \thead{Velocity\\before\\collision\\(m/s)} 
+%     & \thead{Velocity\\after\\collision\\(m/s)} 
+%     & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} \\ 
+%     \hline
+
+%     1 & Cart 1 & & & \multirow{2}{*}{} & & & & \\ \cline{1-4}\cline{6-9}
+%     1 & Cart 2 & & &                 & & & & \\ \hline
+
+%     2 & Cart 1 & & & & & & & \\ \hline
+%     2 & Cart 2 & & & & & & & \\ \hline
+%     3 & Cart 1 & & & & & & & \\ \hline
+%     3 & Cart 2 & & & & & & & \\ \hline
+% \end{tabular}
+
+% \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+%     \hline
+%     \thead{Run\\number} 
+%     & \thead{Cart ID} 
+%     & \thead{Mass of\\cart\\(kg)} 
+%     & \thead{Velocity\\before\\collision\\(m/s)} 
+%     & \thead{Velocity\\after\\collision\\(m/s)} 
+%     & \thead{Momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Momentum\\after\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Total\\momentum\\before\\collision\\(\SI{}{kg\cdot m/s})} 
+%     & \thead{Total\\momentum\\after\\collision\\(\SI{}{kg\cdot m/s})}  \\ \hline
+%     1 & Cart 1 & & & & & & & \\ \hline
+%     1 & Cart 2 & & & & & & & \\ \hline
+%     2 & Cart 1 & & & & & & & \\ \hline
+%     2 & Cart 2 & & & & & & & \\ \hline
+%     3 & Cart 1 & & & & & & & \\ \hline
+%     3 & Cart 2 & & & & & & & \\ \hline
+% \end{tabular}
+
+
+\clearpage
+
+\subsection{Energy is Conserved}
+
+\begin{questions}
+    
+
+
 \question \label{xxSTEr}
 What is the equation for gravitational potential energy? What is the SI unit of gravitational potential energy?
 
@@ -493,8 +1367,6 @@ What is the mass of an object that has a gravitational potential energy of \SI{2
 \end{questions}
 
 
-\subsubsection{Comparing Potential Energy}
-\subsubsection{Multiple Representations for Total Mechanical Energy}
 
 \begin{center}
 \begin{tikzpicture}
@@ -517,72 +1389,9 @@ What is the mass of an object that has a gravitational potential energy of \SI{2
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Effects of Changing Physical Quantities on Energy}
-\subsubsection{Calculations of Total Mechanical Energy}
-
-\begin{questions}
-\question
-Suppose a 1-kilogram object is launched vertically upwards at \SI{18}{m/s}. Make a graph of the object's kinetic energy vs. time, gravitational potential energy vs. time, and total mechanical energy vs. time, as follows. Go to \href{https://www.desmos.com/calculator}{desmos.com/calculator}. Enter the following variables and equations in each cell:
-
-\begin{align*}
-    & m = 1 \\[1ex]
-    & g = 10 \\[1ex]
-    & v_0 = 18 \\[1ex]
-    & v(t) = v_0 - gt \\[1ex]
-    & K(t) = \frac{1}{2} m v\left(t\right)^2 \\[1ex]
-    & h(t) = v_0 t - \frac{1}{2}g t^2 \\[1ex]
-    & P(t) = mg h(t) \\[1ex]
-    & E(t) = K(t) + P(t)
-\end{align*}
-
-where $m$ is mass, $g$ is gravitational acceleration, $v_0$ is the initial speed, $v(t)$ is the velocity as a function of time $t$, $K(t)$ is kinetic energy as a function of time, $h(t)$ is the vertical displacement, $P(t)$ is gravitational potential energy, and $E(t)$ is total mechanical energy.
-
-\textbf{Disable} the graphs for $v(t)$ and $h(t)$ so that only $K(t)$, $P(t)$, and $E(t)$ are visible. Then click the graph settings (\faWrench) and set the X-Axis and Y-Axis limits to
-
-\begin{equation*}
-    0 \leq x \leq 4 \qquad \text{and} \qquad
-    0 \leq y \leq 180
-\end{equation*}
-
-Finally, sketch the kinetic energy, gravitational potential energy, and mechanical energy vs. time graphs in the space below.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[height=6cm,width=8cm,
-    axis lines=left,
-    ylabel={Energy (J)},
-    xlabel={Time (s)},
-    ymin=0,ymax=180,
-    xmin=0,xmax=4,
-    ytick={0,20,...,180},
-    xtick={0,0.5,...,4},
-    % minor y tick num=1,
-    % minor x tick num=1,
-    grid=both,
-]
-    \ifprintanswers
-    \addplot[domain=0:3.6,thick,variable=t,red] {0.5*1*(18-10*t)^2};
-    \addplot[domain=0:3.6,thick,variable=t,green!50!black] {1*10*(18*t-0.5*10*t^2)};
-    \addplot[domain=0:3.6,thick,variable=t] {0.5*1*(18-10*t)^2 + 1*10*(18*t-0.5*10*t^2)};
-    \fi
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-
-\question \label{2EkX0c}
-Define mechanical energy.
-
-
-
-
-\end{questions}
-
 \clearpage
 
-\subsection{Energy is Conserved}
-
-\subsubsection{Energy of a System Before and After an Event}
+\end{questions}
 
 \subsubsection{Law of Conservation of Energy}
 

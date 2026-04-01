@@ -8,7 +8,7 @@
 \runningheader{}{}{}
 
 \begin{document}
-\section{Constant Motion}
+\section*{Unit 1: Constant Motion}
 \begin{questions}
 
 \question
@@ -1431,6 +1431,48 @@ Make a graph of kinetic energy as a function of time for both the hunter and the
         \end{tikzpicture}
     \end{center}
 \end{solution}
+\end{questions}
 
+
+\section*{Unit 8: Conservation in Mechanical Systems}
+
+\begin{questions}
+\question
+The graphs below show the initial and final energies of a rock-earth system as the rock falls towards the earth. Which of the following statements could be inferred from the data in the graphs below?
+
+\begin{center}
+    \begin{tikzpicture}
+    \begin{axis}[width=5cm,height=5cm,ymin=0,ymax=12,title=\textbf{Initial},
+        symbolic x coords={$E_g$,$E_k$,$E_\mathrm{T}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=lightgray] coordinates {
+            ($E_g$,8)
+            ($E_k$,4)
+            ($E_\mathrm{T}$,12)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+    \hspace{1cm}
+    \begin{tikzpicture}
+    \begin{axis}[width=5cm,height=5cm,ymin=0,ymax=12,title=\textbf{Final},
+        symbolic x coords={$E_g$,$E_k$,$E_\mathrm{T}$},
+        xtick=data,
+        yticklabel=\empty]
+        \addplot[ybar,fill=lightgray] coordinates {
+            ($E_g$,6)
+            ($E_k$,4)
+            ($E_\mathrm{T}$,8)
+        };
+    \end{axis}
+    \end{tikzpicture}%
+\end{center}
+
+\begin{randomizechoices}[norandomize]
+    \choice The decrease in kinetic energy is due to the external work of air resistance.
+    \choice The decrease in potential energy is due to the external work of air resistance.
+    \correctchoice The decrease in total energy is due to the external work of air resistance.
+    \choice Since the kinetic energy was constant, there was no external work done on the system.
+\end{randomizechoices}
 \end{questions}
 \end{document}

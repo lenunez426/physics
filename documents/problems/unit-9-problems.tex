@@ -1,5 +1,4 @@
-
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \input{documents/physics-glossary}
@@ -8,12 +7,1077 @@
 \setrandomizerseed{1}
 
 \firstpageheader{Physics}{Unit 9: Oscillatory Motion}{Problems}
-\runningheader{}{}{}
+\runningheader{{Name:\enspace\makebox[6cm]{\hrulefill}}}{}{}
 
 \begin{document}
 
 \begin{questions}
 \question
-.
+Match the term with the best fitting definition
+
+\begin{EnvUplevel}
+\centering
+\fbox{
+\begin{minipage}{4cm}
+\centering
+\textbf{Terms}
+\begin{enumerate}[label={\Alph*.}]
+    \item Oscillatory Motion
+    \item Equilibrium
+    \item Restoring Force
+    \item Period ($T$)
+    \item Frequency ($f$)
+    \item Amplitude
+\end{enumerate}
+\end{minipage}}%
+\begin{minipage}{11.5cm}
+\centering
+\begin{itemize}
+    \item[] \fillin[C][5mm]\ The ``pull'' that brings the object back toward equilibrium\\whenever it moves away.
+    \item[] \fillin[B][5mm]\ The place where the object rests if undisturbed.
+    \item[] \fillin[D][5mm]\ The time it takes for one complete cycle (back and forth).\\Measured in seconds (s).
+    \item[] \fillin[F][5mm]\ The maximum distance moved from the equilibrium point.
+    \item[] \fillin[A][5mm]\ Motion that repeats itself back and forth over the same path,\\centered around an equilibrium position.
+    \item[] \fillin[E][5mm]\ How many cycles occur in one second. Measured in Hertz (Hz).
+\end{itemize}
+\end{minipage}
+\end{EnvUplevel}
+
+
+
+\question
+For a pendulum, where is the equilibrium point?
+
+\begin{randomizechoices}
+    \choice Half way from the release point to the bottom point.
+    \choice At the point of release.
+    \correctchoice At the bottom most point of its motion.
+\end{randomizechoices}
+
+\question
+In your own words, describe oscillatory motion. Do your best to use some of the new academic language in your description.
+
+\question
+What caused the pendulum bob to move towards and away from the equilibrium point?
+
 \end{questions}
+
+\begin{questions}
+
+\question
+What is the period of a pendulum if its frequency is \SI{0.25}{Hz}?
+
+\question
+What is the frequency of a bobbing spring (spring moving up and down only) if its period is \SI{37}{s}?
+
+\question
+How would the period of a pendulum if the mass at the end of the string fell off?
+
+\question
+How would the period of a pendulum be affected if its string was cut in half?
+
+\question
+How would the period of a spring toy change if a spring with a k value twice as big was substituted for the original one? How would its frequency change?
+\end{questions}
+
+
+\textbf{Day 3 CFU}
+
+\begin{questions}
+\question 
+When analyzing how energy is stored with a swinging pendulum, the greatest amount of\\ \fillin[][3cm]\ energy can be found at the ends, where it is at its maximum \fillin[][3cm].
+
+\question
+When analyzing how energy is stored with a swinging pendulum, the greatest amount of\\ \fillin[][3cm]\ energy can be found at the bottom, where it is at its maximum \fillin[][3cm].
+
+\question
+The total mechanical energy of an object that is in oscillatory motion changes as it moves back and forth.
+
+\question
+In spring oscillation, the \fillin[][3cm]\ is how far the object is moving away from the resting point. 
+\begin{randomizechoices}[norandomize]
+    \choice True
+    \correctchoice False
+\end{randomizechoices}
+
+\question
+The mathematical model to calculate the period of a spring is
+
+\begin{randomizechoices}[norandomize]
+    \choice $\displaystyle T = 2\pi \sqrt{\frac{l}{g}}$  \vspace{6pt}
+    \choice $\displaystyle T = 2\pi \sqrt{\frac{g}{l}}$  \vspace{6pt}
+    \correctchoice $\displaystyle T = 2\pi \sqrt{\frac{m}{k}}$  \vspace{6pt}
+    \choice $\displaystyle T = 2\pi \sqrt{\frac{k}{m}}$  \vspace{6pt}
+\end{randomizechoices}
+
+\question
+A mass on a spring is pulled to its maximum stretch point and held there momentarily before release.
+
+\begin{center}
+\begin{tikzpicture}[y=1.2cm]
+    %...wall, equilibrium line, and amplitude
+    \draw[fill=black!15] (-0.4,1) -- (0,1) -- (0,-1) -- (-0.4,-1);
+    \draw[thick,densely dashed] (3,-1) -- (3,1) node[above,align=center] {equilibrium\\position};
+    \draw[<->] (3.1,-0.8) -- (6,-0.8) node[below,pos=0.5] {$\Delta x$};
+    
+    %...springs:
+    \draw[decorate,decoration={coil,segment length=3mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,0) -- ++(6,0);
+    \draw[fill=black!20] (5.85,-0.15) rectangle ++(0.3,0.3);
+    \draw[thick,->] (6.2,0) -- ++(0.6,0) node[right] {$F$ \hspace{2mm} stretch}; 
+\end{tikzpicture}
+\end{center}
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph A},
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph B},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph C},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph D},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,30)
+        ($E_s$,20)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+The mass has been released and is currently passing through the equilibrium point. 
+
+\begin{center}
+\begin{tikzpicture}[y=1.2cm]
+    %...wall, equilibrium line, and amplitude
+    \draw[fill=black!15] (-0.4,1) -- (0,1) -- (0,-1) -- (-0.4,-1);
+    \draw[thick,densely dashed] (3,-1) -- (3,1) node[above,align=center] {equilibrium\\position};
+    % \draw[<->] (3.1,-0.8) -- (6,-0.8) node[below,pos=0.5] {$\Delta x$};
+    
+    %...springs:
+    \draw[decorate,decoration={coil,segment length=1.5mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,0) -- ++(3,0);
+    \draw[fill=black!20] (2.85,-0.15) rectangle ++(0.3,0.3);
+    \draw[thick,<-] (3.3,0) -- ++(0.5,0) node[above,pos=0.5] {$\vec{v}$}; 
+\end{tikzpicture}
+\end{center}
+
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph A},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph B},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph C},
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph D},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,30)
+        ($E_s$,20)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+A mass on a spring is pulled to its maximum stretch point and release from rest. At the instant shown in the figure below, the mass is \textbf{\underline{halfway}} between the release point and the equilibrium point.
+
+\begin{center}
+\begin{tikzpicture}[y=1.2cm]
+    %...wall, equilibrium line, and amplitude
+    \draw[fill=black!15] (-0.4,1) -- (0,1) -- (0,-1) -- (-0.4,-1);
+    \draw[thick,densely dashed] (3,-1) -- (3,1) node[above,align=center] {equilibrium\\position};
+    \draw[<->] (3.1,-0.8) -- (6,-0.8) node[below,pos=0.5] {Amplitude};
+    
+    %...spring:
+    \draw[decorate,decoration={coil,segment length=2.25mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,0) -- ++(4.5,0);
+    \draw[fill=black!20] (4.35,-0.15) rectangle ++(0.3,0.3);
+    % \draw[thick,<-] (4.7,0) -- ++(0.5,0) node[right] {$\vec{v}$}; 
+\end{tikzpicture}
+\end{center}
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph A},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph B},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph C},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,0)
+        ($E_s$,50)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph D},
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,75)
+        ($E_g$,00)
+        ($E_s$,25)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,75)
+        ($E_g$,00)
+        ($E_s$,25)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+A mass on a pendulum is pulled to its maximum height point and held there momentarily before release.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[lightgray] (0,0) -- (0,-1.1) node[below,black,align=center] {\small equilibrium\\ \small position};
+    % \draw[densely dashed] (0,{-sin(60)}) -- ++(0.7,0);
+    % \draw[densely dashed] (0,-1) -- ++(0.7,0) node[below,pos=0.7] {zero line};
+    % \draw[thick,<->] (0.65,-1) -- (0.65,{-sin(60)}) node[right,pos=0.5] {$h$};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({cos(60)},{-sin(60)});
+    \draw (0,0) -- (P) node[pos=0.5,right] {$l$};
+    \draw (0,-0.2) arc (270:300:0.2) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (300:240:1);
+    \fill (P) circle (0.04);
+\end{tikzpicture}
+\end{center}
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph A},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph B},
+        grid=both,
+    ]
+    \ifprintanswers
+        \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph C},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph D},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,30)
+        ($E_s$,20)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+After being released from rest, the mass on a pendulum is currently passing through the equilibrium point. Draw the energy bar chart for this exact moment.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[lightgray] (0,0) -- (0,-1);% node[below=0.08,black,align=center] {\small equilibrium\\ \small position};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at (0,-1);
+    \draw (0,0) -- (P) node[pos=0.5,right] {$l$};
+    \draw[densely dashed] ({cos(60)},{-sin(60)}) arc (300:240:1);
+    \fill (P) circle (0.04);
+    \draw[thick,->] (P) -- ++(-0.35,0) node[left] {$\vec{v}$};
+\end{tikzpicture}
+\end{center}
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph A},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,0)
+        ($E_s$,100)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph B},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph C},
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph D},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,30)
+        ($E_s$,20)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+\question
+After being released from rest, the mass on a pendulum passes beyond the equilibrium point and is \textbf{\underline{vertically halfway}} to the maximum height.
+
+\begin{center}
+\begin{tikzpicture}[x=10cm,y=10cm]
+    \draw[black!30] ({-1.05*sin(30)},{0.5*(-1-cos(30))}) -- (0,{0.5*(-1-cos(30))});
+    \draw[black!30] ({-1.05*sin(30)},{-cos(30)}) node[left,black] {$h_\text{\tiny max}$} -- (0,{-cos(30)});
+    \draw[black!30] ({-1.05*sin(30)},-1) node[left,black] {zero line} -- (0,-1);
+    \coordinate (P) at ({-sin(21.1)},{-cos(21.1)}); %... Why 21.1 deg? See https://chatgpt.com/s/t_6999d65aa14081919716f0730fb2609f
+    \draw[densely dashed,thick] ({-sin(30)},{-cos(30)}) arc (240:270:1);
+    \fill (P) circle (0.015);
+    \draw[thick] (P) -- ($(P)!0.1!(0,0)$);
+\end{tikzpicture}
+\end{center}
+
+Which of the following energy bar charts corresponds to the correct energy distribution for this exact moment?
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph A},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,0)
+        ($E_g$,100)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph B},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,100)
+        ($E_g$,0)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={\ifprintanswers \color{red} \bfseries \fi Graph C},
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[ybar,red,fill=red!40!white] coordinates {
+        ($E_k$,50)
+        ($E_g$,50)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \else
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,50)
+        ($E_g$,50)
+        ($E_s$,0)
+        ($E_\mathrm{tot}$,100)
+    };
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{2mm}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=5cm,
+        height=5cm,
+        ymin=0,
+        ymax=101,
+        symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{tot}$},
+        xtick=data,
+        yticklabel=\empty,
+        title={Graph D},
+        grid=both,
+    ]
+    \addplot[ybar,fill=black!20] coordinates {
+        ($E_k$,75)
+        ($E_g$,00)
+        ($E_s$,25)
+        ($E_\mathrm{tot}$,100)
+    };
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+\end{questions}
+
+\clearpage
+
+\subsection*{Lab: Spring and Pendulum Oscillation}
+% \begin{mdframed}
+\fbox{
+\begin{minipage}{11cm}
+\centering
+\vspace{1ex}
+\textbf{How to Set Up the Spring-Cart System}
+\begin{enumerate}
+    \item Set up a track nearly vertically, with \SI{0}{cm} at the bottom.
+    \item Attach a spring to the top of the track, near \SI{120}{cm}.
+    \item Hang a cart to the bottom of the spring, with $+x$ pointing up.
+    \item \textit{Finding balance.} Ensure the track is not so vertical that the cart can't stay bounded to it, but vertical enough allow the cart to undergo long, smooth oscillations. Ask for help if unsure.
+    \item Launch Graphical Analysis at \href{https://graphicalanalysis.app/}{graphicalanalysis.app/}.
+    \begin{itemize}[topsep=0pt]
+        \item Click ``Sensor Data Collection'' and connect with\\``Wireless'' using the Cart's barcode ID.
+        \item Enable ``Light Mode'' in the app preferences.
+        % \item In ``View Options,'' toggle the option for ``3 Graphs.'' By default, the graphs are position, velocity, and acceleration.
+        % \item In bottom right corner, toggle ``Reset (Zero) on Collect.''
+        % \item Select the ``1 Graph'' option, and change the $y$-axis to Velocity.
+    \end{itemize}
+\end{enumerate}
+\vspace{1ex}
+\end{minipage}}%
+% \fbox{
+\begin{minipage}{4cm}
+\centering
+\begin{tikzpicture}[rotate=80]
+    \begin{axis}[width=11cm,
+        axis y line=none,
+        axis x line=left,
+        ymin=0,ymax=1,
+        xmin=0,xmax=122,
+        xtick={0,10,...,120},
+        minor x tick num=9]
+        \draw[thick] (30,0) rectangle ++(20,1cm) node[pos=0.5,align=center] {Cart\\$\rightarrow +x$};
+        \draw[decorate,decoration={coil,segment length=1.5mm,post length=2mm,pre length=2mm,amplitude=3mm}] (50,0.5cm) -- ++(70,0);
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+% \end{mdframed}
+
+\begin{questions}
+\question
+\textit{How displacement affects spring period.}
+
+\begin{parts}
+\part Allow the cart to come to rest on the spring. In Graphical Analysis, click the Sensor Action settings (bottom right corner) and select ``Zero.'' Now, use the front edge of the cart as reference to mark the cart's position on the track. This is the equilibrium position.
+
+
+\begin{center}
+    Equilibrium position (cm): \fillin[][3cm]
+\end{center}
+
+\part 
+Displace the cart from equilibrium by \SI{15}{cm}, and release it from rest. Press ``Collect'' in Graphical Analysis. Take a screenshot of the position and velocity vs.\,time graphs, and send the file to your lab partners via Google Drive.
+
+
+\part Displace the cart \textbf{\underline{10 centimeters}} below equilibrium, and be ready to release from rest. Use a stopwatch to time 10 oscillation cycles.
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Time for 10 cycles, in seconds (s)} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Divide the time found in the previous part by 10. This is the cart's oscillation period, $T_1$:
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Period $T_1$, in seconds} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Now, displace the cart \textbf{\underline{20 centimeters}} below equilibrium, and be ready to release from rest. Again, use a stopwatch to time 10 oscillation cycles.
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Time for 10 cycles, in seconds} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Divide the time found in the previous part by 10. Call this period $T_2$:
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Period $T_2$, in seconds} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+
+\part Is there a big difference in the period $T$ when the cart is released from different displacements?
+
+\fillwithlines{21mm}
+
+\end{parts}
+
+\question \textit{How pendulum length affects the period of oscillation.}
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}[x=4cm,y=4cm]
+    \draw[lightgray] (0,0) -- (0,-1.05); % node[below,black,align=center] {\small equilibrium\\ \small position};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({cos(60)},{-sin(60)});
+    \draw (0,0) -- (P) node[pos=0.5,right=2mm] {$l$};
+    \draw (0,-0.2) arc (270:300:0.2) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (300:240:1);
+    \begin{scope}[shift={(P)},x=2cm,y=2cm,rotate=30]
+        % \draw[very thick,->] (P) -- (0,{1.2*cos(30)}) node[pos=0.8,right=0.05] {$F_\text{\tiny T}$};
+        % \draw[-{Latex[length=2mm,width=2mm]},very thick] (0,0) -- ({-1.3*sin(30)},0) node[below left,shift={(0.2,0)}] {$-mg \sin{\theta}$};
+        \fill (0,0) circle (0.07) node[right=0.07] {$m$};
+        % \draw[-{Latex[length=2mm,width=2mm]},very thick,rotate=-30] (0,0) -- (0,-1.3) node[below] {$mg$};
+        % \draw[densely dashed] (0,0) -- ++(0,{-1.2*cos(30)}); 
+        % \draw[rotate=-30] (0,-0.3) arc (270:300:0.3) node[pos=0.7,below] {$\theta$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part 
+Set the length of the pendulum to \SI{75}{cm}, and release the mass from rest from an angle of no more than \ang{20} from the vertical. Use a stopwatch to time 10 oscillation cycles. 
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Time for 10 cycles, in seconds (s)} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Divide the time found in the previous part by 10. This is the pendulum's oscillation period, $T_1$:
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Period $T_1$, in seconds} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part 
+Now double the pendulum length to \SI{1.5}{m}, again releasing the mass from rest from an angle $\leq \ang{20}$. Use a stopwatch to time 10 oscillation cycles.
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Time for 10 cycles, in seconds (s)} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Divide the time found in the previous part by 10. Call this period $T_2$:
+
+\begin{center}
+\def\arraystretch{2}
+\begin{tabular}{|c|}
+    \hline
+    \thead{Period $T_2$, in seconds} \\ \hline
+      \ifprintanswers
+        \textcolor{red}{0} \\ \hline
+      \else
+        \textcolor{white}{0} \\ \hline
+      \fi
+\end{tabular}
+\end{center}
+
+\part Is there a big difference in the period $T$ when the pendulum's length is increased?
+
+\fillwithlines{21mm}
+\end{parts}
+
+\question 
+Access the screenshot taken in Question 1 for the spring-cart system. Below, sketch the position and velocity versus time graphs from the file.
+
+\begin{EnvUplevel}
+\centering
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=8cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Position (m)},
+        xlabel={Time (s)},
+        ymin=-0.2,ymax=0.2,
+        xmin=0,xmax=5,
+        grid=both,
+        ytick={-0.2,-0.1,...,0.2},
+        xtick={0,1,...,5},
+        minor y tick num=1,
+        minor x tick num=1,
+        y label style={at={(axis description cs: 0.05,1)},above=2mm,rotate=-90},
+        x label style={at={(axis description cs: 0.5,0)},below=2mm}
+    ]
+    \ifprintanswers
+        \addplot[domain=0:5,thick,samples=200,red,variable=t] {0.15*sin(deg(2*pi*t/1.25))};
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\hspace{3mm}
+\begin{tikzpicture}
+    \begin{axis}[height=5cm,
+        width=8cm,
+        axis y line=left,
+        axis x line=center,
+        ylabel={Velocity (m/s)},
+        xlabel={Time (s)},
+        ymin=-0.8,ymax=0.8,
+        xmin=0,xmax=5,
+        grid=both,
+        ytick={-0.8,-0.4,...,0.8},
+        xtick={0,1,...,5},
+        minor y tick num=1,
+        minor x tick num=1,
+        y label style={at={(axis description cs: 0.05,1)},above=2mm,rotate=-90},
+        x label style={at={(axis description cs: 0.5,0)},below=2mm}
+    ]
+    \ifprintanswers
+        \addplot[domain=0:5,thick,samples=200,red,variable=t] {0.6*cos(deg(2*pi*t/1.25))};
+    \fi
+    \end{axis}
+\end{tikzpicture}
+\end{EnvUplevel}
+
+
+
+
+
+
+
+\end{questions}
+
+
+
+
 \end{document}

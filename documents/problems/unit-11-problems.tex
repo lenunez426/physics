@@ -1,7 +1,7 @@
 %\documentclass[../main-physics-workbook.tex]{subfiles}
 
 %...For a standalone document, un-comment lines below and recompile here:
-\documentclass[answers]{exam}
+\documentclass[]{exam}
 \input{global}
 \input{problem-sets}
 \input{documents/physics-glossary}
@@ -14,78 +14,1035 @@
 \ctikzset{bipoles/cuteswitch/thickness=0.3,bipoles/cuteswitch/shape=circ}
 \ctikzset{bipoles/bulb/height=0.4,bipoles/bulb/width=0.4}
 \usepackage{bohr}
+\usepackage{setspace}
+
+\newcommand{\ans}[1]{%
+  \ifprintanswers
+    \textcolor{red}{#1}%
+  \else
+    \textcolor{white}{#1}%
+  \fi
+}
+
 
 \header{Name:\enspace\makebox[5cm]{\hrulefill}}{}{}
+
+\usepackage{fontawesome}
 
 \begin{document}
 
 
-
-\textbf{\Large Charges and Matter}
-
-\subsection{The Millikan's Oil Drop Experiment}
+\subsection*{The Millikan's Oil Drop Experiment}
 
 \textbf{Questions \ref{6YGfUm}--\ref{Q68N4Y}.} Watch ``Charge of an Electron: Millikan's Oil Drop Experiment'' by Tyler DeWitt on YouTube (\href{https://youtu.be/2HhaQtvICe8}{click here}), then answer the exercises below.
 
 \begin{questions}
+
+\begin{doublespace}
+    
+
 \question \label{6YGfUm}
-In what year did Millikan and Fletcher conduct the oil drop experiment?
+In what year did Millikan and Fletcher conduct the oil drop experiment? \fillin[][3cm]
 
 
 \question
-J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \rule{2cm}{0.15mm}.
+J.~J.~Thompson discovered the electron, the negatively charged particle, in the year \fillin[][3cm].
 
 
 \question
-The Millikan's oil drop experiment involves balancing tiny drops of oil by using gravity and \rule{2cm}{0.15mm}.
+The Millikan's oil drop experiment involves balancing tiny drops of oil by using gravity\\and \fillin[][2.5cm].
 
 
 
 \question
-Two parts of the equipment used by Millikan are the \rule{2cm}{0.15mm} and the \rule{2cm}{0.15mm}.
+Two parts of the equipment used by Millikan are the \fillin[][3cm] and\\the \fillin[][3cm].
 
 
 \question
-Which force acts downward on the oil drop?
+Which force acts downward on the oil drop? \fillin[][3cm]
 
 
 \question
-Which plate--the positively or the negatively charged---will the positive oil drop be attracted to? Explain.
+Which plate--the positively or the negatively charged---will the positive oil drop be attracted to? 
+
+\fillwithlines{7mm}
 
 
 \question
-What force pushes the oil drop in the opposite direction of gravity?
+What force pushes the oil drop in the opposite direction of gravity? \fillin[][3cm]
 
 
 \question
-When the voltage is too HIGH, the oil drop moves \rule{2cm}{0.15mm}.
+When the voltage is too HIGH, the oil drop moves \fillin[][4cm].
 
 
 \question
-When the voltage is too LOW, the oil drop moves \rule{2cm}{0.15mm}.
+When the voltage is too LOW, the oil drop moves \fillin[][4cm].
 
 
 \question
 What happens to the oil drop when the voltage through the apparatus is just right?
 
+\fillwithlines{7mm}
+
 
 \question
-The force of gravity on the drop depends only on the \rule{2cm}{0.15mm} of the drop.
+The force of gravity on the drop depends only on the \fillin[][3cm]\ of the drop.
 
 
 \question
 What 2 factors does the force of electricity on the drop depend on?
 
+\fillwithlines{7mm}
+
 
 \question \label{Q68N4Y}
-What is the charge of 1 electron?
+What is the charge of 1 electron? \fillin[][3cm]
+
+\end{doublespace}
 
 \end{questions}
 
+\clearpage
+
+\subsection*{PhET Simulation: Coulomb's Law}
+
+\noindent Go to the \texttt{PhET Simulation:} \texttt{Coulomb's Law} (\href{https://phet.colorado.edu/sims/html/coulombs-law/latest/coulombs-law_all.html}{click here}), and click the panel called ``Macro Scale.''
+
+\begin{questions}
+\question
+By default, when the simulation is first launched, Charge 1 is \fillin[\SI{-4}{\micro C}][2cm], Charge 2 is \fillin[\SI{8}{\micro C}][2cm], and the distance $r$ between the charges is \fillin[\SI{3}{cm}][2cm]. Despite the charges having different magnitudes, the magnitude of the electric force on each is \fillin[\SI{319.557}{N}].
+
+\question
+Set both charges to $+\SI{8}{\micro C}$, and keep the distance between the charges at \SI{3}{cm}.
+
+\begin{parts}
+\part Draw the direction of the forces on the charges below.
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (q1) at (4,0);
+    \coordinate (q2) at (7,0);
+    \fill (q1) circle (0.05) node[right] {$+$};
+    \fill (q2) circle (0.05) node[left] {$+$};
+    \draw (q1) circle (0.6) node[below=0.1] {$q_1$};
+    \draw (q2) circle (0.6) node[below=0.1] {$q_2$};
+    \draw[dashed,thick] (q1) -- ++(0,1.2);
+    \draw[dashed,thick] (q2) -- ++(0,1.8);
+    \begin{scope}
+        \ifprintanswers
+        \color{red}
+        \draw[->, very thick] (q1) ++ (0,1.2) -- ++(-1,0);
+        \draw[->, very thick] (q2) ++ (0,1.8) -- ++(+1,0);
+        \fi
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part 
+What happens to the electric force if you click and drag Charge 1 ($q_1$) closer to Charge 2 ($q_2$)?
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force increases.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+What happens to the force if you click and drag $q_1$ away from $q_2$? 
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force decreases.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question
+Now set both charges to $-\SI{8}{\micro C}$, and keep the distance between the charges at \SI{3}{cm}.
+
+\begin{parts}
+\part Draw the direction of the forces on the charges below.
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (q1) at (4,0);
+    \coordinate (q2) at (7,0);
+    \fill (q1) circle (0.05) node[right] {$-$};
+    \fill (q2) circle (0.05) node[left] {$-$};
+    \draw (q1) circle (0.6) node[below=0.1] {$q_1$};
+    \draw (q2) circle (0.6) node[below=0.1] {$q_2$};
+    \draw[dashed,thick] (q1) -- ++(0,1.2);
+    \draw[dashed,thick] (q2) -- ++(0,1.8);
+    \begin{scope}
+        \ifprintanswers
+        \color{red}
+        \draw[->, very thick] (q1) ++ (0,1.2) -- ++(-1,0);
+        \draw[->, very thick] (q2) ++ (0,1.8) -- ++(+1,0);
+        \fi
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part 
+What happens to the electric force if you click and drag charge one ($q_1$) closer to charge two ($q_2$)?
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force increases.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+What to the force if you click and drag $q_1$ away from $q_2$? 
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force decreases.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question
+Next, set $q_1 =-\SI{8}{\micro C}$ and $q_2 = +\SI{8}{\micro C}$, and keep the distance between the charges at \SI{3}{cm}.
+
+\begin{parts}
+\part Draw the direction of the forces on the charges below.
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (q1) at (4,0);
+    \coordinate (q2) at (7,0);
+    \fill (q1) circle (0.05) node[right] {$-$};
+    \fill (q2) circle (0.05) node[left] {$+$};
+    \draw (q1) circle (0.6) node[below=0.1] {$q_1$};
+    \draw (q2) circle (0.6) node[below=0.1] {$q_2$};
+    \draw[dashed,thick] (q1) -- ++(0,1.2);
+    \draw[dashed,thick] (q2) -- ++(0,1.8);
+    \begin{scope}
+        \ifprintanswers
+        \color{red}
+        \draw[->, very thick] (q1) ++ (0,1.2) -- ++(+1,0);
+        \draw[->, very thick] (q2) ++ (0,1.8) -- ++(-1,0);
+        \fi
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\part 
+What happens to the electric force if you click and drag charge one ($q_1$) closer to charge two ($q_2$)?
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force increases.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+What to the force if you click and drag $q_1$ away from $q_2$? 
+
+\ifprintanswers
+\textcolor{red}{The magnitude of the force decreases.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question
+These examples show that opposite charges \fillin[attract][3cm], and like charges \fillin[repel][3cm].
+
+\clearpage
+
+\question
+Set both charges to $+\SI{2}{\micro C}$ with a separation distance of \SI{2}{cm}.
+
+\begin{parts}
+\part What is the magnitude of the electric force? \fillin[\SI{89.876}{N}]
+\part Double the magnitude of Charge 1 (set $q_1 = \SI{4}{\micro C}$), while keeping the distance constant. Now what is the magnitude of the force? \fillin[\SI{179.751}{N}]
+\part When one charge is doubled, by what factor does the force change? \textit{Hint}: Divide the force from part (b) by the force from part (a). 
+
+\ifprintanswers
+\textcolor{red}{When one charge is doubled, the force also doubles. Proof: $\SI{179.751}{N}/\SI{89.876}{N} \approx 2$.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part Now double Charge 2. The magnitude of the electric force is now \fillin[\SI{359.502}{N}].
+
+\part When both $q_1$ and $q_2$ are each doubled, by what factor does the original force change?
+
+\ifprintanswers
+\textcolor{red}{When both charges are doubled, the force quadruples. Proof: $\SI{395.502}{N}/\SI{89.876}{N} \approx 4$.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part There's a proportional relationship between the magnitude of the electric force $F$ and the charge $q$. According to our analysis, the magnitude of the electric force is \fillin[proportional][4cm]\ to each of the electric charges.
+\end{parts}
+
+\question
+Set both charges to $+\SI{2}{\micro C}$ with a separation distance of $r = \SI{2}{cm}$.
+
+\begin{parts}
+\part What is the magnitude of the electric force? \fillin[\SI{89.876}{N}]
+\part Double the distance separation distance (set $r = \SI{4}{cm}$), while keeping charges constant. Does the force increase or decrease? \fillin[The force decreases.][6cm]
+\part What is the magnitude of the new electric force? \fillin[\SI{22.469}{N}].
+
+\part When the distance is doubled, by what factor does the force change? \textit{Hint:} Divide the force from part (c) by the force from part (a).
+
+\ifprintanswers
+\textcolor{red}{The force decreases to $\frac{1}{4}$ of the original value. Proof: $\SI{22.469}{N}/\SI{89.876}{N} = 0.25 = \frac{1}{4}$.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part By what factor does the force change when the original distance is tripled?
+
+\ifprintanswers
+\textcolor{red}{The force decreases to $\frac{1}{9}$ of the original value. Proof: $\SI{9.986}{N}/\SI{89.876}{N} = 0.11 \approx \frac{1}{9}$.}
+\else
+\fillwithlines{14mm}
+\fi
+
+\part Explain the proportional relationship between the electric force and the separation distance.
+
+
+\ifprintanswers
+\textcolor{red}{Force is inversely proportional to the distance squared. When the distance was increased by a factor $x$, the force decreased to a value $\frac{1}{x^2}$.}
+\else
+\fillwithlines{21mm}
+\fi
+\end{parts}
+
+\question
+The figure below shows the magnitude of the electric force between two opposite charges.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!15] (-3,0) circle (0.5) node[left=0.5] {$q_1$} node {\large $-$};
+    \draw[fill=black!15] (+3,0) circle (0.5) node[right=0.5] {$q_2$} node {\large $+$};
+    \draw[thick,->] (-2.5,0) -- ++(+1,0) node[above,pos=0.5] {$\SI{60}{N}$};
+    \draw[thick,->] (+2.5,0) -- ++(-1,0) node[above,pos=0.5] {$\SI{60}{N}$};
+    \draw[<->] (-3,-0.7) -- (+3,-0.7) node[pos=0.5,fill=white] {$r$};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{parts}
+\part 
+What is the new force when Charge 1 is replaced with $2q_1$? \fillin[\SI{120}{N}]
+
+\part 
+Calculate the electric force between $q_1$ and $q_2$ when the distance is set to $\frac{r}{2}$. \fillin[\SI{240}{N}]
+\end{parts}
+
+\question
+Summarize what you have learned about Coulomb's law through this PhET lab.
+
+\ifprintanswers
+\textcolor{red}{\textit{Answers will vary.}}
+\else
+\fillwithlines{21mm}
+\fi
+
+\end{questions}
+
+% \begin{center}
+% \begin{minipage}{0.15\textwidth}
+% \begin{itemize}
+%     \item[$\bigcirc$] Manual 
+%     \item[$\bigodot$] \textbf{Oscillate}
+%     \item[$\bigcirc$] Pulse
+% \end{itemize}
+% \end{minipage}%
+% \hspace{1ex}
+% \begin{minipage}{0.3\textwidth}
+% \centering
+% \begin{tikzpicture}[x=4mm,y=4mm]
+%     \begin{scope}
+%         \draw (0,0) -- (10,0);
+%         \clip (-0.5,0) -- (10.5,0) -- (10.5,1.2) -- (0,1.2) -- cycle;
+%         \foreach \i in {0,1,...,10}{
+%             \draw (\i,0) node {$|$};
+%         }
+%         \foreach \i in {0,5,10}{
+%             \draw (\i,0) node {\Huge $|$};
+%         }
+%     \end{scope}
+%     \node[above=1.5em] at (0,0) {None};
+%     \node[above=2.5em] at (5,0) {Damping};
+%     \node[above=1.5em] at (10,0) {Lots};
+%     \draw[rounded corners=1mm,fill=black!50,opacity=0.5] (-0.3,-1.2) rectangle (0.3,1.2);
+% \end{tikzpicture}
+% \end{minipage}%
+% \hspace{1ex}
+% \begin{minipage}{0.15\textwidth}
+% \centering
+% \begin{itemize}
+%     \item[$\bigcirc$] Fixed End 
+%     \item[$\bigcirc$] Loose End
+%     \item[$\bigodot$] \textbf{No End}
+% \end{itemize}
+% \end{minipage}%
+% \hspace{1ex}
+% \begin{minipage}{0.2\textwidth}
+% \begin{itemize}
+%     \item[\checkbox{1}] Rulers
+%     \item[\checkbox{1}] Timer
+%     \item[$\square$] Reference Line
+% \end{itemize}
+% \end{minipage}
+% \end{center}
+
+\clearpage
+
+\subsection*{Coulomb's Law}
+
+
+The magnitude of the electrostatic force is calculated by Coulomb's law:
+
+\begin{equation*}
+    F = \frac{k \left|q_1 q_2\right|}{r^2}
+\end{equation*}
+
+{\def\arraystretch{1.5}
+
+\newcommand{\answertableentry}[4]{%
+  \ifprintanswers
+    #1 & \textcolor{red}{#2} & \textcolor{red}{#3} & \textcolor{red}{#4} \\ \hline
+  \else
+    #1 & \textcolor{white}{#2} & \textcolor{white}{#3} & \textcolor{white}{#4} \\ \hline
+  \fi
+}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}p{2cm}
+                |>{\centering\arraybackslash}p{7cm}
+                |>{\centering\arraybackslash}p{3cm}
+                |>{\centering\arraybackslash}p{2cm}|}
+    \hline
+    \thead{Symbol} & \thead{Meaning} & \thead{Unit} & \thead{Unit Symbol}\\ \hline
+    \answertableentry{$F$}{electric force}{newton}{N}
+    \answertableentry{$k$}{Coulomb's constant}{see $\rightarrow$}{$\mathrm{N\cdot m^2/C^2}$}
+    \answertableentry{$q_1, q_2$}{electric charges}{coulomb}{C}
+    \answertableentry{$r$}{distance between the charges}{meter}{m}
+\end{tabular}
+\end{center}
+}
+
+\begin{questions}
+\question
+The symbol $F$ represents the electric \fillin[force][3cm]\ between two electric \fillin[charges][3cm].
+
+\question
+The electric force exerted on $q_1$ by $q_2$ is \fillin[equal][3cm]\ to the electric force exerted on $q_2$ by $q_1$.
+
+\question
+Coulomb's law is an \fillin[inverse square][4cm]\ law, because the distance between the two electric charges is in the denominator of the equation and it is a squared distance.
+
+\question 
+If the distance between the two charges increases, the force between the charges \fillin[decreases][3cm].
+
+\question
+If the distance between the two charges decreases, the force between the charges \fillin[increases][3cm].
+
+\question
+When the distance between two charges $q_1$ and $q_2$ is $r$, the electric force on each charge has magnitude~$F$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!15] (-3,0) circle (0.5) node[left=0.5] {$q_1$} node {\large $-$};
+    \draw[fill=black!15] (+3,0) circle (0.5) node[right=0.5] {$q_2$} node {\large $+$};
+    \draw[thick,->] (-2.5,0) -- ++(+1,0) node[above,pos=0.5] {$F$};
+    \draw[thick,->] (+2.5,0) -- ++(-1,0) node[above,pos=0.5] {$F$};
+    \draw[<->] (-3,-0.7) -- (+3,-0.7) node[pos=0.5,fill=white] {$r$};
+\end{tikzpicture}
+\end{center}
+
+If the distance changes by a factor of $x$, the force changes to $\displaystyle \frac{1}{x^2} F$.
+
+
+
+% \newcommand{\answertableentry}[3]{%
+%   \ifprintanswers
+%     #1 & \textcolor{red}{#2} & \textcolor{red}{#3} \\ \hline
+%   \else
+%     #1 & \textcolor{white}{#2} & \textcolor{white}{#3} \\ \hline
+%   \fi
+% }
+
+\newcommand{\checkedbox}{%
+  \ooalign{%
+    $\square$\cr
+    \hidewidth${\large \hspace{4pt}\checkmark}$\hidewidth\cr
+  }%
+}
+
+\begin{center}
+\def\arraystretch{1.5}
+\begin{tabular}{|c|cc|}
+    \hline
+    \thead{Distance change factor} & \thead{Force change (check one)} & \thead{Force change factor} \\ \hline
+    Distance increases to $2r$. & $\square$ Force increases \ifprintanswers \color{red} $\checkedbox$ Force decreases \else $\square$ Force decreases \fi  & \ifprintanswers \color{red} \else \color{white} \fi to $\frac{1}{4} F$\\ \hline
+    Distance increases to $3r$. & $\square$ Force increases \ifprintanswers \color{red} $\checkedbox$ Force decreases \else $\square$ Force decreases \fi & \ifprintanswers \color{red} \else \color{white} \fi to $\frac{1}{9} F$\\ \hline
+    Distance increases to $4r$. & $\square$ Force increases \ifprintanswers \color{red} $\checkedbox$ Force decreases \else $\square$ Force decreases \fi & \ifprintanswers \color{red} \else \color{white} \fi to $\frac{1}{16} F$\\ \hline
+    Distance decreases to $\frac{1}{2}r$. & \ifprintanswers \textcolor{red}{$\checkedbox$ Force increases} \else $\square$ Force increases \fi $\square$ Force decreases & \ifprintanswers \color{red} \else \color{white} \fi to $4F$\\ \hline
+    Distance decreases to $\frac{1}{3}r$. & \ifprintanswers \textcolor{red}{$\checkedbox$ Force increases} \else $\square$ Force increases \fi $\square$ Force decreases & \ifprintanswers \color{red} \else \color{white} \fi to $9F$\\ \hline
+    Distance decreases to $\frac{1}{4}r$. & \ifprintanswers \textcolor{red}{$\checkedbox$ Force increases} \else  $\square$ Force increases \fi $\square$ Force decreases & \ifprintanswers \color{red} \else \color{white} \fi to $16F$\\ \hline
+\end{tabular}
+\end{center}
+
+\question
+Electric charges come in two types: positive and negative. Opposite charges \fillin[attract][3cm], and like charges \fillin[repel][3cm].
+
+\question
+Draw vectors (arrows) to represent the forces on the following electric charge pairs. For each pair, the length of the vector represents the magnitude (size) of the electric force on that charge, and the number is the charge in micro-coulombs (\SI{}{\micro C}).
+
+\begin{EnvUplevel}
+\centering
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $+12$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $+12$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-5,0) -- ++(-2,0);
+        \draw[thick,->] (+5,0) -- ++(+2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}%
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $+20$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $+10$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-5,0) -- ++(-2,0);
+        \draw[thick,->] (+5,0) -- ++(+2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}%
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $+16$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $-8$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-3,0) -- ++(+2,0);
+        \draw[thick,->] (+3,0) -- ++(-2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}\\[-1pt]
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $-8$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $-4$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-5,0) -- ++(-2,0);
+        \draw[thick,->] (+5,0) -- ++(+2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}%
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $-12$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $+6$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-3,0) -- ++(+2,0);
+        \draw[thick,->] (+3,0) -- ++(-2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}%
+\fbox{
+\begin{minipage}{5.1cm}
+\centering
+\begin{tikzpicture}[x=3.5mm,y=3.5mm]
+    \draw[fill=black!10] (-4,0) circle (1) node {\small $-9$};
+    \draw[fill=black!10] (+4,0) circle (1) node {\small $-3$};
+    \ifprintanswers
+        \color{red}
+        \draw[thick,->] (-5,0) -- ++(-2,0);
+        \draw[thick,->] (+5,0) -- ++(+2,0);
+    \fi
+\end{tikzpicture}
+\end{minipage}}%
+\end{EnvUplevel}
+
+\question
+Object A has a positive charge of \SI{6.0e-6}{C}. Object B has a positive charge of \SI{3.0e-6}{C}. The two objects are 0.03 meters apart. Calculate the magnitude of the electric force between the two objects.
+
+
+
+\begin{parts}
+\part Write the givens and unknown.
+
+\begin{mdframed}
+\begin{equation*}
+    F = \ans{?} \qquad
+    k = \ans{\SI{9e9}{N\cdot m^2/C^2}} \qquad
+    q_1 = \ans{\SI{6.0e-6}{C}} \hspace{8mm}
+    q_2 = \ans{\SI{3.0e-6}{C}} \hspace{8mm} 
+    r = \ans{\SI{0.03}{m}}
+\end{equation*}
+\end{mdframed}
+
+\part 
+What equation should be used to solve this problem?
+
+\ifprintanswers
+\textcolor{red}{Coulomb's law $F = \frac{k\left|q_1 q_2\right|}{r^2}$}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+Substitute values and solve the equation. Box the final answer
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    F = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{6.0e-6}{C})(\SI{3.0e-6}{C})}{\left(\SI{0.03}{m}\right)^2} = \boxed{\SI{180}{N}}
+\end{equation*}
+\end{solutionorbox}
+\end{parts}
+
+\question
+Two positive charges of \SI{6.0e-6}{C} are separated by 0.50 meters. Calculate the magnitude of the electric force between the two objects. 
+
+\begin{parts}
+\part Write the givens and unknown.
+
+\begin{mdframed}
+\begin{equation*}
+    F = \ans{?} \qquad
+    k = \ans{\SI{9e9}{N\cdot m^2/C^2}} \qquad
+    q_1 = \ans{\SI{6.0e-6}{C}} \hspace{8mm}
+    q_2 = \ans{\SI{6.0e-6}{C}} \hspace{8mm} 
+    r = \ans{\SI{0.50}{m}}
+\end{equation*}
+\end{mdframed}
+
+\part 
+What equation should be used to solve this problem?
+
+\ifprintanswers
+\textcolor{red}{Coulomb's law $F = \frac{k\left|q_1 q_2\right|}{r^2}$}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part 
+Substitute values and solve the equation. Box the final answer
+
+\begin{solutionorbox}[2cm]
+\begin{equation*}
+    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)\left(\SI{6.0e-6}{C}\right)^2}{\left(\SI{0.50}{m}\right)^2} = \boxed{\SI{1.296}{N}}
+\end{equation*}
+\end{solutionorbox}
+\end{parts}
+
+\question
+A negative charge of \SI{-6.0e-6}{C} exerts an attractive force of \SI{65}{N} on a second charge 0.05 meters away. What is the magnitude of the second charge?
+
+\begin{solutionorbox}[3.3cm]
+Coulomb's law is
+
+\begin{equation*}
+    F_e = \frac{k\left|q_1q_2\right|}{r^2}
+\end{equation*}
+
+We know all variables except for $q_2$, which we can solve for algebraically as follows: Multiplying both sides by $r^2$ gives
+
+\begin{equation*}
+    F r^2 = k |q_1 q_2|
+\end{equation*}
+
+Dividing both sides by the produce $k q_1$ gives
+
+\begin{equation*}
+    |q_2| = \frac{F r^2}{k |q_1|} = \frac{(\SI{65}{N})(\SI{0.05}{m})^2}{(\SI{9e9}{N\cdot m^2/C^2})|(-\SI{6.0e-6}{C})|} = \boxed{\SI{3.0e-6}{C}}
+\end{equation*}
+\end{solutionorbox}
+
+\question 
+A force of \SI{-4.4e3}{N} exists between a positive charge of \SI{8.0e-4}{C} and a negative charge of \SI{-3.0e-4}{C}. What distance separates the charges?
+
+\begin{solutionorbox}[3.3cm]
+Coulomb's law is
+
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2}
+\end{equation*}
+
+Solving for distance leads to
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \sqrt{\frac{(\SI{9e9}{N\cdot m^2/C^2})(\SI{8.0e-4}{C})(\SI{-3.0e-4}{C})}{-\SI{4.4e3}{N}}} = \boxed{\SI{0.70}{m}} = \SI{70}{cm}
+\end{equation*}
+\end{solutionorbox}
+
+\end{questions}
+
+\clearpage
+
+
+\subsection*{Coulomb's Law II}
+
+\begin{questions}
+% \question
+% Google the \textit{PhET Simulation} called \texttt{Coulomb's law} (or \href{https://phet.colorado.edu/en/simulations/coulombs-law}{click here}). Press \texttt{Play}, and select the \texttt{Macro Scale} panel. This simulation helps you understand Coulomb's law. (a) How does the magnitude and direction of the force on $q_1$ by $q_2$ compare to that of the force on $q_2$ by $q_1$? (b) What changes in the simulation cause the magnitude of the forces to increase? (c) What changes cause the magnitude of the force to decrease? (d) What changes cause the direction of the forces to change?
+
+
+
+\question
+In Coulomb's law, $\displaystyle F = \frac{kq_1q_2}{r^2}$, the distance $r$ is measured
+\ldots
+
+\begin{randomizechoices}
+    \correctchoice from the center of Charge 1 to the center of Charge 2.
+    \choice from the inner edge of Charge 1 to the inner edge of Charge 2.
+    \choice from the outer edge of Charge 1 to the inner edge of Charge 2.
+    \choice from the outer edge of Charge 1 to the outer edge of Charge 2.
+\end{randomizechoices}
+
+
+
+\question \label{z4pMlx}
+Two objects with charges \SI{7}{\micro C} and \SI{6}{\micro C} are separated by \SI{2}{cm}. (a) Is the electric force between them attractive or repulsive? (b) What is the magnitude of the electric force between the spheres?
+
+\begin{solution}
+(a) Repulsive. 
+
+(b) 
+
+\begin{equation*}
+    F = \frac{k \left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{7e-6}{C})(\SI{6e-6}{C})}{\left(\SI{0.02}{m}\right)^2} = \boxed{\SI{945}{N}}
+\end{equation*}
+
+\end{solution}
+
+
+\question \label{TPIAio}
+Two metallic spheres with charges \SI{-7}{\micro C} and \SI{6}{\micro C} are separated by \SI{2}{cm}. (a) Do the spheres attract each other, or do they repel? (b) What is the magnitude of the electric force between the spheres?
+
+\begin{solution}
+(a) Attract. 
+
+(b)
+
+\begin{equation*}
+    F = \frac{k \left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{7e-6}{C})(\SI{6e-6}{C})}{\left(\SI{0.02}{m}\right)^2} = \boxed{\SI{945}{N}}
+\end{equation*}
+\end{solution}
+
+
+\question \label{mJu5SD}
+As shown below, two charges are placed near each other. (a) Are they attracted or repulsed? (b) What is the magnitude of the electric force between the charges?
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.5) node {$\SI{8}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.5) node { $\SI{9}{\micro C}$};
+    \draw[<->] (-3,-0.7) -- (+3,-0.7) node[pos=0.5,fill=white] {$\SI{6}{cm}$};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+(a) Repulsed. (b) \SI{180}{N}
+\end{solution}
+
+
+\question \label{NqU30G}
+(a) Are the charges below attracted or repulsed by each other? (b) Calculate the electrostatic force between them.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.7) node {$\SI{-3.2}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.7) node { $\SI{-2.5}{\micro C}$};
+    \draw[<->] (-3,-0.9) -- (+3,-0.9) node[pos=0.5,fill=white] {$\SI{1.4}{cm}$};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+\SI{367}{N}
+\end{solution}
+
+
+\question \label{S2QW5m}
+When the two opposite charges shown below are placed near each other, the magnitude of the electrostatic force is \SI{44}{N}. What is the distance between the charges?
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.7) node {$\SI{-680}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.7) node { $+\SI{180}{\micro C}$};
+    \draw[<->] (-3,-0.9) -- (+3,-0.9) node[pos=0.5,fill=white] {$r$};
+    \draw[very thick,->] (-2.3,0) -- ++(+1,0) node[above] {\SI{44}{N}};
+    \draw[very thick,->] (+2.3,0) -- ++(-1,0) node[above] {\SI{44}{N}};
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{solution}
+\begin{align*}
+    F &= \frac{k \left|q_1 q_2\right|}{r^2} \\[1ex]
+    r^2 &= \frac{k \left|q_1 q_2\right|}{F} \\[1ex]
+    r &= \sqrt{\frac{k \left|q_1 q_2\right|}{F}} \\[1ex]
+      &= \sqrt{\frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{680e-6}{C})(\SI{180e-6}{C})}{\SI{44}{N}}} \\[1ex]
+      &= \boxed{\SI{5.0}{m}}
+\end{align*}
+\end{solution}
+
+
+\question \label{clmO0M}
+A \SI{-48}{\micro C} charge and a \SI{55}{\micro C} one are separated by an unknown distance. If the electrostatic force between the charges is \SI{8.2}{N}, what is the distance between the charges?
+
+\begin{solution}
+\SI{1.7}{m}
+\end{solution}
+
+\question \label{TrRzFe}
+Given $q_1 = \SI{-860}{\micro C}$ and $q_2 = +\SI{420}{\micro C}$, calculate the distance between the charges below if the force $F$ is \SI{7.53e-3}{N}.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.5) node {$q_1$};
+    \draw[fill=black!10] (+3,0) circle (0.5) node { $q_2$};
+    \draw[<->] (-3,-0.7) -- (+3,-0.7) node[pos=0.5,fill=white] {$r$};
+    \draw[very thick,->] (-2.5,0) -- ++(+1,0) node[above] {$F$};
+    \draw[very thick,->] (+2.5,0) -- ++(-1,0) node[above] {$F$};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{solution}
+\SI{657}{m}
+\end{solution}
+
+
+\question \label{bpbHHg}
+When a 0.0066-coulomb charge is placed near a 0.0044-coulomb charge, they experience a mutual repulsive force with a magnitude of 74 newtons. What is the distance between the charges?
+
+\begin{solution}
+\SI{59.4}{m}
+\end{solution}
+
+
+
+\question \label{DOuqpT}
+Create your own Coulomb's law problem. Give it to your table partner to solve.
+% Solve Exercise \ref{TrRzFe} analytically, which means using
+% only algebraic symbols and manipulation, and no numbers. Your result should be an equation solved for $r$ in terms of $F$, $k$, $q_1$, and $q_2$.
+
+% \begin{solution}
+% $r = \sqrt{\frac{k |q_1 q_2|}{F}}$
+% \end{solution}
+\end{questions}
 
 
 \clearpage
-\subsection*{The Electric Field}
+
+\subsection*{Coulomb's Law III} %...Physics Classroom
+
+\begin{questions}
+
+\question
+The charges shown below are separated by \SI{3}{cm}, and the electrostatic force is $\SI{320}{N}$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.6) node {$\SI{-4}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.6) node { $+\SI{8}{\micro C}$};
+    \draw[<->] (-3,-0.8) -- (+3,-0.8) node[pos=0.5,fill=white] {$r = \SI{3}{cm}$};
+    \draw[very thick,->] (-2.4,0) -- ++(+1,0) node[above] {$F = \SI{320}{N}$};
+    \draw[very thick,->] (+2.4,0) -- ++(-1,0) node[above] {$F = \SI{320}{N}$};
+\end{tikzpicture}
+\end{center}
+
+If the $-\SI{4}{\micro C}$ charge is replaced by a $-\SI{8}{\micro C}$ charge, what is the new electric force between the charge pairs?
+
+\question
+The charges shown below are separated by \SI{3}{cm}, and the electrostatic force is $\SI{320}{N}$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.6) node {$\SI{-4}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.6) node { $+\SI{8}{\micro C}$};
+    \draw[<->] (-3,-0.8) -- (+3,-0.8) node[pos=0.5,fill=white] {$r = \SI{3}{cm}$};
+    \draw[very thick,->] (-2.4,0) -- ++(+1,0) node[above] {$F = \SI{320}{N}$};
+    \draw[very thick,->] (+2.4,0) -- ++(-1,0) node[above] {$F = \SI{320}{N}$};
+\end{tikzpicture}
+\end{center}
+
+If the distance changes to \SI{6}{cm}, what is the magnitude of the new electric force?
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, then what is the new force?
+
+\begin{solution}
+The ratio of the new force to the old force is
+
+\begin{equation*}
+    \frac{F}{F_0} = \frac{(1)(1)(2)}{(1)^2} = 2
+\end{equation*}
+
+Therefore,
+
+\begin{equation*}
+    F = 2F_0 = \boxed{\SI{0.16}{N}}
+\end{equation*}
+
+\end{solution}
+
+
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.32}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.020}{N}$
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0088}{N}$
+\end{solution}
+
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is quadrupled, then what is the new force?
+
+\begin{solution}
+$\SI{0.005}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is halved, then what is the new force?
+
+\begin{solution}
+\begin{equation*}
+    \frac{F}{F_0} = \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\frac{1}{2}\cdot\frac{1}{2}} = \frac{1}{\frac{1}{4}} = 4
+\end{equation*}
+
+\begin{equation*}
+    F = 4 F_0 = 4(\SI{0.08}{N}) = \boxed{\SI{0.32}{N}}
+\end{equation*}
+\end{solution}
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.04}{N}$
+\end{solution}
+
+
+\question
+Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.08}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is increased by a factor of four, and the distance separating the objects is doubled, then what is the new force?
+
+\begin{solution}
+$\SI{0.08}{N}$
+\end{solution}
+
+\question
+Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is tripled, and the distance separating the objects is tripled, then what is the new force?
+
+\begin{solution}
+$\SI{0.0267}{N}$
+\end{solution}
+
+
+
+
+
+
+
+
+\question
+A balloon with a charge of \SI{4.0e-5}{C} is held a distance of \SI{0.10}{m} from a second balloon having the same charge. Calculate the magnitude of the repulsive force.
+
+\begin{solution}
+\begin{equation*}
+    F = \frac{kq_1q_2}{r^2} = \SI{1440}{N}
+\end{equation*}
+\end{solution}
+
+\question
+Calculate the electrical force (in Newtons) exerted between a 22-gram with a charge of \SI{-2.6e-6}{\micro\coulomb} and a wool sweater with a charge of $+\SI{3.8}{\micro\coulomb}$. The separation distance is \SI{0.75}{m}.
+
+\begin{solution}
+\begin{equation*}
+    F = \frac{k q_1 q_2}{r^2} = \SI{0.158}{N}
+\end{equation*}
+\end{solution}
+
+\question
+Suppose that two equally charged spheres attract each other with a force of \SI{-0.492}{N} (the negative sign indicating an attractive force) when placed a distance of \SI{29.1}{cm} from each other. Determine the charge of the spheres. 
+
+\begin{solution}
+Let $q$ be magnitude of the charge on each sphere. Then Coulomb's law gives
+
+\begin{equation*}
+    F = \frac{kq^2}{r^2}
+\end{equation*}
+
+Solving for $q$ leads to 
+
+\begin{equation*}
+    q = \sqrt{\frac{Fr^2}{k}} = \boxed{\SI{2.15e-6}{C}}
+\end{equation*}
+\end{solution}
+
+\question
+A $+\SI{5.0}{\micro\coulomb}$ charge and a $-\SI{6.0}{\micro\coulomb}$ charge experience an attractive force of $-\SI{0.72}{N}$ (the negative sign indicating an attractive force). Determine their separation distance.
+
+\begin{solution}
+Coulomb's law states
+
+\begin{equation*}
+    F = \frac{kq_1q_2}{r^2}
+\end{equation*}
+
+Solving for distance gives
+
+\begin{equation*}
+    r = \sqrt{\frac{kq_1q_2}{F}} = \boxed{\SI{0.61}{m}}
+\end{equation*}
+\end{solution}
+\end{questions}
+
+\clearpage
+
+\subsection*{PhET Simulation: The Electric Field}
 
 \begin{questions}
 
@@ -320,417 +1277,11 @@ Label each charge below with a positive ($+$) or negative ($-$) sign so that it 
 
 \end{questions}
 
-\clearpage
-
-\textbf{\Large Transfer of Charge}
-
 
 \clearpage
 
-\textbf{\Large Coulomb’s Law}
 
-\subsection{Electric Force, Charges, and Distance}
-
-\begin{questions}
-% \question
-% Google the \textit{PhET Simulation} called \texttt{Coulomb's law} (or \href{https://phet.colorado.edu/en/simulations/coulombs-law}{click here}). Press \texttt{Play}, and select the \texttt{Macro Scale} panel. This simulation helps you understand Coulomb's law. (a) How does the magnitude and direction of the force on $q_1$ by $q_2$ compare to that of the force on $q_2$ by $q_1$? (b) What changes in the simulation cause the magnitude of the forces to increase? (c) What changes cause the magnitude of the force to decrease? (d) What changes cause the direction of the forces to change?
-
-\question
-Object A has a positive charge of \SI{6.0e-6}{C}. Object B has a positive charge of \SI{3.0e-6}{C}. The two objects are 0.03 meters apart. Calculate the electric force between the two objects. 
-
-\begin{solution}
-\begin{equation*}
-    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)(\SI{6.0e-6}{C})(\SI{3.0e-6}{C})}{\left(\SI{0.03}{m}\right)^2} = \boxed{\SI{180}{N}}
-\end{equation*}
-\end{solution}
-
-\question
-Two positive charges of \SI{6.0e-6}{C} are separated by 0.50 meters. Calculate the electric force between the two objects. 
-
-\begin{solution}
-\begin{equation*}
-    F_e = \frac{k\left|q_1 q_2\right|}{r^2} = \frac{\left(\SI{9e9}{N\cdot m^2/C^2}\right)\left(\SI{6.0e-6}{C}\right)^2}{\left(\SI{0.50}{m}\right)^2} = \boxed{\SI{1.296}{N}}
-\end{equation*}
-\end{solution}
-
-\question
-A negative charge of \SI{-6.0e-6}{C} exerts an attractive force of \SI{65}{N} on a second charge 0.05 meters away. What is the magnitude of the second charge?
-
-\begin{solution}
-Coulomb's law is
-
-\begin{equation*}
-    F_e = \frac{k\left|q_1q_2\right|}{r^2}
-\end{equation*}
-
-We know all variables except for $q_2$, which we can solve for algebraically as follows: Multiplying both sides by $r^2$ gives
-
-\begin{equation*}
-    F r^2 = k |q_1 q_2|
-\end{equation*}
-
-Dividing both sides by the produce $k q_1$ gives
-
-\begin{equation*}
-    |q_2| = \frac{F r^2}{k |q_1|} = \frac{(\SI{65}{N})(\SI{0.05}{m})^2}{(\SI{9e9}{N\cdot m^2/C^2})|(-\SI{6.0e-6}{C})|} = \boxed{\SI{3.0e-6}{C}}
-\end{equation*}
-\end{solution}
-
-\question 
-A force of \SI{-4.4e3}{N} exists between a positive charge of \SI{8.0e-4}{C} and a negative charge of \SI{-3.0e-4}{C}. What distance separates the charges?
-
-\begin{solution}
-Coulomb's law is
-
-\begin{equation*}
-    F = \frac{k q_1 q_2}{r^2}
-\end{equation*}
-
-Solving for distance leads to
-
-\begin{equation*}
-    r = \sqrt{\frac{kq_1q_2}{F}} = \sqrt{\frac{(\SI{9e9}{N\cdot m^2/C^2})(\SI{8.0e-4}{C})(\SI{-3.0e-4}{C})}{-\SI{4.4e3}{N}}} = \boxed{\SI{0.70}{m}} = \SI{70}{cm}
-\end{equation*}
-\end{solution}
-
-
-\question \label{z4pMlx}
-Two objects with charges \SI{7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Is the electric force between them attractive or repulsive? (b) What is the magnitude of the electric force between the spheres?
-
-\begin{solution}
-(a) Repulsive. 
-
-(b) \SI{786.6}{N}
-\end{solution}
-
-
-\question \label{TPIAio}
-Two metallic spheres with charges \SI{-7}{\micro C} and \SI{5}{\micro C} are separated by \SI{2}{cm}. (a) Do the spheres attract each other, or do they repel? (b) What is the magnitude of the electric force between the spheres?
-
-\begin{solution}
-(a) Attract. 
-
-(b) \SI{786.6}{N}
-\end{solution}
-
-
-\question \label{mJu5SD}
-As shown below, two charges are placed near each other. (a) Are they attracted or repulsed? (b) What is the magnitude of the electric force between the charges?
-\vspace{-1em}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.7cm,
-clip=false,
-xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
-axis line style={draw=none},
-ticks=none,    
-]
-\fill (0,0) circle (2pt);
-\draw (0,0) circle (6mm) node[above=6mm] {\SI{8}{\micro C}};
-
-\begin{scope}[xshift=3.01*1.07 cm]
-    \fill (0,0) circle (2pt);
-    \draw (0,0) circle (6mm) node[above=6mm] {\SI{9}{\micro C}};
-\end{scope}
-
-\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
-\node[above=6pt] at (3.01/2,0) {\SI{6}{cm}};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{solution}
-(a) Repulsed. (b) \SI{179.8}{N}
-\end{solution}
-
-
-\question \label{NqU30G}
-(a) Are the charges below attracted or repulsed by each other? (b) Calculate the electrostatic force between them.
-\vspace{-1em}
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.7cm,
-clip=false,
-xmin=-2.1,xmax=4,ymin=-0.6,ymax=1.2,
-axis line style={draw=none},
-ticks=none,    
-]
-\fill (0,0) circle (2pt);
-\draw (0,0) circle (6mm) node[above=6mm] {\SI{-3.2}{\micro C}};
-
-\begin{scope}[xshift=3.01*1.07 cm]
-    \fill (0,0) circle (2pt);
-    \draw (0,0) circle (6mm) node[above=6mm] {\SI{-2.5}{\micro C}};
-\end{scope}
-
-\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 3.01,0);
-\node[above=6pt] at (3.01/2,0) {\SI{1.4}{cm}};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{solution}
-\SI{366.9}{N}
-\end{solution}
-
-
-\question \label{S2QW5m}
-When the two opposite charges shown below are placed near each other, the magnitude of the electrostatic force is \SI{44}{N}. What is the distance between the charges?
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.7cm,
-clip=false,
-xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
-axis line style={draw=none},
-ticks=none,    
-]
-\fill (0,0) circle (3pt);
-\draw (0,0) circle (6mm) node[above=6mm] {\SI{-680}{\micro C}};
-\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$\SI{44}{N}$};
-
-\begin{scope}[xshift=5.02*0.99 cm]
-    \fill (0,0) circle (3pt);
-    \draw (0,0) circle (6mm) node[above=6mm] {\SI{180}{\micro C}};
-    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
-\end{scope}
-
-\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
-\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{solution}
-\SI{5.0}{m}
-\end{solution}
-
-
-\question \label{clmO0M}
-A \SI{-48}{\micro C} charge and a \SI{55}{\micro C} one are separated by an unknown distance. If the electrostatic force between the charges is \SI{8.2}{N}, what is the distance between the charges?
-
-\begin{solution}
-\SI{1.7}{m}
-\end{solution}
-
-\question \label{TrRzFe}
-Calculate the distance between the charges below if the force $F$ is \SI{7.52e-3}{N}.
-
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=8cm,height=3.7cm,
-clip=false,
-xmin=-0.5,xmax=6,ymin=-0.6,ymax=1.2,
-axis line style={draw=none},
-ticks=none,    
-]
-\fill (0,0) circle (3pt);
-\draw (0,0) circle (6mm) node[above=6mm] {\SI{-860}{\micro C}};
-\draw[->,thick] (0,0) -- ++(axis direction cs: 2,0) node[below] {$F$};
-
-\begin{scope}[xshift=5.02*0.99 cm]
-    \fill (0,0) circle (3pt);
-    \draw (0,0) circle (6mm) node[above=6mm] {\SI{420}{\micro C}};
-    \draw[->,thick] (0,0) -- ++(axis direction cs: -2,0); %node[below] {$F$};
-\end{scope}
-
-\draw[<->,dashed] (0,0.2) -- ++(axis direction cs: 5.02,0);
-\node[above=6pt] at (5.02/2,0) {$r =\ ?$};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-
-\begin{solution}
-\SI{657}{m}
-\end{solution}
-
-
-\question \label{bpbHHg}
-When a 0.0066-coulomb charge is placed near a 0.0044-coulomb one, they experience a mutual repulsive force with a magnitude of 74 newtons. What is the distance between the charges?
-
-\begin{solution}
-\SI{59.4}{m}
-\end{solution}
-
-
-
-\question \label{DOuqpT}
-Solve Exercise \ref{TrRzFe} analytically, which means using
-only algebraic symbols and manipulation, and no numbers. Your result should be an equation solved for $r$ in terms of $F$, $k$, $q_1$, and $q_2$.
-
-\begin{solution}
-$r = \sqrt{\frac{k |q_1 q_2|}{F}}$
-\end{solution}
-
-\end{questions}
-
-
-\clearpage
-
-\subsection{How Changing Charge or Distance Affects the Electric Force}
-
-\begin{questions}
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, then what is the new force?
-
-\begin{solution}
-The ratio of the new force to the old force is
-
-\begin{equation*}
-    \frac{F}{F_0} = \frac{(1)(1)(2)}{(1)^2} = 2
-\end{equation*}
-
-Therefore,
-
-\begin{equation*}
-    F = 2F_0 = \boxed{\SI{0.16}{N}}
-\end{equation*}
-
-\end{solution}
-
-
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, then what is the new force?
-
-\begin{solution}
-$\SI{0.32}{N}$
-\end{solution}
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is doubled, then what is the new force?
-
-\begin{solution}
-$\SI{0.020}{N}$
-\end{solution}
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the distance separating the objects is tripled, then what is the new force?
-
-\begin{solution}
-$\SI{0.0088}{N}$
-\end{solution}
-
-
-\question
-Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is quadrupled, then what is the new force?
-
-\begin{solution}
-$\SI{0.005}{N}$
-\end{solution}
-
-\question
-Two charged objects have a attractive force of \SI{0.080}{N}. If the distance separating the objects is halved, then what is the new force?
-
-\begin{solution}
-\begin{equation*}
-    \frac{F}{F_0} = \frac{(1)(1)(1)}{\left(\frac{1}{2}\right)^2} = \frac{1}{\frac{1}{2}\cdot\frac{1}{2}} = \frac{1}{\frac{1}{4}} = 4
-\end{equation*}
-
-\begin{equation*}
-    F = 4 F_0 = 4(\SI{0.08}{N}) = \boxed{\SI{0.32}{N}}
-\end{equation*}
-\end{solution}
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of one of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
-
-\begin{solution}
-$\SI{0.04}{N}$
-\end{solution}
-
-
-\question
-Two charged objects have a repulsive force of \SI{0.080}{N}. If the charge of both of the objects is doubled, and the distance separating the objects is doubled, then what is the new force?
-
-\begin{solution}
-$\SI{0.08}{N}$
-\end{solution}
-
-\question
-Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is increased by a factor of four, and the distance separating the objects is doubled, then what is the new force?
-
-\begin{solution}
-$\SI{0.08}{N}$
-\end{solution}
-
-\question
-Two charged objects have a attractive force of \SI{0.080}{N}. If the charge of one of the objects is tripled, and the distance separating the objects is tripled, then what is the new force?
-
-\begin{solution}
-$\SI{0.0267}{N}$
-\end{solution}
-
-
-
-
-
-
-
-
-\question
-A balloon with a charge of \SI{4.0e-5}{C} is held a distance of \SI{0.10}{m} from a second balloon having the same charge. Calculate the magnitude of the repulsive force.
-
-\begin{solution}
-\begin{equation*}
-    F = \frac{kq_1q_2}{r^2} = \SI{1440}{N}
-\end{equation*}
-\end{solution}
-
-\question
-Calculate the electrical force (in Newtons) exerted between a 22-gram with a charge of \SI{-2.6e-6}{\micro\coulomb} and a wool sweater with a charge of $+\SI{3.8}{\micro\coulomb}$. The separation distance is \SI{0.75}{m}.
-
-\begin{solution}
-\begin{equation*}
-    F = \frac{k q_1 q_2}{r^2} = \SI{0.158}{N}
-\end{equation*}
-\end{solution}
-
-\question
-Suppose that two equally charged spheres attract each other with a force of \SI{-0.492}{N} (the negative sign indicating an attractive force) when placed a distance of \SI{29.1}{cm} from each other. Determine the charge of the spheres. 
-
-\begin{solution}
-Let $q$ be magnitude of the charge on each sphere. Then Coulomb's law gives
-
-\begin{equation*}
-    F = \frac{kq^2}{r^2}
-\end{equation*}
-
-Solving for $q$ leads to 
-
-\begin{equation*}
-    q = \sqrt{\frac{Fr^2}{k}} = \boxed{\SI{2.15e-6}{C}}
-\end{equation*}
-\end{solution}
-
-\question
-A $+\SI{5.0}{\micro\coulomb}$ charge and a $-\SI{6.0}{\micro\coulomb}$ charge experience an attractive force of $-\SI{0.72}{N}$ (the negative sign indicating an attractive force). Determine their separation distance.
-
-\begin{solution}
-Coulomb's law states
-
-\begin{equation*}
-    F = \frac{kq_1q_2}{r^2}
-\end{equation*}
-
-Solving for distance gives
-
-\begin{equation*}
-    r = \sqrt{\frac{kq_1q_2}{F}} = \boxed{\SI{0.61}{m}}
-\end{equation*}
-\end{solution}
-\end{questions}
-
-\clearpage
-
-
-
-\textbf{\Large Simple Circuits}
-
-\subsection{Electric Current}
+\subsection*{Electric Current, Voltage, and Resistance}
 
 \begin{questions}
 \question
@@ -781,7 +1332,7 @@ A total charge of \qty{0.0035}{C} flows through a component of a car's engine in
 
 \clearpage
 
-\subsection{Components for a Simple Circuit}
+\subsection*{Components for a Simple Circuit}
 
 For the following exercises, please access the \href{https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_en.html}{PhET Simulation: Circuit Construction Kit}. Click the Intro tab, and check the box called Labels.
 
@@ -897,16 +1448,22 @@ That is, the sum of the currents across each resistor equals the total current i
 \part Find the total (equivalent) resistance in the circuit. 
 
 \begin{solutionorbox}[3cm]
-For resistors in series, 
+For resistors in parallel,
 
-
+\begin{align*}
+    R_{eq} &= \left(\frac{1}{R_1} + \frac{1}{R_2}\right)^{-1} \\[1ex]
+    &= \left(\frac{1}{\SI{8}{\ohm}} + \frac{1}{\SI{12}{\ohm}}\right)^{-1} \\[1ex]
+    &= \boxed{\SI{4.8}{\ohm}}
+\end{align*}
 \end{solutionorbox}
 
 
 \part Use Ohm's law to show that connecting the battery's voltage to the total resistance produces the total current measured in part~(\ref{abc123}).
 
 \begin{solutionorbox}[3cm]
-
+\begin{equation*}
+    I = \frac{V}{R_{eq}} = \frac{\SI{36}{V}}{\SI{4.8}{\ohm}} = \boxed{\SI{7.5}{A}}
+\end{equation*}
 \end{solutionorbox}
 
 \end{parts}
@@ -914,52 +1471,53 @@ For resistors in series,
 
 \clearpage
 
-\subsection{Circuits in Series}
+\subsection*{Circuits in Series}
+
+\noindent \textbf{Questions \ref{UP6a3}--\ref{dYRp8}.} Go to \texttt{PhET Simulation: Circuit Construction Kit}, and build the circuits shown below. Points a, b, c, etc. are labeled for referencing current or voltages at those points. For example, $I_\mathrm{b}$ is the current through Point b, and $V_\mathrm{de}$ is the voltage (or potential difference) across Points d and e.
 
 \begin{questions}
-\question
-Go to PhET Simulation: Circuit Construction Kit and build the circuit shown below. Points a through h are labeled for referencing current or voltages at those points. For example, $I_\mathrm{b}$ is the current through Point b, and $V_\mathrm{de}$ is the voltage (or potential difference) across Points d and e.
+\question \label{UP6a3}
+\textit{Circuit 1.} Use the ammeter and voltmeters in the \texttt{PhET Simulation} to measure current $I$ and voltage $V$ at or across the specified points, and record your values below:
 
-Use the ammeter and voltmeters in the simulation to measure currents and voltages at or across the specified points, and record your values below:
-
-\begin{center}
+\begin{EnvUplevel}
+\centering
 % \fbox{
-\begin{minipage}{5.5cm}
+\begin{minipage}{8cm}
 \centering
-\begin{tikzpicture}[x=3cm,y=2.5cm]
-    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0) to[R,l_={$R_2 = \SI{3}{\ohm}$}] (1,0) to[R={$R_1$},n=R1,-o]  (1,1)  -- (0,1);
+\begin{tikzpicture}[x=4cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0) to[R,l_={$R_2 = \SI{3}{\ohm}$}] (1,0) to[R={$R_1$},n=R1]  (1,1)  -- (0,1);
     \draw (R1.s) node[right]{\SI{2}{\ohm}};
-    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
-    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
-    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
-    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
-    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
-    \fill (0.75,0) circle (2pt) node[above=1pt] {f};
-    \fill (0.25,0) circle (2pt) node[above=1pt] {g};
-    \fill (0,0.25) circle (2pt) node[left=1pt] {h};
+    \fill (0,0.75) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (1.5pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (1.5pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (1.5pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (1.5pt) node[above=1pt] {f};
+    \fill (0.25,0) circle (1.5pt) node[above=1pt] {g};
+    \fill (0,0.25) circle (1.5pt) node[left=1pt] {h};
 \end{tikzpicture}
-\end{minipage}
-%}
+\end{minipage}%}
 \fbox{
-\begin{minipage}{4.0cm}
+\begin{minipage}{3cm}
 \centering
-\begin{align*}
-    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  
-\end{align*}
-\end{minipage}}
+\begin{flalign*}
+    I_\mathrm{b} &= \ans{\SI{1.00}{A}} &  \\[1ex]
+    I_\mathrm{e} &= \ans{\SI{1.00}{A}} & \\[1ex]
+    I_\mathrm{g} &= \ans{\SI{1.00}{A}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{5mm}
 \fbox{
-\begin{minipage}{4.0cm}
+\begin{minipage}{3cm}
 \centering
-\begin{align*}
-    V_\mathrm{de} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-2.00}{V}} }  \\[1ex]
-    V_\mathrm{fg} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{-3.00}{V}} }  \\[1ex]
-    V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
-    V_\mathrm{gc} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  
-\end{align*}
+\begin{flalign*}
+    V_\mathrm{de} &= \ans{\SI{-2.00}{V}} & \\[1ex]
+    V_\mathrm{fg} &= \ans{\SI{-3.00}{V}}  & \\[1ex]
+    V_\mathrm{ha} &= \ans{\SI{5.00}{V}} & \\[1ex]
+    V_\mathrm{gc} &= \ans{\SI{5.00}{V}}  
+\end{flalign*}
 \end{minipage}}
-\end{center}
+\end{EnvUplevel}
 
 \begin{parts}
     \part What is the voltage drop across resistor $R_1$? \fillin[\SI{-2.00}{V}]
@@ -971,46 +1529,46 @@ Use the ammeter and voltmeters in the simulation to measure currents and voltage
 
 
 \question
-\phantom{.}
+\textit{Circuit 2.} Find the currents, voltages, and resistances specified below.
 
-\begin{center}
-% \fbox{
-\begin{minipage}{9.5cm}
+\begin{EnvUplevel}
 \centering
-\begin{tikzpicture}[x=2.5cm,y=2cm]
+% \fbox{
+\begin{minipage}{12cm}
+\centering
+\begin{tikzpicture}[x=3cm,y=2.5cm]
     \draw (0,1) to[battery1,l_={\SI{5}{V}}] (0,0);
     \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (2,1) to[R={$R_3$},n=R3] (3,1) -- (3,0) -- (0,0);
     \draw (R1.s) node[below] {\SI{2}{\ohm}};
     \draw (R2.s) node[below] {\SI{2}{\ohm}};
     \draw (R3.s) node[below] {\SI{1}{\ohm}};
-    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
-    \fill (0.2,1) circle (2pt) node[above=1pt] {b};
-    \fill (0.8,1) circle (2pt) node[above=1pt] {c};
-    \fill (1.2,1) circle (2pt) node[above=1pt] {d};
-    \fill (1.8,1) circle (2pt) node[above=1pt] {e};
-    \fill (2.2,1) circle (2pt) node[above=1pt] {f};
-    \fill (2.8,1) circle (2pt) node[above=1pt] {g};
-    \fill (3,0.8) circle (2pt) node[right=1pt] {h};
-    \fill (3,0.2) circle (2pt) node[right=1pt] {i};
-    \fill (1.5,0) circle (2pt) node[above=1pt] {j};
-    \fill (0,0.2) circle (2pt) node[left=1pt] {k};
+    \fill (0,0.75) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.2,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (0.8,1) circle (1.5pt) node[above=1pt] {c};
+    \fill (1.2,1) circle (1.5pt) node[above=1pt] {d};
+    \fill (1.8,1) circle (1.5pt) node[above=1pt] {e};
+    \fill (2.2,1) circle (1.5pt) node[above=1pt] {f};
+    \fill (2.8,1) circle (1.5pt) node[above=1pt] {g};
+    \fill (3,0.8) circle (1.5pt) node[right=1pt] {h};
+    \fill (3,0.2) circle (1.5pt) node[right=1pt] {i};
+    \fill (1.5,0) circle (1.5pt) node[above=1pt] {j};
+    \fill (0,0.2) circle (1.5pt) node[left=1pt] {k};
 \end{tikzpicture}
-\end{minipage}
-% }
+\end{minipage}%}
 \fbox{
-\begin{minipage}{5cm}
+\begin{minipage}{3cm}
 \centering
-\begin{align*}
-    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    I_\mathrm{c} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    I_\mathrm{f} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    I_\mathrm{j} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} }  \\[1ex]
-    V_\mathrm{ka} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} }  \\[1ex]
+\begin{flalign*}
+    I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} } & \\[1ex]
+    I_\mathrm{c} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} } & \\[1ex]
+    I_\mathrm{f} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} } & \\[1ex]
+    I_\mathrm{j} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{1.00}{A}} } & \\[1ex]
+    V_\mathrm{ka} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{V}} } & \\[1ex]
     V_\mathrm{hi} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{0.00}{V}} }  
-\end{align*}
+\end{flalign*}
 \end{minipage}
 }
-\end{center}
+\end{EnvUplevel}
 
 \begin{parts}
     \part Calculate the total resistance in the circuit. \fillin[\SI{6}{\ohm}]
@@ -1021,92 +1579,261 @@ Use the ammeter and voltmeters in the simulation to measure currents and voltage
 \end{parts}
 
 \question
-\phantom{.}
+\textit{Circuit 3.} Find the currents, voltages, and resistances specified below.
 
-\begin{center}
-\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{8cm}
+\centering
+\begin{tikzpicture}[x=3.5cm,y=2.5cm]
     \draw (0,1) to[battery1,l_={\SI{3}{V}}] (0,0);
     \draw (0,1) to[R={$R_1$},n=R1] (1,1) to[R={$R_2$},n=R2] (1,0) -- (0,0);
-    \fill (0,0.75) circle (2pt) node[left=1pt] {a};
-    \fill (0.25,1) circle (2pt) node[above=1pt] {b};
-    \fill (0.75,1) circle (2pt) node[above=1pt] {c};
-    \fill (1,0.75) circle (2pt) node[right=1pt] {d};
-    \fill (1,0.25) circle (2pt) node[right=1pt] {e};
-    \fill (0.75,0) circle (2pt) node[below=1pt] {f};
-    \fill (0,0.25) circle (2pt) node[left=1pt] {g};
+    \fill (0,0.75) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.25,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (0.75,1) circle (1.5pt) node[above=1pt] {c};
+    \fill (1,0.75) circle (1.5pt) node[right=1pt] {d};
+    \fill (1,0.25) circle (1.5pt) node[right=1pt] {e};
+    \fill (0.75,0) circle (1.5pt) node[below=1pt] {f};
+    \fill (0,0.25) circle (1.5pt) node[left=1pt] {g};
     \draw (R1.s) node[below] {\SI{5}{\ohm}};
     \draw (R2.s) node[left] {\SI{1}{\ohm}};
 \end{tikzpicture}
-\end{center}
+\end{minipage}%}
+\fbox{
+\begin{minipage}{3cm}
+\centering
+\begin{flalign*}
+    I_\mathrm{b} &= \ans{\SI{0.50}{A}} &  \\[1ex]
+    I_\mathrm{c} &= \ans{\SI{0.50}{A}} & \\[1ex]
+    I_\mathrm{f} &= \ans{\SI{0.50}{A}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{5mm}
+\fbox{
+\begin{minipage}{3cm}
+\centering
+\begin{flalign*}
+    V_\mathrm{bc} &= \ans{\SI{-2.50}{V}} & \\[1ex]
+    V_\mathrm{de} &= \ans{\SI{-0.50}{V}}  & \\[1ex]
+    V_\mathrm{ga} &= \ans{\SI{+3.00}{V}} &
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
 
-\question
-\phantom{.}
+\begin{parts}
+    \part Find the total resistance in the circuit. \fillin[\SI{6}{\ohm}]
+    \part What is the total current in the circuit? \fillin[\SI{0.50}{A}]
+    \part Measure the voltage drop across resistor $R_1$. \fillin[\SI{-2.50}{V}]
+    \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-0.50}{V}]
+\end{parts}
+
+
+
+\question \label{dYRp8}
+\textit{Circuit 4}. Find the currents, voltages, and resistances specified below.
+
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{8cm}
+\centering
+\begin{tikzpicture}[x=5mm,y=3.5mm]
+    \draw (0,10) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,10) to[R={$R_1$},n=R1] (10,10) to[R={$R_2$},n=R2]  (10,0) to[R={$R_3$},n=R3]  (0,0);
+    \draw (R1.s) node[below] {\SI{5}{\ohm}};
+    \draw (R2.s) node[left] {\SI{1}{\ohm}};
+    \draw (R3.s) node[above] {\SI{2}{\ohm}};
+    \fill (0,7.5) circle (1.5pt) node[left=1pt] {a};
+    \fill (1,10) circle (1.5pt) node[above=1pt] {b};
+    \fill (3.5,10) circle (1.5pt) node[above=1pt] {c};
+    \fill (6.5,10) circle (1.5pt) node[above=1pt] {d};
+    \fill (8,10) circle (1.5pt) node[above=1pt] {e};
+    \fill (9.5,10) circle (1.5pt) node[above=1pt] {f};
+    \fill (10,7) circle (1.5pt) node[right=1pt] {g};
+    \fill (10,3) circle (1.5pt) node[right=1pt] {h};
+    \fill (10,1) circle (1.5pt) node[right=1pt] {i};
+    \fill (6.5,0) circle (1.5pt) node[below=1pt] {j};
+    \fill (3.5,0) circle (1.5pt) node[below=1pt] {k};
+    \fill (2,0) circle (1.5pt) node[below=1pt] {l};
+    \fill (0.5,0) circle (1.5pt) node[below=1pt] {m};
+    \fill (0,2.5) circle (1.5pt) node[left=1pt] {n};
+\end{tikzpicture}
+\end{minipage}%}
+\fbox{
+\begin{minipage}{3cm}
+\centering
+\begin{flalign*}
+    I_\mathrm{b} &= \ans{\SI{0.75}{A}} & \\[1ex]
+    I_\mathrm{f} &= \ans{\SI{0.75}{A}} & \\[1ex]
+    I_\mathrm{i} &= \ans{\SI{0.75}{A}} & \\[1ex]
+    I_\mathrm{m} &= \ans{\SI{0.75}{A}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{5mm}
+\fbox{
+\begin{minipage}{3cm}
+\centering
+\begin{flalign*}
+    V_\mathrm{cd} &= \ans{\SI{-3.75}{V}} & \\[1ex]
+    V_\mathrm{gh} &= \ans{\SI{-0.75}{V}}  & \\[1ex]
+    V_\mathrm{jk} &= \ans{\SI{-1.50}{V}} & \\[1ex]
+    V_\mathrm{na} &= \ans{+\SI{6.00}{V}} & \\[1ex]
+    V_\mathrm{el} &= \ans{\SI{-2.25}{V}}  
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
+
+\begin{parts}
+    \part Calculate the total resistance in the circuit. \fillin[\SI{8}{\ohm}]
+    \part What is the total current in the circuit? \fillin[\SI{0.75}{A}]
+    \part Measure the voltage drop across resistor $R_1$. \fillin[\SI{-3.75}{V}]
+    % \part What is the voltage drop across resistor $R_2$? \fillin[\SI{-0.75}{V}]
+    \part What is the potential difference across resistor $R_3$? \fillin[\SI{-1.50}{V}]
+\end{parts}
+
+\bigskip
+
+\hrule
+
+\begin{EnvUplevel}
+\textbf{Question \ref{7JSbX}--\ref{iH6ZH}.} The figure below shows a simple circuit consisting of a battery $V$ and resistors $R_1$ and $R_2$.
 
 \begin{center}
 \begin{tikzpicture}[x=2.5cm,y=2cm]
-    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
-    \draw (0,1) to[R,l={$R_1 = \SI{5}{\ohm}$}] (1,1) to[R,l={$R_2 = \SI{1}{\ohm}$}] (1,0) to[R={$R_3 = \SI{2}{\ohm}$}] (0,0);
+    \draw (0,0) to[battery1,invert,l={$V$}] (0,1) to[R={$R_1$}] (1,1) to[R={$R_2$}] (1,0) -- (0,0);
 \end{tikzpicture}
 \end{center}
+\end{EnvUplevel}
 
+\question \label{7JSbX}
+Suppose that $R_1 = R_2$.
+
+\begin{parts}
+\part How does the current through $R_1$ compare to the current through $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{The current is the same through both resistors. In a series circuit, the current is the same everywhere.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop across $R_1$ compare to the voltage drop across $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{By Ohm's law $V=IR$, the voltage drop is the same since they share the same current and have the same resistance.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop each resistor compare to the voltage drop across the battery? Explain.
+
+\ifprintanswers
+\textcolor{red}{Each resistor must have a smaller voltage drop than the potential difference (voltage) across the battery.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question \label{iH6ZH}
+Suppose that $R_1 > R_2$.
+
+\begin{parts}
+\part How does the current through $R_1$ compare to the current through $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{Despite different resistances, the current is still the same through both resistors. In a series circuit, the current is the same everywhere.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop across $R_1$ compare to the voltage drop across $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{By Ohm's law $V=IR$, there's a bigger voltage drop for the bigger resistor $R_1$ than for $R_2$.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop each across resistor compare to the voltage drop across the battery? Explain.
+
+\ifprintanswers
+\textcolor{red}{Each resistor must have a smaller voltage drop than the potential difference (voltage) across the battery, so that the same of voltage drops across resistors equals the voltage drop across the battery.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
 \end{questions}
-
 
 \clearpage
 
-\subsection{Circuits in Parallel}
+\subsection*{Circuits in Parallel}
+
+\noindent \textbf{Questions \ref{PiHwz}--\ref{7bHoB}.} Go to \texttt{PhET Simulation: Circuit Construction Kit}, and build the circuits shown below. Points a, b, c, etc. are labeled for referencing current or voltages at those points. For example, $I_\mathrm{b}$ is the current through Point b, and $V_\mathrm{de}$ is the voltage (or potential difference) across Points d and e.
 
 \begin{questions}
-\question
-\phantom{.}
+\question \label{PiHwz}
+\textit{Circuit 1.} Use the ammeter and voltmeters in the \texttt{PhET Simulation} to measure current $I$ and voltage $V$ at or across the specified points, and record your values below:
 
-\begin{center}
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{9cm}
+\centering
+\begin{tikzpicture}[x=3cm,y=2.5cm]
+    \draw (0,1) to[battery1,l={\SI{10}{V}}] (0,0);
+    \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
+    \draw (1,0) to[R={$R_1$},n=R1] (1,1);
+    \draw (R1.s) node[right] {\SI{2}{\ohm}};
+    \draw (R2.s) node[right] {\SI{4}{\ohm}};
+    \fill (0,0.8) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (2,0.8) circle (1.5pt) node[right=1pt] {c};
+    \fill (2,0.2) circle (1.5pt) node[right=1pt] {d};
+    \fill (0.5,0) circle (1.5pt) node[below=1pt] {e};
+    \fill (1,0.8) circle (1.5pt) node[right=1pt] {f};
+    \fill (1,0.2) circle (1.5pt) node[right=1pt] {g};
+    \fill (0,0.2) circle (1.5pt) node[left=1pt] {h};
+\end{tikzpicture}
+\end{minipage}%}%
 \fbox{
-\begin{minipage}{6.5cm}
-    \begin{tikzpicture}[x=2.5cm,y=2cm]
-        \draw (0,1) to[battery1,l={\SI{10}{V}}] (0,0);
-        \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
-        \draw (1,0) to[R={$R_1$},n=R1] (1,1);
-        \draw (R1.s) node[right] {\SI{2}{\ohm}};
-        \draw (R2.s) node[right] {\SI{4}{\ohm}};
-        \fill (0,0.8) circle (2pt) node[left=1pt] {a};
-        \fill (0.5,1) circle (2pt) node[above=1pt] {b};
-        \fill (2,0.8) circle (2pt) node[right=1pt] {c};
-        \fill (2,0.2) circle (2pt) node[right=1pt] {d};
-        \fill (0.5,0) circle (2pt) node[below=1pt] {e};
-        \fill (1,0.8) circle (2pt) node[right=1pt] {f};
-        \fill (1,0.2) circle (2pt) node[right=1pt] {g};
-        \fill (0,0.2) circle (2pt) node[left=1pt] {h};
-    \end{tikzpicture}
-\end{minipage}
-}
+\begin{minipage}{3cm}
+\begin{flalign*}
+    V_\mathrm{fg} &= {\ans{-\SI{10.00}{V}}} & \\[1ex]
+    V_\mathrm{cd} &= {\ans{-\SI{10.00}{V}}} & \\[1ex]
+    V_\mathrm{ha} &= {\ans{+\SI{10.00}{V}}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{5mm}
 \fbox{
-\begin{minipage}{4cm}
-    \begin{align*}
-        I_\mathrm{g} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{5.00}{A}} } \\[1ex]
-        I_\mathrm{d} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{2.50}{A}} } \\[1ex]
-        I_\mathrm{b} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
-        I_\mathrm{e} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{7.50}{A}} } \\[1ex]
-        V_\mathrm{ha} &= {\ifprintanswers \color{red} \else \color{white} \fi {\SI{10.00}{A}} } 
-    \end{align*}
-\end{minipage}
-}
-\end{center}
+\begin{minipage}{3cm}
+\begin{flalign*}
+    I_\mathrm{g} &= \ans{\SI{5.00}{A}} & \\[1ex]
+    I_\mathrm{d} &= \ans{\SI{2.50}{A}} & \\[1ex]
+    I_\mathrm{b} &= \ans{\SI{7.50}{A}} & \\[1ex]
+    I_\mathrm{e} &= \ans{\SI{7.50}{A}} & 
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
 
 \begin{parts}
 \part What is the equivalent resistance of the circuit? \fillin[\SI{1.33}{\ohm}]
 \part What is the current through resistor $R_1$? \fillin[\SI{5.00}{A}]
 \part Measure the current through resistor $R_2$. \fillin[\SI{2.50}{A}]
 \part Find the total current in the circuit. \fillin[\SI{7.50}{A}]
-\part What is the voltage drop across $R_1$? \fillin[\SI{10}{V}]
-\part What is the voltage drop across $R_2$? \fillin[\SI{10}{V}]
+\part What is the voltage drop across $R_1$? \fillin[\SI{-10}{V}]
+% \part What is the voltage drop across $R_2$? \fillin[\SI{-10}{V}]
 \end{parts}
 
 \question
-\phantom{.}
+\textit{Circuit 2.} Find the currents, voltages, and resistances specified below.
 
-\begin{center}
-\begin{tikzpicture}[x=2.5cm,y=2cm]
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{10cm}
+\centering
+\begin{tikzpicture}[x=2.5cm,y=3cm]
     \draw (0,1) to[battery1,l={\SI{12}{V}}] (0,0);
     \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
     \draw (1,0) to[R={$R_1$},n=R1] (1,1);
@@ -1114,45 +1841,108 @@ Use the ammeter and voltmeters in the simulation to measure currents and voltage
     \draw (R1.s) node[right] {\SI{2}{\ohm}};
     \draw (R2.s) node[right] {\SI{4}{\ohm}};
     \draw (R3.s) node[right] {\SI{3}{\ohm}};
-    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
-    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
-    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
-    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
-    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
-    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
-    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
-    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
-    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
-    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
-    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+    \fill (0,0.8) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (1.5pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (1.5pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (1.5pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (1.5pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (1.5pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (1.5pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (1.5pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (1.5pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (1.5pt) node[right=1pt] {k};
 \end{tikzpicture}
-\end{center}
+\end{minipage}%}%
+\fbox{
+\begin{minipage}{2.8cm}
+\begin{flalign*}
+    V_\mathrm{hi} &= {\ans{\SI{-12.00}{V}}} & \\[1ex]
+    V_\mathrm{jk} &= {\ans{\SI{-12.00}{V}}} & \\[1ex]
+    V_\mathrm{cd} &= {\ans{\SI{-12.00}{V}}} & \\[1ex]
+    V_\mathrm{ga} &= {\ans{+\SI{12.00}{V}}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{2.5mm}
+\fbox{
+\begin{minipage}{2.6cm}
+\begin{flalign*}
+    I_\mathrm{i} &= \ans{\SI{6.00}{A}} & \\[1ex]
+    I_\mathrm{j} &= \ans{\SI{3.00}{A}} & \\[1ex]
+    I_\mathrm{d} &= \ans{\SI{4.00}{A}} & \\[1ex]
+    I_\mathrm{b} &= \ans{\SI{13.00}{A}} & \\[1ex]
+    I_\mathrm{f} &= \ans{\SI{13.00}{A}} & \\[1ex]
+    I_\mathrm{e} &= \ans{\SI{7.00}{A}} & 
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
+
+\begin{parts}
+\part What is the total current in the circuit? \fillin[\SI{13.0}{A}]
+\part Calculate the circuit's equivalent (total) resistance. \fillin[\SI{0.92}{\ohm}]
+\part What is the voltage drop across $R_2$ \fillin[\SI{-12.00}{V}]?
+\part What physical quantity is the same for all resistors? \fillin[voltage]
+\part Besides resistance, what physical quantity is different for each resistor? \fillin[current]
+\end{parts}
 
 \question
-\phantom{.}
+\textit{Circuit 3.} Find the currents, voltages, and resistances specified below.
 
-\begin{center}
-\begin{tikzpicture}[x=2.5cm,y=2cm]
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{8cm}
+\begin{tikzpicture}[x=3cm,y=2.5cm]
     \draw (0,1) to[battery1,l={\SI{8}{V}}] (0,0);
     \draw (0,0) -- (2,0) to[R={$R_2$},n=R2] (2,1) -- (0,1);
     \draw (1,0) to[R={$R_1$},n=R1] (1,1);
     \draw (R1.s) node[right] {\SI{10}{\ohm}};
     \draw (R2.s) node[right] {\SI{40}{\ohm}};
-    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
-    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
-    \fill (2,0.8) circle (2pt) node[right=1pt] {c};
-    \fill (2,0.2) circle (2pt) node[right=1pt] {d};
-    \fill (0.5,0) circle (2pt) node[below=1pt] {e};
-    \fill (1,0.8) circle (2pt) node[right=1pt] {f};
-    \fill (1,0.2) circle (2pt) node[right=1pt] {g};
+    \fill (0,0.8) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (2,0.8) circle (1.5pt) node[right=1pt] {c};
+    \fill (2,0.2) circle (1.5pt) node[right=1pt] {d};
+    \fill (0.5,0) circle (1.5pt) node[below=1pt] {e};
+    \fill (1,0.8) circle (1.5pt) node[right=1pt] {f};
+    \fill (1,0.2) circle (1.5pt) node[right=1pt] {g};
+    \fill (0,0.2) circle (1.5pt) node[left=1pt] {h};
 \end{tikzpicture}
-\end{center}
+\end{minipage}%}%
+\fbox{
+\begin{minipage}{3cm}
+\begin{flalign*}
+    V_\mathrm{fg} &= {\ans{\SI{-8.00}{V}}} & \\[1ex]
+    V_\mathrm{cd} &= {\ans{\SI{-8.00}{V}}} & \\[1ex]
+    V_\mathrm{ha} &= {\ans{+\SI{8.00}{V}}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{5mm}
+\fbox{
+\begin{minipage}{3cm}
+\begin{flalign*}
+    I_\mathrm{f} &= \ans{\SI{0.80}{A}} & \\[1ex]
+    I_\mathrm{c} &= \ans{\SI{0.20}{A}} & \\[1ex]
+    I_\mathrm{b} &= \ans{\SI{1.00}{A}} & \\[1ex]
+    I_\mathrm{e} &= \ans{\SI{1.00}{A}} & 
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
 
-\question
-\phantom{.}
+\begin{parts}
+\part Besides resistance, what physical quantity is different for each resistor? \fillin[current]
+\part What is the equivalent resistance? \fillin[\SI{8}{\ohm}]
+\part Find the total current in the circuit. \fillin[\SI{1.0}{A}]
+\part What physical quantity is the same for all resistors? \fillin[voltage]
+\end{parts}
 
-\begin{center}
-\begin{tikzpicture}[x=2.5cm,y=2cm]
+\question \label{7bHoB}
+\textit{Circuit 4.} Find the currents, voltages, and resistances specified below.
+
+\begin{EnvUplevel}
+\centering
+% \fbox{
+\begin{minipage}{9.5cm}
+\begin{tikzpicture}[x=2.5cm,y=3cm]
     \draw (0,1) to[battery1,l={\SI{5}{V}}] (0,0);
     \draw (0,0) -- (3,0) to[R={$R_3$},n=R3] (3,1) -- (0,1);
     \draw (1,0) to[R={$R_1$},n=R1] (1,1);
@@ -1160,203 +1950,131 @@ Use the ammeter and voltmeters in the simulation to measure currents and voltage
     \draw (R1.s) node[right] {\SI{10}{\ohm}};
     \draw (R2.s) node[right] {\SI{10}{\ohm}};
     \draw (R3.s) node[right] {\SI{10}{\ohm}};
-    \fill (0,0.8) circle (2pt) node[left=1pt] {a};
-    \fill (0.5,1) circle (2pt) node[above=1pt] {b};
-    \fill (3,0.8) circle (2pt) node[right=1pt] {c};
-    \fill (3,0.2) circle (2pt) node[right=1pt] {d};
-    \fill (1.5,0) circle (2pt) node[below=1pt] {e};
-    \fill (0.5,0) circle (2pt) node[below=1pt] {f};
-    \fill (0,0.2) circle (2pt) node[left=1pt] {g};
-    \fill (1,0.8) circle (2pt) node[right=1pt] {h};
-    \fill (1,0.2) circle (2pt) node[right=1pt] {i};
-    \fill (2,0.8) circle (2pt) node[right=1pt] {j};
-    \fill (2,0.2) circle (2pt) node[right=1pt] {k};
+    \fill (0,0.8) circle (1.5pt) node[left=1pt] {a};
+    \fill (0.5,1) circle (1.5pt) node[above=1pt] {b};
+    \fill (3,0.8) circle (1.5pt) node[right=1pt] {c};
+    \fill (3,0.2) circle (1.5pt) node[right=1pt] {d};
+    \fill (1.5,0) circle (1.5pt) node[below=1pt] {e};
+    \fill (0.5,0) circle (1.5pt) node[below=1pt] {f};
+    \fill (0,0.2) circle (1.5pt) node[left=1pt] {g};
+    \fill (1,0.8) circle (1.5pt) node[right=1pt] {h};
+    \fill (1,0.2) circle (1.5pt) node[right=1pt] {i};
+    \fill (2,0.8) circle (1.5pt) node[right=1pt] {j};
+    \fill (2,0.2) circle (1.5pt) node[right=1pt] {k};
+    \fill (2.8,0) circle (1.5pt) node[below=1pt] {l};
+    \fill (1.5,1) circle (1.5pt) node[above=1pt] {m};
+\end{tikzpicture}
+\end{minipage}%}%
+\fbox{
+\begin{minipage}{2.7cm}
+\begin{flalign*}
+    V_\mathrm{hi} &= {\ans{\SI{-5.00}{V}}} & \\[1ex]
+    V_\mathrm{jk} &= {\ans{\SI{-5.00}{V}}} & \\[1ex]
+    V_\mathrm{cd} &= {\ans{\SI{-5.00}{V}}} & \\[1ex]
+    V_\mathrm{ga} &= {+\ans{\SI{5.00}{V}}} & \\[1ex]
+    V_\mathrm{el} &= {\ans{\SI{0.00}{V}}} & 
+\end{flalign*}
+\end{minipage}}%
+\hspace{2.5mm}
+\fbox{
+\begin{minipage}{2.7cm}
+\begin{flalign*}
+    I_\mathrm{h} &= \ans{\SI{0.50}{A}} & \\[1ex]
+    I_\mathrm{k} &= \ans{\SI{0.50}{A}} & \\[1ex]
+    I_\mathrm{l} &= \ans{\SI{0.50}{A}} & \\[1ex]
+    I_\mathrm{m} &= \ans{\SI{1.00}{A}} & \\[1ex]
+    I_\mathrm{b} &= \ans{\SI{1.50}{A}} & \\[1ex]
+    I_\mathrm{f} &= \ans{\SI{1.50}{A}} & 
+\end{flalign*}
+\end{minipage}}
+\end{EnvUplevel}
+
+\begin{parts}
+\part What is the total current in the circuit? \fillin[\SI{1.50}{A}]
+\part Find the equivalent resistance. \fillin[\SI{3.33}{\ohm}]
+\end{parts}
+
+\bigskip
+
+\hrule
+
+\begin{EnvUplevel}
+\textbf{Question \ref{aPjLg}--\ref{mv16P}.} The figure below shows a simple circuit consisting of a battery $V$ and resistors $R_1$ and~$R_2$.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,0) to[battery1,invert,l={$V$}] (0,1) -- (1,1) to[R={$R_1$}] (1,0) -- (0,0);
+    \draw (1,1) -- (2,1) to[R={$R_2$}] (2,0) -- (1,0);
 \end{tikzpicture}
 \end{center}
+\end{EnvUplevel}
+
+
+\question \label{aPjLg}
+Suppose that $R_1 = R_2$.
+
+\begin{parts}
+\part How does the current through $R_1$ compare to the current through $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{The current is the same through both resistors. In a parallel circuit, the current resistors is the same only when the resistances are equal.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop across $R_1$ compare to the voltage drop across $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{They are equal. In parallel circuits, the voltage drop across each resistor is always the same, even for different resistances.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop each resistor compare to the voltage drop across the battery? Explain.
+
+\ifprintanswers
+\textcolor{red}{Each resistor has the same voltage drop as the battery. This fact holds true for parallel circuits, even when resistances are different.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+\question \label{mv16P}
+Next, suppose that $R_1 > R_2$.
+
+\begin{parts}
+\part How does the current through $R_1$ compare to the current through $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{The current through $R_1$ is less than current through $R_2$, since $R_1$ has greater resistance.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop across $R_1$ compare to the voltage drop across $R_2$? Explain.
+
+\ifprintanswers
+\textcolor{red}{They are equal. In parallel circuits, the voltage drop across each resistor is always the same, even for different resistances.}
+\else
+\fillwithlines{7mm}
+\fi
+
+\part How does the voltage drop across each resistor compare to the voltage drop across the battery? Explain.
+
+\ifprintanswers
+\textcolor{red}{Each resistor has the same voltage drop as the battery. This fact holds true for parallel circuits, even when resistances are different.}
+\else
+\fillwithlines{7mm}
+\fi
+\end{parts}
+
+
 
 \end{questions}
 
 \clearpage
 
-
-\subsection{Resistors in Series and Parallel}
-
-\textbf{Series Circuits}
-
-\begin{questions}
-\question 
-In the circuit shown below, a voltage of \SI{6}{V} pushes charge through a single resistor of \SI{2}{\ohm}. According to Ohm's law, the current in the resistor (and therefore in the whole circuit) is \fillin[\SI{3}{A}].
-
-\begin{center}
-\begin{tikzpicture}[x=2cm,y=1.5cm]
-    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) -- (1,1) to[R,l_={\SI{2}{\ohm}}] (0,1) -- (0,0);
-\end{tikzpicture}
-\end{center}
-
-\question
-If a second identical resistor is added, as shown below, the \SI{6}{V} battery must push charge through a total resistance of \fillin[\SI{6}{\ohm}].
-The current in the circuit is then \fillin[\SI{1}{A}].
-
-\begin{center}
-\begin{tikzpicture}[x=2cm,y=1.5cm]
-    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) to[R,l_={\SI{3}{\ohm}}] (1,1) to[R,l_={\SI{3}{\ohm}}] (0,1) -- (0,0);
-\end{tikzpicture}
-\end{center}
-
-
-\question
-The equivalent resistance of three \SI{4}{\ohm} resistors in series is \fillin[\SI{12}{\ohm}].
-
-\question
-Does current flow \textit{through} a resistor, or \textit{across} a resistor? \fillin[through]
-
-Is voltage established \textit{through} a resistor, or \textit{across} a resistor? \fillin[across]
-
-
-\question
-Does current in the lamps occur simultaneously, or does charge flow first through one lamp, then the other, and finally the last in turn?
-
-\fillin[Simultaneously\hfill][0.9\textwidth]
-
-
-
-\question 
-Circuits A and B below are identical with all bulbs rated at equal wattage (therefore equal resistance). The only difference between the circuits is that Bulb 5 has a short circuit, as shown.
-
-\begin{center}
-\begin{tikzpicture}[x=2cm,y=1.5cm]
-    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
-    \draw (0,0) -- (0,1) to[bulb,l_=1] (1,1) to[bulb,l_=2] (2,1) to[bulb,l_=3] (3,1) -- (3,0);
-    \node[above=2pt] at (current bounding box.north) {Circuit A};
-\end{tikzpicture}
-\hspace{5mm}
-\begin{tikzpicture}[x=2cm,y=1.5cm]
-    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
-    \draw (0,0) -- (0,1) to[bulb,l_=4] (1,1) to[bulb,l_=5] (2,1) to[bulb,l_=6] (3,1) -- (3,0);
-    \draw[rounded corners=3mm] (1,1) -- (1.25,0.6) -- (1.5,0.4) -- (1.75,0.6) -- (2,1);
-    \fill (1,1) circle (1pt);
-    \fill (2,1) circle (1pt);
-    \node[above=2pt] at (current bounding box.north) {Circuit B};
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part In which circuit is the current greater? \fillin[B]
-\part In which circuit are all three bulbs equally bright? \fillin[A]
-\part What bulbs are the brightest? \fillin[4 and 6]
-\part What bulb is the dimmest? \fillin[5]
-\part What bulbs have the largest voltage drops across them? \fillin[4 and 6]
-\part What circuit dissipates more power? \fillin[B]
-\part What circuit produces more light? \fillin[B]
-\end{parts}
-
-
-\uplevel{\textbf{Parallel Circuits}}
-
-\question
-In the circuit shown below, there is a voltage drop of \SI{6}{V} across each \SI{2}{\ohm} resistor. Points a through j are labeled for reference.
-
-\begin{center}
-\begin{tikzpicture}[x=2cm,y=2.5cm]
-    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
-    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
-    \draw (1,1) to[R={\SI{2}{\ohm}}] (1,0);
-    \fill (0,0.8) circle (1.5pt) node[left] {a};
-    \fill (0.5,1) circle (1.5pt) node[above] {b};
-    \fill (1.5,1) circle (1.5pt) node[above] {c};
-    \fill (2,0.8) circle (1.5pt) node[right] {d};
-    \fill (2,0.2) circle (1.5pt) node[right] {e};
-    \fill (1.5,0) circle (1.5pt) node[below] {f};
-    \fill (0.5,0) circle (1.5pt) node[below] {g};
-    \fill (0,0.2) circle (1.5pt) node[left] {h};
-    \fill (1,0.8) circle (1.5pt) node[right] {i};
-    \fill (1,0.2) circle (1.5pt) node[right] {j};
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part By Ohm's law, the current in each resistor is \fillin[\SI{3}{A}].
-\part The current through the battery, which is the sum of the currents in the resistors, is \fillin[\SI{6}{A}].
-\part Record the current through each of the points labeled in the figure.
-
-\begin{gather*}
-    I_\mathrm{a} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
-    I_\mathrm{b} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
-    I_\mathrm{c} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
-    I_\mathrm{d} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
-    I_\mathrm{e} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \\[1ex]
-    I_\mathrm{f} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
-    I_\mathrm{g} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
-    I_\mathrm{h} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
-    I_\mathrm{i} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
-    I_\mathrm{j} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} 
-\end{gather*}
-\end{parts}
-
-\question
-Which circuit below is \textit{not} equivalent to the circuit from the previous question?
-
-\begin{center}
-\begin{tikzpicture}[x=1.3cm,y=3cm]
-    \draw (0,1) to[battery1] (0,0) -- (1.5,0);
-    \draw (0,1) -- (1.5,1) -- (2,0.75) to[R] (2,0.25) -- (1.5,0);
-    \draw (1.5,1) -- (1,0.75) to[R] (1,0.25) -- (1.5,0);
-    \node[above=2pt] at (current bounding box.north) {Circuit W};
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}[x=1.3cm,y=3cm]
-    \draw (0,1) to[battery1] (0,0);
-    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) -- (0,0);
-    \draw (1,1) to[R] (1,0);
-    \node[above=2pt] at (current bounding box.north) {Circuit X};
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}[x=1.3cm,y=3cm]
-    \draw (0,1) to[battery1] (0,0) -- (1.5,0) -- (1.5,0.25);
-    \draw (0,1) -- (1.5,1) -- (1.5,0.75) -- (1,0.75) to[R] (1,0.25) -- (2,0.25) to[R] (2,0.75) -- (1.5,0.75);
-    \node[above=2pt] at (current bounding box.north) {Circuit Y};
-\end{tikzpicture}
-\hspace{2em}
-\begin{tikzpicture}[x=1.3cm,y=3cm]
-    \draw (0,1) to[battery1] (0,0);
-    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) to[R] (0,0);
-    \draw (1,1) -- (1,0);
-    \node[above=2pt] at (current bounding box.north) {Circuit Z};
-\end{tikzpicture}
-\end{center}
-
-\question 
-Consider the parallel circuit below.
-
-\begin{center}
-\begin{tikzpicture}[x=2cm,y=2cm]
-    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
-    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
-    \draw (1,1) to[R={\SI{1}{\ohm}}] (1,0);
-    \draw (2,1) -- (3,1) to[R={\SI{2}{\ohm}}] (3,0) -- (2,0);
-\end{tikzpicture}
-\end{center}
-
-\begin{parts}
-\part The voltage drop across each resistor is \fillin[\SI{6}{V}].
-\part Now consider the currents in each branch.
-
-\begin{itemize}[topsep=0pt]
-    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
-    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
-    \item The current through the \SI{1}{\ohm} resistor is \fillin[\SI{6}{A}].
-\end{itemize}
-
-\part The current through the battery, which equals the sum of the currents in each branch, is \fillin[\SI{12}{A}].
-
-\part The equivalent resistance of the circuit equals \fillin[\SI{0.5}{\ohm}].
-
-\end{parts}
-\end{questions}
-
-\clearpage
-
-\subsection{The Circuit Lab}
+\subsection*{The Circuit Lab}
 
 \begin{questions}
 \question \label{Q1}
@@ -1628,7 +2346,7 @@ Teacher's stamp of approval: \fillin[][2em]
 
 % Teacher's stamp of approval: \fillin[][2em]
 
-\clearpage
+
 \question
 Experiment: Get a voltmeter and an ammeter from your teacher and make following measurements:
 
@@ -1641,14 +2359,14 @@ Experiment: Get a voltmeter and an ammeter from your teacher and make following 
     \item Introduce a blue or green resistor into the series. The current through the\\ circuit is now \fillin[]
 \end{itemize}
 
-\part Create a series circuit with 1 battery, 1 switch, and 2 different types of bulb.
+\part Create a series circuit with 1 battery, 1 switch, and 2 bulbs.
 
 \begin{itemize}[itemsep=6pt]
     \item Voltage across the first bulb is \fillin[]
     \item Voltage across the second bulb is \fillin[]
 \end{itemize}
 
-\part Construct a parallel circuit with 2 batteries and 2 different types of bulbs (or 1 bulb, 1 resistor).
+\part Construct a parallel circuit with 2 batteries and 2 bulbs (or 1 bulb, 1 resistor).
 
 \begin{itemize}[itemsep=6pt]
     \item Voltage across both batteries is \fillin[]
@@ -1659,19 +2377,209 @@ Experiment: Get a voltmeter and an ammeter from your teacher and make following 
 \end{itemize}
 
 
+\end{parts}
+\end{questions}
+
+\clearpage
+
+
+\subsection*{Series and Parallel Circuits}
+
+\textbf{Series Circuits}
+
+\begin{questions}
+\question 
+In the circuit shown below, a voltage of \SI{6}{V} pushes charge through a single resistor of \SI{2}{\ohm}. According to Ohm's law, the current in the resistor (and therefore in the whole circuit) is \fillin[\SI{3}{A}].
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) -- (1,1) to[R,l_={\SI{2}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+\question
+If a second identical resistor is added, as shown below, the \SI{6}{V} battery must push charge through a total resistance of \fillin[\SI{6}{\ohm}].
+The current in the circuit is then \fillin[\SI{1}{A}].
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{6}{V}}] (1,0) to[R,l_={\SI{3}{\ohm}}] (1,1) to[R,l_={\SI{3}{\ohm}}] (0,1) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+
+\question
+The equivalent resistance of three \SI{4}{\ohm} resistors in series is \fillin[\SI{12}{\ohm}].
+
+\question
+Does current flow \textit{through} a resistor, or \textit{across} a resistor? \fillin[through]
+
+Is voltage established \textit{through} a resistor, or \textit{across} a resistor? \fillin[across]
+
+
+\question
+Does current in the lamps occur simultaneously, or does charge flow first through one lamp, then the other, and finally the last in turn?
+
+\fillin[Simultaneously\hfill][0.9\textwidth]
+
+
+
+\question 
+Circuits A and B below are identical with all bulbs rated at equal wattage (therefore equal resistance). The only difference between the circuits is that Bulb 5 has a short circuit, as shown.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=1] (1,1) to[bulb,l_=2] (2,1) to[bulb,l_=3] (3,1) -- (3,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit A};
+\end{tikzpicture}
+\hspace{5mm}
+\begin{tikzpicture}[x=2cm,y=1.5cm]
+    \draw (0,0) to[battery1,l_={\SI{4.5}{V}}] (3,0); 
+    \draw (0,0) -- (0,1) to[bulb,l_=4] (1,1) to[bulb,l_=5] (2,1) to[bulb,l_=6] (3,1) -- (3,0);
+    \draw[rounded corners=3mm] (1,1) -- (1.25,0.6) -- (1.5,0.4) -- (1.75,0.6) -- (2,1);
+    \fill (1,1) circle (1pt);
+    \fill (2,1) circle (1pt);
+    \node[above=2pt] at (current bounding box.north) {Circuit B};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part In which circuit is the current greater? \fillin[B]
+\part In which circuit are all three bulbs equally bright? \fillin[A]
+\part What bulbs are the brightest? \fillin[4 and 6]
+\part What bulb is the dimmest? \fillin[5]
+\part What bulbs have the largest voltage drops across them? \fillin[4 and 6]
+\part What circuit dissipates more power? \fillin[B]
+\part What circuit produces more light? \fillin[B]
+\end{parts}
+
+
+\uplevel{\textbf{Parallel Circuits}}
+
+\question
+In the circuit shown below, there is a voltage drop of \SI{6}{V} across each \SI{2}{\ohm} resistor. Points a through j are labeled for reference.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2.5cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{2}{\ohm}}] (1,0);
+    \fill (0,0.8) circle (1.5pt) node[left] {a};
+    \fill (0.5,1) circle (1.5pt) node[above] {b};
+    \fill (1.5,1) circle (1.5pt) node[above] {c};
+    \fill (2,0.8) circle (1.5pt) node[right] {d};
+    \fill (2,0.2) circle (1.5pt) node[right] {e};
+    \fill (1.5,0) circle (1.5pt) node[below] {f};
+    \fill (0.5,0) circle (1.5pt) node[below] {g};
+    \fill (0,0.2) circle (1.5pt) node[left] {h};
+    \fill (1,0.8) circle (1.5pt) node[right] {i};
+    \fill (1,0.2) circle (1.5pt) node[right] {j};
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part By Ohm's law, the current in each resistor is \fillin[\SI{3}{A}].
+\part The current through the battery, which is the sum of the currents in the resistors, is \fillin[\SI{6}{A}].
+\part Record the current through each of the points labeled in the figure.
+
+\begin{gather*}
+    I_\mathrm{a} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{b} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{c} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{d} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{e} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \\[1ex]
+    I_\mathrm{f} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{g} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{h} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{6}{A}} \qquad
+    I_\mathrm{i} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} \qquad
+    I_\mathrm{j} = {\ifprintanswers \color{red} \else \color{white} \fi \SI{3}{A}} 
+\end{gather*}
+\end{parts}
+
+\question
+Which circuit below is \textit{not} equivalent to the circuit from the previous question?
+
+\begin{center}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0);
+    \draw (0,1) -- (1.5,1) -- (2,0.75) to[R] (2,0.25) -- (1.5,0);
+    \draw (1.5,1) -- (1,0.75) to[R] (1,0.25) -- (1.5,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit W};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) -- (0,0);
+    \draw (1,1) to[R] (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit X};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0) -- (1.5,0) -- (1.5,0.25);
+    \draw (0,1) -- (1.5,1) -- (1.5,0.75) -- (1,0.75) to[R] (1,0.25) -- (2,0.25) to[R] (2,0.75) -- (1.5,0.75);
+    \node[above=2pt] at (current bounding box.north) {Circuit Y};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[x=1.3cm,y=3cm]
+    \draw (0,1) to[battery1] (0,0);
+    \draw (0,1) -- (2,1) -- (2,0) to[R] (1,0) to[R] (0,0);
+    \draw (1,1) -- (1,0);
+    \node[above=2pt] at (current bounding box.north) {Circuit Z};
+\end{tikzpicture}
+\end{center}
+
+\question 
+Consider the parallel circuit below.
+
+\begin{center}
+\begin{tikzpicture}[x=2cm,y=2cm]
+    \draw (0,1) to[battery1,l_={\SI{6}{V}}] (0,0);
+    \draw (0,1) -- (2,1) to[R={\SI{2}{\ohm}}] (2,0) -- (0,0);
+    \draw (1,1) to[R={\SI{1}{\ohm}}] (1,0);
+    \draw (2,1) -- (3,1) to[R={\SI{2}{\ohm}}] (3,0) -- (2,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part The voltage drop across each resistor is \fillin[\SI{6}{V}].
+\part Now consider the currents in each branch.
+
+\begin{itemize}[topsep=0pt]
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{2}{\ohm} resistor is \fillin[\SI{3}{A}].
+    \item The current through the \SI{1}{\ohm} resistor is \fillin[\SI{6}{A}].
+\end{itemize}
+
+\part The current through the battery, which equals the sum of the currents in each branch, is \fillin[\SI{12}{A}].
+
+\part The equivalent resistance of the circuit equals \fillin[\SI{0.5}{\ohm}].
 
 \end{parts}
 \end{questions}
+
+\clearpage
+
+
 
 
 
 \clearpage
 
-\subsection{Electric Power and Resistance}
+\subsection*{Electric Power}
 
 \begin{questions}
 \question
-A \SI{1.5}{V} battery is connected to a small light bulb with a resistance of \SI{3.5}{\ohm}. What is the current in the bulb?
+A \SI{1.5}{V} battery is connected to a small light bulb with a resistance of \SI{3.5}{\ohm}. 
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2cm]
+    \draw (0,0) to[battery1,invert,l={$\SI{1.5}{V}$}] (0,1) -- (1,1) to[bulb={$\SI{3.5}{\ohm}$}] (1,0) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+\begin{parts}
+\part What is the current in the bulb?
 
 \begin{solution}
 \begin{equation*}
@@ -1679,24 +2587,50 @@ A \SI{1.5}{V} battery is connected to a small light bulb with a resistance of \S
 \end{equation*}
 \end{solution}
 
-\question
-A stereo with a resistance of \SI{65}{\ohm} is connected across a potential difference of \SI{120}{V}. What is the current in this device?
+\part Calculate the electric power used by the light bulb.
 
+\begin{solution}
+\begin{equation*}
+    P = IV = (\SI{0.43}{A})(\SI{1.5}{V}) = \boxed{\SI{0.64}{W}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
+
+
+\question
+A stereo with a resistance of \SI{65}{\ohm} is connected across a potential difference of \SI{120}{V}.
+
+\begin{parts}
+\part What is the current in this device?
 \begin{solution}
 \begin{equation*}
     I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{65}{\ohm}} = \boxed{\SI{1.85}{A}}
 \end{equation*}
 \end{solution}
 
+\part Calculate the power used by the stereo.
+
+\begin{solution}
+\begin{equation*}
+    P = IV = (\SI{1.85}{A})(\SI{120}{V}) = \boxed{\SI{222}{W}}
+\end{equation*}
+\end{solution}
+\end{parts}
+
 \question
-Find the current in the following devices when they are connected across a potential difference of \SI{120}{V}.
+Find the power used by the following devices when they are connected across a potential difference of \SI{120}{V}.
 
 \begin{parts}
 \part a hot plate with a resistance of \SI{48}{\ohm}
 
 \begin{solution}
 \begin{equation*}
-    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{48}{\ohm}} = \boxed{\SI{2.5}{A}}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{48}{\ohm}} = \SI{2.5}{A}
+\end{equation*}
+
+\begin{equation*}
+    P = IV = (\SI{2.5}{A})(\SI{120}{V}) = \boxed{\SI{300}{W}}
 \end{equation*}
 \end{solution}
 
@@ -1704,13 +2638,17 @@ Find the current in the following devices when they are connected across a poten
 
 \begin{solution}
 \begin{equation*}
-    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{20}{\ohm}} = \boxed{\SI{6}{A}}
+    I = \frac{V}{R} = \frac{\SI{120}{V}}{\SI{20}{\ohm}} = \SI{6}{A}
+\end{equation*}
+
+\begin{equation*}
+    P = IV = (\SI{6}{A})(\SI{120}{V}) = \boxed{\SI{720}{W}}
 \end{equation*}
 \end{solution}
 \end{parts}
 
 \question 
-The current through a microwave oven is \SI{6.25}{A}. If the resistance of the oven's circuitry is \SI{17.6}{\ohm}, what is the potential difference across the oven?
+The current through a microwave oven is \SI{6.25}{A}. If the resistance of the oven's circuitry is \SI{17.6}{\ohm}, what is the power used by the oven?
 
 \begin{solution}
 Ohm's law states
@@ -1722,12 +2660,21 @@ Ohm's law states
 Multiplying both sides by $R$ leads to
 
 \begin{equation*}
-    V = IR = (\SI{6.25}{A})(\SI{17.6}{\ohm}) = \boxed{\SI{110}{V}}
+    V = IR = (\SI{6.25}{A})(\SI{17.6}{\ohm}) = \SI{110}{V}
+\end{equation*}
+
+Power is
+
+\begin{equation*}
+    P = IV = (\SI{6.25}{A})(\SI{110}{V}) = \boxed{\SI{688}{W}}
 \end{equation*}
 \end{solution}
 
 \question
-A typical color television draws \SI{2.5}{A} if current when connected across a potential difference of \SI{115}{V}. What is the effective resistance of the television set?
+A typical color television draws \SI{2.5}{A} if current when connected across a potential difference of \SI{115}{V}. 
+
+\begin{parts}
+\part What is the effective resistance of the television set?
 
 \begin{solution}
 Ohm's law states
@@ -1743,11 +2690,21 @@ Multiplying both sides by $R/I$ leads to
 \end{equation*}
 \end{solution}
 
-\question
-The current in a certain resistor is \SI{0.50}{A} when it is connected to a potential difference of \SI{110}{V}. What is the current in this same resistor if
+\part Calculate the power drawn by the television set.
 
-\begin{parts}
-\part the operating potential difference is \SI{90.0}{V}?
+\begin{solution}
+\begin{equation*}
+    P = IV = (\SI{2.5}{A})(\SI{115}{V}) = \boxed{\SI{288}{W}}
+\end{equation*}
+\end{solution}
+
+\end{parts}
+
+\question
+The current in a certain resistor is \SI{0.50}{A} when it is connected to a potential difference of \SI{110}{V}. What is the power dissipated in this same resistor if the operating potential difference is reduced to \SI{90.0}{V}?
+
+% \begin{parts}
+% \part 
 
 \begin{solution}
 Ohm's law is
@@ -1756,33 +2713,49 @@ Ohm's law is
     I = \frac{V}{R}
 \end{equation*}
 
-Multiplying both sides by $R/I$ leads to the resistance of the resistor:
+Writing this equation as
+
+\begin{equation*}
+    \frac{I}{1} = \frac{V}{R}
+\end{equation*}
+
+and cross multiplying leads to
 
 \begin{equation*}
     R = \frac{V}{I} = \frac{\SI{110}{V}}{\SI{0.50}{A}} = \SI{220}{\ohm}
 \end{equation*}
 
-Therefore, by Ohm's law, the current with the new potential difference is
+So, by Ohm's law, the current with the new potential difference is
 
 \begin{equation*}
-    I = \frac{\SI{90.0}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.41}{A}}
+    I = \frac{\SI{90.0}{V}}{\SI{220}{\ohm}} = \SI{0.41}{A}
+\end{equation*}
+
+Therefore, the power dissipated is
+
+\begin{equation*}
+    P = IV = (\SI{0.41}{A})(\SI{90}{V}) = \boxed{\SI{37}{W}}
 \end{equation*}
 
 \end{solution}
-\part the operating potential difference is \SI{130}{V}?
+% \part the operating potential difference is \SI{130}{V}?
 
-\begin{solution}
-Using $R = \SI{220}{\ohm}$ from the previous part,
+% \begin{solution}
+% Using $R = \SI{220}{\ohm}$ from the previous part,
 
 
-\begin{equation*}
-    I = \frac{\SI{130}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.59}{A}}
-\end{equation*}
-\end{solution}
-\end{parts}
+% \begin{equation*}
+%     I = \frac{\SI{130}{V}}{\SI{220}{\ohm}} = \boxed{\SI{0.59}{A}}
+% \end{equation*}
+% \end{solution}
+% \end{parts}
 
 \question
-A \SI{1050}{W} electric toaster operates on a household circuit of \SI{120}{V}. What is the resistance of the wire that makes up the heating element of the toaster?
+A \SI{1050}{W} electric toaster operates on a household circuit of \SI{120}{V}.
+
+
+\begin{parts}
+\part Find the current through the toaster.
 
 \begin{solution}
 Power is 
@@ -1794,10 +2767,14 @@ Power is
 Dividing both sides by voltage leads to 
 
 \begin{equation*}
-    I = \frac{P}{V} = \frac{\SI{1050}{W}}{\SI{120}{V}} = \SI{8.75}{A}
+    I = \frac{P}{V} = \frac{\SI{1050}{W}}{\SI{120}{V}} = \boxed{\SI{8.75}{A}}
 \end{equation*}
+\end{solution}
 
-But Ohm's law is
+\part What is the resistance of the wire that makes up the heating element of the toaster?
+
+\begin{solution}
+Ohm's law is
 
 \begin{equation*}
     I = \frac{V}{R}
@@ -1809,6 +2786,10 @@ Multiplying both sides by $R/I$ leads to the resistance
     R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{8.75}{A}} = \boxed{\SI{13.7}{\ohm}}
 \end{equation*}
 \end{solution}
+\end{parts}
+
+
+
 
 \question
 A small electronic device is rated at \SI{0.25}{W} when connect to \SI{120}{V}. What is the resistance of this device?
@@ -1819,12 +2800,12 @@ A small electronic device is rated at \SI{0.25}{W} when connect to \SI{120}{V}. 
 \end{equation*}
 
 \begin{equation*}
-    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{2.1e-3}{A}} = \boxed{\SI{5.7e4}{\ohm}} = \SI{57}{k\ohm}
+    R = \frac{V}{I} = \frac{\SI{120}{V}}{\SI{2.1e-3}{A}} = \boxed{\SI{5.76e4}{\ohm}} = \SI{57.6}{k\ohm}
 \end{equation*}
 \end{solution}
 
 \question
-A calculator is rated at \SI{0.10}{W} when connected to a \SI{1.50}{V} battery. What is the resistance of this device?
+A calculator is rated at \SI{0.10}{W} when connected to a \SI{1.50}{V} battery. What is the resistance of the calculator?
 
 \begin{solution}
 \begin{equation*}
@@ -1848,11 +2829,11 @@ An electric heater is operated by applying a potential difference of \SI{50.0}{V
 \end{equation*}
 \end{solution}
 
-\part Find the power rating of the heater.
+\part Find the power used by the heater.
 
 \begin{solution}
 \begin{equation*}
-    P = IV = (\SI{6.25}{A})(\SI{50.0}{V}) = \boxed{\SI{312.5}{W}}
+    P = IV = (\SI{6.25}{A})(\SI{50.0}{V}) = \boxed{\SI{313}{W}}
 \end{equation*}
 \end{solution}
 \end{parts}
@@ -1863,7 +2844,7 @@ An electric heater is operated by applying a potential difference of \SI{50.0}{V
 
 \clearpage
 
-\subsection{Other}   
+\subsection*{Other}   
 \begin{questions}
 
 \question

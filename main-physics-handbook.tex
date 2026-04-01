@@ -4,6 +4,7 @@
 \input{notes}
 \input{documents/physics-glossary}
 \usepackage{figchild}
+\makenoidxglossaries
 
 \usepackage{circuitikz}
 \ctikzset{bipoles/battery1/height=0.5}
@@ -30,17 +31,17 @@
 \newif\ifShowUnitXII
 \newif\ifShowUnitXIII
 \newif\ifShowUnitXIV
-\ShowUnitItrue                                  
-\ShowUnitIItrue                                 
-\ShowUnitIIItrue                                
-\ShowUnitIVtrue                                 
-\ShowUnitVtrue                                  
-\ShowUnitVItrue                                 
-\ShowUnitVIItrue                              
-\ShowUnitVIIItrue                               
-\ShowUnitIXtrue                                 
-%\ShowUnitXtrue                                  
-% \ShowUnitXItrue                                 
+\ShowUnitIfalse                                  
+\ShowUnitIIfalse                                 
+\ShowUnitIIIfalse                                
+\ShowUnitIVfalse                                 
+\ShowUnitVfalse                                  
+\ShowUnitVIfalse                                 
+\ShowUnitVIIfalse                              
+\ShowUnitVIIIfalse                               
+\ShowUnitIXfalse                                 
+\ShowUnitXfalse                                  
+\ShowUnitXItrue                                 
 % \ShowUnitXIItrue  
 % \ShowUnitXIIItrue
 % \ShowUnitXIVtrue  
@@ -1626,6 +1627,82 @@ Therefore, impulse-momentum theorem is also written as
     F_\text{net} \Delta t = m \Delta v = m(v_f - v_i)
 \end{equation*}
 
+\begin{example}\label{EvkSMv}
+A 0.057-kg tennis ball moves at $-\SI{12}{m/s}$ when it gets struck to a new velocity of $+\SI{48}{m/s}$. What is the ball's change in momentum?
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,height=3cm,
+    axis line style={draw=none},
+    ticks=none,
+    axis lines=left,
+    xmin=0,xmax=10,
+    ymin=0,ymax=10,
+    clip=false
+]
+    \fill[black!10] (5.4,5) circle (2mm);
+    \fill[black!20] (5.2,5) circle (2mm) node[black,above=8pt] {$-\SI{12}{m/s}$};
+    \fill (5,5) circle (2mm);
+\end{axis}
+\end{tikzpicture}%
+\begin{tikzpicture}
+\begin{axis}[
+    width=8cm,height=3cm,
+    axis line style={draw=none},
+    ticks=none,
+    axis lines=left,
+    xmin=0,xmax=10,
+    ymin=0,ymax=10,
+    clip=false
+]
+    \fill[black!10] (5,5) circle (2mm);
+    \fill[black!20] (5.4,5) circle (2mm) node[black,above=8pt] {$+\SI{48}{m/s}$};
+    \fill (5.8,5) circle (2mm);
+\end{axis}
+\end{tikzpicture}%
+\end{center}
+\end{example}
+
+\textit{Solution}: 
+
+We know the tennis ball's mass, initial velocity, and final velocity: $m = \SI{0.057}{kg}$, $v_i = -\SI{12}{m/s}$, and $v_f = +\SI{48}{m/s}$. We want to find change in momentum: $\Delta p =\ ?$ Change in momentum is
+
+\begin{equation*}
+    \Delta p  = m \left(v_f - v_i\right) = 0.057 \left(48 - \left(-12\right) \right) = 0.057 \left(48 + 12 \right) = \SI{3.42}{kg\,m/s}
+\end{equation*}
+
+\hfill $\blacksquare$
+
+\begin{example}
+During the 2007 French Open, \href{https://youtu.be/6b1NSgQZvdo}{Venus Williams} hit the fastest recorded serve in a premier women's match. The ball started at rest and reached a speed of \SI{58}{m/s} (\SI{130}{mph}). What was the average force exerted on the 0.057-kg tennis ball by Williams' racquet? Assume that the ball remained in contact with the racquet for \SI{5}{ms} (milliseconds) and accelerated horizontally.
+\end{example}
+
+\textit{Solution:} 
+
+We are given final velocity, initial velocity, mass, and elapsed time: $v_f = \SI{58}{m/s}$, $v_i = \SI{0}{m/s}$, $m = \SI{0.057}{kg}$, and $\Delta t = \SI{5}{ms} = \SI{0.005}{s}$. (Note: $\SI{1}{ms} = \SI{1}{millisecond} = \SI{0.001}{s} = \SI{1e-3}{s}$.) We want to find the average net force: $F_{\text{net}} =\ ?$ Equation~(\ref{e8sC6q}) relates change in momentum to change in time as
+
+\begin{equation*}
+    F_{\text{net}} = \frac{\Delta p}{\Delta t}
+\end{equation*}
+
+The tennis ball's change in momentum is
+
+\begin{equation*}
+    \Delta p = m(v_f - v_i) = 0.057(58 - 0) = \SI{3.306}{kg\,m/s}
+\end{equation*}
+
+Therefore, the net force supplied by the racquet is
+
+\begin{equation*}
+    F_{\text{net}} = \frac{\Delta p}{\Delta t} = \frac{3.306}{0.005} = \SI{661}{N}
+\end{equation*}
+\vspace{0.1ex}
+
+A force of \SI{661}{N} is about the weight of a 150-pound person!
+
+\hfill $\blacksquare$
+
 
 \subsection{Work}
 
@@ -2712,11 +2789,8 @@ The gravitational potential energy between two objects of mass $m_1$ and $m_2$ w
     E_g = -\frac{G m_1 m_2}{r}
 \end{equation*}
 
-When an object is raised from the surface of the Earth to a height $h$, there is an gain in gravitational potential energy of magnitude
+In an object-Earth system, when the object is raised from the surface of the Earth to a height $h$, there is a gain in gravitational potential energy.
 
-\begin{equation*}
-    \Delta E_g = mgh
-\end{equation*}
 
 \begin{center}
 \begin{tikzpicture}
@@ -2725,7 +2799,7 @@ When an object is raised from the surface of the Earth to a height $h$, there is
         \draw (0,0) node[opacity=0.3] {\twemoji[width=6cm]{globe showing Americas}};
     \end{scope}
     \draw (3,0) arc (0:180:3);
-    \draw[densely dashed] (-2,3) node[left,align=center] {\small reference\\height} -- (2,3);
+    \draw[densely dashed] (-2,3) node[left,align=center] {\small zero\\line} -- (2,3);
     \draw[<->] (0,0) -- (0,3) node[right,pos=0.5] {$R$};
     % \draw[<->] (0,3) -- (0,4) node[right,pos=0.5] {$y_0$};
     \draw[->] (0,3) -- (0,4) node[right,pos=0.5] {$h$};
@@ -2733,7 +2807,8 @@ When an object is raised from the surface of the Earth to a height $h$, there is
 \end{tikzpicture}
 \end{center}
 
-In general, the reference height $y_0$ doesn't need to be at the surface (where $y_0 = 0$). It can be set at the top of a 6-meter ramp ($y_0 = \SI{6}{m}$) or on top of a tall building ($y_0 = \SI{100}{m}$). Furthermore, a vertical displacement $\Delta y$ above or below the reference height yields an increase or a decrease in gravitational potential energy, respectively. 
+A zero line is a reference point from which changes in gravitational potential energy can be measured. A displacement $\Delta y$ above the zero line increases the gravitational potential energy; a negative displacement decreases the energy:
+
 
 \begin{center}
 \begin{tikzpicture}
@@ -2742,7 +2817,7 @@ In general, the reference height $y_0$ doesn't need to be at the surface (where 
         \draw (0,0) node[opacity=0.3] {\twemoji[width=6cm]{globe showing Americas}};
     \end{scope}
     \draw (3,0) arc (0:180:3);
-    \draw[densely dashed] (-2,4) node[left,align=center] {\small reference\\height} -- (2,4);
+    \draw[densely dashed] (-2,4) node[left,align=center] {\small zero\\ \small line} -- (2,4);
     \draw[<->] (0,0) -- (0,3) node[right,pos=0.5] {$R$};
     \draw[<->] (0,3) -- (0,4) node[right,pos=0.5] {$y_0$};
     \draw[->] (0,4) -- (0,5) node[right,pos=0.5] {$\Delta y$};
@@ -2756,20 +2831,18 @@ In general, the reference height $y_0$ doesn't need to be at the surface (where 
         \draw (0,0) node[opacity=0.3] {\twemoji[width=6cm]{globe showing Americas}};
     \end{scope}
     \draw (3,0) arc (0:180:3);
-    \draw[densely dashed] (-2,5) -- (2,5) node[right,align=center] {reference\\height};
+    \draw[densely dashed] (-2,5) -- (2,5) node[right,align=center] {\small zero\\ \small line};
     \draw[<->] (0,0) -- (0,3) node[right,pos=0.5] {$R$};
     \draw[|<->|] (-0.5,3) -- ++(0,2) node[left,pos=0.5] {$y_0$};
     \draw[->] (0,5) -- ++(0,-1.0) node[right,pos=0.5] {$\Delta y$};
     \fill[yshift=-3pt] (0,4) circle (3pt) node[right=3pt] {$m$};
     \node[above=3pt,align=center] at (current bounding box.north) {\textit{Decrease} in\\gravitational potential energy};
 \end{tikzpicture}
-
-\underline{Note:} Lengths in figures are not to scale.
 \end{center}
 
-Therefore, the general formula for the change in gravitational potential energy is
+If the zero line is near the surface, no more than about \SI{10}{km} above the surface, the change in gravitational potential energy is given by
 
-\begin{equation}
+\begin{equation} \label{RlpJa5}
     \Delta E_g = mg \Delta y
 \end{equation}
 
@@ -2779,7 +2852,7 @@ A 2.0-kg ball gets kicked in the air to a maximum height of 15 meters. At the pe
 
 \textit{Solution:} 
 
-We are given mass and height: $m = \SI{2.0}{kg}$, $h = \SI{15}{m}$, and gravity is $\SI{10}{m/s^2}$. The unknown we are finding in gravitational potential energy: $\mathrm{PE_g} =\ ?$ By Eq.~(\ref{RlpJa5}),
+By Eq.~(\ref{RlpJa5}),
 
 \begin{equation*}
     \Delta E_g = mg \Delta y = (\SI{2.0}{kg})(\SI{10}{m/s^2})(\SI{15}{m}) =  \boxed{\SI{300}{J}}
@@ -2912,333 +2985,209 @@ If we solve this equation for speed ($v$) then his speed is
 
 \subsection{Conservation of Momentum}
 
-\begin{example}\label{EvkSMv}
-A 0.057-kg tennis ball moves at $-\SI{12}{m/s}$ when it gets struck to a new velocity of $+\SI{48}{m/s}$. What is the ball's change in momentum?
+\begin{example} \label{wXY1rT}
+An object with a mass of \SI{0.50}{kg} moving at \SI{1.00}{m/s} to the right experiences an elastic collision with an object of mass \SI{1.50}{kg} moving at \SI{0.50}{m/s} to the left.
 
 \begin{center}
-\begin{tikzpicture}
-\begin{axis}[
-    width=8cm,height=3cm,
-    axis line style={draw=none},
-    ticks=none,
-    axis lines=left,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    clip=false
-]
-    \fill[black!10] (5.4,5) circle (2mm);
-    \fill[black!20] (5.2,5) circle (2mm) node[black,above=8pt] {$-\SI{12}{m/s}$};
-    \fill (5,5) circle (2mm);
-\end{axis}
-\end{tikzpicture}%
-\begin{tikzpicture}
-\begin{axis}[
-    width=8cm,height=3cm,
-    axis line style={draw=none},
-    ticks=none,
-    axis lines=left,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    clip=false
-]
-    \fill[black!10] (5,5) circle (2mm);
-    \fill[black!20] (5.4,5) circle (2mm) node[black,above=8pt] {$+\SI{48}{m/s}$};
-    \fill (5.8,5) circle (2mm);
-\end{axis}
-\end{tikzpicture}%
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{0.50}{kg}};
+    \draw[->,very thick] (0,0) -- (1.0,0) node[above,pos=0.8] {$\left|v\right| = \SI{1.00}{m/s}$};
+    \begin{scope}[shift={(3,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{1.50}{kg}};
+        \draw[->,very thick] (0,0) -- (-0.5,0) node[above,pos=1.4] {$\left|v\right| = \SI{0.50}{m/s}$};
+    \end{scope}
+    \node[above=2mm] at (current bounding box.north) {\bfseries Before Elastic Collision};
+\end{tikzpicture}
+
+
+\vspace{5mm}
+
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{0.50}{kg}};
+    \draw[->,very thick] (0,0) -- (-1.25,0) node[above,pos=0.8] {$\left|v\right| = \SI{1.25}{m/s}$};
+    \begin{scope}[shift={(1,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{1.50}{kg}};
+        \draw[->,very thick] (0,0) -- (0.25,0);
+    \end{scope}
+    \node[above=2mm] at (current bounding box.north) {\bfseries After Elastic Collision};
+\end{tikzpicture}
 \end{center}
+
+ If the first object's velocity after collision is \SI{-1.25}{m/s}, what is the second object's velocity?
 \end{example}
 
-\textit{Solution}: 
+\textit{Solution:}
 
-We know the tennis ball's mass, initial velocity, and final velocity: $m = \SI{0.057}{kg}$, $v_i = -\SI{12}{m/s}$, and $v_f = +\SI{48}{m/s}$. We want to find change in momentum: $\Delta p =\ ?$ Change in momentum is
+We are given the following masses and velocities:
+
+\begin{align*}
+    m_1 &= \SI{0.50}{kg} \\[1ex]
+    v_{1i} &= \SI{1.00}{m/s} \\[1ex]
+    m_2 &= \SI{1.50}{kg} \\[1ex]
+    v_{2i} &= \SI{-0.50}{m/s}
+\end{align*}
+
+We want the final velocity of the second mass:
 
 \begin{equation*}
-    \Delta p  = m \left(v_f - v_i\right) = 0.057 \left(48 - \left(-12\right) \right) = 0.057 \left(48 + 12 \right) = \SI{3.42}{kg\,m/s}
+    v_{2f} = \ ?
 \end{equation*}
+
+By conservation of momentum for a hit-and-bounce (elastic) collision, 
+
+\begin{equation*}
+    m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f}
+\end{equation*}
+
+Subtracting $m_1 v_{1f}$ from both sides yields
+
+\begin{equation*}
+    m_2 v_{2f} = m_1 v_{1i} + m_2 v_{2i} - m_1 v_{1f} 
+\end{equation*}
+
+Diving both sides by mass $m_2$ leads to
+
+\begin{align*}
+    v_{2f} &= \frac{m_1 v_{1i} + m_2 v_{2i} - m_1 v_{1f}}{m_2} \\[1ex]
+    &= \frac{(\SI{0.50}{kg})(\SI{1.0}{m/s}) + (\SI{1.50}{kg})(\SI{-0.50}{m/s}) - (\SI{0.50}{kg})(\SI{-1.25}{m/s})}{\SI{1.50}{kg}} \\[1ex]
+    &= \boxed{\SI{0.25}{m/s}}
+\end{align*}
+
+So, it recoils at \SI{0.25}{m/s} to the right.
 
 \hfill $\blacksquare$
 
-\begin{example}
-During the 2007 French Open, \href{https://youtu.be/6b1NSgQZvdo}{Venus Williams} hit the fastest recorded serve in a premier women's match. The ball started at rest and reached a speed of \SI{58}{m/s} (\SI{130}{mph}). What was the average force exerted on the 0.057-kg tennis ball by Williams' racquet? Assume that the ball remained in contact with the racquet for \SI{5}{ms} (milliseconds) and accelerated horizontally.
+
+\begin{example} \label{usQeew}
+A \SI{0.50}{kg} object that is moving at a velocity of \SI{1.00}{m/s} collides with a \SI{1.50}{kg} object that is moving at \SI{-0.500}{m/s}. The collision is perfectly inelastic (hit-and-stick). What is the final velocity of the combined system after the collision?
+
+\begin{center}
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{0.50}{kg}};
+    \draw[->,very thick] (0,0) -- (1.0,0) node[above,pos=0.8] {$\left|v\right| = \SI{1.00}{m/s}$};
+    \begin{scope}[shift={(3,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{1.50}{kg}};
+        \draw[->,very thick] (0,0) -- (-0.5,0) node[above,pos=1.4] {$\left|v\right| = \SI{0.50}{m/s}$};
+    \end{scope}
+    \node[above=2mm] at (current bounding box.north) {\bfseries Before Inelastic Collision};
+\end{tikzpicture}
+
+
+\vspace{5mm}
+
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{0.50}{kg}};
+    \draw[->,very thick] (0,0) -- (-0.25,0);
+    \begin{scope}[shift={(0.54,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{1.50}{kg}};
+    \end{scope}
+    \node[above=2mm] at (current bounding box.north) {\bfseries After Inelastic Collision};
+\end{tikzpicture}
+\end{center}
+
+
 \end{example}
+
 
 \textit{Solution:} 
 
-We are given final velocity, initial velocity, mass, and elapsed time: $v_f = \SI{58}{m/s}$, $v_i = \SI{0}{m/s}$, $m = \SI{0.057}{kg}$, and $\Delta t = \SI{5}{ms} = \SI{0.005}{s}$. (Note: $\SI{1}{ms} = \SI{1}{millisecond} = \SI{0.001}{s} = \SI{1e-3}{s}$.) We want to find the average net force: $F_{\text{net}} =\ ?$ Equation~(\ref{e8sC6q}) relates change in momentum to change in time as
+We are given the following masses and velocities:
+
+\begin{align*}
+    m_1 &= \SI{0.50}{kg} \\[1ex]
+    v_{1i} &= \SI{1.00}{m/s} \\[1ex]
+    m_2 &= \SI{1.50}{kg} \\[1ex]
+    v_{2i} &= \SI{-0.50}{m/s}
+\end{align*}
+
+We want the final velocity combined system:
 
 \begin{equation*}
-    F_{\text{net}} = \frac{\Delta p}{\Delta t}
+    v_{f} = \ ?
 \end{equation*}
 
-The tennis ball's change in momentum is
+By conservation of momentum for a hit-and-stick (perfectly inelastic) collision, 
 
 \begin{equation*}
-    \Delta p = m(v_f - v_i) = 0.057(58 - 0) = \SI{3.306}{kg\,m/s}
+    m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f
 \end{equation*}
 
-Therefore, the net force supplied by the racquet is
+Diving both sides by mass $m_1 + m_2$ gives
 
-\begin{equation*}
-    F_{\text{net}} = \frac{\Delta p}{\Delta t} = \frac{3.306}{0.005} = \SI{661}{N}
-\end{equation*}
-\vspace{0.1ex}
+\begin{align*}
+    v_f &= \frac{m_1 v_{1i} + m_2 v_{2i}}{m_1 + m_2} \\[1ex]
+    &= \frac{(\SI{0.50}{kg})(\SI{1.0}{m/s}) + (\SI{1.50}{kg})(\SI{-0.50}{m/s})}{\SI{0.50}{kg} + \SI{1.50}{kg}} \\[1ex]
+    &= \boxed{\SI{-0.125}{m/s}}
+\end{align*}
 
-A force of \SI{661}{N} is about the weight of a 150-pound person!
+So the system moves at \SI{0.125}{m/s} to the left.
 
 \hfill $\blacksquare$
 
 \begin{example} \label{W5BnBq} %%% Refer to this example at the beginning of the unit to motivate a better understanding of momentum. Our object is to scaffold up 
 Nancy the ice skater, whose mass is \SI{70}{kg}, stands at rest with ice skates on an icy (frictionless) surface. She uses superhero strength to throw a \SI{5}{kg} sack of potatoes horizontally away from her body at \SI{50}{m/s} (\SI{112}{mph}). As a result of both the frictionless surface and the law of conservation of momentum, she will accelerate in the direction opposite the sack. The speed she gains as a result throwing the object is known as the \textbf{recoil velocity}. Calculate Nancy's recoil velocity.
 
-
 \begin{center}
-\begin{tikzpicture}
-\begin{axis}[width=6cm,height=3.3cm,
-    ticks=none,
-    clip=false,
-    xmin=-10,xmax=10,
-    ymin=-4,ymax=3,
-    axis line style={draw=none},
-    title={Before Event},
-]
-    \draw[fill=black] (0,0) circle (5mm) node[below=5mm] {\SI{70}{kg}};
-    \begin{scope}[xshift=7.2mm]
-        \draw[fill=black] (0,0) circle (2mm) node[below=2mm] {\SI{5}{kg}};
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{70}{kg}};
+    \begin{scope}[shift={(0.54,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{5.0}{kg}};
     \end{scope}
-\end{axis}
-\end{tikzpicture}%
-\hspace{1cm}
-\begin{tikzpicture}
-\begin{axis}[width=12cm,height=3.3cm,
-    ticks=none,
-    clip=false,
-    xmin=-20,xmax=20,
-    ymin=-4,ymax=3,
-    title={After Event},
-    axis line style={draw=none},
-]
-    \begin{scope}[xshift=-15mm]
-        \draw[fill=black] (0,0) circle (5mm) node[below=5mm] {\SI{70}{kg}};
-        \draw[->] (0,0) -- (-4,0) node[left] {$v_1^{\prime} =\ ?$};       
+    \node[above=2mm] at (current bounding box.north) {\bfseries Before Explosion};
+\end{tikzpicture}
+
+\vspace{5mm}
+
+\begin{tikzpicture}[x=3cm,y=3cm]
+    \draw[opacity=0] (0,0) -- (-2,0);
+    \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{70}{kg}};
+    \draw[->,very thick] (0,0) -- (-0.5,0);% node[above,pos=0.8] {$\left|v\right| = \SI{1.00}{m/s}$};
+    \begin{scope}[shift={(1,0)}]
+        \draw[fill=black!10] (0,0) circle (8mm) node[above] {\SI{5.0}{kg}};
+        \draw[->,very thick] (0,0) -- (2,0) node[above,pos=0.5] {$\left|v\right| = \SI{50}{m/s}$};
     \end{scope}
-    \begin{scope}[xshift=0mm]
-        \draw[fill=black] (0,0) circle (2mm) node[below=2mm] {\SI{5}{kg}};
-        \draw[->] (0,0) -- (12,0) node[right] {$v_2^{\prime} = \SI{50}{m/s}$};
-    \end{scope}
-\end{axis}
+    \node[above=2mm] at (current bounding box.north) {\bfseries After Explosion};
 \end{tikzpicture}
 \end{center}
 \end{example} 
 
 \textit{Solution:} 
+These are the known and unknown quantities:
+
+\begin{align*}
+    m_1 &= \SI{70}{kg} \\[1ex]
+    v_{1i} &= 0 \\[1ex]
+    m_2 &= \SI{5.0}{kg} \\[1ex]
+    v_{2i} &= 0 \\[1ex]
+    v_{1f} &=\ ? \\[1ex]
+    v_{2f} &= \SI{50}{m/s}
+\end{align*}
 
 We are given Nancy's mass, the sack's mass, and the final velocity of the sack: $m_1 = \SI{70}{kg}$, $m_2 = \SI{5}{kg}$, and $v_2^{\prime} = \SI{50}{m/s}$. Furthermore, the initial velocities of both objects is zero: $v_1 = 0$ and $v_2 = 0$. The unknown quantity we're looking for is Nancy's final (recoil) velocity: $v_1^{\prime} =\ ?$ All these quantities are related by the law of conservation of momentum:
 
-\begin{equation*}
-    m_1 v_1 + m_2 v_2 = m_1 v_1^{\prime} + m_2 v_2^{\prime}
-\end{equation*}
-
-Substituting the known values leads to 
+For an explosion, conservation of momentum states
 
 \begin{equation*}
-    0 = 70\,v_1^{\prime} + (5)(50)
+    0 = m_1 v_{1f} + m_2 v_{2f}
 \end{equation*}
 
- which simplifies to 
-
- \begin{equation*}
-     0 = 70\,v_1^{\prime} + 250
- \end{equation*}
-
- Solve for the recoil velocity ($v_1^{\prime}$) as follows:
-
- \begin{align*}
-     \textbf{Write $v_1^{\prime}$ on left} \qquad & 70\,v_1^{\prime} + 250 = 0\\[0.5ex]
-     \textbf{Subtract 250} \qquad & 70\,v_1^{\prime} + \cancel{250} \mathbin{\color{red} - } \textcolor{red}{\cancel{250}} = \mathbin{\color{red} - } \textcolor{red}{250}\\[0.5ex]
-     \textbf{Simplify} \qquad &  70\,v_1^{\prime} = -250\\[0.5ex]
-     \textbf{Divide by 70} \qquad & \frac{\cancel{70}\,v_1^{\prime}}{\textcolor{red}{\cancel{70}}} = \frac{-250}{\textcolor{red}{70}}\\[0.5ex]
-     \textbf{Simplify} \qquad & v_1^{\prime} = -3.57\\
- \end{align*}
-
-Therefore, Nancy's recoil velocity is \SI{-3.57}{m/s}. She slides backwards as a result of throwing the object forward, all while the momentum of the system remains conserved.
- 
-\hfill $\blacksquare$ 
-
-\begin{example} \label{wXY1rT}
-An object with a mass of \SI{0.9}{kg} moving at \SI{1.0}{m/s} experiences an elastic collision with an object of mass \SI{1.5}{kg} moving at \SI{-0.5}{m/s}. If the first object's velocity after collision is \SI{-0.88}{m/s}, what is the second object's velocity?
-
-
-\begin{center}
-\def\xa{1.5}
-\def\xb{8.5}
-\def\y{3}
-\def\ra{4mm}
-\def\rb{6mm}
-\begin{tikzpicture}
-\begin{axis}[width=8cm, height=3cm,
-    ticks=none,
-    axis line style={draw=none},
-    clip=false,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    title=Before Collision,
-]
-    \draw[thick,->] (\xa,\y) -- ++(axis direction cs: 3,0) node[above] {$\SI{1.0}{m/s}$};
-    \fill[black!15] (\xa-0.3,\y) circle (\ra);
-    \fill[black!30] (\xa-0.15,\y) circle (\ra);
-    \draw[fill=black] (\xa,\y) circle (\ra) node[below=\ra] {$\SI{0.9}{kg}$};
-    \fill[black!15] (\xb+0.3,\y) circle (\rb);
-    \fill[black!30] (\xb+0.15,\y) circle (\rb);
-    \draw[thick,->] (\xb,\y) -- ++(axis direction cs: -1.8,0); \node at (6.4,1) {$\SI{-0.5}{m/s}$};
-    \draw[fill=black] (\xb,\y) circle (\rb) node[below=\rb] {$\SI{1.5}{kg}$};
-    \node at (5,10) {$p_1 + p_2 = p_{\text{tot}}$};
-\end{axis}
-\end{tikzpicture}%
-\hspace{2em}
-\def\xa{3.5}
-\def\xb{6.5}
-\def\y{3}
-\def\ra{4mm}
-\def\rb{6mm}
-\begin{tikzpicture}
-\begin{axis}[width=8cm, height=3cm,
-    ticks=none,
-    axis line style={draw=none},
-    clip=false,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    title=After Collision,
-]
-    \draw[thick,->] (\xa,\y) -- ++(axis direction cs: -2.8,0) node[left] {$\SI{-0.88}{m/s}$};
-    \fill[black!15] (\xa+0.4,\y) circle (\ra);
-    \fill[black!30] (\xa+0.2,\y) circle (\ra);
-    \draw[fill=black] (\xa,\y) circle (\ra) node[below=\ra] {$\SI{0.9}{kg}$};
-    \fill[black!15] (\xb-0.24,\y) circle (\rb);
-    \fill[black!30] (\xb-0.12,\y) circle (\rb);
-    \draw[thick,->] (\xb,\y) -- ++(axis direction cs: 2.3,0) node[right] {$v_2^{\prime} =\ ?$};
-    \draw[fill=black] (\xb,\y) circle (\rb) node[below=\rb] {$\SI{1.5}{kg}$};
-    \node at (5,10) {$p_1^{\prime} + p_2^{\prime} = p_{\text{tot}}$};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\end{example}
-
-\textit{Solution:}
-
-We are given the masses and initial velocities of both objects and the velocity after collision of the first object: $m_1 = \SI{0.9}{kg}$, $v_1 = \SI{1.0}{m/s}$, $m_2 = \SI{1.5}{kg}$, $v_2 = \SI{-0.5}{m/s}$, and $v_1^{\prime} = \SI{-0.88}{m/s}$. The unknown we want to find is the velocity of the second object after collision: $v_2^{\prime} =\ ?$. These variables are all related by Eq.~(\ref{eVkwoQ}), the conservation of momentum equation:
-
-\begin{equation*} 
-    m_1 v_1 + m_2 v_2 = m_1 v_1^{\prime} + m_2 v_2^{\prime}
-\end{equation*}
-
-Substituting the given values leads to
+Subtracting $m_2 v_{2f}$ from both sides yields
 
 \begin{equation*}
-    (0.9)(1) + (1.5)(-0.5) = (0.9)(-0.88) + (1.5) v_2^{\prime}\ ,
+    m_1 v_{1f} = -m_2 v_{2f}
 \end{equation*}
 
-which reduces to
+Diving both sides by $m_1$ leads to
 
 \begin{equation*}
-    0.15 = -0.792 + 1.5\,v_2^{\prime}
+    v_{1f} = -\frac{m_2 v_{2f}}{m_1} = -\frac{(\SI{5}{kg})(\SI{50}{m/s})}{\SI{70}{kg}} 
+    = \boxed{-\SI{3.57}{m/s}}
 \end{equation*}
 
-We solve this equation for $v_2^{\prime}$ via the following steps:
-\vspace{-1em}
-
-\begin{align*}
-    \textbf{Write $v_2^{\prime}$ on left} \qquad & 1.5\,v_2^{\prime} - 0.792 = 0.15\\[1ex]
-    \textbf{Add 0.792} \qquad & 1.5\,v_2^{\prime} - \cancel{0.792} + \textcolor{red}{\cancel{0.792}} = 0.15 + \textcolor{red}{0.792}\\[1ex]
-    \textbf{Reduce} \qquad & 1.5\,v_2^{\prime} = 0.942\\[1ex]
-    \textbf{Divide by 1.5} \qquad & \frac{\cancel{1.5}\,v_2^{\prime}}{\textcolor{red}{\cancel{1.5}}} = \frac{0.942}{\textcolor{red}{1.5}}\\[1ex]
-    \textbf{Reduce} \qquad & v_2^{\prime} = 0.628
-\end{align*}
-
-Therefore, the velocity of the second object after collision is (rounding up) $v_2^{\prime} = +\SI{0.63}{m/s}$.
+So, Nancy recoils at \SI{3.57}{m/s} in the opposite direction as the potato sack.
 
 \hfill $\blacksquare$
 
-\begin{example} \label{usQeew}
-A \SI{0.500}{kg} object that is moving at a velocity of \SI{1.00}{m/s} inelastically collides with a \SI{1.50}{kg} object that is moving at \SI{-0.500}{m/s}. What is the final velocity of the combined system after the collision?
-
-
-
-\begin{center}
-\def\xa{1.5}
-\def\xb{8.5}
-\def\y{3}
-\def\rb{6mm}
-\begin{tikzpicture}
-\begin{axis}[width=8cm, height=3cm,
-    ticks=none,
-    axis line style={draw=none},
-    clip=false,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    title=Before Collision,
-]
-    \draw[thick,->] (\xa,\y) -- ++(axis direction cs: 3,0) node[above] {$\SI{+1.0}{m/s}$};
-    \fill[black!15] (\xa-0.3,\y) circle (3mm);
-    \fill[black!30] (\xa-0.15,\y) circle (3mm);
-    \draw[fill=black] (\xa,\y) circle (3mm) node[below=3mm] {$\SI{0.5}{kg}$};
-    \fill[black!15] (\xb+0.3,\y) circle (\rb);
-    \fill[black!30] (\xb+0.15,\y) circle (\rb);
-    \draw[thick,->] (\xb,\y) -- ++(axis direction cs: -2.2,0) node[below] {$\SI{-0.5}{m/s}$};
-    \draw[fill=black] (\xb,\y) circle (\rb) node[below=\rb] {$\SI{1.5}{kg}$};
-    \node at (5,10) {$p_1 + p_2 = p_{\text{tot}}$};
-\end{axis}
-\end{tikzpicture}%
-\hspace{2em}
-\def\xa{4.3}
-\def\xb{5.7}
-\def\y{3}
-\def\rb{6mm}
-\begin{tikzpicture}
-\begin{axis}[width=8cm, height=3cm,
-    ticks=none,
-    axis line style={draw=none},
-    clip=false,
-    xmin=0,xmax=10,
-    ymin=0,ymax=10,
-    title=After Collision,
-]
-    \draw[thick,->] (\xa,\y) -- ++(axis direction cs: -1.2,0) node[left] {$v^{\prime}$};
-    \draw[fill=black] (\xa,\y) circle (3mm);
-    \fill[black!15] (\xb+0.2,\y) circle (\rb);
-    \fill[black!30] (\xb+0.1,\y) circle (\rb);
-    \draw[fill=black] (\xb,\y) circle (\rb);
-    \node at (5,10) {$p_1^{\prime} + p_2^{\prime} = p_{\text{tot}}$};
-    \node at (5,-3) {\SI{2.0}{kg}};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\end{example}
-
-
-\textit{Solution:} 
-
-We are given two masses and two initial velocities: $m_1 = \SI{0.5}{kg}$, $m_2 = \SI{1.5}{kg}$, $v_1 = \SI{+1.0}{m/s}$, and $v_2 = \SI{-0.5}{m/s}$.  We want to find the final velocity of the stuck system: $v^{\prime} =\ ?$. These quantities are related by Equation~(\ref{6HFSQ5}) for inelastic collisions:
-\vspace{-1ex}
-
-\begin{equation*}
-    m_1 v_1 + m_2 v_2 = (m_1 + m_2)\,v^{\prime}
-\end{equation*}
-
-To solve this equation for $v^{\prime}$, we take the following steps:
-\vspace{-1ex}
-
-\begin{align*}
-    \textbf{Substitute given values} \qquad & (0.5)(1.0) + (1.5)(-0.5) = (0.5 + 1.5)\,v^{\prime}\\[1ex]
-    \textbf{Simplify} \qquad & -0.25 = 2\,v^{\prime}\\[1ex]
-    \textbf{Write $v^{\prime}$ on left} \qquad & 2\,v^{\prime} = -0.25\\[1ex]
-    \textbf{Divide by 2} \qquad & \frac{\cancel{2}\,v^{\prime}}{\textcolor{red}{\cancel{2}}} = \frac{-0.25}{\textcolor{red}{\cancel{2}}}\\[1ex]
-    \textbf{Simplify} \qquad & v^{\prime} = -\SI{0.125}{m/s}
-\end{align*}
-
-Therefore, the final velocity of the system is (rounding up) \SI{-0.13}{m/s}; the system moves leftward.
-
-\hfill $\blacksquare$
 
 \begin{enumerate}
 \setlength\itemsep{0.1ex}
@@ -3257,11 +3206,320 @@ Therefore, the final velocity of the system is (rounding up) \SI{-0.13}{m/s}; th
 \clearpage
 
 \section{Oscillatory Motion}
-\ifShowUnitVIII
+\ifShowUnitIX
 
-\subsection{Oscillating Motion}
+\subsection{Oscillatory Motion}
 
-To \textbf{\gls{oscillate}} means \glsdesc{oscillate}. A \textbf{\gls{medium}} is \glsdesc{medium}. 
+To \textbf{\gls{oscillate}} means \glsdesc{oscillate}. \textbf{\Gls{oscillatory motion}} is \glsdesc{oscillatory motion}. 
+
+
+An object attached to the end of a \href{https://ophysics.com/w1.html}{spring} experiences oscillatory motion when the system is displaced from equilibrium. The \textbf{\gls{equilibrium position}} is \glsdesc{equilibrium position}.
+
+\begin{center}
+\begin{tikzpicture}[y=1.2cm]
+    %...wall, equilibrium line, and amplitude
+    \draw[fill=black!15] (-0.4,1.5) -- (0,1.5) -- (0,-1.5) -- (-0.4,-1.5);
+    \draw[thick,densely dashed] (3,-2.2) -- (3,2.2) node[above,align=center] {equilibrium\\position};
+    \draw[<->] (3.1,-1.7) -- (6,-1.7) node[below,pos=0.5] {amplitude};
+    
+    %...springs:
+    \draw[decorate,decoration={coil,segment length=1.5mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,1) -- ++(3,0) node[right=3mm] {no force};
+    \draw[decorate,decoration={coil,segment length=0.75mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,0) -- ++(1.5,0);
+    \draw[decorate,decoration={coil,segment length=3mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,-1) -- ++(6,0);
+
+    %...attached objects
+    \draw[fill=black!20] (2.85,0.85) rectangle ++(0.3,0.3);
+    \draw[fill=black!20] (1.35,-0.15) rectangle ++(0.3,0.3);
+    \draw[fill=black!20] (5.85,-1.15) rectangle ++(0.3,0.3);
+
+    %...forces
+    \draw[thick,<-] (1.7,0) -- ++(0.6,0) node[right] {$F$} node[right=1cm] {compression};
+    \draw[thick,->] (6.2,-1) -- ++(0.6,0) node[right] {$F$ \hspace{2mm} stretch}; 
+\end{tikzpicture}
+\end{center}
+
+The \textbf{\gls{amplitude}} is \glsdesc{amplitude}.
+%A \textbf{\gls{medium}} is \glsdesc{medium}. 
+
+The \textbf{\gls{restoring force}} is \glsdesc{restoring force}. In a spring, the restoring force acting against the applied force is the spring force.
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=3mm]
+    \draw[black!20,decorate,decoration={coil,segment length=1.5mm,post length=2mm,pre length=1mm,amplitude=3mm}] (-1,0) -- ++(-10,0);
+    \draw[->,thick] (0,0) -- (4,0) node[right] {$F_\mathrm{spring}$};
+    \draw[->,thick] (0,0) -- (-4,0)node[left] {$F_\mathrm{applied}$};
+    \draw[fill=black!20] (-1,-1) rectangle (1,1);
+    \node[above=2mm] at (current bounding box.north) {compression};
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=3mm,y=3mm]
+    \draw[black!20,decorate,decoration={coil,segment length=3mm,post length=2mm,pre length=1mm,amplitude=3mm}] (-1,0) -- ++(-10,0);
+    \draw[->,thick] (0,0) -- (4,0) node[right] {$F_\mathrm{applied}$};
+    \draw[->,thick] (0,0) -- (-4,0)node[left] {$F_\mathrm{spring}$};
+    \draw[fill=black!20] (-1,-1) rectangle (1,1);
+    \node[above=2mm] at (current bounding box.north) {stretch};
+\end{tikzpicture}
+\end{center}
+
+In the spring systems shown above, the restoring force is given by Hooke's law:
+
+\begin{equation*}
+    \vec{F}_s = - k \Delta \vec{x}
+\end{equation*}
+
+A \textbf{\gls{pendulum}} is \glsdesc{pendulum}.
+
+\begin{center}
+\begin{tikzpicture}[x=4cm,y=4cm]
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at (0,-1);
+    \draw (0,0) -- (P) node[pos=0.5,above right] {$l$};
+    \fill (P) circle (0.025);
+\end{tikzpicture}
+\hspace{2cm}
+\begin{tikzpicture}[x=4cm,y=4cm]
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({cos(60)},{-sin(60)});
+    \draw (0,0) -- (P) node[pos=0.5,above right] {$l$};
+    \fill (P) circle (0.025);
+    \draw[opacity=0] (0,0) -- (0,-1);
+\end{tikzpicture}
+\end{center}
+
+The pendulum's restoring force has magnitude $mg \sin{\theta}$:
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}[x=5cm,y=5cm]
+    \draw[lightgray] (0,0) -- (0,-1.3) node[below,black,align=center] {\small equilibrium\\ \small position};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({sin(30)},{-cos(30)});
+    \draw (0,0) -- (P) node[pos=0.45,above right] {$l$};
+    \draw (0,-0.2) arc (270:300:0.2) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (300:240:1);
+    \begin{scope}[shift={(P)},x=2cm,y=2cm,rotate=30]
+        \draw[very thick,->] (P) -- (0,{1.3*cos(30)}) node[pos=0.8,right=0.05] {$F_\text{\tiny T}$};
+        \fill (0,0) circle (0.07) node[right=0.07] {$m$};
+        \draw[-{Latex[length=2mm,width=2mm]},very thick,rotate=-30] (0,0) -- (0,-1.3) node[below] {$mg$};
+    \end{scope}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}[x=5cm,y=5cm]
+    \draw[lightgray] (0,0) -- (0,-1.3) node[below,black,align=center] {\small equilibrium\\ \small position};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({sin(30)},{-cos(30)});
+    \draw (0,0) -- (P) node[pos=0.45,above right] {$l$};
+    \draw (0,-0.2) arc (270:300:0.2) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (300:240:1);
+    \begin{scope}[shift={(P)},x=2cm,y=2cm,rotate=30]
+        \draw[very thick,->] (P) -- (0,{1.3*cos(30)}) node[pos=0.8,right=0.05] {$F_\text{\tiny T}$};
+        \draw[-{Latex[length=2mm,width=2mm]},very thick] (0,0) -- ({-1.3*sin(30)},0) node[below left,shift={(0.2,0)}] {$-mg \sin{\theta}$};
+        \fill (0,0) circle (0.07) node[right=0.07] {$m$};
+        \draw[-{Latex[length=2mm,width=2mm]},very thick] (0,0) -- ++(0,{-1.3*cos(30)}) node[right=2mm,pos=0.7] {$mg \cos{\theta}$}; 
+        \draw[densely dashed, rotate=-30] (0,0) -- (0,-1.3);
+        \draw[rotate=-30] (0,-0.3) arc (270:300:0.3) node[pos=0.7,below] {$\theta$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Energy of Oscillators}
+
+Recall that kinetic energy is 
+
+\begin{equation}
+    E_k = \frac{1}{2} mv^2
+\end{equation}
+
+Gravitational potential energy relative to a zero line is
+
+\begin{equation}
+    E_g = mgh
+\end{equation}
+
+Spring potential energy is
+
+\begin{equation}
+    E_s = \frac{1}{2} k \left(\Delta x\right)^2
+\end{equation}
+
+where $k$ is the spring constant, and $\Delta x$ is displacement from equilibrium.
+
+\begin{example}
+A mass on a spring is pulled to its maximum stretch point and held there momentarily before release.
+
+\begin{center}
+\begin{tikzpicture}[y=1.2cm]
+    %...wall, equilibrium line, and amplitude
+    \draw[fill=black!15] (-0.4,1) -- (0,1) -- (0,-1) -- (-0.4,-1);
+    \draw[thick,densely dashed] (3,-1) -- (3,1) node[above,align=center] {equilibrium\\position};
+    \draw[<->] (3.1,-0.8) -- (6,-0.8) node[below,pos=0.5] {$\Delta x$};
+    
+    %...springs:
+    \draw[decorate,decoration={coil,segment length=3mm,post length=2mm,pre length=1mm,amplitude=3mm}] (0,0) -- ++(6,0);
+    \draw[fill=black!20] (5.85,-0.15) rectangle ++(0.3,0.3);
+    \draw[thick,->] (6.2,0) -- ++(0.6,0) node[right] {$F$ \hspace{2mm} stretch}; 
+\end{tikzpicture}
+\end{center}
+
+Draw the energy bar chart for this exact moment.
+\end{example}
+
+\textit{Solution:}
+
+Only spring potential energy is present:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6cm,
+    height=5cm,
+    ymin=0,
+    ymax=90,
+    symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{total}$},
+    xtick=data,
+    yticklabel=\empty
+]
+\addplot[ybar,fill=lightgray] coordinates {
+    ($E_k$,0)
+    ($E_g$,0)
+    ($E_s$,80)
+    ($E_\mathrm{total}$,80)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\hfill $\blacksquare$
+
+\begin{example}
+A mass on a pendulum is pulled to its maximum height point and held there momentarily before release.
+
+\begin{center}
+%%%...Tikzpicture inspired by Boas (Mathematical Physics) pg. 344)
+\begin{tikzpicture}[x=5cm,y=5cm]
+    \draw[lightgray] (0,0) -- (0,-1.1) node[below,black,align=center] {\small equilibrium\\ \small position};
+    \draw[densely dashed] (0,{-sin(60)}) -- ++(0.7,0);
+    \draw[densely dashed] (0,-1) -- ++(0.7,0) node[below,pos=0.7] {zero line};
+    \draw[thick,<->] (0.65,-1) -- (0.65,{-sin(60)}) node[right,pos=0.5] {$h$};
+    \fill[lightgray] (-0.3,0) rectangle (0.3,0.03);
+    \coordinate (P) at ({cos(60)},{-sin(60)});
+    \draw (0,0) -- (P) node[pos=0.5,right] {$l$};
+    \draw (0,-0.2) arc (270:300:0.2) node[below,pos=0.6] {$\theta$};
+    \draw[densely dashed] (P) arc (300:240:1);
+    \fill (P) circle (0.04);
+\end{tikzpicture}
+\end{center}
+
+Draw the energy bar chart for this exact moment.
+\end{example}
+
+\textit{Solution:}
+
+Only gravitational potential energy is present:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=6cm,
+    height=5cm,
+    ymin=0,
+    ymax=90,
+    symbolic x coords={$E_k$,$E_g$,$E_s$,$E_\mathrm{total}$},
+    xtick=data,
+    yticklabel=\empty
+]
+\addplot[ybar,fill=lightgray] coordinates {
+    ($E_k$,0)
+    ($E_g$,80)
+    ($E_s$,0)
+    ($E_\mathrm{total}$,80)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\hfill $\blacksquare$
+
+\subsection*{Period and Frequency}
+Springs and pendulums have periods and frequencies of oscillation. The \textbf{\gls{period}} is \glsdesc{period}, and is measured in seconds. The \textbf{\gls{frequency}} is \glsdesc{frequency}. The period is generally
+
+\begin{equation}
+    T = \text{period} = \frac{\text{amount of time}}{\text{number of cycles}}
+\end{equation}
+
+Frequency is
+
+\begin{equation}
+    f = \text{frequency} = \frac{\text{number of cycles}}{\text{amount of time}}
+\end{equation}
+
+The unit of period is the second (s). The unit of frequency is the hertz (Hz) defined as 1 over seconds:
+
+\begin{equation*}
+    \SI{1}{hertz} = \SI{1}{Hz} = \frac{1}{1\,\text{second}}
+\end{equation*}
+
+Period and frequency are inversely related:
+
+\begin{equation}
+    T = \frac{1}{f} \qquad \text{and} \qquad f = \frac{1}{T}
+\end{equation}
+
+\begin{example}
+    A mass oscillating on a spring completes 1.0 cycle every 0.25 seconds. What is the frequency of the wave?
+\end{example}
+
+\textit{Solution}: 
+
+We are given the period of the wave: $T = \SI{0.25}{s}$. By Equation \ref{9WT68r}, its frequency is
+
+\begin{equation*}
+    f = \frac{1}{T} = \frac{1}{\SI{0.25}{s}} = \SI{4}{\Hz}\ .
+\end{equation*}
+
+Therefore, this wave completes 4 wave cycles every second.
+
+\hfill $\blacksquare$
+
+\begin{example}
+    If a wave completes exactly $3 \frac{1}{3}$ wave cycles every second, what is the period of oscillation of the wave? 
+\end{example}
+
+\textit{Solution}: 
+
+We are given the wave's frequency as 3 and one-third hertz, or $f = 3\frac{1}{3}\,\text{Hz}$. This mixed number is written as an improper\footnote{See \href{https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions}{Section 4.1} of \textit{OpenStax: Prealgebra 2e} for a review on mixed numbers and improper fractions.} fraction as
+
+\begin{equation*}
+    3 \frac{1}{3} = \frac{10}{3} = 3.\overline{3}
+\end{equation*}
+
+So, the frequency is $f = \frac{10}{3}\,\text{Hz}$. The period, by Equation~\eqref{9WT68r}, is
+
+\begin{equation*}
+    T = \frac{1}{f} = \frac{1}{\frac{10}{3}} = \frac{3}{10}  = \SI{0.3}{s}
+\end{equation*}
+
+Therefore, it takes this wave 0.3 seconds to complete one wave cycle. 
+
+\hfill $\blacksquare$
+
+The period and frequency of springs and pendulums may be calculated from their physical characteristics. The period ($T_s$) of a spring is affected by the mass of the object and the spring constant of the spring and is given by
+
+\begin{equation}
+    T_s = 2\pi \sqrt{\frac{m}{k}}
+\end{equation}
+
+where $m$ is the object's mass and $k$ is the spring constant.
+
+The period ($T_p$) of a pendulum is affected by the length of the string and gravitational acceleration, and is given by 
+
+\begin{equation}
+    T_p = 2\pi \sqrt{\frac{l}{g}}
+\end{equation}
+
+where $l$ is the length of the string and $g = \SI{10}{m/s^2}$ is gravitational acceleration.
+
+
 
 \subsection{Amplitude, Frequency, and Period in Simple Harmonic Motion (SHM)}
 
@@ -3305,45 +3563,7 @@ As period increases, frequency decreases, and vice-versa. Period is measured in 
 %     \end{tabular}
 % \end{center}
 
-\begin{example}
-    A transverse wave completes 1 wave cycle every 0.25 seconds. What is the frequency of the wave?
-\end{example}
 
-\textit{Solution}: 
-
-We are given the period of the wave: $T = \SI{0.25}{s}$. By Equation \ref{9WT68r}, its frequency is
-
-\begin{equation*}
-    f = \frac{1}{T} = \frac{1}{0.25} = \SI{4}{\Hz}\ .
-\end{equation*}
-
-Therefore, this wave completes 4 wave cycles every second.
-
-\hfill $\blacksquare$
-
-\begin{example}
-    If a wave completes exactly $3 \frac{1}{3}$ wave cycles every second, what is the period of oscillation of the wave? 
-\end{example}
-
-\textit{Solution}: 
-
-We are given the wave's frequency as 3 and one-third hertz, or $f = 3\frac{1}{3}\,\text{Hz}$. This mixed number is written as an improper\footnote{See \href{https://openstax.org/books/prealgebra-2e/pages/4-1-visualize-fractions}{Section 4.1} of \textit{OpenStax: Prealgebra 2e} for a review on mixed numbers and improper fractions.} fraction as
-
-\begin{equation*}
-    3 \frac{1}{3} = \frac{10}{3} = 3.\overline{3}
-\end{equation*}
-
-So, the frequency is $f = \frac{10}{3}\,\text{Hz}$. The period, by Equation~\eqref{9WT68r}, is
-
-\begin{equation*}
-    T = \frac{1}{f} = \frac{1}{\frac{10}{3}} = \frac{3}{10}  = \SI{0.3}{s}
-\end{equation*}
-
-Therefore, it takes this wave 0.3 seconds to complete one wave cycle. 
-
-\hfill $\blacksquare$
-
-Pendulums?
 
 \fi
 
@@ -3564,35 +3784,6 @@ Thus, this wave moves at a speed of 7.5 meters per second.
 
 % Solution:End
 
-\subsection{Constructive and Destructive Interference}
-
-\begin{center}
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-2)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + sin(\x r)}) node[right] {Resultant};
-\end{tikzpicture}
-
-\bigskip
-
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r - pi r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,0) node[right] {Resultant};
-\end{tikzpicture}
-
-\bigskip
-
-\begin{tikzpicture}[x=3mm,y=5mm]
-    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
-    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
-    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{0.3*cos(\x*5 r)}) node[right] {Wave 2};
-    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + 0.3*cos(\x*5 r)}) node[right] {Resultant};
-\end{tikzpicture}
-\end{center}
-
 \subsection{Longitudinal Waves}
 
 A \textbf{\gls{longitudinal wave}} is \glsdesc{longitudinal wave}.
@@ -3643,6 +3834,50 @@ A \textbf{\gls{longitudinal wave}} is \glsdesc{longitudinal wave}.
 \begin{center}
 \includegraphics[width=7cm]{documents/figures/sound-wave.png}
 \end{center}
+
+\subsection{Boundary Reflections}
+
+If the boundary is a \textit{fixed} end, the reflected wave \textit{flips} direction. If the boundary is a \textit{loose} end, the reflected wave \textit{looks} the same.
+
+\begin{itemize}
+    \item fixed $\rightarrow$ flips
+    \item loose $\rightarrow$ looks the same
+\end{itemize}
+
+\subsection{Constructive and Destructive Interference}
+
+\begin{center}
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-2)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + sin(\x r)}) node[right] {Resultant};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{sin(\x r - pi r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,0) node[right] {Resultant};
+\end{tikzpicture}
+
+\bigskip
+
+\begin{tikzpicture}[x=3mm,y=5mm]
+    \draw[black!20,ultra thin,xstep=pi/2,ystep=1] (0,1) grid (6*pi,-8);
+    \draw[domain=0:6*pi,samples=200] plot (\x,{sin(\x r)}) node[right] {Wave 1};
+    \draw[shift={(0,-3)},domain=0:6*pi,samples=200] plot (\x,{0.3*cos(\x*5 r)}) node[right] {Wave 2};
+    \draw[shift={(0,-6)},domain=0:6*pi,samples=200,thick,red] plot (\x,{sin(\x r) + 0.3*cos(\x*5 r)}) node[right] {Resultant};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Nodes and Antinodes}
+
+\subsection{The Doppler Effect}
+
+\subsection{Refractions}
 
 \fi
 
@@ -3956,20 +4191,116 @@ This equation is solved for distance $r$ as follows:
 \textbf{Compute square root} \qquad & r = \qty{1.50}{m}\\ 
 \end{align*}
 
+\subsection*{Factor of Change Method with Coulomb's Law}
+
+The structure of Coulomb's law is as follows:
+
+\begin{equation*}
+    \text{electric force} = \frac{\left(\text{Coulomb's constant}\right) \times \left(\text{charge 1}\right) \times \left(\text{charge 2}\right)}{\left(\text{distance}\right)^2}
+\end{equation*}
+
+When charges are made to charge 1, charge 2, or distance, the electric force will change.
+
+
+\begin{mdframed}
+\centering
+
+\textbf{The 3-step Factor of Change Method}
+
+\begin{itemize}%[label=\textbf{Step \arabic*:}]
+    \item \textbf{Step 1:} Ask yourself, ``What is changing?'' Assign a number (a factor) to that change.\\(e.g., ``Doubled'' = 2, ``Tripled'' = 3, ``Halved'' = 1/2).
+    \item \textbf{Step 2:} Plug only those simple factors into the Coulomb’s Law structure to find your overall multiplier.\\Ignore $k$ and anything that stays the same (just treat them as a 1).
+    \item \textbf{Step 3:} To get the new force, multiply your original force by this new multiplier.
+\end{itemize}
+\end{mdframed}
+
+
+\begin{example}
+The charges shown below are separated by \SI{3}{cm}, and the electrostatic force is $\SI{320}{N}$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.6) node {$\SI{-4}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.6) node { $+\SI{8}{\micro C}$};
+    \draw[<->] (-3,-0.8) -- (+3,-0.8) node[pos=0.5,fill=white] {$r = \SI{3}{cm}$};
+    \draw[very thick,->] (-2.4,0) -- ++(+1,0) node[above] {$F = \SI{320}{N}$};
+    \draw[very thick,->] (+2.4,0) -- ++(-1,0) node[above] {$F = \SI{320}{N}$};
+\end{tikzpicture}
+\end{center}
+
+If the $-\SI{4}{\micro C}$ charge is replaced by a $-\SI{8}{\micro C}$ charge, what is the new electric force between the charge pairs?
+\end{example}
+
+\textit{Solution:}
+
+What is changing? Charge 2 is doubled, so $q_1$ increases by a factor of 2.
+
+The multiplier is
+
+\begin{equation*}
+    \text{multiplier} = \frac{1\cdot 2 \cdot 1}{1^2} = 2
+\end{equation*}
+
+The new force is
+
+\begin{align*}
+    \text{new force} &= \text{old force} \cdot \text{multiplier} \\[1ex]
+    &= \SI{320}{N} \times 2 \\[1ex]
+    &= \boxed{\SI{640}{N}}
+\end{align*}
+
+Therefore, if one of the charges doubles, the force also doubles. \hfill $\blacksquare$
+
+\begin{example}
+The charges shown below are separated by \SI{3}{cm}, and the electrostatic force is $\SI{320}{N}$.
+
+\begin{center}
+\begin{tikzpicture}
+    \draw[fill=black!10] (-3,0) circle (0.6) node {$\SI{-4}{\micro C}$};
+    \draw[fill=black!10] (+3,0) circle (0.6) node { $+\SI{8}{\micro C}$};
+    \draw[<->] (-3,-0.8) -- (+3,-0.8) node[pos=0.5,fill=white] {$r = \SI{3}{cm}$};
+    \draw[very thick,->] (-2.4,0) -- ++(+1,0) node[above] {$F = \SI{320}{N}$};
+    \draw[very thick,->] (+2.4,0) -- ++(-1,0) node[above] {$F = \SI{320}{N}$};
+\end{tikzpicture}
+\end{center}
+
+If the distance changes to \SI{6}{cm}, what is the magnitude of the new electric force?
+\end{example}
+
+\textit{Solution:}
+
+What is changing? The distance is doubled (from \SI{3}{cm} to \SI{6}{cm}), so $r$ increases by a factor of 2.
+
+The multiplier is
+
+\begin{equation*}
+    \text{multiplier} = \frac{1\cdot 1 \cdot 1}{2^2} = \frac{1}{4}
+\end{equation*}
+
+The new force is
+
+\begin{align*}
+    \text{new force} &= \text{old force} \cdot \text{multiplier} \\[1ex]
+    &= \SI{320}{N} \times \frac{1}{3} \\[1ex]
+    &= \boxed{\SI{80}{N}}
+\end{align*}
+
+Therefore, if the distance doubles, the force decreases to one-fourth of the old value. \hfill $\blacksquare$
 
 \clearpage
 
-\subsection{Simple Circuits}
 
+
+\subsection{Ohm's Law: Electric Current, Voltage, and Resistance}
 
 
 \textbf{\Gls{electric current}} ($I$) is \glsdesc{electric current}. Mathematically, electric current is the rate at which electric charge moves through a point in a wire per unit time:
 
 \begin{equation} \label{JzFlJp}
-    I = \frac{\Delta Q}{\Delta t}
+    I = \frac{\Delta q}{\Delta t}
 \end{equation}
 
-where $\Delta{Q}$ is the amount of charge that flows and $\Delta{t}$ is the amount of time.
+where $\Delta{q}$ is the amount of charge that flows and $\Delta{t}$ is the amount of time.
 
 \begin{center}
     \begin{tabular}{cl|cc}
@@ -3978,7 +4309,7 @@ where $\Delta{Q}$ is the amount of charge that flows and $\Delta{t}$ is the amou
     \hline\hline
     \rule{0pt}{2.5ex}
         $I$ & current & ampere & A\\
-        $\Delta{Q}$ & charge & coulomb & C\\
+        $\Delta{q}$ & charge & coulomb & C\\
         $\Delta{t}$ & time & second & s\\
     \hline
     \end{tabular}
@@ -4000,7 +4331,7 @@ where $\Delta{Q}$ is the amount of charge that flows and $\Delta{t}$ is the amou
 The total charge transferred is
 
 \begin{equation*}
-    \Delta Q = -ne = -(10^{20})(\SI{1.602e-19}{C}) = \SI{-16}{C}
+    \Delta q = -ne = -(10^{20})(\SI{1.602e-19}{C}) = \SI{-16}{C}
 \end{equation*}
 
 The amount of time in seconds is
@@ -4012,43 +4343,87 @@ The amount of time in seconds is
 The current in the lightning is
 
 \begin{equation*}
-    I = \frac{\Delta Q}{\Delta t} = \frac{-\SI{16}{C}}{\SI{0.002}{s}} = \SI{-8000}{A}
+    I = \frac{\Delta q}{\Delta t} = \frac{-\SI{16}{C}}{\SI{0.002}{s}} = \SI{-8000}{A}
 \end{equation*}
 
-The negative sign reflects the fact that electrons carry the negative charge. Thus, although the electrons flow from the cloud to the ground, the positive current is defined to flow from the ground to the cloud.
+The negative sign reflects the fact that electrons carry the negative charge. So, although the electrons flow from the cloud to the ground, the positive current is defined to flow from the ground to the cloud.
 
 \hfill $\blacksquare$
 
-An \textbf{\gls{electric circuit}} is a \glsdesc{electric circuit}. A \textbf{\gls{simple circuit}} is \glsdesc{simple circuit}. A \textbf{\gls{resistor}} is a \glsdesc{resistor}. \textbf{\Gls{voltage}} is \glsdesc{voltage}.
+An \textbf{\gls{electric circuit}} is a \glsdesc{electric circuit}. A \textbf{\gls{circuit component}} is \glsdesc{circuit component}. Examples of circuit components include wires, batteries, light bulbs, resistors, switches, and fuses.
 
+\textbf{\Gls{voltage2}} is \glsdesc{voltage2}.
+
+A \textbf{\gls{resistor}} is a \glsdesc{resistor}. \textbf{\Gls{resistance}} is \glsdesc{resistance}.
+
+
+An analogy: Current is like the number of cars passing through a school zone in a given time (e.g. 10 cars per minute), and resistance is like the flashing yellow lights that force the cars to slow down to 25 MPH.
 
 % \subsection*{Circuit Diagrams} \label{wpbAPw}
 
 A \textbf{circuit diagram} is a schematic drawing of an electrical circuit including all circuit elements, such as resistors, lamps, and batteries. Below are common symbols for circuit elements:
 
-\begin{circuitikz}
-    \draw (0,0) to[bulb]  (0.8,0) node[right=1mm]{bulb};
-    \hspace{4cm}
-    \draw (0,0) to[battery] (1,0) node[right=1mm]{battery};
-    \hspace{4cm}
-    \draw (0,0) to[cute open switch] (0.8,0) node[right=1mm]{switch (open)};
-    \hspace{4cm}
-    \draw (0,0) to[cute closed switch] (0.8,0) node[right=1mm]{switch (closed)};
-\end{circuitikz}
+\begin{center}
+\begin{tikzpicture}
+    \draw (0,0) to[bulb] (1,0) node[right] {bulb};
+    \draw[shift={(3,0)}] (0,0) to[battery1] (1,0) node[right] {battery};
+    \draw[shift={(6.5,0)}] (0,0) to[cute open switch] (2,0) node[right]{switch (open)};
+    \draw[shift={(12,0)}] (0,0) to[cute closed switch] (2,0) node[right]{switch (open)};
+\end{tikzpicture}
 
-\vspace{1em}
+\begin{tikzpicture}
+    \draw (0,0)  to[resistor] (2,0) node[right] {resistor};
+    \draw[shift={(4.5,0)}] (0,0) to[rmeter,t=A] (2,0) node[right] {ammeter};
+    \draw[shift={(9,0)}] (0,0) to[rmeter,t=V] (2,0) node[right=1mm]{voltmeter};
+    \draw[shift={(13.5,0)}] (0,0) -- (1.5,0) node[right] {wire};
+\end{tikzpicture}
+\end{center}
 
-\begin{circuitikz}
-    \draw (0,0) to[resistor] (2,0) node[right=1mm]{resistor};
-    \hspace{4cm}
-    \draw (0,0) to[rmeter,t=A] (2,0) node[right=1mm]{ammeter};
-    \hspace{4cm}
-    \draw (0,0) to[rmeter,t=V] (2,0) node[right=1mm]{voltmeter};
-    \hspace{4.5cm}
-    \draw (0,0) -- (1.5,0) node[right=1mm]{wire};
-\end{circuitikz}
+A \textbf{\gls{simple circuit}} is \glsdesc{simple circuit}.
 
-\vspace{1em}
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=2.5cm]
+    \draw (0,0) to[battery1,invert,l={$V$},i_>={$I$}] (0,1) -- (1,1) to[R={$R$},i_>={$I$}]  (1,0) -- (0,0);
+\end{tikzpicture}
+\end{center}
+
+\textbf{\gls{Ohm's law}} states that \glsdesc{Ohm's law}. Mathematically, Ohm's law is
+
+\begin{equation*}
+    I = \frac{V}{R}
+\end{equation*}
+
+To manipulate Ohm's law alegraically, use the Ohm's law triangle:
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (V) at (0,1);
+    \coordinate (I) at ({cos(210)},{sin(210)});
+    \coordinate (R) at ({cos(330)},{sin(330)});
+    \draw (V) -- (I) -- (R) -- (V);
+    
+    % Midpoints
+    \coordinate (M1) at ($(V)!0.5!(I)$);
+    \coordinate (M2) at ($(V)!0.5!(R)$);
+    \coordinate (M3) at ($(M1)!0.5!(M2)$);
+    \coordinate (M4) at ($(I)!0.5!(R)$);
+    
+    % Lines between midpoints
+    \draw (M1) -- (M2) node[pos=0.5,above=0.03] {$V$};
+    \draw (M3) -- (M4) node[pos=0.5,left=0.1] {$I$} node[pos=0.5,right=0.06] {$R$};
+\end{tikzpicture}
+\end{center}
+
+This triangle is useful for remembering the following formulas:
+
+\begin{equation*}
+    V = IR \qquad \qquad
+    I = \frac{V}{R} \qquad \qquad
+    R = \frac{V}{I}
+\end{equation*}
+
+
+\subsection{Circuits in Series and in Parallel}
 
 Elements in a closed circuit may be connected ``in series'' or ``in parallel.'' \textbf{In series} is when elements in a circuit are connected one after the other in the same branch of the circuit. 
 

@@ -1,0 +1,42 @@
+\documentclass[14pt,t,dvipsnames]{beamer}
+\input{slides}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\input{documents/physics-glossary}
+
+
+
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} %...without this, glossary terms are colored blue in Beamer
+
+
+\title{Unit 11: Mechanical Waves}
+\subtitle{Physics}
+\author{}
+\date{Updated on \today}
+
+\AtBeginSection[]
+{
+  \begin{frame}{Table of Contents}
+        \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{}
+\textbf{\gls{sound}}: \uncover<2->{\glsdesc{sound}}
+\vspace{1ex}
+
+\uncover<3->{
+\begin{center}
+    \includegraphics[width=7cm]{documents/figures/sound-wave.png}
+\end{center}
+}
+\end{frame}
+
+\end{document}
